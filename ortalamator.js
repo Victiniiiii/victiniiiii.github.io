@@ -768,3 +768,6 @@ function convertGradeToValue(grade) {
     };
     return gradeValues[grade] || 0.0;
 }
+
+switchMode('STAT22');
+switchMode('DONEM1');
