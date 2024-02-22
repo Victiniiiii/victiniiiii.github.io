@@ -1,0 +1,605 @@
+
+        html {
+            background-image: url("../static/images/cloud.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        body {
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .title-section {
+            background-image: url("../static/images/thunder.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 3px solid black;
+            margin-bottom: 10px;
+        }
+
+        .main-menu-button {
+            width: 10%;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .main-menu-text {
+            width: 50%;
+            font-size: 13px;
+            padding: 5px 5px;
+            text-align: left;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .project-button {
+            width: 330px;
+        }
+
+        .project-buttons {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            top: 0;
+            right: 0;
+        }
+
+        h1 {
+            color: white;
+            margin: 0;
+        }
+
+        .category-button {
+            background: white;
+            border: 2px solid black;
+            box-sizing: border-box;
+            font-size: 8px;
+            color: black;
+            padding: 5px 5px;
+            cursor: pointer;
+            margin: 5px 3px;
+            position: relative;
+        }
+
+        .project-box {
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid white;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-info {
+            display: flex;
+            font-size: 15px; /* Slightly larger font size */
+            justify-content: space-between; /* Align the project button and release date to the opposite sides */
+            align-items: center;
+            margin-bottom: 40px; /* Add margin to create space between project-info and project-content */
+        }
+
+        .release-date {
+            margin-left: auto; /* Push to the right edge */
+            font-size: 14px; /* Slightly larger font size */
+        }
+
+        .project-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-logo {
+            width: 100px; /* Adjust the image width as needed */
+            height: 100px; /* Adjust the image height as needed */
+            margin-right: 10px;
+        }
+
+        .project-description {
+            flex: 1; /* Fill the remaining space */
+            margin-left: 10px; /* Add margin to the left of the description to create space */
+        }
+
+        .placeholder-box {
+            background: white;
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+
+
+
+
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+		.grid-content {
+			display: flex;
+			align-items: center;
+		}
+
+    	.grid-content p {
+    		margin-left: 50px;
+    		flex-grow: 1;
+    	}
+
+        .grid-item {
+            width: 95%;
+            height: 75px
+            background-color: #ccc;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            text-align: left;
+            padding: 8px;
+            position: relative;
+        }
+
+        .grid-image {
+            width: 70px;
+            height: 70;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+		.grid-item p {
+			flex-grow: 1;
+			max-width: calc(100% - 0px);
+			white-space: nowrap;
+			margin-top: 0px;
+			margin-bottom: 32px;
+			margin-left: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.contact-box {
+            border: 2px solid white;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 130px 0;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+        }
+
+        .contact-item img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .bigoilbigbox {
+            position: relative;
+            padding: 20px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+            box-sizing: border-box;
+        }
+
+        .engines-clues-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .map-image {
+            background-image: url("../static/images/map.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            align-items: center;
+            width: 100%;
+            height: 320px;
+            margin-top: 20px;
+        }
+
+        .engines-section,
+        .clues-section {
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            position: sticky;
+            z-index: 1;
+            flex: 1;
+            text-align: center;
+            width: 100%;
+            height: 50%;
+            font-family: Verdana, sans-serif;
+        }
+
+        .clue {
+            font-size: 32px;
+        }
+
+        .bigoilcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .faq-title {
+            width: 90%;
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            padding: 0px 10px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .faq-content {
+            width: 90%;
+            font-family: Verdana, sans-serif;
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 10px;
+            justify-self: start;
+        }
+
+        .faq-content p {
+            margin: 20px 10px;
+            text-align: left;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 20px 0;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 70%;
+        }
+
+        .imagetext {
+            font-size: 16px;
+            background-color: black;
+        }
+
+         .imagebigoil {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            align-items: center;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .error-text {
+            font-size: 40px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .error-text2 {
+            font-size: 10px;
+            text-align: center;
+            margin: 0;
+        }
+
+
+
+
+
+        #buttonContainer {
+            display: flex;
+            margin-top: 10px;
+            width: 100%;
+            justify-content: space-between;
+            background-color: #e6e6ff;
+        }
+
+        .show {
+            display: block;
+        }
+
+        #rectangle {
+            width: 100%;
+            height: 80vh;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+            position: relative;
+        }
+
+        #examMode {
+            background-color: #e6e6ff;
+            display: none;
+        }
+
+        #examResultsMode {
+            background-color: #e6e6ff;
+            display: none;
+        }
+
+        #faqMode {
+            background-color: #e6e6ff;
+            font-size: 15px;
+            display: none;
+        }
+
+        #stat22Mode {
+            background-color: #e6e6ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        #result {
+            display: none;
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #noteInput {
+            display: none;
+            font-size: 36px;
+            width: 60%;
+            padding: 25px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #calculateButton {
+            display: none;
+            width: 60%;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #examResultsText {
+            margin-top: 40px;
+            font-size: 36px;
+        }
+
+        .modeButton {
+            flex: 1;
+            height: 35px;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .dropdown {
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            font-size: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+        }
+
+        .dropdown-content a {
+            color: black;
+            font-size: 20px;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            font-size: 20px;
+            background-color: #ddd;
+        }
+
+        .dropdown-gpa {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dropdown-stat22 {
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .stat22RectanglesContainer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 60px;
+        }
+
+        .stat22RectanglesContainer2 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 20px;
+        }
+
+        .stat22RectanglesContainer3 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 90px;
+        }
+
+        .stat22Rectangle {
+            width: 23%;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .semesterButtonsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            width: 95%;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .semesterButton {
+            width: 25%;
+            height: 50%;
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .middleRectangle {
+            width: 85%;
+            height: 60%;
+            background-color: lightcoral;
+            position: absolute;
+            top: 45%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            text-align: left;
+            font-size: 10px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        #rectangle select {
+            font-size: 14px;
+        }
+
+        .rightrectangle {
+            width: 20%;
+            height: 60%;
+            background-color: white;
+            position: absolute;
+            top: 45%;
+            right: 40%;
+            transform: translate(195%, -50%);
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin: auto;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .rightrectangleButton {
+            width: 100%;
+            height: 50%;
+            background-color: white;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+        .rightrectangletext {
+            width: 100%;
+            height: 50%;
+            background-color: white;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+        }
+
+        #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
+
+        #rectangle .lessonList li,
+        #rectangle ul li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
