@@ -161,7 +161,7 @@
 
 		.forgegrid {
 			width: 90vw;
-			height: 90vh;
+			height: 80vh;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			justify-content: space-between;
@@ -208,7 +208,7 @@
 	
 		.gem-text {
 		    text-align: center;
-			font-size: 15px;
+			font-size: 44px;
 		}
 
 
