@@ -160,12 +160,12 @@
 
 
 		.forgegrid {
-			width: 90vw;
-			height: 80vh;
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			justify-content: space-between;
-			margin-top: 10px;
+		    width: 90vw;
+		    height: 80vh;
+		    display: grid;
+		    grid-template-columns: 1fr 1fr; 
+		    margin-top: 10px;
+		    padding: 0 5px;
 		}
 	
 		.forgegrid-content {
@@ -178,7 +178,7 @@
 	
 		.forgegrid-item {
 			width: 90%;
-			height: 100%;
+			height: 90%;
 			background-color: #ccc;
 			border: 1px solid #000;
 			box-sizing: border-box;
@@ -189,8 +189,8 @@
 		}
 	
 		.forgegrid-image {
-			width: 3vw;
-			height: 6vh;
+			width: 5vw;
+			height: 10vh;
 			position: absolute;
 			left: 10px;
 			top: 50%;
