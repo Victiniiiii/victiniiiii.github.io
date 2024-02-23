@@ -159,12 +159,13 @@
 
 
 	.forgegrid {
-		width: 90%;
-		height: 90%;
+		width: 90vw;
+		height: 90vh;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 10px;
 		justify-content: space-between;
+		align-items: center;
         }
 
 	.forgegrid-content {
@@ -184,6 +185,8 @@
 		box-sizing: border-box;
 		text-align: center;
 		position: relative;
+		justify-content: space-between;
+		align-items: center;
         }
 
         .forgegrid-image {
