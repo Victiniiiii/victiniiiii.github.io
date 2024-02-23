@@ -44,3 +44,4 @@ gemstonenames().then(sentences => {
         document.getElementById(key).textContent = value;
     });
 });
+
