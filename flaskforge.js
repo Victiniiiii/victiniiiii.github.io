@@ -36,7 +36,7 @@ const getGemstoneInfo = (gemName) => {
     const fineGemProfit = perfectGemBuyPrice - (fineGemPrice * 400);
     const flawlessGemProfit = perfectGemBuyPrice - (flawlessGemPrice * 5);
 
-    const formatNumber = (number) => number.toLocaleString().replace(/,/g, ',');
+    const formatNumber = (number) => Math.floor(number).toLocaleString().replace(/,/g, ',');
 
     return {
         fineSentence: ` 400 Fine ${gemName.replace('_', ' ')} Gemstones are $${formatNumber(fineGemPrice * 400)}, and 1 Perfect ${gemName.replace('_', ' ')} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
@@ -45,7 +45,6 @@ const getGemstoneInfo = (gemName) => {
         flawlessProfitSentence: ` The profit is $${formatNumber(flawlessGemProfit)}.`
     };
 };
-
 
 
 const gemstoneInfoArray = gemstoneNames.map(getGemstoneInfo);
