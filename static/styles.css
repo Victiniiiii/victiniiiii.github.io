@@ -159,6 +159,7 @@
 
 
 	.forgegrid {
+		width: 90%
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 10px;
@@ -174,8 +175,8 @@
     	}
 
         .forgegrid-item {
-		width: 85%;
-		height: 10%;
+		width: 90%;
+		height: 90%;
 		background-color: #ccc;
 		border: 1px solid #000;
 		box-sizing: border-box;
@@ -185,8 +186,8 @@
         }
 
         .forgegrid-image {
-		width: 10%;
-		height: 10%;
+		width: 10vw;
+		height: 10vh;
 		position: absolute;
 		left: 10px;
 		top: 50%;
