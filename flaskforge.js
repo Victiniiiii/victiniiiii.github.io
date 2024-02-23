@@ -35,3 +35,16 @@ async function gemstonenames() {
 
     return gemstoneSentences;
 }
+
+    // Call the gemstonenames function and update the text in HTML
+    gemstonenames().then(sentences => {
+        const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
+            acc[`text${index + 1}`] = sentence;
+            return acc;
+        }, {});
+
+        // Update the text in HTML
+        Object.entries(gemstoneTexts).forEach(([key, value]) => {
+            document.getElementById(key).textContent = value;
+        });
+    });
