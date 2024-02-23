@@ -1,4 +1,4 @@
-	
+		
 		body {
 		    background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
@@ -129,7 +129,7 @@
             text-decoration: none;
         }
 
-	.contact-box {
+		.contact-box {
             border: 2px solid white;
             box-sizing: border-box;
             padding: 20px;
@@ -160,12 +160,12 @@
 
 
 		.forgegrid {
-			width: 90%;
-			height: 90%;
+			width: 90vw;
+			height: 90vh;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			justify-content: space-between;
-	        }
+		}
 	
 		.forgegrid-content {
 			display: flex;
@@ -173,7 +173,7 @@
 	
 		.forgegrid-content p {
 			flex-grow: 1;
-	    	}
+		}
 	
 		.forgegrid-item {
 			width: 90%;
@@ -184,7 +184,7 @@
 			position: relative;
 			justify-content: space-between;
 			align-items: center;
-	        }
+		}
 	
 		.forgegrid-image {
 			width: 3vw;
@@ -193,7 +193,7 @@
 			left: 10px;
 			top: 50%;
 			transform: translateY(-50%);
-	        }
+		}
 	
 		.forgegrid-item p {
 		    flex-grow: 1;
