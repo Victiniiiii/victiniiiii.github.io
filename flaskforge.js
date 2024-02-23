@@ -1,50 +1,46 @@
 async function gemstonenames() {
-    const response = await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
+    const response = await fetch('https://api.hypixel.net/skyblock/bazaar');
     const data = await response.json();
 
     const getGemstoneInfo = (gemName) => {
-        const sellPrice = data.products[gemName].quick_status.sellPrice;
-        const buyPrice = data.products[gemName].quick_status.buyPrice;
-        const fineGemPrice = sellPrice * 400;
-        const flawlessGemPrice = sellPrice * 5;
-        const fineGemProfit = buyPrice - fineGemPrice;
-        const flawlessGemProfit = buyPrice - flawlessGemPrice;
+        const fineGem = data.products[gemName].quick_status;
+        const flawlessGem = data.products[`FLAWLESS_${gemName}`].quick_status;
+        const perfectGem = data.products[`PERFECT_${gemName}`].quick_status;
+
+        const fineGemPrice = fineGem.sellPrice;
+        const flawlessGemPrice = flawlessGem.sellPrice;
+        const perfectGemBuyPrice = perfectGem.buyPrice;
+
+        const fineGemProfit = perfectGemBuyPrice - (fineGemPrice * 400);
+        const flawlessGemProfit = perfectGemBuyPrice - (flawlessGemPrice * 5);
 
         return {
-            fineSentence: ` 400 Fine ${gemName} Gemstones are $${fineGemPrice.toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${buyPrice.toLocaleString()}.`,
+            fineSentence: ` 400 Fine ${gemName} Gemstones are $${(fineGemPrice * 400).toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${perfectGemBuyPrice.toLocaleString()}.`,
             fineProfitSentence: ` The profit is $${fineGemProfit.toLocaleString()}.`,
-            flawlessSentence: ` 5 Flawless ${gemName} Gemstones are $${flawlessGemPrice.toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${buyPrice.toLocaleString()}.`,
+            flawlessSentence: ` 5 Flawless ${gemName} Gemstones are $${(flawlessGemPrice * 5).toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${perfectGemBuyPrice.toLocaleString()}.`,
             flawlessProfitSentence: ` The profit is $${flawlessGemProfit.toLocaleString()}.`
         };
     };
 
-    const gemstoneInfoArray = [
-        getGemstoneInfo('FINE_JADE_GEM'),
-        getGemstoneInfo('FINE_AMBER_GEM'),
-        getGemstoneInfo('FINE_TOPAZ_GEM'),
-        getGemstoneInfo('FINE_SAPPHIRE_GEM'),
-        getGemstoneInfo('FINE_AMETHYST_GEM'),
-        getGemstoneInfo('FINE_RUBY_GEM'),
-        getGemstoneInfo('FINE_JASPER_GEM'),
-        getGemstoneInfo('FINE_OPAL_GEM'),
-    ];
+    // Define gemstone names
+    const gemstoneNames = ['JADE_GEM', 'AMBER_GEM', 'TOPAZ_GEM', 'SAPPHIRE_GEM', 'AMETHYST_GEM', 'RUBY_GEM', 'JASPER_GEM', 'OPAL_GEM'];
 
-    const gemstoneSentences = gemstoneInfoArray.flatMap(({ fineSentence, fineProfitSentence, flawlessSentence, flawlessProfitSentence }) => [
-        fineSentence, fineProfitSentence, flawlessSentence, flawlessProfitSentence
-    ]);
+    // Generate gemstone information
+    const gemstoneInfoArray = gemstoneNames.flatMap(gemName => getGemstoneInfo(gemName));
 
-    return gemstoneSentences;
+    // Return the gemstone information
+    return gemstoneInfoArray;
 }
 
-    // Call the gemstonenames function and update the text in HTML
-    gemstonenames().then(sentences => {
-        const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
-            acc[`text${index + 1}`] = sentence;
-            return acc;
-        }, {});
+// Call the gemstonenames function and update the text in HTML
+gemstonenames().then(sentences => {
+    const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
+        acc[`text${index + 1}`] = sentence;
+        return acc;
+    }, {});
 
-        // Update the text in HTML
-        Object.entries(gemstoneTexts).forEach(([key, value]) => {
-            document.getElementById(key).textContent = value;
-        });
+    // Update the text in HTML
+    Object.entries(gemstoneTexts).forEach(([key, value]) => {
+        document.getElementById(key).textContent = value;
     });
+});
