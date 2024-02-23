@@ -140,6 +140,17 @@
             margin: 200px 0;
         }
 
+        .error-text {
+            font-size: 400px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .error-text2 {
+            font-size: 100px;
+            text-align: center;
+            margin: 0;
+        }
 
 
 
@@ -187,7 +198,7 @@
 		white-space: nowrap;
 		margin-top: 0px;
 		margin-bottom: 32px;
-		margin-left: 60px;
+		margin-left: 10px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -331,17 +342,6 @@
             background-repeat: no-repeat;
         }
 
-        .error-text {
-            font-size: 400px;
-            text-align: center;
-            margin: 0;
-        }
-
-        .error-text2 {
-            font-size: 100px;
-            text-align: center;
-            margin: 0;
-        }
 
 
 
