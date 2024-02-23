@@ -164,8 +164,7 @@
 		    height: 80vh;
 		    display: grid;
 		    grid-template-columns: 1fr 1fr; 
-		    margin-top: 10px;
-		    padding: 0 5px;
+		    margin-top: 15px;
 		}
 	
 		.forgegrid-content {
@@ -185,7 +184,7 @@
 			position: relative;
 			justify-content: space-between;
 			align-items: center;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 		}
 	
 		.forgegrid-image {
@@ -204,7 +203,7 @@
 		    justify-content: center; 
 		    align-items: center; 
 		    margin: 0; 
-			font-size: 22px;
+			font-size: 20px;
 		}
 	
 	
