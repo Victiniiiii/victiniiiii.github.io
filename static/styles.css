@@ -165,6 +165,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			justify-content: space-between;
+			margin-top: 10px;
 		}
 	
 		.forgegrid-content {
@@ -184,6 +185,7 @@
 			position: relative;
 			justify-content: space-between;
 			align-items: center;
+			margin-bottom: 10px;
 		}
 	
 		.forgegrid-image {
@@ -202,13 +204,12 @@
 		    justify-content: center; 
 		    align-items: center; 
 		    margin: 0; 
-			font-size: 14px;
+			font-size: 22px;
 		}
 	
 	
 		.gem-text {
 		    text-align: center;
-			font-size: 44px;
 		}
 
 
