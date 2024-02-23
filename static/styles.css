@@ -170,24 +170,23 @@
 	}
 
     	.forgegrid-content p {
-		margin-left: 20px;
 		flex-grow: 1;
     	}
 
         .forgegrid-item {
 		width: 85%;
-		height: 100px;
+		height: 10%;
 		background-color: #ccc;
 		border: 1px solid #000;
 		box-sizing: border-box;
-		text-align: left;
+		text-align: center;
 		padding: 10px;
 		position: relative;
         }
 
         .forgegrid-image {
-		width: 70px;
-		height: 70px;
+		width: 10%;
+		height: 10%;
 		position: absolute;
 		left: 10px;
 		top: 50%;
