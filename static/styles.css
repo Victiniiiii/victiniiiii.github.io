@@ -1,4 +1,4 @@
-
+	
 		body {
 		    background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
@@ -177,7 +177,7 @@
 	
 		.forgegrid-item {
 			width: 90%;
-			height: 85%;
+			height: 100%;
 			background-color: #ccc;
 			border: 1px solid #000;
 			box-sizing: border-box;
@@ -199,15 +199,18 @@
 		    flex-grow: 1;
 		    white-space: nowrap;
 		    display: flex;
-		    justify-content: center; /* Center the content horizontally */
-		    align-items: center; /* Center the content vertically */
-		    margin: 0; /* Remove any default margins */
+		    justify-content: center; 
+		    align-items: center; 
+		    margin: 0; 
+			font-size: 14px;
 		}
 	
 	
 		.gem-text {
 		    text-align: center;
+			font-size: 15px;
 		}
+
 
 
 
