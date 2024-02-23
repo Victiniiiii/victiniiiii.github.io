@@ -171,15 +171,18 @@
 	.forgegrid-content {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 	}
 
     	.forgegrid-content p {
 		flex-grow: 1;
+		justify-content: space-between;
+		align-items: center;
     	}
 
         .forgegrid-item {
 		width: 90%;
-		height: 90%;
+		height: 80%;
 		background-color: #ccc;
 		border: 1px solid #000;
 		box-sizing: border-box;
