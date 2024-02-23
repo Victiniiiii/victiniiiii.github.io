@@ -114,66 +114,6 @@
             text-align: center;
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-		.grid-content {
-			display: flex;
-			align-items: center;
-		}
-
-    	.grid-content p {
-    		margin-left: 50px;
-    		flex-grow: 1;
-    	}
-
-        .grid-item {
-            width: 95%;
-            height: 90px;
-            background-color: #ccc;
-            border: 1px solid #000;
-            box-sizing: border-box;
-            text-align: left;
-            padding: 8px;
-            position: relative;
-        }
-
-        .grid-image {
-            width: 70px;
-            height: 70;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-		.grid-item p {
-			flex-grow: 1;
-			max-width: calc(100% - 0px);
-			white-space: nowrap;
-			margin-top: 0px;
-			margin-bottom: 32px;
-			margin-left: 60px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.contact-box {
-            border: 2px solid white;
-            box-sizing: border-box;
-            padding: 20px;
-            background-color: black;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 200px 0;
-        }
-
         .contact-item {
             margin: 10px 0;
         }
@@ -187,6 +127,73 @@
             color: white;
             text-decoration: none;
         }
+
+	.contact-box {
+            border: 2px solid white;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 200px 0;
+        }
+
+
+
+
+
+
+	.forgegrid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+        }
+
+	.forgegrid-content {
+		display: flex;
+		align-items: center;
+	}
+
+    	.forgegrid-content p {
+		margin-left: 50px;
+		flex-grow: 1;
+    	}
+
+        .forgegrid-item {
+		width: 85%;
+		height: 100px;
+		background-color: #ccc;
+		border: 1px solid #000;
+		box-sizing: border-box;
+		text-align: left;
+		padding: 8px;
+		position: relative;
+        }
+
+        .forgegrid-image {
+		width: 70px;
+		height: 70;
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+        }
+
+	.forgegrid-item p {
+		flex-grow: 1;
+		max-width: calc(100% - 0px);
+		white-space: nowrap;
+		margin-top: 0px;
+		margin-bottom: 32px;
+		margin-left: 60px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+
 
 
 
