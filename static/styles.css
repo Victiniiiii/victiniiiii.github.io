@@ -165,20 +165,14 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		justify-content: space-between;
-		align-items: center;
-		text-align: center;
         }
 
 	.forgegrid-content {
-		text-align: center;
 		display: flex;
-		align-items: center;
 	}
 
     	.forgegrid-content p {
-		text-align: center;
 		flex-grow: 1;
-		align-items: center;
     	}
 
         .forgegrid-item {
@@ -187,7 +181,6 @@
 		background-color: #ccc;
 		border: 1px solid #000;
 		box-sizing: border-box;
-		text-align: center;
 		position: relative;
 		justify-content: space-between;
 		align-items: center;
@@ -203,14 +196,14 @@
         }
 
 	.forgegrid-item p {
-		text-align: center;
 		flex-grow: 1;
 		white-space: nowrap;
 		display: flex;
-		align-items: center;
-		justify-content: space-between;
 	}
 
+	.gem-text {
+	    text-align: center;
+	}
 
 
 
