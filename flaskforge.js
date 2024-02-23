@@ -1,5 +1,5 @@
 async function gemstonenames() {
-    const response = await fetch('https://api.hypixel.net/skyblock/bazaar');
+    const response = await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
     const data = await response.json();
 
     const getGemstoneInfo = (gemName) => {
