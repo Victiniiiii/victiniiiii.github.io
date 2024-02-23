@@ -36,13 +36,16 @@ const getGemstoneInfo = (gemName) => {
     const fineGemProfit = perfectGemBuyPrice - (fineGemPrice * 400);
     const flawlessGemProfit = perfectGemBuyPrice - (flawlessGemPrice * 5);
 
+    const formatNumber = (number) => number.toLocaleString().replace(/,/g, ',');
+
     return {
-        fineSentence: ` 400 Fine ${gemName} Gemstones are $${fineGemPrice.toFixed(0).toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${perfectGemBuyPrice.toFixed(0).toLocaleString()}.`,
-        fineProfitSentence: ` The profit is $${fineGemProfit.toFixed(0).toLocaleString()}.`,
-        flawlessSentence: ` 5 Flawless ${gemName} Gemstones are $${(flawlessGemPrice * 5).toFixed(0).toLocaleString()}, and 1 Perfect ${gemName} Gemstone is $${perfectGemBuyPrice.toFixed(0).toLocaleString()}.`,
-        flawlessProfitSentence: ` The profit is $${flawlessGemProfit.toFixed(0).toLocaleString()}.`
+        fineSentence: ` 400 Fine ${gemName.replace('_', ' ')} Gemstones are $${formatNumber(fineGemPrice * 400)}, and 1 Perfect ${gemName.replace('_', ' ')} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
+        fineProfitSentence: ` The profit is $${formatNumber(fineGemProfit)}.`,
+        flawlessSentence: ` 5 Flawless ${gemName.replace('_', ' ')} Gemstones are $${formatNumber(flawlessGemPrice * 5)}, and 1 Perfect ${gemName.replace('_', ' ')} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
+        flawlessProfitSentence: ` The profit is $${formatNumber(flawlessGemProfit)}.`
     };
 };
+
 
 
 const gemstoneInfoArray = gemstoneNames.map(getGemstoneInfo);
