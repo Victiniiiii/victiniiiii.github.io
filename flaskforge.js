@@ -38,13 +38,17 @@ const getGemstoneInfo = (gemName) => {
 
     const formatNumber = (number) => Math.floor(number).toLocaleString().replace(/,/g, ',');
 
+    // Capitalize the gem names
+    const capitalizedGemName = gemName.toLowerCase().split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
     return {
-        fineSentence: ` 400 Fine ${gemName.replace('_', ' ').toLowerCase()} Gemstones are $${formatNumber(fineGemPrice * 400)}, and 1 Perfect ${gemName.replace('_', ' ').toLowerCase()} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
+        fineSentence: ` 400 Fine ${capitalizedGemName} Gemstones are $${formatNumber(fineGemPrice * 400)}, and 1 Perfect ${capitalizedGemName} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
         fineProfitSentence: ` The profit is $${formatNumber(fineGemProfit)}.`,
-        flawlessSentence: ` 5 Flawless ${gemName.replace('_', ' ').toLowerCase()} Gemstones are $${formatNumber(flawlessGemPrice * 5)}, and 1 Perfect ${gemName.replace('_', ' ').toLowerCase()} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
+        flawlessSentence: ` 5 Flawless ${capitalizedGemName} Gemstones are $${formatNumber(flawlessGemPrice * 5)}, and 1 Perfect ${capitalizedGemName} Gemstone is $${formatNumber(perfectGemBuyPrice)}.`,
         flawlessProfitSentence: ` The profit is $${formatNumber(flawlessGemProfit)}.`
     };
 };
+
 
 const gemstoneInfoArray = gemstoneNames.map(getGemstoneInfo);
 
