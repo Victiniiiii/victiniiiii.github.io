@@ -156,6 +156,8 @@
 
 
 
+
+
 	.forgegrid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -168,7 +170,7 @@
 	}
 
     	.forgegrid-content p {
-		margin-left: 50px;
+		margin-left: 20px;
 		flex-grow: 1;
     	}
 
@@ -179,13 +181,13 @@
 		border: 1px solid #000;
 		box-sizing: border-box;
 		text-align: left;
-		padding: 8px;
+		padding: 10px;
 		position: relative;
         }
 
         .forgegrid-image {
 		width: 70px;
-		height: 70;
+		height: 70px;
 		position: absolute;
 		left: 10px;
 		top: 50%;
@@ -197,7 +199,7 @@
 		max-width: calc(100% - 0px);
 		white-space: nowrap;
 		margin-top: 0px;
-		margin-bottom: 32px;
+		margin-bottom: 25px;
 		margin-left: 10px;
 		display: flex;
 		align-items: center;
