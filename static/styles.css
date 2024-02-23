@@ -1,6 +1,6 @@
 
-	body {
-	    background-image: url("../static/images/cloud.jpg");
+		body {
+		    background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             box-sizing: border-box;
@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-	    text-align: center;
+		    text-align: center;
         }
 
         .title-section {
@@ -159,51 +159,56 @@
 
 
 
-	.forgegrid {
-		width: 90%;
-		height: 90%;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		justify-content: space-between;
-        }
+		.forgegrid {
+			width: 90%;
+			height: 90%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			justify-content: space-between;
+	        }
+	
+		.forgegrid-content {
+			display: flex;
+		}
+	
+		.forgegrid-content p {
+			flex-grow: 1;
+	    	}
+	
+		.forgegrid-item {
+			width: 90%;
+			height: 85%;
+			background-color: #ccc;
+			border: 1px solid #000;
+			box-sizing: border-box;
+			position: relative;
+			justify-content: space-between;
+			align-items: center;
+	        }
+	
+		.forgegrid-image {
+			width: 3vw;
+			height: 6vh;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+	        }
+	
+		.forgegrid-item p {
+		    flex-grow: 1;
+		    white-space: nowrap;
+		    display: flex;
+		    justify-content: center; /* Center the content horizontally */
+		    align-items: center; /* Center the content vertically */
+		    margin: 0; /* Remove any default margins */
+		}
+	
+	
+		.gem-text {
+		    text-align: center;
+		}
 
-	.forgegrid-content {
-		display: flex;
-	}
-
-    	.forgegrid-content p {
-		flex-grow: 1;
-    	}
-
-        .forgegrid-item {
-		width: 90%;
-		height: 85%;
-		background-color: #ccc;
-		border: 1px solid #000;
-		box-sizing: border-box;
-		position: relative;
-		justify-content: space-between;
-		align-items: center;
-        }
-
-        .forgegrid-image {
-		width: 3vw;
-		height: 6vh;
-		position: absolute;
-		left: 10px;
-		top: 50%;
-		transform: translateY(-50%);
-        }
-
-	.forgegrid-item p {
-		flex-grow: 1;
-		white-space: nowrap;
-		display: flex;
-	}
-
-	.gem-text {
-	    text-align: center;
-	}
 
 
 
