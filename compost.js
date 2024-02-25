@@ -1,4 +1,5 @@
 <script>
+	
 	function calculateProfit() {
 		const speedLevel = parseInt(document.getElementById('speedLevel').value);
 		const multiDropLevel = parseInt(document.getElementById('multiDropLevel').value);
@@ -42,4 +43,5 @@
 	function isValidLevel(level) {
 		return !isNaN(level) && level >= 0 && level <= 25;
 	}
+
 </script>
