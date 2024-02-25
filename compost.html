@@ -26,30 +26,28 @@
         </div>
     </div>
 
+    <form id="composterForm">        
+        <label for="speedLevel">Composter Speed Level:</label>
+        <input type="number" id="speedLevel" min="0" max="25" required>
 
-    <div class="middleRectangle">
-        <form id="composterForm">
-            <label for="speedLevel">Composter Speed Level:</label>
-            <input type="number" id="speedLevel" min="0" max="25" required>
+        <label for="multiDropLevel">Multi Drop Level:</label>
+        <input type="number" id="multiDropLevel" min="0" max="25" required>
 
-            <label for="multiDropLevel">Multi Drop Level:</label>
-            <input type="number" id="multiDropLevel" min="0" max="25" required>
+        <label for="fuelCapLevel">Fuel Cap Level:</label>
+        <input type="number" id="fuelCapLevel" min="0" max="25" required>
 
-            <label for="fuelCapLevel">Fuel Cap Level:</label>
-            <input type="number" id="fuelCapLevel" min="0" max="25" required>
+        <label for="orgMatterCapLevel">Organic Matter Cap Level:</label>
+        <input type="number" id="orgMatterCapLevel" min="0" max="25" required>
 
-            <label for="orgMatterCapLevel">Organic Matter Cap Level:</label>
-            <input type="number" id="orgMatterCapLevel" min="0" max="25" required>
+        <label for="costReductionLevel">Cost Reduction Level:</label>
+        <input type="number" id="costReductionLevel" min="0" max="25" required>
 
-            <label for="costReductionLevel">Cost Reduction Level:</label>
-            <input type="number" id="costReductionLevel" min="0" max="25" required>
+        <button type="button" onclick="calculateProfit()">Calculate Profit</button>
+    </form>
 
-            <button type="button" onclick="calculateProfit()">Calculate Profit</button>
-        </form>
-
-        <p id="resultHour"></p>
-        <p id="resultDay"></p>
-    </div>
+    <p id="resultHour"></p>
+    <p id="resultDay"></p>
+    
     <script src="compost.js"></script>
 </body>
 </html>
