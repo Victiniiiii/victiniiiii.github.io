@@ -1,6 +1,6 @@
 		
 		body {
-	    	background-image: url("../static/images/cloud.jpg");
+			background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             box-sizing: border-box;
@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-		    text-align: center;
+			text-align: center;
         }
 
         .title-section {
@@ -266,8 +266,7 @@
             box-sizing: border-box;
         }
 
-        .engines-section,
-        .clues-section {
+        .engines-section, .clues-section {
             background-color: white;
             width: 34%;
             height: 100%;
@@ -375,6 +374,15 @@
             position: relative;
             border: 2px solid #000;
             box-sizing: border-box;
+        }
+
+        #rectangle .lessonList li, #rectangle ul li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        #rectangle select {
+            font-size: 21px;
         }
 
         #examMode {
@@ -568,10 +576,6 @@
             margin-left: 20px;
         }
 
-        #rectangle select {
-            font-size: 21px;
-        }
-
         .rightrectangle {
             width: 20%;
             height: 60%;
@@ -616,9 +620,3 @@
         }
 
         #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
-
-        #rectangle .lessonList li,
-        #rectangle ul li {
-            list-style-type: none;
-            margin-bottom: 10px;
-        }
