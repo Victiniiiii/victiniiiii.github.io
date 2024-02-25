@@ -5,8 +5,7 @@ function calculateProfit() {
 	const orgMatterCapLevel = parseInt(document.getElementById('orgMatterCapLevel').value);
 	const costReductionLevel = parseInt(document.getElementById('costReductionLevel').value);
 
-	if (!isValidLevel(speedLevel) || !isValidLevel(multiDropLevel) || !isValidLevel(fuelCapLevel) ||
-		!isValidLevel(orgMatterCapLevel) || !isValidLevel(costReductionLevel)) {
+	if (!isValidLevel(speedLevel) || !isValidLevel(multiDropLevel) || !isValidLevel(fuelCapLevel) || !isValidLevel(orgMatterCapLevel) || !isValidLevel(costReductionLevel)) {
 		document.getElementById('resultHour').innerText = "Please enter values between 0 and 25.";
 		document.getElementById('resultDay').innerText = "";
 		return;
