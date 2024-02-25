@@ -1,0 +1,51 @@
+.gem-text {
+	text-align: center;
+}
+
+.forgegrid {
+    width: 90vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    margin-top: 15px;
+
+    &-image {
+        width: 5vw;
+        height: 10vh;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &-content {
+        display: flex;
+
+        p {
+            flex-grow: 1;
+        }
+    }
+
+    &-item {
+        width: 90%;
+        height: 90%;
+        background: #ccc;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        p {
+            flex-grow: 1;
+            white-space: nowrap;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            margin: 0; 
+            font-size: 20px;
+        }
+    }
+}
