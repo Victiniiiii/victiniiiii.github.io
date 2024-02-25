@@ -1,1 +1,55 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compost Profit Calculator!</title>
+    <link rel="icon" href="/static/images/vic32.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="../static/stylesmini.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <div class="title-section">
+        <a href="/">
+            <img class="main-menu-button" src="/static/images/vicinti3.png" alt="Main Menu Button">
+        </a>
+        <h1 class="main-menu-text">Compost Profit Calculator!</h1>
+        <div class="project-buttons">
+            <div class="category-button">
+                <a href="/projects">Projects</a>
+            </div>
+            <div class="category-button">
+                <a href="/contactme">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="MiddleRectangle">
+        <form id="composterForm">
+            <!-- Removed Composter Level input -->
+            <label for="speedLevel">Composter Speed Level:</label>
+            <input type="number" id="speedLevel" min="0" max="25" required>
+
+            <label for="multiDropLevel">Multi Drop Level:</label>
+            <input type="number" id="multiDropLevel" min="0" max="25" required>
+
+            <label for="fuelCapLevel">Fuel Cap Level:</label>
+            <input type="number" id="fuelCapLevel" min="0" max="25" required>
+
+            <label for="orgMatterCapLevel">Organic Matter Cap Level:</label>
+            <input type="number" id="orgMatterCapLevel" min="0" max="25" required>
+
+            <label for="costReductionLevel">Cost Reduction Level:</label>
+            <input type="number" id="costReductionLevel" min="0" max="25" required>
+
+            <button type="button" onclick="calculateProfit()">Calculate Profit</button>
+        </form>
+
+        <p id="resultHour"></p>
+        <p id="resultDay"></p>
+    </div>
+
+</body>
+</html>
