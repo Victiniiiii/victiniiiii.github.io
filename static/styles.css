@@ -154,10 +154,10 @@
 
 
         .forgegrid {
-            width: 90%;
-            height: 90%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            width: 90vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
             justify-content: space-between;
         }
 
@@ -170,8 +170,8 @@
         }
 
         .forgegrid-item {
-            width: 90%;
-            height: 85%;
+            width: 47%;
+            height: 90%;
             background-color: #ccc;
             border: 1px solid #000;
             box-sizing: border-box;
@@ -180,9 +180,18 @@
             align-items: center;
         }
 
+        .forgesatir {
+            width: 90vw;
+            height: 11vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
         .forgegrid-image {
-            width: 3vw;
-            height: 6vh;
+            width: 4vw;
+            height: 8vh;
             position: absolute;
             left: 10px;
             top: 50%;
