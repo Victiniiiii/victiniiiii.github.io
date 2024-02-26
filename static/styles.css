@@ -1,0 +1,627 @@
+		
+		body {
+			background-image: url("../static/images/cloud.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+			text-align: center;
+        }
+
+        .title-section {
+            background-image: url("../static/images/thunder.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 3px solid black;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: white;
+            margin: 0;
+            text-shadow: 2px 2px #b5b5b5;
+            backdrop-filter: blur(5px);
+        }
+
+        .main-menu-text {
+            font-size: 40px;
+            padding: 5px 5px;
+            text-align: center;
+        }
+
+        .project-buttons {
+            display: flex;
+        }
+
+        .main-menu-button {
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+        }
+
+        .category-button {
+            background: white;
+            border: 2px solid black;
+            box-sizing: border-box;
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+            padding: 5px 30px;
+            cursor: pointer;
+            margin: 5px 10px;
+            position: relative;
+        }
+
+        .project-box {
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            text-align: left;
+            width: 800px;
+            height: 220px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.3);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            backdrop-filter: blur(3px);
+            box-shadow: 0 1px 12px rgba(255,255,255,0.25);
+        }
+
+        .project-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .project-button {
+            width: 500px;
+            font-size: 22px;
+        }
+
+        .release-date {
+            margin-left: auto;
+        }
+
+        .project-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .project-logo {
+            width: 150px;
+            height: 150px;
+            margin-right: 10px;
+        }
+
+        .project-description {
+            flex: 1;
+            height: 150px;
+            margin-left: 10px;
+        }
+
+        .placeholder-box {
+            background: white;
+            border: 2px solid black;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 10px 0;
+        }
+
+        .contact-item img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+		.contact-box {
+            border: 2px solid white;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 200px 0;
+        }
+
+        .error-text {
+            font-size: 400px;
+            text-align: center;
+            margin: 0;
+        }
+
+        .error-text2 {
+            font-size: 100px;
+            text-align: center;
+            margin: 0;
+        }
+
+
+
+
+
+
+
+		.forgegrid {
+		    width: 90vw;
+		    height: 80vh;
+		    display: grid;
+		    grid-template-columns: 1fr 1fr; 
+		    margin-top: 15px;
+		}
+	
+		.forgegrid-content {
+			display: flex;
+		}
+	
+		.forgegrid-content p {
+			flex-grow: 1;
+		}
+	
+		.forgegrid-item {
+			width: 90%;
+			height: 90%;
+			background-color: #ccc;
+			border: 1px solid #000;
+			box-sizing: border-box;
+			position: relative;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 15px;
+		}
+	
+		.forgegrid-image {
+			width: 5vw;
+			height: 10vh;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	
+		.forgegrid-item p {
+		    flex-grow: 1;
+		    white-space: nowrap;
+		    display: flex;
+		    justify-content: center; 
+		    align-items: center; 
+		    margin: 0; 
+			font-size: 20px;
+		}
+	
+	
+		.gem-text {
+		    text-align: center;
+		} 
+
+
+
+
+
+
+
+        .content-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .bigoilbigbox {
+            position: relative;
+            padding: 20px;
+            color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+            box-sizing: border-box;
+        }
+
+        .engines-clues-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .map-image {
+            background-image: url("../static/images/map.png");
+            padding: 20px;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 32%;
+            height: 600px;
+        }
+
+        .engine-list {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .engines-section, .clues-section {
+            background-color: white;
+            width: 34%;
+            height: 100%;
+            border: 1px solid black;
+            box-sizing: border-box;
+            font-size: 30px;
+            position: sticky;
+            z-index: 1;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+            font-family: Verdana, sans-serif;
+            height: 600px;
+        }
+
+        .clue {
+            font-size: 32px;
+        }
+
+        .bigoilcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            margin: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .faq-title {
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: Verdana, sans-serif;
+            padding: 0px 10px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .faq-content {
+            font-family: Verdana, sans-serif;
+            background-color: white;
+            border: 1px solid black;
+            box-sizing: border-box;
+            padding: 20px;
+            margin: 10px;
+            justify-self: start;
+        }
+
+        .faq-content p {
+            margin: 20px 10px;
+            text-align: left;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 20px 0;
+            border: 1px solid black;
+            box-sizing: border-box;
+            width: 70%;
+        }
+
+        .imagetext {
+            font-size: 20px;
+            background-color: black;
+        }
+
+        .imagebigoil {
+            text-align: center;
+            margin: 0 10px;
+            margin-bottom: 10px;
+            width: 500px;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+
+
+
+
+        #buttonContainer {
+            display: flex;
+            margin-top: 20px;
+            width: 80%;
+            justify-content: space-between;
+            background-color: #e6e6ff;
+
+        }
+
+        .show {
+            display: block;
+        }
+
+        #rectangle {
+            width: 80%;
+            height: 80vh;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            border: 2px solid #000;
+            box-sizing: border-box;
+        }
+
+        #rectangle .lessonList li, #rectangle ul li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+
+        #rectangle select {
+            font-size: 21px;
+        }
+
+        #examMode {
+            background-color: #e6e6ff;
+            display: none;
+        }
+
+        #examResultsMode {
+            background-color: #e6e6ff;
+            display: none;
+        }
+
+        #faqMode {
+            background-color: #e6e6ff;
+            font-size: 20px;
+            display: none;
+        }
+
+        #stat22Mode {
+            background-color: #e6e6ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        #result {
+            display: none;
+            font-size: 36px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        #noteInput {
+            display: none;
+            font-size: 36px;
+            width: 60%;
+            padding: 25px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #calculateButton {
+            display: none;
+            width: 20%;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #examResultsText {
+            margin-top: 40px;
+            font-size: 36px;
+        }
+
+        .modeButton {
+            flex: 1;
+            height: 35px;
+            font-family: 'Verdana', sans-serif;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .dropdown {
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown button {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            font-size: 20px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+        }
+
+        .dropdown-content a {
+            color: black;
+            font-size: 20px;
+            padding: 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            font-size: 20px;
+            background-color: #ddd;
+        }
+
+        .dropdown-gpa {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dropdown-stat22 {
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .stat22RectanglesContainer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 60px;
+        }
+
+        .stat22RectanglesContainer2 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 20px;
+        }
+
+        .stat22RectanglesContainer3 {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            padding-bottom: 90px;
+        }
+
+        .stat22Rectangle {
+            width: 24%;
+            background-color: lightblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+
+        .semesterButtonsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .semesterButton {
+            width: 11%;
+            height: 8%;
+            background-color: lightcoral;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+
+        .middleRectangle {
+            width: 80%;
+            height: 60%;
+            background-color: lightcoral;
+            position: absolute;
+            top: 45%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            text-align: left;
+            font-size: 28px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            margin-left: 20px;
+        }
+
+        .rightrectangle {
+            width: 20%;
+            height: 60%;
+            position: absolute;
+            top: 45%;
+            right: 40%;
+            transform: translate(195%, -50%);
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin: auto;
+        }
+
+        .rightrectangleButton {
+            width: 80%;
+            height: 50%;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: auto;
+        }
+
+        .rightrectangletext {
+            width: 80%;
+            height: 50%;
+            background-color: white;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            margin: auto;
+        }
+
+        #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
