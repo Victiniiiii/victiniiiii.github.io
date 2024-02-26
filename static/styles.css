@@ -153,57 +153,54 @@
 
 
 
-		.forgegrid {
-		    width: 90vw;
-		    height: 80vh;
-		    display: grid;
-		    grid-template-columns: 1fr 1fr; 
-		    margin-top: 15px;
-		}
-	
-		.forgegrid-content {
-			display: flex;
-		}
-	
-		.forgegrid-content p {
-			flex-grow: 1;
-		}
-	
-		.forgegrid-item {
-			width: 90%;
-			height: 90%;
-			background-color: #ccc;
-			border: 1px solid #000;
-			box-sizing: border-box;
-			position: relative;
-			justify-content: space-between;
-			align-items: center;
-			margin-bottom: 15px;
-		}
-	
-		.forgegrid-image {
-			width: 5vw;
-			height: 10vh;
-			position: absolute;
-			left: 10px;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-	
-		.forgegrid-item p {
-		    flex-grow: 1;
-		    white-space: nowrap;
-		    display: flex;
-		    justify-content: center; 
-		    align-items: center; 
-		    margin: 0; 
-			font-size: 20px;
-		}
-	
-	
-		.gem-text {
-		    text-align: center;
-		} 
+        .forgegrid {
+            width: 90%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+        }
+
+        .forgegrid-content {
+            display: flex;
+        }
+
+        .forgegrid-content p {
+            flex-grow: 1;
+        }
+
+        .forgegrid-item {
+            width: 90%;
+            height: 85%;
+            background-color: #ccc;
+            border: 1px solid #000;
+            box-sizing: border-box;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .forgegrid-image {
+            width: 3vw;
+            height: 6vh;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .forgegrid-item p {
+            flex-grow: 1;
+            white-space: nowrap;
+            display: flex;
+        }
+
+        .gem-text {
+            justify-content: center;
+            margin: 13px;
+            padding: 0;
+        }
+
 
 
 
