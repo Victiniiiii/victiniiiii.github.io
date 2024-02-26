@@ -43,6 +43,8 @@
             text-align: left;
             margin-left: 10px;
             margin-right: 10px;
+            color: white;
+            margin: 0;
         }
 
         .project-button {
@@ -56,11 +58,6 @@
             margin-left: auto;
             top: 0;
             right: 0;
-        }
-
-        h1 {
-            color: white;
-            margin: 0;
         }
 
         .category-button {
@@ -92,15 +89,15 @@
 
         .project-info {
             display: flex;
-            font-size: 15px; /* Slightly larger font size */
-            justify-content: space-between; /* Align the project button and release date to the opposite sides */
+            font-size: 15px; 
+            justify-content: space-between; 
             align-items: center;
-            margin-bottom: 40px; /* Add margin to create space between project-info and project-content */
+            margin-bottom: 40px; 
         }
 
         .release-date {
-            margin-left: auto; /* Push to the right edge */
-            font-size: 14px; /* Slightly larger font size */
+            margin-left: auto; 
+            font-size: 14px; 
         }
 
         .project-content {
@@ -109,77 +106,28 @@
         }
 
         .project-logo {
-            width: 100px; /* Adjust the image width as needed */
-            height: 100px; /* Adjust the image height as needed */
+            width: 100px; 
+            height: 100px;
             margin-right: 10px;
         }
 
         .project-description {
-            flex: 1; /* Fill the remaining space */
-            margin-left: 10px; /* Add margin to the left of the description to create space */
+            flex: 1; 
+            margin-left: 10px; 
         }
 
         .placeholder-box {
+            width: 90vw;
+            height: 13vh;
             background: white;
             border: 2px solid black;
             box-sizing: border-box;
             padding: 10px;
             text-align: center;
+            margin-top: 200px;
         }
 
-
-
-
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-
-		.grid-content {
-			display: flex;
-			align-items: center;
-		}
-
-    	.grid-content p {
-    		margin-left: 50px;
-    		flex-grow: 1;
-    	}
-
-        .grid-item {
-            width: 95%;
-            height: 75px
-            background-color: #ccc;
-            border: 1px solid #000;
-            box-sizing: border-box;
-            text-align: left;
-            padding: 8px;
-            position: relative;
-        }
-
-        .grid-image {
-            width: 70px;
-            height: 70;
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-		.grid-item p {
-			flex-grow: 1;
-			max-width: calc(100% - 0px);
-			white-space: nowrap;
-			margin-top: 0px;
-			margin-bottom: 32px;
-			margin-left: 60px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.contact-box {
+        .contact-box {
             border: 2px solid white;
             box-sizing: border-box;
             padding: 20px;
@@ -204,6 +152,73 @@
             color: white;
             text-decoration: none;
         }
+
+
+
+
+
+
+
+        .forgegrid {
+            width: 95vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(1px);
+        }
+
+        .forgegrid-content {
+            display: flex;
+        }
+
+        .forgegrid-content p {
+            flex-grow: 1;
+        }
+
+        .forgegrid-item {
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            position: relative;
+            align-items: center;
+            color: white;
+            font-family: Verdana, sans-serif;
+        }
+
+        .forgesatir {
+            width: 95vw;
+            height: 15vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .forgegrid-image {
+            width: 10vw;
+            height: 5vh;
+            position: absolute;
+            left: -5px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .forgegrid-item p {
+            display: flex;
+        }
+
+        .gem-text {
+            justify-content: center;
+            margin: 5px;
+            padding: 0;
+            font-size: 9px;
+            text-align: center;
+        }
+
+
+
+
+
 
         .content-container {
             display: flex;
@@ -245,8 +260,7 @@
             margin-top: 20px;
         }
 
-        .engines-section,
-        .clues-section {
+        .engines-section, .clues-section {
             background-color: white;
             border: 1px solid black;
             box-sizing: border-box;
@@ -328,17 +342,6 @@
             margin-bottom: 10px;
         }
 
-        .error-text {
-            font-size: 40px;
-            text-align: center;
-            margin: 0;
-        }
-
-        .error-text2 {
-            font-size: 10px;
-            text-align: center;
-            margin: 0;
-        }
 
 
 
@@ -349,7 +352,6 @@
             margin-top: 10px;
             width: 100%;
             justify-content: space-between;
-            background-color: #e6e6ff;
         }
 
         .show {
@@ -366,23 +368,20 @@
         }
 
         #examMode {
-            background-color: #e6e6ff;
             display: none;
         }
 
         #examResultsMode {
-            background-color: #e6e6ff;
             display: none;
         }
 
         #faqMode {
-            background-color: #e6e6ff;
             font-size: 15px;
             display: none;
+            color: white;
         }
 
         #stat22Mode {
-            background-color: #e6e6ff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -395,6 +394,7 @@
             font-size: 36px;
             margin-top: 20px;
             margin-bottom: 10px;
+            color: white;
         }
 
         #noteInput {
@@ -419,13 +419,16 @@
 
         #examResultsText {
             margin-top: 40px;
-            font-size: 36px;
+            font-size: 28px;
+            color: white;
         }
 
         .modeButton {
             flex: 1;
             height: 35px;
             font-family: 'Verdana', sans-serif;
+            background-color: transparent;
+            color: white;
         }
 
         .dropdown {
@@ -443,13 +446,12 @@
             display: none;
             position: absolute;
             font-size: 20px;
-            background-color: #f9f9f9;
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
             z-index: 5;
         }
 
         .dropdown-content a {
-            color: black;
+            color: white;
             font-size: 20px;
             padding: 16px;
             text-decoration: none;
@@ -458,7 +460,6 @@
 
         .dropdown-content a:hover {
             font-size: 20px;
-            background-color: #ddd;
         }
 
         .dropdown-gpa {
@@ -505,13 +506,14 @@
 
         .stat22Rectangle {
             width: 23%;
-            background-color: lightblue;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
-            border: 1px solid #000;
+            border: 1px solid white;
             box-sizing: border-box;
+            color: white;
+            backdrop-filter: blur(2px);
         }
 
         .semesterButtonsContainer {
@@ -522,25 +524,26 @@
             justify-content: space-between;
             align-items: center;
             margin-top: 10px;
+            background-color: transparent;
         }
 
         .semesterButton {
             width: 25%;
             height: 50%;
-            background-color: lightcoral;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
-            border: 1px solid #000;
+            border: 1px solid white;
             box-sizing: border-box;
             cursor: pointer;
+            color: white;
+            background-color: transparent;
         }
 
         .middleRectangle {
             width: 85%;
             height: 60%;
-            background-color: lightcoral;
             position: absolute;
             top: 45%;
             left: 35%;
@@ -550,6 +553,12 @@
             font-size: 10px;
             border: 1px solid #000;
             box-sizing: border-box;
+            color: white;
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
+            background-color: rgba(255,255,255,0.5);
+            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         #rectangle select {
@@ -572,28 +581,34 @@
             margin: auto;
             border: 1px solid #000;
             box-sizing: border-box;
+            border-radius: 8px;
+            backdrop-filter: blur(2px);
+            background-color: rgba(255,255,255,0.5);
+            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .rightrectangleButton {
             width: 100%;
             height: 50%;
-            background-color: white;
             display: flex;
             text-align: center;
             align-items: center;
             justify-content: center;
             font-size: 15px;
+            background-color: transparent;
+            color: white;
         }
 
         .rightrectangletext {
             width: 100%;
             height: 50%;
-            background-color: white;
             display: flex;
             text-align: center;
             align-items: center;
             justify-content: center;
             font-size: 11px;
+            color: white;
         }
 
         #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
