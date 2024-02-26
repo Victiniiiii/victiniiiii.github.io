@@ -24,7 +24,6 @@ function switchMode(mode) {
     var rightrectangle = document.getElementById('rightrectangle');
 
     if (mode === 'STAT22') {
-        rectangle.style.backgroundColor = '#e6e6ff';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -44,7 +43,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '1';
         middleRectangle.style.zIndex = '0';
     } else if (mode === 'EXAM') {
-        rectangle.style.backgroundColor = '#e6e6ff';
         examMode.style.display = 'block';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -65,7 +63,6 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'none';
     } else if (mode === 'EXAMRESULTS') {
-        rectangle.style.backgroundColor = '#e6e6ff';
         examMode.style.display = 'block';
         examResultsMode.style.display = 'block';
         faqMode.style.display = 'none';
@@ -87,7 +84,6 @@ function switchMode(mode) {
         rightrectangle.style.display = 'none';
         examResultsText.innerHTML = 'Lütfen geçerli bir vize notu giriniz.';
     } else if (mode === 'FAQ') {
-        rectangle.style.backgroundColor = '#e6e6ff';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'block';
@@ -108,7 +104,6 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'none';
     } else if (mode === 'DONEM1') {
-        donem1Mode.style.backgroundColor = '#badb65';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -133,7 +128,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem1Mode.innerHTML = getSemesterContent(1);
     } else if (mode === 'DONEM2') {
-        donem2Mode.style.backgroundColor = '#71db65';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -158,7 +152,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem2Mode.innerHTML = getSemesterContent(2);
     } else if (mode === 'DONEM3') {
-        donem3Mode.style.backgroundColor = '#65dbbc';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -183,7 +176,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem3Mode.innerHTML = getSemesterContent(3);
     } else if (mode === 'DONEM4') {
-        donem4Mode.style.backgroundColor = '#db9265';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -208,7 +200,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem4Mode.innerHTML = getSemesterContent(4);
     } else if (mode === 'DONEM5') {
-        donem5Mode.style.backgroundColor = '#65c1db';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -233,7 +224,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem5Mode.innerHTML = getSemesterContent(5);
     } else if (mode === 'DONEM6') {
-        donem6Mode.style.backgroundColor = '#db659a';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -258,7 +248,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem6Mode.innerHTML = getSemesterContent(6);
     } else if (mode === 'DONEM7') {
-        donem7Mode.style.backgroundColor = '#65cfdb';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -283,7 +272,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem7Mode.innerHTML = getSemesterContent(7);
     } else if (mode === 'DONEM8') {
-        donem8Mode.style.backgroundColor = '#65db79';
         examMode.style.display = 'none';
         examResultsMode.style.display = 'none';
         faqMode.style.display = 'none';
@@ -348,9 +336,6 @@ function selectSemester(semester) {
     var middleRectangle = document.querySelector('.middleRectangle');
     var semesterLessonsList = document.getElementById('semesterLessonsList');
     var semesterData = getSemesterData(semester);
-    var colors = ['#FFD700', '#8A2BE2', '#228B22', '#4169E1', '#FF4500', '#9400D3', '#32CD32', '#FF6347'];
-    var selectedColor = colors[semester - 1];
-    middleRectangle.style.backgroundColor = selectedColor;
     semesterLessonsList.innerHTML = semesterData.map(item => `<li>${item.subject}: ${createDropdownMenu(item.id, getCurrentGrade(item.id))}</li>`).join('');
 }
 
