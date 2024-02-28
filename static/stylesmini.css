@@ -182,10 +182,11 @@
         .forgegrid-item {
             width: 100%;
             height: 100%;
+            background-color: #ccc;
             box-sizing: border-box;
             position: relative;
             align-items: center;
-            color: white;
+            border: 1px solid #000;
             font-family: Verdana, sans-serif;
         }
 
