@@ -1,6 +1,6 @@
 		
-		        body {
-			background-image: url("../static/images/cloud.jpg");
+		body {
+	    	background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             box-sizing: border-box;
@@ -22,18 +22,17 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            border: 3px solid black;
-            margin-bottom: 10px;
+            border: 0.2vw solid black;
+            margin-bottom: 0.9vh;
         }
 
         .main-menu-text {
-            font-size: 40px;
-            padding: 5px 5px;
-            text-align: center;
+            font-size: 2vw;
+            text-align: center; 
             color: white;
             margin: 0;
-            text-shadow: 2px 2px #b5b5b5;
-            backdrop-filter: blur(5px);
+            text-shadow: 0.1vw 0.2vh #b5b5b5;
+            backdrop-filter: blur(0.2vw);
         }
 
         .project-buttons {
@@ -42,20 +41,20 @@
 
         .main-menu-button {
             cursor: pointer;
-            width: 80px;
-            height: 80px;
+            width: 4vw;
+            height: 8vh;
         }
 
         .category-button {
             background: white;
-            border: 2px solid black;
+            border: 0.1vw solid black;
             box-sizing: border-box;
-            font-size: 20px;
+            font-size: 1vw;
             color: black;
             text-decoration: none;
-            padding: 5px 30px;
+            padding: 0.3vw 2.5vh;
             cursor: pointer;
-            margin: 5px 10px;
+            margin: 0.5vw 1vh;
             position: relative;
         }
 
@@ -63,29 +62,29 @@
             background-color: rgba(0,0,0,0.5);
             color: white;
             text-align: left;
-            width: 800px;
-            height: 220px;
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid rgba(0,0,0,0.3);
+            width: 42vw;
+            height: 21vh;
+            margin: 1vw;
+            padding: 0.5vw;
+            border: 0.05vw solid rgba(0,0,0,0.3);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            border-radius: 8px;
-            backdrop-filter: blur(3px);
-            box-shadow: 0 1px 12px rgba(255,255,255,0.25);
+            border-radius: 0.4vw;
+            backdrop-filter: blur(0.1vw);
+            box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
         }
 
         .project-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
+            margin-bottom: 3.5vh;
         }
 
         .project-button {
-            width: 500px;
-            font-size: 22px;
+            width: 26vw;
+            font-size: 1.2vw;
         }
 
         .release-date {
@@ -98,36 +97,36 @@
         }
 
         .project-logo {
-            width: 150px;
-            height: 150px;
-            margin-right: 10px;
+            width: 7.8vw;
+            height: 7.8vw;
+            margin-right: 0.5vw;
         }
 
         .project-description {
             flex: 1;
-            height: 150px;
-            margin-left: 10px;
+            height: 16vh;
+            margin-left: 0.5vw;
         }
 
         .placeholder-box {
             background: white;
-            border: 2px solid black;
+            border: 0.1vw solid black;
             box-sizing: border-box;
-            padding: 10px;
+            padding: 0.5vw;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: 300px;
+            margin-top: 35vh;
         }
 
         .contact-item {
-            margin: 10px 0;
+            margin: 0.5vw 0;
         }
 
         .contact-item img {
             vertical-align: middle;
-            margin-right: 10px;
+            margin-right: 0.5vw;
         }
 
         .contact-item a {
@@ -136,15 +135,15 @@
         }
 
 		.contact-box {
-            border: 2px solid white;
+            border: 0.1vw solid white;
             box-sizing: border-box;
-            padding: 20px;
+            padding: 1vw;
             background-color: black;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 200px 0;
+            margin-top: 30vh;
         }
 
 
@@ -173,7 +172,7 @@
             width: 47%;
             height: 90%;
             background-color: #ccc;
-            border: 1px solid #000;
+            border: 0.05vw solid #000;
             box-sizing: border-box;
             position: relative;
             justify-content: space-between;
@@ -193,7 +192,7 @@
             width: 4vw;
             height: 8vh;
             position: absolute;
-            left: 10px;
+            left: 0.5vw;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -206,10 +205,9 @@
 
         .gem-text {
             justify-content: center;
-            margin: 13px;
+            margin: 0.68vw;
             padding: 0;
         }
-
 
 
 
@@ -227,14 +225,14 @@
 
         .bigoilbigbox {
             position: relative;
-            padding: 20px;
+            padding: 1vw;
             color: black;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin: 20px 0;
+            margin: 1vw 0;
             box-sizing: border-box;
         }
 
@@ -248,13 +246,13 @@
 
         .map-image {
             background-image: url("../static/images/map.png");
-            padding: 20px;
+            padding: 1vw;
             color: black;
             background-color: white;
-            border: 1px solid black;
+            border: 0.05vw solid black;
             box-sizing: border-box;
             width: 32%;
-            height: 600px;
+            height: 65vh;
         }
 
         .engine-list {
@@ -270,9 +268,9 @@
             background-color: white;
             width: 34%;
             height: 100%;
-            border: 1px solid black;
+            border: 0.05vw solid black;
             box-sizing: border-box;
-            font-size: 30px;
+            font-size: 1.6vw;
             position: sticky;
             z-index: 1;
             text-align: center;
@@ -280,11 +278,7 @@
             justify-content: center;
             overflow: auto;
             font-family: Verdana, sans-serif;
-            height: 600px;
-        }
-
-        .clue {
-            font-size: 32px;
+            height: 65vh;
         }
 
         .bigoilcontainer {
@@ -293,33 +287,33 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-            margin: 0 10px;
+            margin: 0 0.9vh;
             box-sizing: border-box;
         }
 
         .faq-title {
             background-color: white;
-            border: 1px solid black;
+            border: 0.05vw solid black;
             box-sizing: border-box;
             text-align: center;
             font-family: Verdana, sans-serif;
-            padding: 0px 10px;
+            padding: 0 0.9vh;
             margin: 0;
-            font-size: 18px;
+            font-size: 1vw;
         }
 
         .faq-content {
             font-family: Verdana, sans-serif;
             background-color: white;
-            border: 1px solid black;
+            border: 0.05vw solid black;
             box-sizing: border-box;
-            padding: 20px;
-            margin: 10px;
+            padding: 1vw;
+            margin: 0.5vw;
             justify-self: start;
         }
 
         .faq-content p {
-            margin: 20px 10px;
+            margin: 1vw 0.9vh;
             text-align: left;
         }
 
@@ -327,24 +321,23 @@
             display: flex;
             justify-content: space-between;
             background-color: white;
-            padding: 20px 0;
-            border: 1px solid black;
+            padding: 1vw 0;
+            border: 0.05vw solid black;
             box-sizing: border-box;
             width: 70%;
         }
 
         .imagetext {
-            font-size: 20px;
+            font-size: 1vw;
             color: white;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(0.2vw);
         }
 
         .imagebigoil {
             text-align: center;
-            margin: 0 10px;
-            margin-bottom: 10px;
-            width: 500px;
-            height: 500px;
+            margin-bottom: 0.9vh;
+            width: 28vw;
+            height: 50vh;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -356,14 +349,14 @@
 
         #buttonContainer {
             display: flex;
-            margin-top: 20px;
+            margin-top: 1.85vh;
             width: 80%;
             justify-content: space-between;
             background-color: transparent;
-            border-radius: 8px;
-            backdrop-filter: blur(3px);
+            border-radius: 0.4vw;
+            backdrop-filter: blur(0.15vw);
             background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
         }
 
         .show {
@@ -371,28 +364,28 @@
         }
 
         #rectangle {
-            width: 80%;
+            width: 80vw;
             height: 80vh;
             text-align: center;
-            padding: 20px;
+            padding: 1vw 1vh;
             position: relative;
             box-sizing: border-box;
             color: white;
-            border-radius: 8px;
-            backdrop-filter: blur(2px);
+            border-radius: 0.4vw;
+            backdrop-filter: blur(0.1vw);
             background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+            border: 0.05vw solid rgba(255,255,255,0.3);
         }
 
         #rectangle .lessonList li, #rectangle ul li {
             list-style-type: none;
-            margin-bottom: 10px;
+            margin-bottom: 1.2vh;
             color: white;
         }
 
         #rectangle select {
-            font-size: 21px;
+            font-size: 1.1vw;
         }
 
         #examMode {
@@ -404,7 +397,7 @@
         }
 
         #faqMode {
-            font-size: 20px;
+            font-size: 1vw;
             display: none;
         }
 
@@ -418,40 +411,40 @@
 
         #result {
             display: none;
-            font-size: 36px;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            font-size: 1.87vw;
+            margin-top: 1.84vh;
+            margin-bottom: 0.92vh;
         }
 
         #noteInput {
             display: none;
-            font-size: 36px;
+            font-size: 1.87vw;
             width: 60%;
-            padding: 25px;
+            padding: 1.3vw;
             box-sizing: border-box;
             margin: 0 auto;
-            margin-top: 30px;
-            margin-bottom: 30px;
+            margin-top: 2.77vh;
+            margin-bottom: 2.77vh;
             text-align: center;
         }
 
         #calculateButton {
             display: none;
             width: 20%;
-            margin-top: 20px;
+            margin-top: 1.85vh;
             margin-left: auto;
             margin-right: auto;
             background-color: transparent;
         }
 
         #examResultsText {
-            margin-top: 40px;
-            font-size: 36px;
+            margin-top: 3.7vh;
+            font-size: 1.87vw;
         }
 
         .modeButton {
             flex: 1;
-            height: 35px;
+            height: 1.82vw;
             font-family: 'Verdana', sans-serif;
             box-sizing: border-box;
             color: white;
@@ -459,39 +452,39 @@
         }
 
         .dropdown {
-            font-size: 20px;
+            font-size: 1vw;
             position: relative;
             display: inline-block;
         }
 
         .dropdown button {
-            font-size: 20px;
-            padding: 10px;
+            font-size: 1vw;
+            padding: 0.52vw 0.92vh;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            font-size: 20px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            font-size: 1vw;
+            box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2);
             z-index: 5;
         }
 
         .dropdown-content a {
             color: white;
-            font-size: 20px;
-            padding: 16px;
+            font-size: 1vw;
+            padding: 0.88vw;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            font-size: 20px;
+            font-size: 1vw;
             color: white;
         }
 
         .dropdown-gpa {
-            font-size: 20px;
+            font-size: 1vw;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -499,7 +492,7 @@
         }
 
         .dropdown-stat22 {
-            font-size: 20px;
+            font-size: 1vw;
             position: absolute;
             top: 0;
             right: 0;
@@ -508,28 +501,31 @@
         .stat22RectanglesContainer {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 75vw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 60px;
+            padding-bottom: 3.05vw;
+            padding-left: 3vw;
         }
 
         .stat22RectanglesContainer2 {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 75vw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 20px;
+            padding-bottom: 1vw;
+            padding-left: 3vw;
         }
 
         .stat22RectanglesContainer3 {
             position: absolute;
             bottom: 0;
-            width: 100%;
+            width: 75vw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 90px;
+            padding-bottom: 4.68vw;
+            padding-left: 3vw;
         }
 
         .stat22Rectangle {
@@ -537,8 +533,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 25px;
-            border: 1px solid white;
+            font-size: 1.3vw;
+            border: 0.05vw solid white;
             box-sizing: border-box;
         }
 
@@ -548,7 +544,7 @@
             justify-content: space-between;
             align-items: center;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 2.5vh;
         }
 
         .semesterButton {
@@ -557,12 +553,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 25px;
-            border: 1px solid white;
+            font-size: 1.3vw;
+            border: 0.05vw solid white;
             box-sizing: border-box;
             cursor: pointer;
-            margin-left: 8px;
-            margin-right: 8px;
+            margin-left: 0.4vw;
+            margin-right: 0.4vw;
             background-color: transparent;
             color: white;
         }
@@ -576,9 +572,9 @@
             transform: translate(-50%, -50%);
             display: flex;
             text-align: left;
-            font-size: 28px;
+            font-size: 1.47vw;
             box-sizing: border-box;
-            margin-left: 20px;
+            margin-left: 1vw;
         }
 
         .rightrectangle {
@@ -592,7 +588,7 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 50px;
+            font-size: 2.6vw;
             margin: auto;
         }
 
@@ -603,8 +599,8 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            border: 1px solid white;
+            font-size: 2.08vw;
+            border: 0.05vw solid white;
             box-sizing: border-box;
             cursor: pointer;
             margin: auto;
@@ -619,8 +615,8 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 25px;
-            border: 1px solid white;
+            font-size: 1.3vw;
+            border: 0.05vw solid white;
             box-sizing: border-box;
             margin: auto;
             color: white;
