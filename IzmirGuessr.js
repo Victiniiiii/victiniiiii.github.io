@@ -450,7 +450,7 @@ function initMap() {
 
                 minimap = new google.maps.Map(document.getElementById('mini-map'), {
                     center: { lat: 38.4192, lng: 27.1287 },
-                    zoom: 12,
+                    zoom: 10,
                     draggable: true,
                     streetViewControl: false,
                     mapTypeControl: false,
