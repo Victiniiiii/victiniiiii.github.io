@@ -298,7 +298,7 @@ const map2 = L.map('map2', {
     minZoom: 9,
 }).setView([initialLat, initialLon], initialZoom);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: 'Â© OpenStreetMap contributors' }).addTo(map2);
 
 function isPointInPolygon(point, polygon) {
     const latLngs = polygon.getLatLngs()[0];
@@ -627,7 +627,7 @@ function displayResults(distance, points) {
 
     const resultMap = new google.maps.Map(document.getElementById('result-map'), {
         center: randomLocation,
-        zoom: 14,
+        zoom: getZoomLevel(distance),
         streetViewControl: false,
         mapTypeControl: false,
         clickableIcons: false,
@@ -655,6 +655,27 @@ function displayResults(distance, points) {
     document.getElementById('overlay-container').style.display = 'none';
     document.getElementById('modaltoggle-button').style.display = 'block';
     pauseTimer()
+}
+
+function getZoomLevel(distance) {
+    // You can set your own conditions to determine the zoom level
+    if (distance < 1000) {
+        return 14;
+    } else if (distance < 2500) {
+        return 13;
+    } else if (distance < 5000) {
+        return 12;
+    } else if (distance < 10000) {
+        return 11;
+    } else if (distance < 20000) {
+        return 10;
+    } else if (distance < 40000) {
+        return 9;
+    } else if (distance < 80000) {
+        return 8;
+    } else {
+        return 7
+    }
 }
 
 function playAgain() {
