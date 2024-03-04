@@ -1,4 +1,3 @@
-// script.js
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
@@ -16,9 +15,8 @@ let highscore = 0;
 const initialLat = 38.609979;
 const initialLon = 27.398601;
 const initialZoom = 9;
-const greenDistricts = []; // Reset greenDistricts array
 let roundTimer;
-let timerSeconds = 60; // Set the initial timer duration in seconds
+let timerSeconds = 60; 
 let isTimerPaused = false;
 
 let startPage = document.getElementById('startpage');
@@ -31,69 +29,63 @@ let buttonrow = document.getElementById('buttonrow')
 const mapContainer = document.getElementById('gamemap');
 const resultModal = document.getElementById('result-modal');
 
-const AliagaBounds = { north: 38.898849, south: 38.676129, west: 26.962805, east: 26.076071, };
-const BalcovaBounds = { north: 38.4152, south: 38.3780, west: 27.0239, east: 27.0716, };
-const BayindirBounds = { north: 38.2569, south: 38.1831, west: 27.5461, east: 27.7010, };
-const BayrakliBounds = { north: 38.4956, south: 38.4528, west: 27.1551, east: 27.1917, };
-const BergamaBounds = { north: 39.1369, south: 38.960276, west: 27.059889, east: 27.2109, };
-const BeydagBounds = { north: 38.0932, south: 38.0789, west: 28.2003, east: 28.2214, };
-const BornovaBounds = { north: 38.5080, south: 38.4127, west: 27.1997, east: 27.2849, };
-const BucaBounds = { north: 38.4015, south: 38.3446, west: 27.1398, east: 27.2382, };
-const CesmeBounds = { north: 38.3414, south: 38.2754, west: 26.2804, east: 26.4378, };
-const CigliBounds = { north: 38.5312, south: 38.4750, west: 26.9408, east: 27.0852, };
-const DikiliBounds = { north: 39.1881, south: 38.9169, west: 26.7954, east: 27.0150, };
-const FocaBounds = { north: 38.7592, south: 38.6448, west: 26.7314, east: 26.9008, };
-const GaziemirBounds = { north: 38.3441, south: 38.2907, west: 27.1038, east: 27.1857, };
-const GuzelbahceBounds = { north: 38.3838, south: 38.3127, west: 26.8569, east: 26.9192, };
-const KarabaglarBounds = { north: 38.4030, south: 38.3558, west: 27.0939, east: 27.1344, };
-const KaraburunBounds = { north: 38.6578, south: 38.4910, west: 26.5006, east: 26.6358, };
-const KarsiyakaBounds = { north: 38.4991, south: 38.4488, west: 27.0709, east: 27.1292, };
-const KemalpasaBounds = { north: 38.4868, south: 38.3938, west: 27.3372, east: 27.5234, };
-const KinikBounds = { north: 39.1135, south: 39.0789, west: 27.2936, east: 27.4302, };
-const KirazBounds = { north: 38.2777, south: 38.1806, west: 28.1847, east: 28.3019, };
-const KonakBounds = { north: 38.4469, south: 38.3986, west: 27.0889, east: 27.1849, };
-const MenderesBounds = { north: 38.2973, south: 37.9843, west: 27.1045, east: 27.2088, };
-const MenemenBounds = { north: 38.6355, south: 38.5426, west: 26.9160, east: 27.1113, };
-const NarlidereBounds = { north: 38.4168, south: 38.3698, west: 26.9227, east: 27.0258, };
-const OdemisBounds = { north: 38.2759, south: 38.1920, west: 27.8853, east: 28.0711, };
-const SeferihisarBounds = { north: 38.2612, south: 38.1338, west: 26.7691, east: 26.8580, };
-const SelcukBounds = { north: 37.9796, south: 37.9220, west: 27.2713, east: 27.4509, };
-const TireBounds = { north: 38.1378, south: 38.0764, west: 27.7081, east: 27.7531, };
-const TorbaliBounds = { north: 38.2798, south: 38.0775, west: 27.2253, east: 27.3997, };
-const UrlaBounds = { north: 38.4264, south: 38.2685, west: 26.5566, east: 26.8530, };
+const AliagaBounds = { north: 38.898849, south: 38.676129, west: 26.962805, east: 26.076071};
+const BalcovaBounds = { north: 38.4152, south: 38.3780, west: 27.0239, east: 27.0716};
+const BayindirBounds = { north: 38.2569, south: 38.1831, west: 27.5461, east: 27.7010};
+const BayrakliBounds = { north: 38.4956, south: 38.4528, west: 27.1551, east: 27.1917};
+const BergamaBounds = { north: 39.1369, south: 38.960276, west: 27.059889, east: 27.2109};
+const BeydagBounds = { north: 38.0932, south: 38.0789, west: 28.2003, east: 28.2214};
+const BornovaBounds = { north: 38.5080, south: 38.4127, west: 27.1997, east: 27.2849};
+const BucaBounds = { north: 38.4015, south: 38.3446, west: 27.1398, east: 27.2382};
+const CesmeBounds = { north: 38.3414, south: 38.2754, west: 26.2804, east: 26.4378};
+const CigliBounds = { north: 38.5312, south: 38.4750, west: 26.9408, east: 27.0852};
+const DikiliBounds = { north: 39.1881, south: 38.9169, west: 26.7954, east: 27.0150};
+const FocaBounds = { north: 38.7592, south: 38.6448, west: 26.7314, east: 26.9008};
+const GaziemirBounds = { north: 38.3441, south: 38.2907, west: 27.1038, east: 27.1857};
+const GuzelbahceBounds = { north: 38.3838, south: 38.3127, west: 26.8569, east: 26.9192};
+const KarabaglarBounds = { north: 38.4030, south: 38.3558, west: 27.0939, east: 27.1344};
+const KaraburunBounds = { north: 38.6578, south: 38.4910, west: 26.5006, east: 26.6358};
+const KarsiyakaBounds = { north: 38.4991, south: 38.4488, west: 27.0709, east: 27.1292};
+const KemalpasaBounds = { north: 38.4868, south: 38.3938, west: 27.3372, east: 27.5234};
+const KinikBounds = { north: 39.1135, south: 39.0789, west: 27.2936, east: 27.4302};
+const KirazBounds = { north: 38.2777, south: 38.1806, west: 28.1847, east: 28.3019};
+const KonakBounds = { north: 38.4469, south: 38.3986, west: 27.0889, east: 27.1849};
+const MenderesBounds = { north: 38.2973, south: 37.9843, west: 27.1045, east: 27.2088};
+const MenemenBounds = { north: 38.6355, south: 38.5426, west: 26.9160, east: 27.1113};
+const NarlidereBounds = { north: 38.4168, south: 38.3698, west: 26.9227, east: 27.0258};
+const OdemisBounds = { north: 38.2759, south: 38.1920, west: 27.8853, east: 28.0711};
+const SeferihisarBounds = { north: 38.2612, south: 38.1338, west: 26.7691, east: 26.8580};
+const SelcukBounds = { north: 37.9796, south: 37.9220, west: 27.2713, east: 27.4509};
+const TireBounds = { north: 38.1378, south: 38.0764, west: 27.7081, east: 27.7531};
+const TorbaliBounds = { north: 38.2798, south: 38.0775, west: 27.2253, east: 27.3997};
+const UrlaBounds = { north: 38.4264, south: 38.2685, west: 26.5566, east: 26.8530};
 
 const districtBounds = [AliagaBounds, BalcovaBounds, BayindirBounds, BayrakliBounds, BergamaBounds, BeydagBounds, BornovaBounds, BucaBounds, CesmeBounds, CigliBounds,
     DikiliBounds, FocaBounds, GaziemirBounds, GuzelbahceBounds, KarabaglarBounds, KaraburunBounds, KarsiyakaBounds, KemalpasaBounds, KinikBounds, KirazBounds,
     KonakBounds, MenderesBounds, MenemenBounds, NarlidereBounds, OdemisBounds, SeferihisarBounds, SelcukBounds, TireBounds, TorbaliBounds, UrlaBounds];
 
 const districtsData = [
-    {
-        name: "Cesme", state: 1, bounds: CesmeBounds, coordinates: [[38.431488, 26.515475], [38.435926, 26.541392], [38.414678, 26.551186], [38.413534, 26.534781], [38.350609, 26.513694], [38.336607, 26.493425], [38.325834, 26.510258],
-        [38.308864, 26.516445], [38.293238, 26.499954], [38.277607, 26.525720], [38.246337, 26.459761], [38.222066, 26.464571], [38.213881, 26.440170], [38.197787, 26.428500], [38.229618, 26.326467],
-        [38.267365, 26.232679], [38.294854, 26.233366], [38.293507, 26.244703], [38.284614, 26.246077], [38.291351, 26.272530], [38.298374, 26.280609], [38.323225, 26.279578], [38.324572, 26.294894],
-        [38.374837, 26.281233], [38.360722, 26.296435], [38.356642, 26.297523], [38.356170, 26.303492], [38.363675, 26.302332], [38.375014, 26.309494], [38.377167, 26.313875], [38.374644, 26.317010],
-        [38.362556, 26.318565], [38.357079, 26.322330], [38.352940, 26.324432], [38.347075, 26.323535], [38.340343, 26.317867], [38.336169, 26.316664], [38.329437, 26.319069], [38.323511, 26.337449],
-        [38.334150, 26.342602], [38.331591, 26.345866], [38.319067, 26.346725], [38.307753, 26.365963], [38.310178, 26.379836], [38.348691, 26.382756], [38.339536, 26.420203], [38.374938, 26.474765],
-        [38.425655, 26.448824], [38.426866, 26.470625], [38.401445, 26.491925], [38.414762, 26.501888], [38.431488, 26.515475]
-        ]
+    {name: "Cesme", state: 1, bounds: CesmeBounds, coordinates: [[38.431488, 26.515475], [38.435926, 26.541392], [38.414678, 26.551186], [38.413534, 26.534781], [38.350609, 26.513694], [38.336607, 26.493425],
+        [38.325834, 26.510258], [38.308864, 26.516445], [38.293238, 26.499954], [38.277607, 26.525720], [38.246337, 26.459761], [38.222066, 26.464571], [38.213881, 26.440170], [38.197787, 26.428500],
+        [38.229618, 26.326467], [38.267365, 26.232679], [38.294854, 26.233366], [38.293507, 26.244703], [38.284614, 26.246077], [38.291351, 26.272530], [38.298374, 26.280609], [38.323225, 26.279578],
+        [38.324572, 26.294894], [38.374837, 26.281233], [38.360722, 26.296435], [38.356642, 26.297523], [38.356170, 26.303492], [38.363675, 26.302332], [38.375014, 26.309494], [38.377167, 26.313875],
+        [38.374644, 26.317010], [38.362556, 26.318565], [38.357079, 26.322330], [38.352940, 26.324432], [38.347075, 26.323535], [38.340343, 26.317867], [38.336169, 26.316664], [38.329437, 26.319069],
+        [38.323511, 26.337449], [38.334150, 26.342602], [38.331591, 26.345866], [38.319067, 26.346725], [38.307753, 26.365963], [38.310178, 26.379836], [38.348691, 26.382756], [38.339536, 26.420203],
+        [38.374938, 26.474765], [38.425655, 26.448824], [38.426866, 26.470625], [38.401445, 26.491925], [38.414762, 26.501888], [38.431488, 26.515475]]
     },
-    {
-        name: "Urla", state: 1, bounds: UrlaBounds, coordinates: [[38.441119, 26.601655], [38.438161, 26.565582], [38.455235, 26.563006], [38.456311, 26.479722], [38.431488, 26.515475], [38.435926, 26.541392], [38.414678, 26.551186],
-        [38.413534, 26.534781], [38.350609, 26.513694], [38.336607, 26.493425], [38.325834, 26.510258], [38.308864, 26.516445], [38.293238, 26.499954], [38.277607, 26.525720], [38.246337, 26.459761],
-        [38.222066, 26.464571], [38.213881, 26.440170], [38.166550, 26.514638], [38.117947, 26.548305], [38.105521, 26.610144], [38.196775, 26.635566], [38.208815, 26.733281], [38.222707, 26.754581],
-        [38.259918, 26.754922], [38.285254, 26.776566], [38.284715, 26.811264], [38.267062, 26.824662], [38.263423, 26.859876], [38.297246, 26.887531], [38.302230, 26.866404], [38.290509, 26.847105],
-        [38.304655, 26.812747], [38.329706, 26.820820], [38.362960, 26.856377], [38.373197, 26.855980], [38.363902, 26.818652], [38.355287, 26.807315], [38.382608, 26.762125], [38.435338, 26.732422],
-        [38.430900, 26.690337], [38.390244, 26.676701], [38.358248, 26.676992], [38.346806, 26.675446], [38.344248, 26.691421], [38.315700, 26.702071], [38.311255, 26.670465], [38.419872, 26.612089],
-        [38.415569, 26.600759], [38.426059, 26.583926], [38.441119, 26.601655]
-        ]
+    {name: "Urla", state: 1, bounds: UrlaBounds, coordinates: [[38.441119, 26.601655], [38.438161, 26.565582], [38.455235, 26.563006], [38.456311, 26.479722], [38.431488, 26.515475], [38.435926, 26.541392],
+            [38.414678, 26.551186], [38.413534, 26.534781], [38.350609, 26.513694], [38.336607, 26.493425], [38.325834, 26.510258], [38.308864, 26.516445], [38.293238, 26.499954], [38.277607, 26.525720],
+            [38.246337, 26.459761], [38.222066, 26.464571], [38.213881, 26.440170], [38.166550, 26.514638], [38.117947, 26.548305], [38.105521, 26.610144], [38.196775, 26.635566], [38.208815, 26.733281],
+            [38.222707, 26.754581], [38.259918, 26.754922], [38.285254, 26.776566], [38.284715, 26.811264], [38.267062, 26.824662], [38.263423, 26.859876], [38.297246, 26.887531], [38.302230, 26.866404],
+            [38.290509, 26.847105], [38.304655, 26.812747], [38.329706, 26.820820], [38.362960, 26.856377], [38.373197, 26.855980], [38.363902, 26.818652], [38.355287, 26.807315], [38.382608, 26.762125],
+            [38.435338, 26.732422], [38.430900, 26.690337], [38.390244, 26.676701], [38.358248, 26.676992], [38.346806, 26.675446], [38.344248, 26.691421], [38.315700, 26.702071], [38.311255, 26.670465],
+        [38.419872, 26.612089], [38.415569, 26.600759], [38.426059, 26.583926], [38.441119, 26.601655]]
     },
-    {
-        name: "Karaburun", state: 1, bounds: KaraburunBounds, coordinates: [[38.456311, 26.479722], [38.455235, 26.563006], [38.438161, 26.565582], [38.441119, 26.601655], [38.467165, 26.638892], [38.528965, 26.623776], [38.680820, 26.488419],
-        [38.656695, 26.344816], [38.566556, 26.363368], [38.483292, 26.407342], [38.452648, 26.389477], [38.447270, 26.403219], [38.471466, 26.438261], [38.456311, 26.479722]
-        ]
+    {name: "Karaburun", state: 1, bounds: KaraburunBounds, coordinates: [[38.456311, 26.479722], [38.455235, 26.563006], [38.438161, 26.565582], [38.441119, 26.601655], [38.467165, 26.638892],
+        [38.528965, 26.623776], [38.680820, 26.488419], [38.656695, 26.344816], [38.566556, 26.363368], [38.483292, 26.407342], [38.452648, 26.389477], [38.447270, 26.403219], [38.471466, 26.438261],
+        [38.456311, 26.479722]]
     },
-    {
-        name: "Seferihisar", state: 1, bounds: SeferihisarBounds, coordinates: [[38.222707, 26.754581], [38.259918, 26.754922], [38.285254, 26.776566], [38.284715, 26.811264], [38.267062, 26.824662], [38.263423, 26.859876], [38.297246, 26.887531],
+    {name: "Seferihisar", state: 1, bounds: SeferihisarBounds, coordinates: [[38.222707, 26.754581], [38.259918, 26.754922], [38.285254, 26.776566], [38.284715, 26.811264], [38.267062, 26.824662], [38.263423, 26.859876], [38.297246, 26.887531],
         [38.307214, 26.940329], [38.194077, 26.985782], [38.075258, 26.979467], [38.028757, 26.865410], [38.161151, 26.820047], [38.159531, 26.773325], [38.222707, 26.754581]
         ]
     },
@@ -112,7 +104,6 @@ const districtsData = [
     {
         name: "Narlidere", state: 1, bounds: NarlidereBounds, coordinates: [[38.383550, 26.924827], [38.363094, 26.933105], [38.362017, 26.951313], [38.354345, 26.953374], [38.354917, 26.967222], [38.333645, 26.994019], [38.333375, 27.003295],
         [38.375863, 27.026015], [38.380035, 27.036579], [38.413601, 27.015607], [38.397173, 26.982947]
-
         ]
     },
     {
@@ -184,7 +175,6 @@ const districtsData = [
     },
     {
         name: "Buca", state: 1, bounds: BucaBounds, coordinates: [[38.361365, 27.139379], [38.346276, 27.136946], [38.346099, 27.177857], [38.316508, 27.183684],
-
         [38.303981, 27.226121], [38.283637, 27.214638], [38.272183, 27.245004], [38.293069, 27.307717], [38.286299, 27.353711], [38.337785, 27.353330],
         [38.362993, 27.369947], [38.393137, 27.336604], [38.414930, 27.302679], [38.401764, 27.264697], [38.379026, 27.258359], [38.365231, 27.237145], [38.383197, 27.226337], [38.384475, 27.216889], [38.406271, 27.210960],
         [38.408965, 27.198628], [38.404913, 27.188971], [38.406292, 27.186824], [38.408112, 27.177941], [38.406382, 27.165313], [38.404574, 27.165239], [38.403198, 27.154160], [38.406003, 27.145448],
@@ -193,25 +183,17 @@ const districtsData = [
     },
     {
         name: "Gaziemir", state: 1, bounds: GaziemirBounds, coordinates: [[38.353810, 27.116291], [38.356991, 27.126026],
-        [38.362139, 27.129010], [38.361365, 27.139379], [38.346276, 27.136946], [38.346099, 27.177857], [38.316508, 27.183684],
-        [38.303981, 27.226121],
+        [38.362139, 27.129010], [38.361365, 27.139379], [38.346276, 27.136946], [38.346099, 27.177857], [38.316508, 27.183684], [38.303981, 27.226121],
         [38.283637, 27.214638], [38.282425, 27.169061], [38.273438, 27.161605], [38.278020, 27.152914], [38.290753, 27.146519], [38.291191, 27.138875], [38.300479, 27.125161],
         [38.298694, 27.092547], [38.312333, 27.079521], [38.318932, 27.080208], [38.329841, 27.091717], [38.352056, 27.105459]
-
         ]
     },
     {
-        name: "Karabaglar", state: 1, bounds: KarabaglarBounds, coordinates: [[38.298694, 27.092547],
-        [38.314319, 27.019715], [38.307214, 26.940329], [38.353537, 26.946159], [38.354345, 26.953374], [38.354917, 26.967222], [38.333645, 26.994019],
-        [38.333375, 27.003295], [38.375863, 27.026015], [38.380035, 27.036579], [38.369740, 27.039377], [38.365702, 27.066685], [38.347058, 27.079137], [38.353613, 27.080211], [38.360915, 27.079564],
+        name: "Karabaglar", state: 1, bounds: KarabaglarBounds, coordinates: [[38.298694, 27.092547], [38.314319, 27.019715], [38.307214, 26.940329], [38.353537, 26.946159], [38.354345, 26.953374],
+            [38.354917, 26.967222], [38.333645, 26.994019], [38.333375, 27.003295], [38.375863, 27.026015], [38.380035, 27.036579], [38.369740, 27.039377], [38.365702, 27.066685], [38.347058, 27.079137], [38.353613, 27.080211], [38.360915, 27.079564],
         [38.367746, 27.095024], [38.377099, 27.083816], [38.378748, 27.076086], [38.382983, 27.075928], [38.385606, 27.073415], [38.383622, 27.073179], [38.382848, 27.071741], [38.386868, 27.066695],
         [38.390316, 27.067790], [38.389879, 27.065964], [38.392284, 27.066400], [38.396824, 27.064281], [38.397557, 27.069331], [38.392885, 27.087799],
-        [38.395710, 27.094498],
-        [38.401482, 27.099814],
-        [38.403231, 27.116756],
-        [38.405847, 27.121294], [38.394345, 27.138400],
-
-
+        [38.395710, 27.094498], [38.401482, 27.099814], [38.403231, 27.116756], [38.405847, 27.121294], [38.394345, 27.138400],
         [38.361365, 27.139379], [38.362139, 27.129010], [38.356991, 27.126026], [38.353810, 27.116291],
         [38.352056, 27.105459], [38.329841, 27.091717], [38.318932, 27.080208], [38.312333, 27.079521]
         ]
@@ -284,10 +266,10 @@ const districtsData = [
         ]
     },
     {
-        name: "Cigli", state: 1, bounds: CigliBounds, coordinates: [[38.550397, 27.092753], [38.527555, 27.117544], [38.503718, 27.090321], [38.495939, 27.093189], [38.488952, 27.088637], [38.475447, 27.066220], [38.465502, 27.041616],
-        [38.470055, 27.024885], [38.458495, 27.012861], [38.441355, 26.951344],
-        [38.501564, 26.884009], [38.531818, 26.899614], [38.518422, 26.922903], [38.525137, 26.945575], [38.516542, 26.973402], [38.528360, 26.992984], [38.529921, 27.014675], [38.521595, 27.024105],
-        [38.526228, 27.030036], [38.522220, 27.039947], [38.528713, 27.038617], [38.542409, 27.046604], [38.554760, 27.068419], [38.555482, 27.083622],
+        name: "Cigli", state: 1, bounds: CigliBounds, coordinates: [[38.550397, 27.092753], [38.527555, 27.117544], [38.503718, 27.090321], [38.495939, 27.093189], [38.488952, 27.088637], [38.475447, 27.066220],
+            [38.465502, 27.041616], [38.470055, 27.024885], [38.458495, 27.012861], [38.441355, 26.951344], [38.501564, 26.884009], [38.531818, 26.899614], [38.518422, 26.922903], [38.525137, 26.945575],
+            [38.516542, 26.973402], [38.528360, 26.992984], [38.529921, 27.014675], [38.521595, 27.024105], [38.526228, 27.030036], [38.522220, 27.039947], [38.528713, 27.038617], [38.542409, 27.046604],
+            [38.554760, 27.068419], [38.555482, 27.083622],
 
         ]
     }
@@ -321,7 +303,6 @@ function isPointInPolygon(point, polygon) {
     return inside;
 }
 
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -329,67 +310,50 @@ function shuffleArray(array) {
     }
 }
 
-
-
-
-
-
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 const formattedBounds = [];
-
 
 districtsData.forEach(district => {
     const polygon = L.polygon(district.coordinates, { fill: true, color: 'green' }).addTo(map2);
     districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
 
-    // Store initially green districts in the array
     if (district.state === 1) {
         initiallyGreenDistricts.push({ bounds: district.bounds });
     }
 });
 
-
 map2.on('mousedown', function (event) {
     districtLayers.forEach(district => {
         if (isPointInPolygon(event.latlng, district.layer)) {
             if (district.layer.options.fill) {
-                // Turn red
                 district.layer.setStyle({ fill: false, color: 'red' });
                 district.state = 0;
 
-                // Remove from initiallyGreenDistricts
                 const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
                 if (index !== -1) {
                     initiallyGreenDistricts.splice(index, 1);
                 }
             } else {
-                // Turn green
                 district.layer.setStyle({ fill: true, color: 'green' });
                 district.state = 1;
 
-                // Add to initiallyGreenDistricts if not already present
                 if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
                     initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
                 }
             }
 
-            console.log(`${district.name}: ${district.state}`);
-            console.log("Initially Green Districts:", initiallyGreenDistricts);
             let lengthh = [initiallyGreenDistricts.length];
             ilcesayisi.innerText = `Current District Count: ${lengthh}`;
 
             formatlama();
-        }
-        
+        }        
     });
 });
-
 
 function formatlama() {
     let formattedBounds = initiallyGreenDistricts.map(district => district.bounds);
     shuffleArray(formattedBounds);
-    console.log("Format", formattedBounds);
     return formattedBounds[0];
 }
 
@@ -422,7 +386,6 @@ function initMap() {
         document.getElementById('timer').style.display = 'block';
         timerSeconds = 60;
 
-        // Check if there's an existing timer and clear it before starting a new one
         if (roundTimer) {
             clearInterval(roundTimer);
         }
@@ -462,8 +425,6 @@ function initMap() {
                         guessedLocationMarker.setMap(null);
                     }
 
-                    console.log('Guessed Coordinates:', event.latLng.toJSON());
-
                     guessedLocationMarker = new google.maps.Marker({
                         position: event.latLng,
                         map: minimap,
@@ -475,8 +436,6 @@ function initMap() {
                     if (guessedLocationMarker) {
                         guessedLocationMarker.setMap(null);
                     }
-
-                    console.log('Original Coordinates:', event.latLng.toJSON());
 
                     guessedLocationMarker = new google.maps.Marker({
                         position: event.latLng,
@@ -500,12 +459,10 @@ function initMap() {
                 });
 
             } else {
-                console.warn('Street View data not found for the selected location. Retrying...');
                 initializeMapWithRandomLocation();
             }
         });
     }
-
     initializeMapWithRandomLocation();
 }
 
@@ -564,7 +521,6 @@ function toggleModal() {
         }
 }
 
-
 function returnToStart() {
     gamemap = new google.maps.Map(document.getElementById('gamemap'), {
         center: randomLocation,
@@ -585,8 +541,7 @@ function returnToStart() {
 
             gamemap.setStreetView(panorama);
         } else {
-            console.warn('Street View data not found for the selected location. Retrying...');
-            returnToStart(); // Retry if Street View data is not found
+            returnToStart(); 
         }
     });
 }
@@ -658,7 +613,6 @@ function displayResults(distance, points) {
 }
 
 function getZoomLevel(distance) {
-    // You can set your own conditions to determine the zoom level
     if (distance < 1000) {
         return 14;
     } else if (distance < 2500) {
@@ -718,21 +672,13 @@ function returnToMainMenu() {
     document.getElementById('result-modal').style.display = 'none';
 }
 
-
 function startGame() {
-    console.log(roundCount);
-    console.log("Initially Green Districts:", initiallyGreenDistricts);
-
     loadGoogleMapsAPI('initMap');
     initMap();
 }
 
-
 function startNextGame() {
-    roundCount++;
-
-    console.log(roundCount);
-    console.log("Format", formattedBounds);
+    roundCount++;    
 
     if (roundCount % roundsPerGame === 0) {
         document.getElementById('final-results-modal').style.display = 'block';
@@ -752,13 +698,10 @@ function addAllDistricts() {
         district.layer.setStyle({ fill: true, color: 'green' });
         district.state = 1;
 
-        // Add to initiallyGreenDistricts if not already present
         if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
             initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
         }
 
-        console.log(`${district.name}: ${district.state}`);
-        console.log("Initially Green Districts:", initiallyGreenDistricts);
         let lengthh = [initiallyGreenDistricts.length];
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     });
@@ -769,14 +712,11 @@ function removeAllDistricts() {
         district.layer.setStyle({ fill: false, color: 'red' });
         district.state = 0;
 
-        // Remove from initiallyGreenDistricts
         const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
         if (index !== -1) {
             initiallyGreenDistricts.splice(index, 1);
         }
 
-        console.log(`${district.name}: ${district.state}`);
-        console.log("Initially Green Districts:", initiallyGreenDistricts);
         let lengthh = [initiallyGreenDistricts.length];
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     });
@@ -786,35 +726,28 @@ function toggleDistrict(districtName) {
     const district = districtLayers.find(district => district.name === districtName);
     if (district) {
         if (district.layer.options.fill) {
-            // Turn red
             district.layer.setStyle({ fill: false, color: 'red' });
             district.state = 0;
 
-            // Remove from initiallyGreenDistricts
             const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
             if (index !== -1) {
                 initiallyGreenDistricts.splice(index, 1);
             }
         } else {
-            // Turn green
             district.layer.setStyle({ fill: true, color: 'green' });
             district.state = 1;
 
-            // Add to initiallyGreenDistricts if not already present
             if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
                 initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
             }
         }
 
-        console.log(`${district.name}: ${district.state}`);
-        console.log("Initially Green Districts:", initiallyGreenDistricts);
         let lengthh = [initiallyGreenDistricts.length];
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     }
 }
 
 function updateTimer() {
-    // Check if the checkbox is checked
     const isTimeLimitEnabled = document.getElementById('myCheckbox2').checked;
 
     if (isTimeLimitEnabled) {
@@ -827,7 +760,6 @@ function updateTimer() {
             timerSeconds--;
         }
     } else {
-        // Display "Time Left: Not Enabled" when the checkbox is not checked
         document.getElementById('timer').innerText = 'Time Left: Not Enabled';
     }
 }
@@ -845,36 +777,27 @@ function resumeTimer() {
     isTimerPaused = false;
 }
 
-// Add event listeners for hover
 overlayContainer.addEventListener('mouseenter', function () {
-    // Add the 'hovered' class when the mouse enters the element
     overlayContainer.classList.add('hovered');
 });
 
 overlayContainer.addEventListener('mouseleave', function () {
-    // Remove the 'hovered' class when the mouse leaves the element
     overlayContainer.classList.remove('hovered');
 });
 
-// Get the FAQ button and FAQ menu elements
 const faqButton = document.getElementById('izmirfaq');
 const faqMenu = document.getElementById('faq-menu');
 const startPageLeftHalf = document.querySelector('.startpagelefthalf');
 
 faqButton.addEventListener('click', function () {
-    // Toggle the 'show' class on the FAQ menu
     faqMenu.classList.toggle('show');
-
 
     if (startPageLeftHalf.style.display === 'none') {
         startPageLeftHalf.style.display = 'block';
     } else {
         startPageLeftHalf.style.display = 'none';
     }
-
-
 });
-
 
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
