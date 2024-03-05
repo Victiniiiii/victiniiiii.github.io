@@ -24,9 +24,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            width: 100vw;
+height: 8vh;
             border: 3px solid black;
-            margin-bottom: 10px;
+margin-bottom: 1vh;
+            
         }
 
         .main-menu-button {
@@ -858,14 +860,14 @@
 }
 
 .startpagelefthalf {
-    width: 50vw;
+    width: 100vw;
     height: 50vh;
     box-sizing: border-box;
 }
 
 .faq-menu {
-    width: 50vw;
-    height: 80vh;
+    width: 100vw;
+    height: 50vh;
     box-sizing: border-box;
     display: none;
     background-color: white;
@@ -893,7 +895,7 @@
 .startpagerighthalf {
     width: 100vw;
     height: 40vh;
-    margin-top: 3vh;
+    margin-top: 1vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -904,9 +906,8 @@
 
 .izmirgamelogo {
     width: 90vw;
-    height: 7.5vh;
+    height: 10vh;
     margin-left: 5vw;
-    margin-top: 1vh;
     box-sizing: border-box;
     background-image: url("../static/images/izmirlogo.png");
     background-repeat: no-repeat;
@@ -918,9 +919,7 @@
 
 .izmirilcebox {
     width: 100vw;
-    height: 17.5vh;
-    margin-left: 1.5vw;
-    margin-top: 1vh;
+    height: 20vh;
     box-sizing: border-box;
     align-items: center;
 }
@@ -954,7 +953,7 @@
 
 .izmirilcebuttons {
     width: 100vw;
-    height: 7.5vh;
+    height: 3vh;
     margin-top: 1vh;
     box-sizing: border-box;
     border: 0.05vw solid black;
@@ -968,8 +967,7 @@
 
 .izmirilcebottombuttons {
     width: 100vw;
-    height: 5vh;
-    margin-top: 1vh;
+    height: 2vh;
     box-sizing: border-box;
     border: 0.05vw solid black;
     display: flex;
@@ -985,7 +983,7 @@
 }
 
 .ilcesayisi {
-    font-size: 1.3vw;
+    font-size: 2vw;
     margin-left: 1.6vw;
     margin-bottom: 2vh;
     text-align: center;
@@ -994,8 +992,6 @@
 .izmirlastrows {
     width: 100vw;
     height: 3vh;
-    margin-left: 1.5vw;
-    margin-top: 2vh;
     box-sizing: border-box;
     border: 0.05vw solid black;
     display: flex;
@@ -1007,13 +1003,13 @@
 
 .izmirayarlar {
     font-size: 1vw;
-    margin-left: 1vw;
-    transform: scale(1.5);
-    margin-right: 1vw; 
+    margin-left: 10vw;
+    margin-right: 10vw; 
 }
 
 .izmirstartgame {
     width: 100%;
+height: 100%;
     margin-left: 2vw;
     font-size: 1.7vw;
     margin-right: 1vw;
