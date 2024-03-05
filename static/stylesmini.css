@@ -745,6 +745,7 @@
             flex-direction: row;
             width: 90vw;
             height: 5vh;
+            margin-left: 5vw;
             justify-content: center;
             text-align: center;
             font-size: 2vh;
@@ -793,7 +794,7 @@
         }
 
         #buttonrow {
-            width: 90vw;
+            width: 100vw;
             height: 8vh;
             background-color: transparent;
             font-size: 0.4vw;
@@ -808,7 +809,7 @@
 
         .modaltoggle-button {
             display: none;
-            margin-right: 0.5vw;
+            margin-right: 0.1vw;
             margin-top: 1vh;
             width: 25vw;
             height: 5.5vh;
@@ -863,7 +864,7 @@
 
         #map2 {
             width: 100vw;
-            height: 35vh;
+            height: 40vh;
             display: block;
             border: 0.5vw solid black;
             box-sizing: border-box;
@@ -961,12 +962,12 @@
             display: none;
             margin-right: 3vw;
             margin-top: 1vh;
-            width: 35vw;
+            width: 40vw;
             height: 5.5vh;
             box-sizing: border-box;
             background-color: #222222;
             color: white;
-            font-size: 5vw;
+            font-size: 4vw;
             align-items: center;
             text-align: center;
             justify-content: center;
