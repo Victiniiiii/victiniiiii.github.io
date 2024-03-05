@@ -895,7 +895,6 @@ margin-bottom: 1vh;
 .startpagerighthalf {
     width: 100vw;
     height: 40vh;
-    margin-top: 1vh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -906,7 +905,7 @@ margin-bottom: 1vh;
 
 .izmirgamelogo {
     width: 90vw;
-    height: 12vh;
+    height: 15vh;
     margin-left: 5vw;
     box-sizing: border-box;
     background-image: url("../static/images/izmirlogo.png");
@@ -925,12 +924,12 @@ margin-bottom: 1vh;
 }
 
 .highscore {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-left: 3.5vw;
 }
 
 .izmirfaq {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-left: 2vw;
     margin-right: 3vw;
 }
@@ -983,9 +982,8 @@ margin-bottom: 1vh;
 }
 
 .ilcesayisi {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-left: 1.6vw;
-    margin-bottom: 2vh;
     text-align: center;
 }
 
@@ -996,13 +994,12 @@ margin-bottom: 1vh;
     border: 0.05vw solid black;
     display: flex;
     flex-direction: row;
-    padding: 0.2vw;
     backdrop-filter: blur(0.5vw);
     align-items: center;
 }
 
 .izmirayarlar {
-    font-size: 2vw;
+    font-size: 3vw;
     margin-left: 10vw;
     margin-right: 10vw; 
 }
