@@ -986,6 +986,7 @@
     border: 0.05vw solid black;
     backdrop-filter: blur(0.5vw);
     justify-content: center;
+    align-items: center;
 }
 
 .palatino {
@@ -993,7 +994,7 @@
 }
 
 .ilcebutton {
-    font-size: 3.7vh;
+    font-size: 3.2vh;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
@@ -1010,7 +1011,7 @@
 }
 
 .addremovebuttons {
-    font-size: 4.35vh;
+    font-size: 4vh;
     margin: 0.1vw;
     margin-left: 1.5vw;
 }
