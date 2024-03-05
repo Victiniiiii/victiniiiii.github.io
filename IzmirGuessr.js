@@ -11,7 +11,6 @@ let round3Score = 0;
 let round4Score = 0;
 let round5Score = 0;
 let totalPoints = 0;
-let highscore = 0;
 const initialLat = 38.609979;
 const initialLon = 27.398601;
 const initialZoom = 9;
@@ -19,6 +18,9 @@ let roundTimer;
 let timerSeconds = 60; 
 let selectedTimeLimit = "No Time Limit"; 
 let isTimerPaused = false;
+let highscore = localStorage.getItem('highscore') ? parseInt(localStorage.getItem('highscore')) : 0;
+document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
+
 
 let startPage = document.getElementById('startpage');
 let gamemap = document.getElementById('gamemap');
@@ -676,6 +678,7 @@ function returnToMainMenu() {
     roundCount = 0;
     if (totalPoints > highscore) {
         highscore = totalPoints; 
+        localStorage.setItem('highscore', highscore);
     }
     document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
     totalPoints = 0;
@@ -869,3 +872,5 @@ window.addEventListener('load', loadSelectedTimeLimit);
 
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
+
+
