@@ -1,22 +1,22 @@
 
-html {
-    background-image: url("../static/images/cloud.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    box-sizing: border-box;
-}
+        html {
+            background-image: url("../static/images/cloud.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            box-sizing: border-box;
+        }
 
-body {
-    box-sizing: border-box;
-    font-family: Verdana, sans-serif;
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-}
+        body {
+            box-sizing: border-box;
+            font-family: Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            margin: 0;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+        }
 
         .title-section {
             background-image: url("../static/images/thunder.jpg");
@@ -28,7 +28,7 @@ body {
             align-items: center;
             width: 100%;
             border: 3px solid black;
-            margin-bottom: 10px;
+            margin-bottom: 0.1vh;
         }
 
         .main-menu-button {
@@ -634,408 +634,407 @@ body {
 
 
 
-#gamemap {
-    width: 100vw;
-    height: 70vh;
-    position: absolute;
-    z-index: 1;
-    display: flex;
-    box-sizing: border-box;
-}
+        #gamemap {
+            width: 100vw;
+            height: 65vh;
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            box-sizing: border-box;
+        }
 
-#mini-map {
-    width: 100%;
-    height: 90%;
-    z-index: 3;
-    box-sizing: border-box;
-}
+        #mini-map {
+            width: 100%;
+            height: 30vh;
+            z-index: 3;
+            box-sizing: border-box;
+        }
 
-.result-map {
-    height: 35vh;
-    width: 100%;
-    border: 0.05vw solid black;
-    margin-bottom: 2vh;
-    box-sizing: border-box;
-}
+        .result-map {
+            height: 35vh;
+            width: 100%;
+            border: 0.05vw solid black;
+            margin-bottom: 2vh;
+            box-sizing: border-box;
+        }
 
-#overlay-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 30vh;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 0.05vw solid black;
-    box-sizing: border-box;
-}
+        #overlay-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 35vh;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 0.05vw solid black;
+            box-sizing: border-box;
+        }
 
-#overlay-container.hovered {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 30vh;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 0.05vw solid black;
-    box-sizing: border-box;
-}
+        #overlay-container.hovered {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 35vh;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 0.05vw solid black;
+            box-sizing: border-box;
+        }
 
 
-#action-button {
-    width: 100%;
-    height: 10%;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    border: none;
-    font-size: 1.2em;
-    box-sizing: border-box;
-}
+        #action-button {
+            width: 100%;
+            height: 5vh;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            box-sizing: border-box;
+        }
 
-#next-game-button {
-    width: 100%;
-    height: 5vh;
-    box-sizing: border-box;
-}
+        #next-game-button {
+            width: 100%;
+            height: 5vh;
+            box-sizing: border-box;
+        }
 
-.modal {
-    display: flex;
-    flex-direction: column;
-    display: none;
-    position: fixed;
-    z-index: 1;
-    width: 100vw;
-    height: 53vh;
-    margin-top: 20vh;
-    overflow: auto;
-    border: 0.1vw solid black;
-    box-sizing: border-box;
-    justify-content: center;
-    background-image: url("../static/images/izmirpixel.png");
-}
+        .modal {
+            display: flex;
+            flex-direction: column;
+            display: none;
+            position: fixed;
+            z-index: 1;
+            width: 100vw;
+            height: 50vh;
+            margin-top: 20vh;
+            overflow: auto;
+            border: 0.1vw solid black;
+            box-sizing: border-box;
+            justify-content: center;
+            background-image: url("../static/images/izmirpixel.png");
+        }
 
-.final-results-modal {
-    display: flex;
-    flex-direction: column;
-    display: none;
-    position: absolute;
-    z-index: 4;
-    width: 100vw;
-    height: 53vh;
-    margin-top: 20vh;
-    overflow: auto;
-    background-color: #fefefe;
-    padding: 0.5vw;
-    border: 0.1vw solid black;
-    box-sizing: border-box;
-    justify-content: center;
-    box-sizing: border-box;
-    background-repeat: repeat;
-    background-image: url("../static/images/izmirpixel.png");
-    align-items: center;
-}
+        .final-results-modal {
+            display: flex;
+            flex-direction: column;
+            display: none;
+            position: absolute;
+            z-index: 4;
+            width: 100vw;
+            height: 50vh;
+            margin-top: 20vh;
+            overflow: auto;
+            background-color: #fefefe;
+            padding: 0.5vw;
+            border: 0.1vw solid black;
+            box-sizing: border-box;
+            justify-content: center;
+            box-sizing: border-box;
+            background-repeat: repeat;
+            background-image: url("../static/images/izmirpixel.png");
+            align-items: center;
+        }
 
-.modalrow {
-    display: flex;
-    flex-direction: row;
-    width: 90vw;
-    height: 5vh;
-    justify-content: center;
-    text-align: center;
-    font-size: 1vw;
-    font-family: Verdana;
-    margin-top: 1vw;
-    box-sizing: border-box;
-    backdrop-filter: blur(0.5vw);
-    border: 0.1vw solid black;
-    align-items: center;
-}
+        .modalrow {
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            height: 5vh;
+            justify-content: center;
+            text-align: center;
+            font-size: 1vw;
+            font-family: Verdana;
+            margin-top: 2vh;
+            box-sizing: border-box;
+            backdrop-filter: blur(1vw);
+            border: 0.1vw solid black;
+            align-items: center;
+        }
 
-.finalrow {
-    display: flex;
-    flex-direction: row;
-    width: 90vw;
-    height: 5vh;
-    margin-top: 6vh;
-    justify-content: center;
-    text-align: center;
-    font-size: 1vw;
-    font-family: Verdana;
-    box-sizing: border-box;
-    backdrop-filter: blur(0.5vw);
-    border: 0.2vw solid black;
-    align-items: center;
-}
+        .finalrow {
+            display: flex;
+            flex-direction: row;
+            width: 90vw;
+            height: 5vh;
+            margin-top: 6vh;
+            justify-content: center;
+            text-align: center;
+            font-size: 2vh;
+            font-family: Verdana;
+            box-sizing: border-box;
+            backdrop-filter: blur(1vw);
+            border: 0.2vw solid black;
+            align-items: center;
+        }
 
-.modalcontent {
-    flex: 1;
-    margin: 0;
-    box-sizing: border-box;
-}
+        .modalcontent {
+            flex: 1;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-#result-info {
-    margin-top: 2.35vh;
-    box-sizing: border-box;
-}
+        #result-info {
+            margin-top: 2.35vh;
+            box-sizing: border-box;
+        }
 
-#returntomenu-button, #playagain-button {
-    height: 4.2vh;
-}
+        #returntomenu-button, #playagain-button {
+            height: 4.2vh;
+        }
 
-#mini-map .gmnoprint, #result-map .gmnoprint {
-    display: none !important;
-}
+        #mini-map .gmnoprint, #result-map .gmnoprint {
+            display: none !important;
+        }
 
-#buttonrow {
-    width: 90vw;
-    height: 8vh;
-    background-color: transparent;
-    font-size: 0.4vw;
-    z-index: 5;
-    position: absolute;
-    overflow: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    box-sizing: border-box;
-}
+        #buttonrow {
+            width: 90vw;
+            height: 8vh;
+            background-color: transparent;
+            font-size: 0.4vw;
+            z-index: 5;
+            position: absolute;
+            overflow: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
 
-.modaltoggle-button {
-    display: none;
-    margin-right: 0.5vw;
-    margin-top: 1.1vh;
-    width: 15vw;
-    height: 4.3vh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-}
+        .modaltoggle-button {
+            display: none;
+            margin-right: 0.5vw;
+            margin-top: 1vh;
+            width: 20vw;
+            height: 5.5vh;
+            box-sizing: border-box;
+            background-color: #222222;
+            color: white;
+        }
 
-.returnbutton {
-    margin-top: 1vh;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    width: 15vw;
-    height: 6vh;
-    transform: scale(0.75);
-    background-image: url('../static/images/return40gray.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border: 0.05vw solid black;
-    border-radius: 0.5vh;
-    box-sizing: border-box;
-}
+        .returnbutton {
+            margin-top: 1vh;
+            margin-left: 3vw;
+            margin-right: 3vw;
+            width: 15vw;
+            height: 6vh;
+            transform: scale(0.8);
+            background-image: url('../static/images/return40gray.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border: 0.05vw solid black;
+            border-radius: 0.5vh;
+            box-sizing: border-box;
+        }
 
-.returnbutton:hover {
-    background-image: url('../static/images/return40normal.png');
-}
+        .returnbutton:hover {
+            background-image: url('../static/images/return40normal.png');
+        }
 
-.izmirclose {
-    margin-top: 1vh;
-    width: 15vw;
-    height: 6vh;
-    transform: scale(0.75); 
-    background-image: url('../static/images/izmirclose1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border: 0.05vw solid black;
-    border-radius: 0.5vh;
-    box-sizing: border-box;
-}
+        .izmirclose {
+            margin-top: 1vh;
+            width: 15vw;
+            height: 6vh;
+            transform: scale(0.8); 
+            background-image: url('../static/images/izmirclose1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border: 0.05vw solid black;
+            border-radius: 0.5vh;
+            box-sizing: border-box;
+        }
 
-.izmirclose:hover {
-    background-image: url('../static/images/izmirclose2.png');
-}
+        .izmirclose:hover {
+            background-image: url('../static/images/izmirclose2.png');
+        }
 
-#return-button, #overlay-container {
-    display: none;
-}
+        #return-button, #overlay-container {
+            display: none;
+        }
 
-/* styles2.css */
+        /* styles2.css */
 
-#map2 {
-    width: 100vw;
-    height: 100%;
-    display: block;
-    border: 1vw solid black;
-    box-sizing: border-box;
-}
+        #map2 {
+            width: 100vw;
+            height: 35vh;
+            display: block;
+            border: 0.5vw solid black;
+            box-sizing: border-box;
+        }
 
-.startpage {
-    width: 100vw;
-    height: 89vh;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-}
+        .startpage {
+            width: 100vw;
+            height: 89vh;
+            display: flex;
+            flex-direction: column-reverse;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
 
-.startpagelefthalf {
-    width: 100vw;
-    height: 60%;
-    box-sizing: border-box;
-}
+        .startpagelefthalf {
+            width: 100vw;
+            height: 40vh;
+            box-sizing: border-box;
+        }
 
-.faq-menu {
-    width: 100vw;
-    height: 60%;
-    box-sizing: border-box;
-    display: none;
-    background-color: white;
-    border: 0.25vw solid black;
-}
+        .faq-menu {
+            width: 100vw;
+            height: 35vh;
+            box-sizing: border-box;
+            display: none;
+            background-color: white;
+            border: 0.25vw solid black;
+        }
 
-.faq-menu.show {
-    display: block;
-}
+        .faq-menu.show {
+            display: block;
+        }
 
-.izmirfaqtext1 {
-    font-size: 6vw;
-    color: red;
-}
+        .izmirfaqtext1 {
+            font-size: 4vw;
+            color: red;
+        }
 
-.izmirfaqtext2 {
-    font-size: 12vw;
-}
+        .izmirfaqtext2 {
+            font-size: 8vw;
+        }
 
-.izmirfaqtext3 {
-    font-size: 4.5vw;
-    color: gray;
-}
+        .izmirfaqtext3 {
+            font-size: 2.8vw;
+            color: gray;
+        }
 
-.startpagerighthalf {
-    width: 100vw;
-    height: 40%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    border: 0.25vw solid black;
-    background-image: url("../static/images/izmirpixel.png");
-    background-repeat: repeat;
-}
+        .startpagerighthalf {
+            width: 100vw;
+            height: 59vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            border: 0.5vw solid black;
+            background-image: url("../static/images/izmirpixel.png");
+            background-repeat: repeat;
+        }
 
-.izmirgamelogo {
-    width: 90vw;
-    height: 10.68vh;
-    margin-left: 5vw;
-    box-sizing: border-box;
-    background-image: url("../static/images/izmirlogo.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    backdrop-filter: blur(0.5vw);
-    border: 0.1vw solid black;
-}
+        .izmirgamelogo {
+            width: 90vw;
+            height: 10.68vh;
+            margin-left: 5vw;
+            box-sizing: border-box;
+            background-image: url("../static/images/izmirlogo.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            backdrop-filter: blur(1vw);
+            border: 0.2vh solid black;
+        }
 
-.izmirilcebox {
-    width: 100vw;
-    height: 17.8vh;
-    box-sizing: border-box;
-    align-items: center;
-}
+        .izmirilcebox {
+            width: 100vw;
+            height: 29.8vh;
+            align-items: center;
+            box-sizing: border-box;
+        }
 
-.highscore {
-    display: flex;
-    flex-direction: row;
-    font-size: 3vw;
-    margin-left: 3.5vw;
-}
+        .highscore {
+            display: flex;
+            flex-direction: row;
+            font-size: 4vw;
+            margin-left: 1.5vw;
+        }
 
-.izmirfaq {
-    width: 50%;
-    height: 100%;
-    font-size: 3vw;
-    margin-left: 1vw;
-    margin-right: 1vw;
-}
+        .izmirfaq {
+            width: 50%;
+            height: 100%;
+            font-size: 2vh;
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
 
-#timer {
-    display: none;
-    margin-right: 3vw;
-    margin-top: 1vh;
-    width: 35vw;
-    height: 5.5vh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-    font-size: 5vw;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    border-radius: 0.5vh;
-}
+        #timer {
+            display: none;
+            margin-right: 3vw;
+            margin-top: 1vh;
+            width: 35vw;
+            height: 5.5vh;
+            box-sizing: border-box;
+            background-color: #222222;
+            color: white;
+            font-size: 5vw;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border-radius: 0.5vh;
+        }
 
-.izmirilcebuttons {
-    width: 100vw;
-    height: 14.24vh;
-    padding: 1vw;
-    box-sizing: border-box;
-    border: 0.05vw solid black;
-    backdrop-filter: blur(0.5vw);
-    justify-content: center;
-}
+        .izmirilcebuttons {
+            width: 100vw;
+            height: 26.24vh;
+            padding: 1vw;
+            box-sizing: border-box;
+            backdrop-filter: blur(1vw);
+            justify-content: center;
+            align-items: center;
+        }
 
-.ilcebutton {
-    font-size: 1.1vh;
-}
+        .ilcebutton {
+            font-size: 2.2vh;
+        }
 
-.izmirilcebottombuttons {
-    width: 100vw;
-    height: 3.56vh;
-    box-sizing: border-box;
-    border: 0.05vw solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    backdrop-filter: blur(0.5vw);
-}
+        .izmirilcebottombuttons {
+            width: 100vw;
+            height: 3.56vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            backdrop-filter: blur(1vw);
+        }
 
-.addremovebuttons {
-    font-size: 2vw;
-    margin: 0.1vw;
-    margin-left: 2vw;
-}
+        .addremovebuttons {
+            font-size: 3vw;
+            margin: 0.1vw;
+            margin-left: 2vw;
+        }
 
-.ilcesayisi {
-    font-size: 4vw;
-    margin-left: 10vw;
-    text-align: center;
-}
+        .ilcesayisi {
+            font-size: 4vw;
+            margin-left: 10vw;
+            text-align: center;
+        }
 
-.izmirlastrows {
-    width: 100vw;
-    height: 3.56vh;
-    box-sizing: border-box;
-    border: 0.05vw solid black;
-    display: flex;
-    flex-direction: row;
-    backdrop-filter: blur(0.5vw);
-    align-items: center;
-}
+        .izmirlastrows {
+            width: 100vw;
+            height: 6.06vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            backdrop-filter: blur(1vw);
+            align-items: center;
+        }
 
-.izmirayarlar {
-    font-size: 3vw;
-    margin-left: 1vw;
-    margin-right: 10vw;
-    padding: 5vw;
-    display: flex;
-    flex-direction: row;
-}
+        .izmirayarlar {
+            font-size: 4vw;
+            margin-left: 1vw;
+            margin-right: 10vw;
+            padding: 2vw;
+            display: flex;
+            flex-direction: row;
+        }
 
-.izmirstartgame {
-    width: 100%;
-    height: 100%;
-    margin-left: 2vw;
-    font-size: 1.5vh;
-    margin-right: 1vw;
-}
+        .izmirstartgame {
+            width: 100%;
+            height: 100%;
+            margin-left: 2vw;
+            font-size: 2vh;
+            margin-right: 1vw;
+        }
 
-#izmirtime {
-    font-size: 2vw;
-}
+        #izmirtime {
+            font-size: 3vw;
+        }
