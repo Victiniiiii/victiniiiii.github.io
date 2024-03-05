@@ -17,6 +17,7 @@ const initialLon = 27.398601;
 const initialZoom = 9;
 let roundTimer;
 let timerSeconds = 60; 
+let selectedTimeLimit = "No Time Limit"; 
 let isTimerPaused = false;
 
 let startPage = document.getElementById('startpage');
@@ -358,7 +359,6 @@ function formatlama() {
 }
 
 function getRandomLocation() {
-
     selectedDistrictBounds = formatlama();
     const lat = Math.random() * (selectedDistrictBounds.north - selectedDistrictBounds.south) + selectedDistrictBounds.south;
     const lng = Math.random() * (selectedDistrictBounds.east - selectedDistrictBounds.west) + selectedDistrictBounds.west;
@@ -384,13 +384,13 @@ function initMap() {
         resultModal.style.display = 'none';
         document.getElementById('modaltoggle-button').style.display = 'none';
         document.getElementById('timer').style.display = 'block';
-        timerSeconds = 60;
 
-        if (roundTimer) {
-            clearInterval(roundTimer);
-        }
+        resumeTimer()        
 
+        if (roundTimer) {clearInterval(roundTimer);}
+        timerSeconds = getSecondsFromTimeLimit(selectedTimeLimit);
         roundTimer = setInterval(updateTimer, 1000);
+        updateTimerDisplay();
 
         gamemap = new google.maps.Map(document.getElementById('gamemap'), {
             center: randomLocation,
@@ -610,10 +610,35 @@ function displayResults(distance, points) {
     document.getElementById('overlay-container').style.display = 'none';
     document.getElementById('modaltoggle-button').style.display = 'block';
     pauseTimer()
+
+    const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
+
+    const lineCoordinates = [
+        { lat: guessedLatLng.lat, lng: guessedLatLng.lng },
+        { lat: randomLocation.lat, lng: randomLocation.lng },
+    ];
+
+    const line = new google.maps.Polyline({
+        path: lineCoordinates,
+        geodesic: true,
+        strokeColor: '#FF0000',  // Red
+        strokeOpacity: 1.0,
+        strokeWeight: 2,
+    });
+
+    line.setMap(resultMap);  
 }
 
 function getZoomLevel(distance) {
-    if (distance < 1000) {
+    if (distance < 50) {
+        return 18;
+    } else if (distance < 100) {
+        return 17;
+    } else if (distance < 250) {
+        return 16;
+    } else if (distance < 500) {
+        return 15;
+    } else if (distance < 1000) {
         return 14;
     } else if (distance < 2500) {
         return 13;
@@ -627,7 +652,7 @@ function getZoomLevel(distance) {
         return 9;
     } else if (distance < 80000) {
         return 8;
-    } else {
+    }  else {
         return 7
     }
 }
@@ -670,9 +695,12 @@ function returnToMainMenu() {
     finalresultsmodal.style.display = 'none';
     buttonrow.style.display = 'none';
     document.getElementById('result-modal').style.display = 'none';
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map2);
+    pauseTimer();
 }
 
 function startGame() {
+    getSecondsFromTimeLimit();
     loadGoogleMapsAPI('initMap');
     initMap();
 }
@@ -688,7 +716,7 @@ function startNextGame() {
         document.getElementById('modaltoggle-button').style.display = 'none';
         document.getElementById('result-modal').style.display = 'none';
         modaltogglebutton.style.display = 'none';
-        resumeTimer()
+        resumeTimer();
         initMap();
     }
 }
@@ -747,20 +775,43 @@ function toggleDistrict(districtName) {
     }
 }
 
+function updateTimerDisplay() {
+    let displayText;
+    if (timerSeconds === Infinity) {
+        displayText = "Remaining: No Time Limit";
+    } else {
+        displayText = `Remaining: ${timerSeconds} Seconds`;
+    }
+    document.getElementById('timer').textContent = displayText;
+}
+
+
 function updateTimer() {
-    const isTimeLimitEnabled = document.getElementById('myCheckbox2').checked;
-
-    if (isTimeLimitEnabled) {
-        document.getElementById('timer').innerText = `Time Left: ${timerSeconds} seconds`;
-
-        if (timerSeconds <= 0) {
+    getSecondsFromTimeLimit();
+    if (!isTimerPaused) {
+        if (selectedTimeLimit !== "No Time Limit" && timerSeconds > 0) {
+            timerSeconds--;
+            updateTimerDisplay();
+        } else if (selectedTimeLimit !== "No Time Limit" && timerSeconds === 0) {
             clearInterval(roundTimer);
             initMap();
-        } else if (!isTimerPaused) {
-            timerSeconds--;
         }
+    }
+}
+
+function getSecondsFromTimeLimit(timeLimit) {
+    return parseInt(timeLimit) || Infinity;
+}
+
+function changeTimeLimit(timeLimit) {
+    selectedTimeLimit = timeLimit;
+
+    if (timeLimit === Infinity) {
+        document.getElementById('timer').textContent = "Remaining: No Time Limit";
+        clearInterval(roundTimer);  
     } else {
-        document.getElementById('timer').innerText = 'Time Left: Not Enabled';
+        const seconds = getSecondsFromTimeLimit(timeLimit);
+        document.getElementById('timer').textContent = `Remaining: ${seconds} Seconds`;
     }
 }
 
@@ -774,7 +825,7 @@ function pauseTimer() {
 }
 
 function resumeTimer() {
-    isTimerPaused = false;
+    isTimerPaused = false;  
 }
 
 overlayContainer.addEventListener('mouseenter', function () {
@@ -798,6 +849,23 @@ faqButton.addEventListener('click', function () {
         startPageLeftHalf.style.display = 'none';
     }
 });
+
+function saveSelectedTimeLimit() {
+    const selectedTimeLimit = document.getElementById('izmirtime').value;
+    localStorage.setItem('selectedTimeLimit', selectedTimeLimit);
+}
+
+function loadSelectedTimeLimit() {
+    const savedTimeLimit = localStorage.getItem('selectedTimeLimit');
+    if (savedTimeLimit) {
+        document.getElementById('izmirtime').value = savedTimeLimit;
+        selectedTimeLimit = savedTimeLimit;
+        updateTimerDisplay();  
+    }
+}
+
+document.getElementById('izmirtime').addEventListener('change', saveSelectedTimeLimit);
+window.addEventListener('load', loadSelectedTimeLimit);
 
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
