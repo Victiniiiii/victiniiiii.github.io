@@ -644,7 +644,7 @@
         }
 
         #mini-map {
-            width: 100%;
+            width: 100vw;
             height: 30vh;
             z-index: 3;
             box-sizing: border-box;
@@ -747,7 +747,7 @@
             height: 5vh;
             justify-content: center;
             text-align: center;
-            font-size: 1vw;
+            font-size: 2vh;
             font-family: Verdana;
             margin-top: 2vh;
             box-sizing: border-box;
@@ -761,6 +761,7 @@
             flex-direction: row;
             width: 90vw;
             height: 5vh;
+            margin-left: 5vw;
             margin-top: 6vh;
             justify-content: center;
             text-align: center;
@@ -802,14 +803,14 @@
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            box-sizing: border-box;
+            box-sizing: border-box;            
         }
 
         .modaltoggle-button {
             display: none;
             margin-right: 0.5vw;
             margin-top: 1vh;
-            width: 20vw;
+            width: 25vw;
             height: 5.5vh;
             box-sizing: border-box;
             background-color: #222222;
