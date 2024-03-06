@@ -1,6 +1,6 @@
 		
-	    body {
-	        background-image: url("../static/images/cloud.jpg");
+	body {
+	    background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             box-sizing: border-box;
@@ -10,7 +10,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-			text-align: center;
+	    text-align: center;
         }
 
         .title-section {
@@ -22,17 +22,17 @@
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            border: 0.2vw solid black;
-            margin-bottom: 0.9vh;
+            border: 0.2dvw solid black;
+            margin-bottom: 0.9dvh;
         }
 
         .main-menu-text {
-            font-size: 2vw;
+            font-size: 2dvw;
             text-align: center; 
             color: white;
             margin: 0;
-            text-shadow: 0.1vw 0.2vh #b5b5b5;
-            backdrop-filter: blur(0.2vw);
+            text-shadow: 0.1dvw 0.2dvh #b5b5b5;
+            backdrop-filter: blur(0.2dvw);
         }
 
         .project-buttons {
@@ -41,20 +41,20 @@
 
         .main-menu-button {
             cursor: pointer;
-            width: 4vw;
-            height: 8vh;
+            width: 4dvw;
+            height: 8dvh;
         }
 
         .category-button {
             background: white;
-            border: 0.1vw solid black;
+            border: 0.1dvw solid black;
             box-sizing: border-box;
-            font-size: 1vw;
+            font-size: 1dvw;
             color: black;
             text-decoration: none;
-            padding: 0.3vw 2.5vh;
+            padding: 0.3dvw 2.5dvh;
             cursor: pointer;
-            margin: 0.5vw 1vh;
+            margin: 0.5dvw 1dvh;
             position: relative;
         }
 
@@ -62,29 +62,29 @@
             background-color: rgba(0,0,0,0.5);
             color: white;
             text-align: left;
-            width: 42vw;
-            height: 21vh;
-            margin: 1vw;
-            padding: 0.5vw;
-            border: 0.05vw solid rgba(0,0,0,0.3);
+            width: 42dvw;
+            height: 21dvh;
+            margin: 1dvw;
+            padding: 0.5dvw;
+            border: 0.05dvw solid rgba(0,0,0,0.3);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            border-radius: 0.4vw;
-            backdrop-filter: blur(0.1vw);
-            box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
+            border-radius: 0.4dvw;
+            backdrop-filter: blur(0.1dvw);
+            box-shadow: 0 0.05dvw 0.63dvw rgba(255,255,255,0.25);
         }
 
         .project-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 3.5vh;
+            margin-bottom: 3.5dvh;
         }
 
         .project-button {
-            width: 26vw;
-            font-size: 1.2vw;
+            width: 26dvw;
+            font-size: 1.2dvw;
         }
 
         .release-date {
@@ -97,36 +97,36 @@
         }
 
         .project-logo {
-            width: 7.8vw;
-            height: 7.8vw;
-            margin-right: 0.5vw;
+            width: 7.8dvw;
+            height: 7.8dvw;
+            margin-right: 0.5dvw;
         }
 
         .project-description {
             flex: 1;
-            height: 16vh;
-            margin-left: 0.5vw;
+            height: 16dvh;
+            margin-left: 0.5dvw;
         }
 
         .placeholder-box {
             background: white;
-            border: 0.1vw solid black;
+            border: 0.1dvw solid black;
             box-sizing: border-box;
-            padding: 0.5vw;
+            padding: 0.5dvw;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-top: 35vh;
+            margin-top: 35dvh;
         }
 
         .contact-item {
-            margin: 0.5vw 0;
+            margin: 0.5dvw 0;
         }
 
         .contact-item img {
             vertical-align: middle;
-            margin-right: 0.5vw;
+            margin-right: 0.5dvw;
         }
 
         .contact-item a {
@@ -135,15 +135,15 @@
         }
 
 		.contact-box {
-            border: 0.1vw solid white;
+            border: 0.1dvw solid white;
             box-sizing: border-box;
-            padding: 1vw;
+            padding: 1dvw;
             background-color: black;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 30vh;
+            margin-top: 30dvh;
         }
 
 
@@ -153,7 +153,7 @@
 
 
         .forgegrid {
-            width: 90vw;
+            width: 90dvw;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -172,7 +172,7 @@
             width: 47%;
             height: 90%;
             background-color: #ccc;
-            border: 0.05vw solid #000;
+            border: 0.05dvw solid #000;
             box-sizing: border-box;
             position: relative;
             justify-content: space-between;
@@ -180,8 +180,8 @@
         }
 
         .forgesatir {
-            width: 90vw;
-            height: 11vh;
+            width: 90dvw;
+            height: 11dvh;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -189,10 +189,10 @@
         }
 
         .forgegrid-image {
-            width: 4vw;
-            height: 8vh;
+            width: 4dvw;
+            height: 8dvh;
             position: absolute;
-            left: 0.5vw;
+            left: 0.5dvw;
             top: 50%;
             transform: translateY(-50%);
         }
@@ -205,7 +205,7 @@
 
         .gem-text {
             justify-content: center;
-            margin: 0.68vw;
+            margin: 0.68dvw;
             padding: 0;
         }
 
@@ -225,14 +225,14 @@
 
         .bigoilbigbox {
             position: relative;
-            padding: 1vw;
+            padding: 1dvw;
             color: black;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            margin: 1vw 0;
+            margin: 1dvw 0;
             box-sizing: border-box;
         }
 
@@ -246,13 +246,13 @@
 
         .map-image {
             background-image: url("../static/images/map.png");
-            padding: 1vw;
+            padding: 1dvw;
             color: black;
             background-color: white;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
             width: 32%;
-            height: 65vh;
+            height: 65dvh;
         }
 
         .engine-list {
@@ -268,9 +268,9 @@
             background-color: white;
             width: 34%;
             height: 100%;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
-            font-size: 1.6vw;
+            font-size: 1.6dvw;
             position: sticky;
             z-index: 1;
             text-align: center;
@@ -278,7 +278,7 @@
             justify-content: center;
             overflow: auto;
             font-family: Verdana, sans-serif;
-            height: 65vh;
+            height: 65dvh;
         }
 
         .bigoilcontainer {
@@ -287,33 +287,33 @@
             align-items: center;
             text-align: center;
             justify-content: center;
-            margin: 0 0.9vh;
+            margin: 0 0.9dvh;
             box-sizing: border-box;
         }
 
         .faq-title {
             background-color: white;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
             text-align: center;
             font-family: Verdana, sans-serif;
-            padding: 0 0.9vh;
+            padding: 0 0.9dvh;
             margin: 0;
-            font-size: 1vw;
+            font-size: 1dvw;
         }
 
         .faq-content {
             font-family: Verdana, sans-serif;
             background-color: white;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
-            padding: 1vw;
-            margin: 0.5vw;
+            padding: 1dvw;
+            margin: 0.5dvw;
             justify-self: start;
         }
 
         .faq-content p {
-            margin: 1vw 0.9vh;
+            margin: 1dvw 0.9dvh;
             text-align: left;
         }
 
@@ -321,23 +321,23 @@
             display: flex;
             justify-content: space-between;
             background-color: white;
-            padding: 1vw 0;
-            border: 0.05vw solid black;
+            padding: 1dvw 0;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
             width: 70%;
         }
 
         .imagetext {
-            font-size: 1vw;
+            font-size: 1dvw;
             color: white;
-            backdrop-filter: blur(0.2vw);
+            backdrop-filter: blur(0.2dvw);
         }
 
         .imagebigoil {
             text-align: center;
-            margin-bottom: 0.9vh;
-            width: 28vw;
-            height: 50vh;
+            margin-bottom: 0.9dvh;
+            width: 28dvw;
+            height: 50dvh;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -349,14 +349,14 @@
 
         #buttonContainer {
             display: flex;
-            margin-top: 1.85vh;
+            margin-top: 1.85dvh;
             width: 80%;
             justify-content: space-between;
             background-color: transparent;
-            border-radius: 0.4vw;
-            backdrop-filter: blur(0.15vw);
+            border-radius: 0.4dvw;
+            backdrop-filter: blur(0.15dvw);
             background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+            box-shadow: 0 0.05dvw 0.6dvw rgba(0,0,0,0.25);
         }
 
         .show {
@@ -364,28 +364,28 @@
         }
 
         #rectangle {
-            width: 80vw;
-            height: 80vh;
+            width: 80dvw;
+            height: 80dvh;
             text-align: center;
-            padding: 1vw 1vh;
+            padding: 1dvw 1dvh;
             position: relative;
             box-sizing: border-box;
             color: white;
-            border-radius: 0.4vw;
-            backdrop-filter: blur(0.1vw);
+            border-radius: 0.4dvw;
+            backdrop-filter: blur(0.1dvw);
             background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
-            border: 0.05vw solid rgba(255,255,255,0.3);
+            box-shadow: 0 0.05dvw 0.6dvw rgba(0,0,0,0.25);
+            border: 0.05dvw solid rgba(255,255,255,0.3);
         }
 
         #rectangle .lessonList li, #rectangle ul li {
             list-style-type: none;
-            margin-bottom: 1.2vh;
+            margin-bottom: 1.2dvh;
             color: white;
         }
 
         #rectangle select {
-            font-size: 1.1vw;
+            font-size: 1.1dvw;
         }
 
         #examMode {
@@ -397,7 +397,7 @@
         }
 
         #faqMode {
-            font-size: 1vw;
+            font-size: 1dvw;
             display: none;
         }
 
@@ -411,40 +411,40 @@
 
         #result {
             display: none;
-            font-size: 1.87vw;
-            margin-top: 1.84vh;
-            margin-bottom: 0.92vh;
+            font-size: 1.87dvw;
+            margin-top: 1.84dvh;
+            margin-bottom: 0.92dvh;
         }
 
         #noteInput {
             display: none;
-            font-size: 1.87vw;
+            font-size: 1.87dvw;
             width: 60%;
-            padding: 1.3vw;
+            padding: 1.3dvw;
             box-sizing: border-box;
             margin: 0 auto;
-            margin-top: 2.77vh;
-            margin-bottom: 2.77vh;
+            margin-top: 2.77dvh;
+            margin-bottom: 2.77dvh;
             text-align: center;
         }
 
         #calculateButton {
             display: none;
             width: 20%;
-            margin-top: 1.85vh;
+            margin-top: 1.85dvh;
             margin-left: auto;
             margin-right: auto;
             background-color: transparent;
         }
 
         #examResultsText {
-            margin-top: 3.7vh;
-            font-size: 1.87vw;
+            margin-top: 3.7dvh;
+            font-size: 1.87dvw;
         }
 
         .modeButton {
             flex: 1;
-            height: 1.82vw;
+            height: 1.82dvw;
             font-family: 'Verdana', sans-serif;
             box-sizing: border-box;
             color: white;
@@ -452,39 +452,39 @@
         }
 
         .dropdown {
-            font-size: 1vw;
+            font-size: 1dvw;
             position: relative;
             display: inline-block;
         }
 
         .dropdown button {
-            font-size: 1vw;
-            padding: 0.52vw 0.92vh;
+            font-size: 1dvw;
+            padding: 0.52dvw 0.92dvh;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            font-size: 1vw;
-            box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2);
+            font-size: 1dvw;
+            box-shadow: 0 0.4dvw 0.8dvw 0 rgba(0, 0, 0, 0.2);
             z-index: 5;
         }
 
         .dropdown-content a {
             color: white;
-            font-size: 1vw;
-            padding: 0.88vw;
+            font-size: 1dvw;
+            padding: 0.88dvw;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            font-size: 1vw;
+            font-size: 1dvw;
             color: white;
         }
 
         .dropdown-gpa {
-            font-size: 1vw;
+            font-size: 1dvw;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -492,7 +492,7 @@
         }
 
         .dropdown-stat22 {
-            font-size: 1vw;
+            font-size: 1dvw;
             position: absolute;
             top: 0;
             right: 0;
@@ -501,31 +501,31 @@
         .stat22RectanglesContainer {
             position: absolute;
             bottom: 0;
-            width: 75vw;
+            width: 75dvw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 3.05vw;
-            padding-left: 3vw;
+            padding-bottom: 3.05dvw;
+            padding-left: 3dvw;
         }
 
         .stat22RectanglesContainer2 {
             position: absolute;
             bottom: 0;
-            width: 75vw;
+            width: 75dvw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 1vw;
-            padding-left: 3vw;
+            padding-bottom: 1dvw;
+            padding-left: 3dvw;
         }
 
         .stat22RectanglesContainer3 {
             position: absolute;
             bottom: 0;
-            width: 75vw;
+            width: 75dvw;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 4.68vw;
-            padding-left: 3vw;
+            padding-bottom: 4.68dvw;
+            padding-left: 3dvw;
         }
 
         .stat22Rectangle {
@@ -533,8 +533,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3vw;
-            border: 0.05vw solid white;
+            font-size: 1.3dvw;
+            border: 0.05dvw solid white;
             box-sizing: border-box;
         }
 
@@ -544,7 +544,7 @@
             justify-content: space-between;
             align-items: center;
             justify-content: center;
-            margin-top: 2.5vh;
+            margin-top: 2.5dvh;
         }
 
         .semesterButton {
@@ -553,12 +553,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3vw;
-            border: 0.05vw solid white;
+            font-size: 1.3dvw;
+            border: 0.05dvw solid white;
             box-sizing: border-box;
             cursor: pointer;
-            margin-left: 0.4vw;
-            margin-right: 0.4vw;
+            margin-left: 0.4dvw;
+            margin-right: 0.4dvw;
             background-color: transparent;
             color: white;
         }
@@ -572,9 +572,9 @@
             transform: translate(-50%, -50%);
             display: flex;
             text-align: left;
-            font-size: 1.47vw;
+            font-size: 1.47dvw;
             box-sizing: border-box;
-            margin-left: 1vw;
+            margin-left: 1dvw;
         }
 
         .rightrectangle {
@@ -588,7 +588,7 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 2.6vw;
+            font-size: 2.6dvw;
             margin: auto;
         }
 
@@ -599,8 +599,8 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 2.08vw;
-            border: 0.05vw solid white;
+            font-size: 2.08dvw;
+            border: 0.05dvw solid white;
             box-sizing: border-box;
             cursor: pointer;
             margin: auto;
@@ -615,8 +615,8 @@
             text-align: center;
             align-items: center;
             justify-content: center;
-            font-size: 1.3vw;
-            border: 0.05vw solid white;
+            font-size: 1.3dvw;
+            border: 0.05dvw solid white;
             box-sizing: border-box;
             margin: auto;
             color: white;
@@ -631,8 +631,8 @@
 
 
 #gamemap {
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     position: absolute;
     z-index: 1;
     display: flex;
@@ -647,10 +647,10 @@
 }
 
 .result-map {
-    height: 35vh;
+    height: 35dvh;
     width: 100%;
-    border: 0.05vw solid black;
-    margin-bottom: 2vh;
+    border: min(0.05dvw, 0.1dvh) solid black;
+    margin-bottom: 2dvh;
     box-sizing: border-box;
 }
 
@@ -658,15 +658,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 20%;
-    height: 30%;
+    width: 20dvw;
+    height: 30dvh;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 3vw;
-    margin-bottom: 4vh;
-    border: 0.05vw solid black;
+    margin-right: 3dvw;
+    margin-bottom: 4dvh;
+    border: min(0.05dvw, 0.05dvh) solid black;
     box-sizing: border-box;
 }
 
@@ -674,15 +674,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 30%;
-    height: 45%;
+    width: 30dvw;
+    height: 45dvh;
     z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 3vw;
-    margin-bottom: 4vh;
-    border: 0.05vw solid black;
+    margin-right: 3dvw;
+    margin-bottom: 4dvh;
+    border: min(0.05dvw, 0.05dvh) solid black;
     box-sizing: border-box;
 }
 
@@ -693,13 +693,13 @@
     background-color: #4CAF50; /* Green */
     color: white;
     border: none;
-    font-size: 1.2em;
+    font-size: min(1dvw, 2dvh);
     box-sizing: border-box;
 }
 
 #next-game-button {
     width: 50%;
-    height: 3vh;
+    height: 3dvh;
     box-sizing: border-box;
 }
 
@@ -709,11 +709,11 @@
     display: none;
     position: fixed;
     z-index: 1;
-    width: 30vw;
-    height: 53vh;
-    margin-top: 20vh;
+    width: 30dvw;
+    height: 53dvh;
+    margin-top: 20dvh;
     overflow: auto;
-    border: 0.1vw solid black;
+    border: min(0.1dvw, 0.2dvh) solid black;
     box-sizing: border-box;
     justify-content: center;
     background-image: url("../static/images/izmirpixel.png");
@@ -725,13 +725,13 @@
     display: none;
     position: absolute;
     z-index: 4;
-    width: 30vw;
-    height: 53vh;
-    margin-top: 20vh;
+    width: 30dvw;
+    height: 53dvh;
+    margin-top: 20dvh;
     overflow: auto;
     background-color: #fefefe;
-    padding: 0.5vw;
-    border: 0.1vw solid black;
+    padding: 0.5dvw;
+    border: min(0.1dvw, 0.2dvh) solid black;
     box-sizing: border-box;
     justify-content: center;
     box-sizing: border-box;
@@ -744,32 +744,32 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 5vh;
+    height: 5dvh;
     justify-content: center;
     text-align: center;
-    font-size: 1vw;
+    font-size: min(1dvw, 2dvh);
     font-family: Verdana;
-    margin-top: 1vw;
+    margin-top: 1dvw;
     box-sizing: border-box;
-    backdrop-filter: blur(0.5vw);
-    border: 0.1vw solid black;
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    border: min(0.1dvw, 0.2dvh) solid black;
     align-items: center;
 }
 
 .finalrow {
     display: flex;
     flex-direction: row;
-    width: 20vw;
-    height: 5vh;
-    margin-left: 4.5vw;
-    margin-top: 6vh;
+    width: 20dvw;
+    height: 5dvh;
+    margin-left: 4.5dvw;
+    margin-top: 6dvh;
     justify-content: center;
     text-align: center;
-    font-size: 1vw;
+    font-size: min(1dvw, 2dvh);
     font-family: Verdana;
     box-sizing: border-box;
-    backdrop-filter: blur(0.5vw);
-    border: 0.2vw solid black;
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    border: min(0.2dvw, 0.4dvh) solid black;
     align-items: center;
 }
 
@@ -780,12 +780,12 @@
 }
 
 #result-info {
-    margin-top: 2.35vh;
+    margin-top: 2.35dvh;
     box-sizing: border-box;
 }
 
 #returntomenu-button, #playagain-button {
-    height: 4.2vh;
+    height: 4.2dvh;
 }
 
 #mini-map .gmnoprint, #result-map .gmnoprint {
@@ -793,11 +793,11 @@
 }
 
 #buttonrow {
-    width: 50vw;
-    margin-right: 50vw; 
-    height: 10vh;
+    width: 50dvw;
+    margin-right: 50dvw;
+    height: 10dvh;
     background-color: transparent;
-    font-size: 0.4vw;
+    font-size: min(0.4dvw, 0.8dvh);
     z-index: 5;
     position: absolute;
     overflow: auto;
@@ -809,29 +809,29 @@
 
 .modaltoggle-button {
     display: none;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
-    margin-top: 1.1vh;
-    width: 5vw;
-    height: 4.3vh;
+    margin-left: 0.5dvw;
+    margin-right: 0.5dvw;
+    margin-top: 1.1dvh;
+    width: 5dvw;
+    height: 4.3dvh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
-    font-size: 1.25vw;
+    font-size: min(1.25dvw, 2.5dvh);
 }
 
 .returnbutton {
-    margin-top: 1.1vh;
-    width: 2.15vw;
-    height: 4.3vh;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
+    margin-top: 1.1dvh;
+    width: 2.15dvw;
+    height: 4.3dvh;
+    margin-left: 0.5dvw;
+    margin-right: 0.5dvw;
     background-image: url('../static/images/return40gray.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    border: 0.05vw solid black;
-    border-radius: 0.5vh;
+    border: min(0.05dvw, 0.1dvh) solid black;
+    border-radius: min(0.5dvh, 1dvh);
     box-sizing: border-box;
 }
 
@@ -840,17 +840,17 @@
 }
 
 .izmirclose {
-    width: 2.15vw;
-    height: 4.3vh;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
-    margin-top: 1.1vh;
+    width: 2.15dvw;
+    height: 4.3dvh;
+    margin-left: 0.5dvw;
+    margin-right: 0.5dvw;
+    margin-top: 1.1dvh;
     background-image: url('../static/images/izmirclose1.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    border: 0.05vw solid black;
-    border-radius: 0.5vh;
+    border: min(0.05dvw, 0.1dvh) solid black;
+    border-radius: min(0.5dvh, 1dvh);
     box-sizing: border-box;
 }
 
@@ -865,10 +865,10 @@
 /* styles2.css */
 
 #map2 {
-    width: 50vw;
-    height: 80vh;    
+    width: 50dvw;
+    height: 80dvh;
     display: block;
-    border: 0.25vw solid black;
+    border: min(0.25dvw, 0.5dvh) solid black;
     box-sizing: border-box;
 }
 
@@ -879,174 +879,178 @@
 }
 
 .startpagelefthalf {
-    width: 52vw;
-    height: 80vh;
-    margin-top: 3vh;
+    width: 52dvw;
+    height: 80dvh;
+    margin-top: 3dvh;
     box-sizing: border-box;
 }
 
 .faq-menu {
-    width: 50vw;
-    height: 80vh;
-    margin-right: 2vw;
-    margin-top: 3vh;
+    width: 50dvw;
+    height: 80dvh;
+    margin-right: 2dvw;
+    margin-top: 3dvh;
     box-sizing: border-box;
     display: none;
     background-color: white;
-    border: 0.25vw solid black;
+    border: min(0.25dvw, 0.5dvh) solid black;
 }
 
 .faq-menu.show {
-    display: block; /* Show the FAQ menu when the 'show' class is present */
+    display: block; 
 }
 
 .izmirfaqtext1 {
-    font-size: 2vw;
+    font-size: min(2dvw, 4dvh);
     color: red;
 }
 
 .izmirfaqtext2 {
-    font-size: 4vw;
+    font-size: min(4dvw, 8dvh);
 }
 
 .izmirfaqtext3 {
-    font-size: 1.5vw;
+    font-size: min(1.5dvw, 3dvh);
     color: gray;
 }
 
 .startpagerighthalf {
-    width: 45vw;
-    height: 80vh;
-    margin-top: 3vh;
+    width: 45dvw;
+    height: 80dvh;
+    margin-top: 3dvh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: 0.25vw solid black;
+    border: min(0.25dvw, 0.5dvh) solid black;
     background-image: url("../static/images/izmirpixel.png");
     background-repeat: repeat;
 }
 
 .izmirgamelogo {
-    width: 30vw;
-    height: 7.5vw;
-    margin-left: 7.5vw;
-    margin-top: 1vh;
+    width: 80%;
+    height: 20%; 
+    max-width: 30dvw;
+    max-height: 15dvw;
+    margin-left: 7.5dvw;
+    margin-top: 1dvh;
     box-sizing: border-box;
     background-image: url("../static/images/izmirlogo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    backdrop-filter: blur(0.5vw);
-    border: 0.1vw solid black;
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    border: 0.1dvw solid black;
 }
 
 .izmirilcebox {
-    width: 42vw;
-    height: 44vh;
-    margin-left: 1.5vw;
-    margin-top: 1vh;
+    width: 42dvw;
+    height: 44dvh;
+    margin-left: 1.5dvw;
+    margin-top: 1dvh;
     box-sizing: border-box;
     align-items: center;
 }
 
 .highscore {
-    font-size: 1.5vw;
-    margin-left: 3.5vw;
+    font-size: min(1.5dvw, 3dvh);
+    margin-left: 3.5dvw;
 }
 
 .izmirfaq {
-    width: 31vh;
-    font-size: 3.1vh;
-    margin-left: 1vw;
-    margin-right: 1vw;
+    width: 31dvh;
+    font-size: min(1.65dvw, 3.1dvh);
+    margin-left: 1dvw;
+    margin-right: 1dvw;
 }
 
 #timer {
     display: none;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
-    margin-top: 1.1vh;
-    width: 20vw;
-    height: 4.3vh;
+    margin-left: 0.5dvw;
+    margin-right: 0.5dvw;
+    margin-top: 1.1dvh;
+    width: 20dvw;
+    height: 4.3dvh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
-    font-size: 1.5vw;
+    font-size: min(1.5dvw, 3dvh);
     align-items: center;
     text-align: center;
     justify-content: center;
-    border-radius: 0.5vh;
+    border-radius: min(0.25dvw, 0.5dvh);
 }
 
 .izmirilcebuttons {
-    width: 42vw;
-    height: 35vh;
-    margin-top: 1vh;
+    width: 42dvw;
+    height: 35dvh;
     box-sizing: border-box;
-    border: 0.05vw solid black;
-    backdrop-filter: blur(0.5vw);
-    justify-content: center;
-    align-items: center;
-}
-
-.palatino {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border: min(0.05dvw, 0.1dvh) solid black;
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    padding: min(1.7dvw, 3.5dvh);
+    padding-top: 5dvh;
+    padding-bottom: 5dvh;
 }
 
 .ilcebutton {
-    font-size: 3.7vh;
+    font-size: min(1.50dvw, 3.0dvh); 
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 .izmirilcebottombuttons {
-    width: 42vw;
-    height: 8vh;
-    margin-top: 1vh;
+    width: 42dvw;
+    height: 8dvh;
+    margin-top: 1dvh;
     box-sizing: border-box;
-    border: 0.05vw solid black;
+    border: min(0.05dvw, 0.1dvh) solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    backdrop-filter: blur(0.5vw);
+    border-radius: min(0.5dvw, 1dvh);
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
 }
 
 .addremovebuttons {
-    font-size: 3.2vh;
-    margin: 0.1vw;
-    margin-left: 1.5vw;
+    font-size: min(1.6dvw, 3.2dvh);
+    margin: 0.1dvw;
+    margin-left: 1.5dvw;
 }
 
 .ilcesayisi {
-    font-size: 1.2vw;
-    margin-left: 1.6vw;
-    margin-bottom: 2vh;
+    font-size: min(1.2dvw, 2.4dvh);
+    margin-left: 1.6dvw;
+    margin-bottom: 2dvh;
     text-align: center;
 }
 
 .izmirlastrows {
-    width: 42vw;
-    height: 6vh;
-    margin-left: 1.5vw;
-    margin-top: 2vh;
+    width: 42dvw;
+    height: 6dvh;
+    margin-left: 1.5dvw;
+    margin-top: 2dvh;
     box-sizing: border-box;
-    border: 0.05vw solid black;
+    border: min(0.05dvw, 0.1dvh) solid black;
     display: flex;
     flex-direction: row;
-    padding: 0.2vw;
-    backdrop-filter: blur(0.5vw);
+    padding: 0.2dvw;
+    border-radius: min(0.5dvw, 1dvh);
     align-items: center;
+    backdrop-filter: blur(max(0.5dvw, 1dvh));
 }
 
 .izmirayarlar {
-    font-size: 1vw;
-    margin-left: 5vw;
+    font-size: min(1dvw, 2dvh);
+    margin-left: 5dvw;
     transform: scale(1.5);
-    margin-right: 2vw;
+    margin-right: 2dvw;
 }
 
 .izmirstartgame {
-    width: 82vh;
-    margin-left: 1vw;
-    font-size: 3.5vh;
-    margin-right: 1vw;
+    width: 82dvh;
+    margin-left: 1dvw;
+    font-size: min(1.75dvw, 3.5dvh);
+    margin-right: 1dvw;
+}
+
+#izmirtime {
+    font-size: min(1dvw, 2dvh);
 }
