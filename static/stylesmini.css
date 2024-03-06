@@ -10,7 +10,6 @@
         body {
             box-sizing: border-box;
             font-family: Verdana, sans-serif;
-            height: 100vh;
             display: flex;
             margin: 0;
             flex-direction: column;
@@ -28,7 +27,7 @@
             align-items: center;
             width: 100%;
             border: 3px solid black;
-            margin-bottom: 0.1vh;
+            margin-bottom: 0.1dvh;
         }
 
         .main-menu-button {
@@ -119,8 +118,8 @@
         }
 
         .placeholder-box {
-            width: 90vw;
-            height: 13vh;
+            width: 90dvw;
+            height: 13dvh;
             background: white;
             border: 2px solid black;
             box-sizing: border-box;
@@ -162,7 +161,7 @@
 
 
         .forgegrid {
-            width: 95vw;
+            width: 95dvw;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -189,16 +188,16 @@
         }
 
         .forgesatir {
-            width: 95vw;
-            height: 15vh;
+            width: 95dvw;
+            height: 15dvh;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
         }
 
         .forgegrid-image {
-            width: 10vw;
-            height: 5vh;
+            width: 10dvw;
+            height: 5dvh;
             position: absolute;
             left: -5px;
             top: 50%;
@@ -368,7 +367,7 @@
 
         #rectangle {
             width: 100%;
-            height: 80vh;
+            height: 80dvh;
             text-align: center;
             box-sizing: border-box;
             padding: 10px;
@@ -635,8 +634,8 @@
 
 
         #gamemap {
-            width: 100vw;
-            height: 65vh;
+            width: 100dvw;
+            height: 65dvh;
             position: absolute;
             z-index: 1;
             display: flex;
@@ -644,17 +643,17 @@
         }
 
         #mini-map {
-            width: 100vw;
-            height: 30vh;
+            width: 100dvw;
+            height: 30dvh;
             z-index: 3;
             box-sizing: border-box;
         }
 
         .result-map {
-            height: 35vh;
+            height: 35dvh;
             width: 100%;
-            border: 0.05vw solid black;
-            margin-bottom: 2vh;
+            border: 0.05dvw solid black;
+            margin-bottom: 2dvh;
             box-sizing: border-box;
         }
 
@@ -663,12 +662,12 @@
             bottom: 0;
             right: 0;
             width: 100%;
-            height: 35vh;
+            height: 35dvh;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
         }
 
@@ -677,19 +676,19 @@
             bottom: 0;
             right: 0;
             width: 100%;
-            height: 35vh;
+            height: 35dvh;
             z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 0.05vw solid black;
+            border: 0.05dvw solid black;
             box-sizing: border-box;
         }
 
 
         #action-button {
             width: 100%;
-            height: 5vh;
+            height: 5dvh;
             background-color: #4CAF50; /* Green */
             color: white;
             border: none;
@@ -699,7 +698,7 @@
 
         #next-game-button {
             width: 100%;
-            height: 5vh;
+            height: 5dvh;
             box-sizing: border-box;
         }
 
@@ -709,11 +708,11 @@
             display: none;
             position: fixed;
             z-index: 1;
-            width: 100vw;
-            height: 50vh;
-            margin-top: 20vh;
+            width: 100dvw;
+            height: 50dvh;
+            margin-top: 20dvh;
             overflow: auto;
-            border: 0.1vw solid black;
+            border: 0.1dvw solid black;
             box-sizing: border-box;
             justify-content: center;
             background-image: url("../static/images/izmirpixel.png");
@@ -725,13 +724,13 @@
             display: none;
             position: absolute;
             z-index: 4;
-            width: 100vw;
-            height: 50vh;
-            margin-top: 20vh;
+            width: 100dvw;
+            height: 50dvh;
+            margin-top: 20dvh;
             overflow: auto;
             background-color: #fefefe;
-            padding: 0.5vw;
-            border: 0.1vw solid black;
+            padding: 0.5dvw;
+            border: 0.1dvw solid black;
             box-sizing: border-box;
             justify-content: center;
             box-sizing: border-box;
@@ -743,34 +742,34 @@
         .modalrow {
             display: flex;
             flex-direction: row;
-            width: 90vw;
-            height: 5vh;
-            margin-left: 5vw;
+            width: 90dvw;
+            height: 5dvh;
+            margin-left: 5dvw;
             justify-content: center;
             text-align: center;
-            font-size: 2vh;
+            font-size: 2dvh;
             font-family: Verdana;
-            margin-top: 2vh;
+            margin-top: 2dvh;
             box-sizing: border-box;
-            backdrop-filter: blur(1vw);
-            border: 0.1vw solid black;
+            backdrop-filter: blur(1dvw);
+            border: 0.1dvw solid black;
             align-items: center;
         }
 
         .finalrow {
             display: flex;
             flex-direction: row;
-            width: 90vw;
-            height: 5vh;
-            margin-left: 5vw;
-            margin-top: 6vh;
+            width: 90dvw;
+            height: 5dvh;
+            margin-left: 5dvw;
+            margin-top: 6dvh;
             justify-content: center;
             text-align: center;
-            font-size: 2vh;
+            font-size: 2dvh;
             font-family: Verdana;
             box-sizing: border-box;
-            backdrop-filter: blur(1vw);
-            border: 0.2vw solid black;
+            backdrop-filter: blur(1dvw);
+            border: 0.2dvw solid black;
             align-items: center;
         }
 
@@ -781,12 +780,12 @@
         }
 
         #result-info {
-            margin-top: 2.35vh;
+            margin-top: 2.35dvh;
             box-sizing: border-box;
         }
 
         #returntomenu-button, #playagain-button {
-            height: 4.2vh;
+            height: 4.2dvh;
         }
 
         #mini-map .gmnoprint, #result-map .gmnoprint {
@@ -794,10 +793,10 @@
         }
 
         #buttonrow {
-            width: 100vw;
-            height: 8vh;
+            width: 100dvw;
+            height: 8dvh;
             background-color: transparent;
-            font-size: 0.4vw;
+            font-size: 0.4dvw;
             z-index: 5;
             position: absolute;
             overflow: auto;
@@ -809,28 +808,28 @@
 
         .modaltoggle-button {
             display: none;
-            margin-right: 0.1vw;
-            margin-top: 1vh;
-            width: 25vw;
-            height: 5.5vh;
+            margin-right: 0.1dvw;
+            margin-top: 1dvh;
+            width: 25dvw;
+            height: 5.5dvh;
             box-sizing: border-box;
             background-color: #222222;
             color: white;
         }
 
         .returnbutton {
-            margin-top: 1vh;
-            margin-left: 3vw;
-            margin-right: 3vw;
-            width: 15vw;
-            height: 6vh;
+            margin-top: 1dvh;
+            margin-left: 3dvw;
+            margin-right: 3dvw;
+            width: 15dvw;
+            height: 6dvh;
             transform: scale(0.8);
             background-image: url('../static/images/return40gray.png');
             background-size: cover;
             background-repeat: no-repeat;
             cursor: pointer;
-            border: 0.05vw solid black;
-            border-radius: 0.5vh;
+            border: 0.05dvw solid black;
+            border-radius: 0.5dvh;
             box-sizing: border-box;
         }
 
@@ -839,16 +838,16 @@
         }
 
         .izmirclose {
-            margin-top: 1vh;
-            width: 15vw;
-            height: 6vh;
+            margin-top: 1dvh;
+            width: 15dvw;
+            height: 6dvh;
             transform: scale(0.8); 
             background-image: url('../static/images/izmirclose1.png');
             background-size: cover;
             background-repeat: no-repeat;
             cursor: pointer;
-            border: 0.05vw solid black;
-            border-radius: 0.5vh;
+            border: 0.05dvw solid black;
+            border-radius: 0.5dvh;
             box-sizing: border-box;
         }
 
@@ -863,35 +862,35 @@
         /* styles2.css */
 
         #map2 {
-            width: 100vw;
-            height: 40vh;
+            width: 100dvw;
+            height: 50dvh;
             display: block;
-            border: 0.5vw solid black;
+            border: 0.5dvw solid black;
             box-sizing: border-box;
         }
 
         .startpage {
-            width: 100vw;
-            height: 89vh;
+            width: 100dvw;
+            height: 100dvh;
             display: flex;
             flex-direction: column-reverse;
             box-sizing: border-box;
-            overflow: hidden;
+            margin-top: 3dvh;
         }
 
         .startpagelefthalf {
-            width: 100vw;
-            height: 40vh;
+            width: 100dvw;
+            height: 50dvh;
             box-sizing: border-box;
         }
 
         .faq-menu {
-            width: 100vw;
-            height: 35vh;
+            width: 100dvw;
+            height: 50dvh;
             box-sizing: border-box;
             display: none;
             background-color: white;
-            border: 0.25vw solid black;
+            border: 0.25dvw solid black;
         }
 
         .faq-menu.show {
@@ -899,46 +898,46 @@
         }
 
         .izmirfaqtext1 {
-            font-size: 4vw;
+            font-size: 4dvw;
             color: red;
         }
 
         .izmirfaqtext2 {
-            font-size: 8vw;
+            font-size: 8dvw;
         }
 
         .izmirfaqtext3 {
-            font-size: 2.8vw;
+            font-size: 2.8dvw;
             color: gray;
         }
 
         .startpagerighthalf {
-            width: 100vw;
-            height: 59vh;
+            width: 100dvw;
+            height: 70dvh;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            border: 0.5vw solid black;
+            border: 0.5dvw solid black;
             background-image: url("../static/images/izmirpixel.png");
             background-repeat: repeat;
         }
 
         .izmirgamelogo {
-            width: 90vw;
-            height: 10.68vh;
-            margin-left: 5vw;
+            width: 90dvw;
+            height: 10.68dvh;
+            margin-left: 5dvw;
             box-sizing: border-box;
             background-image: url("../static/images/izmirlogo.png");
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
-            backdrop-filter: blur(1vw);
-            border: 0.2vh solid black;
+            backdrop-filter: blur(1dvw);
+            border: 0.2dvh solid black;
         }
 
         .izmirilcebox {
-            width: 100vw;
-            height: 29.8vh;
+            width: 100dvw;
+            height: 29.8dvh;
             align-items: center;
             box-sizing: border-box;
         }
@@ -946,85 +945,85 @@
         .highscore {
             display: flex;
             flex-direction: row;
-            font-size: 4vw;
-            margin-left: 1.5vw;
+            font-size: 4dvw;
+            margin-left: 1.5dvw;
         }
 
         .izmirfaq {
             width: 50%;
             height: 100%;
-            font-size: 2vh;
-            margin-left: 1vw;
-            margin-right: 1vw;
+            font-size: 2dvh;
+            margin-left: 1dvw;
+            margin-right: 1dvw;
         }
 
         #timer {
             display: none;
-            margin-right: 3vw;
-            margin-top: 1vh;
-            width: 40vw;
-            height: 5.5vh;
+            margin-right: 3dvw;
+            margin-top: 1dvh;
+            width: 40dvw;
+            height: 5.5dvh;
             box-sizing: border-box;
             background-color: #222222;
             color: white;
-            font-size: 4vw;
+            font-size: 4dvw;
             align-items: center;
             text-align: center;
             justify-content: center;
-            border-radius: 0.5vh;
+            border-radius: 0.5dvh;
         }
 
         .izmirilcebuttons {
-            width: 100vw;
-            height: 26.24vh;
-            padding: 1vw;
+            width: 100dvw;
+            height: 26.24dvh;
+            padding: 1dvw;
             box-sizing: border-box;
-            backdrop-filter: blur(1vw);
+            backdrop-filter: blur(1dvw);
             justify-content: center;
             align-items: center;
         }
 
         .ilcebutton {
-            font-size: 2.2vh;
+            font-size: 2.2dvh;
         }
 
         .izmirilcebottombuttons {
-            width: 100vw;
-            height: 3.56vh;
+            width: 100dvw;
+            height: 3.56dvh;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
             align-items: center;
-            backdrop-filter: blur(1vw);
+            backdrop-filter: blur(1dvw);
         }
 
         .addremovebuttons {
-            font-size: 3vw;
-            margin: 0.1vw;
-            margin-left: 2vw;
+            font-size: 3dvw;
+            margin: 0.1dvw;
+            margin-left: 2dvw;
         }
 
         .ilcesayisi {
-            font-size: 4vw;
-            margin-left: 10vw;
+            font-size: 4dvw;
+            margin-left: 10dvw;
             text-align: center;
         }
 
         .izmirlastrows {
-            width: 100vw;
-            height: 6.06vh;
+            width: 100dvw;
+            height: 6.06dvh;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
-            backdrop-filter: blur(1vw);
+            backdrop-filter: blur(1dvw);
             align-items: center;
         }
 
         .izmirayarlar {
-            font-size: 4vw;
-            margin-left: 1vw;
-            margin-right: 10vw;
-            padding: 2vw;
+            font-size: 4dvw;
+            margin-left: 1dvw;
+            margin-right: 10dvw;
+            padding: 2dvw;
             display: flex;
             flex-direction: row;
         }
@@ -1032,11 +1031,11 @@
         .izmirstartgame {
             width: 100%;
             height: 100%;
-            margin-left: 2vw;
-            font-size: 2vh;
-            margin-right: 1vw;
+            margin-left: 2dvw;
+            font-size: 2dvh;
+            margin-right: 1dvw;
         }
 
         #izmirtime {
-            font-size: 3vw;
+            font-size: 3dvw;
         }
