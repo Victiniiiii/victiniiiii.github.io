@@ -611,7 +611,7 @@ function displayResults(distance, points) {
     document.getElementById('result-modal').style.display = 'block';
     document.getElementById('overlay-container').style.display = 'none';
     document.getElementById('modaltoggle-button').style.display = 'block';
-    pauseTimer()
+    pauseTimer();
 
     const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
 
@@ -725,6 +725,10 @@ function startNextGame() {
 }
 
 function addAllDistricts() {
+    const buttons = document.querySelectorAll('.ilcebutton');
+    buttons.forEach(button => {
+        button.style.backgroundColor = 'green';
+    });
     districtLayers.forEach(district => {
         district.layer.setStyle({ fill: true, color: 'green' });
         district.state = 1;
@@ -739,6 +743,10 @@ function addAllDistricts() {
 }
 
 function removeAllDistricts() {
+    const buttons = document.querySelectorAll('.ilcebutton');
+    buttons.forEach(button => {
+        button.style.backgroundColor = 'red';
+    });
     districtLayers.forEach(district => {
         district.layer.setStyle({ fill: false, color: 'red' });
         district.state = 0;
@@ -754,6 +762,7 @@ function removeAllDistricts() {
 }
 
 function toggleDistrict(districtName) {
+    const button = document.querySelector(`.ilcebutton[data-district="${districtName}"]`);
     const district = districtLayers.find(district => district.name === districtName);
     if (district) {
         if (district.layer.options.fill) {
@@ -761,12 +770,14 @@ function toggleDistrict(districtName) {
             district.state = 0;
 
             const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
+            button.style.backgroundColor = 'red';
             if (index !== -1) {
                 initiallyGreenDistricts.splice(index, 1);
             }
         } else {
             district.layer.setStyle({ fill: true, color: 'green' });
             district.state = 1;
+            button.style.backgroundColor = 'green';
 
             if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
                 initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
@@ -777,6 +788,14 @@ function toggleDistrict(districtName) {
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll('.ilcebutton');
+    buttons.forEach(button => {
+        button.style.backgroundColor = 'green';
+    });
+});
+
 
 function updateTimerDisplay() {
     let displayText;
