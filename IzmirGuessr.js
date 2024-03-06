@@ -18,9 +18,9 @@ let roundTimer;
 let timerSeconds = 60; 
 let selectedTimeLimit = "No Time Limit"; 
 let isTimerPaused = false;
-let highscore = localStorage.getItem('highscore') ? parseInt(localStorage.getItem('highscore')) : 0;
-document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
-
+const initiallyGreenDistricts = [];
+const districtLayers = [];
+const formattedBounds = [];
 
 let startPage = document.getElementById('startpage');
 let gamemap = document.getElementById('gamemap');
@@ -31,6 +31,8 @@ let finalresultsmodal = document.getElementById('final-results-modal')
 let buttonrow = document.getElementById('buttonrow')
 const mapContainer = document.getElementById('gamemap');
 const resultModal = document.getElementById('result-modal');
+let highscore = localStorage.getItem('highscore') ? parseInt(localStorage.getItem('highscore')) : 0;
+document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
 
 const AliagaBounds = { north: 38.898849, south: 38.676129, west: 26.962805, east: 26.076071};
 const BalcovaBounds = { north: 38.4152, south: 38.3780, west: 27.0239, east: 27.0716};
@@ -302,7 +304,6 @@ function isPointInPolygon(point, polygon) {
 
         if (intersect) inside = !inside;
     }
-
     return inside;
 }
 
@@ -312,10 +313,6 @@ function shuffleArray(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
-const initiallyGreenDistricts = [];
-const districtLayers = [];
-const formattedBounds = [];
 
 districtsData.forEach(district => {
     const polygon = L.polygon(district.coordinates, { fill: true, color: 'green' }).addTo(map2);
@@ -329,30 +326,37 @@ districtsData.forEach(district => {
 map2.on('mousedown', function (event) {
     districtLayers.forEach(district => {
         if (isPointInPolygon(event.latlng, district.layer)) {
-            if (district.layer.options.fill) {
-                district.layer.setStyle({ fill: false, color: 'red' });
-                district.state = 0;
-
-                const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
-                if (index !== -1) {
-                    initiallyGreenDistricts.splice(index, 1);
-                }
-            } else {
-                district.layer.setStyle({ fill: true, color: 'green' });
-                district.state = 1;
-
-                if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
-                    initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-                }
-            }
-
-            let lengthh = [initiallyGreenDistricts.length];
-            ilcesayisi.innerText = `Current District Count: ${lengthh}`;
-
+            updateDistrictAndButtonState(district);
             formatlama();
-        }        
+        }
     });
 });
+
+function updateDistrictAndButtonState(district) {
+    const button = document.querySelector(`.ilcebutton[data-district="${district.name}"]`);
+
+    if (district.layer.options.fill) {
+        district.layer.setStyle({ fill: false, color: 'red' });
+        district.state = 0;
+        button.style.backgroundColor = 'red';
+
+        const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
+        if (index !== -1) {
+            initiallyGreenDistricts.splice(index, 1);
+        }
+    } else {
+        district.layer.setStyle({ fill: true, color: 'green' });
+        district.state = 1;
+        button.style.backgroundColor = 'green';
+
+        if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
+            initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+        }
+    }
+
+    let lengthh = [initiallyGreenDistricts.length];
+    ilcesayisi.innerText = `Current District Count: ${lengthh}`;
+}
 
 function formatlama() {
     let formattedBounds = initiallyGreenDistricts.map(district => district.bounds);
@@ -741,7 +745,7 @@ function addAllDistricts() {
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     });
 }
-
+    
 function removeAllDistricts() {
     const buttons = document.querySelectorAll('.ilcebutton');
     buttons.forEach(button => {
@@ -783,7 +787,6 @@ function toggleDistrict(districtName) {
                 initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
             }
         }
-
         let lengthh = [initiallyGreenDistricts.length];
         ilcesayisi.innerText = `Current District Count: ${lengthh}`;
     }
@@ -796,7 +799,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 function updateTimerDisplay() {
     let displayText;
     if (timerSeconds === Infinity) {
@@ -806,7 +808,6 @@ function updateTimerDisplay() {
     }
     document.getElementById('timer').textContent = displayText;
 }
-
 
 function updateTimer() {
     getSecondsFromTimeLimit();
@@ -891,5 +892,3 @@ window.addEventListener('load', loadSelectedTimeLimit);
 
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
-
-
