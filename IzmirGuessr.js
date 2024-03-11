@@ -559,7 +559,7 @@ function calculatePoints(distance) {
     const distanceFactor = 0.1;
     let points = Math.max(minPoints, maxPoints - distance * distanceFactor);
 
-    if (points <= 990) {
+    if (points >= 990) {
         points = 1000;
     }
 
