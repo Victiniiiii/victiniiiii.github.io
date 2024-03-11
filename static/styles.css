@@ -13,6 +13,10 @@
 			text-align: center;
         }
 
+        a {
+            text-decoration: none;
+        }
+
         .title-section {
             background-image: url("../static/images/thunder.jpg");
             background-repeat: no-repeat;
