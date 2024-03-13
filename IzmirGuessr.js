@@ -412,6 +412,7 @@ function initMap() {
                     position: randomLocation,
                     pov: { heading: 34, pitch: 1 },
                     zoom: 1,
+                    tilt: 0,
                     addressControl: false,
                     streetViewControl: false,
                     gestureHandling: 'none'
