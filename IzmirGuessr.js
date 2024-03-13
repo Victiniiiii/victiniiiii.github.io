@@ -413,6 +413,8 @@ function initMap() {
                     pov: { heading: 34, pitch: 1 },
                     zoom: 1,
                     addressControl: false,
+                    streetViewControl: false,
+                    gestureHandling: 'none'
                 });
 
                 gamemap.setStreetView(panorama);
