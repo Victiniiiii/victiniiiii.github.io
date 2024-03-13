@@ -401,7 +401,10 @@ function initMap() {
         gamemap = new google.maps.Map(document.getElementById('gamemap'), {
             center: randomLocation,
             zoom: 14,
+            tilt: 0,
             streetViewControl: false,
+            addressControl: false,
+            gestureHandling: 'none'
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -534,7 +537,10 @@ function returnToStart() {
     gamemap = new google.maps.Map(document.getElementById('gamemap'), {
         center: randomLocation,
         zoom: 14,
+        tilt: 0,
         streetViewControl: false,
+        addressControl: false,
+        gestureHandling: 'none'
     });
 
     const streetViewService = new google.maps.StreetViewService();
@@ -545,7 +551,10 @@ function returnToStart() {
                 position: randomLocation,
                 pov: { heading: 34, pitch: 1 },
                 zoom: 1,
+                tilt: 0,
+                streetViewControl: false,
                 addressControl: false,
+                gestureHandling: 'none'
             });
 
             gamemap.setStreetView(panorama);
