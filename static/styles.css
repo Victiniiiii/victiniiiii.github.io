@@ -63,8 +63,8 @@
         }
 
         .project-box {
-            background-color: rgba(0,0,0,0.5);
-            color: white;
+            display: flex;
+            flex-direction: column;
             text-align: left;
             width: 42dvw;
             height: 21dvh;
@@ -72,11 +72,11 @@
             padding: 0.5dvw;
             border: 0.05dvw solid rgba(0,0,0,0.3);
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
             border-radius: 0.4dvw;
             backdrop-filter: blur(0.1dvw);
             box-shadow: 0 0.05dvw 0.63dvw rgba(255,255,255,0.25);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
         }
 
         .project-info {
@@ -827,7 +827,7 @@
 .returnbutton {
     margin-top: 1.1dvh;
     width: 2.15dvw;
-    height: 4.3dvh;
+    height: 2.15dvw;
     margin-left: 0.5dvw;
     margin-right: 0.5dvw;
     background-image: url('../static/images/return40gray.png');
@@ -837,6 +837,7 @@
     border: min(0.05dvw, 0.1dvh) solid black;
     border-radius: min(0.5dvh, 1dvh);
     box-sizing: border-box;
+    aspect-ratio: 1 / 1;
 }
 
 .returnbutton:hover {
@@ -845,7 +846,7 @@
 
 .izmirclose {
     width: 2.15dvw;
-    height: 4.3dvh;
+    height: 2.15dvw;
     margin-left: 0.5dvw;
     margin-right: 0.5dvw;
     margin-top: 1.1dvh;
@@ -856,6 +857,7 @@
     border: min(0.05dvw, 0.1dvh) solid black;
     border-radius: min(0.5dvh, 1dvh);
     box-sizing: border-box;
+    aspect-ratio: 1 / 1;
 }
 
 .izmirclose:hover {
@@ -931,10 +933,8 @@
 }
 
 .izmirgamelogo {
-    width: 80%;
-    height: 20%; 
-    max-width: 30dvw;
-    max-height: 15dvw;
+    width: 30dvw;
+    height: 7dvw;
     margin-left: 7.5dvw;
     margin-top: 1dvh;
     box-sizing: border-box;
@@ -973,7 +973,7 @@
     margin-right: 0.5dvw;
     margin-top: 1.1dvh;
     width: 20dvw;
-    height: 4.3dvh;
+    height: 2.15dvw;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
@@ -1049,7 +1049,7 @@
 }
 
 .izmirstartgame {
-    width: 82dvh;
+    width: 36dvw;
     margin-left: 1dvw;
     font-size: min(1.75dvw, 3.5dvh);
     margin-right: 1dvw;
