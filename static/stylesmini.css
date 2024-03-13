@@ -811,10 +811,10 @@
 
         .modaltoggle-button {
             display: none;
-            margin-right: 0.1dvw;
-            margin-top: 1dvh;
-            width: 25dvw;
-            height: 5.5dvh;
+            margin-right: 0.5dvh;
+            margin-top: 2dvh;
+            width: 8dvh;
+            height: 4dvh;
             box-sizing: border-box;
             background-color: #222222;
             color: white;
