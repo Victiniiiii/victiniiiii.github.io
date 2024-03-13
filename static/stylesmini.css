@@ -1,13 +1,9 @@
 
-        html {
+        body {
             background-image: url("../static/images/cloud.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
-            box-sizing: border-box;
-        }
-
-        body {
             box-sizing: border-box;
             font-family: Verdana, sans-serif;
             display: flex;
@@ -15,6 +11,10 @@
             flex-direction: column;
             align-items: center;
             box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
         }
 
         .title-section {
@@ -27,7 +27,7 @@
             align-items: center;
             width: 100%;
             border: 3px solid black;
-            margin-bottom: 0.1dvh;
+            margin-bottom: 0.1vh;
         }
 
         .main-menu-button {
@@ -74,18 +74,21 @@
         }
 
         .project-box {
-            background-color: black;
-            font-size: 15px;
-            color: white;
+            font-size: 4vw;
             text-align: center;
-            width: 300px;
-            height: 300px;
+            width: 80vw;
+            height: 40vh;
             margin: 10px;
             padding: 10px;
-            border: 2px solid white;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            border: 0.05dvw solid rgba(0,0,0,0.3);
+            box-sizing: border-box;
+            border-radius: 0.4dvw;
+            backdrop-filter: blur(0.1dvw);
+            box-shadow: 0 0.05dvw 0.63dvw rgba(255,255,255,0.25);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
         }
 
         .project-info {
@@ -119,7 +122,7 @@
 
         .placeholder-box {
             width: 90dvw;
-            height: 13dvh;
+            height: 13vh;
             background: white;
             border: 2px solid black;
             box-sizing: border-box;
@@ -189,7 +192,7 @@
 
         .forgesatir {
             width: 95dvw;
-            height: 15dvh;
+            height: 15vh;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -197,7 +200,7 @@
 
         .forgegrid-image {
             width: 10dvw;
-            height: 5dvh;
+            height: 5vh;
             position: absolute;
             left: -5px;
             top: 50%;
@@ -367,7 +370,7 @@
 
         #rectangle {
             width: 100%;
-            height: 80dvh;
+            height: 80vh;
             text-align: center;
             box-sizing: border-box;
             padding: 10px;
@@ -818,12 +821,11 @@
         }
 
         .returnbutton {
-            margin-top: 1dvh;
-            margin-left: 3dvw;
-            margin-right: 3dvw;
-            width: 15dvw;
-            height: 6dvh;
-            transform: scale(0.8);
+            margin-top: 2dvh;
+            margin-left: 1.5dvh;
+            margin-right: 1.5dvh;
+            width: 4dvh;
+            height: 4dvh;
             background-image: url('../static/images/return40gray.png');
             background-size: cover;
             background-repeat: no-repeat;
@@ -838,10 +840,10 @@
         }
 
         .izmirclose {
-            margin-top: 1dvh;
-            width: 15dvw;
-            height: 6dvh;
-            transform: scale(0.8); 
+            margin-top: 2dvh;
+            margin-left: 1.5dvh;
+            width: 4dvh;
+            height: 4dvh;
             background-image: url('../static/images/izmirclose1.png');
             background-size: cover;
             background-repeat: no-repeat;
@@ -863,7 +865,7 @@
 
         #map2 {
             width: 100dvw;
-            height: 50dvh;
+            height: 50vh;
             display: block;
             border: 0.5dvw solid black;
             box-sizing: border-box;
@@ -871,22 +873,22 @@
 
         .startpage {
             width: 100dvw;
-            height: 100dvh;
+            height: 100vh;
             display: flex;
             flex-direction: column-reverse;
             box-sizing: border-box;
-            margin-top: 3dvh;
+            margin-top: 3vh;
         }
 
         .startpagelefthalf {
             width: 100dvw;
-            height: 50dvh;
+            height: 50vh;
             box-sizing: border-box;
         }
 
         .faq-menu {
             width: 100dvw;
-            height: 50dvh;
+            height: 50vh;
             box-sizing: border-box;
             display: none;
             background-color: white;
@@ -913,7 +915,7 @@
 
         .startpagerighthalf {
             width: 100dvw;
-            height: 70dvh;
+            height: 70vh;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -924,7 +926,7 @@
 
         .izmirgamelogo {
             width: 90dvw;
-            height: 10.68dvh;
+            height: 20dvw;
             margin-left: 5dvw;
             box-sizing: border-box;
             background-image: url("../static/images/izmirlogo.png");
@@ -932,12 +934,12 @@
             background-size: cover;
             display: flex;
             backdrop-filter: blur(1dvw);
-            border: 0.2dvh solid black;
+            border: 0.2vh solid black;
         }
 
         .izmirilcebox {
             width: 100dvw;
-            height: 29.8dvh;
+            height: 29.8vh;
             align-items: center;
             box-sizing: border-box;
         }
@@ -952,30 +954,30 @@
         .izmirfaq {
             width: 50%;
             height: 100%;
-            font-size: 2dvh;
+            font-size: 2vh;
             margin-left: 1dvw;
             margin-right: 1dvw;
         }
 
         #timer {
             display: none;
-            margin-right: 3dvw;
-            margin-top: 1dvh;
-            width: 40dvw;
-            height: 5.5dvh;
+            margin-right: 1.5dvh;
+            margin-top: 2dvh;
+            width: 22dvh;
+            height: 4dvh;
             box-sizing: border-box;
             background-color: #222222;
             color: white;
-            font-size: 4dvw;
+            font-size: 1.5dvh;
             align-items: center;
             text-align: center;
             justify-content: center;
-            border-radius: 0.5dvh;
+            border-radius: 0.5vh;
         }
 
         .izmirilcebuttons {
             width: 100dvw;
-            height: 26.24dvh;
+            height: 26.24vh;
             padding: 1dvw;
             box-sizing: border-box;
             backdrop-filter: blur(1dvw);
@@ -984,12 +986,12 @@
         }
 
         .ilcebutton {
-            font-size: 2.2dvh;
+            font-size: 2.2vh;
         }
 
         .izmirilcebottombuttons {
             width: 100dvw;
-            height: 3.56dvh;
+            height: 3.56vh;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -1011,7 +1013,7 @@
 
         .izmirlastrows {
             width: 100dvw;
-            height: 6.06dvh;
+            height: 6.06vh;
             box-sizing: border-box;
             display: flex;
             flex-direction: row;
@@ -1032,7 +1034,7 @@
             width: 100%;
             height: 100%;
             margin-left: 2dvw;
-            font-size: 2dvh;
+            font-size: 2vh;
             margin-right: 1dvw;
         }
 
