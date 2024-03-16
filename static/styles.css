@@ -1,632 +1,647 @@
 		
-	    body {
-	        background-image: url("../static/images/cloud.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            box-sizing: border-box;
-            font-family: Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-			text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .title-section {
-            background-image: url("../static/images/thunder.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border: 0.2dvw solid black;
-            margin-bottom: 0.9dvh;
-        }
-
-        .main-menu-text {
-            font-size: 2dvw;
-            text-align: center; 
-            color: white;
-            margin: 0;
-            text-shadow: 0.1dvw 0.2dvh #b5b5b5;
-            backdrop-filter: blur(0.2dvw);
-        }
-
-        .project-buttons {
-            display: flex;
-        }
-
-        .main-menu-button {
-            cursor: pointer;
-            width: 4dvw;
-            height: 8dvh;
-        }
-
-        .category-button {
-            background: white;
-            border: 0.1dvw solid black;
-            box-sizing: border-box;
-            font-size: 1dvw;
-            color: black;
-            text-decoration: none;
-            padding: 0.3dvw 2.5dvh;
-            cursor: pointer;
-            margin: 0.5dvw 1dvh;
-            position: relative;
-        }
-
-        .project-box {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            width: 42dvw;
-            height: 21dvh;
-            margin: 1dvw;
-            padding: 0.5dvw;
-            border: 0.05dvw solid rgba(0,0,0,0.3);
-            box-sizing: border-box;
-            border-radius: 0.4dvw;
-            backdrop-filter: blur(0.1dvw);
-            box-shadow: 0 0.05dvw 0.63dvw rgba(255,255,255,0.25);
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-        }
-
-        .project-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 3.5dvh;
-        }
-
-        .project-button {
-            width: 26dvw;
-            font-size: 1.2dvw;
-        }
-
-        .release-date {
-            margin-left: auto;
-        }
-
-        .project-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .project-logo {
-            width: 7.8dvw;
-            height: 7.8dvw;
-            margin-right: 0.5dvw;
-        }
-
-        .project-description {
-            flex: 1;
-            height: 16dvh;
-            margin-left: 0.5dvw;
-        }
-
-        .placeholder-box {
-            background: white;
-            border: 0.1dvw solid black;
-            box-sizing: border-box;
-            padding: 0.5dvw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: 35dvh;
-        }
-
-        .contact-item {
-            margin: 0.5dvw 0;
-        }
-
-        .contact-item img {
-            vertical-align: middle;
-            margin-right: 0.5dvw;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-		.contact-box {
-            border: 0.1dvw solid white;
-            box-sizing: border-box;
-            padding: 1dvw;
-            background-color: black;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 30dvh;
-        }
-
-
-
-
-
-
-
-        .forgegrid {
-            width: 90dvw;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .forgegrid-content {
-            display: flex;
-        }
-
-        .forgegrid-content p {
-            flex-grow: 1;
-        }
-
-        .forgegrid-item {
-            width: 47%;
-            height: 90%;
-            background-color: #ccc;
-            border: 0.05dvw solid #000;
-            box-sizing: border-box;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .forgesatir {
-            width: 90dvw;
-            height: 11dvh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .forgegrid-image {
-            width: 4dvw;
-            height: 8dvh;
-            position: absolute;
-            left: 0.5dvw;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .forgegrid-item p {
-            flex-grow: 1;
-            white-space: nowrap;
-            display: flex;
-        }
-
-        .gem-text {
-            justify-content: center;
-            margin: 0.68dvw;
-            padding: 0;
-        }
-
-
-
-
-
-
-
-        .content-container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .bigoilbigbox {
-            position: relative;
-            padding: 1dvw;
-            color: black;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 1dvw 0;
-            box-sizing: border-box;
-        }
-
-        .engines-clues-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .map-image {
-            background-image: url("../static/images/map.png");
-            padding: 1dvw;
-            color: black;
-            background-color: white;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-            width: 32%;
-            height: 65dvh;
-        }
-
-        .engine-list {
-            width: 90%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .engines-section, .clues-section {
-            background-color: white;
-            width: 34%;
-            height: 100%;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-            font-size: 1.6dvw;
-            position: sticky;
-            z-index: 1;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            overflow: auto;
-            font-family: Verdana, sans-serif;
-            height: 65dvh;
-        }
-
-        .bigoilcontainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            margin: 0 0.9dvh;
-            box-sizing: border-box;
-        }
-
-        .faq-title {
-            background-color: white;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-            text-align: center;
-            font-family: Verdana, sans-serif;
-            padding: 0 0.9dvh;
-            margin: 0;
-            font-size: 1dvw;
-        }
-
-        .faq-content {
-            font-family: Verdana, sans-serif;
-            background-color: white;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-            padding: 1dvw;
-            margin: 0.5dvw;
-            justify-self: start;
-        }
-
-        .faq-content p {
-            margin: 1dvw 0.9dvh;
-            text-align: left;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            background-color: white;
-            padding: 1dvw 0;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-            width: 70%;
-        }
-
-        .imagetext {
-            font-size: 1dvw;
-            color: white;
-            backdrop-filter: blur(0.2dvw);
-        }
-
-        .imagebigoil {
-            text-align: center;
-            margin-bottom: 0.9dvh;
-            width: 28dvw;
-            height: 50dvh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-
-
-
-
-        #buttonContainer {
-            display: flex;
-            margin-top: 1.85dvh;
-            width: 80%;
-            justify-content: space-between;
-            background-color: transparent;
-            border-radius: 0.4dvw;
-            backdrop-filter: blur(0.15dvw);
-            background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 0.05dvw 0.6dvw rgba(0,0,0,0.25);
-        }
-
-        .show {
-            display: block;
-        }
-
-        #rectangle {
-            width: 80dvw;
-            height: 80dvh;
-            text-align: center;
-            padding: 1dvw 1dvh;
-            position: relative;
-            box-sizing: border-box;
-            color: white;
-            border-radius: 0.4dvw;
-            backdrop-filter: blur(0.1dvw);
-            background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 0.05dvw 0.6dvw rgba(0,0,0,0.25);
-            border: 0.05dvw solid rgba(255,255,255,0.3);
-        }
-
-        #rectangle .lessonList li, #rectangle ul li {
-            list-style-type: none;
-            margin-bottom: 1.2dvh;
-            color: white;
-        }
-
-        #rectangle select {
-            font-size: 1.1dvw;
-        }
-
-        #examMode {
-            display: none;
-        }
-
-        #examResultsMode {
-            display: none;
-        }
-
-        #faqMode {
-            font-size: 1dvw;
-            display: none;
-        }
-
-        #stat22Mode {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-
-        #result {
-            display: none;
-            font-size: 1.87dvw;
-            margin-top: 1.84dvh;
-            margin-bottom: 0.92dvh;
-        }
-
-        #noteInput {
-            display: none;
-            font-size: 1.87dvw;
-            width: 60%;
-            padding: 1.3dvw;
-            box-sizing: border-box;
-            margin: 0 auto;
-            margin-top: 2.77dvh;
-            margin-bottom: 2.77dvh;
-            text-align: center;
-        }
-
-        #calculateButton {
-            display: none;
-            width: 20%;
-            margin-top: 1.85dvh;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: transparent;
-        }
-
-        #examResultsText {
-            margin-top: 3.7dvh;
-            font-size: 1.87dvw;
-        }
-
-        .modeButton {
-            flex: 1;
-            height: 1.82dvw;
-            font-family: 'Verdana', sans-serif;
-            box-sizing: border-box;
-            color: white;
-            background-color: transparent;
-        }
-
-        .dropdown {
-            font-size: 1dvw;
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown button {
-            font-size: 1dvw;
-            padding: 0.52dvw 0.92dvh;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            font-size: 1dvw;
-            box-shadow: 0 0.4dvw 0.8dvw 0 rgba(0, 0, 0, 0.2);
-            z-index: 5;
-        }
-
-        .dropdown-content a {
-            color: white;
-            font-size: 1dvw;
-            padding: 0.88dvw;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            font-size: 1dvw;
-            color: white;
-        }
-
-        .dropdown-gpa {
-            font-size: 1dvw;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .dropdown-stat22 {
-            font-size: 1dvw;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .stat22RectanglesContainer {
-            position: absolute;
-            bottom: 0;
-            width: 75dvw;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 3.05dvw;
-            padding-left: 3dvw;
-        }
-
-        .stat22RectanglesContainer2 {
-            position: absolute;
-            bottom: 0;
-            width: 75dvw;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 1dvw;
-            padding-left: 3dvw;
-        }
-
-        .stat22RectanglesContainer3 {
-            position: absolute;
-            bottom: 0;
-            width: 75dvw;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 4.68dvw;
-            padding-left: 3dvw;
-        }
-
-        .stat22Rectangle {
-            width: 24%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3dvw;
-            border: 0.05dvw solid white;
-            box-sizing: border-box;
-        }
-
-        .semesterButtonsContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            justify-content: center;
-            margin-top: 2.5dvh;
-        }
-
-        .semesterButton {
-            width: 11%;
-            height: 8%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3dvw;
-            border: 0.05dvw solid white;
-            box-sizing: border-box;
-            cursor: pointer;
-            margin-left: 0.4dvw;
-            margin-right: 0.4dvw;
-            background-color: transparent;
-            color: white;
-        }
-
-        .middleRectangle {
-            width: 80%;
-            height: 60%;
-            position: absolute;
-            top: 45%;
-            left: 40%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            text-align: left;
-            font-size: 1.47dvw;
-            box-sizing: border-box;
-            margin-left: 1dvw;
-        }
-
-        .rightrectangle {
-            width: 20%;
-            height: 60%;
-            position: absolute;
-            top: 45%;
-            right: 40%;
-            transform: translate(195%, -50%);
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.6dvw;
-            margin: auto;
-        }
-
-        .rightrectangleButton {
-            width: 80%;
-            height: 50%;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.08dvw;
-            border: 0.05dvw solid white;
-            box-sizing: border-box;
-            cursor: pointer;
-            margin: auto;
-            color: white;
-            background-color: transparent;
-        }
-
-        .rightrectangletext {
-            width: 80%;
-            height: 50%;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3dvw;
-            border: 0.05dvw solid white;
-            box-sizing: border-box;
-            margin: auto;
-            color: white;
-        }
-
-        #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
+body {
+	background-image: url("../static/images/cloud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title-section {
+    background-image: url("../static/images/thunder.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 0.2vw solid black;
+    margin-bottom: 0.9dvh;
+}
+
+.main-menu-text {
+    font-size: min(2dvw,4dvh);
+    text-align: center; 
+    color: white;
+    margin: 0;
+    text-shadow: 0.1vw 0.2vh #b5b5b5;
+    -webkit-backdrop-filter: blur(0.2vw);
+    backdrop-filter: blur(0.2vw);
+}
+
+.project-buttons {
+    display: flex;
+}
+
+.main-menu-button {
+    cursor: pointer;
+    width: 4vw;
+    height: 8dvh;
+}
+
+.category-button {
+    background: white;
+    border: 0.1vw solid black;
+    box-sizing: border-box;
+    font-size: min(1dvw,2dvh);
+    color: black;
+    text-decoration: none;
+    padding: 0.3vw 2.5dvh;
+    cursor: pointer;
+    margin: 0.5vw 1dvh;
+    position: relative;
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 42vw;
+    height: 21dvh;
+    margin: 1vw;
+    padding: 0.5vw;
+    border: 0.05vw solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(0.1vw);
+    backdrop-filter: blur(0.1vw);
+    box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.project-info {
+    display: flex;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.5dvh;
+}
+
+.project-button {
+    width: 25dvw;
+    font-size: min(1.2dvw,2.4dvh);
+}
+
+.release-date {
+    margin-left: auto;
+    font-size: min(0.9dvw,1.8dvh);
+}
+
+.project-content {
+    display: flex;
+    align-items: center;
+}
+
+.project-logo {
+    margin-right: 0.5vw;
+    margin-bottom: 5vh;
+}
+
+.projectphoto {
+    width: min(6dvw,12dvh);
+    height: min(6dvw,12dvh);
+}
+
+.project-description {
+    flex: 1;
+    height: 16dvh;
+    margin-left: 0.5vw;
+}
+
+.project-description-text {
+    font-size: min(1dvw,2dvh);
+}
+
+.placeholder-box {
+    background: white;
+    border: 0.1vw solid black;
+    box-sizing: border-box;
+    padding: 0.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 35dvh;
+}
+
+.contact-item {
+    margin: 0.5vw 0;
+}
+
+.contact-item img {
+    vertical-align: middle;
+    margin-right: 0.5vw;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-box {
+    border: 0.1vw solid white;
+    box-sizing: border-box;
+    padding: 1vw;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30dvh;
+}
+
+
+
+
+
+
+
+.forgegrid {
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forgegrid-content {
+    display: flex;
+}
+
+.forgegrid-content p {
+    flex-grow: 1;
+}
+
+.forgegrid-item {
+    width: 47%;
+    height: 90%;
+    background-color: #ccc;
+    border: 0.05vw solid #000;
+    box-sizing: border-box;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgesatir {
+    width: 90vw;
+    height: 11dvh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.forgegrid-image {
+    width: 4vw;
+    height: 8dvh;
+    position: absolute;
+    left: 0.5vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.forgegrid-item p {
+    flex-grow: 1;
+    white-space: nowrap;
+    display: flex;
+}
+
+.gem-text {
+    justify-content: center;
+    margin: 0.68vw;
+    padding: 0;
+}
+
+
+
+
+
+
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bigoilbigbox {
+    position: relative;
+    padding: 1vw;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 1vw 0;
+    box-sizing: border-box;
+}
+
+.engines-clues-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.map-image {
+    background-image: url("../static/images/map.png");
+    padding: 1vw;
+    color: black;
+    background-color: white;
+    border: 0.05vw solid black;
+    box-sizing: border-box;
+    width: 32%;
+    height: 65dvh;
+}
+
+.engine-list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.engines-section, .clues-section {
+    background-color: white;
+    width: 34%;
+    height: 100%;
+    border: 0.05vw solid black;
+    box-sizing: border-box;
+    font-size: 1.6dvw;
+    position: sticky;
+    z-index: 1;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    font-family: Verdana, sans-serif;
+    height: 65dvh;
+}
+
+.bigoilcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 0.9dvh;
+    box-sizing: border-box;
+}
+
+.faq-title {
+    background-color: white;
+    border: 0.05vw solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    padding: 0 0.9dvh;
+    margin: 0;
+    font-size: 1dvw;
+}
+
+.faq-content {
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    border: 0.05vw solid black;
+    box-sizing: border-box;
+    padding: 1vw;
+    margin: 0.5vw;
+    justify-self: start;
+}
+
+.faq-content p {
+    margin: 1vw 0.9dvh;
+    text-align: left;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 1vw 0;
+    border: 0.05vw solid black;
+    box-sizing: border-box;
+    width: 70%;
+}
+
+.imagetext {
+    font-size: 1dvw;
+    color: white;
+    -webkit-backdrop-filter: blur(0.2vw);
+    backdrop-filter: blur(0.2vw);
+}
+
+.imagebigoil {
+    text-align: center;
+    margin-bottom: 0.9dvh;
+    width: 28vw;
+    height: 50dvh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+#buttonContainer {
+    display: flex;
+    margin-top: 1.85dvh;
+    width: 80%;
+    justify-content: space-between;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(0.15vw);
+    backdrop-filter: blur(0.15vw);
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+}
+
+.show {
+    display: block;
+}
+
+#rectangle {
+    width: 80vw;
+    height: 80dvh;
+    text-align: center;
+    padding: 1vw 1dvh;
+    position: relative;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(0.1vw);
+    backdrop-filter: blur(0.1vw);
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    border: 0.05vw solid rgba(255,255,255,0.3);
+}
+
+#rectangle .lessonList li, #rectangle ul li {
+    list-style-type: none;
+    margin-bottom: 1.2dvh;
+    color: white;
+}
+
+#rectangle select {
+    font-size: 1.1dvw;
+}
+
+#examMode {
+    display: none;
+}
+
+#examResultsMode {
+    display: none;
+}
+
+#faqMode {
+    font-size: 1dvw;
+    display: none;
+}
+
+#stat22Mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#result {
+    display: none;
+    font-size: 1.87dvw;
+    margin-top: 1.84dvh;
+    margin-bottom: 0.92dvh;
+}
+
+#noteInput {
+    display: none;
+    font-size: 1.87dvw;
+    width: 60%;
+    padding: 1.3vw;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 2.77dvh;
+    margin-bottom: 2.77dvh;
+    text-align: center;
+}
+
+#calculateButton {
+    display: none;
+    width: 20%;
+    margin-top: 1.85dvh;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+#examResultsText {
+    margin-top: 3.7dvh;
+    font-size: 1.87dvw;
+}
+
+.modeButton {
+    flex: 1;
+    height: 1.82vw;
+    font-family: 'Verdana', sans-serif;
+    box-sizing: border-box;
+    color: white;
+    background-color: transparent;
+}
+
+.dropdown {
+    font-size: 1dvw;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button {
+    font-size: 1dvw;
+    padding: 0.52vw 0.92dvh;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 1dvw;
+    box-shadow: 0 0.4vw 0.8vw 0 rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.dropdown-content a {
+    color: white;
+    font-size: 1dvw;
+    padding: 0.88vw;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    font-size: 1dvw;
+    color: white;
+}
+
+.dropdown-gpa {
+    font-size: 1dvw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropdown-stat22 {
+    font-size: 1dvw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.stat22RectanglesContainer {
+    position: absolute;
+    bottom: 0;
+    width: 75vw;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 3.05vw;
+    padding-left: 3vw;
+}
+
+.stat22RectanglesContainer2 {
+    position: absolute;
+    bottom: 0;
+    width: 75vw;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 1vw;
+    padding-left: 3vw;
+}
+
+.stat22RectanglesContainer3 {
+    position: absolute;
+    bottom: 0;
+    width: 75vw;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 4.68vw;
+    padding-left: 3vw;
+}
+
+.stat22Rectangle {
+    width: 24%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3dvw;
+    border: 0.05vw solid white;
+    box-sizing: border-box;
+}
+
+.semesterButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5dvh;
+}
+
+.semesterButton {
+    width: 11%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3dvw;
+    border: 0.05vw solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+    background-color: transparent;
+    color: white;
+}
+
+.middleRectangle {
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    text-align: left;
+    font-size: 1.47dvw;
+    box-sizing: border-box;
+    margin-left: 1vw;
+}
+
+.rightrectangle {
+    width: 20%;
+    height: 60%;
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    transform: translate(195%, -50%);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6dvw;
+    margin: auto;
+}
+
+.rightrectangleButton {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.08dvw;
+    border: 0.05vw solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: auto;
+    color: white;
+    background-color: transparent;
+}
+
+.rightrectangletext {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3dvw;
+    border: 0.05vw solid white;
+    box-sizing: border-box;
+    margin: auto;
+    color: white;
+}
+
+#donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
 
 
 
@@ -635,7 +650,7 @@
 
 
 #gamemap {
-    width: 100dvw;
+    width: 100vw;
     height: 100dvh;
     position: absolute;
     z-index: 1;
@@ -653,7 +668,7 @@
 .result-map {
     height: 35dvh;
     width: 100%;
-    border: min(0.05dvw, 0.1dvh) solid black;
+    border: min(0.05vw, 0.1vh) solid black;
     margin-bottom: 2dvh;
     box-sizing: border-box;
 }
@@ -662,15 +677,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 20dvw;
+    width: 20vw;
     height: 30dvh;
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 3dvw;
+    margin-right: 3vw;
     margin-bottom: 4dvh;
-    border: min(0.05dvw, 0.05dvh) solid black;
+    border: min(0.05vw, 0.05vh) solid black;
     box-sizing: border-box;
 }
 
@@ -678,15 +693,15 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 30dvw;
+    width: 30vw;
     height: 45dvh;
     z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 3dvw;
+    margin-right: 3vw;
     margin-bottom: 4dvh;
-    border: min(0.05dvw, 0.05dvh) solid black;
+    border: min(0.05vw, 0.05vh) solid black;
     box-sizing: border-box;
 }
 
@@ -713,11 +728,11 @@
     display: none;
     position: fixed;
     z-index: 1;
-    width: 30dvw;
+    width: 30vw;
     height: 53dvh;
     margin-top: 20dvh;
     overflow: auto;
-    border: min(0.1dvw, 0.2dvh) solid black;
+    border: min(0.1vw, 0.2vh) solid black;
     box-sizing: border-box;
     justify-content: center;
     background-image: url("../static/images/izmirpixel.png");
@@ -729,13 +744,13 @@
     display: none;
     position: absolute;
     z-index: 4;
-    width: 30dvw;
+    width: 30vw;
     height: 53dvh;
     margin-top: 20dvh;
     overflow: auto;
     background-color: #fefefe;
-    padding: 0.5dvw;
-    border: min(0.1dvw, 0.2dvh) solid black;
+    padding: 0.5vw;
+    border: min(0.1vw, 0.2vh) solid black;
     box-sizing: border-box;
     justify-content: center;
     box-sizing: border-box;
@@ -753,27 +768,29 @@
     text-align: center;
     font-size: min(1dvw, 2dvh);
     font-family: Verdana;
-    margin-top: 1dvw;
+    margin-top: 1vw;
     box-sizing: border-box;
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
-    border: min(0.1dvw, 0.2dvh) solid black;
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
+    border: min(0.1vw, 0.2vh) solid black;
     align-items: center;
 }
 
 .finalrow {
     display: flex;
     flex-direction: row;
-    width: 20dvw;
+    width: 20vw;
     height: 5dvh;
-    margin-left: 4.5dvw;
+    margin-left: 4.5vw;
     margin-top: 6dvh;
     justify-content: center;
     text-align: center;
     font-size: min(1dvw, 2dvh);
     font-family: Verdana;
     box-sizing: border-box;
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
-    border: min(0.2dvw, 0.4dvh) solid black;
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
+    border: min(0.2vw, 0.4vh) solid black;
     align-items: center;
 }
 
@@ -797,8 +814,8 @@
 }
 
 #buttonrow {
-    width: 50dvw;
-    margin-right: 50dvw;
+    width: 50vw;
+    margin-right: 50vw;
     height: 10dvh;
     background-color: transparent;
     font-size: min(0.4dvw, 0.8dvh);
@@ -813,10 +830,10 @@
 
 .modaltoggle-button {
     display: none;
-    margin-left: 0.5dvw;
-    margin-right: 0.5dvw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     margin-top: 1.1dvh;
-    width: 5dvw;
+    width: 5vw;
     height: 4.3dvh;
     box-sizing: border-box;
     background-color: #222222;
@@ -826,16 +843,16 @@
 
 .returnbutton {
     margin-top: 1.1dvh;
-    width: 2.15dvw;
-    height: 2.15dvw;
-    margin-left: 0.5dvw;
-    margin-right: 0.5dvw;
+    width: 2.15vw;
+    height: 2.15vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     background-image: url('../static/images/return40gray.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    border: min(0.05dvw, 0.1dvh) solid black;
-    border-radius: min(0.5dvh, 1dvh);
+    border: min(0.05vw, 0.1vh) solid black;
+    border-radius: min(0.5vh, 1vh);
     box-sizing: border-box;
     aspect-ratio: 1 / 1;
 }
@@ -845,17 +862,17 @@
 }
 
 .izmirclose {
-    width: 2.15dvw;
-    height: 2.15dvw;
-    margin-left: 0.5dvw;
-    margin-right: 0.5dvw;
+    width: 2.15vw;
+    height: 2.15vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     margin-top: 1.1dvh;
     background-image: url('../static/images/izmirclose1.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
-    border: min(0.05dvw, 0.1dvh) solid black;
-    border-radius: min(0.5dvh, 1dvh);
+    border: min(0.05vw, 0.1vh) solid black;
+    border-radius: min(0.5vh, 1vh);
     box-sizing: border-box;
     aspect-ratio: 1 / 1;
 }
@@ -871,10 +888,10 @@
 /* styles2.css */
 
 #map2 {
-    width: 50dvw;
+    width: 50vw;
     height: 80dvh;
     display: block;
-    border: min(0.25dvw, 0.5dvh) solid black;
+    border: min(0.25vw, 0.5vh) solid black;
     box-sizing: border-box;
 }
 
@@ -885,21 +902,21 @@
 }
 
 .startpagelefthalf {
-    width: 52dvw;
+    width: 52vw;
     height: 80dvh;
     margin-top: 3dvh;
     box-sizing: border-box;
 }
 
 .faq-menu {
-    width: 50dvw;
+    width: 50vw;
     height: 80dvh;
-    margin-right: 2dvw;
+    margin-right: 2vw;
     margin-top: 3dvh;
     box-sizing: border-box;
     display: none;
     background-color: white;
-    border: min(0.25dvw, 0.5dvh) solid black;
+    border: min(0.25vw, 0.5vh) solid black;
 }
 
 .faq-menu.show {
@@ -921,35 +938,36 @@
 }
 
 .startpagerighthalf {
-    width: 45dvw;
+    width: 45vw;
     height: 80dvh;
     margin-top: 3dvh;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border: min(0.25dvw, 0.5dvh) solid black;
+    border: min(0.25vw, 0.5vh) solid black;
     background-image: url("../static/images/izmirpixel.png");
     background-repeat: repeat;
 }
 
 .izmirgamelogo {
-    width: 30dvw;
-    height: 7dvw;
-    margin-left: 7.5dvw;
+    width: 30vw;
+    height: 7vw;
+    margin-left: 7.5vw;
     margin-top: 1dvh;
     box-sizing: border-box;
     background-image: url("../static/images/izmirlogo.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
-    border: 0.1dvw solid black;
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
+    border: 0.1vw solid black;
 }
 
 .izmirilcebox {
-    width: 42dvw;
+    width: 42vw;
     height: 44dvh;
-    margin-left: 1.5dvw;
+    margin-left: 1.5vw;
     margin-top: 1dvh;
     box-sizing: border-box;
     align-items: center;
@@ -957,23 +975,23 @@
 
 .highscore {
     font-size: min(1.5dvw, 3dvh);
-    margin-left: 3.5dvw;
+    margin-left: 3.5vw;
 }
 
 .izmirfaq {
     width: 31dvh;
     font-size: min(1.65dvw, 3.1dvh);
-    margin-left: 1dvw;
-    margin-right: 1dvw;
+    margin-left: 1vw;
+    margin-right: 1vw;
 }
 
 #timer {
     display: none;
-    margin-left: 0.5dvw;
-    margin-right: 0.5dvw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
     margin-top: 1.1dvh;
-    width: 20dvw;
-    height: 2.15dvw;
+    width: 20vw;
+    height: 2.15vw;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
@@ -981,16 +999,17 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    border-radius: min(0.25dvw, 0.5dvh);
+    border-radius: min(0.25vw, 0.5vh);
 }
 
 .izmirilcebuttons {
-    width: 42dvw;
+    width: 42vw;
     height: 35dvh;
     box-sizing: border-box;
-    border: min(0.05dvw, 0.1dvh) solid black;
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
-    padding: min(1.7dvw, 3.5dvh);
+    border: min(0.05vw, 0.1vh) solid black;
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
+    padding: min(1.7vw, 3.5dvh);
     padding-top: 5dvh;
     padding-bottom: 5dvh;
 }
@@ -1001,58 +1020,60 @@
 }
 
 .izmirilcebottombuttons {
-    width: 42dvw;
+    width: 42vw;
     height: 8dvh;
     margin-top: 1dvh;
     box-sizing: border-box;
-    border: min(0.05dvw, 0.1dvh) solid black;
+    border: min(0.05vw, 0.1vh) solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-radius: min(0.5dvw, 1dvh);
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    border-radius: min(0.5vw, 1vh);
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
 }
 
 .addremovebuttons {
     font-size: min(1.6dvw, 3.2dvh);
-    margin: 0.1dvw;
-    margin-left: 1.5dvw;
+    margin: 0.1vw;
+    margin-left: 1.5vw;
 }
 
 .ilcesayisi {
     font-size: min(1.2dvw, 2.4dvh);
-    margin-left: 1.6dvw;
+    margin-left: 1.6vw;
     margin-bottom: 2dvh;
     text-align: center;
 }
 
 .izmirlastrows {
-    width: 42dvw;
+    width: 42vw;
     height: 6dvh;
-    margin-left: 1.5dvw;
+    margin-left: 1.5vw;
     margin-top: 2dvh;
     box-sizing: border-box;
-    border: min(0.05dvw, 0.1dvh) solid black;
+    border: min(0.05vw, 0.1vh) solid black;
     display: flex;
     flex-direction: row;
-    padding: 0.2dvw;
-    border-radius: min(0.5dvw, 1dvh);
+    padding: 0.2vw;
+    border-radius: min(0.5vw, 1vh);
     align-items: center;
-    backdrop-filter: blur(max(0.5dvw, 1dvh));
+    -webkit-backdrop-filter: blur(0.5vw);
+    backdrop-filter: blur(0.5vw);
 }
 
 .izmirayarlar {
     font-size: min(1dvw, 2dvh);
-    margin-left: 5dvw;
+    margin-left: 5vw;
     transform: scale(1.5);
-    margin-right: 2dvw;
+    margin-right: 2vw;
 }
 
 .izmirstartgame {
-    width: 36dvw;
-    margin-left: 1dvw;
+    width: 36vw;
+    margin-left: 1vw;
     font-size: min(1.75dvw, 3.5dvh);
-    margin-right: 1dvw;
+    margin-right: 1vw;
 }
 
 #izmirtime {
