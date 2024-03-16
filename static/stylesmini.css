@@ -1,1043 +1,1062 @@
 
-        body {
-            background-image: url("../static/images/cloud.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            box-sizing: border-box;
-            font-family: Verdana, sans-serif;
-            display: flex;
-            margin: 0;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .title-section {
-            background-image: url("../static/images/thunder.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            box-sizing: border-box;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            border: 3px solid black;
-            margin-bottom: 0.1vh;
-        }
-
-        .main-menu-button {
-            width: 10%;
-            cursor: pointer;
-            width: 50px;
-            height: 50px;
-        }
-
-        .main-menu-text {
-            width: 50%;
-            font-size: 13px;
-            padding: 5px 5px;
-            text-align: left;
-            margin-left: 10px;
-            margin-right: 10px;
-            color: white;
-            margin: 0;
-        }
-
-        .project-button {
-            width: 330px;
-        }
-
-        .project-buttons {
-            width: 40%;
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-            top: 0;
-            right: 0;
-        }
-
-        .category-button {
-            background: white;
-            border: 2px solid black;
-            box-sizing: border-box;
-            font-size: 8px;
-            color: black;
-            padding: 5px 5px;
-            cursor: pointer;
-            margin: 5px 3px;
-            position: relative;
-        }
-
-        .project-box {
-            font-size: 4vw;
-            text-align: center;
-            width: 80vw;
-            height: 40vh;
-            margin: 10px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            border: 0.05dvw solid rgba(0,0,0,0.3);
-            box-sizing: border-box;
-            border-radius: 0.4dvw;
-            backdrop-filter: blur(0.1dvw);
-            box-shadow: 0 0.05dvw 0.63dvw rgba(255,255,255,0.25);
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-        }
-
-        .project-info {
-            display: flex;
-            font-size: 15px; 
-            justify-content: space-between; 
-            align-items: center;
-            margin-bottom: 40px; 
-        }
-
-        .release-date {
-            margin-left: auto; 
-            font-size: 14px; 
-        }
-
-        .project-content {
-            display: flex;
-            align-items: center;
-        }
-
-        .project-logo {
-            width: 100px; 
-            height: 100px;
-            margin-right: 10px;
-        }
-
-        .project-description {
-            flex: 1; 
-            margin-left: 10px; 
-        }
-
-        .placeholder-box {
-            width: 90dvw;
-            height: 13vh;
-            background: white;
-            border: 2px solid black;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
-            margin-top: 200px;
-        }
-
-        .contact-box {
-            border: 2px solid white;
-            box-sizing: border-box;
-            padding: 20px;
-            background-color: black;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 130px 0;
-        }
-
-        .contact-item {
-            margin: 10px 0;
-        }
-
-        .contact-item img {
-            vertical-align: middle;
-            margin-right: 10px;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-
-
-
-
-
-
-
-        .forgegrid {
-            width: 95dvw;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(1px);
-        }
-
-        .forgegrid-content {
-            display: flex;
-        }
-
-        .forgegrid-content p {
-            flex-grow: 1;
-        }
-
-        .forgegrid-item {
-            width: 100%;
-            height: 100%;
-            box-sizing: border-box;
-            position: relative;
-            align-items: center;
-            color: white;
-            font-family: Verdana, sans-serif;
-        }
-
-        .forgesatir {
-            width: 95dvw;
-            height: 15vh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .forgegrid-image {
-            width: 10dvw;
-            height: 5vh;
-            position: absolute;
-            left: -5px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .forgegrid-item p {
-            display: flex;
-        }
-
-        .gem-text {
-            justify-content: center;
-            margin: 5px;
-            padding: 0;
-            font-size: 9px;
-            text-align: center;
-        }
-
-
-
-
-
-
-        .content-container {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            width: 80%;
-            margin: 0 auto;
-        }
-
-        .bigoilbigbox {
-            position: relative;
-            padding: 20px;
-            color: black;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin: 20px 0;
-            box-sizing: border-box;
-        }
-
-        .engines-clues-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%;
-            box-sizing: border-box;
-            
-        }
-
-        .map-image {
-            background-image: url("../static/images/map.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            align-items: center;
-            width: 100%;
-            height: 320px;
-            margin-top: 20px;
-        }
-
-        .engines-section, .clues-section {
-            border: 1px solid black;
-            box-sizing: border-box;
-            position: sticky;
-            z-index: 1;
-            flex: 1;
-            text-align: center;
-            width: 100%;
-            height: 50%;
-            font-family: Verdana, sans-serif;
-            border-radius: 8px;
-            backdrop-filter: blur(2px);
-            background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .clue {
-            font-size: 32px;
-        }
-
-        .bigoilcontainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            margin: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .faq-title {
-            width: 90%;
-            background-color: white;
-            border: 1px solid black;
-            box-sizing: border-box;
-            text-align: center;
-            font-family: Verdana, sans-serif;
-            padding: 0px 10px;
-            margin: 0;
-            font-size: 18px;
-        }
-
-        .faq-content {
-            width: 90%;
-            font-family: Verdana, sans-serif;
-            background-color: white;
-            border: 1px solid black;
-            box-sizing: border-box;
-            padding: 20px;
-            margin: 10px;
-            justify-self: start;
-        }
-
-        .faq-content p {
-            margin: 20px 10px;
-            text-align: left;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: space-between;
-            background-color: white;
-            padding: 20px 0;
-            border: 1px solid black;
-            box-sizing: border-box;
-            width: 70%;
-        }
-
-        .imagetext {
-            font-size: 16px;
-            color: white;
-            backdrop-filter: blur(1px);
-        }
-
-         .imagebigoil {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            align-items: center;
-            text-align: center;
-            width: 300px;
-            height: 300px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-
-
-
-
-
-        #buttonContainer {
-            display: flex;
-            margin-top: 10px;
-            width: 100%;
-            justify-content: space-between;
-        }
-
-        .show {
-            display: block;
-        }
-
-        #rectangle {
-            width: 100%;
-            height: 80vh;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 10px;
-            position: relative;
-        }
-
-        #examMode {
-            display: none;
-        }
-
-        #examResultsMode {
-            display: none;
-        }
-
-        #faqMode {
-            font-size: 15px;
-            display: none;
-            color: white;
-        }
-
-        #stat22Mode {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-
-        #result {
-            display: none;
-            font-size: 36px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: white;
-        }
-
-        #noteInput {
-            display: none;
-            font-size: 36px;
-            width: 60%;
-            padding: 25px;
-            box-sizing: border-box;
-            margin: 0 auto;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        #calculateButton {
-            display: none;
-            width: 60%;
-            margin-top: 20px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #examResultsText {
-            margin-top: 40px;
-            font-size: 28px;
-            color: white;
-        }
-
-        .modeButton {
-            flex: 1;
-            height: 35px;
-            font-family: 'Verdana', sans-serif;
-            background-color: transparent;
-            color: white;
-        }
-
-        .dropdown {
-            font-size: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown button {
-            font-size: 20px;
-            padding: 10px;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            font-size: 20px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 5;
-        }
-
-        .dropdown-content a {
-            color: white;
-            font-size: 20px;
-            padding: 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            font-size: 20px;
-        }
-
-        .dropdown-gpa {
-            font-size: 20px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .dropdown-stat22 {
-            font-size: 20px;
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .stat22RectanglesContainer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 60px;
-        }
-
-        .stat22RectanglesContainer2 {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 20px;
-        }
-
-        .stat22RectanglesContainer3 {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            padding-bottom: 90px;
-        }
-
-        .stat22Rectangle {
-            width: 23%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            border: 1px solid white;
-            box-sizing: border-box;
-            color: white;
-            backdrop-filter: blur(2px);
-        }
-
-        .semesterButtonsContainer {
-            display: flex;
-            flex-wrap: wrap;
-            width: 95%;
-            height: 60px;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 10px;
-            background-color: transparent;
-        }
-
-        .semesterButton {
-            width: 25%;
-            height: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            border: 1px solid white;
-            box-sizing: border-box;
-            cursor: pointer;
-            color: white;
-            background-color: transparent;
-        }
-
-        .middleRectangle {
-            width: 85%;
-            height: 60%;
-            position: absolute;
-            top: 45%;
-            left: 35%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            text-align: left;
-            font-size: 10px;
-            border: 1px solid #000;
-            box-sizing: border-box;
-            color: white;
-            border-radius: 8px;
-            backdrop-filter: blur(2px);
-            background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        #rectangle select {
-            font-size: 14px;
-        }
-
-        .rightrectangle {
-            width: 20%;
-            height: 60%;
-            background-color: white;
-            position: absolute;
-            top: 45%;
-            right: 40%;
-            transform: translate(195%, -50%);
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin: auto;
-            border: 1px solid #000;
-            box-sizing: border-box;
-            border-radius: 8px;
-            backdrop-filter: blur(2px);
-            background-color: rgba(255,255,255,0.5);
-            box-shadow: 0 1px 12px rgba(0,0,0,0.25);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .rightrectangleButton {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            background-color: transparent;
-            color: white;
-        }
-
-        .rightrectangletext {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-            color: white;
-        }
-
-        #donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
-
-        #rectangle .lessonList li,
-        #rectangle ul li {
-            list-style-type: none;
-            margin-bottom: 10px;
-        }
-
-
-
-
-
-
-
-
-        #gamemap {
-            width: 100dvw;
-            height: 65dvh;
-            position: absolute;
-            z-index: 1;
-            display: flex;
-            box-sizing: border-box;
-        }
-
-        #mini-map {
-            width: 100dvw;
-            height: 30dvh;
-            z-index: 3;
-            box-sizing: border-box;
-        }
-
-        .result-map {
-            height: 35dvh;
-            width: 100%;
-            border: 0.05dvw solid black;
-            margin-bottom: 2dvh;
-            box-sizing: border-box;
-        }
-
-        #overlay-container {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 35dvh;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-        }
-
-        #overlay-container.hovered {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            height: 35dvh;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 0.05dvw solid black;
-            box-sizing: border-box;
-        }
-
-
-        #action-button {
-            width: 100%;
-            height: 5dvh;
-            background-color: #4CAF50; /* Green */
-            color: white;
-            border: none;
-            font-size: 1.2em;
-            box-sizing: border-box;
-        }
-
-        #next-game-button {
-            width: 100%;
-            height: 5dvh;
-            box-sizing: border-box;
-        }
-
-        .modal {
-            display: flex;
-            flex-direction: column;
-            display: none;
-            position: fixed;
-            z-index: 1;
-            width: 100dvw;
-            height: 50dvh;
-            margin-top: 20dvh;
-            overflow: auto;
-            border: 0.1dvw solid black;
-            box-sizing: border-box;
-            justify-content: center;
-            background-image: url("../static/images/izmirpixel.png");
-        }
-
-        .final-results-modal {
-            display: flex;
-            flex-direction: column;
-            display: none;
-            position: absolute;
-            z-index: 4;
-            width: 100dvw;
-            height: 50dvh;
-            margin-top: 20dvh;
-            overflow: auto;
-            background-color: #fefefe;
-            padding: 0.5dvw;
-            border: 0.1dvw solid black;
-            box-sizing: border-box;
-            justify-content: center;
-            box-sizing: border-box;
-            background-repeat: repeat;
-            background-image: url("../static/images/izmirpixel.png");
-            align-items: center;
-        }
-
-        .modalrow {
-            display: flex;
-            flex-direction: row;
-            width: 90dvw;
-            height: 5dvh;
-            margin-left: 5dvw;
-            justify-content: center;
-            text-align: center;
-            font-size: 2dvh;
-            font-family: Verdana;
-            margin-top: 2dvh;
-            box-sizing: border-box;
-            backdrop-filter: blur(1dvw);
-            border: 0.1dvw solid black;
-            align-items: center;
-        }
-
-        .finalrow {
-            display: flex;
-            flex-direction: row;
-            width: 90dvw;
-            height: 5dvh;
-            margin-left: 5dvw;
-            margin-top: 6dvh;
-            justify-content: center;
-            text-align: center;
-            font-size: 2dvh;
-            font-family: Verdana;
-            box-sizing: border-box;
-            backdrop-filter: blur(1dvw);
-            border: 0.2dvw solid black;
-            align-items: center;
-        }
-
-        .modalcontent {
-            flex: 1;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        #result-info {
-            margin-top: 2.35dvh;
-            box-sizing: border-box;
-        }
-
-        #returntomenu-button, #playagain-button {
-            height: 4.2dvh;
-        }
-
-        #mini-map .gmnoprint, #result-map .gmnoprint {
-            display: none !important;
-        }
-
-        #buttonrow {
-            width: 100dvw;
-            height: 8dvh;
-            background-color: transparent;
-            font-size: 0.4dvw;
-            z-index: 5;
-            position: absolute;
-            overflow: auto;
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            box-sizing: border-box;            
-        }
-
-        .modaltoggle-button {
-            display: none;
-            margin-right: 0.5dvh;
-            margin-top: 2dvh;
-            width: 8dvh;
-            height: 4dvh;
-            box-sizing: border-box;
-            background-color: #222222;
-            color: white;
-        }
-
-        .returnbutton {
-            margin-top: 2dvh;
-            margin-left: 1.5dvh;
-            margin-right: 1.5dvh;
-            width: 4dvh;
-            height: 4dvh;
-            background-image: url('../static/images/return40gray.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            border: 0.05dvw solid black;
-            border-radius: 0.5dvh;
-            box-sizing: border-box;
-        }
-
-        .returnbutton:hover {
-            background-image: url('../static/images/return40normal.png');
-        }
-
-        .izmirclose {
-            margin-top: 2dvh;
-            margin-left: 1.5dvh;
-            width: 4dvh;
-            height: 4dvh;
-            background-image: url('../static/images/izmirclose1.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            border: 0.05dvw solid black;
-            border-radius: 0.5dvh;
-            box-sizing: border-box;
-        }
-
-        .izmirclose:hover {
-            background-image: url('../static/images/izmirclose2.png');
-        }
-
-        #return-button, #overlay-container {
-            display: none;
-        }
-
-        /* styles2.css */
-
-        #map2 {
-            width: 100dvw;
-            height: 50vh;
-            display: block;
-            border: 0.5dvw solid black;
-            box-sizing: border-box;
-        }
-
-        .startpage {
-            width: 100dvw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column-reverse;
-            box-sizing: border-box;
-            margin-top: 3vh;
-        }
-
-        .startpagelefthalf {
-            width: 100dvw;
-            height: 50vh;
-            box-sizing: border-box;
-        }
-
-        .faq-menu {
-            width: 100dvw;
-            height: 50vh;
-            box-sizing: border-box;
-            display: none;
-            background-color: white;
-            border: 0.25dvw solid black;
-        }
-
-        .faq-menu.show {
-            display: block;
-        }
-
-        .izmirfaqtext1 {
-            font-size: 4dvw;
-            color: red;
-        }
-
-        .izmirfaqtext2 {
-            font-size: 8dvw;
-        }
-
-        .izmirfaqtext3 {
-            font-size: 2.8dvw;
-            color: gray;
-        }
-
-        .startpagerighthalf {
-            width: 100dvw;
-            height: 70vh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            border: 0.5dvw solid black;
-            background-image: url("../static/images/izmirpixel.png");
-            background-repeat: repeat;
-        }
-
-        .izmirgamelogo {
-            width: 90dvw;
-            height: 20dvw;
-            margin-left: 5dvw;
-            box-sizing: border-box;
-            background-image: url("../static/images/izmirlogo.png");
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            backdrop-filter: blur(1dvw);
-            border: 0.2vh solid black;
-        }
-
-        .izmirilcebox {
-            width: 100dvw;
-            height: 29.8vh;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        .highscore {
-            display: flex;
-            flex-direction: row;
-            font-size: 4dvw;
-            margin-left: 1.5dvw;
-        }
-
-        .izmirfaq {
-            width: 50%;
-            height: 100%;
-            font-size: 2vh;
-            margin-left: 1dvw;
-            margin-right: 1dvw;
-        }
-
-        #timer {
-            display: none;
-            margin-right: 1.5dvh;
-            margin-top: 2dvh;
-            width: 22dvh;
-            height: 4dvh;
-            box-sizing: border-box;
-            background-color: #222222;
-            color: white;
-            font-size: 1.5dvh;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            border-radius: 0.5vh;
-        }
-
-        .izmirilcebuttons {
-            width: 100dvw;
-            height: 26.24vh;
-            padding: 1dvw;
-            box-sizing: border-box;
-            backdrop-filter: blur(1dvw);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .ilcebutton {
-            font-size: 2.2vh;
-        }
-
-        .izmirilcebottombuttons {
-            width: 100dvw;
-            height: 3.56vh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            backdrop-filter: blur(1dvw);
-        }
-
-        .addremovebuttons {
-            font-size: 3dvw;
-            margin: 0.1dvw;
-            margin-left: 2dvw;
-        }
-
-        .ilcesayisi {
-            font-size: 4dvw;
-            margin-left: 10dvw;
-            text-align: center;
-        }
-
-        .izmirlastrows {
-            width: 100dvw;
-            height: 6.06vh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            backdrop-filter: blur(1dvw);
-            align-items: center;
-        }
-
-        .izmirayarlar {
-            font-size: 4dvw;
-            margin-left: 1dvw;
-            margin-right: 10dvw;
-            padding: 2dvw;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .izmirstartgame {
-            width: 100%;
-            height: 100%;
-            margin-left: 2dvw;
-            font-size: 2vh;
-            margin-right: 1dvw;
-        }
-
-        #izmirtime {
-            font-size: 3dvw;
-        }
+body {
+    background-image: url("../static/images/cloud.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title-section {
+    background-image: url("../static/images/thunder.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 0.5vw solid black;
+    margin-bottom: 0.1vh;
+}
+
+.main-menu-button {
+    cursor: pointer;
+    width: 6vh;
+    height: 6vh;
+}
+
+.main-menu-text {
+    width: 50vw;
+    font-size: min(4dvw,2dvh);
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    color: white;
+    margin: 0;
+}
+
+.project-buttons {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    top: 0;
+    right: 0;
+}
+
+.category-button {
+    background: white;
+    border: 0.5vw solid black;
+    box-sizing: border-box;
+    font-size: 2vw;
+    color: black;
+    padding: 1vw 1vh;
+    cursor: pointer;
+    margin: 1vw 1vh;
+    position: relative;
+}
+
+.project-box {
+    font-size: 4vw;
+    text-align: center;
+    width: 80vw;
+    height: 100%;
+    margin: 2vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    border: 0.05dvw solid rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+
+.project-info {
+    display: flex;
+    font-size: 4vw; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 3vh; 
+}
+
+.project-button {
+    width: 70dvw;
+}
+
+.release-date {
+    margin-left: auto; 
+    font-size: min(4dvw,2dvh); 
+}
+
+.project-content {
+    display: flex;
+    align-items: center;
+}
+
+.project-logo {
+    margin-right: 1vw;
+}
+
+.projectphoto {
+    width: 25vw;
+    height: 25vw;
+}
+
+.project-description {
+    flex: 1; 
+    margin-left: 3vw; 
+}
+
+.placeholder-box {
+    width: 90vw;
+    height: 13vh;
+    background: white;
+    border: 0.5vw solid black;
+    box-sizing: border-box;
+    padding: 2.5vw;
+    text-align: center;
+    margin-top: 30vh;
+}
+
+.contact-box {
+    border: 0.5vw solid white;
+    box-sizing: border-box;
+    padding: 5vw;
+    background-color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30vh;
+}
+
+.contact-item {
+    margin: 2.5vw 0;
+}
+
+.contact-item img {
+    vertical-align: middle;
+    margin-right: 2.5vw;
+}
+
+.contact-item a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+.forgegrid {
+    width: 95dvw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.forgegrid-content {
+    display: flex;
+}
+
+.forgegrid-content p {
+    flex-grow: 1;
+}
+
+.forgegrid-item {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    align-items: center;
+    color: white;
+    font-family: Verdana, sans-serif;
+}
+
+.forgesatir {
+    width: 95dvw;
+    height: 15vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.forgegrid-image {
+    width: 10dvw;
+    height: 5vh;
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.forgegrid-item p {
+    display: flex;
+}
+
+.gem-text {
+    justify-content: center;
+    margin: 5px;
+    padding: 0;
+    font-size: 9px;
+    text-align: center;
+}
+
+
+
+
+
+
+.content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bigoilbigbox {
+    position: relative;
+    padding: 5vw;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5vw 0;
+    box-sizing: border-box;
+}
+
+.engines-clues-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    height: 116vh;
+}
+
+.map-image {
+    background-image: url("../static/images/map.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    width: 90vw;
+    height: 90vw;
+    border-radius: 5vw;
+    margin-top: 3vh;
+}
+
+.engines-section, .clues-section {
+    border: 1px solid black;
+    box-sizing: border-box;
+    position: sticky;
+    z-index: 1;
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    height: 50vh;
+    font-family: Verdana, sans-serif;
+    border-radius: 2vw;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.clue {
+    font-size: 8vw;
+}
+
+.bigoilcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 2.5vw;
+    box-sizing: border-box;
+}
+
+.faq-title {
+    width: 90%;
+    background-color: white;
+    border: 0.5vw solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Verdana, sans-serif;
+    padding: 0px 2.5vw;
+    margin: 0;
+    font-size: 4.5vw;
+}
+
+.faq-content {
+    width: 90%;
+    font-family: Verdana, sans-serif;
+    background-color: white;
+    border: 0.5vw solid black;
+    box-sizing: border-box;
+    padding: 5vw;
+    margin: 2.5vw;
+    justify-self: start;
+}
+
+.faq-content p {
+    margin: 5vw 2.5vw;
+    text-align: left;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 5vw 0;
+    border: 0.5vw solid black;
+    box-sizing: border-box;
+    width: 70%;
+}
+
+.imagetext {
+    font-size: 4vw;
+    color: white;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.imagebigoil {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    text-align: center;
+    width: 90vw;
+    height: 90vw;
+    border-radius: 5vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+
+
+
+
+
+
+
+#buttonContainer {
+    display: flex;
+    margin-top: 1.5vh;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.show {
+    display: block;
+}
+
+#rectangle {
+    width: 100%;
+    height: 80vh;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2.5vw;
+    position: relative;
+}
+
+#examMode {
+    display: none;
+}
+
+#examResultsMode {
+    display: none;
+}
+
+#faqMode {
+    font-size: 4vw;
+    display: none;
+    color: white;
+}
+
+#stat22Mode {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+#result {
+    display: none;
+    font-size: 9vw;
+    margin-top: 2.5vh;
+    margin-bottom: 1vh;
+    color: white;
+}
+
+#noteInput {
+    display: none;
+    font-size: 9vw;
+    width: 60%;
+    padding: 6vw;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    text-align: center;
+}
+
+#calculateButton {
+    display: none;
+    width: 60%;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#examResultsText {
+    margin-top: 4vh;
+    font-size: 7vw;
+    color: white;
+}
+
+.modeButton {
+    flex: 1;
+    height: 9vw;
+    font-family: 'Verdana', sans-serif;
+    background-color: transparent;
+    color: white;
+}
+
+.dropdown {
+    font-size: 5vw;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button {
+    font-size: 5vw;
+    padding: 2.5vw;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-size: 5vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.dropdown-content a {
+    color: white;
+    font-size: 5vw;
+    padding: 4vw;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    font-size: 5vw;
+}
+
+.dropdown-gpa {
+    font-size: 5vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropdown-stat22 {
+    font-size: 5vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.stat22RectanglesContainer {
+    width: 95vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;    
+}
+
+.stat22RectanglesContainer2 {
+    width: 95vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2vh;
+}
+
+.stat22RectanglesContainer3 {
+    width: 95vw;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 55vh;
+}
+
+.stat22Rectangle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    border: 1px solid white;
+    box-sizing: border-box;
+    color: white;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.semesterButtonsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95vw;
+    height: 7vh;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1vh;
+    background-color: transparent;
+}
+
+.semesterButton {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    border: 1px solid white;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+}
+
+.middleRectangle {
+    width: 85%;
+    height: 60%;
+    position: absolute;
+    top: 45%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    text-align: left;
+    font-size: 2.5vw;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+#rectangle select {
+    font-size: 3.5vw;
+}
+
+.rightrectangle {
+    width: 20%;
+    height: 60%;
+    background-color: white;
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    transform: translate(195%, -50%);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vw;
+    margin: auto;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    border-radius: 8px;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 0 1px 12px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.rightrectangleButton {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vw;
+    background-color: transparent;
+    color: white;
+    box-sizing: border-box;
+    border: 5vh white;
+    cursor: pointer;
+}
+
+.rightrectangletext {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    color: white;
+}
+
+#donem1Mode, #donem2Mode, #donem3Mode, #donem4Mode, #donem5Mode, #donem6Mode, #donem7Mode, #donem8Mode { display: none; }
+
+#rectangle .lessonList li,
+#rectangle ul li {
+    list-style-type: none;
+    margin-bottom: 1vh;
+}
+
+
+
+
+
+
+
+
+#gamemap {
+    width: 100dvw;
+    height: 65dvh;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    box-sizing: border-box;
+}
+
+#mini-map {
+    width: 100dvw;
+    height: 30dvh;
+    z-index: 3;
+    box-sizing: border-box;
+}
+
+.result-map {
+    height: 35dvh;
+    width: 100%;
+    border: 0.05dvw solid black;
+    margin-bottom: 2dvh;
+    box-sizing: border-box;
+}
+
+#overlay-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 35dvh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.05dvw solid black;
+    box-sizing: border-box;
+}
+
+#overlay-container.hovered {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 35dvh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.05dvw solid black;
+    box-sizing: border-box;
+}
+
+
+#action-button {
+    width: 100%;
+    height: 5dvh;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    box-sizing: border-box;
+}
+
+#next-game-button {
+    width: 100%;
+    height: 5dvh;
+    box-sizing: border-box;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100dvw;
+    height: 50dvh;
+    margin-top: 20dvh;
+    overflow: auto;
+    border: 0.1dvw solid black;
+    box-sizing: border-box;
+    justify-content: center;
+    background-image: url("../static/images/izmirpixel.png");
+}
+
+.final-results-modal {
+    display: flex;
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    z-index: 4;
+    width: 100dvw;
+    height: 50dvh;
+    margin-top: 20dvh;
+    overflow: auto;
+    background-color: #fefefe;
+    padding: 0.5dvw;
+    border: 0.1dvw solid black;
+    justify-content: center;
+    box-sizing: border-box;
+    background-repeat: repeat;
+    background-image: url("../static/images/izmirpixel.png");
+    align-items: center;
+}
+
+.modalrow {
+    display: flex;
+    flex-direction: row;
+    width: 90dvw;
+    height: 5dvh;
+    margin-left: 5dvw;
+    justify-content: center;
+    text-align: center;
+    font-size: 2dvh;
+    font-family: Verdana;
+    margin-top: 2dvh;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 0.1dvw solid black;
+    align-items: center;
+}
+
+.finalrow {
+    display: flex;
+    flex-direction: row;
+    width: 90dvw;
+    height: 5dvh;
+    margin-left: 5dvw;
+    margin-top: 6dvh;
+    justify-content: center;
+    text-align: center;
+    font-size: 2dvh;
+    font-family: Verdana;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    border: 0.2dvw solid black;
+    align-items: center;
+}
+
+.modalcontent {
+    flex: 1;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#result-info {
+    margin-top: 2.35dvh;
+    box-sizing: border-box;
+}
+
+#returntomenu-button, #playagain-button {
+    height: 4.2dvh;
+}
+
+#mini-map .gmnoprint, #result-map .gmnoprint {
+    display: none !important;
+}
+
+#buttonrow {
+    width: 100dvw;
+    height: 8dvh;
+    background-color: transparent;
+    font-size: 0.4dvw;
+    z-index: 5;
+    position: absolute;
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    box-sizing: border-box;            
+}
+
+.modaltoggle-button {
+    display: none;
+    margin-right: 0.5dvh;
+    margin-top: 2dvh;
+    width: 8dvh;
+    height: 4dvh;
+    box-sizing: border-box;
+    background-color: #222222;
+    color: white;
+}
+
+.returnbutton {
+    margin-top: 2dvh;
+    margin-left: 1.5dvh;
+    margin-right: 1.5dvh;
+    width: 4dvh;
+    height: 4dvh;
+    background-image: url('../static/images/return40gray.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0.05dvw solid black;
+    border-radius: 0.5dvh;
+    box-sizing: border-box;
+}
+
+.returnbutton:hover {
+    background-image: url('../static/images/return40normal.png');
+}
+
+.izmirclose {
+    margin-top: 2dvh;
+    margin-left: 1.5dvh;
+    width: 4dvh;
+    height: 4dvh;
+    background-image: url('../static/images/izmirclose1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0.05dvw solid black;
+    border-radius: 0.5dvh;
+    box-sizing: border-box;
+}
+
+.izmirclose:hover {
+    background-image: url('../static/images/izmirclose2.png');
+}
+
+#return-button, #overlay-container {
+    display: none;
+}
+
+/* styles2.css */
+
+#map2 {
+    width: 100dvw;
+    height: 50vh;
+    display: block;
+    border: 0.5dvw solid black;
+    box-sizing: border-box;
+}
+
+.startpage {
+    width: 100dvw;
+    height: 113vh;
+    display: flex;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+    margin-top: 1vh;
+}
+
+.startpagelefthalf {
+    width: 100dvw;
+    height: 50vh;
+    box-sizing: border-box;
+}
+
+.faq-menu {
+    width: 100dvw;
+    height: 50vh;
+    display: none;
+    background-color: white;
+    border: 0.25dvw solid black;
+    box-sizing: border-box;
+}
+
+.faq-menu.show {
+    display: block;
+}
+
+.izmirfaqtext1 {
+    font-size: 4dvw;
+    color: red;
+}
+
+.izmirfaqtext2 {
+    font-size: 8dvw;
+}
+
+.izmirfaqtext3 {
+    font-size: 2.8dvw;
+    color: gray;
+}
+
+.startpagerighthalf {
+    width: 100dvw;
+    height: 63vh;
+    display: flex;
+    flex-direction: column;
+    border: 0.5dvw solid black;
+    background-image: url("../static/images/izmirpixel.png");
+    background-repeat: repeat;
+    box-sizing: border-box;
+}
+
+.izmirgamelogo {
+    width: 97dvw;
+    height: 25dvw;
+    margin-left: 1dvw;
+    box-sizing: border-box;
+    background-image: url("../static/images/izmirlogo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.izmirilcebox {
+    width: 100dvw;
+    height: 40vh;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.highscore {
+    display: flex;
+    flex-direction: row;
+    font-size: 4dvw;
+    margin-left: 1.5dvw;
+    box-sizing: border-box;
+}
+
+.izmirfaq {
+    width: 50%;
+    height: 100%;
+    font-size: 2vh;
+    margin-left: 1dvw;
+    margin-right: 1dvw;
+    box-sizing: border-box;
+}
+
+#timer {
+    display: none;
+    margin-right: 1.5dvh;
+    margin-top: 2dvh;
+    width: 22dvh;
+    height: 4dvh;
+    box-sizing: border-box;
+    background-color: #222222;
+    color: white;
+    font-size: 1.5dvh;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.5vh;
+}
+
+.izmirilcebuttons {
+    width: 100dvw;
+    height: 35vh;
+    padding: 1dvw;
+    box-sizing: border-box;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.ilcebutton {
+    font-size: 2.5vh;
+}
+
+.izmirilcebottombuttons {
+    width: 100dvw;
+    height: 5vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.addremovebuttons {
+    font-size: 3dvw;
+    margin: 0.1dvw;
+    margin-left: 2dvw;
+    box-sizing: border-box;
+}
+
+.ilcesayisi {
+    font-size: 4dvw;
+    margin-left: 10dvw;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.izmirlastrows {
+    width: 100dvw;
+    height: 6.06vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    align-items: center;
+}
+
+.izmirayarlar {
+    font-size: 4dvw;
+    margin-left: 1dvw;
+    margin-right: 10dvw;
+    padding: 2dvw;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.izmirstartgame {
+    width: 100%;
+    height: 100%;
+    margin-left: 2dvw;
+    font-size: 2vh;
+    margin-right: 1dvw;
+    box-sizing: border-box;
+}
+
+#izmirtime {
+    font-size: 3dvw;
+}
