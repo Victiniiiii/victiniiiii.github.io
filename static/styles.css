@@ -137,7 +137,8 @@ a {
 }
 
 .contact-item {
-    margin: 0.5vw 0;
+    margin: 1vw;
+    padding: 1vw;
 }
 
 .contact-item img {
@@ -160,6 +161,11 @@ a {
     justify-content: center;
     align-items: center;
     margin-top: 30dvh;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
 }
 
 
