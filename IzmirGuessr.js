@@ -283,7 +283,7 @@ const districtsData = [
 const map2 = L.map('map2', {
     maxZoom: 11,
     minZoom: 9,
-    disableDoubleClickZoom : true,
+    disableDoubleClickZoom : "true",
 }).setView([initialLat, initialLon], initialZoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '� OpenStreetMap contributors' }).addTo(map2);
