@@ -406,6 +406,7 @@ function initMap() {
             streetViewControl: false,
             addressControl: false,
             fullscreenControl: false,
+            gestureHandling: "none",
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -420,6 +421,7 @@ function initMap() {
                     addressControl: false,
                     streetViewControl: false,
                     fullscreenControl: false,
+                    gestureHandling: "none",
                 });
 
                 gamemap.setStreetView(panorama);
