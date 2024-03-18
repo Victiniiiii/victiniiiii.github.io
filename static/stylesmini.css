@@ -825,7 +825,7 @@ a {
 .modaltoggle-button {
     display: none;
     margin-right: 0.5dvh;
-    margin-top: 1dvh;
+    margin-top: 1.1dvh;
     width: 10dvh;
     height: 5dvh;
     box-sizing: border-box;
@@ -834,7 +834,7 @@ a {
 }
 
 .returnbutton {
-    margin-top: 1dvh;
+    margin-top: 1.1dvh;
     margin-left: 0.5dvh;
     margin-right: 0.5dvh;
     width: 5dvh;
@@ -853,7 +853,7 @@ a {
 }
 
 .izmirclose {
-    margin-top: 1dvh;
+    margin-top: 1.1dvh;
     margin-left: 0.5dvh;
     width: 5dvh;
     height: 5dvh;
@@ -977,7 +977,7 @@ a {
 #timer {
     display: none;
     margin-right: 0.5dvh;
-    margin-top: 1dvh;
+    margin-top: 1.1dvh;
     width: 22dvh;
     height: 5dvh;
     line-height: 5dvh;
