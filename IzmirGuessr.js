@@ -910,9 +910,7 @@ window.addEventListener('load', loadSelectedTimeLimit);
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
 
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', function(event) {
-      // Prevent default behavior
-      event.preventDefault();
-    }, true);
-  }
+window.addEventListener('deviceorientation', function(event) {
+    // Prevent default behavior
+    event.preventDefault();
+  }, true);
