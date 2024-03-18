@@ -405,7 +405,7 @@ function initMap() {
             tilt: false,
             streetViewControl: false,
             addressControl: false,
-            gestureHandling: greedy,
+            gestureHandling: "greedy",
             disableDefaultUI: true,
         });
 
@@ -420,7 +420,7 @@ function initMap() {
                     tilt: false,
                     addressControl: false,
                     streetViewControl: false,
-                    gestureHandling: greedy,
+                    gestureHandling: "greedy",
                     disableDefaultUI: true,
                 });
 
@@ -543,7 +543,7 @@ function returnToStart() {
         tilt: false,
         streetViewControl: false,
         addressControl: false,
-        gestureHandling: greedy,
+        gestureHandling: "greedy",
         disableDefaultUI: true,
     });
 
@@ -558,7 +558,7 @@ function returnToStart() {
                 tilt: false,
                 streetViewControl: false,
                 addressControl: false,
-                gestureHandling: greedy,
+                gestureHandling: "greedy",
                 disableDefaultUI: true,
             });
 
