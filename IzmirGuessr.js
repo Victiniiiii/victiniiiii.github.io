@@ -283,6 +283,7 @@ const districtsData = [
 const map2 = L.map('map2', {
     maxZoom: 11,
     minZoom: 9,
+    disableDoubleClickZoom : true,
 }).setView([initialLat, initialLon], initialZoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '� OpenStreetMap contributors' }).addTo(map2);
@@ -404,6 +405,8 @@ function initMap() {
             tilt: false,
             streetViewControl: false,
             addressControl: false,
+            gestureHandling: greedy,
+            disableDefaultUI: true,
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -417,6 +420,8 @@ function initMap() {
                     tilt: false,
                     addressControl: false,
                     streetViewControl: false,
+                    gestureHandling: greedy,
+                    disableDefaultUI: true,
                 });
 
                 gamemap.setStreetView(panorama);
@@ -538,6 +543,8 @@ function returnToStart() {
         tilt: false,
         streetViewControl: false,
         addressControl: false,
+        gestureHandling: greedy,
+        disableDefaultUI: true,
     });
 
     const streetViewService = new google.maps.StreetViewService();
@@ -551,6 +558,8 @@ function returnToStart() {
                 tilt: false,
                 streetViewControl: false,
                 addressControl: false,
+                gestureHandling: greedy,
+                disableDefaultUI: true,
             });
 
             gamemap.setStreetView(panorama);
