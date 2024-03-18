@@ -979,13 +979,12 @@ a {
     margin-top: 2dvh;
     width: 22dvh;
     height: 4dvh;
+    line-height: 4dvh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
     font-size: 1.5dvh;
-    align-items: center;
     text-align: center;
-    justify-content: center;
     border-radius: 0.5vh;
 }
 
