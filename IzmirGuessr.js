@@ -405,8 +405,6 @@ function initMap() {
             tilt: false,
             streetViewControl: false,
             addressControl: false,
-            fullscreenControl: false,
-            gestureHandling: "none",
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -420,8 +418,6 @@ function initMap() {
                     tilt: false,
                     addressControl: false,
                     streetViewControl: false,
-                    fullscreenControl: false,
-                    gestureHandling: "none",
                 });
 
                 gamemap.setStreetView(panorama);
@@ -543,7 +539,6 @@ function returnToStart() {
         tilt: false,
         streetViewControl: false,
         addressControl: false,
-        fullscreenControl: false,
     });
 
     const streetViewService = new google.maps.StreetViewService();
@@ -557,7 +552,6 @@ function returnToStart() {
                 tilt: false,
                 streetViewControl: false,
                 addressControl: false,
-                fullscreenControl: false,
             });
 
             gamemap.setStreetView(panorama);
@@ -911,8 +905,3 @@ window.addEventListener('load', loadSelectedTimeLimit);
 
 buttonrow.style.display = 'none'
 gamemap.style.display = 'none'
-
-window.addEventListener('deviceorientation', function(event) {
-    // Prevent default behavior
-    event.preventDefault();
-  }, true);
