@@ -285,7 +285,7 @@ const map2 = L.map('map2', {
     minZoom: 9,
 }).setView([initialLat, initialLon], initialZoom);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '� OpenStreetMap contributors' }).addTo(map2);
 
 function isPointInPolygon(point, polygon) {
     const latLngs = polygon.getLatLngs()[0];
@@ -401,10 +401,9 @@ function initMap() {
         gamemap = new google.maps.Map(document.getElementById('gamemap'), {
             center: randomLocation,
             zoom: 14,
-            tilt: 0,
+            tilt: false,
             streetViewControl: false,
             addressControl: false,
-            gestureHandling: 'none'
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -415,10 +414,9 @@ function initMap() {
                     position: randomLocation,
                     pov: { heading: 34, pitch: 1 },
                     zoom: 1,
-                    tilt: 0,
+                    tilt: false,
                     addressControl: false,
                     streetViewControl: false,
-                    gestureHandling: 'none'
                 });
 
                 gamemap.setStreetView(panorama);
@@ -537,10 +535,9 @@ function returnToStart() {
     gamemap = new google.maps.Map(document.getElementById('gamemap'), {
         center: randomLocation,
         zoom: 14,
-        tilt: 0,
+        tilt: false,
         streetViewControl: false,
         addressControl: false,
-        gestureHandling: 'none'
     });
 
     const streetViewService = new google.maps.StreetViewService();
@@ -551,10 +548,9 @@ function returnToStart() {
                 position: randomLocation,
                 pov: { heading: 34, pitch: 1 },
                 zoom: 1,
-                tilt: 0,
+                tilt: false,
                 streetViewControl: false,
                 addressControl: false,
-                gestureHandling: 'none'
             });
 
             gamemap.setStreetView(panorama);
@@ -643,7 +639,7 @@ function displayResults(distance, points) {
     const line = new google.maps.Polyline({
         path: lineCoordinates,
         geodesic: true,
-        strokeColor: '#FF0000',  // Red
+        strokeColor: '#FF0000',  // red
         strokeOpacity: 1.0,
         strokeWeight: 2,
     });
@@ -718,7 +714,7 @@ function returnToMainMenu() {
     finalresultsmodal.style.display = 'none';
     buttonrow.style.display = 'none';
     document.getElementById('result-modal').style.display = 'none';
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '� OpenStreetMap contributors' }).addTo(map2);
     pauseTimer();
 }
 
