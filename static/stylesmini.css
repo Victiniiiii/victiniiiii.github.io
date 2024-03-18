@@ -79,8 +79,8 @@ a {
     border: 0.05vw solid rgba(0,0,0,0.3);
     box-sizing: border-box;
     border-radius: 0.4vw;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
     background-color: rgba(0,0,0,0.5);
     color: white;
@@ -171,8 +171,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .forgegrid-content {
@@ -280,8 +280,8 @@ a {
     height: 50vh;
     font-family: Verdana, sans-serif;
     border-radius: 2vw;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     background-color: rgba(255,255,255,0.5);
     box-shadow: 0 1px 12px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.3);
@@ -342,8 +342,8 @@ a {
 .imagetext {
     font-size: 4vw;
     color: white;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .imagebigoil {
@@ -528,8 +528,8 @@ a {
     border: 1px solid white;
     box-sizing: border-box;
     color: white;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .semesterButtonsContainer {
@@ -571,8 +571,8 @@ a {
     box-sizing: border-box;
     color: white;
     border-radius: 8px;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     background-color: rgba(255,255,255,0.5);
     box-shadow: 0 1px 12px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.3);
@@ -599,8 +599,8 @@ a {
     border: 1px solid #000;
     box-sizing: border-box;
     border-radius: 8px;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     background-color: rgba(255,255,255,0.5);
     box-shadow: 0 1px 12px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.3);
@@ -764,8 +764,8 @@ a {
     font-family: Verdana;
     margin-top: 2dvh;
     box-sizing: border-box;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 0.1dvw solid black;
     align-items: center;
 }
@@ -782,8 +782,8 @@ a {
     font-size: 2dvh;
     font-family: Verdana;
     box-sizing: border-box;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 0.2dvw solid black;
     align-items: center;
 }
@@ -822,19 +822,26 @@ a {
     box-sizing: border-box;            
 }
 
-.modaltoggle-button {
-    display: none;
-    margin-right: 0.5dvh;
-    margin-top: 1.1dvh;
-    width: 10dvh;
+.izmirclose {
+    margin-top: 1.5dvh;
+    margin-left: 0.5dvh;
+    width: 5dvh;
     height: 5dvh;
+    background-image: url('../static/images/izmirclose1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0.05dvw solid black;
+    border-radius: 0.5dvh;
     box-sizing: border-box;
-    background-color: #222222;
-    color: white;
+}
+
+.izmirclose:hover {
+    background-image: url('../static/images/izmirclose2.png');
 }
 
 .returnbutton {
-    margin-top: 1.1dvh;
+    margin-top: 1.5dvh;
     margin-left: 0.5dvh;
     margin-right: 0.5dvh;
     width: 5dvh;
@@ -852,22 +859,32 @@ a {
     background-image: url('../static/images/return40normal.png');
 }
 
-.izmirclose {
-    margin-top: 1.1dvh;
-    margin-left: 0.5dvh;
-    width: 5dvh;
+
+.modaltoggle-button {
+    display: none;
+    margin-right: 0.5dvh;
+    margin-top: 1.5dvh;
+    width: 10dvh;
     height: 5dvh;
-    background-image: url('../static/images/izmirclose1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border: 0.05dvw solid black;
-    border-radius: 0.5dvh;
     box-sizing: border-box;
+    background-color: #222222;
+    color: white;
+    border-radius: 0.5vh;
 }
 
-.izmirclose:hover {
-    background-image: url('../static/images/izmirclose2.png');
+#timer {
+    display: none;
+    margin-right: 0.5dvh;
+    margin-top: 1.5dvh;
+    width: 22dvh;
+    height: 5dvh;
+    line-height: 5dvh;
+    box-sizing: border-box;
+    background-color: #222222;
+    color: white;
+    font-size: 1.5dvh;
+    text-align: center;
+    border-radius: 0.5vh;
 }
 
 #return-button, #overlay-container {
@@ -946,8 +963,8 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .izmirilcebox {
@@ -974,28 +991,13 @@ a {
     box-sizing: border-box;
 }
 
-#timer {
-    display: none;
-    margin-right: 0.5dvh;
-    margin-top: 1.1dvh;
-    width: 22dvh;
-    height: 5dvh;
-    line-height: 5dvh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-    font-size: 1.5dvh;
-    text-align: center;
-    border-radius: 0.5vh;
-}
-
 .izmirilcebuttons {
     width: 100dvw;
     height: 35vh;
     padding: 1dvw;
     box-sizing: border-box;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .ilcebutton {
@@ -1009,8 +1011,8 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
 .addremovebuttons {
@@ -1033,8 +1035,8 @@ a {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    -webkit-backdrop-filter: blur(3px);
-    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     align-items: center;
 }
 
