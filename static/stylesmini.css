@@ -800,7 +800,7 @@ a {
 }
 
 #returntomenu-button, #playagain-button {
-    height: 4.2dvh;
+    height: 4.3dvh;
 }
 
 #mini-map .gmnoprint, #result-map .gmnoprint {
@@ -823,7 +823,7 @@ a {
 }
 
 .izmirclose {
-    margin-top: 1.5dvh;
+    margin-top: 1.45dvh;
     margin-left: 0.5dvh;
     width: 5dvh;
     height: 5dvh;
@@ -841,7 +841,7 @@ a {
 }
 
 .returnbutton {
-    margin-top: 1.5dvh;
+    margin-top: 1.45dvh;
     margin-left: 0.5dvh;
     margin-right: 0.5dvh;
     width: 5dvh;
@@ -863,7 +863,7 @@ a {
 .modaltoggle-button {
     display: none;
     margin-right: 0.5dvh;
-    margin-top: 1.5dvh;
+    margin-top: 1.45dvh;
     width: 10dvh;
     height: 5dvh;
     box-sizing: border-box;
@@ -875,7 +875,7 @@ a {
 #timer {
     display: none;
     margin-right: 0.5dvh;
-    margin-top: 1.5dvh;
+    margin-top: 1.45dvh;
     width: 22dvh;
     height: 5dvh;
     line-height: 5dvh;
