@@ -405,8 +405,7 @@ function initMap() {
             tilt: false,
             streetViewControl: false,
             addressControl: false,
-            gestureHandling: "greedy",
-            disableDefaultUI: true,
+            fullscreenControl: false,
         });
 
         const streetViewService = new google.maps.StreetViewService();
@@ -420,8 +419,7 @@ function initMap() {
                     tilt: false,
                     addressControl: false,
                     streetViewControl: false,
-                    gestureHandling: "greedy",
-                    disableDefaultUI: true,
+                    fullscreenControl: false,
                 });
 
                 gamemap.setStreetView(panorama);
@@ -543,8 +541,7 @@ function returnToStart() {
         tilt: false,
         streetViewControl: false,
         addressControl: false,
-        gestureHandling: "greedy",
-        disableDefaultUI: true,
+        fullscreenControl: false,
     });
 
     const streetViewService = new google.maps.StreetViewService();
@@ -558,8 +555,7 @@ function returnToStart() {
                 tilt: false,
                 streetViewControl: false,
                 addressControl: false,
-                gestureHandling: "greedy",
-                disableDefaultUI: true,
+                fullscreenControl: false,
             });
 
             gamemap.setStreetView(panorama);
