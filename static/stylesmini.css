@@ -808,8 +808,8 @@ a {
 }
 
 #buttonrow {
-    width: 100dvw;
-    height: 8dvh;
+    width: 90vw;
+    height: 10dvh;
     background-color: transparent;
     font-size: 0.4dvw;
     z-index: 5;
@@ -825,8 +825,8 @@ a {
     display: none;
     margin-right: 0.5dvh;
     margin-top: 2dvh;
-    width: 8dvh;
-    height: 4dvh;
+    width: 10dvh;
+    height: 5dvh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
@@ -834,10 +834,10 @@ a {
 
 .returnbutton {
     margin-top: 2dvh;
-    margin-left: 1.5dvh;
-    margin-right: 1.5dvh;
-    width: 4dvh;
-    height: 4dvh;
+    margin-left: 0.5dvh;
+    margin-right: 0.5dvh;
+    width: 5dvh;
+    height: 5dvh;
     background-image: url('../static/images/return40gray.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -853,9 +853,9 @@ a {
 
 .izmirclose {
     margin-top: 2dvh;
-    margin-left: 1.5dvh;
-    width: 4dvh;
-    height: 4dvh;
+    margin-left: 0.5dvh;
+    width: 5dvh;
+    height: 5dvh;
     background-image: url('../static/images/izmirclose1.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -975,11 +975,11 @@ a {
 
 #timer {
     display: none;
-    margin-right: 1.5dvh;
+    margin-right: 0.5dvh;
     margin-top: 2dvh;
     width: 22dvh;
-    height: 4dvh;
-    line-height: 4dvh;
+    height: 5dvh;
+    line-height: 5dvh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
