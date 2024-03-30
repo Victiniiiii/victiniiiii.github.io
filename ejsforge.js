@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use('/static', express.static(path.join(__dirname, 'static')));
 
 // render ejsforge.ejs 
-app.get('/', async (req, res) => {
+app.get('/', async (res) => {
     try {
         const gemstoneSentences = await gemstonenames();
 
@@ -25,18 +25,14 @@ app.get('/', async (req, res) => {
 });
 
 const port = 3000;
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.listen(port, () => {console.log(`Server is running on http://localhost:${port}`);});
 
 async function gemstonenames() {
     const fetch = await import('node-fetch'); 
-
     const response = await fetch.default('https://api.hypixel.net/skyblock/bazaar');
     const data = await response.json();
 
     const gemstoneNames = ['JADE_GEM', 'AMBER_GEM', 'TOPAZ_GEM', 'SAPPHIRE_GEM', 'AMETHYST_GEM', 'RUBY_GEM', 'JASPER_GEM', 'OPAL_GEM'];
-    const capitalizedgemstoneNames = ['Jade', 'Amber', 'Topaz', 'Sapphire', 'Amethyst', 'Ruby', 'Jasper', 'Opal'];
 
     const getGemstoneInfo = (gemName) => {
         const fineGem = data.products[`FINE_${gemName}`]?.quick_status;
@@ -64,10 +60,3 @@ async function gemstonenames() {
     const gemstoneSentences = gemstoneInfoArray.flatMap(({ fineSentence, flawlessSentence}) => [fineSentence, flawlessSentence]);
     return gemstoneSentences;
 }
-
-gemstonenames().then(sentences => {
-    const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
-        acc[`text${index + 1}`] = sentence;
-        return acc;
-    }, {});
-});
