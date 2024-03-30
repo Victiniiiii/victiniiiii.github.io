@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minesweeper</title>
+<style>
+
+.minesweeperpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid {
+  display: grid;
+  gap: 0px;
+}
+
+.grid.easy {
+  grid-template-columns: repeat(8, 50px); /* Size for Easy mode */
+}
+
+.grid.medium {
+  grid-template-columns: repeat(10, 50px); /* Size for Medium mode */
+}
+
+.grid.hard {
+  grid-template-columns: repeat(12, 50px); /* Size for Hard mode */
+}
+
+.grid.expert {
+  grid-template-columns: repeat(14, 50px); /* Size for Expert mode */
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: #bbb;
+  border: 0.5px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+.mine {
+  color: red;
+}
+.flagged {
+  color: blue;
+}
+
+</style>
+</head>
+<body>
+<div class="minesweeperpage">
+  <label for="mode">Select Mode:</label>
+  <select id="mode">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+    <option value="expert">Expert</option>
+  </select>
+  <button id="startBtn">Start Game</button>
+  <div class="grid" id="grid"></div>
+</div>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  let totalMines;
+  let size; // Define size variable
+  let revealedCells = 0;
+  let flaggedCells = 0;
+  let remainingMines;
+  let cells;
+  const grid = document.getElementById('grid');
+  const startBtn = document.getElementById('startBtn');
+  const modeSelect = document.getElementById('mode');
+
+  startBtn.addEventListener('click', startGame);
+
+  function startGame() {
+    // Clear existing grid
+    grid.innerHTML = '';
+
+    // Define game parameters based on selected mode
+    const mode = modeSelect.value;
+    grid.className = 'grid ' + mode; // Add mode class to grid
+
+    // Set size based on mode
+    if (mode === 'easy') {
+      size = 8;
+      totalMines = 10;
+    } else if (mode === 'medium') {
+      size = 10;
+      totalMines = 20;
+    } else if (mode === 'hard') {
+      size = 12;
+      totalMines = 30;
+    } else if (mode === 'expert') {
+      size = 14;
+      totalMines = 40;
+    }
+
+    revealedCells = 0;
+    flaggedCells = 0;
+    remainingMines = totalMines;
+
+// Initialize the grid
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.dataset.row = i;
+    cell.dataset.col = j;
+    cell.isMine = false;
+    cell.isRevealed = false;
+    cell.isFlagged = false;
+    cell.addEventListener('click', cellClickHandler);
+    // Change from contextmenu to mousedown for right-click handling
+    cell.addEventListener('contextmenu', function(event) {
+        event.preventDefault(); // Prevent default context menu
+        cellRightClickHandler(event);
+    });
+    grid.appendChild(cell);
+  }
+}
+
+
+    // Add mines randomly
+    cells = grid.querySelectorAll('.cell');
+    while (totalMines > 0) {
+      const index = Math.floor(Math.random() * cells.length);
+      if (!cells[index].isMine) {
+        cells[index].isMine = true;
+        totalMines--;
+      }
+    }
+  }
+
+  // Function to handle left click on cells
+  function cellClickHandler(event) {
+    const cell = event.target;
+    if (!cell.isRevealed && !cell.isFlagged) {
+      const row = parseInt(cell.dataset.row);
+      const col = parseInt(cell.dataset.col);
+      if (cell.isMine) {
+        // Game over - reveal all mines
+        cells.forEach(cell => {
+          if (cell.isMine) {
+            cell.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-balloon" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="black" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8a2 2 0 0 0 -2 -2" /><path d="M6 8a6 6 0 1 1 12 0c0 4.97 -2.686 9 -6 9s-6 -4.03 -6 -9" /><path d="M12 17v1a2 2 0 0 1 -2 2h-3a2 2 0 0 0 -2 2" /></svg>';
+          }
+        });
+        alert('Game Over!');
+      } else {
+        // Reveal cell
+        revealCell(cell);
+        checkWin();
+      }
+    }
+  }
+
+// Function to reveal a cell
+function revealCell(cell) {
+  cell.isRevealed = true;
+  revealedCells++;
+  let count = 0;
+  const row = parseInt(cell.dataset.row);
+  const col = parseInt(cell.dataset.col);
+  for (let i = row - 1; i <= row + 1; i++) {
+    for (let j = col - 1; j <= col + 1; j++) {
+      if (i >= 0 && i < size && j >= 0 && j < size) {
+        if (cells[i * size + j].isMine) count++;
+      }
+    }
+  }
+  if (count > 0) {
+    cell.innerText = count;
+  } else {
+    // Auto-reveal neighboring cells if count is zero
+    for (let i = row - 1; i <= row + 1; i++) {
+      for (let j = col - 1; j <= col + 1; j++) {
+        if (i >= 0 && i < size && j >= 0 && j < size) {
+          const neighbor = cells[i * size + j];
+          if (!neighbor.isRevealed && !neighbor.isFlagged) {
+            revealCell(neighbor);
+          }
+        }
+      }
+    }
+  }
+  cell.style.backgroundColor = '#fff'; // Change background color to white
+  checkWin(); // Check win condition after revealing the cell
+  updateNonMineCellsCount(); // Update the count of non-mine cells
+}
+
+// Function to handle right click on cells
+function cellRightClickHandler(event) {
+  event.preventDefault();
+  const cell = event.target;
+  if (!cell.isRevealed) {
+    if (!cell.isFlagged) {
+      cell.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" fill="red" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 5a5 5 0 0 1 7 0a5 5 0 0 0 7 0v9a5 5 0 0 1 -7 0a5 5 0 0 0 -7 0v-9z" /><path d="M5 21v-7" /></svg>';
+      cell.isFlagged = true;
+      flaggedCells++;
+      remainingMines--;
+    } else {
+      cell.innerHTML = '';
+      cell.isFlagged = false;
+      flaggedCells--;
+      remainingMines++;
+    }
+    // Update remaining mines count
+    document.getElementById('remainingMines').innerText = remainingMines;
+    checkWin(); // Check win condition after flagging the cell
+    updateNonMineCellsCount(); // Update the count of non-mine cells
+  }
+}
+
+// Function to update the count of non-mine cells
+function updateNonMineCellsCount() {
+  let nonMineCells = 0;
+  cells.forEach(cell => {
+    if (!cell.isMine && !cell.isRevealed) {
+      nonMineCells++;
+    }
+  });
+  console.log("Non-mine cells: ", nonMineCells);
+}
+
+// Function to check win condition
+// Function to check win condition
+function checkWin() {
+  let allCellsFlagged = true;
+  let allNonMineCellsRevealed = true;
+
+  cells.forEach(cell => {
+    if (cell.isMine && !cell.isFlagged) {
+      allCellsFlagged = false;
+    }
+    if (!cell.isMine && !cell.isRevealed) {
+      allNonMineCellsRevealed = false;
+    }
+  });
+
+  if (allCellsFlagged && allNonMineCellsRevealed) {
+    alert('Congratulations! You win!');
+  }
+}
+
+
+
+
+
+});
+
+</script>
+</body>
+</html>
