@@ -1,3 +1,0 @@
-# EJSFORGE
-
-ejsforge
