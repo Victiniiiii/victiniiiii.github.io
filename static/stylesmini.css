@@ -649,7 +649,7 @@ a {
 
 #gamemap {
     width: 100dvw;
-    height: 65dsvh;
+    height: 65svh;
     position: absolute;
     z-index: 1;
     display: flex;
@@ -658,16 +658,16 @@ a {
 
 #mini-map {
     width: 100dvw;
-    height: 30dsvh;
+    height: 30svh;
     z-index: 3;
     box-sizing: border-box;
 }
 
 .result-map {
-    height: 35dsvh;
+    height: 35svh;
     width: 100%;
     border: 0.05dvw solid black;
-    margin-bottom: 2dsvh;
+    margin-bottom: 2svh;
     box-sizing: border-box;
 }
 
@@ -676,7 +676,7 @@ a {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 35dsvh;
+    height: 35svh;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -690,7 +690,7 @@ a {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 35dsvh;
+    height: 35svh;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -702,7 +702,7 @@ a {
 
 #action-button {
     width: 100%;
-    height: 5dsvh;
+    height: 5svh;
     background-color: #4CAF50; /* Green */
     color: white;
     border: none;
@@ -712,7 +712,7 @@ a {
 
 #next-game-button {
     width: 100%;
-    height: 5dsvh;
+    height: 5svh;
     box-sizing: border-box;
 }
 
@@ -723,8 +723,8 @@ a {
     position: fixed;
     z-index: 1;
     width: 100dvw;
-    height: 50dsvh;
-    margin-top: 20dsvh;
+    height: 50svh;
+    margin-top: 20svh;
     overflow: auto;
     border: 0.1dvw solid black;
     box-sizing: border-box;
@@ -739,8 +739,8 @@ a {
     position: absolute;
     z-index: 4;
     width: 100dvw;
-    height: 50dsvh;
-    margin-top: 20dsvh;
+    height: 50svh;
+    margin-top: 20svh;
     overflow: auto;
     background-color: #fefefe;
     padding: 0.5dvw;
@@ -756,13 +756,13 @@ a {
     display: flex;
     flex-direction: row;
     width: 90dvw;
-    height: 5dsvh;
+    height: 5svh;
     margin-left: 5dvw;
     justify-content: center;
     text-align: center;
-    font-size: 2dsvh;
+    font-size: 2svh;
     font-family: Verdana;
-    margin-top: 2dsvh;
+    margin-top: 2svh;
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -774,12 +774,12 @@ a {
     display: flex;
     flex-direction: row;
     width: 90dvw;
-    height: 5dsvh;
+    height: 5svh;
     margin-left: 5dvw;
-    margin-top: 6dsvh;
+    margin-top: 6svh;
     justify-content: center;
     text-align: center;
-    font-size: 2dsvh;
+    font-size: 2svh;
     font-family: Verdana;
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
@@ -795,12 +795,12 @@ a {
 }
 
 #result-info {
-    margin-top: 2.35dsvh;
+    margin-top: 2.35svh;
     box-sizing: border-box;
 }
 
 #returntomenu-button, #playagain-button {
-    height: 4.9dsvh;
+    height: 4.9svh;
 }
 
 #mini-map .gmnoprint, #result-map .gmnoprint {
@@ -810,7 +810,7 @@ a {
 #buttonrow {
     width: 90vw;
     margin-left: -10vw;
-    height: 10dsvh;
+    height: 10svh;
     background-color: transparent;
     font-size: 0.4dvw;
     z-index: 5;
@@ -823,16 +823,16 @@ a {
 }
 
 .izmirclose {
-    margin-top: 1.45dsvh;
-    margin-left: 0.5dsvh;
-    width: 5dsvh;
-    height: 5dsvh;
+    margin-top: 1.45svh;
+    margin-left: 0.5svh;
+    width: 5svh;
+    height: 5svh;
     background-image: url('../static/images/izmirclose1.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     border: 0.05dvw solid black;
-    border-radius: 0.5dsvh;
+    border-radius: 0.5svh;
     box-sizing: border-box;
 }
 
@@ -841,17 +841,17 @@ a {
 }
 
 .returnbutton {
-    margin-top: 1.45dsvh;
-    margin-left: 0.5dsvh;
-    margin-right: 0.5dsvh;
-    width: 5dsvh;
-    height: 5dsvh;
+    margin-top: 1.45svh;
+    margin-left: 0.5svh;
+    margin-right: 0.5svh;
+    width: 5svh;
+    height: 5svh;
     background-image: url('../static/images/return40gray.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     border: 0.05dvw solid black;
-    border-radius: 0.5dsvh;
+    border-radius: 0.5svh;
     box-sizing: border-box;
 }
 
@@ -862,10 +862,10 @@ a {
 
 .modaltoggle-button {
     display: none;
-    margin-right: 0.5dsvh;
-    margin-top: 1.45dsvh;
-    width: 10dsvh;
-    height: 5dsvh;
+    margin-right: 0.5svh;
+    margin-top: 1.45svh;
+    width: 10svh;
+    height: 5svh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
@@ -874,15 +874,15 @@ a {
 
 #timer {
     display: none;
-    margin-right: 0.5dsvh;
-    margin-top: 1.45dsvh;
-    width: 22dsvh;
-    height: 5dsvh;
-    line-height: 5dsvh;
+    margin-right: 0.5svh;
+    margin-top: 1.45svh;
+    width: 22svh;
+    height: 5svh;
+    line-height: 5svh;
     box-sizing: border-box;
     background-color: #222222;
     color: white;
-    font-size: 1.5dsvh;
+    font-size: 1.5svh;
     text-align: center;
     border-radius: 0.5svh;
 }
