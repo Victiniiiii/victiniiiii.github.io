@@ -1,0 +1,206 @@
+body {
+  background-image: url("../static/images/cloud.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title-section {
+  background-image: url("../static/images/thunder.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 0.2vw solid black;
+  margin-bottom: 0.9dvh;
+}
+
+.category-button {
+  background: white;
+  border: 0.1vw solid black;
+  box-sizing: border-box;
+  font-size: min(1dvw, 2dvh);
+  color: black;
+  text-decoration: none;
+  padding: 0.3vw 2.5dvh;
+  cursor: pointer;
+  margin: 0.5vw 1dvh;
+  position: relative;
+}
+
+.placeholder-box {
+  background: white;
+  border: 0.1vw solid black;
+  box-sizing: border-box;
+  padding: 0.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 35dvh;
+}
+
+.release-date {
+  margin-left: auto;
+  font-size: min(0.9dvw, 1.8dvh);
+}
+
+.main-menu-text {
+  font-size: min(2dvw, 4dvh);
+  text-align: center;
+  color: white;
+  margin: 0;
+  text-shadow: 0.1vw 0.2vh #b5b5b5;
+  -webkit-backdrop-filter: blur(0.2vw);
+  backdrop-filter: blur(0.2vw);
+}
+.main-menu-button {
+  cursor: pointer;
+  width: 4vw;
+  height: 8dvh;
+}
+
+.project-buttons {
+  display: flex;
+}
+.project-box {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 42vw;
+  height: 21dvh;
+  margin: 1vw;
+  padding: 0.5vw;
+  border: 0.05vw solid rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  border-radius: 0.4vw;
+  -webkit-backdrop-filter: blur(0.1vw);
+  backdrop-filter: blur(0.1vw);
+  box-shadow: 0 0.05vw 0.63vw rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.project-info {
+  display: flex;
+  height: 15%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.5dvh;
+}
+.project-button {
+  width: 25dvw;
+  font-size: min(1.2dvw, 2.4dvh);
+}
+.project-content {
+  display: flex;
+  align-items: center;
+}
+.project-logo {
+  margin-right: 0.5vw;
+  margin-bottom: 5vh;
+}
+.projectphoto {
+  width: min(6dvw, 12dvh);
+  height: min(6dvw, 12dvh);
+}
+.project-description {
+  flex: 1;
+  height: 16dvh;
+  margin-left: 0.5vw;
+}
+.project-description-text {
+  font-size: min(1dvw, 2dvh);
+}
+
+.contact-item {
+  margin: 1vw;
+  padding: 1vw;
+}
+.contact-item img {
+  vertical-align: middle;
+  margin-right: 0.5vw;
+}
+.contact-item a {
+  color: white;
+  text-decoration: none;
+}
+.contact-box {
+  border: 0.1vw solid white;
+  box-sizing: border-box;
+  padding: 1vw;
+  background-color: black;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30dvh;
+}
+.contact-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.gem-text {
+  justify-content: center;
+  margin: 0.68vw;
+  padding: 0;
+}
+
+.forgesatir {
+  width: 90vw;
+  height: 11dvh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.forgegrid {
+  width: 90vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.forgegrid-content {
+  display: flex;
+}
+.forgegrid-content p {
+  flex-grow: 1;
+}
+.forgegrid-item {
+  width: 47%;
+  height: 90%;
+  background-color: #ccc;
+  border: 0.05vw solid #000;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+}
+.forgegrid-image {
+  width: 4vw;
+  height: 8dvh;
+  position: absolute;
+  left: 0.5vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.forgegrid p {
+  flex-grow: 1;
+  white-space: nowrap;
+  display: flex;
+}

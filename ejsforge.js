@@ -1,24 +1,43 @@
-//flaskforge.js
-const gemstoneNames = ['JADE_GEM', 'AMBER_GEM', 'TOPAZ_GEM', 'SAPPHIRE_GEM', 'AMETHYST_GEM', 'RUBY_GEM', 'JASPER_GEM', 'OPAL_GEM',];
-const capitalizedgemstoneNames = ['Jade', 'Amber', 'Topaz', 'Sapphire', 'Amethyst', 'Ruby', 'Jasper', 'Opal',];
+//ejsforge.js
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// no idea what this does
+app.set('views', path.join(__dirname, ''));
+
+// set ejs as the engine
+app.set('view engine', 'ejs');
+
+// for css to work
+app.use('/static', express.static(path.join(__dirname, 'static')));
+
+// render ejsforge.ejs 
+app.get('/', async (res) => {
+    try {
+        const gemstoneSentences = await gemstonenames();
+
+        res.render('ejsforge', { gemstoneSentences, gemstoneNames: ['JADE_GEM', 'AMBER_GEM', 'TOPAZ_GEM', 'SAPPHIRE_GEM', 'AMETHYST_GEM', 'RUBY_GEM', 'JASPER_GEM', 'OPAL_GEM'], capitalizedgemstoneNames: ['Jade', 'Amber', 'Topaz', 'Sapphire', 'Amethyst', 'Ruby', 'Jasper', 'Opal'] });
+    } catch (error) {
+        console.error('Error rendering template:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+const port = 3000;
+app.listen(port, () => {console.log(`Server is running on http://localhost:${port}`);});
 
 async function gemstonenames() {
-    const response = await fetch('https://api.hypixel.net/skyblock/bazaar');
+    const fetch = await import('node-fetch'); 
+    const response = await fetch.default('https://api.hypixel.net/skyblock/bazaar');
     const data = await response.json();
+
+    const gemstoneNames = ['JADE_GEM', 'AMBER_GEM', 'TOPAZ_GEM', 'SAPPHIRE_GEM', 'AMETHYST_GEM', 'RUBY_GEM', 'JASPER_GEM', 'OPAL_GEM'];
 
     const getGemstoneInfo = (gemName) => {
         const fineGem = data.products[`FINE_${gemName}`]?.quick_status;
         const flawlessGem = data.products[`FLAWLESS_${gemName}`]?.quick_status;
         const perfectGem = data.products[`PERFECT_${gemName}`]?.quick_status;
-
-        // Check if gem data exists
-        if (!fineGem || !flawlessGem || !perfectGem) {
-            console.error(`Gem data not found for ${gemName}`);
-            return {
-                fineSentence: '',
-                flawlessSentence: '',
-            };
-        }
 
         const fineGemPrice = fineGem.sellPrice;
         const flawlessGemPrice = flawlessGem.sellPrice;
@@ -29,7 +48,6 @@ async function gemstonenames() {
 
         const formatNumber = (number) => Math.floor(number).toLocaleString().replace(/,/g, ',');
 
-        // Capitalize the gem names
         const capitalizedGemName = gemName.toLowerCase().split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
         return {
@@ -38,23 +56,7 @@ async function gemstonenames() {
         };
     };
 
-
     const gemstoneInfoArray = gemstoneNames.map(getGemstoneInfo);
     const gemstoneSentences = gemstoneInfoArray.flatMap(({ fineSentence, flawlessSentence}) => [fineSentence, flawlessSentence]);
     return gemstoneSentences;
-
 }
-
-// Call the gemstonenames function and update the text in HTML
-gemstonenames().then(sentences => {
-    const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
-        acc[`text${index + 1}`] = sentence;
-        return acc;
-    }, {});
-
-    // Update the text in HTML using innerHTML
-    Object.entries(gemstoneTexts).forEach(([key, value]) => {
-        document.getElementById(key).innerHTML = value;
-    });
-
-});
