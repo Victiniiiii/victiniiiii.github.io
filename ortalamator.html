@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ortalamatör</title>
+    <link rel="icon" href="static/images/vic32.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <div class="title-section">
+        <a href="/">
+            <img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button">
+        </a>
+        <h1 class="main-menu-text">Ortalamatör</h1>
+        <div class="project-buttons">
+            <div class="category-button">
+                <a href="/projects">Projects</a>
+            </div>
+            <div class="category-button">
+                <a href="/contactme">Contact Me</a>
+            </div>
+        </div>
+    </div>
+    <div id="buttonContainer">
+        <button class="modeButton" onclick="switchMode('STAT22')">Ortalama</button>
+        <button class="modeButton" onclick="switchMode('EXAM')">Harf Notu</button>
+        <button class="modeButton" onclick="switchMode('FAQ')">SSS</button>
+    </div>
+    <div id="rectangle">
+        <div class="rightrectangle" id="rightrectangle">
+            <div class="rightrectangleButton" onclick="calculateGPA()">Hesapla</div>
+            <div class="rightrectangletext">AGNO:&nbsp;<span id="calculatedGPA">0</span></div>
+        </div>
+        <div class="middleRectangle" id="donem1Mode"></div>
+        <div class="middleRectangle" id="donem2Mode"></div>
+        <div class="middleRectangle" id="donem3Mode"></div>
+        <div class="middleRectangle" id="donem4Mode"></div>
+        <div class="middleRectangle" id="donem5Mode"></div>
+        <div class="middleRectangle" id="donem6Mode"></div>
+        <div class="middleRectangle" id="donem7Mode"></div>
+        <div class="middleRectangle" id="donem8Mode"></div>
+        <div id="examMode">
+            <div id="result">
+                Vize notu giriniz:
+                <input type="number" id="noteInput" placeholder="Vize Notu">
+                <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+            </div>
+        </div>
+        <div id="examResultsMode">
+            <div id="result">
+                Vize notu giriniz:
+                <input type="number" id="noteInput" placeholder="Vize Notu">
+                <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+            </div>
+            <div id="examResultsText">Lütfen geçerli bir vize notu giriniz. </div>
+        </div>
+        <div id="faqMode">
+            <h2>Sıkça Sorulan Sorular</h2>
+
+            <h3>AGNO nedir?</h3>
+            <p>Ağırlıklı genel not ortalaması.</p>
+
+            <h3>Harf notları nasıl işler?</h3>
+            <p>
+                Not aralıkları şu şekildedir:
+                <ul>
+                    <li>88-100: AA</li>
+                    <li>81-87: BA</li>
+                    <li>74-80: BB</li>
+                    <li>67-73: CB</li>
+                    <li>60-66: CC</li>
+                    <li>53-59: DC</li>
+                    <li>46-52: DD</li>
+                    <li>0-45: FD</li>
+                    <li>Devamsız: FF</li>
+                </ul>
+            </p>
+            <h3>Neden DD almam için bile 45 gerekiyor?</h3>
+            <p>Ham başarı puanına karşılık gelen ve başarılı kategorisinde değerlendirilen harf notlarını alabilmek için,<br>öğrenciler final sınavından yüz üzerinden en az 45 almalıdır.</p>
+        </div>
+        <div id="stat22Mode">
+            <div class="semesterButtonsContainer">
+                <button class="semesterButton" onclick="switchMode('DONEM1')">1. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM2')">2. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM3')">3. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM4')">4. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM5')">5. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM6')">6. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM7')">7. Dönem</button>
+                <button class="semesterButton" onclick="switchMode('DONEM8')">8. Dönem</button>
+            </div>
+        </div>
+        <div class="stat22RectanglesContainer3" id="stat22RectanglesContainer3">
+            <div class="stat22Rectangle">1. Dönem:&nbsp; <span id="donem1ort"> 0.00</span></div>
+            <div class="stat22Rectangle">3. Dönem:&nbsp; <span id="donem3ort"> 0.00</span></div>
+            <div class="stat22Rectangle">5. Dönem:&nbsp; <span id="donem5ort"> 0.00</span></div>
+            <div class="stat22Rectangle">7. Dönem:&nbsp; <span id="donem7ort"> 0.00</span></div>
+        </div>
+        <div class="stat22RectanglesContainer" id="stat22RectanglesContainer">
+            <div class="stat22Rectangle">2. Dönem:&nbsp; <span id="donem2ort"> 0.00</span></div>
+            <div class="stat22Rectangle">4. Dönem:&nbsp; <span id="donem4ort"> 0.00</span></div>
+            <div class="stat22Rectangle">6. Dönem:&nbsp; <span id="donem6ort"> 0.00</span></div>
+            <div class="stat22Rectangle">8. Dönem:&nbsp; <span id="donem8ort"> 0.00</span></div>
+        </div>
+        <div class="stat22RectanglesContainer2" id="stat22RectanglesContainer2">
+            <div class="stat22Rectangle">1. Sene:&nbsp; <span id="gpaYear1"> 0</span></div>
+            <div class="stat22Rectangle">2. Sene:&nbsp; <span id="gpaYear2"> 0</span></div>
+            <div class="stat22Rectangle">3. Sene:&nbsp; <span id="gpaYear3"> 0</span></div>
+            <div class="stat22Rectangle">4. Sene:&nbsp; <span id="gpaYear4"> 0</span></div>
+        </div>
+    </div>
+    <script src="ortalamator.js"></script>
+</body>
+</html>

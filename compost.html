@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -328,3 +329,119 @@
     <script src="compost.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compost Profit Calculator</title>
+    <link rel="icon" href="static/images/vic32.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
+    <style>
+        .compost-rectangle {
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid black;
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            background-color: lightgray; 
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .compost-inner-container {
+            width: 80vw;
+            height: 65vh;
+            display: flex;
+            flex-direction: row;
+            box-sizing: border-box;
+        }
+
+        .compostleft-rectangle, .compostright-rectangle {
+            width: 40vw;
+            height: 65vh;
+            box-sizing: border-box;
+            background-color: lightgreen;
+        }
+
+        .compostbottom-rectangle {
+            width: 80vw;
+            height: 15vh;
+            box-sizing: border-box;
+            background-color: lightblue; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .compostleft-rectangle input {
+            box-sizing: border-box;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title-section">
+        <a href="/">
+            <img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button">
+        </a>
+        <h1 class="main-menu-text">Compost Profit Calculator</h1>
+        <div class="project-buttons">
+            <div class="category-button">
+                <a href="/projects">Projects</a>
+            </div>
+            <div class="category-button">
+                <a href="/contactme">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="compost-rectangle">
+        <div class="compost-inner-container">
+            <div class="compostleft-rectangle">
+                <form id="composterForm">
+                    <label for="speedLevel">Composter Speed Level:</label>
+                    <input type="number" id="speedLevel" min="0" max="25" required>
+
+                    <label for="multiDropLevel">Multi Drop Level:</label>
+                    <input type="number" id="multiDropLevel" min="0" max="25" required>
+
+                    <label for="fuelCapLevel">Fuel Cap Level:</label>
+                    <input type="number" id="fuelCapLevel" min="0" max="25" required>
+
+                    <label for="orgMatterCapLevel">Organic Matter Cap Level:</label>
+                    <input type="number" id="orgMatterCapLevel" min="0" max="25" required>
+
+                    <label for="costReductionLevel">Cost Reduction Level:</label>
+                    <input type="number" id="costReductionLevel" min="0" max="25" required>
+                </form>
+            </div>
+            <div class="compostright-rectangle">
+                <!-- Leave this empty for now -->
+            </div>
+        </div>
+        <div class="compostbottom-rectangle">
+            <div class="compostbutton-and-results">
+                <button type="button" onclick="calculateProfit()">Calculate Profit</button>
+                <p id="resultHour"></p>
+                <p id="resultDay"></p>
+            </div>
+        </div>
+    </div>
+    <div class="compost-rectangle">
+	the best organic matters and fuels
+    </div>
+    <div class="compost-rectangle">
+	the cost of every composter upgrade
+    </div>
+    <div class="compost-rectangle">
+	FAQ
+    </div>
+    <script src="compost.js"></script>
+</body>
+</html>
+>>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
