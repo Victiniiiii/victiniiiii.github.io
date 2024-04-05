@@ -3,6 +3,7 @@ body {
 	background-image: url("../static/images/cloud.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     box-sizing: border-box;
     font-family: Verdana, sans-serif;
     margin: 0;
@@ -1085,3 +1086,429 @@ a {
 #izmirtime {
     font-size: min(1dvw, 2dvh);
 }
+
+
+
+
+.compostprofit {
+    margin-left: 2vw;
+    font-size: min(0.9vw,1.7vh);
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+  }
+  .compostspreadsheetcategory {
+    width: calc(15vw - 8vh);
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+  }
+  .compostspreadsheetcategoryphoto {
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+  }
+  .compostspreadsheetcategoryphoto1 {
+    background-image: url("../static/images/upgrade1.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+  }
+  .compostspreadsheetcategoryphoto2 {
+    background-image: url("../static/images/upgrade2.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+  }
+  .compostspreadsheetcategoryphoto3 {
+    background-image: url("../static/images/upgrade3.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+  }
+  .compostspreadsheetcategoryphoto4 {
+    background-image: url("../static/images/upgrade4.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+  }
+  .compostspreadsheetcategoryphoto5 {
+    background-image: url("../static/images/upgrade5.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 8vh;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+  }
+  .compostrectangle {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+  }
+  .composttitletexts {
+    width: 40vw;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: min(1.5vw,2.9vh);
+    text-align: center;
+  }
+  .compostinsiderectangle {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+  }
+  .compostleftrightrectangle {
+    width: 40vw;
+    height: 70vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostrow {
+    width: 35vw;
+    height: 10vh;
+    margin-left: 2vw;
+    margin-top: 2.5vh;
+    font-size: min(1.1vw,2vh);
+  }
+  .composttoprectangle {
+    width: 80vw;
+    height: 4vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .composttopeconomic {
+    width: 80vw;
+    height: 5vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostbottomrectangle {
+    width: 80vw;
+    height: 6vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostupgraderectangle {
+    width: 80vw;
+    height: 148vh;
+    margin-bottom: 5vh;
+    margin-top: 2vh;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostupgradetitle {
+    width: 80vw;
+    height: 10vh;
+    line-height: 10vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    text-align: center;
+    font-size: min(3.4vw,6.6vh);
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostfaq {
+    width: 80vw;
+    height: 80vh;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostfaqtitletexts {
+    width: 80vw;
+    height: 4vh;
+    font-size: min(1.3vw,2.5vh);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .compostfaqinbox {
+    width: 80vw;
+    height: 76vh;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostfaqtext {
+    width: 40vw;
+    height: 76vh;
+    line-height: 4vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    font-size: min(1.4vw,2.7vh);
+    padding: 2vw;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .compostfaqphoto {
+    width: 40vw;
+    height: 76vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    padding: 2vw;
+    background-image: url("../static/images/composter.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  
+  .upgraderow {
+    width: 80vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .upgraderowbig {
+    width: 80vw;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .upgraderowmini {
+    width: 15vw;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .upgraderowministart {
+    width: 5vw;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  .upgraderowministartbig {
+    width: 5vw;
+    height: 8vh;
+    line-height: 8vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  
+  .upgradeinputs {
+    width: 35vw;
+    height: 5vh;
+    text-align: center;
+    font-size: min(1.9vw,3.7vh);
+  }
+  
+  .spreadsheettotal {
+    width: 80vw;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  
+  #composterForm {
+    display: flex;
+    flex-direction: column;
+    font-size: min(2.8vw,5.5vh);
+  }
+  
+  #profitbutton {
+    width: 10vw;
+    height: 4vh;
+    margin-left: 1vw;
+    font-size: min(1.4vw,2.7vh);
+    background: white;
+    text-align: center;
+    border: min(0.1vw,0.2vh) solid black;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  #profitbutton:hover {
+    background-color: #cccccc;
+  }
+  
+  .organicrow {
+    width: 35vw;
+    height: 10vh;
+    margin-left: 2vw;
+    margin-top: 3vh;
+    font-size: min(1.4vw,2.7vh);
+  }
+  
+  .fuelrow {
+    width: 35vw;
+    height: 15vh;
+    margin-left: 2vw;
+    margin-top: 6vh;
+    font-size: min(1.9vw,3.7vh);
+  }
+  
+  #economic1 {
+    width: 80vw;
+    height: 5vh;
+    line-height: 5vh;
+    box-sizing: border-box;
+    border: min(0.1vw,0.2vh) solid black;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: min(1.8vw,3.5vh);
+    background-color: transparent;
+    border-radius: 0.4vw;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
+    color: white;
+  }
+  
+  ::-moz-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }

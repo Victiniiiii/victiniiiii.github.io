@@ -1,5 +1,4 @@
 async function bazaarconnect() {
-
     const response = await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
     const data = await response.json();
 
@@ -23,7 +22,6 @@ async function bazaarconnect() {
     }
 
     const baseProductionRate = 1;
-
     const speedMultiplier = 1 + (0.2 * speedLevel);
     const multiDropMultiplier = 1 + (0.03 * multiDropLevel);
     const fuelCapMultiplier = 100000 + 30000 * fuelCapLevel;
@@ -40,88 +38,118 @@ async function bazaarconnect() {
     const totalProfitPerHour = incomePerHour - costPerHour;
     const totalProfitPerDay = totalProfitPerHour * 24;
 
-    const machineRuntimeCurrentLevel = calculateMachineRuntime(orgMatterCapMultiplier, fuelCapMultiplier, orgMatterConsumed, fuelConsumed);
+    const machineRuntimeCurrentLevel = Math.min(orgMatterCapMultiplier / orgMatterConsumed, fuelCapMultiplier / fuelConsumed);
 
     document.getElementById('resultHour').innerText = `Currently you make ${Math.floor(totalProfitPerHour).toLocaleString()} coins per hour, ${Math.floor(totalProfitPerDay).toLocaleString()} coins per day, the composter will work for ${machineRuntimeCurrentLevel.toFixed(2)} hours, making you ${Math.floor(totalProfitPerHour * machineRuntimeCurrentLevel).toLocaleString()} coins per refill.`;
 
-    const coinsPerHourArray = [];
-    const coinsPerDayArray = [];
-    const machineRuntimeArray = [];
-    const coinsPerRefillArray = [];
-    
+    const upgradeNames = ['Composter Speed', 'Multi Drop', 'Fuel Cap', 'Organic Matter Cap', 'Cost Reduction'];
+    const upgradeLevels = [speedLevel, multiDropLevel, fuelCapLevel, orgMatterCapLevel, costReductionLevel];
+    const upgradeResults = [
+        document.getElementById('upgradeResult1'),
+        document.getElementById('upgradeResult2'),
+        document.getElementById('upgradeResult3'),
+        document.getElementById('upgradeResult4'),
+        document.getElementById('upgradeResult5')
+    ];
 
-    for (let j = 0; j < 5; j++) {
-        const upgradeLevels = [speedLevel, multiDropLevel, fuelCapLevel, orgMatterCapLevel, costReductionLevel];
-        upgradeLevels[j]++;
+    const maxValues = {
+        coinsPerHour: -Infinity,
+        coinsPerDay: -Infinity,
+        machineRuntime: -Infinity,
+        coinsPerRefill: -Infinity
+    };
 
-        const currentOrgMatterCapMultiplier = 40000 + 20000 * upgradeLevels[3];
-        const currentFuelCapMultiplier = 100000 + 30000 * upgradeLevels[2];
+    const maxIndices = {
+        coinsPerHour: -1,
+        coinsPerDay: -1,
+        machineRuntime: -1,
+        coinsPerRefill: -1
+    };
 
-        const currentProfitPerHour = calculateProfitPerHour(compostPrice, organicMatterPrice, fuelPrice, upgradeLevels);
-        const currentProfitPerDay = currentProfitPerHour * 24;
-        const machineRuntime = calculateMachineRuntime(currentOrgMatterCapMultiplier, currentFuelCapMultiplier, orgMatterConsumed, fuelConsumed);
-        const coinsPerRefill = currentProfitPerHour * machineRuntime;
+    // Loop through each upgrade option
+    for (let i = 0; i < upgradeNames.length; i++) {
+        if (upgradeLevels[i] === 25) {
+            // Skip calculation and display if upgrade level is already 25
+            upgradeResults[i].innerText = 'This upgrade can not be increased further.';
+            continue;
+        }
 
-        coinsPerHourArray.push({ value: currentProfitPerHour, index: j + 1 });
-        coinsPerDayArray.push({ value: currentProfitPerDay, index: j + 1 });
-        machineRuntimeArray.push({ value: machineRuntime, index: j + 1 });
-        coinsPerRefillArray.push({ value: coinsPerRefill, index: j + 1 });
+        const newUpgradeLevels = [...upgradeLevels];
+        newUpgradeLevels[i]++;
+
+        const newSpeedLevel = newUpgradeLevels[0];
+        const newMultiDropLevel = newUpgradeLevels[1];
+        const newFuelCapLevel = newUpgradeLevels[2];
+        const newOrgMatterCapLevel = newUpgradeLevels[3];
+        const newCostReductionLevel = newUpgradeLevels[4];
+
+        const newSpeedMultiplier = 1 + (0.2 * newSpeedLevel);
+        const newMultiDropMultiplier = 1 + (0.03 * newMultiDropLevel);
+        const newFuelCapMultiplier = 100000 + 30000 * newFuelCapLevel;
+        const newOrgMatterCapMultiplier = 40000 + 20000 * newOrgMatterCapLevel;
+        const newCostReductionMultiplier = 1 - (0.01 * newCostReductionLevel);
+
+        const newProductionRatePerHour = baseProductionRate * newSpeedMultiplier * newMultiDropMultiplier * 6;
+
+        const newOrgMatterConsumed = 4000 * baseProductionRate * newSpeedMultiplier * newCostReductionMultiplier * 6;
+        const newFuelConsumed = 2000 * baseProductionRate * newSpeedMultiplier * newCostReductionMultiplier * 6;
+
+        const newIncomePerHour = newProductionRatePerHour * compostPrice;
+        const newCostPerHour = (newFuelConsumed * fuelPrice) + (newOrgMatterConsumed * organicMatterPrice);
+        const newTotalProfitPerHour = newIncomePerHour - newCostPerHour;
+        const newTotalProfitPerDay = newTotalProfitPerHour * 24;
+
+        const newMachineRuntime = Math.min(newOrgMatterCapMultiplier / newOrgMatterConsumed, newFuelCapMultiplier / newFuelConsumed);
+        const newCoinsPerRefill = Math.floor(newTotalProfitPerHour * newMachineRuntime);
+
+        // Check if the new values are greater than the current maximums
+        if (newTotalProfitPerHour > maxValues.coinsPerHour) {
+            maxValues.coinsPerHour = newTotalProfitPerHour;
+            maxIndices.coinsPerHour = i;
+        }
+        if (newTotalProfitPerDay > maxValues.coinsPerDay) {
+            maxValues.coinsPerDay = newTotalProfitPerDay;
+            maxIndices.coinsPerDay = i;
+        }
+        if (newMachineRuntime > maxValues.machineRuntime) {
+            maxValues.machineRuntime = newMachineRuntime;
+            maxIndices.machineRuntime = i;
+        }
+        if (newCoinsPerRefill > maxValues.coinsPerRefill) {
+            maxValues.coinsPerRefill = newCoinsPerRefill;
+            maxIndices.coinsPerRefill = i;
+        }
+
+        // Display the upgrade result
+        upgradeResults[i].innerHTML = `If you upgrade ${upgradeNames[i]}, you will make ${Math.floor(newTotalProfitPerHour).toLocaleString()} coins per hour, ${Math.floor(newTotalProfitPerDay).toLocaleString()} coins per day, the composter will work for ${newMachineRuntime.toFixed(2)} hours, making you ${newCoinsPerRefill.toLocaleString()} coins per refill.`;
     }
 
-    const bestIndexPerHour = coinsPerHourArray.reduce((max, curr) => curr.value > max.value ? curr : max).index;
-    const bestIndexPerDay = coinsPerDayArray.reduce((max, curr) => curr.value > max.value ? curr : max).index;
-    const bestIndexRuntime = machineRuntimeArray.reduce((max, curr) => curr.value > max.value ? curr : max).index;
-    const bestIndexPerRefill = coinsPerRefillArray.reduce((max, curr) => curr.value > max.value ? curr : max).index;
-
-    for (let k = 0; k < 5; k++) {
-        const upgradeLevels = [speedLevel, multiDropLevel, fuelCapLevel, orgMatterCapLevel, costReductionLevel];
-        const currentUpgradeLevel = upgradeLevels[k];
-        const resultElement = document.getElementById(`upgradeResult${k + 1}`);
-
-        if (currentUpgradeLevel === 25) {
-            resultElement.innerHTML = "This upgrade can not be leveled further.";
-        } else {
-            resultElement.innerHTML = `Upgrading this will give you <span class="${bestIndexPerHour === k  ? 'blue-text' : ''}">${Math.floor(coinsPerHourArray[k].value).toLocaleString()} coins per hour</span>, <span class="${bestIndexPerDay === k ? 'blue-text' : ''}">${Math.floor(coinsPerDayArray[k].value).toLocaleString()} coins per day</span>, the machine will work for <span class="${bestIndexRuntime === k ? 'blue-text' : ''}">${machineRuntimeArray[k].value.toFixed(2)} hours</span>, and it will make you <span class="${bestIndexPerRefill === k ? 'blue-text' : ''}">${Math.floor(coinsPerRefillArray[k].value).toLocaleString()} coins per refill</span>.`;
-        }
+    // Color the upgrade result with the maximum values in red
+    if (maxIndices.coinsPerHour !== -1) {
+        const upgradeResultCoinsPerHour = upgradeResults[maxIndices.coinsPerHour].innerHTML;
+        upgradeResults[maxIndices.coinsPerHour].innerHTML = upgradeResultCoinsPerHour.replace(/(\d{1,3},)*\d{3} coins per hour/g, (match) => `<span style="color:red">${match}</span>`);
+    }
+    if (maxIndices.coinsPerDay !== -1) {
+        const upgradeResultCoinsPerDay = upgradeResults[maxIndices.coinsPerDay].innerHTML;
+        upgradeResults[maxIndices.coinsPerDay].innerHTML = upgradeResultCoinsPerDay.replace(/(\d{1,3},)*\d{3} coins per day/g, (match) => `<span style="color:red">${match}</span>`);
+    }
+    if (maxIndices.machineRuntime !== -1) {
+        upgradeResults[maxIndices.machineRuntime].innerHTML = upgradeResults[maxIndices.machineRuntime].innerHTML.replace(`${maxValues.machineRuntime.toFixed(2)} hours`, `<span style="color:red">${maxValues.machineRuntime.toFixed(2)} hours</span>`);
+    }
+    if (maxIndices.coinsPerRefill !== -1) {
+        upgradeResults[maxIndices.coinsPerRefill].innerHTML = upgradeResults[maxIndices.coinsPerRefill].innerHTML.replace(`${maxValues.coinsPerRefill.toLocaleString()} coins per refill`, `<span style="color:red">${maxValues.coinsPerRefill.toLocaleString()} coins per refill</span>`);
     }
 }
 
 function isValidLevel(level) {
-    return !isNaN(level) && level >= 0 && level <= 25;
-}
-
-function calculateProfitPerHour(compostPrice, organicMatterPrice, fuelPrice, upgradeLevels) {
-    const baseProductionRate = 1;
-    const speedMultiplier = 1 + (0.2 * upgradeLevels[0]);
-    const multiDropMultiplier = 1 + (0.03 * upgradeLevels[1]);
-    const costReductionMultiplier = 1 - (0.01 * upgradeLevels[4]);
-
-    const productionRatePerHour = baseProductionRate * speedMultiplier * multiDropMultiplier * 6;
-
-    const orgMatterConsumed = 4000 * baseProductionRate * speedMultiplier * costReductionMultiplier * 6;
-    const fuelConsumed = 2000 * baseProductionRate * speedMultiplier * costReductionMultiplier * 6;
-
-    const incomePerHour = productionRatePerHour * compostPrice;
-    const costPerHour = (fuelConsumed * fuelPrice) + (orgMatterConsumed * organicMatterPrice);
-    const totalProfitPerHour = incomePerHour - costPerHour;
-
-    return totalProfitPerHour;
-}
-
-function calculateMachineRuntime(orgMatterCapMultiplier, fuelCapMultiplier, orgMatterConsumed, fuelConsumed) {
-
-    const orgMatterHours = orgMatterCapMultiplier / orgMatterConsumed;
-    const fuelHours = fuelCapMultiplier / fuelConsumed;
-    const machineRuntimeHours = Math.min(orgMatterHours, fuelHours);
-
-    return machineRuntimeHours;
+    return level >= 0 && level <= 25;
 }
 
 async function getbestmatterandfuel() {
     const response = await fetch('https://api.hypixel.net/v2/skyblock/bazaar');
     const data = await response.json();
 
-    // 47 organic matters 
+    // organic matters (47)
 
     const boxofseeds = data.products[`BOX_OF_SEEDS`]?.quick_status.sellPrice.toFixed(0);
     const matterboxofseeds = boxofseeds / 25600;
@@ -242,10 +270,10 @@ async function getbestmatterandfuel() {
 
     const organicRows = document.querySelectorAll('.organicrow');
     for (let i = 0; i < 5; i++) {
-        organicRows[i].innerHTML = `${i + 1}. ${organicMatters[i].name}: ${organicMatters[i].price.toFixed(2)} coins per unit`;
+    organicRows[i].innerHTML = `${i + 1}. ${organicMatters[i].name}: ${organicMatters[i].price.toFixed(2)} coins per unit`;
     }
 
-    //  3 fuels
+    // fuels (3)
 
     const fuels = [
         { name: 'Oil Barrel', price: data.products[`OIL_BARREL`]?.quick_status.sellPrice.toFixed(0) / 10000 },
@@ -255,9 +283,9 @@ async function getbestmatterandfuel() {
 
     fuels.sort((a, b) => a.price - b.price);
 
-    const fuelRows = document.querySelectorAll('.fuelrow');
+const fuelRows = document.querySelectorAll('.fuelrow');
     for (let i = 0; i < 3; i++) {
-        fuelRows[i].innerHTML = `${i + 1}. ${fuels[i].name}: ${fuels[i].price.toFixed(2)} coins per unit`;
+    fuelRows[i].innerHTML = `${i + 1}. ${fuels[i].name}: ${fuels[i].price.toFixed(2)} coins per unit`;
     }
 }
 
@@ -698,7 +726,9 @@ async function compostspreadsheet() {
             default:
                 value = 0; // If 0 its broken
         }
-        const htmlSpreadsheet = `${value.toLocaleString()} coins`;
+
+        let compostpretext = i === 131 ? 'The cost of getting every single upgrade in the composter currently costs ' : '';
+        const htmlSpreadsheet = `${compostpretext}${value.toLocaleString()} coins`;
         document.getElementById(spreadsheetHtmlId).innerHTML = htmlSpreadsheet;
     }
 }

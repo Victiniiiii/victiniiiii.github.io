@@ -7,228 +7,6 @@
     <link rel="icon" href="static/images/vic32.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
     <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
-    <style>
-        .compostrectangle {
-            width: 80vw;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            background-color: lightgray;
-            margin-top: 2vh;
-            border: 0.1vw solid black;
-            box-sizing: border-box;
-        }
-
-        .composttitletexts {
-            width: 40vw;
-            height: 4vh;
-            font-size: 1.6rem;
-            text-align: center;
-        }
-
-        .compostfaqtitletexts {
-            width: 80vw;
-            height: 4vh;
-            font-size: 1.6rem;
-            text-align: center;
-        }
-
-        .compostinsiderectangle {
-            display: flex;
-            flex-direction: row;
-            width: 80vw;
-        }
-
-        .compostleftrightrectangle {
-            width: 40vw;
-            height: 70vh;
-            box-sizing: border-box;
-            background-color: lightgreen;
-            border: 0.1vw solid black;
-        }
-
-        .compostrow {
-            width: 35vw;
-            height: 10vh;
-            margin-left: 2vw;
-            margin-top: 2.5vh;
-            font-size: 1.2rem;
-        }
-
-        .organicrow {
-            width: 35vw;
-            height: 10vh;
-            margin-left: 2vw;
-            margin-top: 3vh;
-            font-size: 1.5rem;
-        }
-
-        .fuelrow {
-            width: 35vw;
-            height: 15vh;
-            margin-left: 2vw;
-            margin-top: 6vh;
-            font-size: 2rem;
-        }
-
-        .composttoprectangle {
-            width: 80vw;
-            height: 4vh;
-            box-sizing: border-box;
-            background-color: lightblue;    
-            border: 0.1vw solid black;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .composttopeconomic {
-            width: 80vw;
-            height: 5vh;
-            box-sizing: border-box;
-            background-color: yellow;
-            border: 0.1vw solid black;
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-        }
-
-        #economic1 {
-            width: 80vw;
-            height: 5vh;
-            box-sizing: border-box;
-            background-color: lightblue;
-            border: 0.1vw solid black;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-        }
-
-        .compostbottomrectangle {
-            width: 80vw;
-            height: 6vh;
-            box-sizing: border-box;
-            background-color: red;
-            border: 0.1vw solid black;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-
-        #profitbutton {
-            width: 10vw;
-            height: 4vh;
-            margin-left: 1vw;
-            font-size: 1.5rem;
-            background: white;
-            text-align: center;
-            border: 0.1vw solid black; 
-            box-sizing: border-box;
-        }
-
-        .compostprofit {
-            margin-left: 2vw;
-            font-size: 1.05rem;
-            height: 3vh;
-            text-align: center;            
-        }
-
-        #composterForm {
-            display: flex;
-            flex-direction: column;
-            font-size: 3rem;
-        }
-
-        .upgradeinputs {
-            width: 35vw;
-            height: 5vh;
-            text-align: center;
-            font-size: 2rem;
-        }
-
-        .compostfaq {
-            width: 80vw;
-            height: 80vh;
-            background: pink;
-            border: 0.1vw solid black;
-            box-sizing: border-box;
-            margin-bottom: 2vh;
-        }
-
-        .upgraderow {
-            width: 80vw;
-            height: 5vh;
-            background-color: aqua;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .compostupgraderectangle {
-            width: 80vw;
-            height: 143vh;
-            background-color: white;
-            margin-bottom: 2vh;
-            margin-top: 2vh;
-        }
-
-        .compostupgradetitle {
-            width: 80vw;
-            height: 10vh;
-            background-color: maroon;
-            box-sizing: border-box;
-            border: 0.1vw solid black;
-            text-align: center;
-            font-size: 4rem;
-        }
-
-        .upgraderowmini {
-            width: 15vw;
-            height: 5vh;
-            background-color: slateblue;
-            text-align: center;
-            border: 0.1vw solid black;
-            box-sizing: border-box;
-        }
-
-        .upgraderowministart {
-            width: 5vw;
-            height: 5vh;
-            background-color: chocolate;
-            text-align: center;
-            border: 0.1vw solid black;
-            box-sizing: border-box;
-        }
-
-        .spreadsheettotal {
-            width: 80vw;
-            height: 3vh;
-            background-color: darkslateblue;
-            text-align: center;
-            border: 0.1vw solid black;
-            box-sizing: border-box;
-        }
-
-        .compostfaqtext {
-            width: 80vw;
-            height: 76vh;
-            background-color: darkkhaki;
-            box-sizing: border-box;
-            border: 0.1vw solid black;
-            font-size: 2.5rem;
-            padding: 2vw;
-        }
-
-        .blue-text {
-            color: blue;
-            font-weight: bold;
-        }
-
-        ::placeholder {
-            color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0 to 1) for transparency */
-        }
-
-    </style>
 </head>
 <body>
     <div class="title-section">
@@ -247,12 +25,10 @@
     </div>
 
     <div class="compostrectangle">
-
         <div class="composttoprectangle">
             <div class="composttitletexts"> Your Upgrades </div>
             <div class="composttitletexts"> Profits With The Next Upgrade </div>
         </div> 
-
         <div class="compostinsiderectangle">
             <div class="compostleftrightrectangle">
                 <div class="compostrow">
@@ -276,7 +52,6 @@
                     <input class="upgradeinputs" type="number" id="costReductionLevel" placeholder="Enter a value between 0 and 25" min="0" max="25" required>
                 </div>
             </div>
-
             <div class="compostleftrightrectangle">
                 <div class="compostrow"><span id="upgradeResult1"></span></div>
                 <div class="compostrow"><span id="upgradeResult2"></span></div>
@@ -285,13 +60,11 @@
                 <div class="compostrow"><span id="upgradeResult5"></span></div>
             </div>
         </div>
-
         <div class="compostbottomrectangle">
-            <div id="profitbutton" onclick="bazaarconnect()">Calculate Profit</div>
+            <button id="profitbutton" onclick="bazaarconnect()">Calculate Profit</button>
             <div class="compostprofit" id="resultHour"></div>
         </div>
     </div>
-
     <div class="compostrectangle">
         <div id="economic1"> Most Economic Organic Matters and Fuels </div>
         <div class="composttopeconomic">
@@ -313,9 +86,21 @@
             </div>
         </div>
     </div>
-
     <div class="compostupgraderectangle">
         <div class="compostupgradetitle">Composter Upgrades Spreadsheet</div>
+        <div class="upgraderowbig">
+            <div class="upgraderowministartbig">-</div>
+            <div class="compostspreadsheetcategory">Composter Speed</div>
+            <div class="compostspreadsheetcategoryphoto1"></div>
+            <div class="compostspreadsheetcategory">Multi Drop</div>
+            <div class="compostspreadsheetcategoryphoto2"></div>
+            <div class="compostspreadsheetcategory">Fuel Cap</div>
+            <div class="compostspreadsheetcategoryphoto3"></div>
+            <div class="compostspreadsheetcategory">Organic Matter Cap</div>
+            <div class="compostspreadsheetcategoryphoto4"></div>
+            <div class="compostspreadsheetcategory">Cost Reduction</div>
+            <div class="compostspreadsheetcategoryphoto5"></div>
+        </div>
         <div class="upgraderow">
             <div class="upgraderowministart">1</div>
             <div class="upgraderowmini" id="spreadsheet1"></div>
@@ -528,13 +313,16 @@
     </div>
     <div class="compostfaq">
         <div class="compostfaqtitletexts">Frequently Asked Questions</div>
-        <div class="compostfaqtext">
-            <b>What is the Composter ?</b> <br /><br />
-            The Composter is a feature in Hypixel Skyblock that allows the player to create Compost. <br />
-            The Composter takes 10 minutes to create each Compost, consuming 4000 Organic Matter and 2000 Machine Fuel in the process. <br />
-            However, these values can be improved by upgrading the Composter.<br /><br />
-            <b>Why do people want more Compost ?</b><br /><br />
-            Compost can be exchanged for money in the bazaar, thus creating passive income for the Composter owner.<br />
+        <div class="compostfaqinbox">
+            <div class="compostfaqphoto"></div>
+            <div class="compostfaqtext">
+                <b>What is the Composter ?</b> <br /><br />
+                The Composter is a feature in Hypixel Skyblock that allows the player to create Compost. <br />
+                The Composter takes 10 minutes to create each Compost, consuming 4000 Organic Matter and 2000 Machine Fuel in the process. <br />
+                However, these values can be improved by upgrading the Composter.<br /><br />
+                <b>Why do people want more Compost ?</b><br /><br />
+                Compost can be exchanged for money in the bazaar, thus creating passive income for the Composter owner.<br />
+            </div>
         </div>
     </div>
     <script src="compost.js"></script>
