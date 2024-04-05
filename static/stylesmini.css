@@ -27,31 +27,18 @@ a {
     align-items: center;
     width: 100%;
     border: 0.5vw solid black;
-<<<<<<< HEAD
     margin-bottom: 0.1svh;
-=======
-    margin-bottom: 0.1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .main-menu-button {
     cursor: pointer;
-<<<<<<< HEAD
     width: 6svh;
     height: 6svh;
-=======
-    width: 6vh;
-    height: 6vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .main-menu-text {
     width: 50vw;
-<<<<<<< HEAD
     font-size: min(4vw,2svh);
-=======
-    font-size: min(4vw,2vh);
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     text-align: center;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -74,15 +61,9 @@ a {
     box-sizing: border-box;
     font-size: 2vw;
     color: black;
-<<<<<<< HEAD
     padding: 1vw 1svh;
     cursor: pointer;
     margin: 1vw 1svh;
-=======
-    padding: 1vw 1vh;
-    cursor: pointer;
-    margin: 1vw 1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     position: relative;
 }
 
@@ -110,11 +91,7 @@ a {
     font-size: 4vw; 
     justify-content: space-between; 
     align-items: center;
-<<<<<<< HEAD
     margin-bottom: 3svh; 
-=======
-    margin-bottom: 3vh; 
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .project-button {
@@ -123,11 +100,7 @@ a {
 
 .release-date {
     margin-left: auto; 
-<<<<<<< HEAD
     font-size: min(4vw,2svh); 
-=======
-    font-size: min(4vw,2vh); 
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .project-content {
@@ -151,21 +124,13 @@ a {
 
 .placeholder-box {
     width: 90vw;
-<<<<<<< HEAD
     height: 13svh;
-=======
-    height: 13vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background: white;
     border: 0.5vw solid black;
     box-sizing: border-box;
     padding: 2.5vw;
     text-align: center;
-<<<<<<< HEAD
     margin-top: 30svh;
-=======
-    margin-top: 30vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .contact-box {
@@ -177,11 +142,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
     margin-top: 30svh;
-=======
-    margin-top: 30vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .contact-item {
@@ -234,11 +195,7 @@ a {
 
 .forgesatir {
     width: 95vw;
-<<<<<<< HEAD
     height: 15svh;
-=======
-    height: 15vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -246,11 +203,7 @@ a {
 
 .forgegrid-image {
     width: 10vw;
-<<<<<<< HEAD
     height: 5svh;
-=======
-    height: 5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     position: absolute;
     left: -5px;
     top: 50%;
@@ -301,11 +254,7 @@ a {
     justify-content: space-between;
     width: 100%;
     box-sizing: border-box;
-<<<<<<< HEAD
     height: 116svh;
-=======
-    height: 116vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .map-image {
@@ -317,11 +266,7 @@ a {
     width: 90vw;
     height: 90vw;
     border-radius: 5vw;
-<<<<<<< HEAD
     margin-top: 3svh;
-=======
-    margin-top: 3vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .engines-section, .clues-section {
@@ -332,11 +277,7 @@ a {
     flex: 1;
     text-align: center;
     width: 100%;
-<<<<<<< HEAD
     height: 50svh;
-=======
-    height: 50vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     font-family: Verdana, sans-serif;
     border-radius: 2vw;
     -webkit-backdrop-filter: blur(5px);
@@ -414,13 +355,8 @@ a {
     width: 90vw;
     height: 90vw;
     border-radius: 5vw;
-<<<<<<< HEAD
     margin-top: 2svh;
     margin-bottom: 2svh;
-=======
-    margin-top: 2vh;
-    margin-bottom: 2vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 
@@ -432,11 +368,7 @@ a {
 
 #buttonContainer {
     display: flex;
-<<<<<<< HEAD
     margin-top: 1.5svh;
-=======
-    margin-top: 1.5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     width: 100%;
     justify-content: space-between;
 }
@@ -447,11 +379,7 @@ a {
 
 #rectangle {
     width: 100%;
-<<<<<<< HEAD
     height: 80svh;
-=======
-    height: 80vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     text-align: center;
     box-sizing: border-box;
     padding: 2.5vw;
@@ -483,13 +411,8 @@ a {
 #result {
     display: none;
     font-size: 9vw;
-<<<<<<< HEAD
     margin-top: 2.5svh;
     margin-bottom: 1svh;
-=======
-    margin-top: 2.5vh;
-    margin-bottom: 1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     color: white;
 }
 
@@ -500,34 +423,21 @@ a {
     padding: 6vw;
     box-sizing: border-box;
     margin: 0 auto;
-<<<<<<< HEAD
     margin-top: 3svh;
     margin-bottom: 3svh;
-=======
-    margin-top: 3vh;
-    margin-bottom: 3vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     text-align: center;
 }
 
 #calculateButton {
     display: none;
     width: 60%;
-<<<<<<< HEAD
     margin-top: 2svh;
-=======
-    margin-top: 2vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     margin-left: auto;
     margin-right: auto;
 }
 
 #examResultsText {
-<<<<<<< HEAD
     margin-top: 4svh;
-=======
-    margin-top: 4vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     font-size: 7vw;
     color: white;
 }
@@ -588,43 +498,25 @@ a {
 
 .stat22RectanglesContainer {
     width: 95vw;
-<<<<<<< HEAD
     height: 5svh;
-=======
-    height: 5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     display: flex;
     justify-content: flex-start;    
 }
 
 .stat22RectanglesContainer2 {
     width: 95vw;
-<<<<<<< HEAD
     height: 5svh;
     display: flex;
     justify-content: flex-start;
     margin-top: 2svh;
-=======
-    height: 5vh;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 2vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .stat22RectanglesContainer3 {
     width: 95vw;
-<<<<<<< HEAD
     height: 5svh;
     display: flex;
     justify-content: flex-start;
     margin-top: 52svh;
-=======
-    height: 5vh;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 52vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .stat22Rectangle {
@@ -644,17 +536,10 @@ a {
     display: flex;
     flex-wrap: wrap;
     width: 95vw;
-<<<<<<< HEAD
     height: 7svh;
     justify-content: space-between;
     align-items: center;
     margin-top: 1svh;
-=======
-    height: 7vh;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background-color: transparent;
 }
 
@@ -732,11 +617,7 @@ a {
     background-color: transparent;
     color: white;
     box-sizing: border-box;
-<<<<<<< HEAD
     border: 5svh white;
-=======
-    border: 5vh white;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     cursor: pointer;
 }
 
@@ -756,11 +637,7 @@ a {
 #rectangle .lessonList li,
 #rectangle ul li {
     list-style-type: none;
-<<<<<<< HEAD
     margin-bottom: 1svh;
-=======
-    margin-bottom: 1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 
@@ -772,11 +649,7 @@ a {
 
 #gamemap {
     width: 100dvw;
-<<<<<<< HEAD
     height: 65svh;
-=======
-    height: 65dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     position: absolute;
     z-index: 1;
     display: flex;
@@ -785,27 +658,16 @@ a {
 
 #mini-map {
     width: 100dvw;
-<<<<<<< HEAD
     height: 30svh;
-=======
-    height: 30dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     z-index: 3;
     box-sizing: border-box;
 }
 
 .result-map {
-<<<<<<< HEAD
     height: 35svh;
     width: 100%;
     border: 0.05dvw solid black;
     margin-bottom: 2svh;
-=======
-    height: 35dvh;
-    width: 100%;
-    border: 0.05dvw solid black;
-    margin-bottom: 2dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
@@ -814,11 +676,7 @@ a {
     bottom: 0;
     right: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 35svh;
-=======
-    height: 35dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -832,11 +690,7 @@ a {
     bottom: 0;
     right: 0;
     width: 100%;
-<<<<<<< HEAD
     height: 35svh;
-=======
-    height: 35dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -848,11 +702,7 @@ a {
 
 #action-button {
     width: 100%;
-<<<<<<< HEAD
     height: 5svh;
-=======
-    height: 5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background-color: #4CAF50; /* Green */
     color: white;
     border: none;
@@ -862,11 +712,7 @@ a {
 
 #next-game-button {
     width: 100%;
-<<<<<<< HEAD
     height: 5svh;
-=======
-    height: 5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
@@ -877,13 +723,8 @@ a {
     position: fixed;
     z-index: 1;
     width: 100dvw;
-<<<<<<< HEAD
     height: 50svh;
     margin-top: 20svh;
-=======
-    height: 50dvh;
-    margin-top: 20dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     overflow: auto;
     border: 0.1dvw solid black;
     box-sizing: border-box;
@@ -898,13 +739,8 @@ a {
     position: absolute;
     z-index: 4;
     width: 100dvw;
-<<<<<<< HEAD
     height: 50svh;
     margin-top: 20svh;
-=======
-    height: 50dvh;
-    margin-top: 20dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     overflow: auto;
     background-color: #fefefe;
     padding: 0.5dvw;
@@ -920,7 +756,6 @@ a {
     display: flex;
     flex-direction: row;
     width: 90dvw;
-<<<<<<< HEAD
     height: 5svh;
     margin-left: 5dvw;
     justify-content: center;
@@ -928,15 +763,6 @@ a {
     font-size: 2svh;
     font-family: Verdana;
     margin-top: 2svh;
-=======
-    height: 5dvh;
-    margin-left: 5dvw;
-    justify-content: center;
-    text-align: center;
-    font-size: 2dvh;
-    font-family: Verdana;
-    margin-top: 2dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -948,21 +774,12 @@ a {
     display: flex;
     flex-direction: row;
     width: 90dvw;
-<<<<<<< HEAD
     height: 5svh;
     margin-left: 5dvw;
     margin-top: 6svh;
     justify-content: center;
     text-align: center;
     font-size: 2svh;
-=======
-    height: 5dvh;
-    margin-left: 5dvw;
-    margin-top: 6dvh;
-    justify-content: center;
-    text-align: center;
-    font-size: 2dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     font-family: Verdana;
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
@@ -978,20 +795,12 @@ a {
 }
 
 #result-info {
-<<<<<<< HEAD
     margin-top: 2.35svh;
-=======
-    margin-top: 2.35dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
 #returntomenu-button, #playagain-button {
-<<<<<<< HEAD
     height: 4.9svh;
-=======
-    height: 4.9dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 #mini-map .gmnoprint, #result-map .gmnoprint {
@@ -1001,11 +810,7 @@ a {
 #buttonrow {
     width: 90vw;
     margin-left: -10vw;
-<<<<<<< HEAD
     height: 10svh;
-=======
-    height: 10dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background-color: transparent;
     font-size: 0.4dvw;
     z-index: 5;
@@ -1018,27 +823,16 @@ a {
 }
 
 .izmirclose {
-<<<<<<< HEAD
     margin-top: 1.45svh;
     margin-left: 0.5svh;
     width: 5svh;
     height: 5svh;
-=======
-    margin-top: 1.45dvh;
-    margin-left: 0.5dvh;
-    width: 5dvh;
-    height: 5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background-image: url('../static/images/izmirclose1.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     border: 0.05dvw solid black;
-<<<<<<< HEAD
     border-radius: 0.5svh;
-=======
-    border-radius: 0.5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
@@ -1047,29 +841,17 @@ a {
 }
 
 .returnbutton {
-<<<<<<< HEAD
     margin-top: 1.45svh;
     margin-left: 0.5svh;
     margin-right: 0.5svh;
     width: 5svh;
     height: 5svh;
-=======
-    margin-top: 1.45dvh;
-    margin-left: 0.5dvh;
-    margin-right: 0.5dvh;
-    width: 5dvh;
-    height: 5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     background-image: url('../static/images/return40gray.png');
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
     border: 0.05dvw solid black;
-<<<<<<< HEAD
     border-radius: 0.5svh;
-=======
-    border-radius: 0.5dvh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
@@ -1080,7 +862,6 @@ a {
 
 .modaltoggle-button {
     display: none;
-<<<<<<< HEAD
     margin-right: 0.5svh;
     margin-top: 1.45svh;
     width: 10svh;
@@ -1089,21 +870,10 @@ a {
     background-color: #222222;
     color: white;
     border-radius: 0.5svh;
-=======
-    margin-right: 0.5dvh;
-    margin-top: 1.45dvh;
-    width: 10dvh;
-    height: 5dvh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-    border-radius: 0.5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 #timer {
     display: none;
-<<<<<<< HEAD
     margin-right: 0.5svh;
     margin-top: 1.45svh;
     width: 22svh;
@@ -1115,19 +885,6 @@ a {
     font-size: 1.5svh;
     text-align: center;
     border-radius: 0.5svh;
-=======
-    margin-right: 0.5dvh;
-    margin-top: 1.45dvh;
-    width: 22dvh;
-    height: 5dvh;
-    line-height: 5dvh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-    font-size: 1.5dvh;
-    text-align: center;
-    border-radius: 0.5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 #return-button, #overlay-container {
@@ -1138,11 +895,7 @@ a {
 
 #map2 {
     width: 100dvw;
-<<<<<<< HEAD
     height: 50svh;
-=======
-    height: 50vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     display: block;
     border: 0.5dvw solid black;
     box-sizing: border-box;
@@ -1150,38 +903,22 @@ a {
 
 .startpage {
     width: 100dvw;
-<<<<<<< HEAD
     height: 113svh;
     display: flex;
     flex-direction: column-reverse;
     box-sizing: border-box;
     margin-top: 1svh;
-=======
-    height: 113vh;
-    display: flex;
-    flex-direction: column-reverse;
-    box-sizing: border-box;
-    margin-top: 1vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .startpagelefthalf {
     width: 100dvw;
-<<<<<<< HEAD
     height: 50svh;
-=======
-    height: 50vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
 }
 
 .faq-menu {
     width: 100dvw;
-<<<<<<< HEAD
     height: 50svh;
-=======
-    height: 50vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     display: none;
     background-color: white;
     border: 0.25dvw solid black;
@@ -1208,11 +945,7 @@ a {
 
 .startpagerighthalf {
     width: 100dvw;
-<<<<<<< HEAD
     height: 63svh;
-=======
-    height: 63vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     display: flex;
     flex-direction: column;
     border: 0.5dvw solid black;
@@ -1236,11 +969,7 @@ a {
 
 .izmirilcebox {
     width: 100dvw;
-<<<<<<< HEAD
     height: 40svh;
-=======
-    height: 40vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     align-items: center;
     box-sizing: border-box;
 }
@@ -1256,11 +985,7 @@ a {
 .izmirfaq {
     width: 50%;
     height: 100%;
-<<<<<<< HEAD
     font-size: 2svh;
-=======
-    font-size: 2vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     margin-left: 1dvw;
     margin-right: 1dvw;
     box-sizing: border-box;
@@ -1268,11 +993,7 @@ a {
 
 .izmirilcebuttons {
     width: 100dvw;
-<<<<<<< HEAD
     height: 35svh;
-=======
-    height: 35vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     padding: 1dvw;
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
@@ -1280,20 +1001,12 @@ a {
 }
 
 .ilcebutton {
-<<<<<<< HEAD
     font-size: 2.5svh;
-=======
-    font-size: 2.5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
 }
 
 .izmirilcebottombuttons {
     width: 100dvw;
-<<<<<<< HEAD
     height: 5svh;
-=======
-    height: 5vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -1318,11 +1031,7 @@ a {
 
 .izmirlastrows {
     width: 100dvw;
-<<<<<<< HEAD
     height: 6.06svh;
-=======
-    height: 6.06vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -1345,11 +1054,7 @@ a {
     width: 100%;
     height: 100%;
     margin-left: 2dvw;
-<<<<<<< HEAD
     font-size: 2svh;
-=======
-    font-size: 2vh;
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
     margin-right: 1dvw;
     box-sizing: border-box;
 }
@@ -1357,7 +1062,6 @@ a {
 #izmirtime {
     font-size: 3dvw;
 }
-<<<<<<< HEAD
 
 
 
@@ -1777,5 +1481,3 @@ a {
   ::placeholder {
     color: rgba(0, 0, 0, 0.5);
   }
-=======
->>>>>>> e31da9df67265fa7fa1b755ba869a174697dd2e7
