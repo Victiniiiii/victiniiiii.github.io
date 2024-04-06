@@ -343,6 +343,10 @@ const districtsData = [
 const map2 = L.map('map2', {
     maxZoom: 11,
     minZoom: 9,
+    maxBounds: [
+        [39.444306, 28.559917], // (north, east)
+        [37.808722, 26.203444]  // (south, west)
+    ]
 }).setView([initialLat, initialLon], initialZoom);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '� OpenStreetMap contributors' }).addTo(map2);
