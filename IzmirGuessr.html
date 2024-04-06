@@ -87,7 +87,7 @@
                 <div id="izmirayarlar" class="izmirayarlar">
                     <label for="izmirtime">Time Limit:</label>
                     <select id="izmirtime" onchange="changeTimeLimit(this.value)">
-                        <option value="Infinity">No Time Limit</option>
+                        <option value="Infinity">No Limit</option>
                         <option value="15">15 seconds</option>
                         <option value="30">30 seconds</option>
                         <option value="60">60 seconds</option>
@@ -104,10 +104,15 @@
     </div>
 
     <div id="buttonrow" class="buttonrow">
-        <button id="izmirclose" class="izmirclose" onclick="returnToMainMenu()"></button>
-        <button id="returnbutton" class="returnbutton" onclick="returnToStart()"></button>
-        <div id="timer">Time Left: 60 seconds</div>
-        <button id="modaltoggle-button" class="modaltoggle-button" onclick="toggleModal()">Toggle</button>
+        <div id="closeandreturn" class="closeandreturn">
+            <div id="izmirclose" class="izmirclose" onclick="returnToMainMenu()"></div>
+            <div id="returnbutton" class="returnbutton" onclick="returnToStart()"></div>
+        </div>
+        <div id="timerandalarm" class="timerandalarm">
+            <div id="alarmicon" class= "alarmicon"></div>
+            <div id="timer">Time Left: 60 seconds</div>
+        </div>
+        <div id="modaltoggle-button" class="modaltoggle-button" onclick="toggleModal()">Toggle</div>
     </div>
 
     <div id="final-results-modal" class="final-results-modal">

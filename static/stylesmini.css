@@ -4,7 +4,6 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    box-sizing: border-box;
     font-family: Verdana, sans-serif;
     display: flex;
     margin: 0;
@@ -792,6 +791,7 @@ a {
     flex: 1;
     margin: 0;
     box-sizing: border-box;
+    font-size: 1.5svh;
 }
 
 #result-info {
@@ -808,14 +808,14 @@ a {
 }
 
 #buttonrow {
-    width: 90vw;
-    margin-left: -10vw;
-    height: 10svh;
+    width: 85vw;
+    margin-left: -15vw;
+    height: 4svh;
     background-color: transparent;
+    margin-top: 1.6svh;
     font-size: 0.4dvw;
     z-index: 5;
     position: absolute;
-    overflow: auto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -823,68 +823,76 @@ a {
 }
 
 .izmirclose {
-    margin-top: 1.45svh;
-    margin-left: 0.5svh;
-    width: 5svh;
-    height: 5svh;
-    background-image: url('../static/images/izmirclose1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border: 0.05dvw solid black;
-    border-radius: 0.5svh;
+    width: 4svh;
+    height: 4svh;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-x' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M18 6l-12 12' /%3E%3Cpath d='M6 6l12 12' /%3E%3C/svg%3E");    
     box-sizing: border-box;
-}
-
-.izmirclose:hover {
-    background-image: url('../static/images/izmirclose2.png');
+    background-size: 100% auto;
 }
 
 .returnbutton {
-    margin-top: 1.45svh;
     margin-left: 0.5svh;
-    margin-right: 0.5svh;
-    width: 5svh;
-    height: 5svh;
-    background-image: url('../static/images/return40gray.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    border: 0.05dvw solid black;
-    border-radius: 0.5svh;
+    width: 4svh;
+    height: 4svh;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-refresh-dot' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4' /%3E%3Cpath d='M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4' /%3E%3Cpath d='M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /%3E%3C/svg%3E");
     box-sizing: border-box;
+    background-size: 100% auto;
 }
 
-.returnbutton:hover {
-    background-image: url('../static/images/return40normal.png');
-}
-
-
-.modaltoggle-button {
-    display: none;
-    margin-right: 0.5svh;
-    margin-top: 1.45svh;
-    width: 10svh;
-    height: 5svh;
-    box-sizing: border-box;
-    background-color: #222222;
-    color: white;
-    border-radius: 0.5svh;
+.alarmicon {
+    width: 4svh;
+    height: 4svh;
+    margin-right: 0.5vw;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-alarm-filled' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M16 6.072a8 8 0 1 1 -11.995 7.213l-.005 -.285l.005 -.285a8 8 0 0 1 11.995 -6.643zm-4 2.928a1 1 0 0 0 -1 1v3l.007 .117a1 1 0 0 0 .993 .883h2l.117 -.007a1 1 0 0 0 .883 -.993l-.007 -.117a1 1 0 0 0 -.993 -.883h-1v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z' stroke-width='0' fill='currentColor' /%3E%3Cpath d='M6.412 3.191a1 1 0 0 1 1.273 1.539l-.097 .08l-2.75 2a1 1 0 0 1 -1.273 -1.54l.097 -.08l2.75 -2z' stroke-width='0' fill='currentColor' /%3E%3Cpath d='M16.191 3.412a1 1 0 0 1 1.291 -.288l.106 .067l2.75 2a1 1 0 0 1 -1.07 1.685l-.106 -.067l-2.75 -2a1 1 0 0 1 -.22 -1.397z' stroke-width='0' fill='currentColor' /%3E%3C/svg%3E");    box-sizing: border-box;
+    background-size: 100% auto;
 }
 
 #timer {
     display: none;
     margin-right: 0.5svh;
-    margin-top: 1.45svh;
-    width: 22svh;
-    height: 5svh;
-    line-height: 5svh;
+    width: 14svh;
+    height: 4svh;
+    line-height: 2svh;
     box-sizing: border-box;
-    background-color: #222222;
-    color: white;
+    color: black;
+    font-size: 1.3svh;
+    text-align: center;
+}
+
+.modaltoggle-button {
+    display: none;
+    margin-left: 0.5svh;
+    margin-right: 0.5svh;
+    width: 8svh;
+    height: 4svh;
+    line-height: 4svh;
     font-size: 1.5svh;
     text-align: center;
-    border-radius: 0.5svh;
+    box-sizing: border-box;
+    background-color: lightgray;
+    color: black;
+    border-radius: min(0.5vw, 0.25svh);
+}
+
+.closeandreturn {
+    width: 8.5svh;
+    height: 4svh;
+    margin-left: 0.5svh;
+    margin-right: 0.5svh;
+    display: flex;
+    flex-direction: row;
+    background-color: lightgray;
+    border-radius: min(0.5vw, 0.25svh);
+}
+
+#timerandalarm {
+    width: 19svh;
+    height: 4svh;
+    background-color: lightgray;
+    margin-right: 0.5vw;
+    display: flex;
+    flex-direction: row;
+    border-radius: min(0.5vw, 0.25svh);
 }
 
 #return-button, #overlay-container {
