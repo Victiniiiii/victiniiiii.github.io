@@ -240,7 +240,7 @@ async function getbestmatterandfuel() {
         { name: 'Cropie', price: organiccropie },
         { name: 'Enchanted Baked Potato', price: organicenchantedbakedpotato },
         { name: 'Enchanted Bread', price: organicenchantedbread },
-        { name: 'Enchanted Huge Mushroom Block', price: organicenchantedbrownmushroomblock },
+        { name: 'Enchanted Brown Mushroom Block', price: organicenchantedbrownmushroomblock },
         { name: 'Enchanted Brown Mushroom', price: organicenchantedbrownmushroom },
         { name: 'Enchanted Cactus', price: organicenchantedcactus },
         { name: 'Enchanted Cactus Green', price: organicenchantedcactusgreen },
