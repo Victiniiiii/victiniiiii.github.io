@@ -13,6 +13,7 @@ function switchMode(mode) {
     var stat22RectanglesContainer = document.getElementById('stat22RectanglesContainer');
     var stat22RectanglesContainer2 = document.getElementById('stat22RectanglesContainer2');
     var stat22RectanglesContainer3 = document.getElementById('stat22RectanglesContainer3');
+    var nodonemMode = document.getElementById('nodonemMode')
     var donem1Mode = document.getElementById('donem1Mode');
     var donem2Mode = document.getElementById('donem2Mode');
     var donem3Mode = document.getElementById('donem3Mode');
@@ -31,6 +32,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'block';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -53,6 +55,7 @@ function switchMode(mode) {
         result.style.display = 'block';
         noteInput.style.display = 'block';
         calculateButton.style.display = 'block';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -73,6 +76,7 @@ function switchMode(mode) {
         result.style.display = 'block';
         noteInput.style.display = 'block';
         calculateButton.style.display = 'block';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -94,6 +98,7 @@ function switchMode(mode) {
         result.style.display = 'none';
         noteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -111,6 +116,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'block';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -135,6 +141,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'block';
         donem3Mode.style.display = 'none';
@@ -159,6 +166,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'block';
@@ -183,6 +191,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -207,6 +216,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -231,6 +241,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -255,6 +266,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -279,6 +291,7 @@ function switchMode(mode) {
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
+        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'none';
@@ -755,4 +768,4 @@ function convertGradeToValue(grade) {
 }
 
 switchMode('STAT22');
-switchMode('DONEM1');
+//switchMode('DONEM1');
