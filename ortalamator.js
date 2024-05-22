@@ -357,96 +357,96 @@ function getSemesterData(semester) {
     switch (semester) {
         case 1:
             semesterData = [
-                { id: 'inkilapi', subject: 'ATATÜRK İLKELERİ VE İNKILAP TARİHİ I' },
-                { id: 'iktisadi', subject: 'İKTİSADA GİRİŞ I' },
-                { id: 'scientifici', subject: 'SCIENTIFIC ENGLISH I' },
-                { id: 'bilgisayar', subject: 'BİLGİSAYAR' },
-                { id: 'kariyer', subject: 'KARİYER PLANLAMA' },
-                { id: 'istatistik', subject: 'İSTATİSTİĞE GİRİŞ' },
-                { id: 'isletmei', subject: 'İŞLETMEYE GİRİŞ I' },
-                { id: 'matematiki', subject: 'MATEMATİK I' },
-                { id: 'turkdilii', subject: 'TÜRK DİLİ I' },
+                { id: 'inkilapi', subject: '(2) ATATÜRK İLKELERİ VE İNKILAP TARİHİ I' },
+                { id: 'iktisadi', subject: '(3) İKTİSADA GİRİŞ I' },
+                { id: 'scientifici', subject: '(3) SCIENTIFIC ENGLISH I' },
+                { id: 'bilgisayar', subject: '(3) BİLGİSAYAR' },
+                { id: 'kariyer', subject: '(2) KARİYER PLANLAMA' },
+                { id: 'istatistik', subject: '(7) İSTATİSTİĞE GİRİŞ' },
+                { id: 'isletmei', subject: '(3) İŞLETMEYE GİRİŞ I' },
+                { id: 'matematiki', subject: '(5) MATEMATİK I' },
+                { id: 'turkdilii', subject: '(2) TÜRK DİLİ I' },
             ];
             break;
         case 2:
             semesterData = [
-                { id: 'inkilapii', subject: 'ATATÜRK İLKELERİ VE İNKILAP TARİHİ II' },
-                { id: 'iktisadii', subject: 'İKTİSADA GİRİŞ II' },
-                { id: 'scientificii', subject: 'SCIENTIFIC ENGLISH II' },
-                { id: 'istbiluygi', subject: 'İSTATİSTİKTE BİLGİSAYAR UYGULAMALARI I' },
-                { id: 'basic', subject: 'BASIC STATISTICS' },
-                { id: 'isletmeii', subject: 'İŞLETMEYE GİRİŞ II' },
-                { id: 'matematikii', subject: 'MATEMATİK II' },
-                { id: 'turkdiliii', subject: 'TÜRK DİLİ II' },
-                { id: 'uyg', subject: 'ÜNİVERSİTE YAŞAMINA GEÇİŞ' },
+                { id: 'inkilapii', subject: '(2) ATATÜRK İLKELERİ VE İNKILAP TARİHİ II' },
+                { id: 'iktisadii', subject: '(3) İKTİSADA GİRİŞ II' },
+                { id: 'scientificii', subject: '(3) SCIENTIFIC ENGLISH II' },
+                { id: 'istbiluygi', subject: '(3) İSTATİSTİKTE BİLGİSAYAR UYGULAMALARI I' },
+                { id: 'basic', subject: '(7) BASIC STATISTICS' },
+                { id: 'isletmeii', subject: '(3) İŞLETMEYE GİRİŞ II' },
+                { id: 'matematikii', subject: '(5) MATEMATİK II' },
+                { id: 'turkdiliii', subject: '(2) TÜRK DİLİ II' },
+                { id: 'uyg', subject: '(2) ÜNİVERSİTE YAŞAMINA GEÇİŞ' },
             ];
             break;
         case 3:
             semesterData = [
-                { id: 'tbt', subject: 'TEMEL BİLGİ TEKNOLOJİLERİ' },
-                { id: 'kemo', subject: 'KEMOMETRİ' },
-                { id: 'prob', subject: 'PROBABILITY' },
-                { id: 'applied', subject: 'APPLIED STATISTICS' },
-                { id: 'istbiluygii', subject: 'İSTATİSTİKTE BİLGİSAYAR UYGULAMALARI II' },
-                { id: 'matiii', subject: 'MATEMATİK III' },
-                { id: 'dif', subject: 'DİFERANSİYEL DENKLEMLER' },
-                { id: 'thu', subject: 'TOPLUMA HİZMET UYGULAMALARI' },
+                { id: 'tbt', subject: '(3) TEMEL BİLGİ TEKNOLOJİLERİ' },
+                { id: 'kemo', subject: '(3) KEMOMETRİ' },
+                { id: 'prob', subject: '(7) PROBABILITY' },
+                { id: 'applied', subject: '(6) APPLIED STATISTICS' },
+                { id: 'istbiluygii', subject: '(2) İSTATİSTİKTE BİLGİSAYAR UYGULAMALARI II' },
+                { id: 'matiii', subject: '(4) MATEMATİK III' },
+                { id: 'dif', subject: '(3) DİFERANSİYEL DENKLEMLER' },
+                { id: 'thu', subject: '(2) TOPLUMA HİZMET UYGULAMALARI' },
             ];
             break;
         case 4:
             semesterData = [
-                { id: 'ntpg', subject: 'NESNE TABANLI PROGRAMLAMAYA GİRİŞ' },
-                { id: 'matstat', subject: 'MATHEMATICAL STATISTICS' },
-                { id: 'matris', subject: 'MATRİS TEORİSİ VE İSTATİSTİK UYGULAMALARI' },
-                { id: 'algo', subject: 'İSTATİSTİKSEL UYGULAMALAR İLE ALGORİTMA TASARIMI' },
-                { id: 'opr', subject: 'INTRODUCTION TO OPERATIONS RESEARCH' },
-                { id: 'mativ', subject: 'MATEMATİK IV' },
+                { id: 'ntpg', subject: '(3) NESNE TABANLI PROGRAMLAMAYA GİRİŞ' },
+                { id: 'matstat', subject: '(8) MATHEMATICAL STATISTICS' },
+                { id: 'matris', subject: '(5) MATRİS TEORİSİ VE İSTATİSTİK UYGULAMALARI' },
+                { id: 'algo', subject: '(5) İSTATİSTİKSEL UYGULAMALAR İLE ALGORİTMA TASARIMI' },
+                { id: 'opr', subject: '(4) INTRODUCTION TO OPERATIONS RESEARCH' },
+                { id: 'mativ', subject: '(5) MATEMATİK IV' },
             ];
             break;
         case 5:
             semesterData = [
-                { id: 'veri', subject: 'VERİ TABANI' },
-                { id: 'simu', subject: 'SIMULATION' },
-                { id: 'bulanik', subject: 'BULANIK OLASILIK VE İSTATİSTİK' },
-                { id: 'olateo', subject: 'OLASILIK TEORİSİ' },
-                { id: 'katego', subject: 'KATEGORİK VERİ ANALİZİ' },
-                { id: 'regresyon', subject: 'REGRESSION ANALYSIS' },
-                { id: 'arastir', subject: 'ARAŞTIRMA YÖNTEMLERİ' },
-                { id: 'isthazyaz', subject: 'İSTATİSTİKSEL HAZIR YAZILIMLAR' },
+                { id: 'veri', subject: '(4) VERİ TABANI' },
+                { id: 'simu', subject: '(4) SIMULATION' },
+                { id: 'bulanik', subject: '(4) BULANIK OLASILIK VE İSTATİSTİK' },
+                { id: 'olateo', subject: '(4) OLASILIK TEORİSİ' },
+                { id: 'katego', subject: '(4) KATEGORİK VERİ ANALİZİ' },
+                { id: 'regresyon', subject: '(7) REGRESSION ANALYSIS' },
+                { id: 'arastir', subject: '(6) ARAŞTIRMA YÖNTEMLERİ' },
+                { id: 'isthazyaz', subject: '(6) İSTATİSTİKSEL HAZIR YAZILIMLAR' },
             ];
             break;
         case 6:
             semesterData = [
-                { id: 'alan', subject: 'ALAN ARAŞTIRMALARI' },
-                { id: 'verii', subject: 'VERİ TABANI PROGRAMLAMA' },
-                { id: 'cassm', subject: 'COMPUTER AIDED SYSTEM SIMULATION AND MODELING' },
-                { id: 'carti', subject: 'C++ İLE PROGRAMLAMA' },
-                { id: 'skolas', subject: 'STOKASTİK SÜREÇLER' },
-                { id: 'param', subject: 'PARAMETRİK OLMAYAN İSTATİSTİKSEL YÖNTEMLER' },
-                { id: 'ornek', subject: 'ÖRNEKLEME' },
+                { id: 'alan', subject: '(4) ALAN ARAŞTIRMALARI' },
+                { id: 'verii', subject: '(5) VERİ TABANI PROGRAMLAMA' },
+                { id: 'cassm', subject: '(4) COMPUTER AIDED SYSTEM SIMULATION AND MODELING' },
+                { id: 'carti', subject: '(4) C++ İLE PROGRAMLAMA' },
+                { id: 'skolas', subject: '(7) STOKASTİK SÜREÇLER' },
+                { id: 'param', subject: '(6) PARAMETRİK OLMAYAN İSTATİSTİKSEL YÖNTEMLER' },
+                { id: 'ornek', subject: '(6) ÖRNEKLEME' },
             ];
             break;
         case 7:
             semesterData = [
-                { id: 'zaman', subject: 'ZAMAN SERİLERİ' },
-                { id: 'explo', subject: 'EXPLORATORY DATA ANALYSIS' },
-                { id: 'sra', subject: 'STATISTICAL RELIABILITY ANALYSIS' },
-                { id: 'guncel', subject: 'GÜNCEL PROGRAMLAMA DİLLERİ' },
-                { id: 'multi', subject: 'MULTIVARIATE STATISTICS' },
-                { id: 'sqc', subject: 'STATISTICAL QUALITY CONTROL' },
-                { id: 'kaynak', subject: 'KAYNAK TARAMA TEKNİKLERİ' },
+                { id: 'zaman', subject: '(5) ZAMAN SERİLERİ' },
+                { id: 'explo', subject: '(5) EXPLORATORY DATA ANALYSIS' },
+                { id: 'sra', subject: '(5) STATISTICAL RELIABILITY ANALYSIS' },
+                { id: 'guncel', subject: '(5) GÜNCEL PROGRAMLAMA DİLLERİ' },
+                { id: 'multi', subject: '(8) MULTIVARIATE STATISTICS' },
+                { id: 'sqc', subject: '(7) STATISTICAL QUALITY CONTROL' },
+                { id: 'kaynak', subject: '(5) KAYNAK TARAMA TEKNİKLERİ' },
             ];
             break;
         case 8:
             semesterData = [
-                { id: 'robust', subject: 'ROBUST STATISTICS' },
-                { id: 'sira', subject: 'SIRA İSTATİSTİKLERİ' },
-                { id: 'ekonom', subject: 'EKONOMETRİK MODELLER' },
-                { id: 'surec', subject: 'SÜREÇ KONTROLÜNDE PROBLEM ÇÖZME YÖNTEMLERİ' },
-                { id: 'sanayi', subject: 'SANAYİ EKONOMİSİ' },
-                { id: 'design', subject: 'DESIGN OF EXPERIMENTS' },
-                { id: 'appmulti', subject: 'APPLICATIONS OF MULTIVARIATE STATISTICS' },
-                { id: 'tez', subject: 'BİTİRME TEZİ' },
+                { id: 'robust', subject: '(5) ROBUST STATISTICS' },
+                { id: 'sira', subject: '(5) SIRA İSTATİSTİKLERİ' },
+                { id: 'ekonom', subject: '(5) EKONOMETRİK MODELLER' },
+                { id: 'surec', subject: '(5) SÜREÇ KONTROLÜNDE PROBLEM ÇÖZME YÖNTEMLERİ' },
+                { id: 'sanayi', subject: '(5) SANAYİ EKONOMİSİ' },
+                { id: 'design', subject: '(8) DESIGN OF EXPERIMENTS' },
+                { id: 'appmulti', subject: '(7) APPLICATIONS OF MULTIVARIATE STATISTICS' },
+                { id: 'tez', subject: '(5) BİTİRME TEZİ' },
             ];
             break;
         default:
