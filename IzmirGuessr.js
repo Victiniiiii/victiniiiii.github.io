@@ -608,9 +608,11 @@ function toggleModal() {
         if (roundCount === 5) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
+                finalresultsmodal.style.display = 'none';
             } 
             else if (finalresultsmodal.style.display === 'block') {
                 finalresultsmodal.style.display = 'none';
+                resultModal.style.display = 'none';
             } 
             else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none') {
                 resultModal.style.display = 'block';
