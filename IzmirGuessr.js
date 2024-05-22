@@ -680,11 +680,6 @@ function displayResults(distance, points) {
             break;
         case 5:
             round5Score = parseInt(points);
-            if (totalPoints > highscore) {
-                highscore = totalPoints; 
-                localStorage.setItem('highscore', highscore);
-            }
-            document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
             break;
         default:
             break;
@@ -813,9 +808,12 @@ function startGame() {
 }
 
 function startNextGame() {
-    ++roundCount;
-
     if (roundCount % roundsPerGame === 0) {
+        if (totalPoints > highscore) {
+            highscore = totalPoints; 
+            localStorage.setItem('highscore', highscore);
+        }
+        document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
         document.getElementById('final-results-modal').style.display = 'block';
         document.getElementById('overlay-container').style.display = 'none';
     } else {
@@ -825,6 +823,7 @@ function startNextGame() {
         modaltogglebutton.style.display = 'none';
         resumeTimer();
         initMap();
+        ++roundCount;
     }
 }
 
