@@ -768,8 +768,3 @@ function convertGradeToValue(grade) {
 }
 
 switchMode('STAT22');
-<<<<<<< HEAD
-//switchMode('DONEM1');
-=======
-//switchMode('DONEM1');
->>>>>>> 9c8ba6fda5216df7320208c30ad558bc26b8f719
