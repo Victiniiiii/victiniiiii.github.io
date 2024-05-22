@@ -779,7 +779,7 @@ function playAgain() {
 }
 
 function returnToMainMenu() {
-    roundCount = 0;
+    roundCount = 1;
     totalPoints = 0;
 
     round0Score = 0;
