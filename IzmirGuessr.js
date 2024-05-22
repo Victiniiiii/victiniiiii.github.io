@@ -569,15 +569,6 @@ function initMap() {
 }
 
 function toggleModal() {
-
-        if (roundCount === 0) {
-            if (resultModal.style.display === 'block') {
-                resultModal.style.display = 'none';
-            } else {
-                resultModal.style.display = 'block';
-            }
-        }
-
         if (roundCount === 1) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
@@ -605,11 +596,9 @@ function toggleModal() {
         if (roundCount === 4) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else if (finalresultsmodal.style.display === 'block') {
-                finalresultsmodal.style.display = 'none';
-            } else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none') {
-                finalresultsmodal.style.display = 'block';
-            } 
+            } else {
+                resultModal.style.display = 'block';
+            }
         }
 
         if (roundCount === 5) {
@@ -684,6 +673,12 @@ function displayResults(distance, points) {
         default:
             break;
     }
+
+    if (totalPoints > highscore) {
+        highscore = totalPoints; 
+        localStorage.setItem('highscore', highscore);
+    }
+    document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
 
     const resultMap = new google.maps.Map(document.getElementById('result-map'), {
         center: randomLocation,
@@ -809,11 +804,6 @@ function startGame() {
 
 function startNextGame() {
     if (roundCount % roundsPerGame === 0) {
-        if (totalPoints > highscore) {
-            highscore = totalPoints; 
-            localStorage.setItem('highscore', highscore);
-        }
-        document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
         document.getElementById('final-results-modal').style.display = 'block';
         document.getElementById('overlay-container').style.display = 'none';
     } else {
