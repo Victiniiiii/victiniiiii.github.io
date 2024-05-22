@@ -680,9 +680,17 @@ function displayResults(distance, points) {
             break;
         case 4:
             round4Score = parseInt(points);
+            if (totalPoints > highscore) {
+                highscore = totalPoints; 
+                localStorage.setItem('highscore', highscore);
+            }
             break;
         case 5:
             round5Score = parseInt(points);
+            if (totalPoints > highscore) {
+                highscore = totalPoints; 
+                localStorage.setItem('highscore', highscore);
+            }
             break;
         default:
             break;
