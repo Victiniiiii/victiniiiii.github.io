@@ -1,7 +1,7 @@
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
-let roundCount = 0;
+let roundCount = 1;
 const roundsPerGame = 5;
 const roundPoints = [];
 let round0Score = 0;
@@ -666,9 +666,6 @@ function calculatePoints(distance) {
 
 function displayResults(distance, points) {
     switch (roundCount) {
-        case 0:
-            round0Score = parseInt(points);
-            break;
         case 1:
             round1Score = parseInt(points);
             break;
@@ -680,10 +677,6 @@ function displayResults(distance, points) {
             break;
         case 4:
             round4Score = parseInt(points);
-            if (totalPoints > highscore) {
-                highscore = totalPoints; 
-                localStorage.setItem('highscore', highscore);
-            }
             break;
         case 5:
             round5Score = parseInt(points);
@@ -691,6 +684,7 @@ function displayResults(distance, points) {
                 highscore = totalPoints; 
                 localStorage.setItem('highscore', highscore);
             }
+            document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
             break;
         default:
             break;
@@ -774,13 +768,8 @@ function getZoomLevel(distance) {
     }
 }
 
-function playAgain() {
-    if (totalPoints > highscore) {
-        highscore = totalPoints; 
-        localStorage.setItem('highscore', highscore);
-    }
-    
-    roundCount = 0;
+function playAgain() {   
+    roundCount = 1;
     totalPoints = 0;
 
     round0Score = 0;
@@ -796,11 +785,6 @@ function playAgain() {
 
 function returnToMainMenu() {
     roundCount = 0;
-    if (totalPoints > highscore) {
-        highscore = totalPoints; 
-        localStorage.setItem('highscore', highscore);
-    }
-    document.getElementById('highscore').textContent = `Best Score: ${highscore}`;
     totalPoints = 0;
 
     round0Score = 0;
@@ -829,7 +813,7 @@ function startGame() {
 }
 
 function startNextGame() {
-    roundCount++;    
+    ++roundCount;
 
     if (roundCount % roundsPerGame === 0) {
         document.getElementById('final-results-modal').style.display = 'block';
