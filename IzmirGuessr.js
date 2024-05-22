@@ -572,7 +572,8 @@ function toggleModal() {
         if (roundCount === 1) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else {
+            } 
+            else {
                 resultModal.style.display = 'block';
             }
         }
@@ -580,7 +581,8 @@ function toggleModal() {
         if (roundCount === 2) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else {
+            } 
+            else {
                 resultModal.style.display = 'block';
             }
         }
@@ -588,7 +590,8 @@ function toggleModal() {
         if (roundCount === 3) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else {
+            } 
+            else {
                 resultModal.style.display = 'block';
             }
         }
@@ -596,7 +599,8 @@ function toggleModal() {
         if (roundCount === 4) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else {
+            } 
+            else {
                 resultModal.style.display = 'block';
             }
         }
@@ -604,10 +608,12 @@ function toggleModal() {
         if (roundCount === 5) {
             if (resultModal.style.display === 'block') {
                 resultModal.style.display = 'none';
-            } else if (finalresultsmodal.style.display === 'block') {
+            } 
+            else if (finalresultsmodal.style.display === 'block') {
                 finalresultsmodal.style.display = 'none';
-            } else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none') {
-                finalresultsmodal.style.display = 'block';
+            } 
+            else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none') {
+                resultModal.style.display = 'block';
             } 
         }
 }
