@@ -767,6 +767,11 @@ function getZoomLevel(distance) {
 }
 
 function playAgain() {
+    if (totalPoints > highscore) {
+        highscore = totalPoints; 
+        localStorage.setItem('highscore', highscore);
+    }
+    
     roundCount = 0;
     totalPoints = 0;
 
