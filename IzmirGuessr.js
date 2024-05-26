@@ -4,7 +4,6 @@ let minimap;
 let roundCount = 1;
 const roundsPerGame = 5;
 const roundPoints = [];
-let round0Score = 0;
 let round1Score = 0;
 let round2Score = 0;
 let round3Score = 0;
@@ -21,6 +20,7 @@ let isTimerPaused = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 const formattedBounds = [];
+let finalgoruntulendimi = false;
 
 let startPage = document.getElementById('startpage');
 let gamemap = document.getElementById('gamemap');
@@ -614,9 +614,12 @@ function toggleModal() {
                 finalresultsmodal.style.display = 'none';
                 resultModal.style.display = 'none';
             } 
-            else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none') {
+            else if (resultModal.style.display === 'none' && finalresultsmodal.style.display === 'none' && finalgoruntulendimi === "false") {
                 resultModal.style.display = 'block';
             } 
+            else {
+                finalresultsmodal.style.display = "block";
+            }
         }
 }
 
@@ -709,7 +712,7 @@ function displayResults(distance, points) {
     document.getElementById('distance-info').textContent = `Distance: ${distance.toFixed(0)} meters`;
     document.getElementById('points-info').textContent = `Points Earned: ${points}`;
 
-    totalPoints = round0Score + round1Score + round2Score + round3Score + round4Score + round5Score;
+    totalPoints = round1Score + round2Score + round3Score + round4Score + round5Score;
 
     document.getElementById('totalPoints').textContent = `Total Points: ${totalPoints}`;
     document.getElementById('totalPoints2').textContent = `Total Points: ${totalPoints}`;
@@ -770,12 +773,12 @@ function playAgain() {
     roundCount = 1;
     totalPoints = 0;
 
-    round0Score = 0;
     round1Score = 0;
     round2Score = 0;
     round3Score = 0;
     round4Score = 0;
     round5Score = 0;
+    finalgoruntulendimi = false;
 
     initMap();
     resumeTimer()
@@ -785,12 +788,12 @@ function returnToMainMenu() {
     roundCount = 1;
     totalPoints = 0;
 
-    round0Score = 0;
     round1Score = 0;
     round2Score = 0;
     round3Score = 0;
     round4Score = 0;
     round5Score = 0;
+    finalgoruntulendimi = false;
 
     startPage.style.display = 'flex';
     mapContainer.style.display = 'none';
@@ -805,6 +808,7 @@ function returnToMainMenu() {
 }
 
 function startGame() {
+    finalgoruntulendimi = false;
     getSecondsFromTimeLimit();
     loadGoogleMapsAPI('initMap');
     initMap();
@@ -813,6 +817,7 @@ function startGame() {
 function startNextGame() {
     if (roundCount % roundsPerGame === 0) {
         document.getElementById('final-results-modal').style.display = 'block';
+        finalgoruntulendimi = true;
         document.getElementById('overlay-container').style.display = 'none';
     } else {
         document.getElementById('overlay-container').style.display = 'block';
