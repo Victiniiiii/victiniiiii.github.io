@@ -20,7 +20,7 @@ let isTimerPaused = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 const formattedBounds = [];
-let finalgoruntulendimi = false;
+let finalgoruntulendimi = "false";
 
 let startPage = document.getElementById('startpage');
 let gamemap = document.getElementById('gamemap');
@@ -778,7 +778,7 @@ function playAgain() {
     round3Score = 0;
     round4Score = 0;
     round5Score = 0;
-    finalgoruntulendimi = false;
+    finalgoruntulendimi = "false";
 
     initMap();
     resumeTimer()
@@ -793,7 +793,7 @@ function returnToMainMenu() {
     round3Score = 0;
     round4Score = 0;
     round5Score = 0;
-    finalgoruntulendimi = false;
+    finalgoruntulendimi = "false";
 
     startPage.style.display = 'flex';
     mapContainer.style.display = 'none';
@@ -808,7 +808,7 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-    finalgoruntulendimi = false;
+    finalgoruntulendimi = "false";
     getSecondsFromTimeLimit();
     loadGoogleMapsAPI('initMap');
     initMap();
@@ -817,7 +817,7 @@ function startGame() {
 function startNextGame() {
     if (roundCount % roundsPerGame === 0) {
         document.getElementById('final-results-modal').style.display = 'block';
-        finalgoruntulendimi = true;
+        finalgoruntulendimi = "true";
         document.getElementById('overlay-container').style.display = 'none';
     } else {
         document.getElementById('overlay-container').style.display = 'block';
