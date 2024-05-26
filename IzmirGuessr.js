@@ -466,7 +466,7 @@ function getRandomLocation() {
 
 function loadGoogleMapsAPI(callback) {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sQNlbheRpjMPOIKKUB3xg02E4Y3ZJ0Y&libraries=places&v=weekly&callback=${callback}`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc-tC24A24jPxe7ZFfMs_lTN-BQErFzs&libraries=places&v=weekly&callback=${callback}`;
     document.body.appendChild(script);
 }
 
