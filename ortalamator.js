@@ -55,7 +55,10 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
         noteInput.style.display = 'block';
-        if (odev == 0) {
+        if (odev != 0) {
+            secondnoteInput.style.display = 'block';
+        } 
+        else {
             secondnoteInput.style.display = 'none';
         }
         calculateButton.style.display = 'block';
@@ -80,7 +83,10 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
         noteInput.style.display = 'block';
-        if (odev == 0) {
+        if (odev != 0) {
+            secondnoteInput.style.display = 'block';
+        }
+        else {
             secondnoteInput.style.display = 'none';
         }
         calculateButton.style.display = 'block';
