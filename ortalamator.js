@@ -400,8 +400,7 @@ function calculateFinalNote() {
     if (requiredFinalNoteDC < 45) {requiredFinalNoteDC = 45;}
     if (requiredFinalNoteDC % 1 !== 0) {requiredFinalNoteDC += 1;}    
     if (requiredFinalNoteDD < 45) {requiredFinalNoteDD = 45;}
-    if (requiredFinalNoteDD % 1 !== 0) {requiredFinalNoteDD += 1;}
-    
+    if (requiredFinalNoteDD % 1 !== 0) {requiredFinalNoteDD += 1;}    
 
     switchMode('EXAMRESULTS');
     examResultsText.innerHTML = `
@@ -411,8 +410,7 @@ function calculateFinalNote() {
     CB almak için: ${requiredFinalNoteCB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCB)}<br>
     CC almak için: ${requiredFinalNoteCC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCC)}<br>
     DC almak için: ${requiredFinalNoteDC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDC)}<br>
-    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDD)}<br>`;
-    
+    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDD)}<br>`;    
 }
 
 function selectSemester(semester) {
