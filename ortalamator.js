@@ -55,7 +55,9 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
         noteInput.style.display = 'block';
-        secondnoteInput.style.display = 'none';
+        if (odev == 0) {
+            secondnoteInput.style.display = 'none';
+        }
         calculateButton.style.display = 'block';
         settingsbutton.style.display = 'block';
         nodonemMode.style.display = 'none';
