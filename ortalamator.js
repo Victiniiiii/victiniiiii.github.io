@@ -367,14 +367,25 @@ function calculateFinalNote() {
     }
 
     var midtermNote = parseFloat(noteInput.value);
-    var odevNote = parseFloat(secondnoteInput.value);
-    var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteCB = Math.max((66.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteCC = Math.max((59.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
-    var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    if (odev != 0) {
+        var odevNote = parseFloat(secondnoteInput.value);
+        var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteCB = Math.max((66.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteCC = Math.max((59.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+        var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    }
+    else {
+        var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteCB = Math.max((66.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteCC = Math.max((59.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * vize/100)) / final*100);
+        var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * vize/100)) / final*100);
+    }
 
     if (requiredFinalNoteAA < 45) {requiredFinalNoteAA = 45;}
     if (requiredFinalNoteAA % 1 !== 0) {requiredFinalNoteAA += 1;}    
