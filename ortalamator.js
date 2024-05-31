@@ -2,8 +2,10 @@ function switchMode(mode) {
     var rightrectangle = document.querySelector('.rightrectangle');
     var middleRectangle = document.querySelector('.middleRectangle');
     var result = document.getElementById('result');
-    var noteInput = document.getElementById('noteInput');
-    var secondnoteInput = document.getElementById('secondnoteInput');
+    var noteInput1 = document.getElementById('noteInput1');
+    var noteInput2 = document.getElementById('noteInput2');
+    var secondnoteInput1 = document.getElementById('secondnoteInput1');
+    var secondnoteInput2 = document.getElementById('secondnoteInput2');
     var calculateButton = document.getElementById('calculateButton');
     var settingsbutton = document.getElementById('settingsbutton');
     var examResultsText = document.getElementById('examResultsText');
@@ -54,12 +56,15 @@ function switchMode(mode) {
         stat22RectanglesContainer2.style.display = 'none';
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
-        noteInput.style.display = 'block';
+        noteInput1.style.display = 'block';
+        noteInput2.style.display = 'block';
         if (odev != 0) {
-            secondnoteInput.style.display = 'block';
+            secondnoteInput1.style.display = 'block';
+            secondnoteInput2.style.display = 'block';
         } 
         else {
-            secondnoteInput.style.display = 'none';
+            secondnoteInput1.style.display = 'none';
+            secondnoteInput2.style.display = 'none';
         }
         calculateButton.style.display = 'block';
         settingsbutton.style.display = 'block';
@@ -82,12 +87,15 @@ function switchMode(mode) {
         stat22RectanglesContainer2.style.display = 'none';
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
-        noteInput.style.display = 'block';
+        noteInput1.style.display = 'block';
+        noteInput2.style.display = 'block';
         if (odev != 0) {
-            secondnoteInput.style.display = 'block';
+            secondnoteInput1.style.display = 'block';
+            secondnoteInput2.style.display = 'block';
         }
         else {
-            secondnoteInput.style.display = 'none';
+            secondnoteInput1.style.display = 'none';
+            secondnoteInput2.style.display = 'block';
         }
         calculateButton.style.display = 'block';
         settingsbutton.style.display = 'block';
@@ -111,8 +119,10 @@ function switchMode(mode) {
         stat22RectanglesContainer2.style.display = 'none';
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         nodonemMode.style.display = 'none';
@@ -144,8 +154,10 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'block';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
@@ -170,8 +182,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -197,8 +211,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -224,8 +240,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -251,8 +269,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -278,8 +298,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -306,8 +328,10 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'block';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
@@ -332,8 +356,10 @@ function switchMode(mode) {
         donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'block';
         result.style.display = 'none';
-        noteInput.style.display = 'none';
-        secondnoteInput.style.display = 'none';
+        noteInput1.style.display = 'none';
+        noteInput2.style.display = 'none';
+        secondnoteInput1.style.display = 'none';
+        secondnoteInput2.style.display = 'none';
         calculateButton.style.display = 'none';
         settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
@@ -346,14 +372,14 @@ function switchMode(mode) {
 
 function calculateFinalNote() {
 
-    if (noteInput.value < 0 || noteInput.value > 100) {        
+    if (noteInput1.value.trim() === "" || isNaN(noteInput1.value) || noteInput1.value < 0 || noteInput1.value > 100) {        
         switchMode('EXAMRESULTS');
         examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir vize notu giriniz.';
         return;
     }
 
     if (odev != 0) {
-        if (secondnoteInput.value < 0 || secondnoteInput.value > 100) {        
+        if (secondnoteInput1.value.trim() === "" || isNaN(secondnoteInput1.value) || secondnoteInput1.value < 0 || secondnoteInput1.value > 100) {        
             switchMode('EXAMRESULTS');
             examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir ödev notu giriniz.';
             return;
@@ -368,13 +394,13 @@ function calculateFinalNote() {
     }
 
     if (document.getElementById('stat22Mode').style.display === 'block') {
-        stat22SavedInputValue = noteInput.value;
-        stat22SavedOdevValue = secondnoteInput.value;
+        stat22SavedInputValue = noteInput2.value;
+        stat22SavedOdevValue = secondnoteInput2.value;
     }
 
-    var midtermNote = parseFloat(noteInput.value);
+    var midtermNote = parseFloat(noteInput1.value);
     if (odev != 0) {
-        var odevNote = parseFloat(secondnoteInput.value);
+        var odevNote = parseFloat(secondnoteInput1.value);
         var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
         var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
         var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
@@ -853,7 +879,8 @@ function updateValues(target, value) {
         final = value;
     }    
     if (odev != 0) {
-        secondnoteInput.style.display = 'block';
+        secondnoteInput1.style.display = 'block';
+        secondnoteInput2.style.display = 'block';
     }
 }
 
