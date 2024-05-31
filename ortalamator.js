@@ -346,14 +346,14 @@ function switchMode(mode) {
 
 function calculateFinalNote() {
 
-    if (noteInput.value.trim() === "" || isNaN(noteInput.value) || noteInput.value < 0 || noteInput.value > 100) {        
+    if (isNaN(noteInput.value) || noteInput.value < 0 || noteInput.value > 100) {        
         switchMode('EXAMRESULTS');
         examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir vize notu giriniz.';
         return;
     }
 
     if (odev != 0) {
-        if (secondnoteInput.value.trim() === "" || isNaN(secondnoteInput.value) || secondnoteInput.value < 0 || secondnoteInput.value > 100) {        
+        if (isNaN(secondnoteInput.value) || secondnoteInput.value < 0 || secondnoteInput.value > 100) {        
             switchMode('EXAMRESULTS');
             examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir ödev notu giriniz.';
             return;
