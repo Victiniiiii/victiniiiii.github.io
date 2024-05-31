@@ -394,29 +394,29 @@ function calculateFinalNote() {
     }
 
     if (requiredFinalNoteAA < 45) {requiredFinalNoteAA = 45;}
-    if (requiredFinalNoteAA % 1 !== 0) {requiredFinalNoteAA += 1;}    
+    if (requiredFinalNoteAA % 1 !== 0) {requiredFinalNoteAA = 1 + Math.trunc(requiredFinalNoteAA);}    
     if (requiredFinalNoteBA < 45) {requiredFinalNoteBA = 45;}
-    if (requiredFinalNoteBA % 1 !== 0) {requiredFinalNoteBA += 1;}    
+    if (requiredFinalNoteBA % 1 !== 0) {requiredFinalNoteBA = 1 + Math.trunc(requiredFinalNoteBA);}    
     if (requiredFinalNoteBB < 45) {requiredFinalNoteBB = 45;}
-    if (requiredFinalNoteBB % 1 !== 0) {requiredFinalNoteBB += 1;}    
+    if (requiredFinalNoteBB % 1 !== 0) {requiredFinalNoteBB = 1 + Math.trunc(requiredFinalNoteBB);}    
     if (requiredFinalNoteCB < 45) {requiredFinalNoteCB = 45;}
-    if (requiredFinalNoteCB % 1 !== 0) {requiredFinalNoteCB += 1;}    
+    if (requiredFinalNoteCB % 1 !== 0) {requiredFinalNoteCB = 1 + Math.trunc(requiredFinalNoteCB);}    
     if (requiredFinalNoteCC < 45) {requiredFinalNoteCC = 45;}
-    if (requiredFinalNoteCC % 1 !== 0) {requiredFinalNoteCC += 1;}    
+    if (requiredFinalNoteCC % 1 !== 0) {requiredFinalNoteCC = 1 + Math.trunc(requiredFinalNoteCC);}    
     if (requiredFinalNoteDC < 45) {requiredFinalNoteDC = 45;}
-    if (requiredFinalNoteDC % 1 !== 0) {requiredFinalNoteDC += 1;}    
+    if (requiredFinalNoteDC % 1 !== 0) {requiredFinalNoteDC = 1 + Math.trunc(requiredFinalNoteDC);}    
     if (requiredFinalNoteDD < 45) {requiredFinalNoteDD = 45;}
-    if (requiredFinalNoteDD % 1 !== 0) {requiredFinalNoteDD += 1;}    
+    if (requiredFinalNoteDD % 1 !== 0) {requiredFinalNoteDD = 1 + Math.trunc(requiredFinalNoteDD);}    
 
     switchMode('EXAMRESULTS');
     examResultsText.innerHTML = `
-    AA almak için: ${requiredFinalNoteAA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteAA)}<br>
-    BA almak için: ${requiredFinalNoteBA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBA)}<br>
-    BB almak için: ${requiredFinalNoteBB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBB)}<br>
-    CB almak için: ${requiredFinalNoteCB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCB)}<br>
-    CC almak için: ${requiredFinalNoteCC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCC)}<br>
-    DC almak için: ${requiredFinalNoteDC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDC)}<br>
-    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDD)}<br>`;    
+    AA almak için: ${requiredFinalNoteAA > 100 ? 'Alamaz' : requiredFinalNoteAA}<br>
+    BA almak için: ${requiredFinalNoteBA > 100 ? 'Alamaz' : requiredFinalNoteBA}<br>
+    BB almak için: ${requiredFinalNoteBB > 100 ? 'Alamaz' : requiredFinalNoteBB}<br>
+    CB almak için: ${requiredFinalNoteCB > 100 ? 'Alamaz' : requiredFinalNoteCB}<br>
+    CC almak için: ${requiredFinalNoteCC > 100 ? 'Alamaz' : requiredFinalNoteCC}<br>
+    DC almak için: ${requiredFinalNoteDC > 100 ? 'Alamaz' : requiredFinalNoteDC}<br>
+    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : requiredFinalNoteDD}<br>`;    
 }
 
 function selectSemester(semester) {
