@@ -45,15 +45,139 @@
         <div id="examMode">
             <div id="result">
                 Vize notu giriniz:
-                <input type="number" id="noteInput" placeholder="Vize Notu">
-                <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+                <div class="vizeveodevinput">
+                    <input type="number" id="noteInput" class="noteInput" placeholder="Vize Notu">
+                    <input type="number" id="secondnoteInput" class="noteInput" placeholder="Ödev Notu">
+                </div>
+                <div class="vizebutonlar">
+                    <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+                    <div class="custom-dropdown">
+                        <button id="settingsbutton" class="modeButton">Ayarlar</button>
+                        <div class="custom-dropdown-content">
+                            <div class="custom-submenu">
+                                <a href="#">Vize: <span id="vizeValue">%40</span></a>
+                                <div class="custom-submenu-content" data-target="vize">
+                                    <a href="#">%0</a>
+                                    <a href="#">%5</a>
+                                    <a href="#">%10</a>
+                                    <a href="#">%15</a>
+                                    <a href="#">%20</a>
+                                    <a href="#">%25</a>
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                    <a href="#">%65</a>
+                                    <a href="#">%70</a>
+                                </div>
+                            </div>
+                            <div class="custom-submenu">
+                                <a href="#">Ödev: <span id="odevValue">%0</span></a>
+                                <div class="custom-submenu-content" data-target="odev">
+                                    <a href="#">%0</a>
+                                    <a href="#">%5</a>
+                                    <a href="#">%10</a>
+                                    <a href="#">%15</a>
+                                    <a href="#">%20</a>
+                                    <a href="#">%25</a>
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                    <a href="#">%65</a>
+                                    <a href="#">%70</a>
+                                </div>
+                            </div>
+                            <div class="custom-submenu">
+                                <a href="#">Final: <span id="finalValue">%60</span></a>
+                                <div class="custom-submenu-content" data-target="final">
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="examResultsMode">
             <div id="result">
                 Vize notu giriniz:
-                <input type="number" id="noteInput" placeholder="Vize Notu">
-                <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+                <div class="vizeveodevinput">
+                    <input type="number" id="noteInput" placeholder="Vize Notu">
+                    <input type="number" id="secondnoteInput" placeholder="Ödev Notu">
+                </div>
+                <div class="vizebutonlar">
+                    <button id="calculateButton" class="modeButton" onclick="calculateFinalNote()">Hesapla</button>
+                    <div class="modeButton">
+                        <button id="settingsbutton" class="modeButton">Ayarlar</button>
+                        <div class="custom-dropdown-content">
+                            <div class="custom-submenu">
+                                <a href="#">Vize: <span id="vizeValue">%40</span></a>
+                                <div class="custom-submenu-content" data-target="vize">
+                                    <a href="#">%0</a>
+                                    <a href="#">%5</a>
+                                    <a href="#">%10</a>
+                                    <a href="#">%15</a>
+                                    <a href="#">%20</a>
+                                    <a href="#">%25</a>
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                    <a href="#">%65</a>
+                                    <a href="#">%70</a>
+                                </div>
+                            </div>
+                            <div class="custom-submenu">
+                                <a href="#">Ödev: <span id="odevValue">%0</span></a>
+                                <div class="custom-submenu-content" data-target="odev">
+                                    <a href="#">%0</a>
+                                    <a href="#">%5</a>
+                                    <a href="#">%10</a>
+                                    <a href="#">%15</a>
+                                    <a href="#">%20</a>
+                                    <a href="#">%25</a>
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                    <a href="#">%65</a>
+                                    <a href="#">%70</a>
+                                </div>
+                            </div>
+                            <div class="custom-submenu">
+                                <a href="#">Final: <span id="finalValue">%60</span></a>
+                                <div class="custom-submenu-content" data-target="final">
+                                    <a href="#">%30</a>
+                                    <a href="#">%35</a>
+                                    <a href="#">%40</a>
+                                    <a href="#">%45</a>
+                                    <a href="#">%50</a>
+                                    <a href="#">%55</a>
+                                    <a href="#">%60</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="examResultsText">Lütfen geçerli bir vize notu giriniz. </div>
         </div>

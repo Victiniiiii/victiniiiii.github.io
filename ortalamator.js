@@ -1,10 +1,11 @@
 function switchMode(mode) {
     var rightrectangle = document.querySelector('.rightrectangle');
     var middleRectangle = document.querySelector('.middleRectangle');
-    var rectangle = document.getElementById('rectangle');
     var result = document.getElementById('result');
     var noteInput = document.getElementById('noteInput');
+    var secondnoteInput = document.getElementById('secondnoteInput');
     var calculateButton = document.getElementById('calculateButton');
+    var settingsbutton = document.getElementById('settingsbutton');
     var examResultsText = document.getElementById('examResultsText');
     var examMode = document.getElementById('examMode');
     var examResultsMode = document.getElementById('examResultsMode');
@@ -54,7 +55,9 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
         noteInput.style.display = 'block';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'block';
+        settingsbutton.style.display = 'block';
         nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
@@ -75,7 +78,11 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'block';
         noteInput.style.display = 'block';
+        if (odev == 0) {
+            secondnoteInput.style.display = 'none';
+        }
         calculateButton.style.display = 'block';
+        settingsbutton.style.display = 'block';
         nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
@@ -97,7 +104,9 @@ function switchMode(mode) {
         stat22RectanglesContainer3.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'none';
@@ -128,7 +137,9 @@ function switchMode(mode) {
         rightrectangle.style.display = 'block';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
         donem1Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
@@ -152,7 +163,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem2Mode.style.zIndex = '1';
@@ -177,7 +190,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem3Mode.style.zIndex = '1';
@@ -202,7 +217,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem4Mode.style.zIndex = '1';
@@ -227,7 +244,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem5Mode.style.zIndex = '1';
@@ -252,7 +271,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'none';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem6Mode.style.zIndex = '1';
@@ -278,7 +299,9 @@ function switchMode(mode) {
         rightrectangle.style.display = 'block';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
         donem7Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
@@ -302,7 +325,9 @@ function switchMode(mode) {
         donem8Mode.style.display = 'block';
         result.style.display = 'none';
         noteInput.style.display = 'none';
+        secondnoteInput.style.display = 'none';
         calculateButton.style.display = 'none';
+        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem8Mode.style.zIndex = '1';
@@ -312,41 +337,71 @@ function switchMode(mode) {
 }
 
 function calculateFinalNote() {
-    var noteInput = document.getElementById('noteInput');
-    var examResultsText = document.getElementById('examResultsText');
 
-    if (noteInput.value.trim() === "" || isNaN(noteInput.value) || noteInput.value < 0 || noteInput.value > 100) {
-        examResultsText.innerHTML = 'Invalid input. Please enter a valid Midterm Note between 0 and 100.';
+    if (noteInput.value.trim() === "" || isNaN(noteInput.value) || noteInput.value < 0 || noteInput.value > 100) {        
         switchMode('EXAMRESULTS');
+        examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir vize notu giriniz.';
+        return;
+    }
+
+    if (odev != 0) {
+        if (secondnoteInput.value.trim() === "" || isNaN(secondnoteInput.value) || secondnoteInput.value < 0 || secondnoteInput.value > 100) {        
+            switchMode('EXAMRESULTS');
+            examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir ödev notu giriniz.';
+            return;
+        }
+    } 
+
+    if (vize + odev + final != 100) {        
+        switchMode('EXAMRESULTS');
+        examResultsText.innerHTML = 'Vize, ödev ve final yüzdelerinin toplamı 100&apos;e eşit olmalıdır.';
+        console.log(vize+odev+final);
         return;
     }
 
     if (document.getElementById('stat22Mode').style.display === 'block') {
         stat22SavedInputValue = noteInput.value;
+        stat22SavedOdevValue = secondnoteInput.value;
     }
 
     var midtermNote = parseFloat(noteInput.value);
-    var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteCB = Math.max((66.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteCC = Math.max((59.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * 0.4)) / 0.6, 44);
-    var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * 0.4)) / 0.6, 44);
+    var odevNote = parseFloat(secondnoteInput.value);
+    var requiredFinalNoteAA = Math.max((87.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteBA = Math.max((80.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteBB = Math.max((73.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteCB = Math.max((66.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteCC = Math.max((59.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+    var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
+
+    if (requiredFinalNoteAA < 45) {requiredFinalNoteAA = 45}
+    if (Number.isInteger(requiredFinalNoteAA) == false) {requiredFinalNoteAA += 1}
+    if (requiredFinalNoteBA < 45) {requiredFinalNoteBA = 45}
+    if (Number.isInteger(requiredFinalNoteBA) == false) {requiredFinalNoteBA += 1}
+    if (requiredFinalNoteBB < 45) {requiredFinalNoteBB = 45}
+    if (Number.isInteger(requiredFinalNoteBB) == false) {requiredFinalNoteBB += 1}
+    if (requiredFinalNoteCB < 45) {requiredFinalNoteCB = 45}
+    if (Number.isInteger(requiredFinalNoteCB) == false) {requiredFinalNoteCB += 1}
+    if (requiredFinalNoteCC < 45) {requiredFinalNoteCC = 45}
+    if (Number.isInteger(requiredFinalNoteCC) == false) {requiredFinalNoteCC += 1}
+    if (requiredFinalNoteDC < 45) {requiredFinalNoteDC = 45}
+    if (Number.isInteger(requiredFinalNoteDC) == false) {requiredFinalNoteDC += 1}
+    if (requiredFinalNoteDD < 45) {requiredFinalNoteDD = 45}
+    if (Number.isInteger(requiredFinalNoteDD) == false) {requiredFinalNoteDD += 1}
 
     switchMode('EXAMRESULTS');
     examResultsText.innerHTML = `
-    AA almak için: ${requiredFinalNoteAA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteAA) + 1}<br>
-    BA almak için: ${requiredFinalNoteBA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBA) + 1}<br>
-    BB almak için: ${requiredFinalNoteBB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBB) + 1}<br>
-    CB almak için: ${requiredFinalNoteCB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCB) + 1}<br>
-    CC almak için: ${requiredFinalNoteCC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCC) + 1}<br>
-    DC almak için: ${requiredFinalNoteDC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDC) + 1}<br>
-    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDD) + 1}<br>`;
+    AA almak için: ${requiredFinalNoteAA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteAA)}<br>
+    BA almak için: ${requiredFinalNoteBA > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBA)}<br>
+    BB almak için: ${requiredFinalNoteBB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteBB)}<br>
+    CB almak için: ${requiredFinalNoteCB > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCB)}<br>
+    CC almak için: ${requiredFinalNoteCC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteCC)}<br>
+    DC almak için: ${requiredFinalNoteDC > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDC)}<br>
+    DD almak için: ${requiredFinalNoteDD > 100 ? 'Alamaz' : Math.trunc(requiredFinalNoteDD)}<br>`;
+    
 }
 
 function selectSemester(semester) {
-    var middleRectangle = document.querySelector('.middleRectangle');
     var semesterLessonsList = document.getElementById('semesterLessonsList');
     var semesterData = getSemesterData(semester);
     semesterLessonsList.innerHTML = semesterData.map(item => `<li>${item.subject}: ${createDropdownMenu(item.id, getCurrentGrade(item.id))}</li>`).join('');
@@ -766,5 +821,32 @@ function convertGradeToValue(grade) {
     };
     return gradeValues[grade] || 0.0;
 }
+
+let vize = 40;
+let odev = 0;
+let final = 60;
+
+function updateValues(target, value) {
+    if (target === 'vize') {
+        vize = value;
+    } else if (target === 'odev') {
+        odev = value;
+    } else if (target === 'final') {
+        final = value;
+    }    
+    if (odev != 0) {
+        secondnoteInput.style.display = 'block';
+    }
+}
+
+document.querySelectorAll('.custom-submenu-content a').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();
+        const value = parseInt(this.textContent.replace('%', ''));
+        const target = this.parentElement.getAttribute('data-target');
+        document.getElementById(target + 'Value').textContent = '%' + value;
+        updateValues(target, value);
+    });
+});
 
 switchMode('STAT22');

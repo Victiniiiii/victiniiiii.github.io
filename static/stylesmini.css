@@ -427,12 +427,25 @@ a {
     text-align: center;
 }
 
-#calculateButton {
-    display: none;
-    width: 60%;
-    margin-top: 2svh;
+.vizebutonlar {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    margin-top: 1.85dvh;
     margin-left: auto;
     margin-right: auto;
+}
+
+#calculateButton {
+    width: 20vw;
+    display: none;
+    background-color: transparent;
+}
+
+#settingsbutton {
+    width: 20vw;
+    display: none;
+    background-color: transparent;
 }
 
 #examResultsText {
@@ -637,6 +650,56 @@ a {
 #rectangle ul li {
     list-style-type: none;
     margin-bottom: 1svh;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+}
+.custom-dropdown-content {
+    width: 20vw;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.custom-dropdown-content a {
+    color: black;
+    padding: 5px 10px;  /* Decreased the height */
+    font-size: min(3.5vw,1.75vh);
+    text-decoration: none;
+    display: block;
+}
+.custom-dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+.custom-dropdown:hover .custom-dropdown-content {
+    display: block;
+}
+/* Submenu styling */
+.custom-submenu {
+    position: relative;
+}
+.custom-submenu-content {
+    display: none;
+    position: absolute;
+    font-size: min(3.5vw,1.75vh);
+    left: 100%;
+    top: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.custom-submenu:hover .custom-submenu-content {
+    display: block;
+}
+
+.vizeveodevinput {
+    display: flex;
+    flex-direction: row;
 }
 
 
