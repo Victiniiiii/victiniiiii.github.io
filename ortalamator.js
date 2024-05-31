@@ -374,20 +374,21 @@ function calculateFinalNote() {
     var requiredFinalNoteDC = Math.max((52.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
     var requiredFinalNoteDD = Math.max((45.5 - (midtermNote * vize/100)-(odevNote * odev/100)) / final*100);
 
-    if (requiredFinalNoteAA < 45) {requiredFinalNoteAA = 45}
-    if (Number.isInteger(requiredFinalNoteAA) == false) {requiredFinalNoteAA += 1}
-    if (requiredFinalNoteBA < 45) {requiredFinalNoteBA = 45}
-    if (Number.isInteger(requiredFinalNoteBA) == false) {requiredFinalNoteBA += 1}
-    if (requiredFinalNoteBB < 45) {requiredFinalNoteBB = 45}
-    if (Number.isInteger(requiredFinalNoteBB) == false) {requiredFinalNoteBB += 1}
-    if (requiredFinalNoteCB < 45) {requiredFinalNoteCB = 45}
-    if (Number.isInteger(requiredFinalNoteCB) == false) {requiredFinalNoteCB += 1}
-    if (requiredFinalNoteCC < 45) {requiredFinalNoteCC = 45}
-    if (Number.isInteger(requiredFinalNoteCC) == false) {requiredFinalNoteCC += 1}
-    if (requiredFinalNoteDC < 45) {requiredFinalNoteDC = 45}
-    if (Number.isInteger(requiredFinalNoteDC) == false) {requiredFinalNoteDC += 1}
-    if (requiredFinalNoteDD < 45) {requiredFinalNoteDD = 45}
-    if (Number.isInteger(requiredFinalNoteDD) == false) {requiredFinalNoteDD += 1}
+    if (requiredFinalNoteAA < 45) {requiredFinalNoteAA = 45;}
+    if (requiredFinalNoteAA % 1 !== 0) {requiredFinalNoteAA += 1;}    
+    if (requiredFinalNoteBA < 45) {requiredFinalNoteBA = 45;}
+    if (requiredFinalNoteBA % 1 !== 0) {requiredFinalNoteBA += 1;}    
+    if (requiredFinalNoteBB < 45) {requiredFinalNoteBB = 45;}
+    if (requiredFinalNoteBB % 1 !== 0) {requiredFinalNoteBB += 1;}    
+    if (requiredFinalNoteCB < 45) {requiredFinalNoteCB = 45;}
+    if (requiredFinalNoteCB % 1 !== 0) {requiredFinalNoteCB += 1;}    
+    if (requiredFinalNoteCC < 45) {requiredFinalNoteCC = 45;}
+    if (requiredFinalNoteCC % 1 !== 0) {requiredFinalNoteCC += 1;}    
+    if (requiredFinalNoteDC < 45) {requiredFinalNoteDC = 45;}
+    if (requiredFinalNoteDC % 1 !== 0) {requiredFinalNoteDC += 1;}    
+    if (requiredFinalNoteDD < 45) {requiredFinalNoteDD = 45;}
+    if (requiredFinalNoteDD % 1 !== 0) {requiredFinalNoteDD += 1;}
+    
 
     switchMode('EXAMRESULTS');
     examResultsText.innerHTML = `

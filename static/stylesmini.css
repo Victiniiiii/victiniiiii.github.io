@@ -415,7 +415,7 @@ a {
     color: white;
 }
 
-#noteInput {
+.noteInput {
     display: none;
     font-size: 9vw;
     width: 60%;
@@ -430,20 +430,20 @@ a {
 .vizebutonlar {
     display: flex;
     flex-direction: row;
-    width: 40vw;
+    width: 80vw;
     margin-top: 1.85dvh;
     margin-left: auto;
     margin-right: auto;
 }
 
 #calculateButton {
-    width: 20vw;
+    width: 40vw;
     display: none;
     background-color: transparent;
 }
 
 #settingsbutton {
-    width: 20vw;
+    width: 40vw;
     display: none;
     background-color: transparent;
 }
