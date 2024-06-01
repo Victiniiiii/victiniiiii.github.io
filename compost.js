@@ -139,6 +139,36 @@ async function bazaarconnect() {
     if (maxIndices.coinsPerRefill !== -1) {
         upgradeResults[maxIndices.coinsPerRefill].innerHTML = upgradeResults[maxIndices.coinsPerRefill].innerHTML.replace(`${maxValues.coinsPerRefill.toLocaleString()} coins per refill`, `<span style="color:red">${maxValues.coinsPerRefill.toLocaleString()} coins per refill</span>`);
     }
+
+    for (let i = 1; i <= 131; i++) {
+        const osuruk = document.getElementById(`spreadsheet${i}`);
+        osuruk.style.backgroundColor = "transparent";
+    }
+
+    if (speedLevel !== null && speedLevel !== undefined && speedLevel !== "" && speedLevel != 25) {
+        var deneme = document.getElementById(`spreadsheet${1 + speedLevel*5}`);
+        deneme.style.backgroundColor = "lightblue";
+    }
+
+    if (multiDropLevel !== null && multiDropLevel !== undefined && multiDropLevel !== "" && multiDropLevel != 25) {
+        var deneme = document.getElementById(`spreadsheet${2 + multiDropLevel*5}`);
+        deneme.style.backgroundColor = "lightblue";
+    }
+
+    if (fuelCapLevel !== null && fuelCapLevel !== undefined && fuelCapLevel !== "" && fuelCapLevel != 25) {
+        var deneme = document.getElementById(`spreadsheet${3 + fuelCapLevel*5}`);
+        deneme.style.backgroundColor = "lightblue";
+    }
+
+    if (orgMatterCapLevel !== null && orgMatterCapLevel !== undefined && orgMatterCapLevel !== "" && orgMatterCapLevel != 25) {
+        var deneme = document.getElementById(`spreadsheet${4 + orgMatterCapLevel*5}`);
+        deneme.style.backgroundColor = "lightblue";
+    }
+
+    if (costReductionLevel !== null && costReductionLevel !== undefined && costReductionLevel !== "" && costReductionLevel != 25) {
+        var deneme = document.getElementById(`spreadsheet${5 + costReductionLevel*5}`);
+        deneme.style.backgroundColor = "lightblue";
+    }
 }
 
 function isValidLevel(level) {
