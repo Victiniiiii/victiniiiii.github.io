@@ -1,3 +1,30 @@
+function closeeverything() {
+    examMode.style.display = 'none';
+    examResultsMode.style.display = 'none';
+    faqMode.style.display = 'none';
+    stat22Mode.style.display = 'none';
+    stat22RectanglesContainer.style.display = 'none';
+    stat22RectanglesContainer2.style.display = 'none';
+    stat22RectanglesContainer3.style.display = 'none';
+    nodonemMode.style.display = 'none';
+    donem1Mode.style.display = 'none';
+    donem2Mode.style.display = 'none';
+    donem3Mode.style.display = 'none';
+    donem4Mode.style.display = 'none';
+    donem5Mode.style.display = 'none';
+    donem6Mode.style.display = 'none';
+    donem7Mode.style.display = 'none';
+    donem8Mode.style.display = 'none';
+    rightrectangle.style.display = 'none';
+    result.style.display = 'none';
+    noteInput1.style.display = 'none';
+    noteInput2.style.display = 'none';
+    secondnoteInput1.style.display = 'none';
+    secondnoteInput2.style.display = 'none';
+    calculateButton.style.display = 'none';
+    settingsbutton.style.display = 'none';
+}
+
 function switchMode(mode) {
     var rightrectangle = document.querySelector('.rightrectangle');
     var middleRectangle = document.querySelector('.middleRectangle');
@@ -28,340 +55,142 @@ function switchMode(mode) {
     var rightrectangle = document.getElementById('rightrectangle');
 
     if (mode === 'STAT22') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
         nodonemMode.style.display = 'block';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'block';
         stat22Mode.style.zIndex = '1';
         middleRectangle.style.zIndex = '0';
     } else if (mode === 'EXAM') {
-        examMode.style.display = 'block';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
-        stat22Mode.style.display = 'none';
-        stat22RectanglesContainer.style.display = 'none';
-        stat22RectanglesContainer2.style.display = 'none';
-        stat22RectanglesContainer3.style.display = 'none';
+        closeeverything();
+        examMode.style.display = 'block';        
         result.style.display = 'block';
         noteInput1.style.display = 'block';
         noteInput2.style.display = 'block';
         if (odev != 0) {
             secondnoteInput1.style.display = 'block';
             secondnoteInput2.style.display = 'block';
-        } 
-        else {
+        } else {
             secondnoteInput1.style.display = 'none';
             secondnoteInput2.style.display = 'none';
         }
         calculateButton.style.display = 'block';
         settingsbutton.style.display = 'block';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        rightrectangle.style.display = 'none';
+        
     } else if (mode === 'EXAMRESULTS') {
+        closeeverything();
         examMode.style.display = 'block';
-        examResultsMode.style.display = 'block';
-        faqMode.style.display = 'none';
-        stat22Mode.style.display = 'none';
-        stat22RectanglesContainer.style.display = 'none';
-        stat22RectanglesContainer2.style.display = 'none';
-        stat22RectanglesContainer3.style.display = 'none';
+        examResultsMode.style.display = 'block';        
         result.style.display = 'block';
         noteInput1.style.display = 'block';
         noteInput2.style.display = 'block';
         if (odev != 0) {
             secondnoteInput1.style.display = 'block';
             secondnoteInput2.style.display = 'block';
-        }
-        else {
+        } else {
             secondnoteInput1.style.display = 'none';
             secondnoteInput2.style.display = 'block';
         }
         calculateButton.style.display = 'block';
         settingsbutton.style.display = 'block';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        rightrectangle.style.display = 'none';
         examResultsText.innerHTML = 'Lütfen geçerli bir vize notu giriniz.';
     } else if (mode === 'FAQ') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
+        closeeverything();
         faqMode.style.display = 'block';
-        stat22Mode.style.display = 'none';
-        stat22RectanglesContainer.style.display = 'none';
-        stat22RectanglesContainer2.style.display = 'none';
-        stat22RectanglesContainer3.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        rightrectangle.style.display = 'none';
     } else if (mode === 'DONEM1') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
         donem1Mode.style.display = 'block';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'block';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
         donem1Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem1Mode.innerHTML = getSemesterContent(1);
     } else if (mode === 'DONEM2') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
         donem2Mode.style.display = 'block';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem2Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem2Mode.innerHTML = getSemesterContent(2);
     } else if (mode === 'DONEM3') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
         donem3Mode.style.display = 'block';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem3Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem3Mode.innerHTML = getSemesterContent(3);
     } else if (mode === 'DONEM4') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
         donem4Mode.style.display = 'block';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem4Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem4Mode.innerHTML = getSemesterContent(4);
     } else if (mode === 'DONEM5') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
         donem5Mode.style.display = 'block';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem5Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem5Mode.innerHTML = getSemesterContent(5);
     } else if (mode === 'DONEM6') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
         donem6Mode.style.display = 'block';
-        donem7Mode.style.display = 'none';
-        donem8Mode.style.display = 'none';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem6Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem6Mode.innerHTML = getSemesterContent(6);
     } else if (mode === 'DONEM7') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
         donem7Mode.style.display = 'block';
-        donem8Mode.style.display = 'none';
         rightrectangle.style.display = 'block';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.zIndex = '2';
         donem7Mode.style.zIndex = '1';
         stat22Mode.style.zIndex = '0';
         donem7Mode.innerHTML = getSemesterContent(7);
     } else if (mode === 'DONEM8') {
-        examMode.style.display = 'none';
-        examResultsMode.style.display = 'none';
-        faqMode.style.display = 'none';
+        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
         stat22RectanglesContainer3.style.display = 'flex';
-        nodonemMode.style.display = 'none';
-        donem1Mode.style.display = 'none';
-        donem2Mode.style.display = 'none';
-        donem3Mode.style.display = 'none';
-        donem4Mode.style.display = 'none';
-        donem5Mode.style.display = 'none';
-        donem6Mode.style.display = 'none';
-        donem7Mode.style.display = 'none';
         donem8Mode.style.display = 'block';
-        result.style.display = 'none';
-        noteInput1.style.display = 'none';
-        noteInput2.style.display = 'none';
-        secondnoteInput1.style.display = 'none';
-        secondnoteInput2.style.display = 'none';
-        calculateButton.style.display = 'none';
-        settingsbutton.style.display = 'none';
         rightrectangle.style.display = 'block';
         rightrectangle.style.zIndex = '2';
         donem8Mode.style.zIndex = '1';
@@ -371,7 +200,6 @@ function switchMode(mode) {
 }
 
 function calculateFinalNote() {
-
     if (noteInput1.value.trim() === "" || isNaN(noteInput1.value) || noteInput1.value < 0 || noteInput1.value > 100) {        
         switchMode('EXAMRESULTS');
         examResultsText.innerHTML = 'Lütfen 0 ve 100 arasında bir vize notu giriniz.';
@@ -616,6 +444,7 @@ function calculateGPA() {
     var donem6Data = getSemesterData(6);
     var donem7Data = getSemesterData(7);
     var donem8Data = getSemesterData(8);
+    savedata();
 
     function calculateSemesterAverage(semesterData) {
         var totalPoints = 0;
@@ -848,7 +677,7 @@ function calculateGPA() {
         gpaYear2: gpaYear2,
         gpaYear3: gpaYear3,
         gpaYear4: gpaYear4,
-    };
+    };    
 }
 
 function convertGradeToValue(grade) {
