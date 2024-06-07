@@ -1,30 +1,3 @@
-function closeeverything() {
-    examMode.style.display = 'none';
-    examResultsMode.style.display = 'none';
-    faqMode.style.display = 'none';
-    stat22Mode.style.display = 'none';
-    stat22RectanglesContainer.style.display = 'none';
-    stat22RectanglesContainer2.style.display = 'none';
-    stat22RectanglesContainer3.style.display = 'none';
-    nodonemMode.style.display = 'none';
-    donem1Mode.style.display = 'none';
-    donem2Mode.style.display = 'none';
-    donem3Mode.style.display = 'none';
-    donem4Mode.style.display = 'none';
-    donem5Mode.style.display = 'none';
-    donem6Mode.style.display = 'none';
-    donem7Mode.style.display = 'none';
-    donem8Mode.style.display = 'none';
-    rightrectangle.style.display = 'none';
-    result.style.display = 'none';
-    noteInput1.style.display = 'none';
-    noteInput2.style.display = 'none';
-    secondnoteInput1.style.display = 'none';
-    secondnoteInput2.style.display = 'none';
-    calculateButton.style.display = 'none';
-    settingsbutton.style.display = 'none';
-}
-
 function switchMode(mode) {
     var rightrectangle = document.querySelector('.rightrectangle');
     var middleRectangle = document.querySelector('.middleRectangle');
@@ -54,8 +27,32 @@ function switchMode(mode) {
     var donem8Mode = document.getElementById('donem8Mode');
     var rightrectangle = document.getElementById('rightrectangle');
 
+    examMode.style.display = 'none';
+    examResultsMode.style.display = 'none';
+    faqMode.style.display = 'none';
+    stat22Mode.style.display = 'none';
+    stat22RectanglesContainer.style.display = 'none';
+    stat22RectanglesContainer2.style.display = 'none';
+    stat22RectanglesContainer3.style.display = 'none';
+    nodonemMode.style.display = 'none';
+    donem1Mode.style.display = 'none';
+    donem2Mode.style.display = 'none';
+    donem3Mode.style.display = 'none';
+    donem4Mode.style.display = 'none';
+    donem5Mode.style.display = 'none';
+    donem6Mode.style.display = 'none';
+    donem7Mode.style.display = 'none';
+    donem8Mode.style.display = 'none';
+    rightrectangle.style.display = 'none';
+    result.style.display = 'none';
+    noteInput1.style.display = 'none';
+    noteInput2.style.display = 'none';
+    secondnoteInput1.style.display = 'none';
+    secondnoteInput2.style.display = 'none';
+    calculateButton.style.display = 'none';
+    settingsbutton.style.display = 'none';
+
     if (mode === 'STAT22') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -65,7 +62,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '1';
         middleRectangle.style.zIndex = '0';
     } else if (mode === 'EXAM') {
-        closeeverything();
         examMode.style.display = 'block';        
         result.style.display = 'block';
         noteInput1.style.display = 'block';
@@ -81,7 +77,6 @@ function switchMode(mode) {
         settingsbutton.style.display = 'block';
         
     } else if (mode === 'EXAMRESULTS') {
-        closeeverything();
         examMode.style.display = 'block';
         examResultsMode.style.display = 'block';        
         result.style.display = 'block';
@@ -98,10 +93,8 @@ function switchMode(mode) {
         settingsbutton.style.display = 'block';
         examResultsText.innerHTML = 'Lütfen geçerli bir vize notu giriniz.';
     } else if (mode === 'FAQ') {
-        closeeverything();
         faqMode.style.display = 'block';
     } else if (mode === 'DONEM1') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -113,7 +106,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem1Mode.innerHTML = getSemesterContent(1);
     } else if (mode === 'DONEM2') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -125,7 +117,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem2Mode.innerHTML = getSemesterContent(2);
     } else if (mode === 'DONEM3') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -137,7 +128,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem3Mode.innerHTML = getSemesterContent(3);
     } else if (mode === 'DONEM4') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -149,7 +139,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem4Mode.innerHTML = getSemesterContent(4);
     } else if (mode === 'DONEM5') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -161,7 +150,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem5Mode.innerHTML = getSemesterContent(5);
     } else if (mode === 'DONEM6') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -173,7 +161,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem6Mode.innerHTML = getSemesterContent(6);
     } else if (mode === 'DONEM7') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -185,7 +172,6 @@ function switchMode(mode) {
         stat22Mode.style.zIndex = '0';
         donem7Mode.innerHTML = getSemesterContent(7);
     } else if (mode === 'DONEM8') {
-        closeeverything();
         stat22Mode.style.display = 'block';
         stat22RectanglesContainer.style.display = 'flex';
         stat22RectanglesContainer2.style.display = 'flex';
@@ -444,7 +430,6 @@ function calculateGPA() {
     var donem6Data = getSemesterData(6);
     var donem7Data = getSemesterData(7);
     var donem8Data = getSemesterData(8);
-    savedata();
 
     function calculateSemesterAverage(semesterData) {
         var totalPoints = 0;
