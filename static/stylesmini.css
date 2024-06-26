@@ -1556,13 +1556,16 @@ a {
 
 
 
-#settings {
+  #settings {
     width: 80vw;
     background-color: transparent;
     text-align: center;       
     color: white;     
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    font-size: 1.5vh;
 }
 
 #settings-bar {
@@ -1571,6 +1574,7 @@ a {
     cursor: pointer;
     box-sizing: border-box;
     border: 0.1vw solid white;
+    font-size: 1.5vh;
 }
 
 #toggle-container {
@@ -1597,12 +1601,15 @@ a {
 }
 
 .image-placeholder {
-    width: 2vw;
-    height: 2vw;
     background-color: lightgray;
     text-align: center;
-    line-height: 2vw;
+    line-height: 8px;
     margin: 1vw;
+}
+
+.image-placeholder img {
+    width: 16px;
+    height: 16px;
 }
 
 .toggle-switch {
@@ -1651,6 +1658,7 @@ a {
     height: 3vh;
     border: 0.1vw solid white;
     box-sizing: border-box;
+    font-size: 0.8vh;
 }
 
 .toggle-label {
@@ -1664,8 +1672,8 @@ a {
     flex-direction: column;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 .infernoprofittitle {
@@ -1686,14 +1694,23 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5vh;
 }
 
 .infernoprofitcalculatebutton {
     width: 20vw;
     height: 5vh;
-    background-color: transparent;
+    background-color: turquoise;
     color: white;
-    font-size: 1vw;
+    font-size: 1vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    cursor: pointer;
+    text-align: center;
 }
 
 .infernoprofitrow {
@@ -1708,35 +1725,38 @@ a {
     height: 10vh;
     box-sizing: border-box;
     border: 0.1vw solid white;
-    font-size: 1.5vw;
+    font-size: 1.5vh;
     color: white;
     justify-content: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 #minioncount, #miniontier, #infusion {
-    font-size: 1.5vw;
-    margin-left: 1vw;
-    width: 5vw;
+    font-size: 1.5vh;
+    margin-top: 1vh;
+    width: 15vw;
 }
 
 #eyedrops {
-    font-size: 1vw;
-    margin-left: 0.5vw;
+    width: 15vw;
+    font-size: 1vh;
+    margin-top: 0.5vh;
 }
 
 #fueltype, #upgrades1, #upgrades2 {
-    font-size: 1vw;
-    margin-left: 1vw;
-    width: 9vw;
+    font-size: 1vh;
+    margin-top: 1vh;
+    width: 15vw;
 }
 
 #beaconlevel {
-    font-size: 1vw;
-    margin-left: 1vw;
-    width: 5vw;
+    font-size: 1vh;
+    margin-top: 1vh;
+    width: 15vw;
 }
 
 #infernoprofitresults {
@@ -1744,11 +1764,13 @@ a {
     height: 50vh;
     box-sizing: border-box;
     border: 0.1vw solid white;
-    font-size: 1.5vw;
+    font-size: 1.5vh;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 #infernoinfo {
@@ -1758,8 +1780,8 @@ a {
     box-sizing: border-box;
     border: 0.1vw solid white;
     color: white;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     margin-top: 5vh;
     margin-bottom: 5vh;
     display: flex;
@@ -1767,6 +1789,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 2vw;
+    text-align: center;
 }
 
 #infernodroprates {
@@ -1777,8 +1800,7 @@ a {
 }
 
 .infernodropratesrows {
-    width: 40vw;
-    margin-left: 20vw;
+    width: 80vw;
     height: 7.5vh;
     display: flex;
     flex-direction: row;
@@ -1786,8 +1808,8 @@ a {
     align-items: center;
     box-sizing: border-box;
     border: 0.1vw solid white;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);  
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);  
 }
 
 .infernodropratesrowsphotos {
@@ -1816,11 +1838,22 @@ a {
     border: 0.1vw solid white;
     padding: 1vw;
     margin-bottom: 1vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1vh;
+}
+
+.infernocraftingprofitsrowhalfphoto img {
+    width: 8px;
+    height: 8px;
+}
+
+.infernominioncraftingtiertextphoto img {
+    width: 12px;
+    height: 12px;
 }
 
 .infernocraftingprofitsrowhalfphoto {
@@ -1831,8 +1864,8 @@ a {
     box-sizing: border-box;
     border: 0.1vw solid white;
     margin-bottom: 1vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1845,8 +1878,8 @@ a {
     border: 0.1vw solid white;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1854,7 +1887,7 @@ a {
 }
 
 .infernominioncraftingtier {
-    width: 40vw;
+    width: 80vw;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -1885,19 +1918,19 @@ a {
 }
 
 #infernoinfotitle {
-    font-size: 3vw;
+    font-size: 3vh;
     margin-bottom: 5vh;
 }
 
 .infernoinfoquestion {
     font-weight: bold;
-    font-size: 2vw;
-    margin-bottom: 0.3vh;
+    font-size: 2vh;
+    margin-bottom: 0.15vh;
 }
 
 .infernoinfoanswer {
-    font-size: 1.6vw;
-    margin-bottom: 4vh;
+    font-size: 1.6vh;
+    margin-bottom: 2vh;
 }
 
 .toggleitemnamerow {
@@ -1913,8 +1946,26 @@ a {
     align-items: center;
     box-sizing: border-box;
     border: 0.1vw solid white;
+    font-size: 0.8vh;
 }
 
 .fivevhgap {
-    margin-bottom: 3vh;
+    margin-bottom: 1.5vh;
+}
+
+.infernoflexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.infernoflexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.infernosmallphotos {
+    display: flex;
+    margin-right: 0.5vw;
+    width: 38px;
+    height: 38px;
 }
