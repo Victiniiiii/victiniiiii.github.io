@@ -1591,3 +1591,370 @@ a {
   ::placeholder {
     color: rgba(0, 0, 0, 0.5);
   }
+
+
+
+
+
+#settings {
+    width: 80vw;
+    background-color: transparent;
+    text-align: center;       
+    color: white;     
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+#settings-bar {
+    height: 5vh;
+    line-height: 5vh;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+}
+
+#toggle-container {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 0.1vw solid white;
+}
+
+#settings.expanded #toggle-container {
+    height: 150vh;
+    text-align: center;
+}
+
+.toggle-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.image-placeholder {
+    width: 2vw;
+    height: 2vw;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 2vw;
+    margin: 1vw;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 2.4vw;
+    height: 1.2vw;
+    background-color: #ccc;
+    border-radius: 0.6vw;
+    cursor: pointer;
+    margin: 0 0.5vw;
+}
+
+.toggle-switch::before {
+    content: "";
+    position: absolute;
+    top: 0.1vw;
+    left: 0.1vw;
+    width: 1vw;
+    height: 1vw;
+    background-color: red;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.toggle-switch.active::before {
+    left: 1.3vw;
+    background-color: green;
+}
+
+.toggle-group {
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    width: 20vw;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+}
+
+.toggle-groupnames {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+    height: 3vh;
+    border: 0.1vw solid white;
+    box-sizing: border-box;
+}
+
+.toggle-label {
+    font-size: 1.1vw;
+}
+
+.infernoprofit {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.infernoprofittitle {
+    width: 80vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    color: white;
+}
+
+.infernoprofittitletext {
+    width: 60vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infernoprofitcalculatebutton {
+    width: 20vw;
+    height: 5vh;
+    background-color: transparent;
+    color: white;
+    font-size: 1vw;
+}
+
+.infernoprofitrow {
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.infernoprofitbox {
+    width: 20vw;
+    height: 10vh;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    font-size: 1.5vw;
+    color: white;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#minioncount, #miniontier, #infusion {
+    font-size: 1.5vw;
+    margin-left: 1vw;
+    width: 5vw;
+}
+
+#eyedrops {
+    font-size: 1vw;
+    margin-left: 0.5vw;
+}
+
+#fueltype, #upgrades1, #upgrades2 {
+    font-size: 1vw;
+    margin-left: 1vw;
+    width: 9vw;
+}
+
+#beaconlevel {
+    font-size: 1vw;
+    margin-left: 1vw;
+    width: 5vw;
+}
+
+#infernoprofitresults {
+    width: 80vw;
+    height: 50vh;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    font-size: 1.5vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#infernoinfo {
+    width: 80vw;
+    height: auto;
+    padding: 1vw;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    color: white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+}
+
+#infernodroprates {
+    width: 80vw;
+    height: 37.5vh;      
+    color: white;
+    background: transparent;
+}
+
+.infernodropratesrows {
+    width: 40vw;
+    margin-left: 20vw;
+    height: 7.5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);  
+}
+
+.infernodropratesrowsphotos {
+    width: 5vh;
+    height: 5vh;
+}
+
+#infernocraftingprofits {
+    width: 80vw;
+    height: auto;
+}
+
+.infernocraftingprofitsrow {
+    width: 80vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.infernocraftingprofitsrowhalf {
+    width: 35vw;
+    height: 10vh;
+    background-color: transparent;
+    color: white;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    padding: 1vw;
+    margin-bottom: 1vh;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infernocraftingprofitsrowhalfphoto {
+    width: 5vw;
+    height: 10vh;
+    background-color: transparent;
+    color: white;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    margin-bottom: 1vh;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#infernominioncrafting {
+    background-color: transparent;
+    color: white;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.infernominioncraftingtier {
+    width: 40vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.infernominioncraftingtiertext {
+    margin-left: 2vw;
+}
+
+.infernominioncraftingtiertextboxes {
+    display: flex;
+    flex-direction: row;
+}
+
+.infernominioncraftingtiertextboxestext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1vw;
+}
+
+.infernominioncraftingtiertextphoto {
+    display: flex;
+}
+
+#infernoinfotitle {
+    font-size: 3vw;
+    margin-bottom: 5vh;
+}
+
+.infernoinfoquestion {
+    font-weight: bold;
+    font-size: 2vw;
+    margin-bottom: 0.3vh;
+}
+
+.infernoinfoanswer {
+    font-size: 1.6vw;
+    margin-bottom: 4vh;
+}
+
+.toggleitemnamerow {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggleitemname {
+    width: 20vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+}
+
+.fivevhgap {
+    margin-bottom: 3vh;
+}
