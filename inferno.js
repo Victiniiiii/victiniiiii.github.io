@@ -551,7 +551,7 @@ async function minionprofits() {
             }
             console.log(chosenfuel);
         }
-        if (checkifitst3 == 1) {
+        if (checkifitst3 == 1 || checkifitst3 == 1.3) {
             infernorow3.style.backgroundImage = "url('static/images/Chili_Pepper.webp')";
             infernorow4.style.backgroundImage = "url('static/images/Inferno_Vertex.webp')";
             infernorow5.style.backgroundImage = "url('static/images/Inferno_Apex.webp')";
