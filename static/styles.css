@@ -1600,11 +1600,11 @@ a {
     width: 80vw;
     background-color: transparent;
     text-align: center;       
-    color: black;     
+    color: white;     
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
 }
 
 #settings-bar {
@@ -1612,7 +1612,7 @@ a {
     line-height: 5vh;
     cursor: pointer;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
 }
 
 #toggle-container {
@@ -1623,7 +1623,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
 }
 
 #settings.expanded #toggle-container {
@@ -1680,7 +1680,7 @@ a {
     height: 6vh;
     width: 20vw;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
 }
 
 .toggle-groupnames {
@@ -1691,7 +1691,7 @@ a {
     text-align: center;
     width: 20vw;
     height: 3vh;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     box-sizing: border-box;
 }
 
@@ -1718,8 +1718,8 @@ a {
     align-items: center;
     font-size: 1vw;
     box-sizing: border-box;
-    border: 0.1vw solid black;
-    color: black;
+    border: 0.1vw solid white;
+    color: white;
 }
 
 .infernoprofittitletext {
@@ -1733,15 +1733,15 @@ a {
 .infernoprofitcalculatebutton {
     width: 20vw;
     height: 5vh;
-    background-color: #B2EB71;
-    color: black;
+    background-color: turquoise;
+    color: white;
     font-size: 1vw;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     cursor: pointer;
 }
 
@@ -1756,9 +1756,9 @@ a {
     width: 20vw;
     height: 10vh;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     font-size: 1.5vw;
-    color: black;
+    color: white;
     justify-content: center;
     display: flex;
     justify-content: center;
@@ -1792,9 +1792,9 @@ a {
     width: 80vw;
     height: 50vh;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     font-size: 1.5vw;
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1806,8 +1806,8 @@ a {
     height: auto;
     padding: 1vw;
     box-sizing: border-box;
-    border: 0.1vw solid black;
-    color: black;
+    border: 0.1vw solid white;
+    color: white;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     margin-top: 5vh;
@@ -1822,7 +1822,7 @@ a {
 #infernodroprates {
     width: 80vw;
     height: 37.5vh;      
-    color: black;
+    color: white;
     background: transparent;
 }
 
@@ -1835,7 +1835,7 @@ a {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);  
 }
@@ -1861,9 +1861,9 @@ a {
     width: 35vw;
     height: 10vh;
     background-color: transparent;
-    color: black;
+    color: white;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     padding: 1vw;
     margin-bottom: 1vh;
     backdrop-filter: blur(25px);
@@ -1877,9 +1877,9 @@ a {
     width: 5vw;
     height: 10vh;
     background-color: transparent;
-    color: black;
+    color: white;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     margin-bottom: 1vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
@@ -1890,9 +1890,9 @@ a {
 
 #infernominioncrafting {
     background-color: transparent;
-    color: black;
+    color: white;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
     margin-top: 5vh;
     margin-bottom: 5vh;
     backdrop-filter: blur(25px);
@@ -1962,7 +1962,7 @@ a {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: 0.1vw solid black;
+    border: 0.1vw solid white;
 }
 
 .fivevhgap {
