@@ -1596,13 +1596,15 @@ a {
 
 
 
-#settings {
+  #settings {
     width: 80vw;
     background-color: transparent;
     text-align: center;       
-    color: white;     
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    color: black;     
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-sizing: border-box;
+    border: 0.1vw solid black;
 }
 
 #settings-bar {
@@ -1610,7 +1612,7 @@ a {
     line-height: 5vh;
     cursor: pointer;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
 }
 
 #toggle-container {
@@ -1621,7 +1623,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
 }
 
 #settings.expanded #toggle-container {
@@ -1678,7 +1680,7 @@ a {
     height: 6vh;
     width: 20vw;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
 }
 
 .toggle-groupnames {
@@ -1689,7 +1691,7 @@ a {
     text-align: center;
     width: 20vw;
     height: 3vh;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     box-sizing: border-box;
 }
 
@@ -1704,8 +1706,8 @@ a {
     flex-direction: column;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
 }
 
 .infernoprofittitle {
@@ -1716,8 +1718,8 @@ a {
     align-items: center;
     font-size: 1vw;
     box-sizing: border-box;
-    border: 0.1vw solid white;
-    color: white;
+    border: 0.1vw solid black;
+    color: black;
 }
 
 .infernoprofittitletext {
@@ -1731,9 +1733,16 @@ a {
 .infernoprofitcalculatebutton {
     width: 20vw;
     height: 5vh;
-    background-color: transparent;
-    color: white;
+    background-color: #B2EB71;
+    color: black;
     font-size: 1vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border: 0.1vw solid black;
+    cursor: pointer;
 }
 
 .infernoprofitrow {
@@ -1747,9 +1756,9 @@ a {
     width: 20vw;
     height: 10vh;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     font-size: 1.5vw;
-    color: white;
+    color: black;
     justify-content: center;
     display: flex;
     justify-content: center;
@@ -1783,12 +1792,13 @@ a {
     width: 80vw;
     height: 50vh;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     font-size: 1.5vw;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #infernoinfo {
@@ -1796,10 +1806,10 @@ a {
     height: auto;
     padding: 1vw;
     box-sizing: border-box;
-    border: 0.1vw solid white;
-    color: white;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border: 0.1vw solid black;
+    color: black;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     margin-top: 5vh;
     margin-bottom: 5vh;
     display: flex;
@@ -1812,7 +1822,7 @@ a {
 #infernodroprates {
     width: 80vw;
     height: 37.5vh;      
-    color: white;
+    color: black;
     background: transparent;
 }
 
@@ -1825,9 +1835,9 @@ a {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: 0.1vw solid white;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);  
+    border: 0.1vw solid black;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);  
 }
 
 .infernodropratesrowsphotos {
@@ -1851,13 +1861,13 @@ a {
     width: 35vw;
     height: 10vh;
     background-color: transparent;
-    color: white;
+    color: black;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     padding: 1vw;
     margin-bottom: 1vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1867,12 +1877,12 @@ a {
     width: 5vw;
     height: 10vh;
     background-color: transparent;
-    color: white;
+    color: black;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     margin-bottom: 1vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1880,13 +1890,13 @@ a {
 
 #infernominioncrafting {
     background-color: transparent;
-    color: white;
+    color: black;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1952,9 +1962,26 @@ a {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    border: 0.1vw solid white;
+    border: 0.1vw solid black;
 }
 
 .fivevhgap {
     margin-bottom: 3vh;
+}
+
+.infernoflexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.infernoflexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.infernosmallphotos {
+    display: flex;
+    margin-right: 0.5vw;
+    width: 38px;
+    height: 38px;
 }

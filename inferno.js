@@ -1,11 +1,5 @@
 // inferno.js
 
-// TODO: 
-
-// font'larda max(width,height) kullan
-// mobil css
-
-
 function saveToggleStates() {
     localStorage.setItem('toggleStates', JSON.stringify(toggleStates));
 }
@@ -51,8 +45,47 @@ document.querySelectorAll('.toggle-switch').forEach(function(toggleSwitch, index
     });
 });
 
+const infernooneminionprofit = document.getElementById("infernooneminionprofit");
+const infernoallminionprofit = document.getElementById("infernoallminionprofit");
+const infernoallcosts = document.getElementById("infernoallcosts");
+const infernoafterexpenses = document.getElementById("infernoafterexpenses");
+const infernobasegain = document.getElementById("infernobasegain");
+const infernofuelgain = document.getElementById("infernofuelgain");
+const infernochiligain = document.getElementById("infernochiligain");
+const infernovertexgain = document.getElementById("infernovertexgain");
+const infernoapexgain = document.getElementById("infernoapexgain");
+const infernoreapergain = document.getElementById("infernoreapergain");
 const htmlinfernoresulttext = document.getElementById("infernoprofitresults");
-htmlinfernoresulttext.innerHTML = "Press the calculate button at the top right to start.";
+const htmlinfernogain = document.getElementById("infernogain")
+const htmlempty = document.getElementById("empty");
+const infernorow1 = document.getElementById("infernorow1");
+const infernorow2 = document.getElementById("infernorow2");
+const infernorow3 = document.getElementById("infernorow3");
+const infernorow4 = document.getElementById("infernorow4");
+const infernorow5 = document.getElementById("infernorow5");
+const infernorow6 = document.getElementById("infernorow6");
+
+infernorow1.style.backgroundImage = "";
+infernorow2.style.backgroundImage = "";
+infernorow3.style.backgroundImage = "";
+infernorow4.style.backgroundImage = "";
+infernorow5.style.backgroundImage = "";
+infernorow6.style.backgroundImage = "";
+
+infernooneminionprofit.innerHTML = ``;
+infernoallminionprofit.innerHTML = ``;
+infernoallcosts.innerHTML = ``;
+infernoafterexpenses.innerHTML = ``;
+htmlempty.innerHTML= ``;
+infernobasegain.innerHTML = ``;
+infernofuelgain.innerHTML = ``;
+infernochiligain.innerHTML = ``;
+infernovertexgain.innerHTML = ``;
+infernoapexgain.innerHTML = ``;
+infernoreapergain.innerHTML = ``;
+htmlinfernogain.innerHTML= ``;
+
+htmlempty.innerHTML = "Press the calculate button at the top right to start.";
 
 function format(x) {
     return Number.parseFloat(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -345,6 +378,25 @@ async function minionprofits() {
     const powercrystalprice = everyitem[37]
     const scorchedprice = everyitem[38]
 
+    infernooneminionprofit.innerHTML = ``;
+    infernoallminionprofit.innerHTML = ``;
+    infernoallcosts.innerHTML = ``;
+    infernoafterexpenses.innerHTML = ``;
+    htmlempty.innerHTML= ``;
+    infernobasegain.innerHTML = ``;
+    infernofuelgain.innerHTML = ``;
+    infernochiligain.innerHTML = ``;
+    infernovertexgain.innerHTML = ``;
+    infernoapexgain.innerHTML = ``;
+    infernoreapergain.innerHTML = ``;
+    htmlinfernogain.innerHTML= ``;
+    infernorow1.style.backgroundImage = "";
+    infernorow2.style.backgroundImage = "";
+    infernorow3.style.backgroundImage = "";
+    infernorow4.style.backgroundImage = "";
+    infernorow5.style.backgroundImage = "";
+    infernorow6.style.backgroundImage = "";
+
     const sulphuriccoalnopeppers = ((parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice)) / 4).toFixed(0);
     const sulphuriccoalwithpeppers = ((parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice) + parseFloat(chilipepperprice) * 4) / 12).toFixed(0);
     let bestsulphuriccoal = [sulphuriccoalnopeppers > sulphuriccoalwithpeppers ? sulphuriccoalwithpeppers : sulphuriccoalnopeppers];
@@ -401,7 +453,7 @@ async function minionprofits() {
         expenses += htmlminioncount * ( 6 * parseFloat(glowstonedistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));}
     else if (htmlfueltype == "t2-magmacream") {fuelmultiplier = 16; checkifitst3 = 0; specialfuelitem = 2; specialfueloutput+= parseFloat(magmacreamprice*2); specialproduction += 0.8; chosenfuel = "Magma Cream";
         expenses += htmlminioncount * ( 6 * parseFloat(magmacreamdistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));}
-    else if (htmlfueltype == "t2-netherwart") {fuelmultiplier = 16; checkifitst3 = 0; specialfuelitem = 5; specialfueloutput+= nparseFloat(etherwartprice*5); specialproduction += 0.8; chosenfuel = "Nether Wart";
+    else if (htmlfueltype == "t2-netherwart") {fuelmultiplier = 16; checkifitst3 = 0; specialfuelitem = 5; specialfueloutput+= parseFloat(netherwartprice*5); specialproduction += 0.8; chosenfuel = "Nether Wart";
         expenses += htmlminioncount * ( 6 * parseFloat(netherwartdistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));}
     else if (htmlfueltype == "t3-gabagool") {fuelmultiplier = 21; checkifitst3 = 1; specialfuelitem = 1; specialfueloutput+= parseFloat(crudegabagoolprice); specialproduction += 0.8; chosenfuel = "Crude Gabagool";
         expenses += htmlminioncount * ( 6 * parseFloat(gabagooldistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));}
@@ -468,18 +520,48 @@ async function minionprofits() {
     profitfromcraftinghypergolic = Math.round(profitfromcraftinghypergolic).toLocaleString();
     totalaftereverything = Math.round(totalaftereverything).toLocaleString();    
 
-    htmlinfernoresulttext.innerHTML = `One minion makes ${oneminionhourlyprofit} coins per hour and ${oneminiondailyprofit} per day.
-                                        <br> All the minions combined make ${minionhourlyprofit} coins per hour and ${miniondailyprofit} per day.
-                                        <br> Using this fuel and beacon will cost you ${expenses} coins per day.
-                                        <br> That will leave you with ${coinsleft} coins after your expenses.
-                                        <br> &nbsp;
-                                        <br> The items you will get will be: 
-                                        <br> ${format((htmlminioncount*dailytotalminionactions*(1-specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount*dailytotalminionactions*(1-specialproduction)*parseFloat(crudegabagoolprice)).toFixed(0))} coins,
-                                        <br> ${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount*dailytotalminionactions*specialproduction*specialfueloutput).toFixed(0))} coins,
-                                        <br> ${format((checkifitst3/136*htmlminioncount*dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format((checkifitst3/136*htmlminioncount*dailytotalminionactions*parseFloat(chilipepperprice)).toFixed(0))} coins.
-                                        <br> ${format((checkifitst3/5950*htmlminioncount*dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format((checkifitst3/5950*htmlminioncount*dailytotalminionactions*parseFloat(vertexprice)).toFixed(0))} coins,
-                                        <br> ${format((checkifitst3/1309091*apexCount*htmlminioncount*dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format((checkifitst3/1309091*apexCount*htmlminioncount*dailytotalminionactions*parseFloat(apexprice)).toFixed(0))} coins,
-                                        <br> ${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions*parseFloat(reaperprice)).toFixed(0))} coins,`;
+    if (htmlminioncount < 1 || htmlminioncount > 31) {
+        empty.innerHTML = "Please enter the minion count value between 1 and 31.";
+    } 
+    else {
+        infernorow1.style.backgroundImage = "url('static/images/Crude_Gabagool.webp')";
+        infernooneminionprofit.innerHTML = `One minion makes ${oneminionhourlyprofit} coins per hour and ${oneminiondailyprofit} per day.`;
+        infernoallminionprofit.innerHTML = `All the minions combined make ${minionhourlyprofit} coins per hour and ${miniondailyprofit} per day.`;
+        infernoallcosts.innerHTML = `Using this fuel and beacon will cost you ${expenses} coins per day.`;
+        infernoafterexpenses.innerHTML = `That will leave you with <span style="color: turquoise; font-weight: bold; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);">${coinsleft} coins</span> after your expenses.`;
+        htmlempty.innerHTML= `&nbsp`
+        htmlinfernogain.innerHTML = `The items you will get will be:`
+        infernobasegain.innerHTML = `${format((htmlminioncount*dailytotalminionactions*(1-specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount*dailytotalminionactions*(1-specialproduction)*parseFloat(crudegabagoolprice)).toFixed(0))} coins,`
+        if (htmlfueltype != "nothing") {
+            infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount*dailytotalminionactions*specialproduction*specialfueloutput).toFixed(0))} coins,`
+            if (chosenfuel == "Crude Gabagool") {
+                infernorow2.style.backgroundImage = "url('static/images/Crude_Gabagool.webp')";
+            }
+            else if (chosenfuel == "Blaze Rod") {
+                infernorow2.style.backgroundImage = "url('static/images/Blaze_Rod.webp')";
+            }
+            else if (chosenfuel == "Magma Cream") {
+                infernorow2.style.backgroundImage = "url('static/images/Magma_Cream.webp')";
+            }
+            else if (chosenfuel == "Nether Wart") {
+                infernorow2.style.backgroundImage = "url('static/images/Nether_Wart.webp')";
+            }
+            else if (chosenfuel == "Glowstone Dust") {
+                infernorow2.style.backgroundImage = "url('static/images/Glowstone_Dust.webp')";
+            }
+            console.log(chosenfuel);
+        }
+        if (checkifitst3 == 1) {
+            infernorow3.style.backgroundImage = "url('static/images/Chili_Pepper.webp')";
+            infernorow4.style.backgroundImage = "url('static/images/Inferno_Vertex.webp')";
+            infernorow5.style.backgroundImage = "url('static/images/Inferno_Apex.webp')";
+            infernorow6.style.backgroundImage = "url('static/images/Reaper_Pepper.webp')";
+            infernochiligain.innerHTML = `${format((checkifitst3/136*htmlminioncount*dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format((checkifitst3/136*htmlminioncount*dailytotalminionactions*parseFloat(chilipepperprice)).toFixed(0))} coins.`
+            infernovertexgain.innerHTML = `${format((checkifitst3/5950*htmlminioncount*dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format((checkifitst3/5950*htmlminioncount*dailytotalminionactions*parseFloat(vertexprice)).toFixed(0))} coins,`
+            infernoapexgain.innerHTML = `${format((checkifitst3/1309091*apexCount*htmlminioncount*dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format((checkifitst3/1309091*apexCount*htmlminioncount*dailytotalminionactions*parseFloat(apexprice)).toFixed(0))} coins,`
+            infernoreapergain.innerHTML = `${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions*parseFloat(reaperprice)).toFixed(0))} coins,`
+        }
+    }
 
 }   
 

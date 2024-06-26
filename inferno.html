@@ -482,7 +482,7 @@
     <div class="infernoprofit">
         <div class="infernoprofittitle">
             <div class="infernoprofittitletext">Profit Calculator</div>
-            <button class="infernoprofitcalculatebutton" onclick="minionprofits()">Calculate</button>
+            <div class="infernoprofitcalculatebutton" onclick="minionprofits()">Calculate</div>
         </div>
         <div class="infernoprofitrow">
             <div class="infernoprofitbox">
@@ -577,7 +577,38 @@
                 </select>
             </div>
         </div>
-        <div id="infernoprofitresults"></div>
+        <div id="infernoprofitresults">
+            <div id="infernooneminionprofit"></div>
+            <div id="infernoallminionprofit"></div>
+            <div id="infernoallcosts"></div>
+            <div id="infernoafterexpenses"></div>
+            <div id="empty">&nbsp;</div>
+            <div id="infernogain">The items you will get will be: </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" img src="static\images/Hypergolic_Gabagool.webp" id="infernorow1"></div>
+                <div id="infernobasegain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow2"></div>
+                <div id="infernofuelgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow3"></div>
+                <div id="infernochiligain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow4"></div>
+                <div id="infernovertexgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow5"></div>
+                <div id="infernoapexgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow6"></div>
+                <div id="infernoreapergain"></div>
+            </div>
+        </div>
     </div>
 
     <div id="infernocraftingprofits">
@@ -899,6 +930,11 @@
         <div class="infernoinfoanswer">Yes, it does include Ionized Ceramic prices too, however i didn't include super compacotrs as it wouldn't affect the output much.</div>   
     </div>
     
+    <script>
+        document.body.style.backgroundImage = "url('static/images/inferno.png')";
+        document.body.style.backgroundSize = "cover"; 
+        document.body.style.backgroundRepeat = "no-repeat"; 
+    </script>
     <script src="inferno.js"></script>
 <body>
 </html>
