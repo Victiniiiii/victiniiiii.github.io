@@ -521,7 +521,7 @@ async function minionprofits() {
     totalaftereverything = Math.round(totalaftereverything).toLocaleString();    
 
     if (htmlminioncount < 1 || htmlminioncount > 31) {
-        empty.innerHTML = "Please enter the minion count value between 1 and 31.";
+        htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
     } 
     else {
         infernorow1.style.backgroundImage = "url('static/images/Crude_Gabagool.webp')";
@@ -562,7 +562,6 @@ async function minionprofits() {
             infernoreapergain.innerHTML = `${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format((checkifitst3/458182*htmlminioncount*dailytotalminionactions*parseFloat(reaperprice)).toFixed(0))} coins,`
         }
     }
-
 }   
 
 async function minioncraftingcosts() {
