@@ -406,7 +406,7 @@ async function minionprofits() {
 
     var htmlminioncount = document.getElementById('minioncount').value;
     if (htmlminioncount < 1 || htmlminioncount > 31) {
-        htmlinfernoresulttext.innerHTML = "You must enter a minion count value between 1 and 31.";
+        htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
     } else if (htmlminioncount > 0 && htmlminioncount < 11) {extraspeeds += htmlminioncount * 18}
     else if (htmlminioncount > 10 && htmlminioncount < 33) {extraspeeds += 180}
     else {console.log("Minion count error.")}
