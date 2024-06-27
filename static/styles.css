@@ -194,7 +194,8 @@ a {
 .forgegrid-item {
     width: 47%;
     height: 90%;
-    background-color: #ccc;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
     border: 0.05vw solid #000;
     box-sizing: border-box;
     position: relative;
