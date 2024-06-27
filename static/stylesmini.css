@@ -83,7 +83,7 @@ a {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.63vw rgba(255,255,255,0.25);
-    background-color: rgba(0,0,0,0.5);
+    background-color: transparent; 
     color: white;
 }
 
@@ -460,7 +460,7 @@ a {
     flex: 1;
     height: 9vw;
     font-family: 'Verdana', sans-serif;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     color: white;
 }
 
@@ -568,7 +568,7 @@ a {
     box-sizing: border-box;
     cursor: pointer;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
 }
 
 .middleRectangle {
@@ -628,7 +628,7 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 4vw;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     color: white;
     box-sizing: border-box;
     border: 5svh white;
@@ -876,7 +876,7 @@ a {
     width: 85vw;
     margin-left: -15vw;
     height: 4svh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     margin-top: 1.6svh;
     font-size: 0.4dvw;
     z-index: 5;

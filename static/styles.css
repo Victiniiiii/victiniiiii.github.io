@@ -486,7 +486,7 @@ a {
     font-family: 'Verdana', sans-serif;
     box-sizing: border-box;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
 }
 
 .dropdown {
@@ -597,7 +597,7 @@ a {
     cursor: pointer;
     margin-left: 0.4vw;
     margin-right: 0.4vw;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     color: white;
 }
 
@@ -643,7 +643,7 @@ a {
     cursor: pointer;
     margin: auto;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
 }
 
 .rightrectangletext {
@@ -888,7 +888,7 @@ a {
     width: 50vw;
     margin-right: 50vw;
     height: 10dvh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: transparent;
     font-size: min(0.4dvw, 0.8dvh);
     z-index: 5;
     position: absolute;
