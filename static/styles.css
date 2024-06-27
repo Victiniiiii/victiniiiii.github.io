@@ -376,7 +376,7 @@ a {
     margin-top: 1.85dvh;
     width: 80%;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(0.15vw);
     backdrop-filter: blur(0.15vw);
@@ -466,13 +466,13 @@ a {
 #calculateButton {
     width: 20vw;
     display: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #settingsbutton {
     width: 20vw;
     display: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #examResultsText {
@@ -486,7 +486,7 @@ a {
     font-family: 'Verdana', sans-serif;
     box-sizing: border-box;
     color: white;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .dropdown {
@@ -597,7 +597,7 @@ a {
     cursor: pointer;
     margin-left: 0.4vw;
     margin-right: 0.4vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
 }
 
@@ -643,7 +643,7 @@ a {
     cursor: pointer;
     margin: auto;
     color: white;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .rightrectangletext {
@@ -888,7 +888,7 @@ a {
     width: 50vw;
     margin-right: 50vw;
     height: 10dvh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     font-size: min(0.4dvw, 0.8dvh);
     z-index: 5;
     position: absolute;
@@ -1183,7 +1183,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
@@ -1195,7 +1195,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
@@ -1263,7 +1263,7 @@ a {
     margin-top: 2vh;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1286,7 +1286,7 @@ a {
     height: 70vh;
     box-sizing: border-box;
     border: min(0.1vw,0.2vh) solid black;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1308,7 +1308,7 @@ a {
     text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1323,7 +1323,7 @@ a {
     text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1338,7 +1338,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1350,7 +1350,7 @@ a {
     height: 148vh;
     margin-bottom: 5vh;
     margin-top: 2vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1365,7 +1365,7 @@ a {
     border: min(0.1vw,0.2vh) solid black;
     text-align: center;
     font-size: min(3.4vw,6.6vh);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1380,7 +1380,7 @@ a {
     margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1401,7 +1401,7 @@ a {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1416,7 +1416,7 @@ a {
     border: min(0.1vw,0.2vh) solid black;
     font-size: min(1.4vw,2.7vh);
     padding: 2vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1432,7 +1432,7 @@ a {
     background-image: url("../static/images/composter.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1445,7 +1445,7 @@ a {
     height: 5vh;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1457,7 +1457,7 @@ a {
     height: 8vh;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1471,7 +1471,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1485,7 +1485,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1499,7 +1499,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1521,7 +1521,7 @@ a {
     text-align: center;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1576,7 +1576,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: min(1.8vw,3.5vh);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1598,7 +1598,7 @@ a {
 
   #settings {
     width: 80vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     text-align: center;       
     color: white;     
     backdrop-filter: blur(25px);
@@ -1708,6 +1708,7 @@ a {
     margin-bottom: 5vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .infernoprofittitle {
@@ -1733,7 +1734,7 @@ a {
 .infernoprofitcalculatebutton {
     width: 20vw;
     height: 5vh;
-    background-color: turquoise;
+    background-color: #397d24;
     color: white;
     font-size: 1vw;
     font-weight: bold;
@@ -1817,25 +1818,26 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 2vw;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 #infernodroprates {
     width: 80vw;
-    height: 37.5vh;      
-    color: white;
-    background: transparent;
+    height: 37.5vh;
 }
 
 .infernodropratesrows {
     width: 40vw;
     margin-left: 20vw;
     height: 7.5vh;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     border: 0.1vw solid white;
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);  
 }
@@ -1860,7 +1862,7 @@ a {
 .infernocraftingprofitsrowhalf {
     width: 35vw;
     height: 10vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
@@ -1876,7 +1878,7 @@ a {
 .infernocraftingprofitsrowhalfphoto {
     width: 5vw;
     height: 10vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
@@ -1889,7 +1891,7 @@ a {
 }
 
 #infernominioncrafting {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
