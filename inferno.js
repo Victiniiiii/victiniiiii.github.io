@@ -65,26 +65,6 @@ const infernorow4 = document.getElementById("infernorow4");
 const infernorow5 = document.getElementById("infernorow5");
 const infernorow6 = document.getElementById("infernorow6");
 
-infernorow1.style.backgroundImage = "";
-infernorow2.style.backgroundImage = "";
-infernorow3.style.backgroundImage = "";
-infernorow4.style.backgroundImage = "";
-infernorow5.style.backgroundImage = "";
-infernorow6.style.backgroundImage = "";
-
-infernooneminionprofit.innerHTML = ``;
-infernoallminionprofit.innerHTML = ``;
-infernoallcosts.innerHTML = ``;
-infernoafterexpenses.innerHTML = ``;
-htmlempty.innerHTML= ``;
-infernobasegain.innerHTML = ``;
-infernofuelgain.innerHTML = ``;
-infernochiligain.innerHTML = ``;
-infernovertexgain.innerHTML = ``;
-infernoapexgain.innerHTML = ``;
-infernoreapergain.innerHTML = ``;
-htmlinfernogain.innerHTML= ``;
-
 htmlempty.innerHTML = "Press the calculate button at the top right to start.";
 
 function format(x) {
