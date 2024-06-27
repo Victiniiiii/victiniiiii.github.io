@@ -441,13 +441,13 @@ a {
 #calculateButton {
     width: 40vw;
     display: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #settingsbutton {
     width: 40vw;
     display: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 #examResultsText {
@@ -460,7 +460,7 @@ a {
     flex: 1;
     height: 9vw;
     font-family: 'Verdana', sans-serif;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
 }
 
@@ -554,7 +554,7 @@ a {
     justify-content: space-between;
     align-items: center;
     margin-top: 1svh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .semesterButton {
@@ -568,7 +568,7 @@ a {
     box-sizing: border-box;
     cursor: pointer;
     color: white;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .middleRectangle {
@@ -628,7 +628,7 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 4vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 5svh white;
@@ -876,7 +876,7 @@ a {
     width: 85vw;
     margin-left: -15vw;
     height: 4svh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     margin-top: 1.6svh;
     font-size: 0.4dvw;
     z-index: 5;
@@ -1155,7 +1155,7 @@ a {
     font-size: min(1vw,0.5vh);
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
@@ -1223,7 +1223,7 @@ a {
     margin-top: 2vh;
     border: min(0.1vw,0.2vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1246,7 +1246,7 @@ a {
     height: 70vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1268,7 +1268,7 @@ a {
     text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1283,7 +1283,7 @@ a {
     text-align: center;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1298,7 +1298,7 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1310,7 +1310,7 @@ a {
     height: 148vh;
     margin-bottom: 5vh;
     margin-top: 2vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1325,7 +1325,7 @@ a {
     border: min(0.1vw,0.2vh) solid black;
     text-align: center;
     font-size: min(4vw,3.4vh);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1340,7 +1340,7 @@ a {
     margin-bottom: 2vh;
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1361,7 +1361,7 @@ a {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1376,7 +1376,7 @@ a {
     border: min(0.2vw,0.1vh) solid black;
     font-size: min(2.7vw,1.4vh);
     padding: 2vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1392,7 +1392,7 @@ a {
     background-image: url("../static/images/composter.webp");
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1405,7 +1405,7 @@ a {
     height: 5vh;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1417,7 +1417,7 @@ a {
     height: 4vh;
     display: flex;
     flex-direction: row;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1432,7 +1432,7 @@ a {
     font-size: min(1.4vw,0.80vh);
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1447,7 +1447,7 @@ a {
     font-size: min(2vw,1vh);
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1461,7 +1461,7 @@ a {
     text-align: center;
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1484,7 +1484,7 @@ a {
     font-size: min(1.8vw,0.9vh);
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1539,7 +1539,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: min(3.5vw,1.8vh);
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 0.4vw;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1560,7 +1560,7 @@ a {
 
   #settings {
     width: 80vw;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     text-align: center;       
     color: white;     
     backdrop-filter: blur(25px);
@@ -1676,6 +1676,7 @@ a {
     margin-bottom: 5vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .infernoprofittitle {
@@ -1792,13 +1793,14 @@ a {
     align-items: center;
     font-size: 2vw;
     text-align: center;
+    background: rgba(0, 0, 0, 0.4);;
 }
 
 #infernodroprates {
     width: 80vw;
     height: 37.5vh;      
     color: white;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .infernodropratesrows {
@@ -1834,7 +1836,7 @@ a {
 .infernocraftingprofitsrowhalf {
     width: 35vw;
     height: 10vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
@@ -1861,7 +1863,7 @@ a {
 .infernocraftingprofitsrowhalfphoto {
     width: 5vw;
     height: 10vh;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
@@ -1874,7 +1876,7 @@ a {
 }
 
 #infernominioncrafting {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
