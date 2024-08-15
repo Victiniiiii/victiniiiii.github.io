@@ -182,6 +182,7 @@ function switchMode(mode) {
 		stat22Mode.style.zIndex = "0";
 		donem8Mode.innerHTML = getSemesterContent(8);
 	}
+    loadSavedDropdowns();
 }
 
 function calculateFinalNote() {
@@ -283,12 +284,6 @@ function calculateFinalNote() {
     CC almak için: ${requiredFinalNoteCC > 100 ? "Alamaz" : requiredFinalNoteCC}<br>
     DC almak için: ${requiredFinalNoteDC > 100 ? "Alamaz" : requiredFinalNoteDC}<br>
     DD almak için: ${requiredFinalNoteDD > 100 ? "Alamaz" : requiredFinalNoteDD}<br>`;
-}
-
-function selectSemester(semester) {
-	var semesterLessonsList = document.getElementById("semesterLessonsList");
-	var semesterData = getSemesterData(semester);
-	semesterLessonsList.innerHTML = semesterData.map((item) => `<li>${item.subject}: ${createDropdownMenu(item.id, getCurrentGrade(item.id))}</li>`).join("");
 }
 
 function getSemesterData(semester) {
@@ -396,15 +391,31 @@ function getSemesterData(semester) {
 
 function createDropdownMenu(id, currentGrade) {
 	var grades = ["AA", "BA", "BB", "CB", "CC", "DC", "DD", "FD", "FF", "--"];
-	var dropdownMenu = `<select id="${id}">`;
+	var savedGrade = localStorage.getItem(id) || currentGrade;
+	var dropdownMenu = `<select id="${id}" onchange="saveDropdownValue('${id}')">`;
 
 	grades.forEach((grade) => {
-		var selected = grade === currentGrade ? "selected" : "";
+		var selected = grade === savedGrade ? "selected" : "";
 		dropdownMenu += `<option value="${grade}" ${selected}>${grade}</option>`;
 	});
 
 	dropdownMenu += "</select>";
 	return dropdownMenu;
+}
+
+function saveDropdownValue(id) {
+	var selectedValue = document.getElementById(id).value;
+	localStorage.setItem(id, selectedValue);
+}
+
+function loadSavedDropdowns() {
+	var dropdowns = document.querySelectorAll("select[id]");
+	dropdowns.forEach((dropdown) => {
+		var savedValue = localStorage.getItem(dropdown.id);
+		if (savedValue) {
+			dropdown.value = savedValue;
+		}
+	});
 }
 
 window.onclick = function (event) {
@@ -735,3 +746,13 @@ document.querySelectorAll(".custom-submenu-content a").forEach((item) => {
 });
 
 switchMode("STAT22");
+document.addEventListener('DOMContentLoaded', () => {
+    loadSavedDropdowns();
+
+    for (let i = 8; i >= 1; i--) {
+        switchMode(`DONEM${i}`);
+    }
+
+    calculateGPA();
+});
+
