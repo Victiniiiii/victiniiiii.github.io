@@ -755,4 +755,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calculateGPA();
 });
-
