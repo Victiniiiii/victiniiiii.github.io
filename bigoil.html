@@ -1,134 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payday 2 - Big Oil Engine Solver</title>
-    <link rel="icon" href="static/images/vic32.png" type="image/png"> <!-- Favicon for browser tab and bookmarks bar -->
-    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
-</head>
-<body>
-    <div class="title-section">
-        <a href="/">
-            <img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button">
-        </a>
-        <h1 class="main-menu-text">Payday 2 - Big Oil Engine Solver</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Payday 2 - Big Oil Engine Solver</title>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
+	</head>
+	<body>
+		<div class="title-section">
+			<a href="/">
+				<img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button" />
+			</a>
+			<h1 class="main-menu-text">Payday 2 - Big Oil Engine Solver</h1>
+			<div class="project-buttons">
+				<div class="category-button">
+					<a href="/projects">Projects</a>
+				</div>
+				<div class="category-button">
+					<a href="/contactme">Contact Me</a>
+				</div>
+			</div>
+		</div>
+		<div class="bigoilbigbox">
+			<div class="engines-clues-container">
+				<div class="engines-section">
+					<h2>Possible Engines:</h2>
+					<ul class="engine-list">
+						<li class="engine-item" id="engine1">Engine 1</li>
+						<li class="engine-item" id="engine2">Engine 2</li>
+						<li class="engine-item" id="engine5">Engine 5</li>
+						<li class="engine-item" id="engine6">Engine 6</li>
+						<li class="engine-item" id="engine7">Engine 7</li>
+						<li class="engine-item" id="engine8">Engine 8</li>
+						<li class="engine-item" id="engine9">Engine 9</li>
+						<li class="engine-item" id="engine11">Engine 11</li>
+						<li class="engine-item" id="engine12">Engine 12</li>
+					</ul>
+				</div>
+				<div class="clues-section">
+					<h2>Clues:</h2>
+					<label> <input type="checkbox" id="clueNozzle1" class="clue" /> 1 Nozzle </label>
+					<br />
+					<label> <input type="checkbox" id="clueNozzle2" class="clue" /> 2 Nozzles </label>
+					<br />
+					<label> <input type="checkbox" id="clueNozzle3" class="clue" /> 3 Nozzles </label>
+					<br />
+					<br />
+					<label> <input type="checkbox" id="clueElementN" class="clue" /> Element: N </label>
+					<br />
+					<label> <input type="checkbox" id="clueElementD" class="clue" /> Element: D </label>
+					<br />
+					<label> <input type="checkbox" id="clueElementHe" class="clue" /> Element: He </label>
+					<br />
+					<br />
+					<label> <input type="checkbox" id="cluePressure5783" class="clue" /> Pressure: 5783 </label>
+					<br />
+					<label> <input type="checkbox" id="cluePressure5812" class="clue" /> Pressure: 5812 </label>
+				</div>
+				<div class="map-image"></div>
+			</div>
+		</div>
 
-        <div class="project-buttons">
-            <div class="category-button">
-                <a href="/projects">Projects</a>
-            </div>
-            <div class="category-button">
-                <a href="/contactme">Contact Me</a>
-            </div>
-        </div>
-    </div>
-        <div class="bigoilbigbox">
-            <div class="engines-clues-container">
-                <div class="engines-section">
-                    <h2>Possible Engines:</h2>
-                    <ul class="engine-list">
-                        <li class="engine-item" id="engine1">Engine 1</li>
-                        <li class="engine-item" id="engine2">Engine 2</li>
-                        <li class="engine-item" id="engine5">Engine 5</li>
-                        <li class="engine-item" id="engine6">Engine 6</li>
-                        <li class="engine-item" id="engine7">Engine 7</li>
-                        <li class="engine-item" id="engine8">Engine 8</li>
-                        <li class="engine-item" id="engine9">Engine 9</li>
-                        <li class="engine-item" id="engine11">Engine 11</li>
-                        <li class="engine-item" id="engine12">Engine 12</li>
-                    </ul>
-                </div>
-                <div class="clues-section">
-                    <h2>Clues:</h2>
-                    <label>
-                        <input type="checkbox" id="clueNozzle1" class="clue"> 1 Nozzle
-                    </label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="clueNozzle2" class="clue"> 2 Nozzles
-                    </label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="clueNozzle3" class="clue"> 3 Nozzles
-                    </label>
-                    <br>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="clueElementN" class="clue"> Element: N
-                    </label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="clueElementD" class="clue"> Element: D
-                    </label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="clueElementHe" class="clue"> Element: He
-                    </label>
-                    <br>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="cluePressure5783" class="clue"> Pressure: 5783
-                    </label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="cluePressure5812" class="clue"> Pressure: 5812
-                    </label>
-                </div>
-                <div class="map-image"></div>
-            </div>
-        </div>
+		<div class="bigoilbigbox">
+			<div class="bigoilcontainer">
+				<div style="background-image: url('static/images/Nozzle.png')" class="imagebigoil"></div>
+				<div>
+					<h1 class="imagetext">An example of the 1 Nozzle clue found.</h1>
+				</div>
+			</div>
+			<div class="bigoilcontainer">
+				<div style="background-image: url('static/images/Element.png')" class="imagebigoil"></div>
+				<div>
+					<h1 class="imagetext">Element Deuterium (D) written on a paper.</h1>
+				</div>
+			</div>
+			<div class="bigoilcontainer">
+				<div style="background-image: url('static/images/Pressure.png')" class="imagebigoil"></div>
+				<div>
+					<h1 class="imagetext">Computer showing the value ≤5812.</h1>
+				</div>
+			</div>
+		</div>
 
-    <div class="bigoilbigbox">
-        <div class="bigoilcontainer">
-            <div style="background-image: url('static/images/Nozzle.png');" class="imagebigoil">
-            </div>
-            <div>
-                <h1 class="imagetext">An example of the 1 Nozzle clue found.</h1>
-            </div>
-        </div>
-        <div class="bigoilcontainer">
-            <div style="background-image: url('static/images/Element.png');" class="imagebigoil">
-            </div>
-            <div>
-                <h1 class="imagetext">Element Deuterium (D) written on a paper.</h1>
-            </div>
-        </div>
-        <div class="bigoilcontainer">
-            <div style="background-image: url('static/images/Pressure.png');" class="imagebigoil">
-            </div>
-            <div>
-                <h1 class="imagetext">Computer showing the value ≤5812.</h1>
-            </div>
-        </div>
-    </div>
+		<div class="faq-title">
+			<h2>Frequently Asked Questions (FAQ)</h2>
+		</div>
 
-    <div class="faq-title">
-        <h2>Frequently Asked Questions (FAQ)</h2>
-    </div>
+		<div class="faq-content">
+			<p><strong>Q: What is Big Oil Engine Solver?</strong></p>
+			<p>A: Big Oil Engine Solver is a tool to help you solve the puzzle in the second day of Big Oil heist in the game Payday 2.</p>
+			<br />
 
-    <div class="faq-content">
-        <p><strong>Q: What is Big Oil Engine Solver?</strong></p>
-        <p>A: Big Oil Engine Solver is a tool to help you solve the puzzle in the second day of Big Oil heist in the game Payday 2.</p><br>
+			<p><strong>Q: How can I use this tool?</strong></p>
+			<p>A: Select the clues you have, and the tool will show you the possible engine solutions.</p>
+			<br />
 
-        <p><strong>Q: How can I use this tool?</strong></p>
-        <p>A: Select the clues you have, and the tool will show you the possible engine solutions.</p><br>
+			<p><strong>Q: Why is the engine list missing some engines ?</strong></p>
+			<p>A: Some engines ( Numbers 3, 4, and 10 ) are impossible to get and removed from the clue list.</p>
+			<br />
 
-        <p><strong>Q: Why is the engine list missing some engines ?</strong></p>
-        <p>A: Some engines ( Numbers 3, 4, and 10 ) are impossible to get and removed from the clue list.</p><br>
+			<p><strong>Q: The engine numbers on the image felt weird. Are they correct ?</strong></p>
+			<p>A: Yes, the engines are really in this order, ask the devs.</p>
+			<br />
 
-        <p><strong>Q: The engine numbers on the image felt weird. Are they correct ?</strong></p>
-        <p>A: Yes, the engines are really in this order, ask the devs.</p><br>
+			<p><strong>Q: Where are the clues ?</strong></p>
+			<p>A: The nozzle and element clues spawn randomly in the house, and the pressure clue is in the basement where the engines are located.</p>
+			<br />
 
-        <p><strong>Q: Where are the clues ?</strong></p>
-        <p>A: The nozzle and element clues spawn randomly in the house, and the pressure clue is in the basement where the engines are located.</p><br>
-
-        <p><strong>Q: Can I suggest improvements or report issues?</strong></p>
-        <p>A: Of course, you can check the communication menu to message with the app of your choice.</p>
-    </div>
-<script src="bigoil.js">
-    toggleEngines();
-</script>
-</body>
+			<p><strong>Q: Can I suggest improvements or report issues?</strong></p>
+			<p>A: Of course, you can check the communication menu to message with the app of your choice.</p>
+		</div>
+		<script src="bigoil.js">
+			toggleEngines();
+		</script>
+	</body>
 </html>

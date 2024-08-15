@@ -1,157 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>IzmirGuessr</title>
-    <link rel="icon" href="static/images/vic32.png" type="image/png">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc-tC24A24jPxe7ZFfMs_lTN-BQErFzs"></script>
-</head>
-<body>
-    <div class="title-section">
-        <a href="/">
-            <img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button">
-        </a>
-        <h1 class="main-menu-text">IzmirGuessr</h1>
-        <div class="project-buttons">
-            <div class="category-button">
-                <a href="/projects">Projects</a>
-            </div>
-            <div class="category-button">
-                <a href="/contactme">Contact Me</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="startpage" class="startpage">
-        <div id="faq-menu" class="faq-menu">
-            <p class="izmirfaqtext2"><u>How to play this game ?</u></p>
-            <p class="izmirfaqtext3">
-                When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you
-                have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on
-                how close your guess is to the original destination. Have fun !
-            </p>
-        </div>
-        <div id="startpagelefthalf" class="startpagelefthalf">
-            <div id="map2"></div>
-        </div>
-
-        <div id="startpagerighthalf" class="startpagerighthalf">
-            <div class="izmirgamelogo" id="izmirgamelogo"></div>
-
-            <div id="izmirilcebox" class="izmirilcebox">
-                <div id="izmirlcebuttons" class="izmirilcebuttons">
-                    <button class="ilcebutton" data-district="Aliaga" onclick="toggleDistrict('Aliaga')">Aliağa</button>
-                    <button class="ilcebutton" data-district="Balcova" onclick="toggleDistrict('Balcova')">Balçova</button>
-                    <button class="ilcebutton" data-district="Bayindir" onclick="toggleDistrict('Bayindir')">Bayındır</button>
-                    <button class="ilcebutton" data-district="Bayrakli" onclick="toggleDistrict('Bayrakli')">Bayraklı</button>
-                    <button class="ilcebutton" data-district="Bergama" onclick="toggleDistrict('Bergama')">Bergama</button>
-                    <button class="ilcebutton" data-district="Beydag" onclick="toggleDistrict('Beydag')">Beydağ</button>
-                    <button class="ilcebutton" data-district="Bornova" onclick="toggleDistrict('Bornova')">Bornova</button>
-                    <button class="ilcebutton" data-district="Buca" onclick="toggleDistrict('Buca')">Buca</button>
-                    <button class="ilcebutton" data-district="Cesme" onclick="toggleDistrict('Cesme')">Çeşme</button>
-                    <button class="ilcebutton" data-district="Cigli" onclick="toggleDistrict('Cigli')">Çiğli</button>
-                    <button class="ilcebutton" data-district="Dikili" onclick="toggleDistrict('Dikili')">Dikili</button>
-                    <button class="ilcebutton" data-district="Foca" onclick="toggleDistrict('Foca')">Foça</button>
-                    <button class="ilcebutton" data-district="Gaziemir" onclick="toggleDistrict('Gaziemir')">Gaziemir</button>
-                    <button class="ilcebutton" data-district="Guzelbahce" onclick="toggleDistrict('Guzelbahce')">Güzelbahçe</button>
-                    <button class="ilcebutton" data-district="Karabaglar" onclick="toggleDistrict('Karabaglar')">Karabağlar</button>
-                    <button class="ilcebutton" data-district="Karaburun" onclick="toggleDistrict('Karaburun')">Karaburun</button>
-                    <button class="ilcebutton" data-district="Karsiyaka" onclick="toggleDistrict('Karsiyaka')">Karşıyaka</button>
-                    <button class="ilcebutton" data-district="Kemalpasa" onclick="toggleDistrict('Kemalpasa')">Kemalpaşa</button>
-                    <button class="ilcebutton" data-district="Kinik" onclick="toggleDistrict('Kinik')">Kınık</button>
-                    <button class="ilcebutton" data-district="Kiraz" onclick="toggleDistrict('Kiraz')">Kiraz</button>
-                    <button class="ilcebutton" data-district="Konak" onclick="toggleDistrict('Konak')">Konak</button>
-                    <button class="ilcebutton" data-district="Menderes" onclick="toggleDistrict('Menderes')">Menderes</button>
-                    <button class="ilcebutton" data-district="Menemen" onclick="toggleDistrict('Menemen')">Menemen</button>
-                    <button class="ilcebutton" data-district="Narlidere" onclick="toggleDistrict('Narlidere')">Narlıdere</button>
-                    <button class="ilcebutton" data-district="Odemis" onclick="toggleDistrict('Odemis')">Ödemiş</button>
-                    <button class="ilcebutton" data-district="Seferihisar" onclick="toggleDistrict('Seferihisar')">Seferihisar</button>
-                    <button class="ilcebutton" data-district="Selcuk" onclick="toggleDistrict('Selcuk')">Selçuk</button>
-                    <button class="ilcebutton" data-district="Tire" onclick="toggleDistrict('Tire')">Tire</button>
-                    <button class="ilcebutton" data-district="Torbali" onclick="toggleDistrict('Torbali')">Torbalı</button>
-                    <button class="ilcebutton" data-district="Urla" onclick="toggleDistrict('Urla')">Urla</button>
-                </div>
-
-                <div id="izmirilcebottombuttons" class="izmirilcebottombuttons">
-                    <button id="addAll-button" class="addremovebuttons" onclick="addAllDistricts()">Add All</button>
-                    <button id="removeAll-button" class="addremovebuttons" onclick="removeAllDistricts()">Remove All</button>
-                    <p id="ilcesayisi" class="ilcesayisi">Current District Count: 30</p>
-                </div>
-            </div>
-
-            <div class="izmirlastrows" id="izmirlastrows1">
-                <div id="izmirayarlar" class="izmirayarlar">
-                    <label for="izmirtime">Time Limit:</label>
-                    <select id="izmirtime" onchange="changeTimeLimit(this.value)">
-                        <option value="Infinity">No Time Limit</option>
-                        <option value="15">15 seconds</option>
-                        <option value="30">30 seconds</option>
-                        <option value="60">60 seconds</option>
-                        <option value="120">120 seconds</option>
-                    </select>
-                </div>
-                <p id="highscore" class="highscore">Best Score: 0</p>
-            </div>
-            <div class="izmirlastrows" id="izmirlastrows2">
-                <button id="izmirfaq" class="izmirfaq">How to Play</button>
-                <button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="buttonrow" class="buttonrow">
-        <div id="closeandreturn" class="closeandreturn">
-            <div id="izmirclose" class="izmirclose" onclick="returnToMainMenu()"></div>
-            <div id="returnbutton" class="returnbutton" onclick="returnToStart()"></div>
-        </div>
-        <div id="timerandalarm" class="timerandalarm">
-            <div id="alarmicon" class= "alarmicon"></div>
-            <div id="timer">Time Left: 60 seconds</div>
-        </div>
-        <div id="modaltoggle-button" class="modaltoggle-button" onclick="toggleModal()">Toggle</div>
-    </div>
-
-    <div id="final-results-modal" class="final-results-modal">
-        <div class="finalrow">
-            <p class="modalcontent">Congratulations!</p>
-        </div>
-        <div class="finalrow">
-            <p id="totalPoints2" class="modalcontent"></p>
-        </div>
-        <div class="finalrow">
-            <p class="modalcontent">Play Again?</p>
-        </div>
-        <div class="finalrow">
-            <button id="returntomenu-button" class="modalcontent" onclick="returnToMainMenu()">Return to Main Menu</button>
-            <button id="playagain-button" class="modalcontent" onclick="playAgain()">Play Again</button>
-        </div>
-    </div>
-
-    <div id="gamemap"></div>
-    <div id="overlay-container">
-        <div id="mini-map"></div>
-        <button id="action-button">Confirm & Calculate</button>
-    </div>
-
-    <div id="result-modal" class="modal">
-        <div id="result-map" class="result-map"></div>
-        <div class="modalrow">
-            <p id="distance-info" class="modalcontent"></p>
-            <p id="points-info" class="modalcontent"></p>
-        </div>
-        <div class="modalrow">
-            <p id="totalPoints" class="modalcontent"></p>
-            <div class="modalcontent">
-                <button id="next-game-button" class="next-game-button" onclick="startNextGame()">Next Game</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="IzmirGuessr.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>IzmirGuessr</title>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc-tC24A24jPxe7ZFfMs_lTN-BQErFzs"></script>
+	</head>
+	<body>
+		<div class="title-section">
+			<a href="/">
+				<img class="main-menu-button" src="static/images/vicinti3.png" alt="Main Menu Button" />
+			</a>
+			<h1 class="main-menu-text">IzmirGuessr</h1>
+			<div class="project-buttons">
+				<div class="category-button">
+					<a href="/projects">Projects</a>
+				</div>
+				<div class="category-button">
+					<a href="/contactme">Contact Me</a>
+				</div>
+			</div>
+		</div>
+		<div id="startpage" class="startpage">
+			<div id="faq-menu" class="faq-menu">
+				<p class="izmirfaqtext2"><u>How to play this game ?</u></p>
+				<p class="izmirfaqtext3">When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
+			</div>
+			<div id="startpagelefthalf" class="startpagelefthalf">
+				<div id="map2"></div>
+			</div>
+			<div id="startpagerighthalf" class="startpagerighthalf">
+				<div class="izmirgamelogo" id="izmirgamelogo"></div>
+				<div id="izmirilcebox" class="izmirilcebox">
+					<div id="izmirlcebuttons" class="izmirilcebuttons">
+						<button class="ilcebutton" data-district="Aliaga" onclick="toggleDistrict('Aliaga')">Aliağa</button>
+						<button class="ilcebutton" data-district="Balcova" onclick="toggleDistrict('Balcova')">Balçova</button>
+						<button class="ilcebutton" data-district="Bayindir" onclick="toggleDistrict('Bayindir')">Bayındır</button>
+						<button class="ilcebutton" data-district="Bayrakli" onclick="toggleDistrict('Bayrakli')">Bayraklı</button>
+						<button class="ilcebutton" data-district="Bergama" onclick="toggleDistrict('Bergama')">Bergama</button>
+						<button class="ilcebutton" data-district="Beydag" onclick="toggleDistrict('Beydag')">Beydağ</button>
+						<button class="ilcebutton" data-district="Bornova" onclick="toggleDistrict('Bornova')">Bornova</button>
+						<button class="ilcebutton" data-district="Buca" onclick="toggleDistrict('Buca')">Buca</button>
+						<button class="ilcebutton" data-district="Cesme" onclick="toggleDistrict('Cesme')">Çeşme</button>
+						<button class="ilcebutton" data-district="Cigli" onclick="toggleDistrict('Cigli')">Çiğli</button>
+						<button class="ilcebutton" data-district="Dikili" onclick="toggleDistrict('Dikili')">Dikili</button>
+						<button class="ilcebutton" data-district="Foca" onclick="toggleDistrict('Foca')">Foça</button>
+						<button class="ilcebutton" data-district="Gaziemir" onclick="toggleDistrict('Gaziemir')">Gaziemir</button>
+						<button class="ilcebutton" data-district="Guzelbahce" onclick="toggleDistrict('Guzelbahce')">Güzelbahçe</button>
+						<button class="ilcebutton" data-district="Karabaglar" onclick="toggleDistrict('Karabaglar')">Karabağlar</button>
+						<button class="ilcebutton" data-district="Karaburun" onclick="toggleDistrict('Karaburun')">Karaburun</button>
+						<button class="ilcebutton" data-district="Karsiyaka" onclick="toggleDistrict('Karsiyaka')">Karşıyaka</button>
+						<button class="ilcebutton" data-district="Kemalpasa" onclick="toggleDistrict('Kemalpasa')">Kemalpaşa</button>
+						<button class="ilcebutton" data-district="Kinik" onclick="toggleDistrict('Kinik')">Kınık</button>
+						<button class="ilcebutton" data-district="Kiraz" onclick="toggleDistrict('Kiraz')">Kiraz</button>
+						<button class="ilcebutton" data-district="Konak" onclick="toggleDistrict('Konak')">Konak</button>
+						<button class="ilcebutton" data-district="Menderes" onclick="toggleDistrict('Menderes')">Menderes</button>
+						<button class="ilcebutton" data-district="Menemen" onclick="toggleDistrict('Menemen')">Menemen</button>
+						<button class="ilcebutton" data-district="Narlidere" onclick="toggleDistrict('Narlidere')">Narlıdere</button>
+						<button class="ilcebutton" data-district="Odemis" onclick="toggleDistrict('Odemis')">Ödemiş</button>
+						<button class="ilcebutton" data-district="Seferihisar" onclick="toggleDistrict('Seferihisar')">Seferihisar</button>
+						<button class="ilcebutton" data-district="Selcuk" onclick="toggleDistrict('Selcuk')">Selçuk</button>
+						<button class="ilcebutton" data-district="Tire" onclick="toggleDistrict('Tire')">Tire</button>
+						<button class="ilcebutton" data-district="Torbali" onclick="toggleDistrict('Torbali')">Torbalı</button>
+						<button class="ilcebutton" data-district="Urla" onclick="toggleDistrict('Urla')">Urla</button>
+					</div>
+					<div id="izmirilcebottombuttons" class="izmirilcebottombuttons">
+						<button id="addAll-button" class="addremovebuttons" onclick="addAllDistricts()">Add All</button>
+						<button id="removeAll-button" class="addremovebuttons" onclick="removeAllDistricts()">Remove All</button>
+						<p id="ilcesayisi" class="ilcesayisi">Current District Count: 30</p>
+					</div>
+				</div>
+				<div class="izmirlastrows" id="izmirlastrows1">
+					<div id="izmirayarlar" class="izmirayarlar">
+						<label for="izmirtime">Time Limit:</label>
+						<select id="izmirtime" onchange="changeTimeLimit(this.value)">
+							<option value="Infinity">No Time Limit</option>
+							<option value="15">15 seconds</option>
+							<option value="30">30 seconds</option>
+							<option value="60">60 seconds</option>
+							<option value="120">120 seconds</option>
+						</select>
+					</div>
+					<p id="highscore" class="highscore">Best Score: 0</p>
+				</div>
+				<div class="izmirlastrows" id="izmirlastrows2">
+					<button id="izmirfaq" class="izmirfaq">How to Play</button>
+					<button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
+				</div>
+			</div>
+		</div>
+		<div id="buttonrow" class="buttonrow">
+			<div id="closeandreturn" class="closeandreturn">
+				<div id="izmirclose" class="izmirclose" onclick="returnToMainMenu()"></div>
+				<div id="returnbutton" class="returnbutton" onclick="returnToStart()"></div>
+			</div>
+			<div id="timerandalarm" class="timerandalarm">
+				<div id="alarmicon" class="alarmicon"></div>
+				<div id="timer">Time Left: 60 seconds</div>
+			</div>
+			<div id="modaltoggle-button" class="modaltoggle-button" onclick="toggleModal()">Toggle</div>
+		</div>
+		<div id="final-results-modal" class="final-results-modal">
+			<div class="finalrow">
+				<p class="modalcontent">Congratulations!</p>
+			</div>
+			<div class="finalrow">
+				<p id="totalPoints2" class="modalcontent"></p>
+			</div>
+			<div class="finalrow">
+				<p class="modalcontent">Play Again?</p>
+			</div>
+			<div class="finalrow">
+				<button id="returntomenu-button" class="modalcontent" onclick="returnToMainMenu()">Return to Main Menu</button>
+				<button id="playagain-button" class="modalcontent" onclick="playAgain()">Play Again</button>
+			</div>
+		</div>
+		<div id="gamemap"></div>
+		<div id="overlay-container">
+			<div id="mini-map"></div>
+			<button id="action-button">Confirm & Calculate</button>
+		</div>
+		<div id="result-modal" class="modal">
+			<div id="result-map" class="result-map"></div>
+			<div class="modalrow">
+				<p id="distance-info" class="modalcontent"></p>
+				<p id="points-info" class="modalcontent"></p>
+			</div>
+			<div class="modalrow">
+				<p id="totalPoints" class="modalcontent"></p>
+				<div class="modalcontent">
+					<button id="next-game-button" class="next-game-button" onclick="startNextGame()">Next Game</button>
+				</div>
+			</div>
+		</div>
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+		<script src="IzmirGuessr.js"></script>
+	</body>
 </html>
