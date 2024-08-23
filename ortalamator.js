@@ -347,6 +347,7 @@ function getSemesterData(semester) {
 				{ id: "regresyon", subject: "(7) REGRESSION ANALYSIS" },
 				{ id: "arastir", subject: "(6) ARAŞTIRMA YÖNTEMLERİ" },
 				{ id: "isthazyaz", subject: "(6) İSTATİSTİKSEL HAZIR YAZILIMLAR" },
+                { id: "secmeli1", subject: "(3) SEÇMELİ - 1"},
 			];
 			break;
 		case 6:
@@ -358,6 +359,7 @@ function getSemesterData(semester) {
 				{ id: "skolas", subject: "(7) STOKASTİK SÜREÇLER" },
 				{ id: "param", subject: "(6) PARAMETRİK OLMAYAN İSTATİSTİKSEL YÖNTEMLER" },
 				{ id: "ornek", subject: "(6) ÖRNEKLEME" },
+                { id: "secmeli2", subject: "(3) SEÇMELİ - 2"},
 			];
 			break;
 		case 7:
@@ -532,6 +534,7 @@ function calculateGPA() {
 		olateo: 4,
 		simu: 4,
 		katego: 4,
+        secmeli1: 3,
 
 		alan: 4,
 		cassm: 4,
@@ -540,6 +543,7 @@ function calculateGPA() {
 		param: 6,
 		ornek: 6,
 		verii: 5,
+        secmeli2: 3,
 
 		zaman: 5,
 		explo: 5,
@@ -755,3 +759,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calculateGPA();
 });
+
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #001f3f, #003366, #001f3f);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    color: #e0e0e0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) repeat;
+    background-size: 10px 10px;
+    z-index: 0;
+    pointer-events: none;
+    clip-path: polygon(0 9vh, 100% 9vh, 100% 100%, 0 100%);
+  }
+`;
+
+document.head.appendChild(style);
+
+const stars = document.createElement('div');
+stars.className = 'stars';
+document.body.appendChild(stars);
