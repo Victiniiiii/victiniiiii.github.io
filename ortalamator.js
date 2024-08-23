@@ -785,19 +785,6 @@ style.textContent = `
     position: relative;
     z-index: 1;
   }
-  
-  .stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) repeat;
-    background-size: 10px 10px;
-    z-index: 0;
-    pointer-events: none;
-    clip-path: polygon(0 9vh, 100% 9vh, 100% 100%, 0 100%);
-  }
 `;
 
 document.head.appendChild(style);
