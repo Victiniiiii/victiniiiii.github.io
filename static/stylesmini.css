@@ -729,7 +729,20 @@ a {
 
 
 
-
+.fullscreenmodal {
+    width: 100vw;
+    top: 10vh;
+    height: 90vh;
+    position: absolute;
+    z-index: 1111111;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Remember to re-enable scrolling in html */
+}
 
 #gamemap {
     width: 100dvw;
