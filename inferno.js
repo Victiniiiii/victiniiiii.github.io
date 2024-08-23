@@ -662,7 +662,7 @@ async function minionprofits() {
 	if (htmlminioncount < 1 || htmlminioncount > 31) {
 		htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
 	} else {
-		infernorow1.style.backgroundImage = "url('static/images/Crude_Gabagool.webp')";
+		infernorow1.style.backgroundImage = "url('static/imageswebp/Crude_Gabagool.webp'), url('static/images/Crude_Gabagool.png')";
 		infernooneminionprofit.innerHTML = `One minion makes ${oneminionhourlyprofit} coins per hour and ${oneminiondailyprofit} per day.`;
 		infernoallminionprofit.innerHTML = `All the minions combined make ${minionhourlyprofit} coins per hour and ${miniondailyprofit} per day.`;
 		infernoallcosts.innerHTML = `Using this fuel and beacon will cost you ${expenses} coins per day.`;
@@ -673,23 +673,23 @@ async function minionprofits() {
 		if (htmlfueltype != "nothing") {
 			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
-				infernorow2.style.backgroundImage = "url('static/images/Crude_Gabagool.webp')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/Crude_Gabagool.webp'), url('static/images/Crude_Gabagool.png')";
 			} else if (chosenfuel == "Blaze Rod") {
-				infernorow2.style.backgroundImage = "url('static/images/Blaze_Rod.webp')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/Blaze_Rod.webp'), url('static/images/Blaze_Rod.png')";
 			} else if (chosenfuel == "Magma Cream") {
-				infernorow2.style.backgroundImage = "url('static/images/Magma_Cream.webp')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/Magma_Cream.webp'), url('static/images/Magma_Cream.png')";
 			} else if (chosenfuel == "Nether Wart") {
-				infernorow2.style.backgroundImage = "url('static/images/Nether_Wart.webp')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/Nether_Wart.webp'), url('static/images/Nether_Wart.png')";
 			} else if (chosenfuel == "Glowstone Dust") {
-				infernorow2.style.backgroundImage = "url('static/images/Glowstone_Dust.webp')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/Glowstone_Dust.webp'), url('static/images/Glowstone_Dust.png')";
 			}
 			console.log(chosenfuel);
 		}
 		if (checkifitst3 == 1 || checkifitst3 == 1.3) {
-			infernorow3.style.backgroundImage = "url('static/images/Chili_Pepper.webp')";
-			infernorow4.style.backgroundImage = "url('static/images/Inferno_Vertex.webp')";
-			infernorow5.style.backgroundImage = "url('static/images/Inferno_Apex.webp')";
-			infernorow6.style.backgroundImage = "url('static/images/Reaper_Pepper.webp')";
+			infernorow3.style.backgroundImage = "url('static/imageswebp/Chili_Pepper.webp'), url('static/images/Chili_Pepper.png')";
+			infernorow4.style.backgroundImage = "url('static/imageswebp/Inferno_Vertex.webp'), url('static/images/Inferno_Vertex.png')";
+			infernorow5.style.backgroundImage = "url('static/imageswebp/Inferno_Apex.webp'), url('static/images/Inferno_Apex.png')";
+			infernorow6.style.backgroundImage = "url('static/imageswebp/Reaper_Pepper.webp'), url('static/images/Reaper_Pepper.png')";
 			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
 			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
 			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;

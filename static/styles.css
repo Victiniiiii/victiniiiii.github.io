@@ -1,6 +1,6 @@
 		
 body {
-	background-image: url("../static/images/cloud.jpg");
+	background-image: url("../static/images/cloud.png"), url("../static/imageswebp/cloud.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -19,7 +19,7 @@ a {
 }
 
 .title-section {
-    background-image: url("../static/images/thunder.jpg");
+    background-image: url("../static/images/thunder.png"), url("../static/imageswebp/thunder.webp");
     background-repeat: no-repeat;
     background-size: cover;
     box-sizing: border-box;
@@ -49,6 +49,7 @@ a {
     cursor: pointer;
     width: 4vw;
     height: 8dvh;
+    background-image: url("/static/imageswebp/vicinti3.webp"), url("/static/images/vicinti3.png");
 }
 
 .category-button {
@@ -269,7 +270,7 @@ a {
 }
 
 .map-image {
-    background-image: url("../static/images/map.png");
+    background-image: url("../static/imageswebp/map.webp"), url("../static/images/map.png") ;
     padding: 1vw;
     color: black;
     background-color: white;
@@ -807,7 +808,7 @@ a {
     border: min(0.1vw, 0.2vh) solid black;
     box-sizing: border-box;
     justify-content: center;
-    background-image: url("../static/images/izmirpixel.png");
+    background-image: url("../static/images/izmirpixel.png"), url("../static/imageswebp/izmirpixel.webp");
 }
 
 .final-results-modal {
@@ -827,7 +828,7 @@ a {
     justify-content: center;
     box-sizing: border-box;
     background-repeat: repeat;
-    background-image: url("../static/images/izmirpixel.png");
+    background-image: url("../static/images/izmirpixel.png"), url("../static/imageswebp/izmirpixel.webp");
     align-items: center;
 }
 
@@ -1049,7 +1050,7 @@ a {
     display: flex;
     flex-direction: column;
     border: min(0.25vw, 0.5vh) solid black;
-    background-image: url("../static/images/izmirpixel.png");
+    background-image: url("../static/images/izmirpixel.png"), url("../static/imageswebp/izmirpixel.webp");
     background-repeat: repeat;
 }
 
@@ -1059,7 +1060,7 @@ a {
     margin-left: 7.5vw;
     margin-top: 1dvh;
     box-sizing: border-box;
-    background-image: url("../static/images/izmirlogo.png");
+    background-image: url("../static/images/izmirlogo.png"), url("../static/imageswebp/izmirlogo.webp");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -1202,7 +1203,7 @@ a {
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
   }
   .compostspreadsheetcategoryphoto1 {
-    background-image: url("../static/images/upgrade1.webp");
+    background-image: url("../static/images/upgrade1.png"), url("../static/imageswebp/upgrade1.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 8vh;
@@ -1213,7 +1214,7 @@ a {
     box-sizing: border-box;
   }
   .compostspreadsheetcategoryphoto2 {
-    background-image: url("../static/images/upgrade2.webp");
+    background-image: url("../static/images/upgrade2.png"), url("../static/imageswebp/upgrade2.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 8vh;
@@ -1224,7 +1225,7 @@ a {
     box-sizing: border-box;
   }
   .compostspreadsheetcategoryphoto3 {
-    background-image: url("../static/images/upgrade3.webp");
+    background-image: url("../static/images/upgrade3.png"), url("../static/imageswebp/upgrade3.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 8vh;
@@ -1235,7 +1236,7 @@ a {
     box-sizing: border-box;
   }
   .compostspreadsheetcategoryphoto4 {
-    background-image: url("../static/images/upgrade4.webp");
+    background-image: url("../static/images/upgrade4.png"), url("../static/imageswebp/upgrade4.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 8vh;
@@ -1246,7 +1247,7 @@ a {
     box-sizing: border-box;
   }
   .compostspreadsheetcategoryphoto5 {
-    background-image: url("../static/images/upgrade5.webp");
+    background-image: url("../static/images/upgrade5.png"), url("../static/imageswebp/upgrade5.webp");
     background-size: cover;
     background-repeat: no-repeat;
     width: 8vh;
@@ -1430,7 +1431,7 @@ a {
     box-sizing: border-box;
     border: min(0.1vw,0.2vh) solid black;
     padding: 2vw;
-    background-image: url("../static/images/composter.webp");
+    background-image: url("../static/images/composter.png"), url("../static/imageswebp/composter.webp");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgba(0, 0, 0, 0.2);
