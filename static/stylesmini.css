@@ -116,6 +116,7 @@ a {
 .projectphoto {
     width: 25vw;
     height: 25vw;
+    border-radius: 1vh;
 }
 
 .project-description {
