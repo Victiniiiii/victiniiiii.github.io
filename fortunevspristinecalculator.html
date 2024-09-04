@@ -26,8 +26,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="placeholder-box">
-			<p>This page is under development - Come back again!</p>
-		</div>
+		<div id="fortunevspristinebigbox">
+            <div id="fortunevspristinetitle">Compare</div>
+            <div id="fortunevspristinetwoboxes">
+                <div class="fortunevspristinebox" id="fortunevspristinebox1">
+                    <input class="FvPinput" id="FvPinput1" placeholder="Mining Fortune">
+                    <input class="FvPinput" id="FvPinput3" placeholder="Pristine">
+                    <button class="FvPbutton" onclick="calculateFortunevsPristine(1)">Calculate</button>
+                    <div class="FvPoutput" id="FvPoutput1">asd</div>
+                </div>
+                <div class="fortunevspristinebox" id="fortunevspristinebox2">
+                    <input class="FvPinput" id="FvPinput2" placeholder="Mining Fortune">
+                    <input class="FvPinput" id="FvPinput4" placeholder="Pristine">
+                    <button class="FvPbutton" onclick="calculateFortunevsPristine(2)">Calculate</button>
+                    <div class="FvPoutput" id="FvPoutput2">asd</div>
+                </div>
+            </div>
+        </div>
 	</body>
+    <script src="fortunevspristinecalculator.js"></script>
 </html>

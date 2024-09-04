@@ -2168,3 +2168,71 @@ a {
     color: white;
     text-align: center;
 }
+
+
+
+
+
+#fortunevspristinebigbox {
+    width: 80vw;
+    height: 80vh;
+    box-sizing: border-box;
+    background-color: rgb(0,0,0,0.7);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-top: 3vh;
+}
+
+#fortunevspristinetitle {
+    width: 80vw;
+    height: 5vh;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.fortunevspristinebox {
+    width: 40vw;
+    height: 75vh;
+    box-sizing: border-box;
+    border: 0.1vw solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+#fortunevspristinetwoboxes {
+    display: flex;
+    flex-direction: row;
+}
+
+.FvPinput {
+    width: 35vw;
+    height: 10vh;
+    margin: 2vh 0 2vh 2.5vw;
+    font-size: 3rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.FvPinput::placeholder {
+    color: white;
+}
+
+.FvPbutton {
+    width: 30vw;
+    height: 10vh;
+    margin: 2vh 0 2vh 5vw;
+    font-size: 3rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.FvPoutput {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 10vh;
+}
