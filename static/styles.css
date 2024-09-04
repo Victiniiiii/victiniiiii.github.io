@@ -2020,94 +2020,151 @@ a {
 
 
 
-        .taratorpicturepart {
-            width: 90vw;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            margin-bottom: 5vh;
-        }
+.taratorpicturepart {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 5vh;
+}
 
-        .taratorbox {
-            width: 40vw;
-            height: 25vw;
-            background-color: aqua;
-            position: relative;
-            overflow: hidden;
-        }
+.taratorbox {
+    width: 40vw;
+    height: 25vw;
+    background-color: aqua;
+    position: relative;
+    overflow: hidden;
+}
 
-        .gallery {
-            display: flex;
-            transition: transform 0.4s ease-in-out;
-        }
+.gallery {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
 
-        .gallery img {
-            width: 40vw;
-            height: 25vw;
-        } 
+.gallery img {
+    width: 40vw;
+    height: 25vw;
+} 
 
-        .taratorbuttonprev {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            left: 0;
-        }
+.taratorbuttonprev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    left: 0;
+}
 
-        .taratorbuttonnext {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            right: 0;
-        }
+.taratorbuttonnext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    right: 0;
+}
 
-        .taratorbuttonprev:hover, .taratorbuttonnext:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
+.taratorbuttonprev:hover, .taratorbuttonnext:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 
-        .taratorrectanglesleft, .taratorrectanglesright {
-            width: 70vw;
-            height: 20vh;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 1.25rem;
-            margin-bottom: 5vh;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
+.taratorrectanglesleft, .taratorrectanglesright {
+    width: 70vw;
+    height: 20vh;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 5vh;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
 
-        .taratorrectanglesleft {
-            margin-left: 20vw;
-            margin-right: 10vw;
-            text-align: center;
-            padding: 10px;
-        }
+.taratorrectanglesleft {
+    margin-left: 20vw;
+    margin-right: 10vw;
+    text-align: center;
+    padding: 10px;
+}
 
-        .taratorrectanglesright {
-            margin-right: 20vw;
-            margin-left: 10vw;
-            text-align: center;
-            padding: 10px;
-        }
+.taratorrectanglesright {
+    margin-right: 20vw;
+    margin-left: 10vw;
+    text-align: center;
+    padding: 10px;
+}
 
-        .taratorrectanglesleft.visible, .taratorrectanglesright.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.taratorrectanglesleft.visible, .taratorrectanglesright.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+.effectivehpbox {
+    width: 80vw;
+    height: 80vh;
+    margin: 5vh 10vw 5vh 10vw;
+    background-color: rgb(0, 0, 0,0.7);
+    border-radius: 2vw;
+    padding: 10vw;
+    box-sizing: border-box;
+    display: flex;        
+    flex-direction: column;    
+}
+
+#hp, #def {
+    width: 30vw;
+    height: 10vh;
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+#hpdefbox {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#hpdefbox2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+
+#effectivehpbutton {
+    width: 30vw;
+    height: 10vh;
+    font-size: 3rem;
+    color: white;
+    background-color: black;
+}
+
+#effectivehpoutput {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+}
+
+#hp::placeholder, #def::placeholder {
+    color: white;
+    text-align: center;
+}

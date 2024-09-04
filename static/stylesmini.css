@@ -2102,3 +2102,60 @@ a {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+
+
+.effectivehpbox {
+    width: 80vw;
+    height: 60vh;
+    margin: 10vh 10vw 0vh 10vw;
+    background-color: rgb(0, 0, 0,0.7);
+    border-radius: 2vh;
+    padding-top: 5vh;
+    box-sizing: border-box;
+    display: flex;        
+    flex-direction: column;    
+}
+
+#hp, #def {
+    width: 70vw;
+    height: 10vh;
+    font-size: 1.5rem;
+    margin-left: 5vw;    
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+#hpdefbox {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+}
+
+#hpdefbox2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+#effectivehpbutton {
+    width: 50vw;
+    height: 10vh;
+    margin-top: 5vh;
+    font-size: 1.5rem;
+    color: white;
+    background-color: black;
+}
+
+#effectivehpoutput {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+#hp::placeholder, #def::placeholder {
+    color: white;
+}

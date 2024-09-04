@@ -8,14 +8,6 @@
 		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
 		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
 	</head>
-    <style>
-        .effectivehpbox {
-            width: 80vw;
-            height: 80vh;
-            margin: 5vh 10vw 5vh 10vw;
-            background-color: aqua;
-        }
-    </style>
 	<body>
 		<div class="title-section">
 			<a href="/">
@@ -35,10 +27,14 @@
 			</div>
 		</div>
 		<div class="effectivehpbox">
-            <input id="hp" type="number" inputmode="numeric" placeholder="HP">
-            <input id="def" type="number" inputmode="numeric" placeholder="Defence">
-            <button onclick="effectivehpcalculate()">Calculate</button>
-            <div id="output">Output</div>
+            <div id="hpdefbox2">
+                <div id="hpdefbox">
+                    <input id="hp" type="number" inputmode="numeric" placeholder="HP">
+                    <input id="def" type="number" inputmode="numeric" placeholder="Defence">
+                </div>
+                <button id="effectivehpbutton" onclick="effectivehpcalculate()">Calculate</button>
+            </div>
+            <div id="effectivehpoutput"></div>
 		</div>
 	</body>
     <script src="effectivehp.js"></script>
