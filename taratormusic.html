@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TaratorMusic</title>
+    <link rel="icon" href="static/images/vic32.png" type="image/png"/>
+    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
+    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
+</head>
+<body>
+    <div class="title-section">
+        <a href="/">
+            <picture>
+                <source srcset="/static/imageswebp/vicinti3.webp" type="image/webp">
+                <img class="main-menu-button" src="/static/images/vicinti3.png">
+            </picture>
+        </a>
+        <h1 class="main-menu-text">TaratorMusic</h1>
+        <div class="project-buttons">
+            <div class="category-button">
+                <a href="/projects">Projects</a>
+            </div>
+            <div class="category-button">
+                <a href="/contactme">Contact Me</a>
+            </div>
+        </div>
+    </div>
+    <div class="taratorpicturepart">
+        <div class="taratorbox"><img src="static/images/tarator0.png" alt="Image 0"></div>
+        <div class="taratorbox">
+            <div class="gallery">
+                <img src="static/images/tarator2.png" alt="Image 2">
+                <img src="static/images/tarator1.png" alt="Image 1">
+                <img src="static/images/tarator3.png" alt="Image 3">
+                <img src="static/images/tarator4.png" alt="Image 4">
+                <img src="static/images/tarator5.png" alt="Image 5">
+            </div>
+            <button class="taratorbuttonprev" onclick="prevImage()">&#10094;</button>
+            <button class="taratorbuttonnext" onclick="nextImage()">&#10095;</button>
+        </div>
+    </div>
+    <div class="taratorrectanglesleft">
+        <h1>Why TaratorMusic?</h1>
+        Aren't you tired of listening to same ten songs in your youtube or spotify playlist? Too many ads? What if you want to listen to music offline? This app runs to your aid...
+    </div>
+    <div class="taratorrectanglesright">
+        <h1>Actual Random</h1>
+        The randomness of the next song in TaratorMusic has been statistically proven by Chi Square Test. In the test, 10,000 random songs have played after each other, and the test was successful even at 0.01 significance level.
+    </div>
+    <div class="taratorrectanglesleft">
+        <h1>Download Your Own</h1>
+        In this app, you can easily paste a link in the download section, change its name or thumbnail, and press download to make the music and its thumbnail appear in your folders. Works for playlists too! Or you can just carry your own mp3 files to the musics folder.
+    </div>
+    <div class="taratorrectanglesright">
+        <h1>Customisation</h1>
+        You can customise everything starting from the app itself, the musics and the playlists. The music files and the playlists can be renamed, and get their thumbnails changed inside the app. The settings tab has a high variety of options on how to change user experience.
+    </div>
+    <div class="taratorrectanglesleft">
+        <h1>Discord</h1>
+        This app is connected to Discord via Rich Presence. Thus everyone can know you are using TaratorMusic, and what song you are listening to. Although its easily toggleable inside the settings tab if you don't want it.
+    </div>
+    <div class="taratorrectanglesright">
+        <h1>Memory Efficiency</h1>
+        TaratorMusic only uses 75MB per second of memory while open, 95MB per second while listening to a song, and 125 MB per second while downloading a song. The lightweightness of the app makes it suitable for computers with very low specs. Warning: adding more songs will increase the weight, these values were taken with 0 songs.
+    </div>
+</body>
+<script src="taratormusic.js"></script>
+</html>
