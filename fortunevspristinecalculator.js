@@ -4,7 +4,7 @@ function calculateFortunevsPristine(x) {
 
     if ((fortune > 0) && (pristine > 0) && (fortune < 10000) && (pristine < 100)) {
         let expecteddrop = (( 1 + pristine * 0.79) * (1 + fortune / 100) * 3).toFixed(0)
-        document.getElementById(`FvPoutput${x}`).innerText = expecteddrop+" Flawed Gemstones";
+        document.getElementById(`FvPoutput${x}`).innerText = expecteddrop+" Rough Gemstones";
     } else {
         document.getElementById(`FvPoutput${x}`).innerText = "Please double-check your values.";
     }    
