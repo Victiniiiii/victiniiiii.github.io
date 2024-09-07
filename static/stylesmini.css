@@ -2227,3 +2227,32 @@ a {
     text-align: center;
     margin-top: 10vh;
 }
+
+
+
+
+
+.bzbuynpcsellboxes {
+    width: 80vw;
+    height: 15vh;
+    background-color: rgb(0,0,0,0.8);
+    border-radius: 1vw;
+    margin-bottom: 8vh;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.BbNsText {
+    width: calc(80vw - 15vh);
+    height: 15vh;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 2.7vh;
+}
+
+.BbNsPhoto {
+    width: 15vh;
+    height: 15vh;
+}
