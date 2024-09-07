@@ -8,7 +8,23 @@
 		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
 		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
 	</head>
-    <style></style>
+    <style>
+        #settings.expanded #toggle-container {
+            height: 12vh;            
+        }
+
+        #settings {
+            margin-bottom: 8vh;
+        }
+
+        .bzbuynpcsellboxes {
+            width: 80vw;
+            height: 15vh;
+            background-color: indigo;
+            margin-bottom: 8vh;
+            box-sizing: border-box;
+        }
+    </style>
 	<body>
 		<div class="title-section">
 			<a href="/">
@@ -27,9 +43,61 @@
 				</div>
 			</div>
 		</div>
-		Enchanted Melon Block
-        Fine Ruby Gemstone
-        Enchanted Sulphur
+        <div id="settings">
+            <div id="settings-bar">Press here to access the bazaar settings.</div>
+            <div id="toggle-container">
+                <div class="toggle-line">
+                    <div class="toggleitemnamerow">
+                        <div class="toggleitemname">Enchanted Melon Block</div>
+                        <div class="toggle-group">
+                            <div class="image-placeholder">
+                                <picture>
+                                    <source srcset="static\imageswebp/Enchanted_Coal.webp" type="image/webp">
+                                    <img src="static\images/Enchanted_Coal.png">
+                                </picture>
+                            </div>
+                            <span class="toggle-label">Instasell</span>
+                            <div class="toggle-switch" data-id="1"></div>
+                            <span class="toggle-label">Sell Order</span>
+                        </div>
+                        <div class="toggle-groupnames" id="prices1"></div>
+                    </div>
+                    <div class="toggleitemnamerow">
+                        <div class="toggleitemname">Fine Ruby Gemstone</div>
+                        <div class="toggle-group">                        
+                            <div class="image-placeholder">
+                                <picture>
+                                    <source srcset="static\imageswebp/Enchanted_Sulphur.webp" type="image/webp">
+                                    <img src="static\images/Enchanted_Sulphur.png">
+                                </picture>
+                            </div>
+                            <span class="toggle-label">Instasell</span>
+                            <div class="toggle-switch" data-id="2"></div>
+                            <span class="toggle-label">Sell Order</span>
+                        </div>
+                        <div class="toggle-groupnames" id="prices2"></div>
+                    </div>
+                    <div class="toggleitemnamerow">
+                        <div class="toggleitemname">Enchanted Sulphur</div>
+                        <div class="toggle-group">                        
+                            <div class="image-placeholder">
+                                <picture>
+                                    <source srcset="static\imageswebp/Chili_Pepper.webp" type="image/webp">
+                                    <img src="static\images/Chili_Pepper.png">
+                                </picture>
+                            </div>
+                            <span class="toggle-label">Instasell</span>
+                            <div class="toggle-switch" data-id="3"></div>
+                            <span class="toggle-label">Sell Order</span>
+                        </div>
+                        <div class="toggle-groupnames" id="prices3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bzbuynpcsellboxes"></div>
+        <div class="bzbuynpcsellboxes"></div>
+        <div class="bzbuynpcsellboxes"></div>
 	</body>
     <script src="bazaarbuynpcsellflips.js"></script>
 </html>
