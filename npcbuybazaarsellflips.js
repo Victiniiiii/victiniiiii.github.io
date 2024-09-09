@@ -287,11 +287,8 @@ document.addEventListener("DOMContentLoaded", function () {
         
         test.appendChild(test1);
         test.appendChild(testtest);        
-        // MINI FOTO
     }
-
 	bazaarconnect();
-
 });
 
 async function bazaarconnect() {
