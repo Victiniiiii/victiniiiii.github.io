@@ -1,197 +1,234 @@
 let toggleStates;
+let WebPSupport = 2;
 let itemsarray = [
-	{
-		name: "Packed Ice",
-		id: "PACKED_ICE",
-        amount: "640",
-        source: "Builder",
-        npc: "9"
-	},
-	{
-		name: "Sand",
-		id: "SAND",
-        amount: "1280",
-        source: "Farm Merchant, Builder",
-        npc: "3" // mean of all sellers
-	},
-	{
-		name: "Experience Bottle",
-		id: "EXP_BOTTLE",
-        amount: "640",
-        source: "Librarian",
-        npc: "30"        
-	},
-    {
-        name: "Grand Experience Bottle",
-        id: "GRAND_EXP_BOTTLE",
-        amount: "640",
-        source: "Mage Emissary",
-        npc: "5000"
-    },
-	{
-		name: "Flint",
-		id: "FLINT",
-        amount: "640",
-        source: "Pat",
-        npc: "6"
-	},
-	{
-		name: "Iron Ingot",
-		id: "IRON_INGOT",
-        amount: "1280",
-        source: "Mine Merchant, Iron Forger",
-        npc: "5.25" // mean of all sellers
-	},
-	{
-		name: "Slimeball",
-		id: "SLIME_BALL",
-        amount: "640",
-        source: "Adventurer",
-        npc: "14"
-	},
-	{
-		name: "Oak Wood",
-		id: "LOG",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5"
-	},
-	{
-		name: "Raw Fish",
-		id: "RAW_FISH",
-        amount: "640",
-        source: "Fish Merchant",
-        npc: "20"
-	},
-	{
-		name: "Jungle Wood",
-		id: "LOG:3",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5"
-	},
-	{
-		name: "Gunpowder",
-		id: "SULPHUR",
-        amount: "640",
-        source: "Adventurer",
-        npc: "10"
-	},
-	{
-		name: "Pufferfish",
-		id: "RAW_FISH:3",
-        amount: "640",
-        source: "Fish Merchant",
-        npc: "40"
-	},
-	{
-		name: "Ice",
-		id: "ICE",
-        amount: "640",
-        source: "Merchant",
-        npc: "1"
-	},
-	{
-		name: "String",
-		id: "STRING",
-        amount: "640",
-        source: "Adventurer",
-        npc: "10"
-	},
 	{
 		name: "Acacia Wood",
 		id: "LOG:2",
         amount: "640",
         source: "Lumber Merchant",
-        npc: "5"
-	},
-	{
-		name: "Magma Cream",
-		id: "MAGMA_CREAM",
-        amount: "640",
-        source: "Alchemist",
-        npc: "20"
-	},
-	{
-		name: "Coal",
-		id: "COAL",
-        amount: "640",
-        source: "Mine Merchant",
-        npc: "4"
-	},
-	{
-		name: "End Stone",
-		id: "ENDER_STONE",
-        amount: "640",
-        source: "Pearl Dealer",
-        npc: "10"
-	},
-	{
-		name: "Spruce Wood",
-		id: "LOG:1",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5"
-	},
-	{
-		name: "Cobblestone",
-		id: "COBBLESTONE",
-        amount: "1280",
-        source: "Mine Merchant, Builder",
-        npc: "2.5" // mean of all sellers
-	},
-	{
-		name: "Wheat",
-		id: "WHEAT",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10"
-	},
-	{
-		name: "Sugar Cane",
-		id: "SUGAR_CANE",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10"
+        npc: "5",
+        image: "Acacia_Wood"
 	},
 	{
 		name: "Carrot",
 		id: "CARROT_ITEM",
         amount: "640",
         source: "Farm Merchant",
-        npc: "10"
-	},
-	{
-		name: "Pumpkin",
-		id: "PUMPKIN",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "25"
-	},
-	{
-		name: "Potato",
-		id: "POTATO_ITEM",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10"
-	},
-	{
-		name: "Melon",
-		id: "MELON",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "4"
+        npc: "10",
+        image: "Carrot"
 	},
 	{
 		name: "Cocoa Beans",
 		id: "INK_SACK:3",
         amount: "640",
         source: "Farm Merchant",
-        npc: "5"
+        npc: "5",
+        image: "Cocoa_Beans"
 	},
+	{
+		name: "Coal",
+		id: "COAL",
+        amount: "640",
+        source: "Mine Merchant",
+        npc: "4",
+        image: "Coal"
+	},
+	{
+		name: "Cobblestone",
+		id: "COBBLESTONE",
+        amount: "1280",
+        source: "Mine Merchant, Builder",
+        npc: "2.5", // mean of all sellers
+        image: "Cobblestone"
+	},
+	{
+		name: "End Stone",
+		id: "ENDER_STONE",
+        amount: "640",
+        source: "Pearl Dealer",
+        npc: "10",
+        image: "End_Stone"
+	},
+	{
+		name: "Experience Bottle",
+		id: "EXP_BOTTLE",
+        amount: "640",
+        source: "Librarian",
+        npc: "30",
+        image: "Experience_Bottle"
+	},
+    {
+        name: "Flint",
+        id: "FLINT",
+        amount: "640",
+        source: "Pat",
+        npc: "6",
+        image: "Flint"
+    },
+    {
+		name: "Grand Experience Bottle",
+		id: "GRAND_EXP_BOTTLE",
+        amount: "640",
+        source: "Mage Emissary",
+        npc: "5000",
+        image: "Experience_Bottle"
+	},
+	{
+		name: "Gunpowder",
+		id: "SULPHUR",
+        amount: "640",
+        source: "Adventurer",
+        npc: "10",
+        image: "Gunpowder"
+	},
+	{
+		name: "Ice",
+		id: "ICE",
+        amount: "640",
+        source: "Merchant",
+        npc: "1",
+        image: "Ice"
+	},
+	{
+		name: "Iron Ingot",
+		id: "IRON_INGOT",
+        amount: "1280",
+        source: "Mine Merchant, Iron Forger",
+        npc: "5.25", // mean of all sellers
+        image: "Iron_Ingot"
+	},
+	{
+		name: "Jungle Wood",
+		id: "LOG:3",
+        amount: "640",
+        source: "Lumber Merchant",
+        npc: "5",
+        image: "Jungle_Wood"
+	},
+	{
+		name: "Magma Cream",
+		id: "MAGMA_CREAM",
+        amount: "640",
+        source: "Alchemist",
+        npc: "20",
+        image: "Magma_Cream"
+	},
+	{
+		name: "Melon",
+		id: "MELON",
+        amount: "640",
+        source: "Farm Merchant",
+        npc: "4",
+        image: "Melon"
+	},
+	{
+		name: "Oak Wood",
+		id: "LOG",
+        amount: "640",
+        source: "Lumber Merchant",
+        npc: "5",
+        image: "Oak_Wood"
+	},
+	{
+		name: "Packed Ice",
+		id: "PACKED_ICE",
+        amount: "640",
+        source: "Builder",
+        npc: "9",
+        image: "Packed_Ice"
+	},
+	{
+		name: "Pufferfish",
+		id: "RAW_FISH:3",
+        amount: "640",
+        source: "Fish Merchant",
+        npc: "40",
+        image: "Pufferfish"
+	},
+	{
+		name: "Potato",
+		id: "POTATO_ITEM",
+        amount: "640",
+        source: "Farm Merchant",
+        npc: "10",
+        image: "Potato"
+	},
+	{
+		name: "Pumpkin",
+		id: "PUMPKIN",
+        amount: "640",
+        source: "Farm Merchant",
+        npc: "25",
+        image: "Pumpkin"
+	},
+	{
+		name: "Raw Fish",
+		id: "RAW_FISH",
+        amount: "640",
+        source: "Fish Merchant",
+        npc: "20",
+        image: "Raw_Fish"
+	},
+	{
+		name: "Sand",
+		id: "SAND",
+        amount: "1280",
+        source: "Farm Merchant, Builder",
+        npc: "3", // mean of all sellers
+        image: "Sand"
+	},
+	{
+		name: "Slimeball",
+		id: "SLIME_BALL",
+        amount: "640",
+        source: "Adventurer",
+        npc: "14",
+        image: "Slimeball"
+	},
+	{
+		name: "Spruce Wood",
+		id: "LOG:1",
+        amount: "640",
+        source: "Lumber Merchant",
+        npc: "5",
+        image: "Spruce_Wood"
+	},
+	{
+		name: "String",
+		id: "STRING",
+        amount: "640",
+        source: "Adventurer",
+        npc: "10",
+        image: "String"
+	},
+	{
+		name: "Sugar Cane",
+		id: "SUGAR_CANE",
+        amount: "640",
+        source: "Farm Merchant",
+        npc: "10",
+        image: "Sugar_Cane"
+	},
+	{
+		name: "Wheat",
+		id: "WHEAT",
+        amount: "640",
+        source: "Farm Merchant",
+        npc: "10",
+        image: "Wheat"
+	}
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
+    var webptest = new Image();
+    webptest.src = "/static/imageswebp/webpdot.webp";
+    if (webptest.width > 0 && webptest.height > 0) {
+        WebPSupport = 1;
+        console.log("121")
+    } else {
+        WebPSupport = 0;
+    }
+
 	const savedToggleStates = localStorage.getItem("toggleStates");
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
@@ -215,19 +252,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		groupDiv.className = "toggle-group";
 
 		const imagePlaceholder = document.createElement("div");
-		imagePlaceholder.className = "image-placeholder";
+		imagePlaceholder.className = "NbBsImage";
 
-		const picture = document.createElement("picture");
-		const source = document.createElement("source");
-		source.srcset = `static/imageswebp/${item.id}.webp`;
-		source.type = "image/webp";
+        const img = document.createElement("img");
 
-		const img = document.createElement("img");
-		img.src = `static/images/${item.id}.png`;
+        if (WebPSupport == 1) {
+            img.src = `static/imageswebp/${item.image}.webp`;
+        } else {
+            img.src = `static/images/${item.image}.png`;
+        }
 
-		picture.appendChild(source);
-		picture.appendChild(img);
-		imagePlaceholder.appendChild(picture);
+		imagePlaceholder.appendChild(img);
 
 		const instasellLabel = document.createElement("span");
 		instasellLabel.className = "toggle-label";
@@ -276,17 +311,25 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-    const test = document.getElementById("test22222");
+    const test = document.getElementById("NbBsSpace");
+
     for (let i = 0; i < itemsarray.length; i++) {
         const testtest = document.createElement("div");
-		testtest.className = "NbBsBox";
+        testtest.className = "NbBsBox";
         testtest.id = `NbBsBox${i}`
 
         const test1 = document.createElement("img");
-        test1.src = "static/images/Blaze_Rod.png"
+        if (WebPSupport == 1) {
+            test1.src = `static/imageswebp/${itemsarray[i].image}.webp`
+        } else {
+            test1.src = `static/images/${itemsarray[i].image}.png`
+        }
         
-        test.appendChild(test1);
-        test.appendChild(testtest);        
+        const both = document.createElement("div");
+
+        test.appendChild(both)
+        both.appendChild(test1);
+        both.appendChild(testtest);    
     }
 	bazaarconnect();
 });

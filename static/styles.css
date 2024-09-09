@@ -2265,3 +2265,41 @@ a {
     width: 15vh;
     height: 15vh;
 }
+
+
+
+
+
+.NbBsBox {
+    width: 21vw;
+    height: 7vh;
+    background-color: aqua;
+    box-sizing: border-box;
+    margin-bottom: 1vh;
+    border-radius: 1vw;
+    border: 0.15vw solid black;
+    font-size: 1.8vh;
+    line-height: 2vh;
+    text-align: center;
+}
+
+#NbBsSpace img {
+    float: left;
+    margin-right: 10px;
+    width: 6vh;
+    height: 6vh;
+    margin: 0.5vh 0 0 1vh;
+}
+
+#NbBsSpace {
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    justify-content: center;
+}
+
+.NbBsImage img {
+    width: 37px;
+    height: 37px;
+}
