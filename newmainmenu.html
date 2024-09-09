@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Main Menu</title>
+		<link rel="icon" href="static/images/vic32.png" type="image/png"/>
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
+	</head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        #mainmenuleftbox {
+            width: 15vw;
+            height: 80vh;
+            margin: 0 5vw 0 10vw;
+            background-color: rgb(0,0,0,0.7);
+        }
+        
+        #mainmenurightbox {
+            width: 60vw;
+            height: 80vh;
+            margin: 0 10vw 0 0;
+            background-color: rgb(0,0,0,0.7);
+        }
+
+        #mainmenutabs {
+            width: 60vw;
+            height: 10vh;
+            margin: 5vh 0 0 20vw;            
+            display: flex;
+            justify-content: space-between;
+            border: 0.1vw solid black;
+        }
+        
+        #mainmenuboxes {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .mainmenubutton {
+            width: 10vw;
+            height: 10vh;
+            background-color: rgb(0,0,0,0.7);
+        }
+    </style>
+	<body>
+        <div id="mainmenutabs"></div>
+        <div id="mainmenuboxes">
+            <div id="mainmenuleftbox"></div>
+            <div id="mainmenurightbox"></div>
+        </div>
+	</body>
+    <script>
+        document.body.style.background = "gray"
+    </script>
+</html>
