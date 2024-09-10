@@ -47,9 +47,16 @@ a {
 
 .main-menu-button {
     cursor: pointer;
-    width: 4vw;
+    width: 8dvh;
     height: 8dvh;
     background-image: url("/static/imageswebp/vicinti3.webp"), url("/static/images/vicinti3.png");
+}
+
+.title-section a div {
+    background-image: url("/static/imageswebp/vicinti87.webp"), url("/static/images/vicinti87.png");
+    width: 8dvh;
+    height: 8dvh;
+    background-size: contain;
 }
 
 .category-button {

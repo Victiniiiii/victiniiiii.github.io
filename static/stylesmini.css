@@ -37,6 +37,13 @@ a {
     height: 6svh;
 }
 
+.title-section a div {
+    background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
+    width: 6svh;
+    height: 6svh;
+    background-size: contain;
+}
+
 .main-menu-text {
     width: 50vw;
     font-size: min(4vw,2svh);
