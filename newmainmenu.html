@@ -23,11 +23,20 @@
             color: white;
         }
         
-        #mainmenurightbox {
+        #mainmenugeneralprojects, #mainmenuskyblockprojects, #mainmenuotherprojects {
             width: 60vw;
             height: 80vh;
             margin: 0 10vw 0 0;
             background-color: black;
+            padding: 2vw;
+            display: grid;
+            overflow-y: scroll;
+            grid-template-columns: repeat(auto-fit, minmax(20vw,1fr));
+            justify-content: center;
+        }
+
+        #mainmenuskyblockprojects, #mainmenuotherprojects {
+            display: none;
         }
 
         #mainmenutabs {
@@ -46,8 +55,19 @@
 
         .mainmenubutton {
             width: 10vw;
-            height: 10vh;
+            height: 5vh;
             background-color: black;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mainmenubutton:hover {
+            background-color: gray;
+            transition: background-color 0.75s;
         }
 
         #mainmenupfp{
@@ -70,10 +90,23 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+            cursor: pointer;
+        }
+
+        .mainmenuproject {
+            width: 20vw;
+            height: 30vh;
+            background-color: aquamarine;
+            margin: 1vw 3vw 1vw 3vw;
+            cursor: pointer;
         }
     </style>
 	<body>
-        <div id="mainmenutabs"></div>
+        <div id="mainmenutabs">
+            <div class="mainmenubutton" onclick="switchtab(mainmenugeneralprojects)">General</div>
+            <div class="mainmenubutton" onclick="switchtab(mainmenuskyblockprojects)">Skyblock</div>
+            <div class="mainmenubutton" onclick="switchtab(mainmenuotherprojects)">Others</div>
+        </div>
         <div id="mainmenuboxes">
             <div id="mainmenuleftbox">
                 <div id="mainmenupfp">
@@ -103,10 +136,51 @@
                     Vicintici
                 </div>
             </div>
-            <div id="mainmenurightbox"></div>
+            <div id="mainmenurightbox">
+                <div id="mainmenugeneralprojects">
+                    <div class="mainmenuproject">TaratorMusic</div>
+                    <div class="mainmenuproject">SushiReminder</div>
+                    <div class="mainmenuproject">Ortalamatör</div>
+                    <div class="mainmenuproject">IzmirGuessr</div>
+                    <div class="mainmenuproject">Coordinate Grabber</div>
+                    <div class="mainmenuproject">GradeChecker</div>
+                    <div class="mainmenuproject">Skribbl.io Helper</div>
+                </div>
+                <div id="mainmenuskyblockprojects">
+                    <div class="mainmenuproject">Forging Perfect Gemstone Calculator</div>
+                    <div class="mainmenuproject">Bazaar Buy NPC Sell Flips</div>
+                    <div class="mainmenuproject">Compost Profit Calculator</div>
+                    <div class="mainmenuproject">Effective HP Calculator</div>
+                    <div class="mainmenuproject">Fortune vs. Pristine Calculator</div>
+                    <div class="mainmenuproject">Inferno Minion Profit Calculator</div>
+                    <div class="mainmenuproject">NPC Buy Bazaar Sell Flips</div>
+                    <div class="mainmenuproject">Shiny Pig Profit Calculator</div>
+                    <div class="mainmenuproject">Bobbin' Time Profit Calculator</div>
+                    <div class="mainmenuproject">Chocolate Factory Calculator</div>
+                    <div class="mainmenuproject">Mineshaft Key Profit Calculator</div>
+                    <div class="mainmenuproject">Alchemy 50 Calculator</div>
+                </div>
+                <div id="mainmenuotherprojects">
+                    <div class="mainmenuproject">Payday 2 Big Oil Engine Solver</div>
+                </div>
+            </div>
         </div>
 	</body>
     <script>
-        document.body.style.background = "radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 100%)"
+        document.body.style.background = "radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.875) 100%)"
+
+        function switchtab(clicked) {
+            const generaltab = document.getElementById("mainmenugeneralprojects");
+            const skyblocktab = document.getElementById("mainmenuskyblockprojects");
+            const otherstab = document.getElementById("mainmenuotherprojects");
+
+            generaltab.style.display = "none";
+            skyblocktab.style.display = "none";
+            otherstab.style.display = "none";
+            clicked.style.display = "grid";
+        }
+
+        // TODO: Clickable her yeri yap.
+        // TODO: link sonuna hash
     </script>
 </html>
