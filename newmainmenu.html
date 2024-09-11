@@ -187,13 +187,14 @@
             const generaltab = document.getElementById("mainmenugeneralprojects");
             const skyblocktab = document.getElementById("mainmenuskyblockprojects");
             const otherstab = document.getElementById("mainmenuotherprojects");
-            let clicked2 = clicked.id.slice(8,-8);
 
             generaltab.style.display = "none";
             skyblocktab.style.display = "none";
             otherstab.style.display = "none";
             clicked.style.display = "grid";
-            window.location.hash = clicked2;
+
+            window.location.hash = clicked.id.slice(8,-8);
+            clicked.scrollTop = 0;
         }
 
         // TODO: Clickable her yeri yap.
