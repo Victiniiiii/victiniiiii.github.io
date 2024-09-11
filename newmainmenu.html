@@ -113,9 +113,9 @@
     </style>
 	<body>
         <div id="mainmenutabs">
-            <div class="mainmenubutton" onclick="switchtab(mainmenugeneralprojects)">General</div>
-            <div class="mainmenubutton" onclick="switchtab(mainmenuskyblockprojects)">Skyblock</div>
-            <div class="mainmenubutton" onclick="switchtab(mainmenuotherprojects)">Others</div>
+            <div class="mainmenubutton" id="general" onclick="switchtab(mainmenugeneralprojects)">General</div>
+            <div class="mainmenubutton" id="skyblock" onclick="switchtab(mainmenuskyblockprojects)">Skyblock</div>
+            <div class="mainmenubutton" id="other" onclick="switchtab(mainmenuotherprojects)">Others</div>
         </div>
         <div id="mainmenuboxes">
             <div id="mainmenuleftbox">
@@ -179,20 +179,27 @@
     <script>
         document.body.style.background = "radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.875) 100%)"
 
+        if (window.location.hash) {
+            document.getElementById(window.location.hash.slice(1)).click();
+        }
+
         function switchtab(clicked) {
             const generaltab = document.getElementById("mainmenugeneralprojects");
             const skyblocktab = document.getElementById("mainmenuskyblockprojects");
             const otherstab = document.getElementById("mainmenuotherprojects");
+            let clicked2 = clicked.id.slice(8,-8);
 
             generaltab.style.display = "none";
             skyblocktab.style.display = "none";
             otherstab.style.display = "none";
             clicked.style.display = "grid";
+            window.location.hash = clicked2;
         }
 
         // TODO: Clickable her yeri yap.
-        // TODO: link sonuna hash
         // sol kutunun altındakileri biraz alta çek ? VE EPOSTA
         // NOT READY ler için overlay
+        // class: NEW, regular, not ready
+        // border radius önemli
     </script>
 </html>
