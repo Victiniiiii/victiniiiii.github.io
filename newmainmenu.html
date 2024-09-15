@@ -30,6 +30,7 @@
 			display: flex;
 			flex-direction: column;
 			color: white;
+            border-radius: 3vw;
 		}
 
 		#mainmenugeneralprojects,
@@ -45,6 +46,8 @@
 			grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
 			justify-content: center;
             scroll-snap-type: y mandatory;
+            border-top-left-radius: 3vw;
+            border-bottom-left-radius: 3vw;
 		}
 
 		#mainmenuskyblockprojects,
@@ -52,13 +55,20 @@
 			display: none;
 		}
 
+        #general {
+            border-top-left-radius: 2.5vh;
+        }
+
+        #other {
+            border-top-right-radius: 2.5vh;
+        }
+
 		#mainmenutabs {
 			width: 30vw;
 			height: 5vh;
 			margin: 7.5vh 0 0 50vw;
 			display: flex;
 			justify-content: space-between;
-			border: 0.1vw solid black;
 		}
 
 		#mainmenuboxes {
@@ -69,7 +79,7 @@
 		.mainmenubutton {
 			width: 10vw;
 			height: 5vh;
-			background-color: black;
+			background-color: rgb(15, 15, 15, 1);
 			color: white;
 			cursor: pointer;
 			text-align: center;
@@ -151,6 +161,17 @@
 			border-bottom-left-radius: 1vw;
 		}
 
+        .mainmenulanguage {
+            width: 0vw;
+			height: 3vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 2.5vh;
+			border-bottom-right-radius: 1vw;
+            padding-left: 1vw;
+        }
+
 		.mainmenunotready {
 			width: 100%;
 			height: 100%;
@@ -220,6 +241,7 @@
 				<div id="mainmenugeneralprojects">
 					<div class="mainmenuproject">
 						<a href="/taratormusic" title="TaratorMusic" aria-label="TaratorMusic">
+                            <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/taratormusic384.png" />
 							<div>TaratorMusic</div>
 							<div class="mainmenunew">NEW!</div>
@@ -227,30 +249,35 @@
 					</div>
 					<div class="mainmenuproject">
 						<a>
+                            <div class="mainmenulanguage">Python</div>
 							<img src="static/images/comingsoon384.png" />
 							<div>GradeChecker</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
 						<a>
+                            <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/ortalamator384.png" />
 							<div>Ortalamatör</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
 						<a>
+                            <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/izmirguessr384.png" />
 							<div>IzmirGuessr</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
 						<a>
+                            <div class="mainmenulanguage">Python</div>
 							<img src="static/images/coordinategrabber384.png" />
 							<div>Coordinate Grabber</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
 						<a>
+                            <div class="mainmenulanguage">Python</div>
 							<img src="static/images/skribbliohelper384.png" />
 							<div>Skribbl.io Helper</div>
 						</a>
@@ -258,6 +285,7 @@
 					<div class="mainmenuproject">
 						<a title="SushiReminder" aria-label="SushiReminder">
 							<div class="mainmenunotready">Coming Soon...</div>
+                            <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/sushireminder384.png" />
 							<div>SushiReminder</div>
 						</a>
@@ -265,61 +293,74 @@
 				</div>
 				<div id="mainmenuskyblockprojects">
                     <div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/npcbuybazaarsellflips384.png" />
 						<div>NPC Buy Bazaar Sell Flips</div>
-					</div>					
+					</div>
 					<div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/bazaarbuynpcsells384.png" />
 						<div>Bazaar Buy NPC Sell Flips</div>
 					</div>					
 					<div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/effectivehpcalculator384.png" />
 						<div>Effective HP Calculator</div>
 					</div>
 					<div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/fortunevspristinecalculator384.png" />
 						<div>Fortune vs. Pristine Calculator</div>
 					</div>
 					<div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/infernocalculator384.png" />
-						<div>Inferno Minion Profit Calculator</div>
+						<div>Inferno Minion Calculator</div>
 					</div>
                     <div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/compostcalculator384.png" />
 						<div>Compost Profit Calculator</div>
 					</div>
                     <div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/forgecalculator384.png" />
 						<div>Forging Gemstone Calculator</div>
 					</div>					
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
 						<div>Shiny Pig Profit Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
 						<div>Bobbin' Time Profit Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
 						<div>Chocolate Factory Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
 						<div>Mineshaft Key Profit Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
 						<div>Alchemy 50 Calculator</div>
 					</div>
 				</div>
 				<div id="mainmenuotherprojects">
 					<div class="mainmenuproject">
+                        <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/bigoilsolver384.png" />
 						<div>Payday 2 Big Oil Engine Solver</div>
 					</div>
@@ -347,6 +388,19 @@
 			window.location.hash = clicked.id.slice(8, -8);
 			clicked.scrollTop = 0;
 		}
+        
+        document.querySelectorAll('.mainmenulanguage').forEach(function(div) {
+            if (div.innerHTML.trim() === "JavaScript") {
+                div.style.color = "black";
+                div.style.backgroundColor = 'rgb(255,255,0,0.7)';
+                div.style.width = "8vw";
+            } else if (div.innerHTML.trim() === "Python") {
+                div.style.backgroundColor = 'rgb(0,0,255,0.7)';
+                div.style.color = "yellow";
+                div.style.width = "6vw";
+            }
+        });
+
 
 		// TODO: Clickable her yeri yap.
 		// border radius önemli
@@ -354,6 +408,5 @@
 		// tüm screenshotlar
 		// butonların rengi hafif farklı olsun
         // WEBP everything, insights 100%
-        // proje hangi dilde yazsın main menude label olark
 	</script>
 </html>
