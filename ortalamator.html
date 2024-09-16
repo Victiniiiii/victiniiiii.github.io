@@ -6,6 +6,7 @@
     <title>Ortalamatör</title>
     <link rel="icon" href="static/images/vic32.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="static/ortalamatorPWAstyles.css">
+    <link rel="manifest" href="/ortalamatormanifest.json">
 </head>
 <body>
     <div class="title-section">
@@ -228,5 +229,16 @@
     </div>
     <div class="stars"></div>
     <script src="ortalamator.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/ortalamatorSW.js').then(function(registration) {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }, function(err) {
+                    console.log('Service Worker registration failed:', err);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
