@@ -759,36 +759,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calculateGPA();
 });
-
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
-  }
-
-  body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(45deg, #001f3f, #003366, #001f3f);
-    background-size: 400% 400%;
-    animation: gradientAnimation 20s ease infinite;
-    color: #e0e0e0;
-    position: relative;
-    z-index: 1;
-  }
-`;
-
-document.head.appendChild(style);
-
-const stars = document.createElement('div');
-stars.className = 'stars';
-document.body.appendChild(stars);
