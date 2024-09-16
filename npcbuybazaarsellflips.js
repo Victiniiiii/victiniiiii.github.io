@@ -220,11 +220,10 @@ let itemsarray = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-    var webptest = new Image();
+    var webptest = new Image(1,1);
     webptest.src = "/static/imageswebp/webpdot.webp";
     if (webptest.width > 0 && webptest.height > 0) {
         WebPSupport = 1;
-        console.log("121")
     } else {
         WebPSupport = 0;
     }
