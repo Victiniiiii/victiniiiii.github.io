@@ -5,288 +5,571 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Main Menu</title>
 		<link rel="icon" href="static/images/vic32.png" type="image/png" />
-		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
-		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
+		<link rel="stylesheet" type="text/css" href="static/mainmenustyles.css"/>
 	</head>
 	<style>
-		* {
-			box-sizing: border-box;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-		}
-
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
-		}
-
-        @keyframes blueShades {
-            0% {
-                background-color: #001f3f;
+        @media (min-width: 768px) {
+            * {
+                box-sizing: border-box;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
-            25% {
-                background-color: #0074D9;
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
-            50% {
-                background-color: #7FDBFF;
+
+            @keyframes blueShades {
+                0% {
+                    background-color: #001f3f;
+                }
+                25% {
+                    background-color: #0074D9;
+                }
+                50% {
+                    background-color: #7FDBFF;
+                }
+                75% {
+                    background-color: #39CCCC;
+                }
+                100% {
+                    background-color: #001f3f;
+                }
             }
-            75% {
-                background-color: #39CCCC;
+
+            @keyframes hotColors {
+                0% {
+                    background-color: #ff4136;
+                }
+                25% {
+                    background-color: #ff851b;
+                }
+                50% {
+                    background-color: #ffdc00;
+                }
+                75% {
+                    background-color: #ff6300;
+                }
+                100% {
+                    background-color: #ff4136;
+                }
             }
-            100% {
-                background-color: #001f3f;
+
+            #mainmenuleftbox {
+                width: 15vw;
+                height: 80vh;
+                margin: 0 5vw 0 10vw;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                border-radius: 3vw;
+                position: relative;
+            }
+
+            #mainmenuleftbox::before {
+                content: "";
+                position: absolute;
+                animation: blueShades 3s infinite;
+                top: -1px;
+                left: -1px;
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
+                z-index: -1;
+                border-radius: 3vw;
+            }
+
+            #mainmenurightbox {
+                position: relative;            
+            }
+
+            #mainmenurightbox::before {
+                content: "";
+                position: absolute;
+                animation: hotColors 3s infinite;
+                top: -1px;
+                left: -1px;
+                width: calc(60vw + 2px);
+                height: calc(80vh + 2px);
+                z-index: -1;
+                border-top-left-radius: 3vw;
+                border-bottom-left-radius: 3vw;
+            }
+
+            #mainmenugeneralprojects,
+            #mainmenuskyblockprojects,
+            #mainmenuotherprojects {
+                width: 60vw;
+                height: 80vh;
+                margin: 0 10vw 0 0;
+                background-color: black;
+                padding: 2vw;
+                display: grid;
+                overflow-y: scroll;
+                grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+                justify-content: center;
+                /*scroll-snap-type: y mandatory; TODO: Bunu mobilde yap*/
+                border-top-left-radius: 3vw;
+                border-bottom-left-radius: 3vw;
+                overflow: auto;
+                scrollbar-width: none;
+            }
+
+            #mainmenugeneralprojects::-webkit-scrollbar,
+            #mainmenuskyblockprojects::-webkit-scrollbar,
+            #mainmenuotherprojects::-webkit-scrollbar,
+            #mainmenuskyblockprojects,
+            #mainmenuotherprojects {
+                display: none;
+            }
+
+            #mainmenutabs {
+                width: 30vw;
+                height: 5vh;
+                margin: 7.5vh 0 0 50vw;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.1vh;
+            }
+
+            #mainmenuboxes {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .mainmenubutton {
+                width: 10vw;
+                background-color: rgb(15, 15, 15, 1);
+                color: white;
+                cursor: pointer;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            .mainmenubutton:hover {
+                background-color: gray;
+                transition: background-color 0.75s;
+            }
+
+            #general, #general::before {
+                border-top-left-radius: 2.5vh;
+            }
+
+            #skyblock, #skyblock::before {
+                margin: 0 0.1vw 0 0.1vw;
+            }
+
+            #other, #other::before {
+                border-top-right-radius: 2.5vh;
+            }
+
+            #general::before, #skyblock::before, #other::before {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
+                animation: hotColors 3s infinite;
+                z-index: -1;
+            }
+
+            #mainmenupfp {
+                width: 10vw;
+                height: 10vw;
+                margin: 2.5vw 2.5vw 1vw 2.5vw;
+                border: 0.1vw solid white;
+            }
+
+            #mainmenupfp img {
+                width: 10vw;
+                height: 10vw;
+            }
+
+            .mainmenuline {
+                width: 13vw;
+                height: 9vh;
+                margin: 0.5vh 0.5vw 0vw 1.5vw;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                cursor: pointer;
+                word-break: break-all;
+            }
+
+            .mainmenuline svg {
+                margin-right: 1vw;
+            }
+
+            .mainmenuline a {
+                color: white;
+            }
+
+            .mainmenuproject {
+                width: 20vw;
+                height: 30vh;
+                background-color: rgb(50, 50, 50, 1);
+                margin: 1vw 3vw 1vw 3vw;
+                cursor: pointer;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 1.2vw;
+                animation: fadeIn 2s ease;
+                color: white;
+                border-radius: 2vw;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                scroll-snap-align: center;
+            }
+
+            .mainmenuproject img {
+                transition: transform 0.3s ease;
+            }
+
+            .mainmenuproject img:hover {
+                transform: scale(1.5);
+            }
+
+            .mainmenuproject div {
+                z-index: 3;
+                color: white;
+                margin-top: -0.5vh;
+            }
+
+            .mainmenunew {
+                width: 5vw;
+                height: 3vh;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 2rem;
+                line-height: 2.8vh;
+                background-color: rgb(255, 0, 0, 0.8);
+                border-bottom-left-radius: 1vw;
+                border: 2px solid white;
+            }
+
+            .mainmenulanguage {
+                width: 0vw;
+                height: 4vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 2rem;
+                border-bottom-right-radius: 1vw;
+                padding-left: 1vw;
+                line-height: 4vh;
+            }
+
+            .mainmenulanguage svg {
+                width: 7vh;
+                height: 7vh;
+            }
+
+            .mainmenunotready {
+                width: 20vw;
+                height: 30.1vh;
+                z-index: 2;
+                background-color: rgb(25, 25, 25, 0.85);
+                position: absolute;
+                cursor: not-allowed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+                padding-bottom: 5vh;
             }
         }
 
-        @keyframes hotColors {
-            0% {
-                background-color: #ff4136;
+        @media (max-width: 767px) {
+            * {
+                box-sizing: border-box;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
-            25% {
-                background-color: #ff851b;
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
-            50% {
-                background-color: #ffdc00;
+
+            @keyframes blueShades {
+                0% {
+                    background-color: #001f3f;
+                }
+                25% {
+                    background-color: #0074D9;
+                }
+                50% {
+                    background-color: #7FDBFF;
+                }
+                75% {
+                    background-color: #39CCCC;
+                }
+                100% {
+                    background-color: #001f3f;
+                }
             }
-            75% {
-                background-color: #ff6300;
+
+            @keyframes hotColors {
+                0% {
+                    background-color: #ff4136;
+                }
+                25% {
+                    background-color: #ff851b;
+                }
+                50% {
+                    background-color: #ffdc00;
+                }
+                75% {
+                    background-color: #ff6300;
+                }
+                100% {
+                    background-color: #ff4136;
+                }
             }
-            100% {
-                background-color: #ff4136;
+
+            #mainmenuleftbox {
+                width: 15vw;
+                height: 80vh;
+                margin: 0 5vw 0 10vw;
+                background-color: black;
+                display: flex;
+                flex-direction: column;
+                color: white;
+                border-radius: 3vw;
+                position: relative;
+            }
+
+            #mainmenuleftbox::before {
+                content: "";
+                position: absolute;
+                animation: blueShades 3s infinite;
+                top: -1px;
+                left: -1px;
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
+                z-index: -1;
+                border-radius: 3vw;
+            }
+
+            #mainmenurightbox {
+                position: relative;            
+            }
+
+            #mainmenurightbox::before {
+                content: "";
+                position: absolute;
+                animation: hotColors 3s infinite;
+                top: -1px;
+                left: -1px;
+                width: calc(60vw + 2px);
+                height: calc(80vh + 2px);
+                z-index: -1;
+                border-top-left-radius: 3vw;
+                border-bottom-left-radius: 3vw;
+            }
+
+            #mainmenugeneralprojects,
+            #mainmenuskyblockprojects,
+            #mainmenuotherprojects {
+                width: 60vw;
+                height: 80vh;
+                margin: 0 10vw 0 0;
+                background-color: black;
+                padding: 2vw;
+                display: grid;
+                overflow-y: scroll;
+                grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+                justify-content: center;
+                scroll-snap-type: y mandatory;
+                border-top-left-radius: 3vw;
+                border-bottom-left-radius: 3vw;
+                overflow: auto;
+                scrollbar-width: none;
+            }
+
+            #mainmenugeneralprojects::-webkit-scrollbar,
+            #mainmenuskyblockprojects::-webkit-scrollbar,
+            #mainmenuotherprojects::-webkit-scrollbar,
+            #mainmenuskyblockprojects,
+            #mainmenuotherprojects {
+                display: none;
+            }
+
+            #mainmenutabs {
+                width: 30vw;
+                height: 5vh;
+                margin: 7.5vh 0 0 50vw;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.1vh;
+            }
+
+            #mainmenuboxes {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .mainmenubutton {
+                width: 10vw;
+                background-color: rgb(15, 15, 15, 1);
+                color: white;
+                cursor: pointer;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            .mainmenubutton:hover {
+                background-color: gray;
+                transition: background-color 0.75s;
+            }
+
+            #general, #general::before {
+                border-top-left-radius: 2.5vh;
+            }
+
+            #skyblock, #skyblock::before {
+                margin: 0 0.1vw 0 0.1vw;
+            }
+
+            #other, #other::before {
+                border-top-right-radius: 2.5vh;
+            }
+
+            #general::before, #skyblock::before, #other::before {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
+                animation: hotColors 3s infinite;
+                z-index: -1;
+            }
+
+            #mainmenupfp {
+                width: 10vw;
+                height: 10vw;
+                margin: 2.5vw 2.5vw 1vw 2.5vw;
+                border: 0.1vw solid white;
+            }
+
+            #mainmenupfp img {
+                width: 10vw;
+                height: 10vw;
+            }
+
+            .mainmenuline {
+                width: 13vw;
+                height: 9vh;
+                margin: 0.5vh 0.5vw 0vw 1.5vw;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                cursor: pointer;
+                word-break: break-all;
+            }
+
+            .mainmenuline svg {
+                margin-right: 1vw;
+            }
+
+            .mainmenuline a {
+                color: white;
+            }
+
+            .mainmenuproject {
+                width: 20vw;
+                height: 30vh;
+                background-color: rgb(50, 50, 50, 1);
+                margin: 1vw 3vw 1vw 3vw;
+                cursor: pointer;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 1.2vw;
+                animation: fadeIn 2s ease;
+                color: white;
+                border-radius: 2vw;
+                position: relative;
+                z-index: 1;
+                overflow: hidden;
+                scroll-snap-align: center;
+            }
+
+            .mainmenuproject img {
+                transition: transform 0.3s ease;
+            }
+
+            .mainmenuproject img:hover {
+                transform: scale(1.5);
+            }
+
+            .mainmenuproject div {
+                z-index: 3;
+                color: white;
+                margin-top: -0.5vh;
+            }
+
+            .mainmenunew {
+                width: 5vw;
+                height: 3vh;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 2rem;
+                line-height: 2.8vh;
+                background-color: rgb(255, 0, 0, 0.8);
+                border-bottom-left-radius: 1vw;
+                border: 2px solid white;
+            }
+
+            .mainmenulanguage {
+                width: 0vw;
+                height: 4vh;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 2rem;
+                border-bottom-right-radius: 1vw;
+                padding-left: 1vw;
+                line-height: 4vh;
+            }
+
+            .mainmenulanguage svg {
+                width: 7vh;
+                height: 7vh;
+            }
+
+            .mainmenunotready {
+                width: 20vw;
+                height: 30.1vh;
+                z-index: 2;
+                background-color: rgb(25, 25, 25, 0.85);
+                position: absolute;
+                cursor: not-allowed;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.5rem;
+                padding-bottom: 5vh;
             }
         }
-
-		#mainmenuleftbox {
-			width: 15vw;
-			height: 80vh;
-			margin: 0 5vw 0 10vw;
-			background-color: black;
-			display: flex;
-			flex-direction: column;
-			color: white;
-            border-radius: 3vw;
-            position: relative;
-		}
-
-        #mainmenuleftbox::before {
-            content: "";
-            position: absolute;
-            animation: blueShades 3s infinite;
-            top: -1px;
-            left: -1px;
-            width: calc(100% + 2px);
-            height: calc(100% + 2px);
-            z-index: -1;
-            border-radius: 3vw;
-        }
-
-        #mainmenurightbox {
-            position: relative;            
-        }
-
-        #mainmenurightbox::before {
-            content: "";
-            position: absolute;
-            animation: hotColors 3s infinite;
-            top: -1px;
-            left: -1px;
-            width: calc(60vw + 2px);
-            height: calc(80vh + 2px);
-            z-index: -1;
-            border-top-left-radius: 3vw;
-            border-bottom-left-radius: 3vw;
-        }
-
-		#mainmenugeneralprojects,
-		#mainmenuskyblockprojects,
-		#mainmenuotherprojects {
-			width: 60vw;
-			height: 80vh;
-			margin: 0 10vw 0 0;
-			background-color: black;
-			padding: 2vw;
-			display: grid;
-			overflow-y: scroll;
-			grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
-			justify-content: center;
-            /*scroll-snap-type: y mandatory; TODO: Bunu mobilde yap*/
-            border-top-left-radius: 3vw;
-            border-bottom-left-radius: 3vw;
-            overflow: auto;
-            scrollbar-width: none;
-		}
-
-        #mainmenugeneralprojects::-webkit-scrollbar,
-		#mainmenuskyblockprojects::-webkit-scrollbar,
-		#mainmenuotherprojects::-webkit-scrollbar,
-        #mainmenuskyblockprojects,
-		#mainmenuotherprojects {
-            display: none;
-        }
-
-		#mainmenutabs {
-			width: 30vw;
-			height: 5vh;
-			margin: 7.5vh 0 0 50vw;
-			display: flex;
-			justify-content: space-between;
-            margin-bottom: 0.1vh;
-		}
-
-		#mainmenuboxes {
-			display: flex;
-			flex-direction: row;
-		}
-
-		.mainmenubutton {
-			width: 10vw;
-			background-color: rgb(15, 15, 15, 1);
-			color: white;
-			cursor: pointer;
-			text-align: center;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-            position: relative;
-		}
-
-		.mainmenubutton:hover {
-			background-color: gray;
-			transition: background-color 0.75s;
-		}
-
-        #general, #general::before {
-            border-top-left-radius: 2.5vh;
-        }
-
-        #skyblock, #skyblock::before {
-            margin: 0 0.1vw 0 0.1vw;
-        }
-
-        #other, #other::before {
-            border-top-right-radius: 2.5vh;
-        }
-
-        #general::before, #skyblock::before, #other::before {
-            content: "";
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: calc(100% + 2px);
-            height: calc(100% + 2px);
-            animation: hotColors 3s infinite;
-            z-index: -1;
-        }
-
-		#mainmenupfp {
-			width: 10vw;
-			height: 10vw;
-			margin: 2.5vw 2.5vw 1vw 2.5vw;
-			border: 0.1vw solid white;
-		}
-
-		#mainmenupfp img {
-			width: 10vw;
-			height: 10vw;
-		}
-
-		.mainmenuline {
-			width: 13vw;
-			height: 9vh;
-			margin: 0.5vh 0.5vw 0vw 1.5vw;
-			text-align: left;
-			display: flex;
-			align-items: center;
-			justify-content: left;
-			cursor: pointer;
-            word-break: break-all;
-		}
-
-		.mainmenuline svg {
-			margin-right: 1vw;
-		}
-
-        .mainmenuline a {
-            color: white;
-        }
-
-		.mainmenuproject {
-			width: 20vw;
-			height: 30vh;
-			background-color: rgb(50, 50, 50, 1);
-			margin: 1vw 3vw 1vw 3vw;
-			cursor: pointer;
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			font-size: 1.2vw;
-			animation: fadeIn 2s ease;
-			color: white;
-			border-radius: 2vw;
-			position: relative;
-			z-index: 1;
-			overflow: hidden;
-            scroll-snap-align: center;
-		}
-
-		.mainmenuproject img {
-			transition: transform 0.3s ease;
-		}
-
-		.mainmenuproject img:hover {
-			transform: scale(1.5);
-		}
-
-		.mainmenuproject div {
-			z-index: 3;
-			color: white;
-            margin-top: -0.5vh;
-		}
-
-		.mainmenunew {
-			width: 5vw;
-			height: 3vh;
-			position: absolute;
-			top: 0;
-			right: 0;
-			font-size: 2rem;
-            line-height: 2.8vh;
-			background-color: rgb(255, 0, 0, 0.8);
-			border-bottom-left-radius: 1vw;
-            border: 2px solid white;
-		}
-
-        .mainmenulanguage {
-            width: 0vw;
-			height: 4vh;
-			position: absolute;
-			top: 0;
-			left: 0;
-			font-size: 2rem;
-			border-bottom-right-radius: 1vw;
-            padding-left: 1vw;
-            line-height: 4vh;
-        }
-
-        .mainmenulanguage svg {
-            width: 7vh;
-            height: 7vh;
-        }
-
-		.mainmenunotready {
-			width: 20vw;
-			height: 30.1vh;
-			z-index: 2;
-			background-color: rgb(25, 25, 25, 0.85);
-			position: absolute;
-			cursor: not-allowed;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 2.5rem;
-			padding-bottom: 5vh;
-		}
+		
 	</style>
 	<body>
 		<div id="mainmenutabs">
