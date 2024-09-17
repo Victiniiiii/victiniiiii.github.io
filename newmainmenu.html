@@ -11,6 +11,7 @@
 	<style>
 		* {
 			box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
 		}
 
 		@keyframes fadeIn {
@@ -22,6 +23,42 @@
 			}
 		}
 
+        @keyframes blueShades {
+            0% {
+                background-color: #001f3f;
+            }
+            25% {
+                background-color: #0074D9;
+            }
+            50% {
+                background-color: #7FDBFF;
+            }
+            75% {
+                background-color: #39CCCC;
+            }
+            100% {
+                background-color: #001f3f;
+            }
+        }
+
+        @keyframes hotColors {
+            0% {
+                background-color: #ff4136;
+            }
+            25% {
+                background-color: #ff851b;
+            }
+            50% {
+                background-color: #ffdc00;
+            }
+            75% {
+                background-color: #ff6300;
+            }
+            100% {
+                background-color: #ff4136;
+            }
+        }
+
 		#mainmenuleftbox {
 			width: 15vw;
 			height: 720px;
@@ -31,7 +68,37 @@
 			flex-direction: column;
 			color: white;
             border-radius: 3vw;
+            position: relative;
 		}
+
+        #mainmenuleftbox::before {
+            content: "";
+            position: absolute;
+            animation: blueShades 3s infinite;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            z-index: -1;
+            border-radius: 3vw;
+        }
+
+        #mainmenurightbox {
+            position: relative;            
+        }
+
+        #mainmenurightbox::before {
+            content: "";
+            position: absolute;
+            animation: hotColors 3s infinite;
+            top: -1px;
+            left: -1px;
+            width: calc(60vw + 2px);
+            height: 722px;
+            z-index: -1;
+            border-top-left-radius: 3vw;
+            border-bottom-left-radius: 3vw;
+        }
 
 		#mainmenugeneralprojects,
 		#mainmenuskyblockprojects,
@@ -48,19 +115,16 @@
             /*scroll-snap-type: y mandatory; TODO: Bunu mobilde yap*/
             border-top-left-radius: 3vw;
             border-bottom-left-radius: 3vw;
+            overflow: auto;
+            scrollbar-width: none;
 		}
 
-		#mainmenuskyblockprojects,
+        #mainmenugeneralprojects::-webkit-scrollbar,
+		#mainmenuskyblockprojects::-webkit-scrollbar,
+		#mainmenuotherprojects::-webkit-scrollbar,
+        #mainmenuskyblockprojects,
 		#mainmenuotherprojects {
-			display: none;
-		}
-
-        #general {
-            border-top-left-radius: 22.5px;
-        }
-
-        #other {
-            border-top-right-radius: 22.5px;
+            display: none;
         }
 
 		#mainmenutabs {
@@ -69,6 +133,7 @@
 			margin: 67.5px 0 0 50vw;
 			display: flex;
 			justify-content: space-between;
+            margin-bottom: 1px;
 		}
 
 		#mainmenuboxes {
@@ -86,12 +151,36 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+            position: relative;
 		}
 
 		.mainmenubutton:hover {
 			background-color: gray;
 			transition: background-color 0.75s;
 		}
+
+        #general, #general::before {
+            border-top-left-radius: 22.5px;
+        }
+
+        #skyblock, #skyblock::before {
+            margin: 0 1px 0 1px;
+        }
+
+        #other, #other::before {
+            border-top-right-radius: 22.5px;
+        }
+
+        #general::before, #skyblock::before, #other::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            animation: hotColors 3s infinite;
+            z-index: -1;
+        }
 
 		#mainmenupfp {
 			width: 10vw;
@@ -256,7 +345,7 @@
 						</a>
 					</div>
 					<div class="mainmenuproject">
-						<a>
+						<a href="https://github.com/Victiniiiii/gradecheckeronline" title="GradeChecker" aria-label="GradeChecker">
                             <div class="mainmenulanguage">
                                 Python                                    
                             </div>
@@ -265,28 +354,28 @@
 						</a>
 					</div>
 					<div class="mainmenuproject">
-						<a>
+						<a href="/ortalamator" title="Ortalamatör" aria-label="Ortalamatör">
                             <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/ortalamator384.png" />
 							<div>Ortalamatör</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
-						<a>
+						<a href="/IzmirGuessr" title="IzmirGuessr" aria-label="IzmirGuessr">
                             <div class="mainmenulanguage">JavaScript</div>
 							<img src="static/images/izmirguessr384.png" />
 							<div>IzmirGuessr</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
-						<a>
+						<a href="https://github.com/Victiniiiii/easycoordinategrabber" title="Coordinate Grabber" aria-label="Coordinate Grabber">
                             <div class="mainmenulanguage">Python</div>
 							<img src="static/images/coordinategrabber384.png" />
 							<div>Coordinate Grabber</div>
 						</a>
 					</div>
 					<div class="mainmenuproject">
-						<a>
+						<a href="https://github.com/Victiniiiii/skribbliohelper" title="Skribbl.io Helper" aria-label="Skribbl.io Helper">
                             <div class="mainmenulanguage">Python</div>
 							<img src="static/images/skribbliohelper384.png" />
 							<div>Skribbl.io Helper</div>
@@ -303,40 +392,54 @@
 				</div>
 				<div id="mainmenuskyblockprojects">
                     <div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/npcbuybazaarsellflips384.png" />
-						<div>NPC Buy Bazaar Sell Flips</div>
-                        <div class="mainmenunew">NEW!</div>
+                        <a href="/npcbuybazaarsellflips" title="NPC Buy Bazaar Sell Flips" aria-label="NPC Buy Bazaar Sell Flips">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/npcbuybazaarsellflips384.png" />
+                            <div>NPC Buy Bazaar Sell Flips</div>
+                            <div class="mainmenunew">NEW!</div>
+                        </a>
 					</div>
 					<div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/bazaarbuynpcsells384.png" />
-						<div>Bazaar Buy NPC Sell Flips</div>
+                        <a href="/bazaarbuynpcsellflips" title="Bazaar Buy NPC Sell Flips" aria-label="Bazaar Buy NPC Sell Flips">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/bazaarbuynpcsells384.png" />
+                            <div>Bazaar Buy NPC Sell Flips</div>
+                        </a>
 					</div>					
 					<div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/effectivehpcalculator384.png" />
-						<div>Effective HP Calculator</div>
+                        <a href="/effectivehpcalculator" title="Effective HP Calculator" aria-label="Effective HP Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/effectivehpcalculator384.png" />
+                            <div>Effective HP Calculator</div>
+                        </a>
 					</div>
 					<div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/fortunevspristinecalculator384.png" />
-						<div>Fortune - Pristine Comparer</div>
+                        <a href="/fortunevspristinecalculator" title="Fortune - Pristine Comparer" aria-label="Fortune - Pristine Comparer">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/fortunevspristinecalculator384.png" />
+                            <div>Fortune - Pristine Comparer</div>
+                        </a>
 					</div>
 					<div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/infernocalculator384.png" />
-						<div>Inferno Minion Calculator</div>
+                        <a href="/inferno" title="Inferno Minion Calculator" aria-label="Inferno Minion Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/infernocalculator384.png" />
+                            <div>Inferno Minion Calculator</div>
+                        </a>
 					</div>
                     <div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/compostcalculator384.png" />
-						<div>Compost Profit Calculator</div>
+                        <a href="/compost" title="Compost Profit Calculator" aria-label="Compost Profit Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/compostcalculator384.png" />
+                            <div>Compost Profit Calculator</div>
+                        </a>
 					</div>
                     <div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/forgecalculator384.png" />
-						<div>Forging Gemstone Calculator</div>
+                        <a href="/flaskforge.html" title="Forging Gemstone Calculator" aria-label="Forging Gemstone Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/forgecalculator384.png" />
+                            <div>Forging Gemstone Calculator</div>
+                        </a>
 					</div>					
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
@@ -371,9 +474,11 @@
 				</div>
 				<div id="mainmenuotherprojects">
 					<div class="mainmenuproject">
-                        <div class="mainmenulanguage">JavaScript</div>
-						<img src="static/images/bigoilsolver384.png" />
-						<div>Payday 2 Big Oil Solver</div>
+                        <a href="/bigoil" title="Payday 2 Big Oil Solver" aria-label="Payday 2 Big Oil Solver">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <img src="static/images/bigoilsolver384.png" />
+                            <div>Payday 2 Big Oil Solver</div>
+                        </a>
 					</div>
 				</div>
 			</div>
@@ -427,11 +532,12 @@
             }
         });
 
-		// TODO: Clickable her yeri yap.
+		// TODO: Clickable her yeri yap. ( sol taraf dahil )
 		// tüm screenshotlar
         // WEBP everything, insights 100%
         // fontlarda sıkıntı var
-        // üstteki butonlar zor görmesi
-        // new textine bi bak
+        // üstteki butonlar zor görmesi ( ve NEW texti de zor görmesi)
+        // "NEW" textine bi bak
+        // Language logo arkasına blur
 	</script>
 </html>
