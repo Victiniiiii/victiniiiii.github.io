@@ -5,13 +5,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Main Menu</title>
 		<link rel="icon" href="static/images/vic32.png" type="image/png" />
-		<link rel="stylesheet" type="text/css" href="static/mainmenustyles.css"/>
+		<!-- 
+        <link rel="stylesheet" type="text/css" href="static/styles.css"/>
+        --->         
 	</head>
 	<style>
         @media (min-width: 768px) {
             * {
                 box-sizing: border-box;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-decoration: none;
+                text-align: center;
+                margin: 0;
+                padding: 0;
             }
 
             @keyframes fadeIn {
@@ -69,6 +75,7 @@
                 color: white;
                 border-radius: 3vw;
                 position: relative;
+                text-align: center;
             }
 
             #mainmenuleftbox::before {
@@ -130,7 +137,7 @@
             #mainmenutabs {
                 width: 30vw;
                 height: 5vh;
-                margin: 7.5vh 0 0 50vw;
+                margin: 7.5vh 0 0 60vw;
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 0.1vh;
@@ -211,6 +218,7 @@
 
             .mainmenuline a {
                 color: white;
+                text-align: left;
             }
 
             .mainmenuproject {
@@ -220,7 +228,8 @@
                 margin: 1vw 3vw 1vw 3vw;
                 cursor: pointer;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 1.2vw;
+                font-size: clamp(1vw,1.3vw,1.6vw);
+                line-height: 4vh;
                 animation: fadeIn 2s ease;
                 color: white;
                 border-radius: 2vw;
@@ -228,9 +237,12 @@
                 z-index: 1;
                 overflow: hidden;
                 scroll-snap-align: center;
+                text-align: center;
             }
 
             .mainmenuproject img {
+                width: 20vw;
+                height: 25vh;
                 transition: transform 0.3s ease;
             }
 
@@ -250,7 +262,7 @@
                 position: absolute;
                 top: 0;
                 right: 0;
-                font-size: 2rem;
+                font-size: clamp(1vw,2.8vh,1.5vw);
                 line-height: 2.8vh;
                 background-color: rgb(255, 0, 0, 0.8);
                 border-bottom-left-radius: 1vw;
@@ -276,7 +288,7 @@
 
             .mainmenunotready {
                 width: 20vw;
-                height: 30.1vh;
+                height: 31vh;
                 z-index: 2;
                 background-color: rgb(25, 25, 25, 0.85);
                 position: absolute;
@@ -286,6 +298,7 @@
                 align-items: center;
                 font-size: 2.5rem;
                 padding-bottom: 5vh;
+                line-height: 8vh;
             }
         }
 
@@ -747,7 +760,7 @@
                         <div class="mainmenunotready"></div>
                         <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
-						<div>Bobbin' Time Profit Calculator</div>
+						<div>Bobbin' Time Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
@@ -759,7 +772,7 @@
                         <div class="mainmenunotready"></div>
                         <div class="mainmenulanguage">JavaScript</div>
 						<img src="static/images/comingsoon384.png" />
-						<div>Mineshaft Key Profit Calculator</div>
+						<div>Mineshaft Key Calculator</div>
 					</div>
 					<div class="mainmenuproject">
                         <div class="mainmenunotready"></div>
@@ -832,9 +845,7 @@
         });
 
         // WEBP everything, insights 100%
-        // fontlarda sıkıntı var
-        // bu seferlik VH'ye dön ?
-        // mineshaft key yazısı sığmamış!!!!
+        // mobil css
 
 	</script>
 </html>
