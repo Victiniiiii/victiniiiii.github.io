@@ -1,0 +1,580 @@
+@media (min-width: 768px) {
+    * {
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blueShades {
+        0% {
+            background-color: #001f3f;
+        }
+        25% {
+            background-color: #0074D9;
+        }
+        50% {
+            background-color: #7FDBFF;
+        }
+        75% {
+            background-color: #39CCCC;
+        }
+        100% {
+            background-color: #001f3f;
+        }
+    }
+
+    @keyframes hotColors {
+        0% {
+            background-color: #ff4136;
+        }
+        25% {
+            background-color: #ff851b;
+        }
+        50% {
+            background-color: #ffdc00;
+        }
+        75% {
+            background-color: #ff6300;
+        }
+        100% {
+            background-color: #ff4136;
+        }
+    }
+
+    #mainmenuleftbox {
+        width: 15vw;
+        height: 80svh;
+        margin: 0 5vw 0 10vw;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        border-radius: 3vw;
+        position: relative;
+        text-align: center;
+    }
+
+    #mainmenuleftbox::before {
+        content: "";
+        position: absolute;
+        animation: blueShades 3s infinite;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        z-index: -1;
+        border-radius: 3vw;
+    }
+
+    #mainmenurightbox {
+        position: relative;            
+    }
+
+    #mainmenurightbox::before {
+        content: "";
+        position: absolute;
+        animation: hotColors 3s infinite;
+        top: -1px;
+        left: -1px;
+        width: calc(60vw + 2px);
+        height: calc(80svh + 2px);
+        z-index: -1;
+        border-top-left-radius: 3vw;
+        border-bottom-left-radius: 3vw;
+    }
+
+    #mainmenugeneralprojects,
+    #mainmenuskyblockprojects,
+    #mainmenuotherprojects {
+        width: 60vw;
+        height: 80svh;
+        margin: 0 10vw 0 0;
+        background-color: black;
+        padding: 2vw;
+        display: grid;
+        overflow-y: scroll;
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+        justify-content: center;
+        /*scroll-snap-type: y mandatory; TODO: Bunu mobilde yap*/
+        border-top-left-radius: 3vw;
+        border-bottom-left-radius: 3vw;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+
+    #mainmenugeneralprojects::-webkit-scrollbar,
+    #mainmenuskyblockprojects::-webkit-scrollbar,
+    #mainmenuotherprojects::-webkit-scrollbar,
+    #mainmenuskyblockprojects,
+    #mainmenuotherprojects {
+        display: none;
+    }
+
+    #mainmenutabs {
+        width: 30vw;
+        height: 5svh;
+        margin: 7.5svh 0 0 60vw;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.1svh;
+    }
+
+    #mainmenuboxes {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mainmenubutton {
+        width: 10vw;
+        background-color: rgb(15, 15, 15, 1);
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mainmenubutton:hover {
+        background-color: gray;
+        transition: background-color 0.75s;
+    }
+
+    #general, #general::before {
+        border-top-left-radius: 2.5svh;
+    }
+
+    #skyblock, #skyblock::before {
+        margin: 0 0.1vw 0 0.1vw;
+    }
+
+    #other, #other::before {
+        border-top-right-radius: 2.5svh;
+    }
+
+    #general::before, #skyblock::before, #other::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        animation: hotColors 3s infinite;
+        z-index: -1;
+    }
+
+    #mainmenupfp {
+        width: 10vw;
+        height: 10vw;
+        margin: 2.5vw 2.5vw 1vw 2.5vw;
+        border: 0.1vw solid white;
+    }
+
+    #mainmenupfp img {
+        width: 10vw;
+        height: 10vw;
+    }
+
+    .mainmenuline {
+        width: 13vw;
+        height: 9svh;
+        margin: 0.5svh 0.5vw 0vw 1.5vw;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        cursor: pointer;
+        word-break: break-all;
+    }
+
+    .mainmenuline svg {
+        margin-right: 1vw;
+    }
+
+    .mainmenuline a {
+        color: white;
+        text-align: left;
+    }
+
+    .mainmenuproject {
+        width: 20vw;
+        height: 30svh;
+        background-color: rgb(50, 50, 50, 1);
+        margin: 1vw 3vw 1vw 3vw;
+        cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: clamp(1vw,1.3vw,1.6vw);
+        line-height: 4svh;
+        animation: fadeIn 2s ease;
+        color: white;
+        border-radius: 2vw;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        scroll-snap-align: center;
+        text-align: center;
+    }
+
+    .mainmenuproject img {
+        width: 20vw;
+        height: 25svh;
+        transition: transform 0.3s ease;
+    }
+
+    .mainmenuproject img:hover {
+        transform: scale(1.5);
+    }
+
+    .mainmenuproject div {
+        z-index: 3;
+        color: white;
+        margin-top: -0.5svh;
+    }
+
+    .mainmenunew {
+        width: 5vw;
+        height: 3svh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: clamp(1vw,2.8svh,1.5vw);
+        line-height: 2.8svh;
+        background-color: rgb(255, 0, 0, 0.8);
+        border-bottom-left-radius: 1vw;
+        border: 2px solid white;
+    }
+
+    .mainmenulanguage {
+        width: 0vw;
+        height: 4svh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 2rem;
+        border-bottom-right-radius: 1vw;
+        padding-left: 1vw;
+        line-height: 4svh;
+    }
+
+    .mainmenulanguage svg {
+        width: 7svh;
+        height: 7svh;
+    }
+
+    .mainmenunotready {
+        width: 20vw;
+        height: 31svh;
+        z-index: 2;
+        background-color: rgb(25, 25, 25, 0.85);
+        position: absolute;
+        cursor: not-allowed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        padding-bottom: 5svh;
+        line-height: 8svh;
+    }
+}
+
+@media (max-width: 767px) {
+    * {
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-decoration: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes blueShades {
+        0% {
+            background-color: #001f3f;
+        }
+        25% {
+            background-color: #0074D9;
+        }
+        50% {
+            background-color: #7FDBFF;
+        }
+        75% {
+            background-color: #39CCCC;
+        }
+        100% {
+            background-color: #001f3f;
+        }
+    }
+
+    @keyframes hotColors {
+        0% {
+            background-color: #ff4136;
+        }
+        25% {
+            background-color: #ff851b;
+        }
+        50% {
+            background-color: #ffdc00;
+        }
+        75% {
+            background-color: #ff6300;
+        }
+        100% {
+            background-color: #ff4136;
+        }
+    }
+
+    #mainmenuleftbox {
+        width: 34vw;
+        height: 80svh;
+        margin: 0 5vw 0 1vw;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        border-radius: 3vw;
+        position: relative;
+        text-align: center;
+    }
+
+    #mainmenuleftbox::before {
+        content: "";
+        position: absolute;
+        animation: blueShades 3s infinite;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        z-index: -1;
+        border-radius: 3vw;
+    }
+
+    #mainmenurightbox {
+        position: relative;            
+    }
+
+    #mainmenurightbox::before {
+        content: "";
+        position: absolute;
+        animation: hotColors 3s infinite;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        z-index: -1;
+        border-bottom-left-radius: 3vw;
+        border-bottom-right-radius: 3vw;
+    }
+
+    #mainmenugeneralprojects,
+    #mainmenuskyblockprojects,
+    #mainmenuotherprojects {
+        width: 59vw;
+        height: 80svh;
+        background-color: black;
+        padding: 2vw;
+        display: grid;
+        overflow-y: scroll;
+        grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr));
+        justify-content: center;
+        scroll-snap-type: y mandatory;
+        border-bottom-left-radius: 3vw;
+        border-bottom-right-radius: 3vw;
+        overflow: auto;
+        scrollbar-width: none;
+    }
+
+    #mainmenugeneralprojects::-webkit-scrollbar,
+    #mainmenuskyblockprojects::-webkit-scrollbar,
+    #mainmenuotherprojects::-webkit-scrollbar,
+    #mainmenuskyblockprojects,
+    #mainmenuotherprojects {
+        display: none;
+    }
+
+    #mainmenutabs {
+        width: 59vw;
+        height: 5svh;
+        margin: 5.5svh 0 0 40vw;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.1svh;
+        font-size: 4vw;
+    }
+
+    #mainmenuboxes {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mainmenubutton {
+        width: calc(59vw / 3);
+        background-color: rgb(15, 15, 15, 1);
+        color: white;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .mainmenubutton:hover {
+        background-color: gray;
+        transition: background-color 0.75s;
+    }
+
+    #general, #general::before {
+        border-top-left-radius: 2.5svh;
+    }
+
+    #skyblock, #skyblock::before {
+        margin: 0 1px 0 1px;
+    }
+
+    #other, #other::before {
+        border-top-right-radius: 2.5svh;
+    }
+
+    #general::before, #skyblock::before, #other::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+        animation: hotColors 3s infinite;
+        z-index: -1;
+    }
+
+    #mainmenupfp {
+        width: 30vw;
+        height: 30vw;
+        margin: 2.5vw 2.5vw 1vw 2.5vw;
+        border: 0.1vw solid white;
+    }
+
+    #mainmenupfp img {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .mainmenuline {
+        width: 30vw;
+        height: 9svh;
+        margin: 0.5svh 0.5vw 0vw 1.5vw;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        cursor: pointer;
+        word-break: break-all;
+    }
+
+    .mainmenuline svg {
+        margin-right: 1vw;
+    }
+
+    .mainmenuline a {
+        color: white;
+    }
+
+    .mainmenuproject {
+        width: 53vw;
+        height: 40svh;
+        background-color: rgb(50, 50, 50, 1);
+        margin: 1svh 1vw 1svh 1vw;
+        cursor: pointer;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+        font-size: 2.1svh;
+        animation: fadeIn 2s ease;
+        color: white;
+        border-radius: 5vw;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        scroll-snap-align: center;
+    }
+
+    .mainmenuproject img {
+        width: 53vw;
+        height: 35svh;
+        transition: transform 0.3s ease;
+    }
+
+    .mainmenuproject img:hover {
+        transform: scale(1.5);
+    }
+
+    .mainmenuproject div {
+        z-index: 3;
+        color: white;
+        margin-top: -0.5svh;
+    }
+
+    .mainmenunew {
+        width: 20vw;
+        height: 4svh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 6vw;
+        text-align: center;
+        line-height: 3svh;
+        background-color: rgb(255, 0, 0, 0.8);
+        border-bottom-left-radius: 1vw;
+        border: 2px solid white;
+    }
+
+    .mainmenulanguage {
+        width: 0vw;
+        height: 4svh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-bottom-right-radius: 1vw;
+        padding-left: 1vw;
+        line-height: 4svh;
+    }
+
+    .mainmenulanguage svg {
+        width: 7svh;
+        height: 7svh;
+    }
+
+    .mainmenunotready {
+        width: 100%;
+        height: 41svh;
+        z-index: 2;
+        background-color: rgb(25, 25, 25, 0.85);
+        position: absolute;
+        cursor: not-allowed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5rem;
+        padding-bottom: 5svh;
+    }
+}
