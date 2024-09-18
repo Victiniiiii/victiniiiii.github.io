@@ -1,161 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Victiniiiii's github sites main page">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Main Menu</title>
-		<link rel="icon" href="static/images/vic32.png" type="image/png"/>
-		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
-		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+        <link rel="stylesheet" type="text/css" href="static/mainmenuPWAstyles.css"/>       
 	</head>
 	<body>
-		<div class="title-section">
-			<a href="/" aria-label="Main Menu">
-                <div></div>
-			</a>
-			<h1 class="main-menu-text">Welcome!</h1>
-			<div class="project-buttons">
-				<div class="category-button">
-					<a href="/projects" aria-label="Projects">Projects</a>
-				</div>
-				<div class="category-button">
-					<a href="/contactme" aria-label="Contact">Contact Me</a>
-				</div>
-			</div>
+		<div id="mainmenutabs">
+			<div class="mainmenubutton" id="general" onclick="switchtab(mainmenugeneralprojects)">General</div>
+			<div class="mainmenubutton" id="skyblock" onclick="switchtab(mainmenuskyblockprojects)">Skyblock</div>
+			<div class="mainmenubutton" id="other" onclick="switchtab(mainmenuotherprojects)">Others</div>
 		</div>
-        <div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/taratormusic" aria-label="TaratorMusic">TaratorMusic</a>
-				<div class="release-date">Release Date: August 14, 2024</div>
-			</div>
-			<div class="project-content">
-				<a href="/taratormusic" aria-label="TaratorMusic">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/taratorlogo.webp" type="image/webp">
-                            <img src="static/images/taratorlogo.png" class="projectphoto" alt="TaratorMusic">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">Next generation music app!</p>
+		<div id="mainmenuboxes">
+			<div id="mainmenuleftbox">
+				<div id="mainmenupfp">
+                    <picture>
+                        <source srcset="static/imageswebp/vicinti2.webp" type="image/webp">
+                        <img src="static/images/vicinti2.png" alt="Victiniiiii logo" />
+                    </picture>
+				</div>
+				Victiniiiii
+				<div class="mainmenuline">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+						<path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+					</svg>
+                    <a href="https://www.google.com/maps/place/İzmir/@38.4499471,27.1181692,11">
+                        İzmir
+                    </a>
+				</div>
+				<div class="mainmenuline">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github-filled" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path
+							d="M5.315 2.1c.791 -.113 1.9 .145 3.333 .966l.272 .161l.16 .1l.397 -.083a13.3 13.3 0 0 1 4.59 -.08l.456 .08l.396 .083l.161 -.1c1.385 -.84 2.487 -1.17 3.322 -1.148l.164 .008l.147 .017l.076 .014l.05 .011l.144 .047a1 1 0 0 1 .53 .514a5.2 5.2 0 0 1 .397 2.91l-.047 .267l-.046 .196l.123 .163c.574 .795 .93 1.728 1.03 2.707l.023 .295l.007 .272c0 3.855 -1.659 5.883 -4.644 6.68l-.245 .061l-.132 .029l.014 .161l.008 .157l.004 .365l-.002 .213l-.003 3.834a1 1 0 0 1 -.883 .993l-.117 .007h-6a1 1 0 0 1 -.993 -.883l-.007 -.117v-.734c-1.818 .26 -3.03 -.424 -4.11 -1.878l-.535 -.766c-.28 -.396 -.455 -.579 -.589 -.644l-.048 -.019a1 1 0 0 1 .564 -1.918c.642 .188 1.074 .568 1.57 1.239l.538 .769c.76 1.079 1.36 1.459 2.609 1.191l.001 -.678l-.018 -.168a5.03 5.03 0 0 1 -.021 -.824l.017 -.185l.019 -.12l-.108 -.024c-2.976 -.71 -4.703 -2.573 -4.875 -6.139l-.01 -.31l-.004 -.292a5.6 5.6 0 0 1 .908 -3.051l.152 -.222l.122 -.163l-.045 -.196a5.2 5.2 0 0 1 .145 -2.642l.1 -.282l.106 -.253a1 1 0 0 1 .529 -.514l.144 -.047l.154 -.03z"
+							stroke-width="0"
+							fill="currentColor"
+						/>
+					</svg>
+                    <a href="https://github.com/Victiniiiii">
+                        Victiniiiii
+                    </a>
+				</div>
+				<div class="mainmenuline">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-discord-filled" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path
+							d="M14.983 3l.123 .006c2.014 .214 3.527 .672 4.966 1.673a1 1 0 0 1 .371 .488c1.876 5.315 2.373 9.987 1.451 12.28c-1.003 2.005 -2.606 3.553 -4.394 3.553c-.732 0 -1.693 -.968 -2.328 -2.045a21.512 21.512 0 0 0 2.103 -.493a1 1 0 1 0 -.55 -1.924c-3.32 .95 -6.13 .95 -9.45 0a1 1 0 0 0 -.55 1.924c.717 .204 1.416 .37 2.103 .494c-.635 1.075 -1.596 2.044 -2.328 2.044c-1.788 0 -3.391 -1.548 -4.428 -3.629c-.888 -2.217 -.39 -6.89 1.485 -12.204a1 1 0 0 1 .371 -.488c1.439 -1.001 2.952 -1.459 4.966 -1.673a1 1 0 0 1 .935 .435l.063 .107l.651 1.285l.137 -.016a12.97 12.97 0 0 1 2.643 0l.134 .016l.65 -1.284a1 1 0 0 1 .754 -.54l.122 -.009zm-5.983 7a2 2 0 0 0 -1.977 1.697l-.018 .154l-.005 .149l.005 .15a2 2 0 1 0 1.995 -2.15zm6 0a2 2 0 0 0 -1.977 1.697l-.018 .154l-.005 .149l.005 .15a2 2 0 1 0 1.995 -2.15z"
+							stroke-width="0"
+							fill="currentColor"
+						/>
+					</svg>
+                    <a href="https://discord.com/users/vicintici">
+                        Vicintici
+                    </a>
+				</div>
+				<div class="mainmenuline">
+					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail" width="32" height="32" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
+						<path d="M3 7l9 6l9 -6" />
+					</svg>
+                    <a href="mailto:victinii494@gmail.com">
+                        victinii494@gmail.com
+                    </a>
 				</div>
 			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/inferno" aria-label="Inferno Minion Profit Calculator">Skyblock - Inferno Minion Profit Calculator</a>
-				<div class="release-date">Release Date: June 27, 2024</div>
-			</div>
-			<div class="project-content">
-				<a href="/inferno" aria-label="Inferno Minion Profit Calculator">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/infernologo.webp" type="image/webp">
-                            <img src="static/images/infernologo.png" class="projectphoto" alt="Inferno Minion Profit Calculator">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">Do the complex minion profit calculation by only entering the values! Everything about the Inferno Minions! Check it out!</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/compost" aria-label="Compost Profit Calculator">Skyblock - Compost Profit Calculator</a>
-				<div class="release-date">Release Date: April 5, 2024</div>
-			</div>
-			<div class="project-content">
-				<a href="/compost" aria-label="Compost Profit Calculator">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/compost.webp" type="image/webp">
-                            <img src="static/images/compost.png" class="projectphoto" alt="Skyblock Compost Profit Calculator">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">The new compost profit calculator for Skyblock players! Calculate your future profits instantly!</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/IzmirGuessr" aria-label="IzmirGuessr">IzmirGuessr</a>
-				<div class="release-date">Release Date: March 4, 2024</div>
-			</div>
-			<div class="project-content">
-				<a href="/IzmirGuessr" aria-label="IzmirGuessr">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/izmirprojelogo.webp" type="image/webp">
-                            <img src="static/images/izmirprojelogo.png" class="projectphoto" alt="IzmirGuessr">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">Explore the streets of Izmir without even getting up! Play now!</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/ortalamator" aria-label="Ortalamatör">Ortalamatör</a>
-				<div class="release-date">Release Date: February 11, 2024</div>
-			</div>
-			<div class="project-content">
-				<a href="/ortalamator" aria-label="Ortalamatör">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/ortalamatorlogo.webp" type="image/webp">
-                            <img src="static/images/ortalamatorlogo.png" class="projectphoto" alt="Ortalamatör">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">This basic app helps you calculate your GPA within seconds! No more calculating by hand!</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/bigoil" aria-label="Big Oil Engine Solver">Payday 2 - Big Oil Engine Solver</a>
-				<div class="release-date">Release Date: October 1, 2023</div>
-			</div>
-			<div class="project-content">
-				<a href="/bigoil" aria-label="Big Oil Engine Solver">
-					<div class="project-logo">
-                        <picture>
-                            <source srcset="static/imageswebp/bigoil.webp" type="image/webp">
-                            <img src="static/images/bigoil.png" class="projectphoto" alt="Payday 2 Big Oil Engine Solver">
-                        </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">The Big Oil Engine Solver is here for all Payday 2 players! Now solve the puzzle with ease!</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-box">
-			<div class="project-info">
-				<a class="project-button" href="/flaskforge" aria-label="Skyblock Forging Gemstone Calculator">Skyblock - Forging Gemstone Calculator</a>
-				<div class="release-date">Release Date: August 31, 2023</div>
-			</div>
-			<div class="project-content">
-				<a href="/flaskforge" aria-label="Skyblock Forging Gemstone Calculator">
-					<div class="project-logo">
+			<div id="mainmenurightbox">
+                <div id="mainmenugeneralprojects">
+                    <div class="mainmenuproject">
+                        <a href="/taratormusic" title="TaratorMusic" aria-label="TaratorMusic">
+                            <div class="mainmenulanguage">JavaScript</div>
                             <picture>
-                            <source srcset="static/imageswebp/flaskforge.webp" type="image/webp">
-                            <img src="static/images/flaskforge.png" class="projectphoto" alt="Skyblock Forging Gemstone Calculator">
+                                <source srcset="static/imageswebp/taratormusic384.webp" type="image/webp">
+                                <img src="static/images/taratormusic384.png" alt="TaratorMusic"/>
+                            </picture>
+                            <div>TaratorMusic</div>
+                            <div class="mainmenunew">NEW!</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="https://github.com/Victiniiiii/gradecheckeronline" title="GradeChecker" aria-label="GradeChecker">
+                            <div class="mainmenulanguage">Python</div>
+                            <picture>
+                                <source srcset="static/imageswebp/gradechecker384.webp" type="image/webp">
+                                <img src="static/images/gradechecker384.png" alt="GradeChecker"/>
+                            </picture>
+                            <div>GradeChecker</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/ortalamator" title="Ortalamatör" aria-label="Ortalamatör">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/ortalamator384.webp" type="image/webp">
+                                <img src="static/images/ortalamator384.png" alt="Ortalamatör"/>
+                            </picture>
+                            <div>Ortalamatör</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/IzmirGuessr" title="IzmirGuessr" aria-label="IzmirGuessr">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/izmirguessr384.webp" type="image/webp">
+                                <img src="static/images/izmirguessr384.png" alt="IzmirGuessr"/>
+                            </picture>
+                            <div>IzmirGuessr</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="https://github.com/Victiniiiii/easycoordinategrabber" title="Coordinate Grabber" aria-label="Coordinate Grabber">
+                            <div class="mainmenulanguage">Python</div>
+                            <picture>
+                                <source srcset="static/imageswebp/coordinategrabber384.webp" type="image/webp">
+                                <img src="static/images/coordinategrabber384.png" alt="Coordinate Grabber"/>
+                            </picture>
+                            <div>Coordinate Grabber</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="https://github.com/Victiniiiii/skribbliohelper" title="Skribbl.io Helper" aria-label="Skribbl.io Helper">
+                            <div class="mainmenulanguage">Python</div>
+                            <picture>
+                                <source srcset="static/imageswebp/skribbliohelper384.webp" type="image/webp">
+                                <img src="static/images/skribbliohelper384.png" alt="Skribbl.io Helper"/>
+                            </picture>
+                            <div>Skribbl.io Helper</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a title="SushiReminder" aria-label="SushiReminder">
+                            <div class="mainmenunotready">Coming Soon...</div>
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/sushireminder384.webp" type="image/webp">
+                                <img src="static/images/sushireminder384.png" alt="SushiReminder"/>
+                            </picture>
+                            <div>SushiReminder</div>
+                        </a>
+                    </div>
+                </div>
+                <div id="mainmenuskyblockprojects">
+                    <div class="mainmenuproject">
+                        <a href="/npcbuybazaarsellflips" title="NPC Buy Bazaar Sell Flips" aria-label="NPC Buy Bazaar Sell Flips">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/npcbuybazaarsellflips384.webp" type="image/webp">
+                                <img src="static/images/npcbuybazaarsellflips384.png" alt="NPC Buy Bazaar Sell Flips"/>
+                            </picture>
+                            <div>NPC Buy Bazaar Sell Flips</div>
+                            <div class="mainmenunew">NEW!</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/bazaarbuynpcsellflips" title="Bazaar Buy NPC Sell Flips" aria-label="Bazaar Buy NPC Sell Flips">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/bazaarbuynpcsells384.webp" type="image/webp">
+                                <img src="static/images/bazaarbuynpcsells384.png" alt="Bazaar Buy NPC Sell Flips"/>
+                            </picture>
+                            <div>Bazaar Buy NPC Sell Flips</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/effectivehpcalculator" title="Effective HP Calculator" aria-label="Effective HP Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/effectivehpcalculator384.webp" type="image/webp">
+                                <img src="static/images/effectivehpcalculator384.png" alt="Effective HP Calculator"/>
+                            </picture>
+                            <div>Effective HP Calculator</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/fortunevspristinecalculator" title="Fortune - Pristine Comparer" aria-label="Fortune - Pristine Comparer">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/fortunevspristinecalculator384.webp" type="image/webp">
+                                <img src="static/images/fortunevspristinecalculator384.png" alt="Fortune - Pristine Comparer"/>
+                            </picture>
+                            <div>Fortune - Pristine Comparer</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/inferno" title="Inferno Minion Calculator" aria-label="Inferno Minion Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/inferno384.webp" type="image/webp">
+                                <img src="static/images/inferno384.png" alt="Inferno Minion Calculator"/>
+                            </picture>
+                            <div>Inferno Minion Calculator</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/compost" title="Compost Profit Calculator" aria-label="Compost Profit Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/compostcalculator384.webp" type="image/webp">
+                                <img src="static/images/compostcalculator384.png" alt="Compost Profit Calculator"/>
+                            </picture>
+                            <div>Compost Profit Calculator</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <a href="/flaskforge.html" title="Forging Gemstone Calculator" aria-label="Forging Gemstone Calculator">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/forgecalculator384.webp" type="image/webp">
+                                <img src="static/images/forgecalculator384.png" alt="Forging Gemstone Calculator"/>
+                            </picture>
+                            <div>Forging Gemstone Calculator</div>
+                        </a>
+                    </div>
+                    <div class="mainmenuproject">
+                        <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
+                        <picture>
+                            <source srcset="static/imageswebp/comingsoon384.webp" type="image/webp">
+                            <img src="static/images/comingsoon384.png" alt="Coming Soon"/>
                         </picture>
-					</div>
-				</a>
-				<div class="project-description">
-					<p class="project-description-text">Skyblock Forging Gemstone Calculator is made for Skyblock players to maximize their forge profits. Learn the best gemstone to forge with only one click!</p>
-				</div>
-			</div>
+                        <div>Shiny Pig Profit Calculator</div>
+                    </div>
+                    <div class="mainmenuproject">
+                        <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
+                        <picture>
+                            <source srcset="static/imageswebp/comingsoon384.webp" type="image/webp">
+                            <img src="static/images/comingsoon384.png" alt="Coming Soon"/>
+                        </picture>
+                        <div>Bobbin' Time Calculator</div>
+                    </div>
+                    <div class="mainmenuproject">
+                        <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
+                        <picture>
+                            <source srcset="static/imageswebp/comingsoon384.webp" type="image/webp">
+                            <img src="static/images/comingsoon384.png" alt="Coming Soon"/>
+                        </picture>
+                        <div>Chocolate Factory Calculator</div>
+                    </div>
+                    <div class="mainmenuproject">
+                        <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
+                        <picture>
+                            <source srcset="static/imageswebp/comingsoon384.webp" type="image/webp">
+                            <img src="static/images/comingsoon384.png" alt="Coming Soon"/>
+                        </picture>
+                        <div>Mineshaft Key Calculator</div>
+                    </div>
+                    <div class="mainmenuproject">
+                        <div class="mainmenunotready"></div>
+                        <div class="mainmenulanguage">JavaScript</div>
+                        <picture>
+                            <source srcset="static/imageswebp/comingsoon384.webp" type="image/webp">
+                            <img src="static/images/comingsoon384.png" alt="Coming Soon"/>
+                        </picture>
+                        <div>Alchemy 50 Calculator</div>
+                    </div>
+                </div>
+                <div id="mainmenuotherprojects">
+                    <div class="mainmenuproject">
+                        <a href="/bigoil" title="Payday 2 Big Oil Solver" aria-label="Payday 2 Big Oil Solver">
+                            <div class="mainmenulanguage">JavaScript</div>
+                            <picture>
+                                <source srcset="static/imageswebp/bigoilsolver384.webp" type="image/webp">
+                                <img src="static/images/bigoilsolver384.png" alt="Payday 2 Big Oil Solver"/>
+                            </picture>
+                            <div>Payday 2 Big Oil Solver</div>
+                        </a>
+                    </div>
+                </div>
+            </div>            
 		</div>
 	</body>
+    <script src="mainmenu.js"></script>
 </html>
