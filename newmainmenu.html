@@ -306,6 +306,10 @@
             * {
                 box-sizing: border-box;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-decoration: none;
+                text-align: center;
+                margin: 0;
+                padding: 0;
             }
 
             @keyframes fadeIn {
@@ -354,15 +358,16 @@
             }
 
             #mainmenuleftbox {
-                width: 15vw;
-                height: 80vh;
-                margin: 0 5vw 0 10vw;
+                width: 34vw;
+                height: 90vh;
+                margin: 0 5vw 0 1vw;
                 background-color: black;
                 display: flex;
                 flex-direction: column;
                 color: white;
                 border-radius: 3vw;
                 position: relative;
+                text-align: center;
             }
 
             #mainmenuleftbox::before {
@@ -387,28 +392,27 @@
                 animation: hotColors 3s infinite;
                 top: -1px;
                 left: -1px;
-                width: calc(60vw + 2px);
-                height: calc(80vh + 2px);
+                width: calc(100% + 2px);
+                height: calc(100% + 2px);
                 z-index: -1;
-                border-top-left-radius: 3vw;
                 border-bottom-left-radius: 3vw;
+                border-bottom-right-radius: 3vw;
             }
 
             #mainmenugeneralprojects,
             #mainmenuskyblockprojects,
             #mainmenuotherprojects {
-                width: 60vw;
-                height: 80vh;
-                margin: 0 10vw 0 0;
+                width: 59vw;
+                height: 90vh;
                 background-color: black;
                 padding: 2vw;
                 display: grid;
                 overflow-y: scroll;
-                grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(45vw, 1fr));
                 justify-content: center;
                 scroll-snap-type: y mandatory;
-                border-top-left-radius: 3vw;
                 border-bottom-left-radius: 3vw;
+                border-bottom-right-radius: 3vw;
                 overflow: auto;
                 scrollbar-width: none;
             }
@@ -422,12 +426,13 @@
             }
 
             #mainmenutabs {
-                width: 30vw;
+                width: 59vw;
                 height: 5vh;
-                margin: 7.5vh 0 0 50vw;
+                margin: 0.5vh 0 0 40vw;
                 display: flex;
                 justify-content: space-between;
                 margin-bottom: 0.1vh;
+                font-size: 4vw;
             }
 
             #mainmenuboxes {
@@ -436,7 +441,7 @@
             }
 
             .mainmenubutton {
-                width: 10vw;
+                width: calc(59vw / 3);
                 background-color: rgb(15, 15, 15, 1);
                 color: white;
                 cursor: pointer;
@@ -457,7 +462,7 @@
             }
 
             #skyblock, #skyblock::before {
-                margin: 0 0.1vw 0 0.1vw;
+                margin: 0 1px 0 1px;
             }
 
             #other, #other::before {
@@ -476,19 +481,19 @@
             }
 
             #mainmenupfp {
-                width: 10vw;
-                height: 10vw;
+                width: 30vw;
+                height: 30vw;
                 margin: 2.5vw 2.5vw 1vw 2.5vw;
                 border: 0.1vw solid white;
             }
 
             #mainmenupfp img {
-                width: 10vw;
-                height: 10vw;
+                width: 30vw;
+                height: 30vw;
             }
 
             .mainmenuline {
-                width: 13vw;
+                width: 30vw;
                 height: 9vh;
                 margin: 0.5vh 0.5vw 0vw 1.5vw;
                 text-align: left;
@@ -508,16 +513,17 @@
             }
 
             .mainmenuproject {
-                width: 20vw;
-                height: 30vh;
+                width: 53vw;
+                height: 40vh;
                 background-color: rgb(50, 50, 50, 1);
-                margin: 1vw 3vw 1vw 3vw;
+                margin: 1vh 1vw 1vh 1vw;
                 cursor: pointer;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
-                font-size: 1.2vw;
+                text-align: center;
+                font-size: 2.2vh;
                 animation: fadeIn 2s ease;
                 color: white;
-                border-radius: 2vw;
+                border-radius: 5vw;
                 position: relative;
                 z-index: 1;
                 overflow: hidden;
@@ -525,6 +531,8 @@
             }
 
             .mainmenuproject img {
+                width: 53vw;
+                height: 35vh;
                 transition: transform 0.3s ease;
             }
 
@@ -539,13 +547,14 @@
             }
 
             .mainmenunew {
-                width: 5vw;
-                height: 3vh;
+                width: 20vw;
+                height: 4vh;
                 position: absolute;
                 top: 0;
                 right: 0;
-                font-size: 2rem;
-                line-height: 2.8vh;
+                font-size: 6vw;
+                text-align: center;
+                line-height: 3vh;
                 background-color: rgb(255, 0, 0, 0.8);
                 border-bottom-left-radius: 1vw;
                 border: 2px solid white;
@@ -557,7 +566,6 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                font-size: 2rem;
                 border-bottom-right-radius: 1vw;
                 padding-left: 1vw;
                 line-height: 4vh;
@@ -569,8 +577,8 @@
             }
 
             .mainmenunotready {
-                width: 20vw;
-                height: 30.1vh;
+                width: 100%;
+                height: 41vh;
                 z-index: 2;
                 background-color: rgb(25, 25, 25, 0.85);
                 position: absolute;
@@ -905,7 +913,6 @@
             }
         });
 
-        // WEBP everything, insights 100%
         // mobil css
 
 	</script>
