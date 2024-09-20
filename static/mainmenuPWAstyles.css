@@ -107,7 +107,6 @@
         overflow-y: scroll;
         grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
         justify-content: center;
-        /*scroll-snap-type: y mandatory; TODO: Bunu mobilde yap*/
         border-top-left-radius: 3vw;
         border-bottom-left-radius: 3vw;
         overflow: auto;
