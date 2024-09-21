@@ -102,10 +102,11 @@
         height: 80svh;
         margin: 0 10vw 0 0;
         background-color: black;
-        padding: 2vw;
         display: grid;
         overflow-y: scroll;
-        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 2fr));
+        gap: 2vw 5vw;
+        padding: 2vw 0 0 5vw;
         justify-content: center;
         border-top-left-radius: 3vw;
         border-bottom-left-radius: 3vw;
@@ -212,7 +213,6 @@
         width: 20vw;
         height: 30svh;
         background-color: rgb(50, 50, 50, 1);
-        margin: 1vw 3vw 1vw 3vw;
         cursor: pointer;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: clamp(1vw,1.3vw,1.6vw);
@@ -530,7 +530,11 @@
     .mainmenuproject div {
         z-index: 3;
         color: white;
-        margin-top: -0.5svh;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 2svh;
+        line-height: 3svh;
     }
 
     .mainmenunew {
@@ -539,7 +543,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 6vw;
+        font-size: 5vw !important;
         text-align: center;
         line-height: 3svh;
         background-color: rgb(255, 0, 0, 0.8);
