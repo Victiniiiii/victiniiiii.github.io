@@ -1,6 +1,6 @@
 {
-    "name": "Ortalamator",
-    "short_name": "Ortalamator",
+    "name": "Ortalamatör",
+    "short_name": "Ortalamatör",
     "start_url": "/ortalamator.html",
     "display": "standalone",
     "background_color": "#a0a0a0",
