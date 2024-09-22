@@ -353,7 +353,7 @@ function getSemesterData(semester) {
 		case 6:
 			semesterData = [
 				{ id: "alan", subject: "(4) ALAN ARAŞTIRMALARI" },
-				{ id: "verii", subject: "(5) VERİ TABANI PROGRAMLAMA" },
+				{ id: "verii", subject: "(4) VERİ TABANI PROGRAMLAMA" },
 				{ id: "cassm", subject: "(4) COMPUTER AIDED SYSTEM SIMULATION AND MODELING" },
 				{ id: "carti", subject: "(4) C++ İLE PROGRAMLAMA" },
 				{ id: "skolas", subject: "(7) STOKASTİK SÜREÇLER" },
@@ -542,7 +542,7 @@ function calculateGPA() {
 		skolas: 7,
 		param: 6,
 		ornek: 6,
-		verii: 5,
+		verii: 4,
         secmeli2: 3,
 
 		zaman: 5,
