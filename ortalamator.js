@@ -341,7 +341,7 @@ function getSemesterData(semester) {
 			semesterData = [
 				{ id: "veri", subject: "(4) VERİ TABANI" },
 				{ id: "simu", subject: "(4) SIMULATION" },
-				{ id: "bulanik", subject: "(4) BULANIK OLASILIK VE İSTATİSTİK" },
+				{ id: "biyosta", subject: "(4) BİYOİSTATİSTİK" },
 				{ id: "olateo", subject: "(4) OLASILIK TEORİSİ" },
 				{ id: "katego", subject: "(4) KATEGORİK VERİ ANALİZİ" },
 				{ id: "regresyon", subject: "(7) REGRESSION ANALYSIS" },
@@ -527,7 +527,7 @@ function calculateGPA() {
 		mativ: 5,
 
 		veri: 4,
-		bulanik: 4,
+		biyosta: 4,
 		regresyon: 7,
 		arastir: 6,
 		isthazyaz: 6,
