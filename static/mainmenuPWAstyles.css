@@ -249,8 +249,8 @@
         position: absolute;
         top: 0;
         right: 0;
-        font-size: clamp(1vw,2.8svh,1.5vw);
-        line-height: 2.8svh;
+        font-size: clamp(1vw,2.5svh,1.5vw);
+        line-height: 2.7svh;
         background-color: rgb(255, 0, 0, 0.8);
         border-bottom-left-radius: 1vw;
         border: 2px solid white;
@@ -539,16 +539,17 @@
 
     .mainmenunew {
         width: 20vw;
-        height: 4svh;
+        height: 3svh;
         position: absolute;
         top: 0;
         right: 0;
         font-size: 5vw !important;
         text-align: center;
         line-height: 3svh;
+        padding: 0 0 0 2vw;
         background-color: rgb(255, 0, 0, 0.8);
-        border-bottom-left-radius: 1vw;
-        border: 2px solid white;
+        border-bottom-left-radius: 2vh;
+        border: 1px solid white;
     }
 
     .mainmenulanguage {
