@@ -245,16 +245,18 @@
     }
 
     .mainmenunew {
-        width: 5vw;
-        height: 3svh;
+        width: 13vw;
+        height: 6svh;
         position: absolute;
         top: 0;
         right: 0;
-        font-size: clamp(1vw,2.5svh,1.5vw);
-        line-height: 2.7svh;
-        background-color: rgb(255, 0, 0, 0.8);
+        font-size: clamp(1vw,1.25vw,1.5vw);
+        line-height: 2.8svh;
+        background-color: rgb(0, 0, 0, 0.8);
         border-bottom-left-radius: 1vw;
-        border: 2px solid white;
+        border-top-right-radius: 1vw;
+        border: 1px solid white;
+        padding: 0.1vh 1vw 0 1vw;
     }
 
     .mainmenulanguage {
@@ -502,7 +504,7 @@
 
     .mainmenuproject {
         width: 53vw;
-        height: 40svh;
+        height: 20svh;
         background-color: rgb(50, 50, 50, 1);
         margin: 1svh 1vw 1svh 1vw;
         cursor: pointer;
@@ -520,7 +522,7 @@
 
     .mainmenuproject img {
         width: 53vw;
-        height: 35svh;
+        height: 17svh;
         transition: transform 0.3s ease;
     }
 
@@ -528,29 +530,34 @@
         transform: scale(1.5);
     }
 
-    .mainmenuproject div {
+    .projectname {
         z-index: 3;
         color: white;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 2svh;
-        line-height: 3svh;
+        line-height: 2svh;
+        padding: 0 3vw 0 3vw;
+        text-align: center;
     }
 
     .mainmenunew {
-        width: 20vw;
-        height: 3svh;
+        width: 32vw;
+        height: 3.5svh;
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 5vw !important;
+        font-size: 3vw !important;
         text-align: center;
-        line-height: 3svh;
+        line-height: 3vw;
         padding: 0 0 0 2vw;
-        background-color: rgb(255, 0, 0, 0.8);
+        background-color: rgb(0, 0, 0, 0.8);
         border-bottom-left-radius: 2vh;
+        border-top-right-radius: 2vh;
         border: 1px solid white;
+        color: white;
+        padding: 0.25vh 2vw 0 2vw
     }
 
     .mainmenulanguage {
@@ -579,7 +586,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 2.5rem;
-        padding-bottom: 5svh;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-bottom: 20svh;
     }
 }
