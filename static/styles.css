@@ -135,7 +135,8 @@ a {
 }
 
 .placeholder-box {
-    background: white;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
     border: 0.1vw solid black;
     box-sizing: border-box;
     padding: 0.5vw;
