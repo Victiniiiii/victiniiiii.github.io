@@ -45,7 +45,7 @@ a {
 }
 
 .main-menu-text {
-    width: 50vw;
+    width: 100%;
     font-size: min(4vw,2svh);
     text-align: center;
     margin-left: 1vw;
