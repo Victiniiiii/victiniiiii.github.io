@@ -1202,12 +1202,14 @@ a {
     text-align: center;
   }
   .compostspreadsheetcategory {
-    width: calc(15vw - 2vh);
+    width: calc(17vw - 2vh);
     height: 4vh;
-    line-height: 4vh;
+    line-height: 2vw;
     text-align: center;
-    font-size: min(1vw,0.5vh);
-    border: min(0.2vw,0.1vh) solid black;
+    font-size: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(5px);
@@ -1270,8 +1272,8 @@ a {
     box-sizing: border-box;
   }
   .compostrectangle {
-    width: 80vw;
-    height: 80vh;
+    width: 90vw;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     margin-top: 2vh;
@@ -1284,20 +1286,23 @@ a {
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
   }
   .composttitletexts {
-    width: 40vw;
+    width: 45vw;
     height: 4vh;
-    line-height: 4vh;
-    font-size: min(2vw,1vh);
+    line-height: 1.5vh;
+    font-size: 1.5vh;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .compostinsiderectangle {
     display: flex;
     flex-direction: row;
-    width: 80vw;
+    width: 90vw;
   }
   .compostleftrightrectangle {
-    width: 40vw;
-    height: 70vh;
+    width: 45vw;
+    height: 41vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1308,14 +1313,14 @@ a {
     color: white;
   }
   .compostrow {
-    width: 35vw;
-    height: 10vh;
+    width: 40vw;
+    height: 5vh;
     margin-left: 2vw;
     margin-top: 2.5vh;
-    font-size: min(2.2vw,1.5vh);
+    font-size: 1.2vh;
   }
   .composttoprectangle {
-    width: 80vw;
+    width: 90vw;
     height: 4vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
@@ -1330,7 +1335,7 @@ a {
     color: white;
   }
   .composttopeconomic {
-    width: 80vw;
+    width: 90vw;
     height: 5vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
@@ -1345,7 +1350,7 @@ a {
     color: white;
   }
   .compostbottomrectangle {
-    width: 80vw;
+    width: 90vw;
     height: 6vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
@@ -1360,9 +1365,9 @@ a {
     color: white;
   }
   .compostupgraderectangle {
-    width: 80vw;
-    height: 148vh;
-    margin-bottom: 5vh;
+    width: 90vw;
+    height: 116vh;
+    margin-bottom: 4vh;
     margin-top: 2vh;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.4vw;
@@ -1370,11 +1375,12 @@ a {
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
     color: white;
+    border: 1px solid black;
   }
   .compostupgradetitle {
-    width: 80vw;
-    height: 10vh;
-    line-height: 10vh;
+    width: 90vw;
+    height: 5vh;
+    line-height: 5vh;
     box-sizing: border-box;
     border: min(0.1vw,0.2vh) solid black;
     text-align: center;
@@ -1387,7 +1393,7 @@ a {
     color: white;
   }
   .compostfaq {
-    width: 80vw;
+    width: 90vw;
     height: calc(80vh+80vw);
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
@@ -1402,7 +1408,7 @@ a {
     color: white;
   }
   .compostfaqtitletexts {
-    width: 80vw;
+    width: 90vw;
     height: 5vh;
     font-size: min(5vw,2.7vh);
     line-height: 5vh;
@@ -1410,7 +1416,7 @@ a {
     box-sizing: border-box;
   }
   .compostfaqinbox {
-    width: 80vw;
+    width: 90vw;
     height: calc(75vh+80vw);
     box-sizing: border-box;
     display: flex;
@@ -1423,12 +1429,12 @@ a {
     color: white;
   }
   .compostfaqtext {
-    width: 80vw;
-    height: 75vh;
+    width: 90vw;
+    height: 65vh;
     line-height: 4vh;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
-    font-size: min(2.7vw,1.4vh);
+    font-size: 1.5vh;
     padding: 2vw;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.4vw;
@@ -1436,10 +1442,11 @@ a {
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
     color: white;
+    text-align: center;
   }
   .compostfaqphoto {
-    width: 80vw;
-    height: 80vw;
+    width: 90vw;
+    height: 90vw;
     box-sizing: border-box;
     border: min(0.2vw,0.1vh) solid black;
     padding: 2vw;
@@ -1455,8 +1462,8 @@ a {
   }
   
   .upgraderow {
-    width: 80vw;
-    height: 5vh;
+    width: 90vw;
+    height: 4vh;
     display: flex;
     flex-direction: row;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1467,7 +1474,7 @@ a {
     color: white;
   }
   .upgraderowbig {
-    width: 80vw;
+    width: 90vw;
     height: 4vh;
     display: flex;
     flex-direction: row;
@@ -1479,11 +1486,14 @@ a {
     color: white;
   }
   .upgraderowmini {
-    width: 15vw;
-    height: 5vh;
-    line-height: 5vh;
+    display: flex;
+    justify-content: center;
+    width: 17vw;
+    height: 4vh;
+    line-height: 2.2vw;
+    padding: 1vw;
     text-align: center;
-    font-size: min(1.4vw,0.80vh);
+    font-size: 2.2vw;
     border: min(0.2vw,0.1vh) solid black;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.2);
@@ -1492,11 +1502,12 @@ a {
     backdrop-filter: blur(5px);
     box-shadow: 0 0.05vw 0.6vw rgba(0,0,0,0.25);
     color: white;
+    align-items: center;
   }
   .upgraderowministart {
     width: 5vw;
-    height: 5vh;
-    line-height: 5vh;
+    height: 4vh;
+    line-height: 4vh;
     text-align: center;
     font-size: min(2vw,1vh);
     border: min(0.2vw,0.1vh) solid black;
@@ -1524,14 +1535,14 @@ a {
   }
   
   .upgradeinputs {
-    width: 35vw;
-    height: 5vh;
+    width: 38vw;
+    height: 3vh;
     text-align: center;
-    font-size: min(2.7vw,1.3vh);
+    font-size: 2.2vw;
   }
   
   .spreadsheettotal {
-    width: 80vw;
+    width: 90vw;
     height: 3vh;
     line-height: 3vh;
     text-align: center;
@@ -1553,7 +1564,7 @@ a {
   }
   
   #profitbutton {
-    width: 12.5vw;
+    width: 22vw;
     height: 4vh;
     margin-left: 1vw;
     font-size: min(2.7vw,1.4vh);
@@ -1569,7 +1580,7 @@ a {
   
   .organicrow {
     width: 35vw;
-    height: 10vh;
+    height: 5vh;
     margin-left: 2vw;
     margin-top: 3vh;
     font-size: min(2.7vw,1.4vh);
@@ -1577,14 +1588,14 @@ a {
   
   .fuelrow {
     width: 35vw;
-    height: 15vh;
+    height: 8vh;
     margin-left: 2vw;
     margin-top: 6vh;
     font-size: min(3.7vw,1.9vh);
   }
   
   #economic1 {
-    width: 80vw;
+    width: 90vw;
     height: 5vh;
     line-height: 5vh;
     box-sizing: border-box;
