@@ -225,6 +225,7 @@
         overflow: hidden;
         scroll-snap-align: center;
         text-align: center;
+        margin: -1vh 0 3vh 0;
     }
 
     .mainmenuproject img {
