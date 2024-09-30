@@ -14,7 +14,14 @@
         }
 
         #settings {
-            margin-bottom: 8vh;
+            margin: 3vh 0 3vh 0;
+        }
+
+        .flexcolumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 	<body>
@@ -45,9 +52,11 @@
                                     <img src="static\images/Enchanted_Melon_Block_Small.png">
                                 </picture>
                             </div>
-                            <span class="toggle-label">Instasell</span>
-                            <div class="toggle-switch" data-id="1"></div>
-                            <span class="toggle-label">Sell Order</span>
+                            <div class="flexcolumn">
+                                <span class="toggle-label">Instasell</span>
+                                <div class="toggle-switch" data-id="1"></div>
+                                <span class="toggle-label">Sell Order</span>
+                            </div>
                         </div>
                         <div class="toggle-groupnames" id="prices1"></div>
                     </div>
@@ -60,9 +69,11 @@
                                     <img src="static\images/Fine_Ruby_Gemstone_Small.png">
                                 </picture>
                             </div>
-                            <span class="toggle-label">Instasell</span>
-                            <div class="toggle-switch" data-id="2"></div>
-                            <span class="toggle-label">Sell Order</span>
+                            <div class="flexcolumn">
+                                <span class="toggle-label">Instasell</span>
+                                <div class="toggle-switch" data-id="2"></div>
+                                <span class="toggle-label">Sell Order</span>
+                            </div>
                         </div>
                         <div class="toggle-groupnames" id="prices2"></div>
                     </div>
@@ -75,9 +86,11 @@
                                     <img src="static\images/Enchanted_Sulphur.png">
                                 </picture>
                             </div>
-                            <span class="toggle-label">Instasell</span>
-                            <div class="toggle-switch" data-id="3"></div>
-                            <span class="toggle-label">Sell Order</span>
+                            <div class="flexcolumn">
+                                <span class="toggle-label">Instasell</span>
+                                <div class="toggle-switch" data-id="3"></div>
+                                <span class="toggle-label">Sell Order</span>
+                            </div>                            
                         </div>
                         <div class="toggle-groupnames" id="prices3"></div>
                     </div>
