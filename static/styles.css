@@ -2262,14 +2262,16 @@ a {
 }
 
 .BbNsText {
+    display: flex;
     width: calc(80vw - 15vh);
     height: 15vh;
     text-align: center;
     font-size: 1.5rem;
-    line-height: 15vh;
+    justify-content: center;
+    align-items: center;
 }
 
-.BbNsPhoto {
+.BbNsPhoto img {
     width: 15vh;
     height: 15vh;
 }
