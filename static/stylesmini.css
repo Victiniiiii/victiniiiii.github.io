@@ -1737,8 +1737,8 @@ a {
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     background: rgba(0, 0, 0, 0.4);
@@ -1879,6 +1879,7 @@ a {
     border: 0.1vw solid white;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);  
+    text-align: center;
 }
 
 .infernodropratesrowsphotos {
@@ -1893,20 +1894,19 @@ a {
 
 .infernocraftingprofitsrow {
     width: 80vw;
-    height: 10vh;
+    height: 20vh;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .infernocraftingprofitsrowhalf {
-    width: 35vw;
+    width: calc(80vw - 7vh);
     height: 10vh;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
     padding: 1vw;
-    margin-bottom: 1vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     display: flex;
@@ -1916,8 +1916,8 @@ a {
 }
 
 .infernocraftingprofitsrowhalfphoto img {
-    width: 8px;
-    height: 8px;
+    width: 6vh;
+    height: 6vh;
 }
 
 .infernominioncraftingtiertextphoto img {
@@ -1926,13 +1926,12 @@ a {
 }
 
 .infernocraftingprofitsrowhalfphoto {
-    width: 5vw;
+    width: 7vh;
     height: 10vh;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     box-sizing: border-box;
     border: 0.1vw solid white;
-    margin-bottom: 1vh;
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     display: flex;
@@ -1953,6 +1952,7 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 3vw;
 }
 
 .infernominioncraftingtier {
@@ -1964,10 +1964,12 @@ a {
     justify-content: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    font-size: 0.9em;
 }
 
 .infernominioncraftingtiertext {
     margin-left: 2vw;
+    width: 70%;
 }
 
 .infernominioncraftingtiertextboxes {
