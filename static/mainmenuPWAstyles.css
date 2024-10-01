@@ -548,9 +548,9 @@
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 3vw !important;
+        font-size: 1.4vh !important;
         text-align: center;
-        line-height: 3vw;
+        line-height: 1.4vh;
         padding: 0 0 0 2vw;
         background-color: rgb(0, 0, 0, 0.8);
         border-bottom-left-radius: 2vh;
