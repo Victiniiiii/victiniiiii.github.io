@@ -10,13 +10,28 @@
 	</head>
     <style>
         #settings.expanded #toggle-container {
-            height: 85vh !important;
+            height: 84vh !important;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
         }
 
         #settings {
             margin-bottom: 4vh;
+        }
+
+        .inferno-savior {
+            display: flex;
+        }
+
+        @media (max-width: 767px) {
+            #settings {
+                margin-top: 2vh;
+            }
+            .inferno-savior {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
         }
     </style>
 	<body>

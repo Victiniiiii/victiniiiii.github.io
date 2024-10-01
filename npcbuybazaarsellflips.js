@@ -275,10 +275,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		sellOrderLabel.className = "toggle-label";
 		sellOrderLabel.textContent = "Sell Order";
 
+        const newDivThatIMadeUp = document.createElement("div");
+        newDivThatIMadeUp.className = "inferno-savior";
+
 		groupDiv.appendChild(imagePlaceholder);
-		groupDiv.appendChild(instasellLabel);
-		groupDiv.appendChild(toggleSwitch);
-		groupDiv.appendChild(sellOrderLabel);
+        groupDiv.appendChild(newDivThatIMadeUp);
+		newDivThatIMadeUp.appendChild(instasellLabel);
+		newDivThatIMadeUp.appendChild(toggleSwitch);
+		newDivThatIMadeUp.appendChild(sellOrderLabel);
 
 		const pricesDiv = document.createElement("div");
 		pricesDiv.className = "toggle-groupnames";
