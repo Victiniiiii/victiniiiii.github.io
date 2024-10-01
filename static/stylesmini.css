@@ -1675,8 +1675,8 @@ a {
 }
 
 .image-placeholder img {
-    width: 16px;
-    height: 16px;
+    width: 5vh;
+    height: 5vh;
 }
 
 .toggle-switch {
@@ -1687,6 +1687,8 @@ a {
     border-radius: 0.6vw;
     cursor: pointer;
     margin: 0 0.5vw;
+    transform: scale(2.5);
+    margin: 1vh 0 1vh 0;
 }
 
 .toggle-switch::before {
@@ -1729,7 +1731,7 @@ a {
 }
 
 .toggle-label {
-    font-size: 2.3vw;
+    font-size: 2vw;
 }
 
 .infernoprofit {
