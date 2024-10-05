@@ -2,19 +2,23 @@ let toggleStates;
 let itemsarray = [
     {
         "name": "Enchanted Melon Block",
-        "id" : "ENCHANTED_MELON_BLOCK"
+        "id" : "ENCHANTED_MELON_BLOCK",
+        "npc" : "51200"
     },
     {
         "name": "Fine Ruby Gemstone",
-        "id" : "FINE_RUBY_GEM"
+        "id" : "FINE_RUBY_GEM",
+        "npc" : "19200"
     },
     {
         "name": "Enchanted Sulphur",
-        "id" : "ENCHANTED_SULPHUR"
+        "id" : "ENCHANTED_SULPHUR",
+        "npc" : "1600"
     },
     {
         "name": "Enchanted Gold",
-        "id" : "ENCHANTED_GOLD"
+        "id" : "ENCHANTED_GOLD",
+        "npc" : "480"
     }
 ]
 
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("settings-bar").addEventListener("click", function () {
         document.getElementById("settings").classList.toggle("expanded");
     });
+    
     bazaarconnect();
 });
 
@@ -51,15 +56,11 @@ async function bazaarconnect() {
 	const response = await fetch("https://api.hypixel.net/v2/skyblock/bazaar");
 	const data = await response.json();
 
-    document.getElementById("prices1").innerHTML = format(data.products[itemsarray[0].id]?.quick_status[toggleStates[0] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
-    document.getElementById("prices2").innerHTML = format(data.products[itemsarray[1].id]?.quick_status[toggleStates[1] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
-    document.getElementById("prices3").innerHTML = format(data.products[itemsarray[2].id]?.quick_status[toggleStates[2] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
-    document.getElementById("prices4").innerHTML = format(data.products[itemsarray[3].id]?.quick_status[toggleStates[3] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
-
-    document.getElementById("BbNs1Text").innerHTML = `If you buy 3906 Enchanted Melon Blocks from the bazaar, and sell it to NPC, you will make ${format(199987200 - 3906 * data.products[`ENCHANTED_MELON_BLOCK`]?.quick_status[toggleStates[0] ? "buyPrice" : "sellPrice"].toFixed(0))} coins.`
-    document.getElementById("BbNs2Text").innerHTML = `If you buy 10416 Fine Ruby Gemstones from the bazaar, and sell it to NPC, you will make ${format(199987200 - 10416 * data.products[`FINE_RUBY_GEM`]?.quick_status[toggleStates[1] ? "buyPrice" : "sellPrice"].toFixed(0))} coins.`
-    document.getElementById("BbNs3Text").innerHTML = `If you buy 125000 Enchanted Sulphur from the bazaar, and sell it to NPC, you will make ${format(200000000 - 125000 * data.products[`ENCHANTED_SULPHUR`]?.quick_status[toggleStates[2] ? "buyPrice" : "sellPrice"].toFixed(0))} coins.`
-    document.getElementById("BbNs4Text").innerHTML = `If you buy 416666 Enchanted Gold from the bazaar, and sell it to NPC, you will make ${format(200000000 - 416666 * data.products[`ENCHANTED_GOLD`]?.quick_status[toggleStates[3] ? "buyPrice" : "sellPrice"].toFixed(0))} coins.`
+    for (i = 0; i < itemsarray.length; i++) {
+        let ableToSellCount = (200000000 / itemsarray[i].npc).toFixed(0);
+        document.getElementById(`prices${i+1}`).innerHTML = format(data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
+        document.getElementById(`BbNs${i+1}Text`).innerHTML = `If you buy ${ableToSellCount} ${itemsarray[i].name} from the bazaar, and sell it to NPC, you will make ${format(ableToSellCount * (itemsarray[i].npc - data.products[`${itemsarray[i].id}`]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"]).toFixed(0))} coins.`
+    }
 }
 
 function format(x) {
