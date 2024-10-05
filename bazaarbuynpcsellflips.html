@@ -10,34 +10,42 @@
 	</head>
     <style>
         #settings.expanded #toggle-container {
-            height: 12vh !important;            
+            height: 12vh !important;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);          
         }
 
         #settings {
             margin: 3vh 0 3vh 0;
         }
 
-        @media (max-width: 767px) {
-            .flexcolumn {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
+        .flexcolumn {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         @media (min-width: 768px) {
-            .flexcolumn {
+            .flexcolumn, #toggle-container, .inferno-savior {
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
-                align-items: center;
             }
         }
+
+        @media (max-width: 767px) {
+            .toggle-switch {
+                margin: 0.6vh 0 0.3vh 3vw;
+            }
+
+            .toggle-groupnames {
+                font-size: 0.8em;
+            }
+        }        
         
-        .image-placeholder img {
-            width: 38px;
-            height: 38px;
+        .image-placeholder img, .NbBsImage img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 	<body>
@@ -57,114 +65,7 @@
 		</header>
         <div id="settings">
             <div id="settings-bar">Press here to access the bazaar settings.</div>
-            <div id="toggle-container">
-                <div class="toggle-line">
-                    <div class="toggleitemnamerow">
-                        <div class="toggleitemname">Enchanted Melon Block</div>
-                        <div class="toggle-group">
-                            <div class="image-placeholder">
-                                <picture>
-                                    <source srcset="static\imageswebp/Enchanted_Melon_Block_Small.webp" type="image/webp">
-                                    <img src="static\images/Enchanted_Melon_Block_Small.png">
-                                </picture>
-                            </div>
-                            <div class="flexcolumn">
-                                <span class="toggle-label">Instasell</span>
-                                <div class="toggle-switch" data-id="1"></div>
-                                <span class="toggle-label">Sell Order</span>
-                            </div>
-                        </div>
-                        <div class="toggle-groupnames" id="prices1"></div>
-                    </div>
-                    <div class="toggleitemnamerow">
-                        <div class="toggleitemname">Fine Ruby Gemstone</div>
-                        <div class="toggle-group">                        
-                            <div class="image-placeholder">
-                                <picture>
-                                    <source srcset="static\imageswebp/Fine_Ruby_Gemstone_Small.webp" type="image/webp">
-                                    <img src="static\images/Fine_Ruby_Gemstone_Small.png">
-                                </picture>
-                            </div>
-                            <div class="flexcolumn">
-                                <span class="toggle-label">Instasell</span>
-                                <div class="toggle-switch" data-id="2"></div>
-                                <span class="toggle-label">Sell Order</span>
-                            </div>
-                        </div>
-                        <div class="toggle-groupnames" id="prices2"></div>
-                    </div>
-                    <div class="toggleitemnamerow">
-                        <div class="toggleitemname">Enchanted Sulphur</div>
-                        <div class="toggle-group">                        
-                            <div class="image-placeholder">
-                                <picture>
-                                    <source srcset="static\imageswebp/Enchanted_Sulphur.webp" type="image/webp">
-                                    <img src="static\images/Enchanted_Sulphur.png">
-                                </picture>
-                            </div>
-                            <div class="flexcolumn">
-                                <span class="toggle-label">Instasell</span>
-                                <div class="toggle-switch" data-id="3"></div>
-                                <span class="toggle-label">Sell Order</span>
-                            </div>                            
-                        </div>
-                        <div class="toggle-groupnames" id="prices3"></div>
-                    </div>
-                    <div class="toggleitemnamerow">
-                        <div class="toggleitemname">Enchanted Gold</div>
-                        <div class="toggle-group">                        
-                            <div class="image-placeholder">
-                                <picture>
-                                    <source srcset="static\imageswebp/Enchanted_Gold.webp" type="image/webp">
-                                    <img src="static\images/Enchanted_Gold.png">
-                                </picture>
-                            </div>
-                            <div class="flexcolumn">
-                                <span class="toggle-label">Instasell</span>
-                                <div class="toggle-switch" data-id="4"></div>
-                                <span class="toggle-label">Sell Order</span>
-                            </div>                            
-                        </div>
-                        <div class="toggle-groupnames" id="prices4"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bzbuynpcsellboxes">
-            <div id="BbNs1Photo" class="BbNsPhoto">
-                <picture>
-                    <source srcset="static\imageswebp/Enchanted_Melon_Block_140.webp" type="image/webp">
-                    <img src="static\images/Enchanted_Melon_Block_140.png">
-                </picture>
-            </div>
-            <div id="BbNs1Text" class="BbNsText"></div>
-        </div>
-        <div class="bzbuynpcsellboxes">
-            <div id="BbNs2Photo" class="BbNsPhoto">
-                <picture>
-                    <source srcset="static\imageswebp/Fine_Ruby_Gemstone_140.webp" type="image/webp">
-                    <img src="static\images/Fine_Ruby_Gemstone_140.png">
-                </picture>
-            </div>
-            <div id="BbNs2Text" class="BbNsText"></div>
-        </div>
-        <div class="bzbuynpcsellboxes">
-            <div id="BbNs3Photo" class="BbNsPhoto">
-                <picture>
-                    <source srcset="static\imageswebp/Enchanted_Sulphur_140.webp" type="image/webp">
-                    <img src="static\images/Enchanted_Sulphur_140.png">
-                </picture>
-            </div>
-            <div id="BbNs3Text" class="BbNsText"></div>
-        </div>
-        <div class="bzbuynpcsellboxes">
-            <div id="BbNs4Photo" class="BbNsPhoto">
-                <picture>
-                    <source srcset="static\imageswebp/Enchanted_Gold.webp" type="image/webp">
-                    <img src="static\images/Enchanted_Gold.png">
-                </picture>
-            </div>
-            <div id="BbNs4Text" class="BbNsText"></div>
+            <div id="toggle-container"></div>
         </div>
 	</body>
     <script src="bazaarbuynpcsellflips.js"></script>

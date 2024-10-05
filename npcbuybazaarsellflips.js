@@ -314,8 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-    const test = document.getElementById("NbBsSpace");
-
     for (let i = 0; i < itemsarray.length; i++) {
         const testtest = document.createElement("div");
         testtest.className = "NbBsBox";
@@ -330,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         const both = document.createElement("div");
 
-        test.appendChild(both)
+        document.body.appendChild(both)
         both.appendChild(test1);
         both.appendChild(testtest);    
     }
