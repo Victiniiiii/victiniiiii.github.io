@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     for (let i = 0; i < itemsarray.length; i++) {
-        const testtest = document.createElement("div");
-        testtest.className = "bzbuynpcsellboxes";
+        const theBox = document.createElement("div");
+        theBox.className = "bzbuynpcsellboxes";
 
         const bbnsImage = document.createElement("img");
         if (WebPSupport == 1) {
@@ -136,9 +136,9 @@ document.addEventListener("DOMContentLoaded", function () {
         bbnsText.id = `BbNs${i+1}Text`;
         bbnsText.className = "BbNsText";
         
-        testtest.appendChild(bbnsImage)
-        testtest.appendChild(bbnsText);
-        document.body.appendChild(testtest);    
+        theBox.appendChild(bbnsImage)
+        theBox.appendChild(bbnsText);
+        document.body.appendChild(theBox);    
     }
 
     bazaarconnect();

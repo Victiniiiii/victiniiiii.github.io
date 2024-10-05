@@ -314,23 +314,25 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-    for (let i = 0; i < itemsarray.length; i++) {
-        const testtest = document.createElement("div");
-        testtest.className = "NbBsBox";
-        testtest.id = `NbBsBox${i}`
+    const NbBsSpace = document.getElementById("NbBsSpace");
 
-        const test1 = document.createElement("img");
+    for (let i = 0; i < itemsarray.length; i++) {
+        const nbbsText = document.createElement("div");
+        nbbsText.className = "NbBsBox";
+        nbbsText.id = `NbBsBox${i}`
+
+        const nbbsImage = document.createElement("img");
         if (WebPSupport == 1) {
-            test1.src = `static/imageswebp/${itemsarray[i].image}.webp`
+            nbbsImage.src = `static/imageswebp/${itemsarray[i].image}.webp`
         } else {
-            test1.src = `static/images/${itemsarray[i].image}.png`
+            nbbsImage.src = `static/images/${itemsarray[i].image}.png`
         }
         
-        const both = document.createElement("div");
+        const theBox = document.createElement("div");
 
-        document.body.appendChild(both)
-        both.appendChild(test1);
-        both.appendChild(testtest);    
+        NbBsSpace.appendChild(theBox);
+        theBox.appendChild(nbbsImage);
+        theBox.appendChild(nbbsText);    
     }
 	bazaarconnect();
 });
