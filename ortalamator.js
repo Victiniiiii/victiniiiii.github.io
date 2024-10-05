@@ -680,15 +680,20 @@ function calculateGPA() {
 		}
 	}
 
-	var gpaYear1 = totalCreditsYear1 !== 0 ? (totalPointsYear1 / totalCreditsYear1).toFixed(2) : 0.0;
-	var gpaYear2 = totalCreditsYear2 !== 0 ? (totalPointsYear2 / totalCreditsYear2).toFixed(2) : 0.0;
-	var gpaYear3 = totalCreditsYear3 !== 0 ? (totalPointsYear3 / totalCreditsYear3).toFixed(2) : 0.0;
-	var gpaYear4 = totalCreditsYear4 !== 0 ? (totalPointsYear4 / totalCreditsYear4).toFixed(2) : 0.0;
+	var gpaYear1 = totalCreditsYear1 !== 0 ? (totalPointsYear1 / totalCreditsYear1).toFixed(2) : 0.00;
+	var gpaYear2 = totalCreditsYear2 !== 0 ? (totalPointsYear2 / totalCreditsYear2).toFixed(2) : 0.00;
+	var gpaYear3 = totalCreditsYear3 !== 0 ? (totalPointsYear3 / totalCreditsYear3).toFixed(2) : 0.00;
+	var gpaYear4 = totalCreditsYear4 !== 0 ? (totalPointsYear4 / totalCreditsYear4).toFixed(2) : 0.00;
 
-	document.getElementById("gpaYear1").innerText = gpaYear1;
-	document.getElementById("gpaYear2").innerText = gpaYear2;
-	document.getElementById("gpaYear3").innerText = gpaYear3;
-	document.getElementById("gpaYear4").innerText = gpaYear4;
+    let test1 = parseFloat(gpaYear1);
+    let test2 = parseFloat(gpaYear2);
+    let test3 = parseFloat(gpaYear3);
+    let test4 = parseFloat(gpaYear4);
+
+	document.getElementById("gpaYear1").innerText = test1.toFixed(2);
+	document.getElementById("gpaYear2").innerText = test2.toFixed(2);
+	document.getElementById("gpaYear3").innerText = test3.toFixed(2);
+	document.getElementById("gpaYear4").innerText = test4.toFixed(2);
 
 	return {
 		donem1ort: donem1ort,

@@ -44,11 +44,11 @@
         align-items: center;
         width: 100%;
         border: 0.2vw solid black;
-        margin-bottom: 0.9dvh;
+        margin-bottom: 0.9svh;
     }
 
     .main-menu-text {
-        font-size: min(2dvw,4dvh);
+        font-size: min(2dvw,4svh);
         text-align: center; 
         color: white;
         margin: 0;
@@ -63,8 +63,8 @@
 
     .main-menu-button {
         cursor: pointer;
-        width: 8dvh;
-        height: 8dvh;
+        width: 8svh;
+        height: 8svh;
         background-image: url("/static/imageswebp/vicinti3.webp"), url("/static/images/vicinti3.png");
     }
 
@@ -72,18 +72,18 @@
         background: white;
         border: 0.1vw solid black;
         
-        font-size: min(1dvw,2dvh);
+        font-size: min(1dvw,2svh);
         color: black;
         text-decoration: none;
-        padding: 0.3vw 2.5dvh;
+        padding: 0.3vw 2.5svh;
         cursor: pointer;
-        margin: 0.5vw 1dvh;
+        margin: 0.5vw 1svh;
         position: relative;
     }
 
     #buttonContainer {
         display: flex;
-        margin-top: 1.85dvh;
+        margin-top: 1.85svh;
         width: 80%;
         justify-content: space-between;
         background-color: rgba(0, 0, 0, 0.4);
@@ -100,9 +100,9 @@
 
     #rectangle {
         width: 80vw;
-        height: 80dvh;
+        height: 80svh;
         text-align: center;
-        padding: 1vw 1dvh;
+        padding: 1vw 1svh;
         position: relative;        
         color: white;
         border-bottom-left-radius: 1vw;
@@ -116,7 +116,7 @@
 
     #rectangle .lessonList li, #rectangle ul li {
         list-style-type: none;
-        margin-bottom: 1.2dvh;
+        margin-bottom: 1.2svh;
         color: white;
     }
 
@@ -148,8 +148,8 @@
     #result {
         display: none;
         font-size: 1.87dvw;
-        margin-top: 1.84dvh;
-        margin-bottom: 0.92dvh;
+        margin-top: 1.84svh;
+        margin-bottom: 0.92svh;
     }
 
     .noteInput {
@@ -158,8 +158,8 @@
         width: 60%;
         padding: 1.3vw;        
         margin: 0 auto;
-        margin-top: 2.77dvh;
-        margin-bottom: 2.77dvh;
+        margin-top: 2.77svh;
+        margin-bottom: 2.77svh;
         text-align: center;
     }
 
@@ -167,7 +167,7 @@
         display: flex;
         flex-direction: row;
         width: 40vw;
-        margin-top: 1.85dvh;
+        margin-top: 1.85svh;
         margin-left: auto;
         margin-right: auto;
     }
@@ -185,7 +185,7 @@
     }
 
     #examResultsText {
-        margin-top: 3.7dvh;
+        margin-top: 3.7svh;
         font-size: 1.87dvw;
     }
 
@@ -204,7 +204,7 @@
 
     .dropdown button {
         font-size: 1dvw;
-        padding: 0.52vw 0.92dvh;
+        padding: 0.52vw 0.92svh;
     }
 
     .dropdown-content {
@@ -288,7 +288,7 @@
         justify-content: space-between;
         align-items: center;
         justify-content: center;
-        margin-top: 2.5dvh;
+        margin-top: 2.5svh;
     }
 
     .semesterButton {
@@ -508,21 +508,20 @@
     .project-buttons {
         width: 40vw;
         display: flex;
-        align-items: center;
-        margin-left: auto;
+        align-items: flex-end;
         top: 0;
         right: 0;
     }
 
     .category-button {
         background: white;
-        border: 0.5vw solid black;
-        
+        border: 0.5vw solid black;        
         font-size: 2vw;
         color: black;
         padding: 1vw 1vh;
         cursor: pointer;
         margin: 1vw 1vh;
+        margin-left: auto;
         position: relative;
     }
 
@@ -539,9 +538,8 @@
 
     #rectangle {
         width: 100%;
-        height: 80vh;
-        text-align: center;
-        
+        height: 75vh;
+        text-align: center;        
         padding: 2.5vw;
         position: relative;
     }
@@ -579,7 +577,7 @@
     .noteInput {
         display: none;
         font-size: 9vw;
-        width: 60%;
+        width: 80%;
         padding: 6vw;
         margin: 0 auto;
         margin-top: 3vh;
@@ -591,7 +589,7 @@
         display: flex;
         flex-direction: row;
         width: 80vw;
-        margin-top: 1.85dvh;
+        margin-top: 1.85svh;
         margin-left: auto;
         margin-right: auto;
     }
@@ -687,7 +685,7 @@
         height: 5vh;
         display: flex;
         justify-content: flex-start;
-        margin-top: 52vh;
+        margin-top: 50vh;
     }
 
     .stat22Rectangle {
@@ -695,7 +693,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 3vw;
+        font-size: 2.5vw;
         border: 1px solid white;
         color: white;
         -webkit-backdrop-filter: blur(5px);
@@ -782,7 +780,7 @@
         justify-content: center;
         font-size: 4vw;
         background-color: transparent;
-        color: white;
+        color: orange;
         border: 5vh white;
         cursor: pointer;
     }
