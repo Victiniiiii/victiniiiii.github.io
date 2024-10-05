@@ -2274,8 +2274,9 @@ a {
 }
 
 .BbNsPhoto img {
-    width: 15vh;
-    height: 15vh;
+    width: 14vh;
+    height: 14vh;
+    margin: 1vh 0 1vh 2vh;
 }
 
 
