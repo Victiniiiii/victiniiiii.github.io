@@ -388,6 +388,10 @@ a {
     margin-bottom: 2svh;
 }
 
+.map-image img, .imagebigoil img {
+    width: 100%;
+    height: 100%;
+}
 
 
 

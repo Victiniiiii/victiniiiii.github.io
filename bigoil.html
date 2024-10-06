@@ -59,35 +59,52 @@
 					<br/>
 					<label> <input type="checkbox" id="cluePressure5812" class="clue"/> Pressure: 5812 </label>
 				</div>
-				<div class="map-image"></div>
+				<div class="map-image">
+                    <picture>
+                        <source srcset="/static/imageswebp/map.webp" type="image/webp">
+                        <img src="/static/images/map.png">
+                    </picture>
+                </div>
 			</div>
 		</div>
-
 		<div class="bigoilbigbox">
 			<div class="bigoilcontainer">
-				<div style="background-image: url('static/imageswebp/Nozzle.webp'), url('static/images/Nozzle.png')" class="imagebigoil"></div>
+				<div class="imagebigoil">
+                    <picture>
+                        <source srcset="/static/imageswebp/Nozzle.webp" type="image/webp">
+                        <img src="/static/images/Nozzle.png">
+                    </picture>
+                </div>
 				<div>
 					<h1 class="imagetext">An example of the 1 Nozzle clue found.</h1>
 				</div>
 			</div>
 			<div class="bigoilcontainer">
-				<div style="background-image: url('static/imageswebp/Element.webp'), url('static/images/Element.png')" class="imagebigoil"></div>
+				<div class="imagebigoil">
+                    <picture>
+                        <source srcset="/static/imageswebp/Element.webp" type="image/webp">
+                        <img src="/static/images/Element.png">
+                    </picture>
+                </div>
 				<div>
 					<h1 class="imagetext">Element Deuterium (D) written on a paper.</h1>
 				</div>
 			</div>
 			<div class="bigoilcontainer">
-				<div style="background-image: url('static/imageswebp/Pressure.webp'), url('static/images/Pressure.png')" class="imagebigoil"></div>
+				<div class="imagebigoil">
+                    <picture>
+                        <source srcset="/static/imageswebp/Pressure.webp" type="image/webp">
+                        <img src="/static/images/Pressure.png">
+                    </picture>
+                </div>
 				<div>
 					<h1 class="imagetext">Computer showing the value ≤5812.</h1>
 				</div>
 			</div>
 		</div>
-
 		<div class="faq-title">
 			<h2>Frequently Asked Questions (FAQ)</h2>
 		</div>
-
 		<div class="faq-content">
 			<p><strong>Q: What is Big Oil Engine Solver?</strong></p>
 			<p>A: Big Oil Engine Solver is a tool to help you solve the puzzle in the second day of Big Oil heist in the game Payday 2.</p>
@@ -102,7 +119,7 @@
 			<br/>
 
 			<p><strong>Q: The engine numbers on the image felt weird. Are they correct ?</strong></p>
-			<p>A: Yes, the engines are really in this order, ask the devs.</p>
+			<p>A: Yes, the engines are really in this order.</p>
 			<br/>
 
 			<p><strong>Q: Where are the clues ?</strong></p>
@@ -112,8 +129,6 @@
 			<p><strong>Q: Can I suggest improvements or report issues?</strong></p>
 			<p>A: Of course, you can check the communication menu to message with the app of your choice.</p>
 		</div>
-		<script src="bigoil.js">
-			toggleEngines();
-		</script>
+		<script src="bigoil.js"></script>
 	</body>
 </html>

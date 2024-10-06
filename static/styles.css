@@ -241,6 +241,7 @@ a {
     justify-content: center;
     margin: 0.68vw;
     padding: 0;
+    font-size: 1vw;
 }
 
 
@@ -279,14 +280,17 @@ a {
 }
 
 .map-image {
-    background-image: url("../static/imageswebp/map.webp"), url("../static/images/map.png") ;
-    padding: 1vw;
     color: black;
     background-color: white;
-    border: 0.05vw solid black;
+    border: 1px solid black;
     box-sizing: border-box;
     width: 32%;
     height: 65dvh;
+}
+
+.map-image img {
+    width: 100%;
+    height: 100%;
 }
 
 .engine-list {
@@ -378,6 +382,11 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.imagebigoil img {
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -751,7 +760,7 @@ a {
     position: absolute;
     z-index: 1111111;
     background-color: rgba(0, 0, 0, 0.8);
-    font-size: 3rem;
+    font-size: 2em;
     color: white;
     text-align: center;
     display: flex;
@@ -1210,7 +1219,7 @@ a {
 
 .compostprofit {
     margin-left: 2vw;
-    font-size: min(0.9vw,1.7vh);
+    font-size: 0.8vw;
     height: 3vh;
     line-height: 3vh;
     text-align: center;
@@ -1578,13 +1587,14 @@ a {
     width: 10vw;
     height: 4vh;
     margin-left: 1vw;
-    font-size: min(1.4vw,2.7vh);
+    font-size: 1vw;
     background: white;
     text-align: center;
-    border: min(0.1vw,0.2vh) solid black;
+    border: 1px solid black;
     box-sizing: border-box;
     cursor: pointer;
   }
+
   #profitbutton:hover {
     background-color: #cccccc;
   }
@@ -1684,6 +1694,11 @@ a {
     text-align: center;
     line-height: 2vw;
     margin: 1vw;
+}
+
+.image-placeholder img {
+    width: 2vw;
+    height: 2vw;
 }
 
 .toggle-switch {
@@ -2051,7 +2066,7 @@ a {
     transition: transform 0.4s ease-in-out;
 }
 
-.gallery img {
+.taratorbox img, .gallery img {
     width: 40vw;
     height: 25vw;
 } 
@@ -2088,7 +2103,7 @@ a {
 
 .taratorrectanglesleft, .taratorrectanglesright {
     width: 70vw;
-    height: 20vh;
+    height: auto;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -2169,7 +2184,7 @@ a {
 }
 
 #effectivehpoutput {
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     text-align: center;
 }
@@ -2199,7 +2214,8 @@ a {
     height: 5vh;
     box-sizing: border-box;
     border: 0.1vw solid white;
-    font-size: 2.1rem;
+    font-size: 1.7em;
+    line-height: 1.7em;
     text-align: center;
 }
 
