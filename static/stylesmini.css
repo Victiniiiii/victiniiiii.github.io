@@ -465,7 +465,7 @@ a {
     display: flex;
     flex-direction: row;
     width: 80vw;
-    margin-top: 1.85dvh;
+    margin-top: 1.85vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -756,8 +756,8 @@ a {
 
 .fullscreenmodal {
     width: 100vw;
-    top: 10vh;
-    height: 90vh;
+    top: 6vh;
+    height: 94vh;
     position: absolute;
     z-index: 1111111;
     background-color: rgba(0, 0, 0, 0.8);
@@ -770,7 +770,7 @@ a {
 }
 
 #gamemap {
-    width: 100dvw;
+    width: 100vw;
     height: 65svh;
     position: absolute;
     z-index: 1;
@@ -779,7 +779,7 @@ a {
 }
 
 #mini-map {
-    width: 100dvw;
+    width: 100vw;
     height: 30svh;
     z-index: 3;
     box-sizing: border-box;
@@ -788,7 +788,7 @@ a {
 .result-map {
     height: 35svh;
     width: 100%;
-    border: 0.05dvw solid black;
+    border: 0.05vw solid black;
     margin-bottom: 2svh;
     box-sizing: border-box;
 }
@@ -803,7 +803,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.05dvw solid black;
+    border: 0.05vw solid black;
     box-sizing: border-box;
 }
 
@@ -817,7 +817,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 0.05dvw solid black;
+    border: 0.05vw solid black;
     box-sizing: border-box;
 }
 
@@ -844,11 +844,11 @@ a {
     display: none;
     position: fixed;
     z-index: 1;
-    width: 100dvw;
+    width: 100vw;
     height: 50svh;
     margin-top: 20svh;
     overflow: auto;
-    border: 0.1dvw solid black;
+    border: 0.1vw solid black;
     box-sizing: border-box;
     justify-content: center;
     background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
@@ -860,13 +860,13 @@ a {
     display: none;
     position: absolute;
     z-index: 4;
-    width: 100dvw;
+    width: 100vw;
     height: 50svh;
     margin-top: 20svh;
     overflow: auto;
     background-color: #fefefe;
-    padding: 0.5dvw;
-    border: 0.1dvw solid black;
+    padding: 0.5vw;
+    border: 0.1vw solid black;
     justify-content: center;
     box-sizing: border-box;
     background-repeat: repeat;
@@ -877,9 +877,9 @@ a {
 .modalrow {
     display: flex;
     flex-direction: row;
-    width: 90dvw;
+    width: 90vw;
     height: 5svh;
-    margin-left: 5dvw;
+    margin-left: 5vw;
     justify-content: center;
     text-align: center;
     font-size: 2svh;
@@ -888,16 +888,16 @@ a {
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    border: 0.1dvw solid black;
+    border: 0.1vw solid black;
     align-items: center;
 }
 
 .finalrow {
     display: flex;
     flex-direction: row;
-    width: 90dvw;
+    width: 90vw;
     height: 5svh;
-    margin-left: 5dvw;
+    margin-left: 5vw;
     margin-top: 6svh;
     justify-content: center;
     text-align: center;
@@ -906,7 +906,7 @@ a {
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    border: 0.2dvw solid black;
+    border: 0.2vw solid black;
     align-items: center;
 }
 
@@ -936,7 +936,7 @@ a {
     height: 4svh;
     background-color: transparent;
     margin-top: 1.6svh;
-    font-size: 0.4dvw;
+    font-size: 0.4vw;
     z-index: 5;
     position: absolute;
     display: flex;
@@ -1025,15 +1025,15 @@ a {
 /* styles2.css */
 
 #map2 {
-    width: 100dvw;
+    width: 100vw;
     height: 50svh;
     display: block;
-    border: 0.5dvw solid black;
+    border: 0.5vw solid black;
     box-sizing: border-box;
 }
 
 .startpage {
-    width: 100dvw;
+    width: 100vw;
     height: 113svh;
     display: flex;
     flex-direction: column-reverse;
@@ -1042,17 +1042,17 @@ a {
 }
 
 .startpagelefthalf {
-    width: 100dvw;
+    width: 100vw;
     height: 50svh;
     box-sizing: border-box;
 }
 
 .faq-menu {
-    width: 100dvw;
+    width: 100vw;
     height: 50svh;
     display: none;
     background-color: white;
-    border: 0.25dvw solid black;
+    border: 0.25vw solid black;
     box-sizing: border-box;
 }
 
@@ -1061,34 +1061,34 @@ a {
 }
 
 .izmirfaqtext1 {
-    font-size: 4dvw;
+    font-size: 4vw;
     color: red;
 }
 
 .izmirfaqtext2 {
-    font-size: 8dvw;
+    font-size: 8vw;
 }
 
 .izmirfaqtext3 {
-    font-size: 2.8dvw;
+    font-size: 2.8vw;
     color: gray;
 }
 
 .startpagerighthalf {
-    width: 100dvw;
+    width: 100vw;
     height: 63svh;
     display: flex;
     flex-direction: column;
-    border: 0.5dvw solid black;
+    border: 0.5vw solid black;
     background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
     background-repeat: repeat;
     box-sizing: border-box;
 }
 
 .izmirgamelogo {
-    width: 97dvw;
-    height: 25dvw;
-    margin-left: 1dvw;
+    width: 97vw;
+    height: 25vw;
+    margin-left: 1vw;
     box-sizing: border-box;
     background-image: url("../static/imageswebp/izmirlogo.webp"), url("../static/images/izmirlogo.png");
     background-repeat: no-repeat;
@@ -1099,7 +1099,7 @@ a {
 }
 
 .izmirilcebox {
-    width: 100dvw;
+    width: 100vw;
     height: 40svh;
     align-items: center;
     box-sizing: border-box;
@@ -1108,8 +1108,8 @@ a {
 .highscore {
     display: flex;
     flex-direction: row;
-    font-size: 4dvw;
-    margin-left: 1.5dvw;
+    font-size: 4vw;
+    margin-left: 1.5vw;
     box-sizing: border-box;
 }
 
@@ -1117,15 +1117,15 @@ a {
     width: 50%;
     height: 100%;
     font-size: 2svh;
-    margin-left: 1dvw;
-    margin-right: 1dvw;
+    margin-left: 1vw;
+    margin-right: 1vw;
     box-sizing: border-box;
 }
 
 .izmirilcebuttons {
-    width: 100dvw;
+    width: 100vw;
     height: 35svh;
-    padding: 1dvw;
+    padding: 1vw;
     box-sizing: border-box;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -1136,7 +1136,7 @@ a {
 }
 
 .izmirilcebottombuttons {
-    width: 100dvw;
+    width: 100vw;
     height: 5svh;
     box-sizing: border-box;
     display: flex;
@@ -1147,21 +1147,21 @@ a {
 }
 
 .addremovebuttons {
-    font-size: 3dvw;
-    margin: 0.1dvw;
-    margin-left: 2dvw;
+    font-size: 3vw;
+    margin: 0.1vw;
+    margin-left: 2vw;
     box-sizing: border-box;
 }
 
 .ilcesayisi {
-    font-size: 4dvw;
-    margin-left: 10dvw;
+    font-size: 4vw;
+    margin-left: 10vw;
     text-align: center;
     box-sizing: border-box;
 }
 
 .izmirlastrows {
-    width: 100dvw;
+    width: 100vw;
     height: 6.06svh;
     box-sizing: border-box;
     display: flex;
@@ -1172,10 +1172,10 @@ a {
 }
 
 .izmirayarlar {
-    font-size: 4dvw;
-    margin-left: 1dvw;
-    margin-right: 10dvw;
-    padding: 2dvw;
+    font-size: 4vw;
+    margin-left: 1vw;
+    margin-right: 10vw;
+    padding: 2vw;
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
@@ -1184,14 +1184,14 @@ a {
 .izmirstartgame {
     width: 100%;
     height: 100%;
-    margin-left: 2dvw;
+    margin-left: 2vw;
     font-size: 2svh;
-    margin-right: 1dvw;
+    margin-right: 1vw;
     box-sizing: border-box;
 }
 
 #izmirtime {
-    font-size: 3dvw;
+    font-size: 3vw;
 }
 
 
@@ -2140,6 +2140,12 @@ a {
 .taratorrectanglesleft.visible, .taratorrectanglesright.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.literallyInvisibleBox {
+    width: 1px;
+    height: 2.5vh;
+    background-color: transparent;
 }
 
 

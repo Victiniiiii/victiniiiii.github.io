@@ -755,8 +755,8 @@ a {
 
 .fullscreenmodal {
     width: 100vw;
-    top: 10vh;
-    height: 90vh;
+    top: 8vh;
+    height: 92vh;
     position: absolute;
     z-index: 1111111;
     background-color: rgba(0, 0, 0, 0.8);
@@ -2135,6 +2135,12 @@ a {
 .taratorrectanglesleft.visible, .taratorrectanglesright.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.literallyInvisibleBox {
+    width: 1px;
+    height: 5vh;
+    background-color: transparent;
 }
 
 
