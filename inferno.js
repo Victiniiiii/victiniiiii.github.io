@@ -226,7 +226,7 @@ let itemsarray = [
     {
         name: "Power Crystal",
         id: "POWER_CRYSTAL",
-        image: "ENCHANTED_NETHER_STAR",
+        image: "Enchanted_Nether_Star",
         price: "0"
     },
     {

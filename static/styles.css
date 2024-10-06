@@ -1944,6 +1944,11 @@ a {
     align-items: center;
 }
 
+.infernocraftingprofitsrowhalfphoto img {
+    width: 4vw;
+    height: 4vw;
+}
+
 #infernominioncrafting {
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
