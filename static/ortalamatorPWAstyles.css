@@ -458,7 +458,7 @@
         align-items: center;        
         height: 100%;
         margin: 0;
-        height: 100vh;
+        height: 100svh;
         overflow: hidden;
         background: linear-gradient(45deg, #001f3f, #003366, #001f3f);
         background-size: 400% 400%;
@@ -479,25 +479,25 @@
         align-items: center;
         width: 100%;
         border: 0.5vw solid black;
-        margin-bottom: 0.1vh;
+        margin-bottom: 0.1svh;
     }
 
     .main-menu-button {
         cursor: pointer;
-        width: 6vh;
-        height: 6vh;
+        width: 6svh;
+        height: 6svh;
     }
 
     .title-section a div {
         background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
-        width: 6vh;
-        height: 6vh;
+        width: 6svh;
+        height: 6svh;
         background-size: contain;
     }
 
     .main-menu-text {
         width: 50vw;
-        font-size: min(4vw,2vh);
+        font-size: min(4vw,2svh);
         text-align: center;
         margin-left: 1vw;
         margin-right: 1vw;
@@ -518,16 +518,16 @@
         border: 0.5vw solid black;        
         font-size: 2vw;
         color: black;
-        padding: 1vw 1vh;
+        padding: 1vw 1svh;
         cursor: pointer;
-        margin: 1vw 1vh;
+        margin: 1vw 1svh;
         margin-left: auto;
         position: relative;
     }
 
     #buttonContainer {
         display: flex;
-        margin-top: 1.5vh;
+        margin-top: 1.5svh;
         width: 100%;
         justify-content: space-between;
     }
@@ -538,7 +538,7 @@
 
     #rectangle {
         width: 100%;
-        height: 75vh;
+        height: 75svh;
         text-align: center;        
         padding: 2.5vw;
         position: relative;
@@ -569,8 +569,8 @@
     #result {
         display: none;
         font-size: 9vw;
-        margin-top: 2.5vh;
-        margin-bottom: 1vh;
+        margin-top: 2.5svh;
+        margin-bottom: 1svh;
         color: white;
     }
 
@@ -580,8 +580,8 @@
         width: 80%;
         padding: 6vw;
         margin: 0 auto;
-        margin-top: 3vh;
-        margin-bottom: 3vh;
+        margin-top: 3svh;
+        margin-bottom: 3svh;
         text-align: center;
     }
 
@@ -607,7 +607,7 @@
     }
 
     #examResultsText {
-        margin-top: 4vh;
+        margin-top: 4svh;
         font-size: 7vw;
         color: white;
     }
@@ -667,25 +667,25 @@
 
     .stat22RectanglesContainer {
         width: 95vw;
-        height: 5vh;
+        height: 5svh;
         display: flex;
         justify-content: flex-start;    
     }
 
     .stat22RectanglesContainer2 {
         width: 95vw;
-        height: 5vh;
+        height: 5svh;
         display: flex;
         justify-content: flex-start;
-        margin-top: 2vh;
+        margin-top: 2svh;
     }
 
     .stat22RectanglesContainer3 {
         width: 95vw;
-        height: 5vh;
+        height: 5svh;
         display: flex;
         justify-content: flex-start;
-        margin-top: 50vh;
+        margin-top: 50svh;
     }
 
     .stat22Rectangle {
@@ -704,10 +704,10 @@
         display: flex;
         flex-wrap: wrap;
         width: 95vw;
-        height: 7vh;
+        height: 7svh;
         justify-content: space-between;
         align-items: center;
-        margin-top: 1vh;
+        margin-top: 1svh;
         background-color: rgba(0, 0, 0, 0.4);
     }
 
@@ -781,7 +781,7 @@
         font-size: 4vw;
         background-color: transparent;
         color: orange;
-        border: 5vh white;
+        border: 5svh white;
         cursor: pointer;
     }
 
@@ -800,7 +800,7 @@
 
     #rectangle .lessonList li, #rectangle ul li {
         list-style-type: none;
-        margin-bottom: 1vh;
+        margin-bottom: 1svh;
     }
 
     .custom-dropdown {
@@ -821,7 +821,7 @@
     .custom-dropdown-content a {
         color: black;
         padding: 5px 10px;
-        font-size: min(3.5vw,1.75vh);
+        font-size: min(3.5vw,1.75svh);
         text-decoration: none;
         display: block;
     }
@@ -841,7 +841,7 @@
     .custom-submenu-content {
         display: none;
         position: absolute;
-        font-size: min(3.5vw,1.75vh);
+        font-size: min(3.5vw,1.75svh);
         left: 100%;
         top: 0;
         background-color: #f9f9f9;
@@ -869,6 +869,6 @@
         background-size: 10px 10px;
         z-index: 0;
         pointer-events: none;
-        clip-path: polygon(0 7vh, 100% 7vh, 100% 100%, 0 100%);
+        clip-path: polygon(0 7svh, 100% 7svh, 100% 100%, 0 100%);
     }
 }
