@@ -3177,7 +3177,7 @@ function getRandomLocation() {
 
 function loadGoogleMapsAPI(callback) {
 	const script = document.createElement("script");
-	script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDIc-tC24A24jPxe7ZFfMs_lTN-BQErFzs&libraries=places&v=weekly&callback=${callback}`;
+	script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4&libraries=places&v=weekly&callback=${callback}`;
 	document.body.appendChild(script);
 }
 
