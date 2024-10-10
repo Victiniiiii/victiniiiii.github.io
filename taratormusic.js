@@ -1,34 +1,3 @@
-let currentIndex = 0;
-
-function showImage(index) {
-    const gallery = document.querySelector('.gallery');
-    const images = document.querySelectorAll('.gallery img');
-    const imageWidth = images[0].clientWidth;
-    gallery.style.transform = `translateX(${-index * imageWidth}px)`;
-}
-
-function prevImage() {
-    const images = document.querySelectorAll('.gallery img');
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = images.length - 1;
-    }
-    showImage(currentIndex);
-}
-
-function nextImage() {
-    const images = document.querySelectorAll('.gallery img');
-    if (currentIndex < images.length - 1) {
-        currentIndex++;
-    } else {
-        currentIndex = 0;
-    }
-    showImage(currentIndex);
-}
-
-window.addEventListener('resize', () => showImage(currentIndex));
-
 document.addEventListener("DOMContentLoaded", function() {
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
@@ -41,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handleScroll() {
-        const elements = document.querySelectorAll('.taratorrectanglesleft, .taratorrectanglesright');
+        const elements = document.querySelectorAll('.taratortextbox, .taratorflexbox1 img, .taratorflexbox2 img');
         elements.forEach((el) => {
             if (isElementInViewport(el)) {
                 el.classList.add('visible');
