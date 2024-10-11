@@ -3313,7 +3313,7 @@ function calculatePoints(distance) {
 }
 
 function displayResults(distance, points) {
-	if (roundCount >= 1 && roundCount <= 5) {
+	if (roundCount >= 0 && roundCount < 5) {
         roundPoints[roundCount] = parseInt(points);        
     }    
 
