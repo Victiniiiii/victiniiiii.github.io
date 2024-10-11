@@ -1,13 +1,16 @@
 // Game Points:
+
 let roundPoints = [0,0,0,0,0];
 let guessedCoordinates = [0,0,0,0,0];
 let actualCoordinates = [0,0,0,0,0];
 let totalPoints = 0;
 
+
 // Loading Highscore:
 
 let highscore = localStorage.getItem("highscore") ? parseInt(localStorage.getItem("highscore")) : 0;
 document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+
 
 // Game Settings:
 
@@ -16,6 +19,8 @@ const initialLon = 27.398601;
 const initialZoom = 9;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 60; // TODO: Remove
+let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4";
+
 
 // HTML Elements:
 
@@ -31,6 +36,7 @@ const faqButton = document.getElementById("izmirfaq");
 const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
+
 
 // Game Elements:
 
@@ -50,24 +56,27 @@ const map2 = L.map("map2", {
 }).setView([initialLat, initialLon], initialZoom);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "� OpenStreetMap contributors" }).addTo(map2);
 
+
+// Functions:
+
 function isPointInPolygon(point, polygon) {
-	var x = point[0],
+	let x = point[0],
 		y = point[1];
-	var inside = false;
-	for (var i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-		var xi = polygon[i][0],
+	let inside = false;
+	for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+		let xi = polygon[i][0],
 			yi = polygon[i][1];
-		var xj = polygon[j][0],
+		let xj = polygon[j][0],
 			yj = polygon[j][1];
-		var intersect = yi > y != yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+		let intersect = yi > y != yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
 		if (intersect) inside = !inside;
 	}
 	return inside;
 }
 
 function shuffleArray(array) {
-	for (var i = array.length - 1; i > 0; i--) {
-		var j = Math.floor(Math.random() * (i + 1));
+	for (let i = array.length - 1; i > 0; i--) {
+		let j = Math.floor(Math.random() * (i + 1));
 		[array[i], array[j]] = [array[j], array[i]];
 	}
 	return array;
@@ -140,21 +149,21 @@ function formatlama() {
 }
 
 function getRandomLocation() {
-	var polygon = formatlama();
+	let polygon = formatlama();
 
-	var minX = polygon[0][0];
-	var maxX = polygon[0][0];
-	var minY = polygon[0][1];
-	var maxY = polygon[0][1];
-	for (var i = 1; i < polygon.length; i++) {
+	let minX = polygon[0][0];
+	let maxX = polygon[0][0];
+	let minY = polygon[0][1];
+	let maxY = polygon[0][1];
+	for (let i = 1; i < polygon.length; i++) {
 		minX = Math.min(minX, polygon[i][0]);
 		maxX = Math.max(maxX, polygon[i][0]);
 		minY = Math.min(minY, polygon[i][1]);
 		maxY = Math.max(maxY, polygon[i][1]);
 	}
 
-	var lat;
-	var lng;
+	let lat;
+	let lng;
 	do {
 		lat = Math.random() * (maxX - minX) + minX;
 		lng = Math.random() * (maxY - minY) + minY;
@@ -165,7 +174,7 @@ function getRandomLocation() {
 
 function loadGoogleMapsAPI(callback) {
 	const script = document.createElement("script");
-	script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4&libraries=places&v=weekly&callback=${callback}`;
+	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=${callback}`;
 	document.body.appendChild(script);
 }
 
@@ -601,7 +610,6 @@ overlayContainer.addEventListener("mouseenter", function () {
 overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
-
 
 faqButton.addEventListener("click", function () {
 	faqMenu.classList.toggle("show");
