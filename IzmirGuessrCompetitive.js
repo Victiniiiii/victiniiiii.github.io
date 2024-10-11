@@ -241,7 +241,7 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Guessed Location",
-                        icon: "static/images/red.png"   
+                        icon: "static/images/redpin.png"   
 					});
 				});
 
@@ -255,7 +255,7 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Original Location",
-                        icon: "static/images/magentapin.png"
+                        icon: "static/images/greenpin.png"
 					});
 				});
 
@@ -396,14 +396,14 @@ function displayResults(distance, points) {
                 position: guessedCoordinates[i],
                 map: resultMap,
                 title: `Guessed Location ${i + 1}`,
-                icon: "static/images/redpin.png",
+                icon: `static/images/redpin${i + 1}.png`,
             });
 
             new google.maps.Marker({
                 position: actualCoordinates[i],
                 map: resultMap,
                 title: `Actual Location ${i + 1}`,
-                icon: "static/images/greenpin.png",
+                icon: `static/images/greenpin${i + 1}.png`,
             });
 
             const line = new google.maps.Polyline({
