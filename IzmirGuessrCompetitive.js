@@ -251,8 +251,10 @@ function initMap() {
 
 				confirmButton.addEventListener("click", function () {
 					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
-
 					const points = calculatePoints(distance);
+
+                    guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
+                    actualCoordinates[roundCount] = randomLocation;
 
 					displayResults(distance, points);
 				});
