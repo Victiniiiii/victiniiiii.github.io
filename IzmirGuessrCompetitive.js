@@ -3157,7 +3157,7 @@ function initMap() {
 		randomLocation = getRandomLocation();
 
 		startPage.style.display = "none";
-		gamemap.style.display = "block";
+		document.getElementById("gamemap").style.display = "block";
 		returnButton.style.display = "block";
 		overlayContainer.style.display = "block";
 		buttonrow.style.display = "flex";
@@ -3427,7 +3427,7 @@ function returnToMainMenu() {
 	finalgoruntulendimi = "false";
 
 	startPage.style.display = "flex";
-	gamemap.style.display = "none";
+	document.getElementById("gamemap").style.display = "none";
 	returnButton.style.display = "none";
 	modaltogglebutton.style.display = "none";
 	overlayContainer.style.display = "none";
