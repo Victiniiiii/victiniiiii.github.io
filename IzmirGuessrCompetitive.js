@@ -3343,9 +3343,7 @@ function displayResults(distance, points) {
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
 
-    for (i = 0; i < 5; i++) {
-        totalPoints += roundPoints[i]
-    }
+    totalPoints += roundPoints[roundCount];
 
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
