@@ -241,6 +241,7 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Guessed Location",
+                        icon: "static/images/bluepin.png"
 					});
 				});
 
@@ -254,6 +255,7 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Original Location",
+                        icon: "static/images/magentapin.png"
 					});
 				});
 
@@ -385,35 +387,33 @@ function displayResults(distance, points) {
         const line = new google.maps.Polyline({
             path: lineCoordinates,
             geodesic: true,
-            strokeColor: "#FF0000", // red
+            strokeColor: "#FF0000", // Red
             strokeOpacity: 1.0,
             strokeWeight: 2,
         });
     
         line.setMap(resultMap);	
     } else {
+        const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]
         for (let i = 0; i < 5; i++) {
-            // Create a marker for the guessed location
             new google.maps.Marker({
                 position: guessedCoordinates[i],
                 map: resultMap,
                 title: `Guessed Location ${i + 1}`,
-                icon: "static/images/redpin.png", // Different icon for guessed locations
+                icon: "static/images/redpin.png",
             });
 
-            // Create a marker for the actual location
             new google.maps.Marker({
                 position: actualCoordinates[i],
                 map: resultMap,
                 title: `Actual Location ${i + 1}`,
-                icon: "static/images/bluepin.png", // Different icon for actual locations
+                icon: "static/images/greenpin.png",
             });
 
-            // Draw a line between the guessed and actual locations
             const line = new google.maps.Polyline({
                 path: [guessedCoordinates[i], actualCoordinates[i]],
                 geodesic: true,
-                strokeColor: getLineColor(i), // A function to determine color based on index
+                strokeColor: colors[i],
                 strokeOpacity: 1.0,
                 strokeWeight: 2,
             });
@@ -421,12 +421,6 @@ function displayResults(distance, points) {
             line.setMap(resultMap);
         }        
     }	
-}
-
-// Helper function to get line color based on index
-function getLineColor(index) {
-    const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]; // Example colors for lines
-    return colors[index % colors.length]; // Cycle through colors
 }
 
 function getZoomLevel(distance) {
