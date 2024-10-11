@@ -3209,6 +3209,8 @@ function initMap() {
 			zoom: 14,
 			streetViewControl: false,
 			addressControl: false,
+            motionTracking: false,
+            motionTrackingControl: false,
 		});
 
 		const streetViewService = new google.maps.StreetViewService();
@@ -3221,6 +3223,8 @@ function initMap() {
 					zoom: 1,
 					addressControl: false,
 					streetViewControl: false,
+                    motionTracking: false,
+                    motionTrackingControl: false,
 				});
 
 				gamemap.setStreetView(panorama);
@@ -3232,6 +3236,8 @@ function initMap() {
 					streetViewControl: false,
 					mapTypeControl: false,
 					clickableIcons: false,
+                    motionTracking: false,
+                    motionTrackingControl: false,
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
@@ -3329,6 +3335,8 @@ function returnToStart() {
 		zoom: 14,
 		streetViewControl: false,
 		addressControl: false,
+        motionTracking: false,
+        motionTrackingControl: false,
 	});
 
 	const streetViewService = new google.maps.StreetViewService();
@@ -3341,6 +3349,8 @@ function returnToStart() {
 				zoom: 1,
 				streetViewControl: false,
 				addressControl: false,
+                motionTracking: false,
+                motionTrackingControl: false,
 			});
 
 			gamemap.setStreetView(panorama);
@@ -3397,6 +3407,8 @@ function displayResults(distance, points) {
 		streetViewControl: false,
 		mapTypeControl: false,
 		clickableIcons: false,
+        motionTracking: false,
+        motionTrackingControl: false,
 	});
 
 	new google.maps.Marker({
