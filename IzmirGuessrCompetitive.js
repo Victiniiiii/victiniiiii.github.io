@@ -50,11 +50,15 @@ let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 const map2 = L.map("map2", {
-	maxZoom: 11,
-	minZoom: 9,
-	maxBounds: [[39.444306, 28.559917], [37.808722, 26.203444]], // (North, East, South, West)
+    maxZoom: 11, minZoom: 9,
+    maxBounds: [[39.444306, 28.559917], [37.808722, 26.203444]], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "� OpenStreetMap contributors" }).addTo(map2);
+
+L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+    attribution: '© OpenStreetMap contributors © CartoDB',
+    subdomains: 'abcd',
+    maxZoom: 19
+}).addTo(map2);
 
 
 // Functions:
