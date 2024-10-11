@@ -327,8 +327,8 @@ function calculatePoints(distance) {
 
 function displayResults(distance, points) {
 	if (roundCount >= 1 && roundCount <= 5) {
-        roundScores[roundCount] = parseInt(points);
-    }
+        window[`round${roundCount}Score`] = parseInt(points);
+    }    
 
 	if (totalPoints > highscore) {
 		highscore = totalPoints;
