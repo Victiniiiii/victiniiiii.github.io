@@ -3234,11 +3234,12 @@ function initMap() {
                     actualCoordinates[roundCount] = event.latlng;
 				});
 
-                function confirmButtonEvent() {
+                document.getElementById("action-button").onclick = function() {
                     const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
 					const points = calculatePoints(distance);
 					displayResults(distance, points);
-                }
+                };
+                
 			} else {
 				initializeMapWithRandomLocation();
 			}
