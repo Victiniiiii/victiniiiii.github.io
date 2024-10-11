@@ -3313,7 +3313,9 @@ function calculatePoints(distance) {
 
 function displayResults(distance, points) {
 	if (roundCount < 4) {
-        roundPoints[roundCount] = parseInt(points);        
+        roundPoints[roundCount] = parseInt(points);
+        totalPoints += roundPoints[roundCount];
+        console.log("test")
     }    
 
 	if (totalPoints > highscore) {
@@ -3340,9 +3342,7 @@ function displayResults(distance, points) {
 	guessedLocationMarker.setMap(resultMap);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
-
-    totalPoints += roundPoints[roundCount];
+	document.getElementById("points-info").textContent = `Points Earned: ${points}`;    
 
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
