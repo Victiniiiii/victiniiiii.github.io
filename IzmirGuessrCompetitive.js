@@ -336,62 +336,97 @@ function calculatePoints(distance) {
 }
 
 function displayResults(distance, points) {
+    pauseTimer();
+    document.getElementById("gamemap").style.opacity = "1";
     roundPoints[roundCount] = parseInt(points);
     totalPoints += roundPoints[roundCount];
 
-	if (totalPoints > highscore) {
-		highscore = totalPoints;
-		localStorage.setItem("highscore", highscore);
-	}
+    if (totalPoints > highscore) {
+        highscore = totalPoints;
+        localStorage.setItem("highscore", highscore);
+    }
 
-	document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+    document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+    document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
+    document.getElementById("points-info").textContent = `Points Earned: ${points}`;    
+    document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
+    document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
-	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
-		center: randomLocation,
-		zoom: getZoomLevel(distance),
-		streetViewControl: false,
-		mapTypeControl: false,
-		clickableIcons: false,
-	});
+    document.getElementById("result-modal").style.display = "block";
+    document.getElementById("overlay-container").style.display = "none";
+    document.getElementById("modaltoggle-button").style.display = "block";
 
-	new google.maps.Marker({
-		position: randomLocation,
-		map: resultMap,
-		title: "Correct Answer",
-		icon: "static/images/greenpin.png",
-	});
+    const resultMap = new google.maps.Map(document.getElementById("result-map"), {
+        center: randomLocation,
+        zoom: getZoomLevel(distance),
+        streetViewControl: false,
+        mapTypeControl: false,
+        clickableIcons: false,
+    });
 
-	guessedLocationMarker.setMap(resultMap);
+    if (roundCount < 4) {
+        new google.maps.Marker({
+            position: randomLocation,
+            map: resultMap,
+            title: "Correct Answer",
+            icon: "static/images/greenpin.png",
+        });
+    
+        guessedLocationMarker.setMap(resultMap);
+        const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
+    
+        guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
+        actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
+    
+        const lineCoordinates = [
+            guessedCoordinates[roundCount], actualCoordinates[roundCount]
+        ];
+    
+        const line = new google.maps.Polyline({
+            path: lineCoordinates,
+            geodesic: true,
+            strokeColor: "#FF0000", // red
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+        });
+    
+        line.setMap(resultMap);	
+    } else {
+        for (let i = 0; i < 5; i++) {
+            // Create a marker for the guessed location
+            new google.maps.Marker({
+                position: guessedCoordinates[i],
+                map: resultMap,
+                title: `Guessed Location ${i + 1}`,
+                icon: "static/images/redpin.png", // Different icon for guessed locations
+            });
 
-	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-	document.getElementById("points-info").textContent = `Points Earned: ${points}`;    
-	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
-	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
+            // Create a marker for the actual location
+            new google.maps.Marker({
+                position: actualCoordinates[i],
+                map: resultMap,
+                title: `Actual Location ${i + 1}`,
+                icon: "static/images/bluepin.png", // Different icon for actual locations
+            });
 
-	document.getElementById("result-modal").style.display = "block";
-	document.getElementById("overlay-container").style.display = "none";
-	document.getElementById("modaltoggle-button").style.display = "block";
-	pauseTimer();
+            // Draw a line between the guessed and actual locations
+            const line = new google.maps.Polyline({
+                path: [guessedCoordinates[i], actualCoordinates[i]],
+                geodesic: true,
+                strokeColor: getLineColor(i), // A function to determine color based on index
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            });
 
-	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
+            line.setMap(resultMap);
+        }        
+    }	
+}
 
-    guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng }
-    actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng }
-
-	const lineCoordinates = [
-		guessedCoordinates[roundCount], actualCoordinates[roundCount]
-	];
-
-	const line = new google.maps.Polyline({
-		path: lineCoordinates,
-		geodesic: true,
-		strokeColor: "#FF0000", // red
-		strokeOpacity: 1.0,
-		strokeWeight: 2,
-	});
-
-	line.setMap(resultMap);
-	document.getElementById("gamemap").style.opacity = "1";
+// Helper function to get line color based on index
+function getLineColor(index) {
+    const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]; // Example colors for lines
+    return colors[index % colors.length]; // Cycle through colors
 }
 
 function getZoomLevel(distance) {
