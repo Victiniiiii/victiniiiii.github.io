@@ -258,9 +258,12 @@ function initMap() {
 				});
 
                 document.getElementById("action-button").onclick = function() {
-                    const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
-                    const points = calculatePoints(distance);
+                    guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
+                    actualCoordinates[roundCount] = randomLocation;
                     
+                    let distance = google.maps.geometry.spherical.computeDistanceBetween(guessedCoordinates[roundCount], actualCoordinates[roundCount]);
+                    let points = calculatePoints(distance);
+
                     guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
                     actualCoordinates[roundCount] = randomLocation;
 					
