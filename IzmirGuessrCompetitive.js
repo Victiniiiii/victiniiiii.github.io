@@ -2998,8 +2998,7 @@ document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
 const initialLat = 38.609979;
 const initialLon = 27.398601;
 const initialZoom = 9;
-const roundsPerGame = 5;
-let roundCount = 1; // The round we are currently at
+let roundCount = 0; // The round we are currently at
 let timerSeconds = 60; // Pre-selected timer
 
 let guessedLocationMarker;
@@ -3248,7 +3247,7 @@ function initMap() {
 }
 
 function toggleModal() {
-	if (roundCount >= 1 && roundCount <= 4) {
+	if (roundCount < 4) {
 		if (resultModal.style.display === "block") {
 			resultModal.style.display = "none";
 		} else {
@@ -3256,7 +3255,7 @@ function toggleModal() {
 		}
 	}
 
-	if (roundCount === 5) {
+	if (roundCount == 4) {
 		if (resultModal.style.display === "block") {
 			resultModal.style.display = "none";
 			finalresultsmodal.style.display = "none";
@@ -3313,7 +3312,7 @@ function calculatePoints(distance) {
 }
 
 function displayResults(distance, points) {
-	if (roundCount >= 0 && roundCount < 5) {
+	if (roundCount < 4) {
         roundPoints[roundCount] = parseInt(points);        
     }    
 
@@ -3401,7 +3400,7 @@ function getZoomLevel(distance) {
 }
 
 function playAgain() {
-	roundCount = 1;
+	roundCount = 0;
 	totalPoints = 0;
 
     for (i = 0; i < 5; i++) {
@@ -3415,7 +3414,7 @@ function playAgain() {
 }
 
 function returnToMainMenu() {
-	roundCount = 1;
+	roundCount = 0;
 	totalPoints = 0;
 
 	for (i = 0; i < 5; i++) {
@@ -3444,7 +3443,7 @@ function startGame() {
 }
 
 function startNextGame() {
-	if (roundCount % roundsPerGame === 0) {
+	if (roundCount == 4) {
 		document.getElementById("final-results-modal").style.display = "block";
 		finalgoruntulendimi = "true";
 		document.getElementById("overlay-container").style.display = "none";
