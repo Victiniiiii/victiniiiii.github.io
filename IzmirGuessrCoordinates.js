@@ -1,4 +1,4 @@
-export const districtsData = [
+const districtsData = [
 	{
 		name: "Cesme",
 		state: 1,
