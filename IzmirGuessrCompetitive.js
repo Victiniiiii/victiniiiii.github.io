@@ -3216,6 +3216,8 @@ function initMap() {
 						map: minimap,
 						title: "Guessed Location",
 					});
+
+                    guessedCoordinates[roundCount] = event.latlng;
 				});
 
 				google.maps.event.addListener(gamemap, "click", function (event) {
@@ -3228,18 +3230,15 @@ function initMap() {
 						map: minimap,
 						title: "Original Location",
 					});
+
+                    actualCoordinates[roundCount] = event.latlng;
 				});
 
-				confirmButton.addEventListener("click", function () {
-					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
+                function confirmButtonEvent() {
+                    const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
 					const points = calculatePoints(distance);
-
-                    guessedCoordinates[roundCount] = guessedLocationMarker.position;
-                    actualCoordinates[roundCount] = randomLocation;
-                    console.log("Guessed:", guessedLocationMarker.getPosition(), "Actual: ", randomLocation);
-
 					displayResults(distance, points);
-				});
+                }
 			} else {
 				initializeMapWithRandomLocation();
 			}
