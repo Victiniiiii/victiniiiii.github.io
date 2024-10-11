@@ -19,7 +19,7 @@ const initialLon = 27.398601;
 const initialZoom = 9;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 60; // TODO: Remove
-let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4";
+let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 
 // HTML Elements:
@@ -52,7 +52,7 @@ const districtLayers = [];
 const map2 = L.map("map2", {
 	maxZoom: 11,
 	minZoom: 9,
-	maxBounds: [[39.444306, 28.559917], [37.808722, 26.203444]], // (north, east, south, west)
+	maxBounds: [[39.444306, 28.559917], [37.808722, 26.203444]], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "� OpenStreetMap contributors" }).addTo(map2);
 
@@ -197,6 +197,7 @@ function initMap() {
 		if (roundTimer) {
 			clearInterval(roundTimer);
 		}
+
 		timerSeconds = getSecondsFromTimeLimit(selectedTimeLimit);
 		roundTimer = setInterval(updateTimer, 1000);
 		updateTimerDisplay();
@@ -209,7 +210,6 @@ function initMap() {
 		});
 
 		const streetViewService = new google.maps.StreetViewService();
-
 		streetViewService.getPanorama({ location: randomLocation, radius: 50 }, function (data, status) {
 			if (status === "OK") {
 				const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
@@ -232,6 +232,7 @@ function initMap() {
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
+
 					if (guessedLocationMarker) {
 						guessedLocationMarker.setMap(null);
 					}
@@ -246,6 +247,7 @@ function initMap() {
 				});
 
 				google.maps.event.addListener(gamemap, "click", function (event) {
+
 					if (guessedLocationMarker) {
 						guessedLocationMarker.setMap(null);
 					}
@@ -306,7 +308,6 @@ function returnToStart() {
 	});
 
 	const streetViewService = new google.maps.StreetViewService();
-
 	streetViewService.getPanorama({ location: randomLocation, radius: 50 }, function (data, status) {
 		if (status === "OK") {
 			const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
@@ -346,6 +347,7 @@ function displayResults(distance, points) {
 		highscore = totalPoints;
 		localStorage.setItem("highscore", highscore);
 	}
+
 	document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
 
 	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
@@ -429,7 +431,6 @@ function playAgain() {
     roundPoints = [0,0,0,0,0];
     guessedCoordinates = [0,0,0,0,0];
     actualCoordinates = [0,0,0,0,0];
-
 	finalgoruntulendimi = "false";
 
 	initMap();
@@ -442,17 +443,17 @@ function returnToMainMenu() {
     roundPoints = [0,0,0,0,0];
     guessedCoordinates = [0,0,0,0,0];
     actualCoordinates = [0,0,0,0,0];
-
 	finalgoruntulendimi = "false";
 
-	startPage.style.display = "flex";
-	document.getElementById("gamemap").style.display = "none";
+	startPage.style.display = "flex";	
 	returnButton.style.display = "none";
 	modaltogglebutton.style.display = "none";
 	overlayContainer.style.display = "none";
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
+    document.getElementById("gamemap").style.display = "none";
+
 	L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "� OpenStreetMap contributors" }).addTo(map2);
 	pauseTimer();
 }
@@ -482,9 +483,7 @@ function startNextGame() {
 
 function addAllDistricts() {
 	const buttons = document.querySelectorAll(".ilcebutton");
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "green";
-	});
+	buttons.forEach((button) => { button.style.backgroundColor = "green"; });
 	districtLayers.forEach((district) => {
 		district.layer.setStyle({ fill: true, color: "green" });
 		district.state = 1;
