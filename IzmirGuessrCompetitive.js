@@ -1,17 +1,15 @@
 import { districtsData } from './IzmirGuessrCoordinates.js';
 
+// Game Points:
+const roundPoints = [0,0,0,0,0];
+const guessedCoordinates = [0,0,0,0,0];
+const actualCoordinates = [0,0,0,0,0];
+
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
 let roundCount = 1;
 const roundsPerGame = 5;
-//const roundPoints = [];
-const guessedCoordinates = [];
-let round1Score = 0;
-let round2Score = 0;
-let round3Score = 0;
-let round4Score = 0;
-let round5Score = 0;
 let totalPoints = 0;
 const initialLat = 38.609979;
 const initialLon = 27.398601;
@@ -327,7 +325,7 @@ function calculatePoints(distance) {
 
 function displayResults(distance, points) {
 	if (roundCount >= 1 && roundCount <= 5) {
-        window[`round${roundCount}Score`] = parseInt(points);
+        roundPoints[roundCount] = parseInt(points);        
     }    
 
 	if (totalPoints > highscore) {
@@ -352,12 +350,13 @@ function displayResults(distance, points) {
 	});
 
 	guessedLocationMarker.setMap(resultMap);
-	//roundPoints.push(parseInt(points));
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
 
-	totalPoints = round1Score + round2Score + round3Score + round4Score + round5Score;
+    for (i = 0; i < 5; i++) {
+        totalPoints += roundPoints[i]
+    }
 
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
@@ -418,11 +417,10 @@ function playAgain() {
 	roundCount = 1;
 	totalPoints = 0;
 
-	round1Score = 0;
-	round2Score = 0;
-	round3Score = 0;
-	round4Score = 0;
-	round5Score = 0;
+    for (i = 0; i < 5; i++) {
+        roundPoints[i] = 0
+    }
+
 	finalgoruntulendimi = "false";
 
 	initMap();
@@ -433,11 +431,10 @@ function returnToMainMenu() {
 	roundCount = 1;
 	totalPoints = 0;
 
-	round1Score = 0;
-	round2Score = 0;
-	round3Score = 0;
-	round4Score = 0;
-	round5Score = 0;
+	for (i = 0; i < 5; i++) {
+        roundPoints[i] = 0
+    }
+
 	finalgoruntulendimi = "false";
 
 	startPage.style.display = "flex";
