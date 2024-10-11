@@ -293,10 +293,12 @@ function initMap() {
 			streetViewControl: false,
 			addressControl: false,
             styles: darkModeStyleinGoogleMaps,
+            motionTracking: false,
+            motionTrackingControl: false,
 		});
 
 		const streetViewService = new google.maps.StreetViewService();
-		streetViewService.getPanorama({ location: randomLocation, radius: 50 }, function (data, status) {
+		streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
 			if (status === "OK") {
 				const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
 					position: randomLocation,
@@ -305,6 +307,8 @@ function initMap() {
 					addressControl: false,
 					streetViewControl: false,
                     styles: darkModeStyleinGoogleMaps,
+                    motionTracking: false,
+                    motionTrackingControl: false,
 				});
 
 				gamemap.setStreetView(panorama);
@@ -316,7 +320,9 @@ function initMap() {
 					streetViewControl: false,
 					mapTypeControl: false,
 					clickableIcons: false,
-                    styles: darkModeStyleinGoogleMaps,         
+                    styles: darkModeStyleinGoogleMaps,
+                    motionTracking: false,
+                    motionTrackingControl: false,      
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
@@ -392,10 +398,12 @@ function returnToStart() {
 		streetViewControl: false,
 		addressControl: false,
         styles: darkModeStyleinGoogleMaps,
+        motionTracking: false,
+        motionTrackingControl: false,
 	});
 
 	const streetViewService = new google.maps.StreetViewService();
-	streetViewService.getPanorama({ location: randomLocation, radius: 50 }, function (data, status) {
+	streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
 		if (status === "OK") {
 			const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
 				position: randomLocation,
@@ -404,6 +412,8 @@ function returnToStart() {
 				streetViewControl: false,
 				addressControl: false,
                 styles: darkModeStyleinGoogleMaps,
+                motionTracking: false,
+                motionTrackingControl: false,
 			});
 
 			gamemap.setStreetView(panorama);
@@ -455,6 +465,8 @@ function displayResults(distance, points) {
         mapTypeControl: false,
         clickableIcons: false,
         styles: darkModeStyleinGoogleMaps,
+        motionTracking: false,
+        motionTrackingControl: false,
     });
 
     guessedLocationMarker.setMap(resultMap);
