@@ -27,6 +27,9 @@ const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
 const confirmButton = document.getElementById("action-button");
+const faqButton = document.getElementById("izmirfaq");
+const faqMenu = document.getElementById("faq-menu");
+const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -599,9 +602,6 @@ overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
 
-const faqButton = document.getElementById("izmirfaq");
-const faqMenu = document.getElementById("faq-menu");
-const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 
 faqButton.addEventListener("click", function () {
 	faqMenu.classList.toggle("show");
@@ -629,6 +629,3 @@ function loadSelectedTimeLimit() {
 
 document.getElementById("izmirtime").addEventListener("change", saveSelectedTimeLimit);
 window.addEventListener("load", loadSelectedTimeLimit);
-
-buttonrow.style.display = "none";
-gamemap.style.display = "none";
