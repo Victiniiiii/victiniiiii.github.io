@@ -296,6 +296,7 @@ function initMap() {
             motionTracking: false,
             motionTrackingControl: false,
             zoomControl: false,
+            showRoadLabels: false,
 		});
 
 		const streetViewService = new google.maps.StreetViewService();
@@ -311,6 +312,7 @@ function initMap() {
                     motionTracking: false,
                     motionTrackingControl: false,
                     zoomControl: false,
+                    showRoadLabels: false,
 				});
 
 				gamemap.setStreetView(panorama);
@@ -325,7 +327,8 @@ function initMap() {
                     styles: darkModeStyleinGoogleMaps,
                     motionTracking: false,
                     motionTrackingControl: false,
-                    zoomControl: false,   
+                    zoomControl: false,
+                    showRoadLabels: false,
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
@@ -404,6 +407,7 @@ function returnToStart() {
         motionTracking: false,
         motionTrackingControl: false,
         zoomControl: false,
+        showRoadLabels: false,
 	});
 
 	const streetViewService = new google.maps.StreetViewService();
@@ -419,6 +423,7 @@ function returnToStart() {
                 motionTracking: false,
                 motionTrackingControl: false,
                 zoomControl: false,
+                showRoadLabels: false,
 			});
 
 			gamemap.setStreetView(panorama);
@@ -473,6 +478,7 @@ function displayResults(distance, points) {
         motionTracking: false,
         motionTrackingControl: false,
         zoomControl: false,
+        showRoadLabels: false,
     });
 
     guessedLocationMarker.setMap(resultMap);
