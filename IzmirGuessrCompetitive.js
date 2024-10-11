@@ -3013,15 +3013,15 @@ const initiallyGreenDistricts = [];
 const districtLayers = [];
 
 const startPage = document.getElementById("startpage");
-const gamemap = document.getElementById("gamemap");
+
 const returnButton = document.getElementById("returnbutton");
 const modaltogglebutton = document.getElementById("modaltoggle-button");
 const overlayContainer = document.getElementById("overlay-container");
 const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
-const mapContainer = document.getElementById("gamemap");
 const resultModal = document.getElementById("result-modal");
 const confirmButton = document.getElementById("action-button");
+let gamemap = document.getElementById("gamemap");
 
 const map2 = L.map("map2", {
 	maxZoom: 11,
@@ -3157,7 +3157,7 @@ function initMap() {
 		randomLocation = getRandomLocation();
 
 		startPage.style.display = "none";
-		mapContainer.style.display = "block";
+		gamemap.style.display = "block";
 		returnButton.style.display = "block";
 		overlayContainer.style.display = "block";
 		buttonrow.style.display = "flex";
@@ -3427,7 +3427,7 @@ function returnToMainMenu() {
 	finalgoruntulendimi = "false";
 
 	startPage.style.display = "flex";
-	mapContainer.style.display = "none";
+	gamemap.style.display = "none";
 	returnButton.style.display = "none";
 	modaltogglebutton.style.display = "none";
 	overlayContainer.style.display = "none";
