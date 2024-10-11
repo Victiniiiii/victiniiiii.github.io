@@ -254,19 +254,12 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Original Location",
-					});                    
+					});
 				});
 
                 document.getElementById("action-button").onclick = function() {
-                    guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
-                    actualCoordinates[roundCount] = randomLocation;
-                    
-                    let distance = google.maps.geometry.spherical.computeDistanceBetween(guessedCoordinates[roundCount], actualCoordinates[roundCount]);
-                    let points = calculatePoints(distance);
-
-                    guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
-                    actualCoordinates[roundCount] = randomLocation;
-					
+                    const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
+					const points = calculatePoints(distance);
 					displayResults(distance, points);
                 };
 
@@ -372,7 +365,6 @@ function displayResults(distance, points) {
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;    
-
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
@@ -383,9 +375,11 @@ function displayResults(distance, points) {
 
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
 
+    guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng }
+    actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng }
+
 	const lineCoordinates = [
-		{ lat: guessedLatLng.lat, lng: guessedLatLng.lng },
-		{ lat: randomLocation.lat, lng: randomLocation.lng },
+		guessedCoordinates[roundCount], actualCoordinates[roundCount]
 	];
 
 	const line = new google.maps.Polyline({
