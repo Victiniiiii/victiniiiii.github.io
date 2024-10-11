@@ -5,7 +5,8 @@ let randomLocation;
 let minimap;
 let roundCount = 1;
 const roundsPerGame = 5;
-const roundPoints = [];
+//const roundPoints = [];
+const guessedCoordinates = [];
 let round1Score = 0;
 let round2Score = 0;
 let round3Score = 0;
@@ -21,7 +22,6 @@ let selectedTimeLimit = "No Time Limit";
 let isTimerPaused = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
-const formattedBounds = [];
 let finalgoruntulendimi = "false";
 
 let startPage = document.getElementById("startpage");
@@ -261,31 +261,7 @@ function initMap() {
 }
 
 function toggleModal() {
-	if (roundCount === 1) {
-		if (resultModal.style.display === "block") {
-			resultModal.style.display = "none";
-		} else {
-			resultModal.style.display = "block";
-		}
-	}
-
-	if (roundCount === 2) {
-		if (resultModal.style.display === "block") {
-			resultModal.style.display = "none";
-		} else {
-			resultModal.style.display = "block";
-		}
-	}
-
-	if (roundCount === 3) {
-		if (resultModal.style.display === "block") {
-			resultModal.style.display = "none";
-		} else {
-			resultModal.style.display = "block";
-		}
-	}
-
-	if (roundCount === 4) {
+	if (roundCount >= 1 && roundCount <= 4) {
 		if (resultModal.style.display === "block") {
 			resultModal.style.display = "none";
 		} else {
@@ -350,25 +326,9 @@ function calculatePoints(distance) {
 }
 
 function displayResults(distance, points) {
-	switch (roundCount) {
-		case 1:
-			round1Score = parseInt(points);
-			break;
-		case 2:
-			round2Score = parseInt(points);
-			break;
-		case 3:
-			round3Score = parseInt(points);
-			break;
-		case 4:
-			round4Score = parseInt(points);
-			break;
-		case 5:
-			round5Score = parseInt(points);
-			break;
-		default:
-			break;
-	}
+	if (roundCount >= 1 && roundCount <= 5) {
+        roundScores[roundCount] = parseInt(points);
+    }
 
 	if (totalPoints > highscore) {
 		highscore = totalPoints;
@@ -392,7 +352,7 @@ function displayResults(distance, points) {
 	});
 
 	guessedLocationMarker.setMap(resultMap);
-	roundPoints.push(parseInt(points));
+	//roundPoints.push(parseInt(points));
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
