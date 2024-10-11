@@ -39,7 +39,7 @@ const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
 const mapContainer = document.getElementById("gamemap");
 const resultModal = document.getElementById("result-modal");
-
+const confirmButton = document.getElementById("action-button");
 
 const map2 = L.map("map2", {
 	maxZoom: 11,
@@ -247,14 +247,13 @@ function initMap() {
 					});
 				});
 
-				const confirmButton = document.getElementById("action-button");
-
 				confirmButton.addEventListener("click", function () {
 					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
 					const points = calculatePoints(distance);
 
                     guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
                     actualCoordinates[roundCount] = randomLocation;
+                    console.log("Guessed:", guessedLocationMarker.getPosition(), "Actual: ", randomLocation);
 
 					displayResults(distance, points);
 				});
