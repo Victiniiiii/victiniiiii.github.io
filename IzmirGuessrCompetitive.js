@@ -1,9 +1,9 @@
 import { districtsData } from './IzmirGuessrCoordinates.js';
 
 // Game Points:
-const roundPoints = [0,0,0,0,0];
-const guessedCoordinates = [0,0,0,0,0];
-const actualCoordinates = [0,0,0,0,0];
+let roundPoints = [0,0,0,0,0];
+let guessedCoordinates = [0,0,0,0,0];
+let actualCoordinates = [0,0,0,0,0];
 let totalPoints = 0;
 
 // Loading Highscore:
