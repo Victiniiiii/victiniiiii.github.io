@@ -3152,7 +3152,9 @@ function loadGoogleMapsAPI(callback) {
 }
 
 function initMap() {
+    console.log("1")
 	function initializeMapWithRandomLocation() {
+        console.log("2")
 		randomLocation = getRandomLocation();
 
 		startPage.style.display = "none";
@@ -3232,7 +3234,7 @@ function initMap() {
 					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
 					const points = calculatePoints(distance);
 
-                    guessedCoordinates[roundCount] = guessedLocationMarker.getPosition();
+                    guessedCoordinates[roundCount] = guessedLocationMarker.position;
                     actualCoordinates[roundCount] = randomLocation;
                     console.log("Guessed:", guessedLocationMarker.getPosition(), "Actual: ", randomLocation);
 
@@ -3402,10 +3404,9 @@ function getZoomLevel(distance) {
 function playAgain() {
 	roundCount = 0;
 	totalPoints = 0;
-
-    for (i = 0; i < 5; i++) {
-        roundPoints[i] = 0
-    }
+    roundPoints = [0,0,0,0,0];
+    guessedCoordinates = [0,0,0,0,0];
+    actualCoordinates = [0,0,0,0,0];
 
 	finalgoruntulendimi = "false";
 
@@ -3416,10 +3417,9 @@ function playAgain() {
 function returnToMainMenu() {
 	roundCount = 0;
 	totalPoints = 0;
-
-	for (i = 0; i < 5; i++) {
-        roundPoints[i] = 0
-    }
+    roundPoints = [0,0,0,0,0];
+    guessedCoordinates = [0,0,0,0,0];
+    actualCoordinates = [0,0,0,0,0];
 
 	finalgoruntulendimi = "false";
 
