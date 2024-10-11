@@ -4,42 +4,48 @@ import { districtsData } from './IzmirGuessrCoordinates.js';
 const roundPoints = [0,0,0,0,0];
 const guessedCoordinates = [0,0,0,0,0];
 const actualCoordinates = [0,0,0,0,0];
+let totalPoints = 0;
+
+// Loading Highscore:
+
+let highscore = localStorage.getItem("highscore") ? parseInt(localStorage.getItem("highscore")) : 0;
+document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+
+// Game Settings:
+
+const initialLat = 38.609979;
+const initialLon = 27.398601;
+const initialZoom = 9;
+const roundsPerGame = 5;
+let roundCount = 1; // The round we are currently at
+let timerSeconds = 60; // Pre-selected timer
 
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
-let roundCount = 1;
-const roundsPerGame = 5;
-let totalPoints = 0;
-const initialLat = 38.609979;
-const initialLon = 27.398601;
-const initialZoom = 9;
 let roundTimer;
-let timerSeconds = 60;
 let selectedTimeLimit = "No Time Limit";
 let isTimerPaused = false;
+let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
-let finalgoruntulendimi = "false";
 
-let startPage = document.getElementById("startpage");
-let gamemap = document.getElementById("gamemap");
-let returnButton = document.getElementById("returnbutton");
-let modaltogglebutton = document.getElementById("modaltoggle-button");
-let overlayContainer = document.getElementById("overlay-container");
-let finalresultsmodal = document.getElementById("final-results-modal");
-let buttonrow = document.getElementById("buttonrow");
+const startPage = document.getElementById("startpage");
+const gamemap = document.getElementById("gamemap");
+const returnButton = document.getElementById("returnbutton");
+const modaltogglebutton = document.getElementById("modaltoggle-button");
+const overlayContainer = document.getElementById("overlay-container");
+const finalresultsmodal = document.getElementById("final-results-modal");
+const buttonrow = document.getElementById("buttonrow");
 const mapContainer = document.getElementById("gamemap");
 const resultModal = document.getElementById("result-modal");
-let highscore = localStorage.getItem("highscore") ? parseInt(localStorage.getItem("highscore")) : 0;
-document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+
 
 const map2 = L.map("map2", {
 	maxZoom: 11,
 	minZoom: 9,
 	maxBounds: [
-		[39.444306, 28.559917], // (north, east)
-		[37.808722, 26.203444], // (south, west)
+		[39.444306, 28.559917], [37.808722, 26.203444] // (north, east, south, west)		
 	],
 }).setView([initialLat, initialLon], initialZoom);
 
