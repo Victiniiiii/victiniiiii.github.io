@@ -241,7 +241,7 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Guessed Location",
-                        icon: "static/images/bluepin.png"
+                        icon: "static/images/red.png"   
 					});
 				});
 
@@ -366,24 +366,20 @@ function displayResults(distance, points) {
         clickableIcons: false,
     });
 
+    guessedLocationMarker.setMap(resultMap);
+    const guessedLatLng = guessedLocationMarker.getPosition().toJSON();    
+    guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
+    actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };    
+
     if (roundCount < 4) {
         new google.maps.Marker({
             position: randomLocation,
             map: resultMap,
             title: "Correct Answer",
             icon: "static/images/greenpin.png",
-        });
+        });        
     
-        guessedLocationMarker.setMap(resultMap);
-        const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
-    
-        guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
-        actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
-    
-        const lineCoordinates = [
-            guessedCoordinates[roundCount], actualCoordinates[roundCount]
-        ];
-    
+        const lineCoordinates = [guessedCoordinates[roundCount], actualCoordinates[roundCount]];    
         const line = new google.maps.Polyline({
             path: lineCoordinates,
             geodesic: true,
@@ -394,7 +390,7 @@ function displayResults(distance, points) {
     
         line.setMap(resultMap);	
     } else {
-        const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"]
+        const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"] // Red, Yellow, Green, Blue, Magenta
         for (let i = 0; i < 5; i++) {
             new google.maps.Marker({
                 position: guessedCoordinates[i],
@@ -415,7 +411,7 @@ function displayResults(distance, points) {
                 geodesic: true,
                 strokeColor: colors[i],
                 strokeOpacity: 1.0,
-                strokeWeight: 2,
+                strokeWeight: 4,
             });
 
             line.setMap(resultMap);
