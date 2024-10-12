@@ -61,6 +61,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 19
 }).addTo(map2);
 
+
 // Functions:
 
 function isPointInPolygon(point, polygon) {
@@ -167,87 +168,6 @@ function getRandomLocation() {
 	return { lat, lng };
 }
 
-const darkModeStyleinGoogleMaps = [
-    { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
-    { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-    { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
-    {
-      featureType: "administrative.locality",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }],
-    },
-    {
-      featureType: "poi",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }],
-    },
-    {
-      featureType: "poi.park",
-      elementType: "geometry",
-      stylers: [{ color: "#263c3f" }],
-    },
-    {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#6b9a76" }],
-    },
-    {
-      featureType: "road",
-      elementType: "geometry",
-      stylers: [{ color: "#38414e" }],
-    },
-    {
-      featureType: "road",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#212a37" }],
-    },
-    {
-      featureType: "road",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#9ca5b3" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry",
-      stylers: [{ color: "#746855" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "geometry.stroke",
-      stylers: [{ color: "#1f2835" }],
-    },
-    {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#f3d19c" }],
-    },
-    {
-      featureType: "transit",
-      elementType: "geometry",
-      stylers: [{ color: "#2f3948" }],
-    },
-    {
-      featureType: "transit.station",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#d59563" }],
-    },
-    {
-      featureType: "water",
-      elementType: "geometry",
-      stylers: [{ color: "#17263c" }],
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.fill",
-      stylers: [{ color: "#515c6d" }],
-    },
-    {
-      featureType: "water",
-      elementType: "labels.text.stroke",
-      stylers: [{ color: "#17263c" }],
-    },
-]
-
 function loadGoogleMapsAPI(callback) {
 	const script = document.createElement("script");
 	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=${callback}`;
@@ -281,13 +201,7 @@ function initMap() {
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 			center: randomLocation,
 			zoom: 14,
-			streetViewControl: false,
-			addressControl: false,
-            styles: darkModeStyleinGoogleMaps,
-            motionTracking: false,
-            motionTrackingControl: false,
-            zoomControl: false,
-            showRoadLabels: false,
+			...panoramaOptions,
 		});
 
 		const streetViewService = new google.maps.StreetViewService();
@@ -297,13 +211,7 @@ function initMap() {
 					position: randomLocation,
 					pov: { heading: 34, pitch: 1 },
 					zoom: 1,
-					addressControl: false,
-					streetViewControl: false,
-                    styles: darkModeStyleinGoogleMaps,
-                    motionTracking: false,
-                    motionTrackingControl: false,
-                    zoomControl: false,
-                    showRoadLabels: false,
+					...panoramaOptions,
 				});
 
 				gamemap.setStreetView(panorama);
@@ -312,14 +220,9 @@ function initMap() {
 					center: { lat: 38.4192, lng: 27.1287 },
 					zoom: 10,
 					draggable: true,
-					streetViewControl: false,
 					mapTypeControl: false,
 					clickableIcons: false,
-                    styles: darkModeStyleinGoogleMaps,
-                    motionTracking: false,
-                    motionTrackingControl: false,
-                    zoomControl: false,
-                    showRoadLabels: false,
+                    ...panoramaOptions,
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
@@ -392,13 +295,7 @@ function returnToStart() {
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
 		zoom: 14,
-		streetViewControl: false,
-		addressControl: false,
-        styles: darkModeStyleinGoogleMaps,
-        motionTracking: false,
-        motionTrackingControl: false,
-        zoomControl: false,
-        showRoadLabels: false,
+		...panoramaOptions,
 	});
 
 	const streetViewService = new google.maps.StreetViewService();
@@ -408,13 +305,7 @@ function returnToStart() {
 				position: randomLocation,
 				pov: { heading: 34, pitch: 1 },
 				zoom: 1,
-				streetViewControl: false,
-				addressControl: false,
-                styles: darkModeStyleinGoogleMaps,
-                motionTracking: false,
-                motionTrackingControl: false,
-                zoomControl: false,
-                showRoadLabels: false,
+				...panoramaOptions,
 			});
 
 			gamemap.setStreetView(panorama);
@@ -462,14 +353,9 @@ function displayResults(distance, points) {
     const resultMap = new google.maps.Map(document.getElementById("result-map"), {
         center: randomLocation,
         zoom: getZoomLevel(distance),
-        streetViewControl: false,
         mapTypeControl: false,
         clickableIcons: false,
-        styles: darkModeStyleinGoogleMaps,
-        motionTracking: false,
-        motionTrackingControl: false,
-        zoomControl: false,
-        showRoadLabels: false,
+        ...panoramaOptions,
     });
 
     guessedLocationMarker.setMap(resultMap);
