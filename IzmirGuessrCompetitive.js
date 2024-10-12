@@ -274,8 +274,8 @@ function initMap() {
 			clearInterval(roundTimer);
 		}
 
+        timerSeconds = 30;
 		roundTimer = setInterval(updateTimer, 1000);
-        document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
 
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 			center: randomLocation,
