@@ -18,7 +18,7 @@ const initialLat = 38.609979;
 const initialLon = 27.398601;
 const initialZoom = 9;
 let roundCount = 0; // The round we are currently at (0 to 4)
-let timerSeconds = 60; // TODO: Remove
+const timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 
@@ -60,6 +60,7 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 19
 }).addTo(map2);
 
+// Adding Event Listeners:
 
 // Functions:
 
@@ -283,9 +284,7 @@ function initMap() {
 			clearInterval(roundTimer);
 		}
 
-		timerSeconds = getSecondsFromTimeLimit(selectedTimeLimit);
 		roundTimer = setInterval(updateTimer, 1000);
-		updateTimerDisplay();
 
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 			center: randomLocation,
@@ -601,7 +600,6 @@ function returnToMainMenu() {
 
 function startGame() {
 	finalgoruntulendimi = "false";
-	getSecondsFromTimeLimit();
 	loadGoogleMapsAPI("initMap");
 	initMap();
 }
@@ -684,54 +682,23 @@ function toggleDistrict(districtName) {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () { // TODO: 2 domcontentloaded
 	const buttons = document.querySelectorAll(".ilcebutton");
 	buttons.forEach((button) => {
 		button.style.backgroundColor = "green";
 	});
 });
 
-function updateTimerDisplay() {
-	let displayText;
-	if (timerSeconds === Infinity) {
-		displayText = "Remaining: No Time Limit";
-	} else {
-		displayText = `Remaining: ${timerSeconds} Seconds`;
-	}
-	document.getElementById("timer").textContent = displayText;
-}
-
 function updateTimer() {
-	getSecondsFromTimeLimit();
 	if (!isTimerPaused) {
-		if (selectedTimeLimit !== "No Time Limit" && timerSeconds > 0) {
+		if (timerSeconds > 0) {
 			timerSeconds--;
-			updateTimerDisplay();
-		} else if (selectedTimeLimit !== "No Time Limit" && timerSeconds === 0) {
+			document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
 		}
 	}
-}
-
-function getSecondsFromTimeLimit(timeLimit) {
-	return parseInt(timeLimit) || Infinity;
-}
-
-function changeTimeLimit(timeLimit) {
-	selectedTimeLimit = timeLimit;
-
-	if (timeLimit === Infinity) {
-		document.getElementById("timer").textContent = "Remaining: No Time Limit";
-		clearInterval(roundTimer);
-	} else {
-		const seconds = getSecondsFromTimeLimit(timeLimit);
-		document.getElementById("timer").textContent = `Remaining: ${seconds} Seconds`;
-	}
-}
-
-function endRound() {
-	clearInterval(roundTimer);
 }
 
 function pauseTimer() {
@@ -760,20 +727,6 @@ faqButton.addEventListener("click", function () {
 		startPageLeftHalf.style.display = "none";
 	}
 });
-
-function saveSelectedTimeLimit() {
-	const selectedTimeLimit = document.getElementById("izmirtime").value;
-	localStorage.setItem("selectedTimeLimit", selectedTimeLimit);
-}
-
-function loadSelectedTimeLimit() {
-	const savedTimeLimit = localStorage.getItem("selectedTimeLimit");
-	if (savedTimeLimit) {
-		document.getElementById("izmirtime").value = savedTimeLimit;
-		selectedTimeLimit = savedTimeLimit;
-		updateTimerDisplay();
-	}
-}
 
 document.getElementById("izmirtime").addEventListener("change", saveSelectedTimeLimit);
 window.addEventListener("load", loadSelectedTimeLimit);
