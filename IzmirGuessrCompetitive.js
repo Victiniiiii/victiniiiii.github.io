@@ -35,6 +35,7 @@ const confirmButton = document.getElementById("action-button");
 const faqButton = document.getElementById("izmirfaq");
 const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
+const buttons = document.querySelectorAll(".ilcebutton");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 
@@ -60,8 +61,6 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     maxZoom: 19
 }).addTo(map2);
 
-// Adding Event Listeners:
-
 // Functions:
 
 function isPointInPolygon(point, polygon) {
@@ -86,15 +85,6 @@ function shuffleArray(array) {
 	}
 	return array;
 }
-
-districtsData.forEach((district) => {
-	const polygon = L.polygon(district.coordinates, { fill: true, color: "green" }).addTo(map2);
-	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
-
-	if (district.state === 1) {
-		initiallyGreenDistricts.push({ bounds: district.bounds });
-	}
-});
 
 map2.on("mousedown", function (event) {
 	districtLayers.forEach((district) => {
@@ -682,13 +672,6 @@ function toggleDistrict(districtName) {
 	}
 }
 
-document.addEventListener("DOMContentLoaded", function () { // TODO: 2 domcontentloaded
-	const buttons = document.querySelectorAll(".ilcebutton");
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "green";
-	});
-});
-
 function updateTimer() {
 	if (!isTimerPaused) {
 		if (timerSeconds > 0) {
@@ -710,6 +693,9 @@ function resumeTimer() {
 	isTimerPaused = false;
 }
 
+// Adding Event Listeners:
+
+
 overlayContainer.addEventListener("mouseenter", function () {
 	overlayContainer.classList.add("hovered");
 });
@@ -726,6 +712,19 @@ faqButton.addEventListener("click", function () {
 	} else {
 		startPageLeftHalf.style.display = "none";
 	}
+});
+
+districtsData.forEach((district) => {
+	const polygon = L.polygon(district.coordinates, { fill: true, color: "green" }).addTo(map2);
+	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+
+	if (district.state === 1) {
+		initiallyGreenDistricts.push({ bounds: district.bounds });
+	}
+});
+
+buttons.forEach((button) => {
+    button.style.backgroundColor = "green";
 });
 
 document.getElementById("izmirtime").addEventListener("change", saveSelectedTimeLimit);
