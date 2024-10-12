@@ -1,16 +1,14 @@
 // Game Points:
 
-let roundPoints = [0,0,0,0,0];
-let guessedCoordinates = [0,0,0,0,0];
-let actualCoordinates = [0,0,0,0,0];
+let roundPoints = [0, 0, 0, 0, 0];
+let guessedCoordinates = [0, 0, 0, 0, 0];
+let actualCoordinates = [0, 0, 0, 0, 0];
 let totalPoints = 0;
-
 
 // Loading Highscore:
 
 let highscore = localStorage.getItem("highscore") ? parseInt(localStorage.getItem("highscore")) : 0;
 document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
-
 
 // Game Settings:
 
@@ -20,7 +18,6 @@ const initialZoom = 9;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
-
 
 // HTML Elements:
 
@@ -38,7 +35,6 @@ const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll(".ilcebutton");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
-
 // Game Elements:
 
 let guessedLocationMarker;
@@ -51,16 +47,19 @@ let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 const map2 = L.map("map2", {
-    maxZoom: 11, minZoom: 9,
-    maxBounds: [[39.444306, 28.559917], [37.808722, 26.203444]], // (North, East, South, West)
+	maxZoom: 11,
+	minZoom: 9,
+	maxBounds: [
+		[39.444306, 28.559917],
+		[37.808722, 26.203444],
+	], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
 
 L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-    attribution: '© OpenStreetMap contributors © CartoDB',
-    subdomains: 'abcd',
-    maxZoom: 19
+	attribution: "© OpenStreetMap contributors © CartoDB",
+	subdomains: "abcd",
+	maxZoom: 19,
 }).addTo(map2);
-
 
 // Functions:
 
@@ -194,8 +193,8 @@ function initMap() {
 			clearInterval(roundTimer);
 		}
 
-        timerSeconds = 30;
-        document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+		timerSeconds = 30;
+		document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
 		roundTimer = setInterval(updateTimer, 1000);
 
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
@@ -222,11 +221,10 @@ function initMap() {
 					draggable: true,
 					mapTypeControl: false,
 					clickableIcons: false,
-                    ...panoramaOptions,
+					...panoramaOptions,
 				});
 
 				google.maps.event.addListener(minimap, "click", function (event) {
-
 					if (guessedLocationMarker) {
 						guessedLocationMarker.setMap(null);
 					}
@@ -235,12 +233,11 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Guessed Location",
-                        icon: "static/images/redpin.png"   
+						icon: "static/images/redpin.png",
 					});
 				});
 
 				google.maps.event.addListener(gamemap, "click", function (event) {
-
 					if (guessedLocationMarker) {
 						guessedLocationMarker.setMap(null);
 					}
@@ -249,16 +246,15 @@ function initMap() {
 						position: event.latLng,
 						map: minimap,
 						title: "Original Location",
-                        icon: "static/images/greenpin.png"
+						icon: "static/images/greenpin.png",
 					});
 				});
 
-                document.getElementById("action-button").onclick = function() {
-                    const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
+				document.getElementById("action-button").onclick = function () {
+					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
 					const points = calculatePoints(distance);
 					displayResults(distance, points);
-                };
-
+				};
 			} else {
 				initializeMapWithRandomLocation();
 			}
@@ -330,85 +326,85 @@ function calculatePoints(distance) {
 }
 
 function displayResults(distance, points) {
-    pauseTimer();
-    document.getElementById("gamemap").style.opacity = "1";
-    roundPoints[roundCount] = parseInt(points);
-    totalPoints += roundPoints[roundCount];
+	pauseTimer();
+	document.getElementById("gamemap").style.opacity = "1";
+	roundPoints[roundCount] = parseInt(points);
+	totalPoints += roundPoints[roundCount];
 
-    if (totalPoints > highscore) {
-        highscore = totalPoints;
-        localStorage.setItem("highscore", highscore);
-    }
+	if (totalPoints > highscore) {
+		highscore = totalPoints;
+		localStorage.setItem("highscore", highscore);
+	}
 
-    document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
-    document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-    document.getElementById("points-info").textContent = `Points Earned: ${points}`;    
-    document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
-    document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
+	document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
+	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
+	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
+	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
+	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
-    document.getElementById("result-modal").style.display = "block";
-    document.getElementById("overlay-container").style.display = "none";
-    document.getElementById("modaltoggle-button").style.display = "block";
+	document.getElementById("result-modal").style.display = "block";
+	document.getElementById("overlay-container").style.display = "none";
+	document.getElementById("modaltoggle-button").style.display = "block";
 
-    const resultMap = new google.maps.Map(document.getElementById("result-map"), {
-        center: randomLocation,
-        zoom: getZoomLevel(distance),
-        mapTypeControl: false,
-        clickableIcons: false,
-        ...panoramaOptions,
-    });
+	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
+		center: randomLocation,
+		zoom: getZoomLevel(distance),
+		mapTypeControl: false,
+		clickableIcons: false,
+		...panoramaOptions,
+	});
 
-    guessedLocationMarker.setMap(resultMap);
-    const guessedLatLng = guessedLocationMarker.getPosition().toJSON();    
-    guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
-    actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };    
+	guessedLocationMarker.setMap(resultMap);
+	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
+	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
+	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
-    if (roundCount < 4) {
-        new google.maps.Marker({
-            position: randomLocation,
-            map: resultMap,
-            title: "Correct Answer",
-            icon: "static/images/greenpin.png",
-        });        
-    
-        const lineCoordinates = [guessedCoordinates[roundCount], actualCoordinates[roundCount]];    
-        const line = new google.maps.Polyline({
-            path: lineCoordinates,
-            geodesic: true,
-            strokeColor: "#FF0000", // Red
-            strokeOpacity: 1.0,
-            strokeWeight: 4,
-        });
-    
-        line.setMap(resultMap);	
-    } else {
-        const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"] // Red, Yellow, Green, Blue, Magenta
-        for (let i = 0; i < 5; i++) {
-            new google.maps.Marker({
-                position: guessedCoordinates[i],
-                map: resultMap,
-                title: `Guessed Location ${i + 1}`,
-                icon: `static/images/redpin${i + 1}.png`,
-            });
+	if (roundCount < 4) {
+		new google.maps.Marker({
+			position: randomLocation,
+			map: resultMap,
+			title: "Correct Answer",
+			icon: "static/images/greenpin.png",
+		});
 
-            new google.maps.Marker({
-                position: actualCoordinates[i],
-                map: resultMap,
-                title: `Actual Location ${i + 1}`,
-                icon: `static/images/greenpin${i + 1}.png`,
-            });
+		const lineCoordinates = [guessedCoordinates[roundCount], actualCoordinates[roundCount]];
+		const line = new google.maps.Polyline({
+			path: lineCoordinates,
+			geodesic: true,
+			strokeColor: "#FF0000", // Red
+			strokeOpacity: 1.0,
+			strokeWeight: 4,
+		});
 
-            const line = new google.maps.Polyline({
-                path: [guessedCoordinates[i], actualCoordinates[i]],
-                geodesic: true,
-                strokeColor: colors[i],
-                strokeOpacity: 1.0,
-                strokeWeight: 4,
-            });
+		line.setMap(resultMap);
+	} else {
+		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
+		for (let i = 0; i < 5; i++) {
+			new google.maps.Marker({
+				position: guessedCoordinates[i],
+				map: resultMap,
+				title: `Guessed Location ${i + 1}`,
+				icon: `static/images/redpin${i + 1}.png`,
+			});
 
-            line.setMap(resultMap);
-        }        
-    }	
+			new google.maps.Marker({
+				position: actualCoordinates[i],
+				map: resultMap,
+				title: `Actual Location ${i + 1}`,
+				icon: `static/images/greenpin${i + 1}.png`,
+			});
+
+			const line = new google.maps.Polyline({
+				path: [guessedCoordinates[i], actualCoordinates[i]],
+				geodesic: true,
+				strokeColor: colors[i],
+				strokeOpacity: 1.0,
+				strokeWeight: 4,
+			});
+
+			line.setMap(resultMap);
+		}
+	}
 }
 
 function getZoomLevel(distance) {
@@ -442,9 +438,9 @@ function getZoomLevel(distance) {
 function playAgain() {
 	roundCount = 0;
 	totalPoints = 0;
-    roundPoints = [0,0,0,0,0];
-    guessedCoordinates = [0,0,0,0,0];
-    actualCoordinates = [0,0,0,0,0];
+	roundPoints = [0, 0, 0, 0, 0];
+	guessedCoordinates = [0, 0, 0, 0, 0];
+	actualCoordinates = [0, 0, 0, 0, 0];
 	finalgoruntulendimi = "false";
 
 	initMap();
@@ -454,25 +450,25 @@ function playAgain() {
 function returnToMainMenu() {
 	roundCount = 0;
 	totalPoints = 0;
-    roundPoints = [0,0,0,0,0];
-    guessedCoordinates = [0,0,0,0,0];
-    actualCoordinates = [0,0,0,0,0];
+	roundPoints = [0, 0, 0, 0, 0];
+	guessedCoordinates = [0, 0, 0, 0, 0];
+	actualCoordinates = [0, 0, 0, 0, 0];
 	finalgoruntulendimi = "false";
 
-	startPage.style.display = "flex";	
+	startPage.style.display = "flex";
 	returnButton.style.display = "none";
 	modaltogglebutton.style.display = "none";
 	overlayContainer.style.display = "none";
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
-    document.getElementById("gamemap").style.display = "none";
+	document.getElementById("gamemap").style.display = "none";
 
 	L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        attribution: '© OpenStreetMap contributors © CartoDB',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map2);
+		attribution: "© OpenStreetMap contributors © CartoDB",
+		subdomains: "abcd",
+		maxZoom: 19,
+	}).addTo(map2);
 	pauseTimer();
 }
 
@@ -500,7 +496,9 @@ function startNextGame() {
 
 function addAllDistricts() {
 	const buttons = document.querySelectorAll(".ilcebutton");
-	buttons.forEach((button) => { button.style.backgroundColor = "green"; });
+	buttons.forEach((button) => {
+		button.style.backgroundColor = "green";
+	});
 	districtLayers.forEach((district) => {
 		district.layer.setStyle({ fill: true, color: "green" });
 		district.state = 1;
@@ -583,7 +581,6 @@ function resumeTimer() {
 
 // Adding Event Listeners:
 
-
 overlayContainer.addEventListener("mouseenter", function () {
 	overlayContainer.classList.add("hovered");
 });
@@ -612,7 +609,7 @@ districtsData.forEach((district) => {
 });
 
 buttons.forEach((button) => {
-    button.style.backgroundColor = "green";
+	button.style.backgroundColor = "green";
 });
 
 document.getElementById("izmirtime").addEventListener("change", saveSelectedTimeLimit);
