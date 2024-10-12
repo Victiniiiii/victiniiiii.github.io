@@ -18,7 +18,7 @@ const initialLat = 38.609979;
 const initialLon = 27.398601;
 const initialZoom = 9;
 let roundCount = 0; // The round we are currently at (0 to 4)
-const timerSeconds = 30;
+let timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 
