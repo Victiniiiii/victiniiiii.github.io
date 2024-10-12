@@ -275,6 +275,7 @@ function initMap() {
 		}
 
         timerSeconds = 30;
+        document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
 		roundTimer = setInterval(updateTimer, 1000);
 
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
