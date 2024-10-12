@@ -91,8 +91,8 @@ map2.on("mousedown", function (event) {
 		const latLngs = district.layer.getLatLngs()[0];
 		const x = event.latlng.lng;
 		const y = event.latlng.lat;
-
 		let inside = false;
+        
 		for (let i = 0, j = latLngs.length - 1; i < latLngs.length; j = i++) {
 			const xi = latLngs[i].lng;
 			const yi = latLngs[i].lat;
@@ -145,20 +145,20 @@ function formatlama() {
 
 function getRandomLocation() {
 	let polygon = formatlama();
-
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
 	let minY = polygon[0][1];
 	let maxY = polygon[0][1];
+    let lat;
+	let lng;
+
 	for (let i = 1; i < polygon.length; i++) {
 		minX = Math.min(minX, polygon[i][0]);
 		maxX = Math.max(maxX, polygon[i][0]);
 		minY = Math.min(minY, polygon[i][1]);
 		maxY = Math.max(maxY, polygon[i][1]);
 	}
-
-	let lat;
-	let lng;
+	
 	do {
 		lat = Math.random() * (maxX - minX) + minX;
 		lng = Math.random() * (maxY - minY) + minY;
@@ -167,25 +167,19 @@ function getRandomLocation() {
 	return { lat, lng };
 }
 
-function loadGoogleMapsAPI(callback) {
-	const script = document.createElement("script");
-	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=${callback}`;
-	document.body.appendChild(script);
-}
-
 function initMap() {
 	function initializeMapWithRandomLocation() {
 		randomLocation = getRandomLocation();
 
-		startPage.style.display = "none";
+        document.getElementById("modaltoggle-button").style.display = "none";
+		document.getElementById("timer").style.display = "block";
+        document.getElementById("final-results-modal").style.display = "none";		
 		document.getElementById("gamemap").style.display = "block";
 		returnButton.style.display = "block";
 		overlayContainer.style.display = "block";
 		buttonrow.style.display = "flex";
-		document.getElementById("final-results-modal").style.display = "none";
-		resultModal.style.display = "none";
-		document.getElementById("modaltoggle-button").style.display = "none";
-		document.getElementById("timer").style.display = "block";
+		startPage.style.display = "none";
+		resultModal.style.display = "none";		
 
 		resumeTimer();
 
@@ -474,15 +468,16 @@ function returnToMainMenu() {
 
 function startGame() {
 	finalgoruntulendimi = "false";
-	loadGoogleMapsAPI("initMap");
-	initMap();
+	const script = document.createElement("script");
+	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=initMap`;
+	document.body.appendChild(script);
 }
 
 function startNextGame() {
-	if (roundCount == 4) {
-		document.getElementById("final-results-modal").style.display = "block";
-		finalgoruntulendimi = "true";
+	if (roundCount == 4) {        
+		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
+        finalgoruntulendimi = "true";
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
