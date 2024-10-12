@@ -465,10 +465,10 @@ function returnToMainMenu() {
 	document.getElementById("gamemap").style.display = "none";
 
 	L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-		attribution: "© OpenStreetMap contributors © CartoDB",
-		subdomains: "abcd",
-		maxZoom: 19,
-	}).addTo(map2);
+        attribution: "© OpenStreetMap contributors © CartoDB",
+        subdomains: "abcd",
+        maxZoom: 19,
+    }).addTo(map2);
 	pauseTimer();
 }
 

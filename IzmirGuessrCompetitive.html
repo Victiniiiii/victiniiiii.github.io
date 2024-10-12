@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<title>IzmirGuessr Competitive</title>
-		<link rel="icon" href="static/images/vic32.png" type="image/png"/>
-		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
-		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"></script>
 	</head>
-    <style>
-        body {
-            overflow: hidden;
-        }
+	<style>
+		body {
+			overflow: hidden;
+		}
 
-        #buttonrow, #gamemap {
-            display: none;
-        }
+		#buttonrow,
+		#gamemap {
+			display: none;
+		}
 
-        .gm-fullscreen-control {
-            background: rgb(0,0,0,0.8) !important;
-        }
+		.gm-fullscreen-control {
+			background: rgb(0, 0, 0, 0.8) !important;
+		}
 
-        .gm-style div div a, .gm-style-cc, .leaflet-control {
-            display: none !important;
-        }
-    </style>
+		.gm-style div div a,
+		.gm-style-cc,
+		.leaflet-control {
+			display: none !important;
+		}
+	</style>
 	<body>
 		<header class="title-section">
 			<a href="/">
 				<picture>
-                    <source srcset="/static/imageswebp/vicinti3.webp" type="image/webp">
-                    <img class="main-menu-button" src="/static/images/vicinti3.png">
-                </picture>
+					<source srcset="/static/imageswebp/vicinti3.webp" type="image/webp" />
+					<img class="main-menu-button" src="/static/images/vicinti3.png" />
+				</picture>
 			</a>
 			<h1 class="main-menu-text">IzmirGuessr Competitive</h1>
 			<div class="project-buttons">
@@ -42,11 +45,6 @@
 				</div>
 			</div>
 		</header>
-        <!--<div class="fullscreenmodal">For using Maps API, i am using the free trial, but i have to restart it every 3 months in another account for the project to run which is very tiring.<br>&nbsp;<br>
-            On top of that it requires credit card information so there is a risk of a huge bill on one wrong click, thats why i will de-activate this project for a while. <br>&nbsp;<br>
-            Not exactly de-activating, but i will stop putting new keys, but if you want to play the game you can get it from the github page, and put your own key. <br>&nbsp;<br>
-            However i will re-activate the project after i release IzmirGuessr 2 - The Competitive Update. Have a good day.
-        </div>-->
 		<div id="startpage" class="startpage">
 			<div id="faq-menu" class="faq-menu">
 				<p class="izmirfaqtext2"><u>How to play this game ?</u></p>
@@ -150,8 +148,8 @@
 			</div>
 		</div>
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <script src="IzmirGuessrMapOptions.js"></script>
-        <script src="IzmirGuessrCoordinates.js"></script>
-		<script src="IzmirGuessrCompetitive.js"></script>        
+		<script src="IzmirGuessrMapOptions.js"></script>
+		<script src="IzmirGuessrCoordinates.js"></script>
+		<script src="IzmirGuessrCompetitive.js"></script>
 	</body>
 </html>
