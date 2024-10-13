@@ -14,7 +14,9 @@ document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
 
 const initialLat = 38.609979;
 const initialLon = 27.398601;
-const initialZoom = 9;
+let initialZoom;
+let maxZoomValue;
+let minZoomValue;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
@@ -46,15 +48,15 @@ let isTimerPaused = false;
 let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
-let maxZoomValue;
-let minZoomValue;
 
 if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
     maxZoomValue = 9;
     minZoomValue = 7;
+    initialZoom = 8;
 } else {
-    maxZoomValue = 11;
-    minZoomValue = 9;
+    maxZoomValue = 10;
+    minZoomValue = 8;
+    initialZoom = 9;
 }
 
 const map2 = L.map("map2", {
