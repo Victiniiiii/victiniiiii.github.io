@@ -12,11 +12,7 @@ document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
 
 // Game Settings:
 
-const initialLat = 38.609979;
-const initialLon = 27.398601;
-let initialZoom;
-let maxZoomValue;
-let minZoomValue;
+let selectedDistrict;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
@@ -49,6 +45,12 @@ const initiallyGreenDistricts = [];
 const districtLayers = [];
 
 // Leaflet Map:
+
+const initialLat = 38.609979;
+const initialLon = 27.398601;
+let initialZoom;
+let maxZoomValue;
+let minZoomValue;
 
 if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
     maxZoomValue = 9;
@@ -153,9 +155,11 @@ function updateDistrictAndButtonState(district) {
 }
 
 function formatlama() {
-	let formattedBounds = initiallyGreenDistricts.map((district) => district.bounds);
-	shuffleArray(formattedBounds);
-	return formattedBounds[0];
+    let formattedBounds = initiallyGreenDistricts.map((district) => district.bounds);    
+    shuffleArray(formattedBounds);    
+    let selectedBounds = formattedBounds[0];    
+    selectedDistrict = districtsData.find(district => district.bounds === selectedBounds).name;
+    return selectedBounds;
 }
 
 function getRandomLocation() {
@@ -387,6 +391,7 @@ function displayResults(distance, points) {
 
 		line.setMap(resultMap);
 	} else {
+        incrementPlayCount(selectedDistrict);
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
 		for (let i = 0; i < 5; i++) {
 			new google.maps.Marker({

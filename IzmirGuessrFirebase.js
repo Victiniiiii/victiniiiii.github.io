@@ -1,9 +1,7 @@
-// Import the Firebase app
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
 	authDomain: "izmirguessrcompetitive.firebaseapp.com",
@@ -14,12 +12,11 @@ const firebaseConfig = {
 	measurementId: "G-345W0ZZRY9",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth(app); // Get the Auth instance
+const auth = getAuth(app);
+const db = firebase.firestore();
 
-// Anonymous Login Function
 window.loginAnonymously = function () {
 	signInAnonymously(auth)
 		.then((userCredential) => {
@@ -31,7 +28,6 @@ window.loginAnonymously = function () {
 		});
 };
 
-// Google Login Function
 window.loginWithGoogle = function () {
 	const provider = new GoogleAuthProvider();
 
@@ -45,7 +41,6 @@ window.loginWithGoogle = function () {
 		});
 };
 
-// Monitor Auth State
 onAuthStateChanged(auth, (user) => {
 	if (user) {
 		console.log("User ID:", user.uid);
@@ -53,3 +48,17 @@ onAuthStateChanged(auth, (user) => {
 		console.log("No user signed in.");
 	}
 });
+
+function incrementPlayCount(district) {
+    const userId = auth.currentUser.uid;
+    const userPlayCountsRef = firebase.database().ref(`users/${userId}/playCounts/${district}`);
+    userPlayCountsRef.transaction((currentCount) => {
+        return (currentCount || 0) + 1; // If currentCount is null, start from 0
+    })
+    .then(() => {
+        console.log(`Play count for ${district} incremented successfully!`);
+    })
+    .catch((error) => {
+        console.error(`Error incrementing play count for ${district}:`, error);
+    });
+}
