@@ -1,9 +1,4 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
-
-// Your web app's Firebase configuration
+// Initialize Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
     authDomain: "izmirguessrcompetitive.firebaseapp.com",
@@ -14,14 +9,13 @@ const firebaseConfig = {
     measurementId: "G-345W0ZZRY9"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app); // Use getAuth to get the auth instance
+firebase.initializeApp(firebaseConfig);
+const analytics = firebase.analytics();
+const auth = firebase.auth(); // Use firebase.auth() to get the auth instance
 
 // Anonymous Login Function
 function loginAnonymously() {
-    signInAnonymously(auth)
+    auth.signInAnonymously()
     .then((userCredential) => {
         const user = userCredential.user;
         console.log("Logged in anonymously:", user);
@@ -34,9 +28,9 @@ function loginAnonymously() {
 
 // Google Login Function
 function loginWithGoogle() {
-    const provider = new GoogleAuthProvider(); // Use GoogleAuthProvider from the imports
+    const provider = new firebase.auth.GoogleAuthProvider();
 
-    signInWithPopup(auth, provider) // Use signInWithPopup with the auth instance
+    auth.signInWithPopup(provider)
     .then((result) => {
         const user = result.user;
         console.log("Logged in with Google:", user);
@@ -48,7 +42,7 @@ function loginWithGoogle() {
 }
 
 // Monitor Auth State
-onAuthStateChanged(auth, (user) => {
+auth.onAuthStateChanged((user) => {
     if (user) {
         // User is signed in, you can use user.uid to identify the user
         console.log("User ID:", user.uid);
