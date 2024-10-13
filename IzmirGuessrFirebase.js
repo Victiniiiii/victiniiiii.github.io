@@ -69,7 +69,7 @@ function incrementPlayCount(district) {
 function updateHighScore(district, score) {
     const userId = auth.currentUser.uid;
 	const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
-    console.log("current high score:")
+    console.log("current high score:",userHighScore);
 	
 	getDoc(userHighScore).then((docSnapshot) => {
 		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
