@@ -45,13 +45,13 @@ window.loginWithGoogle = function () {
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
-		window.document.getElementById("usernameHere").innerText = `Username: ${user.uid}`;
+		window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
 	} else {
 		window.document.getElementById("usernameHere").innerText = "Login pleeease"
 	}
 });
 
-function incrementPlayCount(district) {
+export function incrementPlayCount(district) {
 	const userId = auth.currentUser.uid;
 
 	// Reference to the user's play counts in Firestore
@@ -70,3 +70,5 @@ function incrementPlayCount(district) {
 			});
 	});
 }
+
+window.incrementPlayCount = incrementPlayCount;
