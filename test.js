@@ -37,7 +37,6 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 function test(hey) {
-    let hey = hey;
     districtsData.forEach((district) => {
         const polygon = L.polygon(district.hey, { fill: true, color: "green" }).addTo(map);
         districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
