@@ -69,8 +69,14 @@ const districtColors = [
     "turquoise"  // BayindirBounds
 ];
 
-function test(hey) {
+function bounds() {
     for (let i = 0; i < 30; i++) {
-        L.polygon(districtsData[i].hey, { color: districtColors[i] }).addTo(map);
+        L.polygon(districtsData[i].bounds, { color: districtColors[i] }).addTo(map);
+    }
+}
+
+function designcoordinates() {
+    for (let i = 0; i < 30; i++) {
+        L.polygon(districtsData[i].designcoordinates, { color: districtColors[i] }).addTo(map);
     }
 }
