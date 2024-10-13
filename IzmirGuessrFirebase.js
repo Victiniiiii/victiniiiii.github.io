@@ -72,13 +72,11 @@ function updateHighScore(district, score) {
 
     getDoc(userHighScore).then((docSnapshot) => {
         const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-
-        console.log(`Current High Score for ${district}:`, currentCount);
-        console.log(`New Score Attempt:`, score);
-
         if (!docSnapshot.exists() || currentCount < score) {
             setDoc(userHighScore, { count: score }, { merge: true })
                 .then(() => {
+                    console.log(`Current High Score for ${district}:`, currentCount);
+                    console.log(`New Score Attempt:`, score);
                     console.log(`High Score for ${district} updated successfully!`);
                 })
                 .catch((error) => {
