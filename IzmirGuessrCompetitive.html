@@ -11,10 +11,6 @@
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"></script>
 	</head>
 	<style>
-		body {
-			overflow: hidden;
-		}
-
 		#buttonrow,
 		#gamemap {
 			display: none;
@@ -29,6 +25,18 @@
 		.leaflet-control {
 			display: none !important;
 		}
+
+        @media (width > 767px) {
+            body {
+                overflow: hidden;
+            }
+        }
+
+        @media (width < 768px) {
+            .startpage {
+                flex-direction: column;
+            }
+        }
 	</style>
 	<body>
 		<header id="title-section">
