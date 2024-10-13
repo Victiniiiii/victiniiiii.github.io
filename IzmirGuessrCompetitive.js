@@ -606,5 +606,3 @@ districtsData.forEach((district) => {
 buttons.forEach((button) => {
 	button.style.backgroundColor = "green";
 });
-
-window.addEventListener("load", loadSelectedTimeLimit);
