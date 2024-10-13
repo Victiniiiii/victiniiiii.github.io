@@ -68,12 +68,13 @@ function incrementPlayCount(district) {
 
 function updateHighScore(district, score) {
     const userId = auth.currentUser.uid;
-	const userPlayCountsRef = doc(db, `users/${userId}/HighScores/${district}`);
+	const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
+    console.log("current high score:")
 	
-	getDoc(userPlayCountsRef).then((docSnapshot) => {
+	getDoc(userHighScore).then((docSnapshot) => {
 		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
         if (currentCount < score) {
-            setDoc(userPlayCountsRef, { count: score }, { merge: true })
+            setDoc(userHighScore, { count: score }, { merge: true })
 			.then(() => {
 				console.log(`High Score for ${district} updated successfully!`);
 			})
