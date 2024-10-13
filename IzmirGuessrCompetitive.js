@@ -46,16 +46,26 @@ let isTimerPaused = false;
 let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
-if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {console.log("mobile")}
-else {console.log("computer")}
+let maxZoomValue;
+let minZoomValue;
+
+if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
+    maxZoomValue = 9;
+    minZoomValue = 7;
+} else {
+    maxZoomValue = 11;
+    minZoomValue = 9;
+}
+
 const map2 = L.map("map2", {
-	maxZoom: 11,
-	minZoom: 9,
-	maxBounds: [
-		[39.444306, 28.559917],
-		[37.808722, 26.203444],
-	], // (North, East, South, West)
+    maxZoom: maxZoomValue,
+    minZoom: minZoomValue,
+    maxBounds: [
+        [39.444306, 28.559917],
+        [37.808722, 26.203444],
+    ], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
+
 
 L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 	attribution: "© OpenStreetMap contributors © CartoDB",
