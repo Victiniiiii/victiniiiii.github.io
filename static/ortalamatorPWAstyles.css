@@ -37,7 +37,7 @@
         text-decoration: none;
     }
 
-    .title-section {
+    #title-section {
         background-color: rgb(10,10,20,1);        
         display: flex;
         justify-content: space-between;
@@ -472,7 +472,7 @@
         text-decoration: none;
     }
 
-    .title-section {
+    #title-section {
         background-color: rgb(10,10,20,1);
         display: flex;
         justify-content: space-between;
@@ -488,7 +488,7 @@
         height: 6svh;
     }
 
-    .title-section a div {
+    #title-section a div {
         background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
         width: 6svh;
         height: 6svh;

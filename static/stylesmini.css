@@ -18,7 +18,7 @@ a {
     text-decoration: none;
 }
 
-.title-section {
+#title-section {
     background-image: url("../static/imageswebp/thunder.webp"), url("../static/images/thunder.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -37,7 +37,7 @@ a {
     height: 6svh;
 }
 
-.title-section a div {
+#title-section a div {
     background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
     width: 6svh;
     height: 6svh;
