@@ -80,7 +80,7 @@ function updateHighScore(district, score) {
 			.catch((error) => {
 				console.error(`Error updating high score for ${district}:`, error);
 			});
-        }		
+        } else {console.log("high score not highj enough")}	
 	});
 }
 

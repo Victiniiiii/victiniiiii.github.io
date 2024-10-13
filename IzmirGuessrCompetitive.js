@@ -5,11 +5,6 @@ let guessedCoordinates = [0, 0, 0, 0, 0];
 let actualCoordinates = [0, 0, 0, 0, 0];
 let totalPoints = 0;
 
-// Loading Highscore:
-
-let highscore = localStorage.getItem("highscore") ? parseInt(localStorage.getItem("highscore")) : 0;
-document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
-
 // Game Settings:
 
 let selectedDistrict;
@@ -343,14 +338,8 @@ function displayResults(distance, points) {
 	document.getElementById("gamemap").style.opacity = "1";
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
+    updateHighScore(selectedDistrict,totalPoints);
 
-	if (totalPoints > highscore) {
-		highscore = totalPoints;
-		localStorage.setItem("highscore", highscore);
-        updateHighScore(selectedDistrict,highscore);
-	}
-
-	document.getElementById("highscore").textContent = `Best Score: ${highscore}`;
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
