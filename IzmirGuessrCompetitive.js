@@ -48,6 +48,8 @@ let finalgoruntulendimi = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 
+// Leaflet Map:
+
 if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
     maxZoomValue = 9;
     minZoomValue = 7;
