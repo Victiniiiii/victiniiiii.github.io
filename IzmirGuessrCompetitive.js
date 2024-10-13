@@ -179,17 +179,7 @@ function initMap() {
 		overlayContainer.style.display = "block";
 		buttonrow.style.display = "flex";
 		startPage.style.display = "none";
-		resultModal.style.display = "none";		
-
-		resumeTimer();
-
-		if (roundTimer) {
-			clearInterval(roundTimer);
-		}
-
-		timerSeconds = 30;
-		document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
-		roundTimer = setInterval(updateTimer, 1000);
+		resultModal.style.display = "none";
 
 		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 			center: randomLocation,
@@ -249,6 +239,16 @@ function initMap() {
 					const points = calculatePoints(distance);
 					displayResults(distance, points);
 				};
+
+                resumeTimer();
+
+                if (roundTimer) {
+                    clearInterval(roundTimer);
+                }
+
+                timerSeconds = 30;
+                document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+                roundTimer = setInterval(updateTimer, 1000);
 			} else {
 				initializeMapWithRandomLocation();
 			}
