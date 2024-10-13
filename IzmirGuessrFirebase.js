@@ -79,7 +79,7 @@ function updateHighScore(district, score) {
 				console.log(`High Score for ${district} updated successfully!`);
 			})
 			.catch((error) => {
-				console.error(`Error incrementing play count for ${district}:`, error);
+				console.error(`Error updating high score for ${district}:`, error);
 			});
         }		
 	});
