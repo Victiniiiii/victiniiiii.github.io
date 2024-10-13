@@ -46,7 +46,7 @@ let isTimerPaused = false;
 let finalgoruntulendimi = "false";
 const initiallyGreenDistricts = [];
 const districtLayers = [];
-if (document.getElementById("title-section").style.width < 768) {console.log("mobile")}
+if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {console.log("mobile")}
 else {console.log("computer")}
 const map2 = L.map("map2", {
 	maxZoom: 11,
