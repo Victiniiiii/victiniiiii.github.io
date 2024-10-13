@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-analytics.js";
 import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"; // Import Firestore functions
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -12,10 +13,11 @@ const firebaseConfig = {
 	measurementId: "G-345W0ZZRY9",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
-const db = firebase.firestore();
+const db = getFirestore(app); // Initialize Firestore
 
 window.loginAnonymously = function () {
 	signInAnonymously(auth)
@@ -50,15 +52,21 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function incrementPlayCount(district) {
-    const userId = auth.currentUser.uid;
-    const userPlayCountsRef = firebase.database().ref(`users/${userId}/playCounts/${district}`);
-    userPlayCountsRef.transaction((currentCount) => {
-        return (currentCount || 0) + 1; // If currentCount is null, start from 0
-    })
-    .then(() => {
-        console.log(`Play count for ${district} incremented successfully!`);
-    })
-    .catch((error) => {
-        console.error(`Error incrementing play count for ${district}:`, error);
-    });
+	const userId = auth.currentUser.uid;
+
+	// Reference to the user's play counts in Firestore
+	const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
+	
+	getDoc(userPlayCountsRef).then((docSnapshot) => {
+		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+
+		// Increment play count and update Firestore
+		setDoc(userPlayCountsRef, { count: currentCount + 1 }, { merge: true })
+			.then(() => {
+				console.log(`Play count for ${district} incremented successfully!`);
+			})
+			.catch((error) => {
+				console.error(`Error incrementing play count for ${district}:`, error);
+			});
+	});
 }
