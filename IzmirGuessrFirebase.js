@@ -51,7 +51,7 @@ onAuthStateChanged(auth, (user) => {
 	}
 });
 
-export function incrementPlayCount(district) {
+function incrementPlayCount(district) {
 	const userId = auth.currentUser.uid;
 
 	// Reference to the user's play counts in Firestore

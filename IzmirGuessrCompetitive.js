@@ -1,4 +1,3 @@
-import { incrementPlayCount } from './IzmirGuessrFirebase.js';
 // Game Points:
 
 let roundPoints = [0, 0, 0, 0, 0];
