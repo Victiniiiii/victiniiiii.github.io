@@ -610,7 +610,7 @@ faqButton.addEventListener("click", function () {
 });
 
 districtsData.forEach((district) => {
-	const polygon = L.polygon(district.coordinates, { fill: true, color: "green" }).addTo(map2);
+	const polygon = L.polygon(district.designcoordinates, { fill: true, color: "green" }).addTo(map2);
 	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
 
 	if (district.state === 1) {
