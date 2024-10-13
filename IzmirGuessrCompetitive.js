@@ -347,6 +347,7 @@ function displayResults(distance, points) {
 	if (totalPoints > highscore) {
 		highscore = totalPoints;
 		localStorage.setItem("highscore", highscore);
+        updateHighScore(selectedDistrict,highscore);
 	}
 
 	document.getElementById("highscore").textContent = `Best Score: ${highscore}`;

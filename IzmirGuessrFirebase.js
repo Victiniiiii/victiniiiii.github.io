@@ -53,14 +53,10 @@ onAuthStateChanged(auth, (user) => {
 
 function incrementPlayCount(district) {
 	const userId = auth.currentUser.uid;
-
-	// Reference to the user's play counts in Firestore
 	const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
 	
 	getDoc(userPlayCountsRef).then((docSnapshot) => {
 		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-
-		// Increment play count and update Firestore
 		setDoc(userPlayCountsRef, { count: currentCount + 1 }, { merge: true })
 			.then(() => {
 				console.log(`Play count for ${district} incremented successfully!`);
@@ -71,4 +67,23 @@ function incrementPlayCount(district) {
 	});
 }
 
+function updateHighScore(district, score) {
+    const userId = auth.currentUser.uid;
+	const userPlayCountsRef = doc(db, `users/${userId}/HighScores/${district}`);
+	
+	getDoc(userPlayCountsRef).then((docSnapshot) => {
+		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+        if (currentCount < score) {
+            setDoc(userPlayCountsRef, { count: score }, { merge: true })
+			.then(() => {
+				console.log(`High Score for ${district} updated successfully!`);
+			})
+			.catch((error) => {
+				console.error(`Error incrementing play count for ${district}:`, error);
+			});
+        }		
+	});
+}
+
 window.incrementPlayCount = incrementPlayCount;
+window.updateHighScore = updateHighScore;
