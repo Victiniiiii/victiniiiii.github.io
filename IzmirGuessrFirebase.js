@@ -45,9 +45,9 @@ window.loginWithGoogle = function () {
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
-		console.log("User ID:", user.uid);
+		window.document.getElementById("usernameHere").innerText = `Username: ${user.uid}`;
 	} else {
-		console.log("No user signed in.");
+		window.document.getElementById("usernameHere").innerText = "Login pleeease"
 	}
 });
 
