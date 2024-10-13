@@ -36,11 +36,14 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 }).addTo(map);
 
-districtsData.forEach((district) => {
-	const polygon = L.polygon(district.designcoordinates, { fill: true, color: "green" }).addTo(map);
-	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+function test(hey) {
+    let hey = hey;
+    districtsData.forEach((district) => {
+        const polygon = L.polygon(district.hey, { fill: true, color: "green" }).addTo(map);
+        districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
 
-	if (district.state === 1) {
-		initiallyGreenDistricts.push({ bounds: district.bounds });
-	}
-});
+        if (district.state === 1) {
+            initiallyGreenDistricts.push({ bounds: district.bounds });
+        }
+    });
+}
