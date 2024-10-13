@@ -71,21 +71,12 @@ function updateHighScore(district, score) {
     const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
 
     getDoc(userHighScore).then((docSnapshot) => {
-        // Check the current count from Firestore
         const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
 
-        // Debugging logs to check values
         console.log(`Current High Score for ${district}:`, currentCount);
         console.log(`New Score Attempt:`, score);
 
-        // Ensure score is a number
-        if (typeof score !== 'number') {
-            console.error('Score must be a number');
-            return;
-        }
-
-        // Compare current count with the new score
-        if (currentCount < score) {
+        if (!docSnapshot.exists() || currentCount < score) {
             setDoc(userHighScore, { count: score }, { merge: true })
                 .then(() => {
                     console.log(`High Score for ${district} updated successfully!`);
