@@ -68,21 +68,37 @@ function incrementPlayCount(district) {
 
 function updateHighScore(district, score) {
     const userId = auth.currentUser.uid;
-	const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
-    console.log("current high score:",userHighScore);
-	
-	getDoc(userHighScore).then((docSnapshot) => {
-		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+    const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
+
+    getDoc(userHighScore).then((docSnapshot) => {
+        // Check the current count from Firestore
+        const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+
+        // Debugging logs to check values
+        console.log(`Current High Score for ${district}:`, currentCount);
+        console.log(`New Score Attempt:`, score);
+
+        // Ensure score is a number
+        if (typeof score !== 'number') {
+            console.error('Score must be a number');
+            return;
+        }
+
+        // Compare current count with the new score
         if (currentCount < score) {
             setDoc(userHighScore, { count: score }, { merge: true })
-			.then(() => {
-				console.log(`High Score for ${district} updated successfully!`);
-			})
-			.catch((error) => {
-				console.error(`Error updating high score for ${district}:`, error);
-			});
-        } else {console.log("high score not highj enough")}	
-	});
+                .then(() => {
+                    console.log(`High Score for ${district} updated successfully!`);
+                })
+                .catch((error) => {
+                    console.error(`Error updating high score for ${district}:`, error);
+                });
+        } else {
+            console.log("High score not high enough");
+        }
+    }).catch((error) => {
+        console.error(`Error retrieving high score for ${district}:`, error);
+    });
 }
 
 window.incrementPlayCount = incrementPlayCount;
