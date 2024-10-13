@@ -43,9 +43,8 @@ let guessedLocationMarker;
 let randomLocation;
 let minimap;
 let roundTimer;
-let selectedTimeLimit = "No Time Limit";
 let isTimerPaused = false;
-let finalgoruntulendimi = "false";
+let finalgoruntulendimi = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 
@@ -287,7 +286,7 @@ function toggleModal() {
 		} else if (finalresultsmodal.style.display === "block") {
 			finalresultsmodal.style.display = "none";
 			resultModal.style.display = "none";
-		} else if (resultModal.style.display === "none" && finalresultsmodal.style.display === "none" && finalgoruntulendimi === "false") {
+		} else if (resultModal.style.display === "none" && finalresultsmodal.style.display === "none" && !finalgoruntulendimi) {
 			resultModal.style.display = "block";
 		} else {
 			finalresultsmodal.style.display = "block";
@@ -449,7 +448,7 @@ function playAgain() {
 	roundPoints = [0, 0, 0, 0, 0];
 	guessedCoordinates = [0, 0, 0, 0, 0];
 	actualCoordinates = [0, 0, 0, 0, 0];
-	finalgoruntulendimi = "false";
+	finalgoruntulendimi = false;
 
 	initMap();
 	resumeTimer();
@@ -461,7 +460,7 @@ function returnToMainMenu() {
 	roundPoints = [0, 0, 0, 0, 0];
 	guessedCoordinates = [0, 0, 0, 0, 0];
 	actualCoordinates = [0, 0, 0, 0, 0];
-	finalgoruntulendimi = "false";
+	finalgoruntulendimi = false;
 
 	startPage.style.display = "flex";
 	returnButton.style.display = "none";
@@ -481,7 +480,7 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-	finalgoruntulendimi = "false";
+	finalgoruntulendimi = false;
 	const script = document.createElement("script");
 	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=initMap`;
 	document.body.appendChild(script);
@@ -491,7 +490,7 @@ function startNextGame() {
 	if (roundCount == 4) {        
 		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
-        finalgoruntulendimi = "true";
+        finalgoruntulendimi = true;
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
