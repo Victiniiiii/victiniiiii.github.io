@@ -36,13 +36,41 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 	maxZoom: 19,
 }).addTo(map);
 
-function test(hey) {
-    districtsData.forEach((district) => {
-        const polygon = L.polygon(district[hey], { fill: true, color: "green" }).addTo(map);
-        districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+const districtColors = [
+    "blue",      // KaraburunBounds
+    "green",     // CesmeBounds
+    "red",       // KinikBounds
+    "purple",    // DikiliBounds
+    "yellow",    // BergamaBounds
+    "brown",     // UrlaBounds
+    "turquoise", // FocaBounds
+    "darkblue",  // AliagaBounds
+    "orange",    // MenemenBounds
+    "black",     // CigliBounds
+    "blue",      // KarsiyakaBounds
+    "green",     // BayrakliBounds
+    "purple",    // KonakBounds
+    "green",     // BeydagBounds
+    "turquoise", // BornovaBounds
+    "black",     // GuzelbahceBounds
+    "orange",    // KemalpasaBounds
+    "red",       // SeferihisarBounds
+    "turquoise", // BalcovaBounds
+    "orange",    // NarlidereBounds
+    "darkblue",  // KarabaglarBounds
+    "yellow",    // BucaBounds
+    "red",       // KirazBounds
+    "green",     // GaziemirBounds
+    "black",     // TireBounds
+    "blue",      // MenderesBounds
+    "brown",     // SelcukBounds
+    "pink",      // OdemisBounds
+    "purple",    // TorbaliBounds
+    "turquoise"  // BayindirBounds
+];
 
-        if (district.state === 1) {
-            initiallyGreenDistricts.push({ bounds: district.bounds });
-        }
-    });
+function test(hey) {
+    for (let i = 0; i < 30; i++) {
+        L.polygon(districtsData[hey][i], { color: districtColors[i] }).addTo(map);
+    }
 }
