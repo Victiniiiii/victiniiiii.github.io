@@ -607,5 +607,4 @@ buttons.forEach((button) => {
 	button.style.backgroundColor = "green";
 });
 
-document.getElementById("izmirtime").addEventListener("change", saveSelectedTimeLimit);
 window.addEventListener("load", loadSelectedTimeLimit);
