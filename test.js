@@ -70,7 +70,8 @@ const districtColors = [
 ];
 
 function test(hey) {
+    if (hey == bounds)
     for (let i = 0; i < 30; i++) {
-        L.polygon(districtsData[hey][i], { color: districtColors[i] }).addTo(map);
+        L.polygon(districtsData[i][hey], { color: districtColors[i] }).addTo(map);
     }
 }
