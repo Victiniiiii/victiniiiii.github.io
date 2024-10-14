@@ -29,6 +29,7 @@ a {
     width: 100%;
     border: 0.5vw solid black;
     margin-bottom: 0.1svh;
+    height: 8dvh;
 }
 
 .main-menu-button {
