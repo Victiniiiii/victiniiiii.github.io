@@ -30,7 +30,10 @@ window.loginWithGoogle = function () {
 };
 
 onAuthStateChanged(auth, (user) => {
-	if (user) {
+    if (user && userCredential.user.isAnonymous) {
+        window.document.getElementById("usernameHere").innerText = `Anonymous`;
+    }
+	else if (user) {
 		window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
 	} else {
 		signInAnonymously(auth)
