@@ -362,6 +362,10 @@ function displayResults(distance, points) {
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
+    addToTotalScore(selectedDistrict,(roundPoints[roundCount]));    
+    updateHighScore(selectedDistrict,(roundPoints[roundCount]));    
+    increaseRoundCount(selectedDistrict);
+
 	if (roundCount < 4) {
 		new google.maps.Marker({
 			position: randomLocation,
@@ -495,8 +499,6 @@ function startNextGame() {
 		initMap();
 		++roundCount;
 	}
-    addToTotalScore(selectedDistrict,roundPoints[roundCount]);
-    increaseRoundCount(selectedDistrict)
 }
 
 function addAllDistricts() {

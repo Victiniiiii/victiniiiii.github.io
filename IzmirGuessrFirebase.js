@@ -48,51 +48,14 @@ onAuthStateChanged(auth, (user) => {
 	}
 });
 
-function incrementPlayCount(district) {
+async function incrementPlayCount(district) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = currentUser.uid;
-		const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
+		const Ref = doc(db, `users/${userId}/playCounts/${district}`);
 
-		getDoc(userPlayCountsRef).then((docSnapshot) => {
-			const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-			setDoc(userPlayCountsRef, { count: currentCount + 1 }, { merge: true })
-				.then(() => {
-					console.log(`Play count for ${district} incremented successfully!`);
-				})
-				.catch((error) => {
-					console.error(`Error incrementing play count for ${district}:`, error);
-				});
-		});
-	}
-}
-
-function updateHighScore(district, score) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = auth.currentUser.uid;
-		const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
-
-		getDoc(userHighScore)
-			.then((docSnapshot) => {
-				const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-				if (!docSnapshot.exists() || currentCount < score) {
-					setDoc(userHighScore, { count: score }, { merge: true })
-						.then(() => {
-							console.log(`Current High Score for ${district}:`, currentCount);
-							console.log(`New Score Attempt:`, score);
-							console.log(`High Score for ${district} updated successfully!`);
-						})
-						.catch((error) => {
-							console.error(`Error updating high score for ${district}:`, error);
-						});
-				} else {
-					console.log("High score not high enough");
-				}
-			})
-			.catch((error) => {
-				console.error(`Error retrieving high score for ${district}:`, error);
-			});
+        await setDoc(Ref, { playCount: increment(1) }, { merge: true });
+        console.log(`Incremented playCount by 1 for: ${district}`);
 	}
 }
 
@@ -102,24 +65,34 @@ async function increaseRoundCount(district) {
         const userId = auth.currentUser.uid;
         const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-        await setDoc(Ref, { playCount: increment(1) }, { merge: true });
-        console.log(`Incremented playCount by 1 for: ${district}`);
+        await setDoc(Ref, { roundCount: increment(1) }, { merge: true });
+        console.log(`Incremented roundCount by 1 for: ${district}`);
     }
 }
 
-async function addToTotalScore(district, number) {
+async function updateHighScore(district, score) {
+	const currentUser = auth.currentUser;
+	if (currentUser && !currentUser.isAnonymous) {
+		const userId = auth.currentUser.uid;
+		const Ref = doc(db, `users/${userId}/HighScores/${district}`);
+
+        await setDoc(Ref, { highScore: score }, { merge: true });
+        console.log(`Set new high score for: ${district}; ${score}!`);
+	}
+}
+
+async function addToTotalScore(district, score) {
     const currentUser = auth.currentUser;
     if (currentUser && !currentUser.isAnonymous) {
         const userId = auth.currentUser.uid;
         const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-        await setDoc(Ref, { TotalScore: increment(number) }, { merge: true });
-        console.log(`Total score for ${district} increased by ${number}`);
+        await setDoc(Ref, { totalScore: increment(score) }, { merge: true });
+        console.log(`Total score for ${district} increased by ${score}`);
     }
 }
 
-
-//hepsi-tek ilçe ayrımına dikkat
+// hepsi-tek ilçe ayrımına dikkat
 
 window.incrementPlayCount = incrementPlayCount;
 window.updateHighScore = updateHighScore;
