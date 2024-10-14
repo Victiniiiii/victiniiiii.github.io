@@ -120,6 +120,7 @@ async function addToTotalScore(district, score) {
 }
 
 // hepsi-tek ilçe ayrımına dikkat
+// !!!!!!!!! Bİ ROUND BİTİMİ, Bİ OYUN BİTİMİ FONKSİYONU YAP HEPSİNİ ORAYA KOY!!!!!!!!!
 
 window.incrementPlayCount = incrementPlayCount;
 window.updateHighScore = updateHighScore;
