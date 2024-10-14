@@ -97,30 +97,27 @@ function updateHighScore(district, score) {
 }
 
 async function increaseRoundCount(district) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+        const userId = auth.currentUser.uid;
+        const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-		await updateDoc(Ref, {
-			playCount: increment(1),
-		});
-		console.log(`Incremented by 1: ${district}`);
-	}
+        await setDoc(Ref, { playCount: increment(1) }, { merge: true });
+        console.log(`Incremented playCount by 1 for: ${district}`);
+    }
 }
 
 async function addToTotalScore(district, number) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+        const userId = auth.currentUser.uid;
+        const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-		await updateDoc(Ref, {
-			TotalScore: increment(number),
-		});
-		console.log(`Total score for ${district} increased by ${number}`);
-	}
+        await setDoc(Ref, { TotalScore: increment(number) }, { merge: true });
+        console.log(`Total score for ${district} increased by ${number}`);
+    }
 }
+
 
 //hepsi-tek ilçe ayrımına dikkat
 
