@@ -71,28 +71,35 @@ async function increaseRoundCount(district) {
 }
 
 async function updateHighScore(district, score) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+        const userId = currentUser.uid;
+        const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-		const docSnap = await getDoc(Ref);
+        const docSnap = await getDoc(Ref);
 
-		if (docSnap.exists()) {
-			const data = docSnap.data();
-            console.log("currentHighScore",data.highScore);
+        if (docSnap.exists()) {
+            const data = docSnap.data();
+            console.log("Document data:", data);
 
-			if (score > data.highScore) {
-				await setDoc(Ref, { highScore: score }, { merge: true });
-				console.log(`New high score for ${district}: ${score}!`);
-			} else {
-				console.log(`No update needed, current high score for ${district} is higher or equal: ${data.highScore}`);
-			}
-		} else {
-			await setDoc(Ref, { highScore: score }, { merge: true });
-			console.log(`First high score set for ${district}: ${score}!`);
-		}
-	}
+            // Check if highScore exists in the data
+            const currentHighScore = data.highScore !== undefined ? data.highScore : 0;
+            console.log("Current high score:", currentHighScore);
+
+            if (score > currentHighScore) {
+                await setDoc(Ref, { highScore: score }, { merge: true });
+                console.log(`New high score for ${district}: ${score}!`);
+            } else {
+                console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
+            }
+        } else {
+            // Document doesn't exist, set the high score
+            await setDoc(Ref, { highScore: score }, { merge: true });
+            console.log(`First high score set for ${district}: ${score}!`);
+        }
+    } else {
+        console.log("User is not logged in or is anonymous.");
+    }
 }
 
 async function addToTotalScore(district, score) {
