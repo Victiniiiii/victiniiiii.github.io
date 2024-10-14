@@ -68,7 +68,8 @@ function incrementPlayCount(district) {
 }
 
 function updateHighScore(district, score) {
-    if (!user.isAnonymous) {
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
         const userId = auth.currentUser.uid;
         const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
 
