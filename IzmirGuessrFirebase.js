@@ -37,7 +37,6 @@ onAuthStateChanged(auth, (user) => {
             window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
         }
     } else {
-        // Sign in anonymously
         signInAnonymously(auth)
         .then((userCredential) => {
             const user = userCredential.user;
@@ -50,43 +49,47 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function incrementPlayCount(district) {
-	const userId = auth.currentUser.uid;
-	const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
-	
-	getDoc(userPlayCountsRef).then((docSnapshot) => {
-		const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-		setDoc(userPlayCountsRef, { count: currentCount + 1 }, { merge: true })
-			.then(() => {
-				console.log(`Play count for ${district} incremented successfully!`);
-			})
-			.catch((error) => {
-				console.error(`Error incrementing play count for ${district}:`, error);
-			});
-	});
+    if (!user.isAnonymous) {
+        const userId = auth.currentUser.uid;
+        const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
+        
+        getDoc(userPlayCountsRef).then((docSnapshot) => {
+            const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+            setDoc(userPlayCountsRef, { count: currentCount + 1 }, { merge: true })
+                .then(() => {
+                    console.log(`Play count for ${district} incremented successfully!`);
+                })
+                .catch((error) => {
+                    console.error(`Error incrementing play count for ${district}:`, error);
+                });
+        });
+    }
 }
 
 function updateHighScore(district, score) {
-    const userId = auth.currentUser.uid;
-    const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
+    if (!user.isAnonymous) {
+        const userId = auth.currentUser.uid;
+        const userHighScore = doc(db, `users/${userId}/HighScores/${district}`);
 
-    getDoc(userHighScore).then((docSnapshot) => {
-        const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
-        if (!docSnapshot.exists() || currentCount < score) {
-            setDoc(userHighScore, { count: score }, { merge: true })
-                .then(() => {
-                    console.log(`Current High Score for ${district}:`, currentCount);
-                    console.log(`New Score Attempt:`, score);
-                    console.log(`High Score for ${district} updated successfully!`);
-                })
-                .catch((error) => {
-                    console.error(`Error updating high score for ${district}:`, error);
-                });
-        } else {
-            console.log("High score not high enough");
-        }
-    }).catch((error) => {
-        console.error(`Error retrieving high score for ${district}:`, error);
-    });
+        getDoc(userHighScore).then((docSnapshot) => {
+            const currentCount = docSnapshot.exists() ? docSnapshot.data().count : 0;
+            if (!docSnapshot.exists() || currentCount < score) {
+                setDoc(userHighScore, { count: score }, { merge: true })
+                    .then(() => {
+                        console.log(`Current High Score for ${district}:`, currentCount);
+                        console.log(`New Score Attempt:`, score);
+                        console.log(`High Score for ${district} updated successfully!`);
+                    })
+                    .catch((error) => {
+                        console.error(`Error updating high score for ${district}:`, error);
+                    });
+            } else {
+                console.log("High score not high enough");
+            }
+        }).catch((error) => {
+            console.error(`Error retrieving high score for ${district}:`, error);
+        });
+    }
 }
 
 window.incrementPlayCount = incrementPlayCount;
