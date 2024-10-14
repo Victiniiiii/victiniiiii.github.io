@@ -338,7 +338,6 @@ function displayResults(distance, points) {
 	document.getElementById("gamemap").style.opacity = "1";
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
-    updateHighScore(selectedDistrict,totalPoints);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
@@ -363,8 +362,8 @@ function displayResults(distance, points) {
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
     addToTotalScore(selectedDistrict,(roundPoints[roundCount]));    
-    updateHighScore(selectedDistrict,(roundPoints[roundCount]));    
     increaseRoundCount(selectedDistrict);
+    updateHighScore(selectedDistrict,totalPoints);
 
 	if (roundCount < 4) {
 		new google.maps.Marker({

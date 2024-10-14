@@ -52,7 +52,7 @@ async function incrementPlayCount(district) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = currentUser.uid;
-		const Ref = doc(db, `users/${userId}/playCounts/${district}`);
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
         await setDoc(Ref, { playCount: increment(1) }, { merge: true });
         console.log(`Incremented playCount by 1 for: ${district}`);
@@ -70,16 +70,34 @@ async function increaseRoundCount(district) {
     }
 }
 
+import { doc, getDoc, setDoc } from "firebase/firestore";
+
 async function updateHighScore(district, score) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/HighScores/${district}`);
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
-        await setDoc(Ref, { highScore: score }, { merge: true });
-        console.log(`Set new high score for: ${district}; ${score}!`);
+		const docSnap = await getDoc(Ref);
+
+		if (docSnap.exists()) {
+			const data = docSnap.data();
+			const currentHighScore = data.highScore || 0;
+
+			if (score > currentHighScore) {
+				await setDoc(Ref, { highScore: score }, { merge: true });
+				console.log(`New high score for ${district}: ${score}!`);
+			} else {
+				console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
+			}
+		} else {
+			// If document doesn't exist, set the high score
+			await setDoc(Ref, { highScore: score }, { merge: true });
+			console.log(`First high score set for ${district}: ${score}!`);
+		}
 	}
 }
+
 
 async function addToTotalScore(district, score) {
     const currentUser = auth.currentUser;
