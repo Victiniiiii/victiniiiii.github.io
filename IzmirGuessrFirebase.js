@@ -94,5 +94,27 @@ function updateHighScore(district, score) {
     }
 }
 
+async function increaseRoundCount(district) {
+    const Ref = doc(db, `users/${userId}/${district}`);
+
+    await updateDoc(Ref, {
+        playCount: increment(1)
+    });
+    console.log(`Incremented by 1: ${district}`);
+}
+
+async function addToTotalScore(district,number) {
+    const Ref = doc(db, `users/${userId}/${district}`);
+
+    await updateDoc(Ref, {
+        TotalScore: increment(number)
+    });
+    console.log(`Total score for ${district} increased by ${number}`)
+}
+
+// game count, high score, round count, total score, hepsi-tek ilçe ayrımına dikkat
+
 window.incrementPlayCount = incrementPlayCount;
 window.updateHighScore = updateHighScore;
+window.increaseRoundCount = increaseRoundCount;
+window.addToTotalScore = addToTotalScore;

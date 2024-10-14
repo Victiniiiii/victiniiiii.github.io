@@ -495,6 +495,8 @@ function startNextGame() {
 		initMap();
 		++roundCount;
 	}
+    addToTotalScore(selectedDistrict,roundPoints[roundCount]);
+    increaseRoundCount(selectedDistrict)
 }
 
 function addAllDistricts() {
