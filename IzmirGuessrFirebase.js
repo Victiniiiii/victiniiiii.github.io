@@ -70,8 +70,6 @@ async function increaseRoundCount(district) {
     }
 }
 
-import { doc, getDoc, setDoc } from "firebase/firestore";
-
 async function updateHighScore(district, score) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
@@ -91,7 +89,6 @@ async function updateHighScore(district, score) {
 				console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
 			}
 		} else {
-			// If document doesn't exist, set the high score
 			await setDoc(Ref, { highScore: score }, { merge: true });
 			console.log(`First high score set for ${district}: ${score}!`);
 		}
