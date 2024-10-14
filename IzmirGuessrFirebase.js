@@ -18,17 +18,6 @@ const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-window.loginAnonymously = function () {
-	signInAnonymously(auth)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			console.log("Logged in anonymously:", user);
-		})
-		.catch((error) => {
-			console.error("Error during anonymous login:", error);
-		});
-};
-
 window.loginWithGoogle = function () {
 	const provider = new GoogleAuthProvider();
 
@@ -46,7 +35,14 @@ onAuthStateChanged(auth, (user) => {
 	if (user) {
 		window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
 	} else {
-		window.document.getElementById("usernameHere").innerText = "Login pleeease"
+		signInAnonymously(auth)
+		.then((userCredential) => {
+			const user = userCredential.user;
+			console.log("Logged in anonymously:", user);
+		})
+		.catch((error) => {
+			console.error("Error during anonymous login:", error);
+		});
 	}
 });
 
