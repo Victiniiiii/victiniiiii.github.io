@@ -49,8 +49,9 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function incrementPlayCount(district) {
-    if (!user.isAnonymous) {
-        const userId = auth.currentUser.uid;
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+        const userId = currentUser.uid;
         const userPlayCountsRef = doc(db, `users/${userId}/playCounts/${district}`);
         
         getDoc(userPlayCountsRef).then((docSnapshot) => {
