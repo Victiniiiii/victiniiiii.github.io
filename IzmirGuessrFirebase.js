@@ -75,11 +75,14 @@ async function updateHighScore(district, score) {
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
 		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+
 		const docSnap = await getDoc(Ref);
 
 		if (docSnap.exists()) {
 			const data = docSnap.data();
-			const currentHighScore = (typeof data.highScore !== "undefined") ? data.highScore : 0;
+			const currentHighScore = data.highScore || 0;
+            console.log("currentHighScore",currentHighScore);
+
 			if (score > currentHighScore) {
 				await setDoc(Ref, { highScore: score }, { merge: true });
 				console.log(`New high score for ${district}: ${score}!`);
@@ -92,7 +95,6 @@ async function updateHighScore(district, score) {
 		}
 	}
 }
-
 
 async function addToTotalScore(district, score) {
     const currentUser = auth.currentUser;
