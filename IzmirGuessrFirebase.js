@@ -80,10 +80,14 @@ async function updateHighScore(district, score) {
 
 		if (docSnap.exists()) {
 			const data = docSnap.data();
-			const currentHighScore = data.highScore;
-            console.log("currentHighScore",currentHighScore);
+            console.log("Document data:", data); // Debugging
+			const currentHighScore = data?.highScore;
+            console.log("currentHighScore:", currentHighScore);
 
-			if (score > currentHighScore) {
+			if (typeof currentHighScore === 'undefined') {
+				console.log("High score field not found, setting it for the first time.");
+				await setDoc(Ref, { highScore: score }, { merge: true });
+			} else if (score > currentHighScore) {
 				await setDoc(Ref, { highScore: score }, { merge: true });
 				console.log(`New high score for ${district}: ${score}!`);
 			} else {
