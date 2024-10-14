@@ -80,7 +80,7 @@ async function updateHighScore(district, score) {
 
 		if (docSnap.exists()) {
 			const data = docSnap.data();
-			const currentHighScore = data.highScore || 0;
+			const currentHighScore = data.highScore;
             console.log("currentHighScore",currentHighScore);
 
 			if (score > currentHighScore) {
