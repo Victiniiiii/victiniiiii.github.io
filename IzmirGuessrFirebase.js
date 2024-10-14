@@ -82,6 +82,9 @@ async function updateHighScore(district, score) {
             const data = docSnap.data();
             console.log("Document data:", data);
 
+            // Log the entire data object to verify structure
+            console.log("Complete document data retrieved:", JSON.stringify(data, null, 2));
+
             // Initialize highScore to 0 if it doesn't exist
             let currentHighScore = data.highScore !== undefined ? data.highScore : 0;
 
@@ -102,6 +105,7 @@ async function updateHighScore(district, score) {
         console.log("User is not logged in or is anonymous.");
     }
 }
+
 
 
 async function addToTotalScore(district, score) {
