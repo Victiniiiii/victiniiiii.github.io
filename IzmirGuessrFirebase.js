@@ -122,7 +122,7 @@ async function addToTotalScore(district, number) {
 	}
 }
 
-// game count, high score, round count, total score, hepsi-tek ilçe ayrımına dikkat
+//hepsi-tek ilçe ayrımına dikkat
 
 window.incrementPlayCount = incrementPlayCount;
 window.updateHighScore = updateHighScore;
