@@ -100,7 +100,7 @@ async function increaseRoundCount(district) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/${district}`);
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
 		await updateDoc(Ref, {
 			playCount: increment(1),
@@ -113,7 +113,7 @@ async function addToTotalScore(district, number) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/${district}`);
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
 		await updateDoc(Ref, {
 			TotalScore: increment(number),
