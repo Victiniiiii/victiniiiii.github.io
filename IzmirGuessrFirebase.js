@@ -82,8 +82,9 @@ async function updateHighScore(district, score) {
             const data = docSnap.data();
             console.log("Document data:", data);
 
-            // Check if highScore exists in the data
-            const currentHighScore = data.highScore !== undefined ? data.highScore : 0;
+            // Initialize highScore to 0 if it doesn't exist
+            let currentHighScore = data.highScore !== undefined ? data.highScore : 0;
+
             console.log("Current high score:", currentHighScore);
 
             if (score > currentHighScore) {
@@ -93,14 +94,15 @@ async function updateHighScore(district, score) {
                 console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
             }
         } else {
-            // Document doesn't exist, set the high score
-            await setDoc(Ref, { highScore: score }, { merge: true });
+            // If document doesn't exist, create it with highScore
+            await setDoc(Ref, { highScore: score, totalScore: 0, roundCount: 0, playCount: 0 }, { merge: true });
             console.log(`First high score set for ${district}: ${score}!`);
         }
     } else {
         console.log("User is not logged in or is anonymous.");
     }
 }
+
 
 async function addToTotalScore(district, score) {
     const currentUser = auth.currentUser;
