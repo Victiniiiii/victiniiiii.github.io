@@ -478,9 +478,10 @@ function returnToMainMenu() {
 
 function startGame() {
 	finalgoruntulendimi = false;
+    initMap(); /*
 	const script = document.createElement("script");
 	script.src = `https://maps.googleapis.com/maps/api/js?key=${theKey}&libraries=places&v=weekly&callback=initMap`;
-	document.body.appendChild(script);
+	document.body.appendChild(script);*/
 }
 
 function startNextGame() {
