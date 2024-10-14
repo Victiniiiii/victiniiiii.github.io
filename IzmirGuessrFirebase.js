@@ -30,21 +30,23 @@ window.loginWithGoogle = function () {
 };
 
 onAuthStateChanged(auth, (user) => {
-    if (user && userCredential.user.isAnonymous) {
-        window.document.getElementById("usernameHere").innerText = `Anonymous`;
+    if (user) {
+        if (user.isAnonymous) {
+            window.document.getElementById("usernameHere").innerText = `Anonymous`;
+        } else {
+            window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
+        }
+    } else {
+        // Sign in anonymously
+        signInAnonymously(auth)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log("Logged in anonymously:", user);
+        })
+        .catch((error) => {
+            console.error("Error during anonymous login:", error);
+        });
     }
-	else if (user) {
-		window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
-	} else {
-		signInAnonymously(auth)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			console.log("Logged in anonymously:", user);
-		})
-		.catch((error) => {
-			console.error("Error during anonymous login:", error);
-		});
-	}
 });
 
 function incrementPlayCount(district) {
