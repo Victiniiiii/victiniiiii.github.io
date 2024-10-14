@@ -74,53 +74,24 @@ async function updateHighScore(district, score) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
-const docRef = db.collection('users').doc(userId).collection('GameData').doc(district);
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
 
+		const docSnap = await getDoc(Ref);
 
-
-
-        docRef.get().then((doc) => {
-            if (doc.exists) {
-                const data = doc.data();
-                const highScore = data.highScore;
-                const playCount = data.playCount;
-                const roundCount = data.roundCount;
-                const totalScore = data.totalScore;
-        
-                console.log('High Score:', highScore);
-                console.log('Play Count:', playCount);
-                console.log('Round Count:', roundCount);
-                console.log('Total Score:', totalScore);
-            } else {
-                console.log('No such document!');
-            }
-        }).catch((error) => {
-            console.error('Error getting document:', error);
-        });
-        
-/* 
 		if (docSnap.exists()) {
 			const data = docSnap.data();
-            console.log("Document data:", data); // Debugging
-			const currentHighScore = data?.highScore;
+            console.log("currentHighScore",data.highScore);
 
-			if (typeof currentHighScore === 'undefined') {
-				// High score does not exist yet, setting it for the first time
-				console.log("High score field not found, setting it for the first time.");
-				await setDoc(Ref, { highScore: score }, { merge: true });
-				console.log(`First high score set for ${district}: ${score}!`);
-			} else if (score > currentHighScore) {
-				// Update the high score if the new score is greater
+			if (score > data.highScore) {
 				await setDoc(Ref, { highScore: score }, { merge: true });
 				console.log(`New high score for ${district}: ${score}!`);
 			} else {
-				console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
+				console.log(`No update needed, current high score for ${district} is higher or equal: ${data.highScore}`);
 			}
 		} else {
-			// Document doesn't exist, create it with the high score field
 			await setDoc(Ref, { highScore: score }, { merge: true });
 			console.log(`First high score set for ${district}: ${score}!`);
-		} */
+		}
 	}
 }
 
