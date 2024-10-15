@@ -63,7 +63,8 @@ async function saveData(district, score) {
           transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
         } else {
           const data = userGameData.data();
-          const highScore = data.highScore || 0;
+          const highScore = data.highScore;
+          console.log("highscore:",highScore);
 
         if (score > highScore) {
             transaction.update(ref, { highScore: score });
