@@ -338,6 +338,7 @@ function displayResults(distance, points) {
 	document.getElementById("gamemap").style.opacity = "1";
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
+    saveData(selectedDistrict,(roundPoints[roundCount]));
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
