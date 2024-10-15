@@ -49,26 +49,26 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function saveData(district, score) {
-    const currentUser = auth.currentUser;
-    if (currentUser && !currentUser.isAnonymous) {
-        const userId = auth.currentUser.uid;
-        const Ref = doc(db, `users/${userId}/GameData/${district}`);
-        if (roundCount < 4) {
-            if (score > totalPoints) {
-                Ref.transaction((highScore) => {
-                    return (score)
-                })
-            }
-            await setDoc(Ref, { totalScore: increment(score), roundCount: increment(1) }, { merge: true });
-        } else {
-            if (score > totalPoints) {
-                Ref.transaction((highScore) => {
-                    return (score)
-                })
-            }
-            await setDoc(Ref, { playCount: increment(1), totalScore: increment(score), roundCount: increment(1) }, { merge: true });
-        }
-    }
+	const currentUser = auth.currentUser;
+	if (currentUser && !currentUser.isAnonymous) {
+		const userId = auth.currentUser.uid;
+		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+		if (roundCount < 4) {
+			Ref.transaction((highScore) => {
+				if (totalPoints > highScore) {
+					return score;
+				}
+			});
+			await setDoc(Ref, { totalScore: increment(score), roundCount: increment(1) }, { merge: true });
+		} else {
+			Ref.transaction((highScore) => {
+				if (totalPoints > highScore) {
+					return score;
+				}
+			});
+			await setDoc(Ref, { playCount: increment(1), totalScore: increment(score), roundCount: increment(1) }, { merge: true });
+		}
+	}
 }
 
 // hepsi-tek ilçe ayrımına dikkat
