@@ -62,12 +62,12 @@ async function saveData(district, score) {
         if (!userGameData.exists()) {
           transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
         } else {
-          const data = userGameData.data();
-          const highScore = data.highScore;
-          console.log("highscore:",highScore);
+        const data = userGameData.data();
+        const highScore = data.highScore;
+        console.log("highscore:",highScore);
 
-        if (score > highScore) {
-            transaction.update(ref, { highScore: score });
+        if (totalPoints > highScore) {
+            transaction.update(ref, { highScore: totalPoints });
         }
 
         if (roundCount < 4) {
