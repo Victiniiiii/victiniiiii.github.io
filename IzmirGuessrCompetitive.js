@@ -75,6 +75,11 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 
 // Functions:
 
+function refreshMap() {
+    map2.setView([initialLat, initialLon], initialZoom);
+    map2.invalidateSize();
+}
+
 function isPointInPolygon(point, polygon) {
 	let x = point[0],
 		y = point[1];
@@ -465,13 +470,9 @@ function returnToMainMenu() {
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
-	document.getElementById("gamemap").style.display = "none";/*
+	document.getElementById("gamemap").style.display = "none";
 
-	L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-        attribution: "© OpenStreetMap contributors © CartoDB",
-        subdomains: "abcd",
-        maxZoom: 19,
-    }).addTo(map2);*/
+	refreshMap();
 	pauseTimer();
 }
 
