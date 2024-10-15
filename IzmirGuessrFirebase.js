@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, setDoc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -49,21 +49,46 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function saveData(district, score) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = auth.currentUser.uid;
-		const Ref = doc(db, `users/${userId}/GameData/${district}`);
-        Ref.transaction((highScore) => {
-            if (totalPoints > highScore) {
-                return score;
-            }
-        });
-		if (roundCount < 4) {
-			await setDoc(Ref, { totalScore: increment(score), roundCount: increment(1) }, { merge: true });
-		} else {			
-			await setDoc(Ref, { playCount: increment(1), totalScore: increment(score), roundCount: increment(1) }, { merge: true });
-		}
-	}
+  const currentUser = auth.currentUser;
+  
+  if (currentUser && !currentUser.isAnonymous) {
+    const userId = currentUser.uid;
+    const ref = doc(db, `users/${userId}/GameData/${district}`);
+
+    try {
+      await runTransaction(db, async (transaction) => {
+        const userGameData = await transaction.get(ref);
+
+        if (!userGameData.exists()) {
+          transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
+        } else {
+          const data = userGameData.data();
+          const highScore = data.highScore || 0;
+
+        if (score > highScore) {
+            transaction.update(ref, { highScore: score });
+        }
+
+        if (roundCount < 4) {
+            transaction.update(ref, {
+              totalScore: increment(score),
+              roundCount: increment(1)
+            });
+        } else {
+            transaction.update(ref, {
+              totalScore: increment(score),
+              roundCount: increment(1),
+              playCount: increment(1)
+            });
+        }
+    }
+});
+      
+      console.log("Transaction successfully committed!");
+    } catch (error) {
+      console.error("Transaction failed: ", error);
+    }
+  }
 }
 
 // hepsi-tek ilçe ayrımına dikkat
