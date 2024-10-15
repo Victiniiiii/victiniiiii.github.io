@@ -361,10 +361,6 @@ function displayResults(distance, points) {
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
-    updateHighScore(selectedDistrict,totalPoints);
-    addToTotalScore(selectedDistrict,(roundPoints[roundCount]));    
-    increaseRoundCount(selectedDistrict);    
-
 	if (roundCount < 4) {
 		new google.maps.Marker({
 			position: randomLocation,
@@ -384,7 +380,6 @@ function displayResults(distance, points) {
 
 		line.setMap(resultMap);
 	} else {
-        incrementPlayCount(selectedDistrict);
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
 		for (let i = 0; i < 5; i++) {
 			new google.maps.Marker({

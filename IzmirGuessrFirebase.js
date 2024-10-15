@@ -48,81 +48,29 @@ onAuthStateChanged(auth, (user) => {
 	}
 });
 
-async function incrementPlayCount(district) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = currentUser.uid;
-		const Ref = doc(db, `users/${userId}/GameData/${district}`);
-
-        await setDoc(Ref, { playCount: increment(1) }, { merge: true });
-        console.log(`Incremented playCount by 1 for: ${district}`);
-	}
-}
-
-async function increaseRoundCount(district) {
+async function saveData(district, score) {
     const currentUser = auth.currentUser;
     if (currentUser && !currentUser.isAnonymous) {
         const userId = auth.currentUser.uid;
         const Ref = doc(db, `users/${userId}/GameData/${district}`);
-
-        await setDoc(Ref, { roundCount: increment(1) }, { merge: true });
-        console.log(`Incremented roundCount by 1 for: ${district}`);
-    }
-}
-
-async function updateHighScore(district, score) {
-    const currentUser = auth.currentUser;
-    if (currentUser && !currentUser.isAnonymous) {
-        const userId = currentUser.uid;
-        const Ref = doc(db, `users/${userId}/GameData/${district}`);
-
-        const docSnap = await getDoc(Ref);
-
-        if (docSnap.exists()) {
-            const data = docSnap.data();
-            console.log("Document data:", data);
-
-            // Log the entire data object to verify structure
-            console.log("Complete document data retrieved:", JSON.stringify(data, null, 2));
-
-            // Initialize highScore to 0 if it doesn't exist
-            let currentHighScore = data.highScore !== undefined ? data.highScore : 0;
-
-            console.log("Current high score:", currentHighScore);
-
-            if (score > currentHighScore) {
-                await setDoc(Ref, { highScore: score }, { merge: true });
-                console.log(`New high score for ${district}: ${score}!`);
-            } else {
-                console.log(`No update needed, current high score for ${district} is higher or equal: ${currentHighScore}`);
+        if (roundCount < 4) {
+            if (score > totalPoints) {
+                Ref.transaction((highScore) => {
+                    return (score)
+                })
             }
+            await setDoc(Ref, { totalScore: increment(score), roundCount: increment(1) }, { merge: true });
         } else {
-            // If document doesn't exist, create it with highScore
-            await setDoc(Ref, { highScore: score, totalScore: 0, roundCount: 0, playCount: 0 }, { merge: true });
-            console.log(`First high score set for ${district}: ${score}!`);
+            if (score > totalPoints) {
+                Ref.transaction((highScore) => {
+                    return (score)
+                })
+            }
+            await setDoc(Ref, { playCount: increment(1), totalScore: increment(score), roundCount: increment(1) }, { merge: true });
         }
-    } else {
-        console.log("User is not logged in or is anonymous.");
-    }
-}
-
-
-
-async function addToTotalScore(district, score) {
-    const currentUser = auth.currentUser;
-    if (currentUser && !currentUser.isAnonymous) {
-        const userId = auth.currentUser.uid;
-        const Ref = doc(db, `users/${userId}/GameData/${district}`);
-
-        await setDoc(Ref, { totalScore: increment(score) }, { merge: true });
-        console.log(`Total score for ${district} increased by ${score}`);
     }
 }
 
 // hepsi-tek ilçe ayrımına dikkat
-// !!!!!!!!! Bİ ROUND BİTİMİ, Bİ OYUN BİTİMİ FONKSİYONU YAP HEPSİNİ ORAYA KOY!!!!!!!!!
 
-window.incrementPlayCount = incrementPlayCount;
-window.updateHighScore = updateHighScore;
-window.increaseRoundCount = increaseRoundCount;
-window.addToTotalScore = addToTotalScore;
+window.saveData = saveData;
