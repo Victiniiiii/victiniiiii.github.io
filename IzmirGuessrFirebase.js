@@ -53,19 +53,14 @@ async function saveData(district, score) {
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = auth.currentUser.uid;
 		const Ref = doc(db, `users/${userId}/GameData/${district}`);
+        Ref.transaction((highScore) => {
+            if (totalPoints > highScore) {
+                return score;
+            }
+        });
 		if (roundCount < 4) {
-			Ref.transaction((highScore) => {
-				if (totalPoints > highScore) {
-					return score;
-				}
-			});
 			await setDoc(Ref, { totalScore: increment(score), roundCount: increment(1) }, { merge: true });
-		} else {
-			Ref.transaction((highScore) => {
-				if (totalPoints > highScore) {
-					return score;
-				}
-			});
+		} else {			
 			await setDoc(Ref, { playCount: increment(1), totalScore: increment(score), roundCount: increment(1) }, { merge: true });
 		}
 	}
