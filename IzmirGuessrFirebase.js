@@ -49,47 +49,44 @@ onAuthStateChanged(auth, (user) => {
 });
 
 async function saveData(district, score) {
-  const currentUser = auth.currentUser;
-  
-  if (currentUser && !currentUser.isAnonymous) {
-    const userId = currentUser.uid;
-    const ref = doc(db, `users/${userId}/GameData/${district}`);
+	const currentUser = auth.currentUser;
 
-    try {
-      await runTransaction(db, async (transaction) => {
-        const userGameData = await transaction.get(ref);
+	if (currentUser && !currentUser.isAnonymous) {
+		const userId = currentUser.uid;
+		const ref = doc(db, `users/${userId}/GameData/${district}`);
 
-        if (!userGameData.exists()) {
-          transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
-        } else {
-        const data = userGameData.data();
-        const highScore = data.highScore;
-        console.log("highscore:",highScore);
+		try {
+			await runTransaction(db, async (transaction) => {
+				const userGameData = await transaction.get(ref);
 
-        if (totalPoints > highScore) {
-            transaction.update(ref, { highScore: totalPoints });
-        }
+				if (!userGameData.exists()) {
+					transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
+				} else {
+					const data = userGameData.data();
+					const highScore = data.highScore;
 
-        if (roundCount < 4) {
-            transaction.update(ref, {
-              totalScore: increment(score),
-              roundCount: increment(1)
-            });
-        } else {
-            transaction.update(ref, {
-              totalScore: increment(score),
-              roundCount: increment(1),
-              playCount: increment(1)
-            });
-        }
-    }
-});
-      
-      console.log("Transaction successfully committed!");
-    } catch (error) {
-      console.error("Transaction failed: ", error);
-    }
-  }
+					if (totalPoints > highScore) {
+						transaction.update(ref, { highScore: totalPoints });
+					}
+
+					if (roundCount < 4) {
+						transaction.update(ref, {
+							totalScore: increment(score),
+							roundCount: increment(1),
+						});
+					} else {
+						transaction.update(ref, {
+							totalScore: increment(score),
+							roundCount: increment(1),
+							playCount: increment(1),
+						});
+					}
+				}
+			});
+		} catch (error) {
+			console.error("Transaction failed: ", error);
+		}
+	}
 }
 
 // hepsi-tek ilçe ayrımına dikkat
