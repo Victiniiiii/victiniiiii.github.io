@@ -51,74 +51,51 @@ onAuthStateChanged(auth, (user) => {
 async function saveData(district, score) {
 	const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) {
-		const userId = currentUser.uid;		
-        const ref = doc(db, `users/${userId}/GameData/${district}`);
-        const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
+		const userId = currentUser.uid;
+		const ref = doc(db, `users/${userId}/GameData/${district}`);
+		const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
 
-        if (roundCount != 4) {
-            try {
-                await runTransaction(db, async (transaction) => {
-                    const userGameData = await transaction.get(ref);
-    
-                    if (!userGameData.exists()) {
-                        transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
-                    } else {
-                        const data = userGameData.data();
-                        const highScore = data.highScore;
-    
-                        if (totalPoints > highScore) {
-                            transaction.update(ref, { highScore: totalPoints });
-                        }    
+		try {
+			await runTransaction(db, async (transaction) => {
+				const userGameData = await transaction.get(ref);
 
-                        transaction.update(ref, {
-                            totalScore: increment(score),
-                            roundCount: increment(1),
-                        });
-                    }
-                });
-            } catch (error) {
-                console.error("Transaction failed: ", error);
-            }
-        } else {            
-            try {
-                await runTransaction(db, async (transaction) => {
-                    const userGameData = await transaction.get(ref);
-    
-                    if (!userGameData.exists()) {
-                        transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1 });
-                    } else {
-                        const data = userGameData.data();
-                        const highScore = data.highScore;
-    
-                        if (totalPoints > highScore) {
-                            transaction.update(ref, { highScore: totalPoints });
-                        }
-    
-                        transaction.update(ref, {
-                            totalScore: increment(score),
-                            roundCount: increment(1),
-                        });
-                    }
-                });
-            } catch (error) {
-                console.error("Transaction failed: ", error);
-            }
-            try {
-                await runTransaction(db, async (transaction) => {
-                    const userGameData = await transaction.get(ref2);
-    
-                    if (!userGameData.exists()) {
-                        transaction.set(ref2, { playCount: 1 });
-                    } else {
-                        transaction.update(ref2, {
-                            playCount: increment(1),
-                        });
-                    }
-                });
-            } catch (error) {
-                console.error("Transaction failed: ", error);
-            }
-        }		
+				if (!userGameData.exists()) {
+					transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
+				} else {
+					const data = userGameData.data();
+					const highScore = data.highScore;
+
+					if (totalPoints > highScore) {
+						transaction.update(ref, { highScore: totalPoints });
+					}
+
+					transaction.update(ref, {
+						totalScore: increment(score),
+						roundCount: increment(1),
+					});
+				}
+			});
+		} catch (error) {
+			console.error("Transaction failed: ", error);
+		}
+        
+		if (roundCount == 4) {
+			try {
+				await runTransaction(db, async (transaction) => {
+					const userGameData = await transaction.get(ref2);
+
+					if (!userGameData.exists()) {
+						transaction.set(ref2, { playCount: 1 });
+					} else {
+						transaction.update(ref2, {
+							playCount: increment(1),
+						});
+					}
+				});
+			} catch (error) {
+				console.error("Transaction failed: ", error);
+			}
+		}
 	}
 }
 
