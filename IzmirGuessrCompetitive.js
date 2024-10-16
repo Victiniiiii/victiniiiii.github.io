@@ -123,7 +123,6 @@ map2.on("mousedown", function (event) {
 
 		if (inside) {
 			updateDistrictAndButtonState(district);
-			formatlama();
 		}
 	});
 });
