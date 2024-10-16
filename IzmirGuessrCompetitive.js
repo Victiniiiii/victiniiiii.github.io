@@ -511,14 +511,9 @@ function startGame() {
         guessedCoordinates = [0, 0, 0, 0, 0];
         actualCoordinates = [0, 0, 0, 0, 0];
         finalgoruntulendimi = false;
-        document.getElementById("overlay-container").style.display = "block";
-		document.getElementById("modaltoggle-button").style.display = "none";
-		document.getElementById("result-modal").style.display = "none";
-        resumeTimer();
-        initMap();
         
     }
-	else if (roundCount == 5) {        
+	if (roundCount == 5) {        
 		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
         finalgoruntulendimi = true;
