@@ -302,6 +302,7 @@ function initMap() {
                 timerSeconds = 30;
                 document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
                 roundTimer = setInterval(updateTimer, 1000);
+                roundCount++;
 			} else {
 				initializeMapWithRandomLocation();
 			}
@@ -447,7 +448,6 @@ function displayResults(distance, points) {
 			line.setMap(resultMap);
 		}
 	}
-    roundCount++;
 }
 
 function getZoomLevel(distance) {
