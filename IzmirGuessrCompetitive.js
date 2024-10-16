@@ -477,16 +477,12 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-	finalgoruntulendimi = false;
-    initMap();
-}
-
-function startNextGame() {
 	if (roundCount == 4) {        
 		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
         finalgoruntulendimi = true;
 	} else {
+        finalgoruntulendimi = false;
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
 		document.getElementById("result-modal").style.display = "none";
