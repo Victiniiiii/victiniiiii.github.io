@@ -76,8 +76,8 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 // Functions:
 
 function refreshMap() {
+    map2.setView([initialLat, initialLon], initialZoom);
     map2.invalidateSize();
-    map2.setView([initialLat, initialLon], initialZoom);    
 }
 
 function isPointInPolygon(point, polygon) {
@@ -103,7 +103,7 @@ function shuffleArray(array) {
 	return array;
 }
 
-map2.on("mousedown", function (event) {
+map2.on("mousedown", function (event) {    
 	districtLayers.forEach((district) => {
 		const latLngs = district.layer.getLatLngs()[0];
 		const x = event.latlng.lng;
@@ -123,11 +123,53 @@ map2.on("mousedown", function (event) {
 
 		if (inside) {
 			toggleDistrict(district);
-            console.log("inside")
 		}
-        console.log("2")
 	});
 });
+
+function toggleDistrict(input) {
+    let district;
+
+    if (typeof input === "string") {
+        district = districtLayers.find((d) => d.name === input);
+    } else {
+        district = input;
+    }
+
+    districtLayers.forEach((d) => {
+        d.layer.setStyle({ fill: false, color: "red" });
+        d.state = 0;
+    });
+
+    initiallyGreenDistricts.length = 0;
+
+    const button = document.querySelector(`.ilcebutton[data-district="${district.name}"]`);
+
+    buttons.forEach((b) => {
+        b.style.backgroundColor = "red";
+    });
+
+    if (district.layer.options.fill) {
+        district.layer.setStyle({ fill: false, color: "red" });
+        district.state = 0;
+        if (button) button.style.backgroundColor = "red";
+
+        const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
+        if (index !== -1) {
+            initiallyGreenDistricts.splice(index, 1);
+        }
+    } else {
+        district.layer.setStyle({ fill: true, color: "green" });
+        district.state = 1;
+        if (button) button.style.backgroundColor = "green";
+
+        if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+            initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+        }
+    }
+
+    ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+}
 
 function addAllDistricts() {
 	buttons.forEach((button) => {
@@ -141,52 +183,8 @@ function addAllDistricts() {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
 
-		ilcesayisi.innerText = `Current District Count: ${[initiallyGreenDistricts.length]}`;
+		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
-}
-
-function toggleDistrict(districtName) {
-    const button = document.querySelector(`.ilcebutton[data-district="${districtName}"]`);
-	const district = districtLayers.find((district) => district.name === districtName);
-
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "red";
-	});
-
-	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: false, color: "red" });
-		district.state = 0;
-
-		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-		if (index !== -1) {
-			initiallyGreenDistricts.splice(index, 1);
-		}
-
-		let lengthh = [initiallyGreenDistricts.length];
-		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
-	});
-	
-	if (district) {
-		if (district.layer.options.fill) {
-			district.layer.setStyle({ fill: false, color: "red" });
-			district.state = 0;
-
-			const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-			button.style.backgroundColor = "red";
-			if (index !== -1) {
-				initiallyGreenDistricts.splice(index, 1);
-			}
-		} else {
-			district.layer.setStyle({ fill: true, color: "green" });
-			district.state = 1;
-			button.style.backgroundColor = "green";
-
-			if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-				initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-			}
-		}
-		ilcesayisi.innerText = `Current District Count: ${[initiallyGreenDistricts.length]}`;
-	}
 }
 
 function formatlama() {
