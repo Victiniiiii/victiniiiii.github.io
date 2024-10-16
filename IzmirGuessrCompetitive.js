@@ -515,8 +515,8 @@ function addAllDistricts() {
 	});
 }
 
-function removeAllDistricts() {
-	const buttons = document.querySelectorAll(".ilcebutton");
+function toggleDistrict(districtName) {
+    const buttons = document.querySelectorAll(".ilcebutton");
 	buttons.forEach((button) => {
 		button.style.backgroundColor = "red";
 	});
@@ -532,9 +532,6 @@ function removeAllDistricts() {
 		let lengthh = [initiallyGreenDistricts.length];
 		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
 	});
-}
-
-function toggleDistrict(districtName) {
 	const button = document.querySelector(`.ilcebutton[data-district="${districtName}"]`);
 	const district = districtLayers.find((district) => district.name === districtName);
 	if (district) {
