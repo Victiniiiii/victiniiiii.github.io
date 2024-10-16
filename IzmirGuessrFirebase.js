@@ -50,11 +50,10 @@ onAuthStateChanged(auth, (user) => {
 
 async function saveData(district, score) {
 	const currentUser = auth.currentUser;
-    const ref = doc(db, `users/${userId}/GameData/${district}`);
-            const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
-
 	if (currentUser && !currentUser.isAnonymous) {
 		const userId = currentUser.uid;		
+        const ref = doc(db, `users/${userId}/GameData/${district}`);
+        const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
 
         if (roundCount != 4) {
             try {
