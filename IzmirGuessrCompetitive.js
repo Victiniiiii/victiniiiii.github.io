@@ -500,6 +500,11 @@ function returnToMainMenu() {
 
 function startGame() {
     if (roundCount == 0) {
+        if (initiallyGreenDistricts.length > 1) {
+            selectedGameMode = "EveryDistrict";
+        } else {
+            selectedGameMode = initiallyGreenDistricts[0].name;
+        }
         totalPoints = 0;
         roundPoints = [0, 0, 0, 0, 0];
         guessedCoordinates = [0, 0, 0, 0, 0];
