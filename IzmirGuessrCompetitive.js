@@ -8,6 +8,7 @@ let totalPoints = 0;
 // Game Settings:
 
 let selectedDistrict;
+let selectedGameMode;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 30;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
@@ -478,23 +479,11 @@ function getZoomLevel(distance) {
 
 function playAgain() {
 	roundCount = 0;
-	totalPoints = 0;
-	roundPoints = [0, 0, 0, 0, 0];
-	guessedCoordinates = [0, 0, 0, 0, 0];
-	actualCoordinates = [0, 0, 0, 0, 0];
-	finalgoruntulendimi = false;
-
-	initMap();
-	resumeTimer();
+    startGame();
 }
 
 function returnToMainMenu() {
 	roundCount = 0;
-	totalPoints = 0;
-	roundPoints = [0, 0, 0, 0, 0];
-	guessedCoordinates = [0, 0, 0, 0, 0];
-	actualCoordinates = [0, 0, 0, 0, 0];
-	finalgoruntulendimi = false;
 
 	startPage.style.display = "flex";
 	returnButton.style.display = "none";
@@ -510,12 +499,23 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-	if (roundCount == 4) {        
+    if (roundCount == 0) {
+        totalPoints = 0;
+        roundPoints = [0, 0, 0, 0, 0];
+        guessedCoordinates = [0, 0, 0, 0, 0];
+        actualCoordinates = [0, 0, 0, 0, 0];
+        finalgoruntulendimi = false;
+        document.getElementById("overlay-container").style.display = "block";
+		document.getElementById("modaltoggle-button").style.display = "none";
+		document.getElementById("result-modal").style.display = "none";
+        resumeTimer();
+        initMap();
+    }
+	else if (roundCount == 4) {        
 		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
         finalgoruntulendimi = true;
-	} else {
-        finalgoruntulendimi = false;
+	} else {        
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
 		document.getElementById("result-modal").style.display = "none";
