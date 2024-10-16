@@ -447,6 +447,7 @@ function displayResults(distance, points) {
 			line.setMap(resultMap);
 		}
 	}
+    roundCount++;
 }
 
 function getZoomLevel(distance) {
@@ -515,7 +516,7 @@ function startGame() {
 		document.getElementById("result-modal").style.display = "none";
         resumeTimer();
         initMap();
-        ++roundCount;
+        
     }
 	else if (roundCount == 4) {        
 		document.getElementById("final-results-modal").style.display = "block";		
@@ -528,7 +529,6 @@ function startGame() {
 		modaltogglebutton.style.display = "none";
 		resumeTimer();
 		initMap();
-		++roundCount;
 	}
 }
 
