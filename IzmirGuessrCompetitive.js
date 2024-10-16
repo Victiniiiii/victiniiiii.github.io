@@ -233,93 +233,90 @@ function getRandomLocation() {
 }
 
 function initMap() {
-	function initializeMapWithRandomLocation() {
-		randomLocation = getRandomLocation();
+    randomLocation = getRandomLocation();
 
-        document.getElementById("modaltoggle-button").style.display = "none";
-		document.getElementById("timer").style.display = "block";
-        document.getElementById("final-results-modal").style.display = "none";		
-		document.getElementById("gamemap").style.display = "block";
-		returnButton.style.display = "block";
-		overlayContainer.style.display = "block";
-		buttonrow.style.display = "flex";
-		startPage.style.display = "none";
-		resultModal.style.display = "none";
+    document.getElementById("modaltoggle-button").style.display = "none";
+    document.getElementById("timer").style.display = "block";
+    document.getElementById("final-results-modal").style.display = "none";		
+    document.getElementById("gamemap").style.display = "block";
+    returnButton.style.display = "block";
+    overlayContainer.style.display = "block";
+    buttonrow.style.display = "flex";
+    startPage.style.display = "none";
+    resultModal.style.display = "none";
 
-		gamemap = new google.maps.Map(document.getElementById("gamemap"), {
-			center: randomLocation,
-			zoom: 14,
-			...panoramaOptions,
-		});
+    gamemap = new google.maps.Map(document.getElementById("gamemap"), {
+        center: randomLocation,
+        zoom: 14,
+        ...panoramaOptions,
+    });
 
-		const streetViewService = new google.maps.StreetViewService();
-		streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
-			if (status === "OK") {
-				const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
-					position: randomLocation,
-					pov: { heading: 34, pitch: 1 },
-					zoom: 1,
-					...panoramaOptions,
-				});
+    const streetViewService = new google.maps.StreetViewService();
+    streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
+        if (status === "OK") {
+            const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
+                position: randomLocation,
+                pov: { heading: 34, pitch: 1 },
+                zoom: 1,
+                ...panoramaOptions,
+            });
 
-				gamemap.setStreetView(panorama);
+            gamemap.setStreetView(panorama);
 
-				minimap = new google.maps.Map(document.getElementById("mini-map"), {
-					center: { lat: 38.4192, lng: 27.1287 },
-					zoom: 10,
-					draggable: true,
-					mapTypeControl: false,
-					clickableIcons: false,
-					...panoramaOptions,
-				});
+            minimap = new google.maps.Map(document.getElementById("mini-map"), {
+                center: { lat: 38.4192, lng: 27.1287 },
+                zoom: 10,
+                draggable: true,
+                mapTypeControl: false,
+                clickableIcons: false,
+                ...panoramaOptions,
+            });
 
-				google.maps.event.addListener(minimap, "click", function (event) {
-					if (guessedLocationMarker) {
-						guessedLocationMarker.setMap(null);
-					}
-
-					guessedLocationMarker = new google.maps.Marker({
-						position: event.latLng,
-						map: minimap,
-						title: "Guessed Location",
-						icon: "static/images/redpin.png",
-					});
-				});
-
-				google.maps.event.addListener(gamemap, "click", function (event) {
-					if (guessedLocationMarker) {
-						guessedLocationMarker.setMap(null);
-					}
-
-					guessedLocationMarker = new google.maps.Marker({
-						position: event.latLng,
-						map: minimap,
-						title: "Original Location",
-						icon: "static/images/greenpin.png",
-					});
-				});
-
-				document.getElementById("action-button").onclick = function () {
-					const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
-					const points = calculatePoints(distance);
-					displayResults(distance, points);
-				};
-
-                resumeTimer();
-
-                if (roundTimer) {
-                    clearInterval(roundTimer);
+            google.maps.event.addListener(minimap, "click", function (event) {
+                if (guessedLocationMarker) {
+                    guessedLocationMarker.setMap(null);
                 }
 
-                timerSeconds = 30;
-                document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
-                roundTimer = setInterval(updateTimer, 1000);
-			} else {
-				initializeMapWithRandomLocation();
-			}
-		});
-	}
-	initializeMapWithRandomLocation();
+                guessedLocationMarker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: minimap,
+                    title: "Guessed Location",
+                    icon: "static/images/redpin.png",
+                });
+            });
+
+            google.maps.event.addListener(gamemap, "click", function (event) {
+                if (guessedLocationMarker) {
+                    guessedLocationMarker.setMap(null);
+                }
+
+                guessedLocationMarker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: minimap,
+                    title: "Original Location",
+                    icon: "static/images/greenpin.png",
+                });
+            });
+
+            document.getElementById("action-button").onclick = function () {
+                const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
+                const points = calculatePoints(distance);
+                displayResults(distance, points);
+            };
+
+            resumeTimer();
+
+            if (roundTimer) {
+                clearInterval(roundTimer);
+            }
+
+            timerSeconds = 30;
+            document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+            roundTimer = setInterval(updateTimer, 1000);
+        } else {
+            initMap();
+        }
+    });
 }
 
 function toggleModal() {
