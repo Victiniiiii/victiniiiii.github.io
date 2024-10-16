@@ -156,7 +156,7 @@ function toggleDistrict(input) {
 
     initiallyGreenDistricts.length = 0;
 
-    const button = document.querySelector(`.ilcebutton[data-district="${district.name}"]`);
+    const button = Array.from(buttons).find(b => b.innerText.trim() === district.name);
 
     buttons.forEach((b) => {
         b.style.backgroundColor = "red";

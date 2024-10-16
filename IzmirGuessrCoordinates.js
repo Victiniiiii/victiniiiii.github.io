@@ -1,6 +1,6 @@
 const districtsData = [
 	{
-		name: "Cesme",
+		name: "Çeşme",
 		state: 1,
 		bounds: [
 			[38.264265, 26.500253],
@@ -999,7 +999,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Guzelbahce",
+		name: "Güzelbahçe",
 		state: 1,
 		bounds: [
 			[38.373531, 26.854939],
@@ -1126,7 +1126,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Narlidere",
+		name: "Narlıdere",
 		state: 1,
 		bounds: [
 			[38.413272, 27.015175],
@@ -1184,7 +1184,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Balcova",
+		name: "Balçova",
 		state: 1,
 		bounds: [
 			[38.413322, 27.015238],
@@ -1286,7 +1286,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Selcuk",
+		name: "Selçuk",
 		state: 1,
 		bounds: [
 			[38.035494, 27.441592],
@@ -1359,7 +1359,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Torbali",
+		name: "Torbalı",
 		state: 1,
 		bounds: [
 			[38.08118, 27.401827],
@@ -1490,7 +1490,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Odemis",
+		name: "Ödemiş",
 		state: 1,
 		bounds: [
 			[38.272864, 28.002038],
@@ -1545,7 +1545,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Bayindir",
+		name: "Bayındır",
 		state: 1,
 		bounds: [
 			[38.235167, 27.647054],
@@ -1623,7 +1623,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Beydag",
+		name: "Beydağ",
 		state: 1,
 		bounds: [
 			[38.104677, 28.218584],
@@ -1653,7 +1653,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Kemalpasa",
+		name: "Kemalpaşa",
 		state: 1,
 		bounds: [
 			[38.457479, 27.325848],
@@ -2096,7 +2096,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Karabaglar",
+		name: "Karabağlar",
 		state: 1,
 		bounds: [
 			[38.396816, 27.064235],
@@ -2590,7 +2590,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Aliaga",
+		name: "Aliağa",
 		state: 1,
 		bounds: [
 			[38.937564, 27.054931],
@@ -2914,7 +2914,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Kinik",
+		name: "Kınık",
 		state: 1,
 		bounds: [
 			[39.143841, 27.468648],
@@ -3045,7 +3045,7 @@ const districtsData = [
 	},
 
 	{
-		name: "Foca",
+		name: "Foça",
 		state: 1,
 		bounds: [
 			[38.669412, 26.749542],
@@ -3195,7 +3195,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Karsiyaka",
+		name: "Karşıyaka",
 		state: 1,
 		bounds: [
 			[38.4752, 27.0643],
@@ -3297,7 +3297,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Bayrakli",
+		name: "Bayraklı",
 		state: 1,
 		bounds: [
 			[38.464254, 27.148053],
@@ -3375,7 +3375,7 @@ const districtsData = [
 		],
 	},
 	{
-		name: "Cigli",
+		name: "Çiğli",
 		state: 1,
 		bounds: [
 			[38.519744, 27.039601],
