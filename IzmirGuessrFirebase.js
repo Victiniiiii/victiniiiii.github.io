@@ -78,8 +78,8 @@ async function saveData(district, score) {
 		} catch (error) {
 			console.error("Transaction failed: ", error);
 		}
-        
-		if (roundCount == 4) {
+
+		if (roundCount == 5) {
 			try {
 				await runTransaction(db, async (transaction) => {
 					const userGameData = await transaction.get(ref2);

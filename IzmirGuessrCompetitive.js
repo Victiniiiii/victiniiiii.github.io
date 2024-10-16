@@ -311,7 +311,7 @@ function initMap() {
 }
 
 function toggleModal() {
-	if (roundCount < 4) {
+	if (roundCount < 5) {
 		if (resultModal.style.display === "block") {
 			resultModal.style.display = "none";
 		} else {
@@ -319,7 +319,7 @@ function toggleModal() {
 		}
 	}
 
-	if (roundCount == 4) {
+	if (roundCount == 5) {
 		if (resultModal.style.display === "block") {
 			resultModal.style.display = "none";
 			finalresultsmodal.style.display = "none";
@@ -401,7 +401,7 @@ function displayResults(distance, points) {
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
-	if (roundCount < 4) {
+	if (roundCount < 5) {
 		new google.maps.Marker({
 			position: randomLocation,
 			map: resultMap,
@@ -447,10 +447,7 @@ function displayResults(distance, points) {
 			line.setMap(resultMap);
 		}
 	}
-
-    if (roundCount != 4) {
-        roundCount++;
-    }
+    roundCount++;
 }
 
 function getZoomLevel(distance) {
@@ -521,7 +518,7 @@ function startGame() {
         initMap();
         
     }
-	else if (roundCount == 4) {        
+	else if (roundCount == 5) {        
 		document.getElementById("final-results-modal").style.display = "block";		
 		document.getElementById("overlay-container").style.display = "none";
         finalgoruntulendimi = true;
