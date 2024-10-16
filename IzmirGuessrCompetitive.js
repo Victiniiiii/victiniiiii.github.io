@@ -515,6 +515,7 @@ function startGame() {
 		document.getElementById("result-modal").style.display = "none";
         resumeTimer();
         initMap();
+        roundCount++;
     }
 	else if (roundCount == 4) {        
 		document.getElementById("final-results-modal").style.display = "block";		

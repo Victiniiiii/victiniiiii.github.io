@@ -74,7 +74,6 @@ async function saveData(district, score) {
                             totalScore: increment(score),
                             roundCount: increment(1),
                         });
-
                     }
                 });
             } catch (error) {
