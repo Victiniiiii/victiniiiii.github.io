@@ -122,35 +122,69 @@ map2.on("mousedown", function (event) {
 		}
 
 		if (inside) {
-			updateDistrictAndButtonState(district);
+			toggleDistrict(district);
 		}
 	});
 });
 
-function updateDistrictAndButtonState(district) {
-	const button = document.querySelector(`.ilcebutton[data-district="${district.name}"]`);
+function addAllDistricts() {
+	const buttons = document.querySelectorAll(".ilcebutton");
+	buttons.forEach((button) => {
+		button.style.backgroundColor = "green";
+	});
+	districtLayers.forEach((district) => {
+		district.layer.setStyle({ fill: true, color: "green" });
+		district.state = 1;
 
-	if (district.layer.options.fill) {
+		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+		}
+
+		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+	});
+}
+
+function toggleDistrict(districtName) {
+    const buttons = document.querySelectorAll(".ilcebutton");
+    const button = Array.from(buttons).find(btn => btn.innerText.trim() === districtName);
+	const district = districtLayers.find((district) => district.name === districtName);
+	buttons.forEach((button) => {
+		button.style.backgroundColor = "red";
+	});
+	districtLayers.forEach((district) => {
 		district.layer.setStyle({ fill: false, color: "red" });
 		district.state = 0;
-		button.style.backgroundColor = "red";
 
 		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
 		if (index !== -1) {
 			initiallyGreenDistricts.splice(index, 1);
 		}
-	} else {
-		district.layer.setStyle({ fill: true, color: "green" });
-		district.state = 1;
-		button.style.backgroundColor = "green";
 
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+		let lengthh = [initiallyGreenDistricts.length];
+		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
+	});	
+	if (district) {
+		if (district.layer.options.fill) {
+			district.layer.setStyle({ fill: false, color: "red" });
+			district.state = 0;
+
+			const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
+			button.style.backgroundColor = "red";
+			if (index !== -1) {
+				initiallyGreenDistricts.splice(index, 1);
+			}
+		} else {
+			district.layer.setStyle({ fill: true, color: "green" });
+			district.state = 1;
+			button.style.backgroundColor = "green";
+
+			if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+				initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+			}
 		}
+		let lengthh = [initiallyGreenDistricts.length];
+		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
 	}
-
-	let lengthh = [initiallyGreenDistricts.length];
-	ilcesayisi.innerText = `Current District Count: ${lengthh}`;
 }
 
 function formatlama() {
@@ -489,67 +523,6 @@ function startGame() {
 		resumeTimer();
 		initMap();
 		++roundCount;
-	}
-}
-
-function addAllDistricts() {
-	const buttons = document.querySelectorAll(".ilcebutton");
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "green";
-	});
-	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: true, color: "green" });
-		district.state = 1;
-
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-		}
-
-		let lengthh = [initiallyGreenDistricts.length];
-		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
-	});
-}
-
-function toggleDistrict(districtName) {
-    const buttons = document.querySelectorAll(".ilcebutton");
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "red";
-	});
-	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: false, color: "red" });
-		district.state = 0;
-
-		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-		if (index !== -1) {
-			initiallyGreenDistricts.splice(index, 1);
-		}
-
-		let lengthh = [initiallyGreenDistricts.length];
-		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
-	});
-	const button = document.querySelector(`.ilcebutton[data-district="${districtName}"]`);
-	const district = districtLayers.find((district) => district.name === districtName);
-	if (district) {
-		if (district.layer.options.fill) {
-			district.layer.setStyle({ fill: false, color: "red" });
-			district.state = 0;
-
-			const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-			button.style.backgroundColor = "red";
-			if (index !== -1) {
-				initiallyGreenDistricts.splice(index, 1);
-			}
-		} else {
-			district.layer.setStyle({ fill: true, color: "green" });
-			district.state = 1;
-			button.style.backgroundColor = "green";
-
-			if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-				initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-			}
-		}
-		let lengthh = [initiallyGreenDistricts.length];
-		ilcesayisi.innerText = `Current District Count: ${lengthh}`;
 	}
 }
 
