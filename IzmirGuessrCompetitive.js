@@ -67,12 +67,24 @@ const map2 = L.map("map2", {
     ], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
 
-
 L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 	attribution: "© OpenStreetMap contributors © CartoDB",
 	subdomains: "abcd",
 	maxZoom: 19,
 }).addTo(map2);
+
+districtsData.forEach((district) => {
+	const polygon = L.polygon(district.designcoordinates, { fill: true, color: "green" }).addTo(map2);
+	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+
+	if (district.state === 1) {
+		initiallyGreenDistricts.push({ bounds: district.bounds });
+	}
+});
+
+buttons.forEach((button) => {
+	button.style.backgroundColor = "green";
+});
 
 // Functions:
 
@@ -566,17 +578,4 @@ faqButton.addEventListener("click", function () {
 	} else {
 		startPageLeftHalf.style.display = "none";
 	}
-});
-
-districtsData.forEach((district) => {
-	const polygon = L.polygon(district.designcoordinates, { fill: true, color: "green" }).addTo(map2);
-	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
-
-	if (district.state === 1) {
-		initiallyGreenDistricts.push({ bounds: district.bounds });
-	}
-});
-
-buttons.forEach((button) => {
-	button.style.backgroundColor = "green";
 });
