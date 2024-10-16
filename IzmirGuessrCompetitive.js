@@ -76,8 +76,8 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 // Functions:
 
 function refreshMap() {
-    map2.setView([initialLat, initialLon], initialZoom);
     map2.invalidateSize();
+    map2.setView([initialLat, initialLon], initialZoom);    
 }
 
 function isPointInPolygon(point, polygon) {
@@ -123,7 +123,9 @@ map2.on("mousedown", function (event) {
 
 		if (inside) {
 			toggleDistrict(district);
+            console.log("inside")
 		}
+        console.log("2")
 	});
 });
 
