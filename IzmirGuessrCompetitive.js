@@ -378,13 +378,23 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-    const maxPoints = 1000;
-    const minPoints = 0;
+    const basePoints = 1050;
+    const scalingFactor = 200;
+    const base = 2;
 
-    let points = Math.max(minPoints, maxPoints - 100 * Math.log(distance + 1) / Math.log(10));
-    points = Math.min(points, maxPoints);
+    console.log(isPointInPolygon(guessedCoordinates[roundCount],selectedDistrict.bounds))
 
-    return points.toFixed(0);
+    let points = basePoints - (scalingFactor * Math.log(distance + 1) / Math.log(base));
+
+    /* if (selectedGameMode == "EveryDistrict" && )) {
+        points += 200;
+    } else if (selectedGameMode == "EveryDistrict" && selectedDistrict ) {
+        points += 100;
+    } */
+
+    points = Math.min(1000, points);
+
+    return Math.round(points);
 }
 
 
