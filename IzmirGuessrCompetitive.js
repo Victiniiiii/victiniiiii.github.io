@@ -280,6 +280,15 @@ function initMap() {
                 mapTypeControl: false,
                 clickableIcons: false,
                 ...panoramaOptions,
+                restriction: {
+                    latLngBounds: {
+                        north: 39.472639,
+                        south: 37.903750,
+                        east: 28.410944,
+                        west: 26.254528
+                    },
+                    strictBounds: true
+                },
             });
 
             google.maps.event.addListener(minimap, "click", function (event) {
