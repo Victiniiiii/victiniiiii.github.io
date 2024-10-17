@@ -379,6 +379,7 @@ function returnToStart() {
 
 function calculatePoints(distance) {
     let points = (-1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48)
+    if (points < 0) {points = 0}
     return Math.round(points);
 }
 
