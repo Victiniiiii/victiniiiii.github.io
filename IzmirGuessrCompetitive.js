@@ -381,11 +381,9 @@ function calculatePoints(distance) {
     let points = 0;
     if (distance < 101) {
         points = 1000;
-    } else if (distance < 1001) {
-        points = 800 + (1000 - distance)/5;
-    } else if (distance < 10001) {
-        points += (10000 - distance)/50
-    }
+    } else {
+        points = (0.0000114043*distance*distance - 0.213966*distance + 1004.29)
+    } 
     return Math.round(points);
 }
 
