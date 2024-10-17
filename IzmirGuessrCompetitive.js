@@ -282,10 +282,10 @@ function initMap() {
                 ...panoramaOptions,
                 restriction: {
                     latLngBounds: {
-                        north: 39.472639,
-                        south: 37.903750,
-                        east: 28.410944,
-                        west: 26.254528
+                        north: 39.47,
+                        south: 37.85,
+                        east: 28.41,
+                        west: 26.21
                     },
                     strictBounds: true
                 },
