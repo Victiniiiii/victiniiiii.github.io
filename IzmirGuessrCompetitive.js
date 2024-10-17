@@ -378,9 +378,14 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-    let points = Math.pow(10, (58795 - distance) / 19565)
-    points = Math.min(1000, points);
-
+    let points = 0;
+    if (distance < 101) {
+        points = 1000;
+    } else if (distance < 1001) {
+        points = 800 + (1000 - distance)/5;
+    } else if (distance < 10001) {
+        points += (10000 - distance)/50
+    }
     return Math.round(points);
 }
 
