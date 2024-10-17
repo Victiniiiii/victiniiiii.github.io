@@ -406,16 +406,16 @@ function displayResults(distance, points) {
 
     if (selectedGameMode == "EveryDistrict" && isPointInPolygon(guessedPoint,foundDistrict.bounds)) {
         points += 200;
-        console.log("Added 200 points!")
     } else if (selectedGameMode == "EveryDistrict") {
         for (i = 0; i < foundDistrict.neighbors.length; i++) {
             let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
             if (isPointInPolygon(guessedPoint,foundNeighborDistrict.bounds)  ) {
                 points += 100;
-                console.log("Added 100 points!")
             }            
         }        
     }
+
+    if (points > 1000) {points = 1000}
 
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
