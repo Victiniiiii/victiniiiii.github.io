@@ -378,14 +378,11 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-    const basePoints = 1050;
-    const scalingFactor = 200;
-    const base = 2;
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
 
-    console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))
+    console.log("foundDistrict",foundDistrict,"selected",selectedDistrict);
 
-    let points = basePoints - (scalingFactor * Math.log(distance + 1) / Math.log(base));
+    let points = -19565 * Math.log(distance) + 58795;
 
     /* if (selectedGameMode == "EveryDistrict" && )) {
         points += 200;
