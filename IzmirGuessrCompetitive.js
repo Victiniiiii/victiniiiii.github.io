@@ -415,10 +415,10 @@ function displayResults(distance, points) {
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
-    console.log("foundDistrict",foundDistrict);
-    console.log("guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds)
-    console.log("Guessed coordinate:", guessedCoordinates[roundCount]);
-    console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))    
+    console.log("foundDistrict",foundDistrict,"guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds,"Guessed coordinate:", guessedCoordinates[roundCount]);
+    const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
+    console.log("Guessed point in array format:", guessedPoint);
+    console.log(isPointInPolygon(guessedPoint,foundDistrict.bounds))    
 
     /* if (selectedGameMode == "EveryDistrict" && )) {
         points += 200;
