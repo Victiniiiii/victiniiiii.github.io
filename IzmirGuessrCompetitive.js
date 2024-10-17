@@ -378,18 +378,15 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-	const maxPoints = 1000;
-	const minPoints = 0;
+    const maxPoints = 1000;
+    const minPoints = 0;
 
-	const distanceFactor = 0.1;
-	let points = Math.max(minPoints, maxPoints - distance * distanceFactor);
+    let points = Math.max(minPoints, maxPoints - 100 * Math.log(distance + 1) / Math.log(10));
+    points = Math.min(points, maxPoints);
 
-	if (points >= 990) {
-		points = 1000;
-	}
-
-	return points.toFixed(0);
+    return points.toFixed(0);
 }
+
 
 function displayResults(distance, points) {
 	pauseTimer();
