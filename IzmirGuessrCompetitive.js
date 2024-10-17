@@ -378,20 +378,7 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-    const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
-    console.log("foundDistrict",foundDistrict);
-    console.log("guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds)
-    console.log("Guessed coordinate:", guessedCoordinates[roundCount]);
-    console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))
-
-    let points = Math.pow(10, (58795 - distance) / 19565)    
-
-    /* if (selectedGameMode == "EveryDistrict" && )) {
-        points += 200;
-    } else if (selectedGameMode == "EveryDistrict" && selectedDistrict ) {
-        points += 100;
-    } */
-
+    let points = Math.pow(10, (58795 - distance) / 19565)
     points = Math.min(1000, points);
 
     return Math.round(points);
@@ -426,6 +413,18 @@ function displayResults(distance, points) {
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
+
+    const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
+    console.log("foundDistrict",foundDistrict);
+    console.log("guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds)
+    console.log("Guessed coordinate:", guessedCoordinates[roundCount]);
+    console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))    
+
+    /* if (selectedGameMode == "EveryDistrict" && )) {
+        points += 200;
+    } else if (selectedGameMode == "EveryDistrict" && selectedDistrict ) {
+        points += 100;
+    } */
 
 	if (roundCount < 5) {
 		new google.maps.Marker({
