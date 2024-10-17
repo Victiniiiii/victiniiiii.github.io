@@ -3,7 +3,7 @@ const districtsData = [
 		name: "Çeşme",
 		state: 1,
         zoom: { lat: 38.3217, lng: 26.3030 },
-        neighbors: [],
+        neighbors: ["Urla"],
 		bounds: [
 			[38.264265, 26.500253],
 			[38.266152, 26.470427],
@@ -465,7 +465,7 @@ const districtsData = [
 		name: "Urla",
 		state: 1,
         zoom: { lat: 38.3219, lng: 26.7665 },
-        neighbors: [],
+        neighbors: ["Çeşme","Karaburun","Seferihisar","Güzelbahçe"],
 		bounds: [
 			[38.374122, 26.854488],
 			[38.36921, 26.856461],
@@ -869,7 +869,7 @@ const districtsData = [
 		name: "Karaburun",
 		state: 1,
         zoom: { lat: 38.6357, lng: 26.5083 },
-        neighbors: [],
+        neighbors: ["Urla"],
 		bounds: [
 			[38.442548, 26.600101],
 			[38.441876, 26.593327],
@@ -952,7 +952,7 @@ const districtsData = [
 		name: "Seferihisar",
 		state: 1,
         zoom: { lat: 38.1941, lng: 26.8379 },
-        neighbors: [],
+        neighbors: ["Urla","Güzelbahçe","Karabağlar","Menderes"],
 		bounds: [
 			[38.263372, 26.832164],
 			[38.235736, 26.827105],
@@ -1010,7 +1010,7 @@ const districtsData = [
 		name: "Güzelbahçe",
 		state: 1,
         zoom: { lat: 38.3559, lng: 26.8863 },
-        neighbors: [],
+        neighbors: ["Urla","Seferihisar","Karabağlar","Narlıdere"],
 		bounds: [
 			[38.373531, 26.854939],
 			[38.369218, 26.857913],
@@ -1049,7 +1049,7 @@ const districtsData = [
 		name: "Menderes",
 		state: 1,
         zoom: { lat: 38.2502, lng: 27.1342 },
-        neighbors: [],
+        neighbors: ["Seferihisar","Karabağlar","Gaziemir","Buca","Torbalı","Selçuk"],
 		bounds: [
 			[38.290519, 27.141896],
 			[38.290554, 27.146465],
@@ -1141,7 +1141,7 @@ const districtsData = [
 		name: "Narlıdere",
 		state: 1,
         zoom: { lat: 38.3933, lng: 27.0095 },
-        neighbors: [],
+        neighbors: ["Güzelbahçe","Karabağlar","Balçova"],
 		bounds: [
 			[38.413272, 27.015175],
 			[38.412935, 27.017288],
@@ -1201,7 +1201,7 @@ const districtsData = [
 		name: "Balçova",
 		state: 1,
         zoom: { lat: 38.3917, lng: 27.0428 },
-        neighbors: [],
+        neighbors: ["Narlıdere","Konak","Karabağlar"],
 		bounds: [
 			[38.413322, 27.015238],
 			[38.412994, 27.017392],
@@ -1305,7 +1305,7 @@ const districtsData = [
 		name: "Selçuk",
 		state: 1,
         zoom: { lat: 37.9479, lng: 27.3697 },
-        neighbors: [],
+        neighbors: ["Menderes","Torbalı","Tire"],
 		bounds: [
 			[38.035494, 27.441592],
 			[38.036035, 27.44331],
@@ -1380,7 +1380,7 @@ const districtsData = [
 		name: "Torbalı",
 		state: 1,
         zoom: { lat: 38.1513, lng: 27.3621 },
-        neighbors: [],
+        neighbors: ["Selçuk","Menderes","Buca","Kemalpaşa","Bayındır","Tire"],
 		bounds: [
 			[38.08118, 27.401827],
 			[38.080707, 27.400452],
@@ -1458,7 +1458,7 @@ const districtsData = [
 		name: "Tire",
 		state: 1,
         zoom: { lat: 38.0854, lng: 27.7350 },
-        neighbors: [],
+        neighbors: ["Selçuk","Torbalı","Bayındır","Ödemiş"],
 		bounds: [
 			[38.108439, 27.730908],
 			[38.088445, 27.754949],
@@ -1515,7 +1515,7 @@ const districtsData = [
 		name: "Ödemiş",
 		state: 1,
         zoom: { lat: 38.2259, lng: 27.9691 },
-        neighbors: [],
+        neighbors: ["Tire","Bayındır","Kiraz","Beydağ"],
 		bounds: [
 			[38.272864, 28.002038],
 			[38.248063, 27.985548],
@@ -1572,7 +1572,7 @@ const districtsData = [
 		name: "Bayındır",
 		state: 1,
         zoom: { lat: 38.2178, lng: 27.6457 },
-        neighbors: [],
+        neighbors: ["Kemalpaşa","Ödemiş","Tire","Torbalı"],
 		bounds: [
 			[38.235167, 27.647054],
 			[38.22357, 27.633827],
@@ -1620,7 +1620,7 @@ const districtsData = [
 		name: "Kiraz",
 		state: 1,
         zoom: { lat: 38.2304, lng: 28.2050 },
-        neighbors: [],
+        neighbors: ["Ödemiş","Beydağ"],
 		bounds: [
 			[38.242023, 28.176894],
 			[38.246067, 28.219106],
@@ -1654,7 +1654,7 @@ const districtsData = [
 		name: "Beydağ",
 		state: 1,
         zoom: { lat: 38.0858, lng: 28.2086 },
-        neighbors: [],
+        neighbors: ["Ödemiş","Kiraz"],
 		bounds: [
 			[38.104677, 28.218584],
 			[38.099138, 28.222872],
@@ -1686,7 +1686,7 @@ const districtsData = [
 		name: "Kemalpaşa",
 		state: 1,
         zoom: { lat: 38.4270, lng: 27.4167 },
-        neighbors: [],
+        neighbors: ["Bornova","Buca","Torbalı","Bayındır"],
 		bounds: [
 			[38.457479, 27.325848],
 			[38.4674, 27.323038],
@@ -1750,7 +1750,7 @@ const districtsData = [
 		name: "Konak",
 		state: 1,
         zoom: { lat: 38.4179, lng: 27.1283 },
-        neighbors: [],
+        neighbors: ["Bayraklı","Bornova","Buca","Karabağlar","Balçova"],
 		bounds: [
 			[38.442657, 27.142617],
 			[38.447127, 27.148576],
@@ -1931,7 +1931,7 @@ const districtsData = [
 		name: "Buca",
 		state: 1,
         zoom: { lat: 38.3871, lng: 27.1743 },
-        neighbors: [],
+        neighbors: ["Konak","Bornova","Kemalpaşa","Torbalı","Menderes","Gaziemir","Karabağlar"],
 		bounds: [
 			[38.394343, 27.138385],
 			[38.392174, 27.138069],
@@ -2064,7 +2064,7 @@ const districtsData = [
 		name: "Gaziemir",
 		state: 1,
         zoom: { lat: 38.3198, lng: 27.1318 },
-        neighbors: [],
+        neighbors: ["Karabağlar","Buca","Menderes"],
 		bounds: [
 			[38.347799, 27.10441],
 			[38.354059, 27.116164],
@@ -2137,7 +2137,7 @@ const districtsData = [
 		name: "Karabağlar",
 		state: 1,
         zoom: { lat: 38.3949, lng: 27.1283 },
-        neighbors: [],
+        neighbors: ["Seferihisar","Güzelbahçe","Narlıdere","Balçova","Konak","Buca","Gaziemir","Menderes"],
 		bounds: [
 			[38.396816, 27.064235],
 			[38.396295, 27.064235],
@@ -2305,7 +2305,7 @@ const districtsData = [
 		name: "Bornova",
 		state: 1,
         zoom: { lat: 38.4655, lng: 27.2195 },
-        neighbors: [],
+        neighbors: ["Menemen","Karşıyaka","Bayraklı","Konak","Buca","Kemalpaşa"],
 		bounds: [
 			[38.492958, 27.186516],
 			[38.487684, 27.1812],
@@ -2439,7 +2439,7 @@ const districtsData = [
 		name: "Menemen",
 		state: 1,
         zoom: { lat: 38.6096, lng: 27.0667 },
-        neighbors: [],
+        neighbors: ["Çiğli","Karşıyaka","Bornova","Foça","Aliağa"],
 		bounds: [
 			[38.631874, 26.909809],
 			[38.630868, 26.913325],
@@ -2637,7 +2637,7 @@ const districtsData = [
 		name: "Aliağa",
 		state: 1,
         zoom: { lat: 38.8017, lng: 26.9733 },
-        neighbors: [],
+        neighbors: ["Bergama","Menemen","Foça"],
 		bounds: [
 			[38.937564, 27.054931],
 			[38.935895, 27.051587],
@@ -2881,7 +2881,7 @@ const districtsData = [
 		name: "Bergama",
 		state: 1,
         zoom: { lat: 39.1188, lng: 27.1772 },
-        neighbors: [],
+        neighbors: ["Dikili","Kınık","Aliağa"],
 		bounds: [
 			[39.114046, 27.255502],
 			[39.120172, 27.224634],
@@ -2965,7 +2965,7 @@ const districtsData = [
 		name: "Kınık",
 		state: 1,
         zoom: { lat: 39.0872, lng: 27.3827 },
-        neighbors: [],
+        neighbors: ["Bergama"],
 		bounds: [
 			[39.143841, 27.468648],
 			[39.126798, 27.457118],
@@ -3018,7 +3018,7 @@ const districtsData = [
 		name: "Dikili",
 		state: 1,
         zoom: { lat: 39.0742, lng: 26.8898 },
-        neighbors: [],
+        neighbors: ["Bergama"],
 		bounds: [
 			[39.213469, 26.821013],
 			[39.18713, 26.791511],
@@ -3100,7 +3100,7 @@ const districtsData = [
 		name: "Foça",
 		state: 1,
         zoom: { lat: 38.6683, lng: 26.7549 },
-        neighbors: [],
+        neighbors: ["Menemen","Aliağa"],
 		bounds: [
 			[38.669412, 26.749542],
 			[38.677051, 26.741996],
@@ -3252,7 +3252,7 @@ const districtsData = [
 		name: "Karşıyaka",
 		state: 1,
         zoom: { lat: 38.4555, lng: 27.1194 },
-        neighbors: [],
+        neighbors: ["Çiğli","Menemen","Bornova","Bayraklı"],
 		bounds: [
 			[38.4752, 27.0643],
 			[38.4745, 27.0626],
@@ -3356,7 +3356,7 @@ const districtsData = [
 		name: "Bayraklı",
 		state: 1,
         zoom: { lat: 38.4641, lng: 27.1680 },
-        neighbors: [],
+        neighbors: ["Karşıyaka","Bornova","Konak"],
 		bounds: [
 			[38.464254, 27.148053],
 			[38.464809, 27.145052],
@@ -3436,7 +3436,7 @@ const districtsData = [
 		name: "Çiğli",
 		state: 1,
         zoom: { lat: 38.4936, lng: 27.0627 },
-        neighbors: [],
+        neighbors: ["Karşıyaka","Menemen"],
 		bounds: [
 			[38.519744, 27.039601],
 			[38.523135, 27.041359],
