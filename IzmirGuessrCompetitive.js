@@ -379,10 +379,9 @@ function returnToStart() {
 
 function calculatePoints(distance) {
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
+    console.log("foundDistrict",foundDistrict);
 
-    console.log("foundDistrict",foundDistrict,"selected",selectedDistrict);
-
-    let points = -19565 * Math.log(distance) + 58795;
+    let points = Math.pow(10, (58795 - distance) / 19565)    
 
     /* if (selectedGameMode == "EveryDistrict" && )) {
         points += 200;
