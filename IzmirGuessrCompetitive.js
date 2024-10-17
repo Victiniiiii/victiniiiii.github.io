@@ -604,3 +604,18 @@ faqButton.addEventListener("click", function () {
 		startPageLeftHalf.style.display = "none";
 	}
 });
+
+
+
+
+const expandButton = document.getElementById('expand-button');
+
+expandButton.addEventListener('click', () => {
+    if (expandButton.classList.contains('expanded')) {
+        // Start closing animation
+        expandButton.classList.remove('expanded');
+    } else {
+        // Start opening animation
+        expandButton.classList.add('expanded');
+    }
+});

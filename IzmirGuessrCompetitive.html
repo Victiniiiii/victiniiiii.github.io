@@ -12,6 +12,14 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 	</head>
 	<style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #title-section {
+            height: 8dvh;
+        }
+        
 		#buttonrow,
 		#gamemap {
 			display: none;
@@ -30,6 +38,38 @@
         div.gm-bundled-control:nth-child(2) {
             left: 0;
             right: 0;
+        }
+
+        #expand-button {
+            width: auto;
+            max-height: 50px;
+            margin: 5px 10px 5px 0;
+            background-color: aqua;
+            cursor: pointer;
+            transition: 1.5s;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .buttonInsideButton {
+            width: auto;
+            height: 50px;
+            background-color: rgb(0, 0, 100, 0.8);
+            font-size: 1.25em;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            display: block;
+            border: 1px solid turquoise;
+        }
+
+        #expand-button.expanded {
+            max-height: 200px;
+            transition: 1.5s;
+            margin-top: 155px;
+            z-index: 2;
         }
 
         @media (width > 767px) {
@@ -53,13 +93,12 @@
 				</picture>
 			</a>
 			<h1 class="main-menu-text">IzmirGuessr Competitive</h1>
-			<div class="project-buttons">
-				<div class="category-button">
-                    <div id="usernameHere">Username:</div>
-                    <button id="google-login-button" onclick="loginWithGoogle()">Login with Google</button>
-					<a href="/contactme">Contact Me</a>
-				</div>
-			</div>
+            <div id="expand-button">
+                <div class="buttonInsideButton" id="usernameHere">Logging in...</div>
+                <div class="buttonInsideButton" id="google-login-button" onclick="loginWithGoogle()">Login with Google</div>
+                <div class="buttonInsideButton">Change Username</div>
+                <div class="buttonInsideButton"><a href="/contactme">Contact Me</a></div>
+            </div>
 		</header>
 		<div id="startpage" class="startpage">
 			<div id="faq-menu" class="faq-menu">
