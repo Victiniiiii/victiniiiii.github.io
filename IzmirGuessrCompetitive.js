@@ -381,8 +381,9 @@ function calculatePoints(distance) {
     const basePoints = 1050;
     const scalingFactor = 200;
     const base = 2;
+    const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
 
-    console.log(isPointInPolygon(guessedCoordinates[roundCount],selectedDistrict.bounds))
+    console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))
 
     let points = basePoints - (scalingFactor * Math.log(distance + 1) / Math.log(base));
 
