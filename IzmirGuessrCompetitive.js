@@ -35,6 +35,7 @@ let guessedLocationMarker;
 let randomLocation;
 let minimap;
 let minimapcenter;
+let minimapzoom;
 let roundTimer;
 let isTimerPaused = false;
 let finalgoruntulendimi = false;
@@ -265,14 +266,16 @@ function initMap() {
             gamemap.setStreetView(panorama);
             
             if (selectedGameMode == "EveryDistrict") {
-                minimapcenter = { lat: 38.4192, lng: 27.1287 }
+                minimapcenter = { lat: 38.4192, lng: 27.1287 };
+                minimapzoom = 10;
             } else {
                 minimapcenter = (districtsData.find(d => d.name === selectedGameMode)).zoom;
+                minimapzoom = 12;
             }
 
             minimap = new google.maps.Map(document.getElementById("mini-map"), {
                 center: minimapcenter,
-                zoom: 10,
+                zoom: minimapzoom,
                 draggable: true,
                 mapTypeControl: false,
                 clickableIcons: false,
