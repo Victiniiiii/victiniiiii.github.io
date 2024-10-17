@@ -384,24 +384,11 @@ function calculatePoints(distance) {
     return Math.round(points);
 }
 
-
 function displayResults(distance, points) {
 	pauseTimer();
 	document.getElementById("gamemap").style.opacity = "1";
-	roundPoints[roundCount] = parseInt(points);
-	totalPoints += roundPoints[roundCount];
-    saveData(selectedDistrict,(roundPoints[roundCount]));
 
-	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
-	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
-	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
-
-	document.getElementById("result-modal").style.display = "block";
-	document.getElementById("overlay-container").style.display = "none";
-	document.getElementById("modaltoggle-button").style.display = "block";
-
-	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
+    const resultMap = new google.maps.Map(document.getElementById("result-map"), {
 		center: randomLocation,
 		zoom: getZoomLevel(distance),
 		mapTypeControl: false,
@@ -415,16 +402,33 @@ function displayResults(distance, points) {
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
-    console.log("foundDistrict",foundDistrict,"guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds,"Guessed coordinate:", guessedCoordinates[roundCount]);
     const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    console.log("Guessed point in array format:", guessedPoint);
-    console.log(isPointInPolygon(guessedPoint,foundDistrict.bounds))    
 
-    /* if (selectedGameMode == "EveryDistrict" && )) {
+    if (selectedGameMode == "EveryDistrict" && isPointInPolygon(guessedPoint,foundDistrict.bounds)) {
         points += 200;
-    } else if (selectedGameMode == "EveryDistrict" && selectedDistrict ) {
-        points += 100;
-    } */
+        console.log("Added 200 points!")
+    } else if (selectedGameMode == "EveryDistrict") {
+        for (i = 0; i < foundDistrict.neighbors.length; i++) {
+            let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
+            if (isPointInPolygon(guessedPoint,foundNeighborDistrict.bounds)  ) {
+                points += 100;
+                console.log("Added 100 points!")
+            }            
+        }        
+    }
+
+	roundPoints[roundCount] = parseInt(points);
+	totalPoints += roundPoints[roundCount];
+    saveData(selectedDistrict,(roundPoints[roundCount]));
+
+	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
+	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
+	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
+	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
+
+	document.getElementById("result-modal").style.display = "block";
+	document.getElementById("overlay-container").style.display = "none";
+	document.getElementById("modaltoggle-button").style.display = "block";
 
 	if (roundCount < 5) {
 		new google.maps.Marker({
