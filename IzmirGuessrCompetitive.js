@@ -381,6 +381,7 @@ function calculatePoints(distance) {
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
     console.log("foundDistrict",foundDistrict);
     console.log("guessed",guessedCoordinates,"roundcotun",roundCount,"bounds",foundDistrict.bounds)
+    console.log("Guessed coordinate:", guessedCoordinates[roundCount]);
     console.log(isPointInPolygon(guessedCoordinates[roundCount],foundDistrict.bounds))
 
     let points = Math.pow(10, (58795 - distance) / 19565)    
