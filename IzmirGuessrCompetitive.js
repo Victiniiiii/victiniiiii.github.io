@@ -404,12 +404,12 @@ function displayResults(distance, points) {
     const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
     if (selectedGameMode == "EveryDistrict" && isPointInPolygon(guessedPoint,foundDistrict.bounds)) {
-        points += 200;
+        points += 100;
     } else if (selectedGameMode == "EveryDistrict") {
         for (i = 0; i < foundDistrict.neighbors.length; i++) {
             let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
             if (isPointInPolygon(guessedPoint,foundNeighborDistrict.bounds)  ) {
-                points += 100;
+                points += 50;
             }            
         }        
     }
