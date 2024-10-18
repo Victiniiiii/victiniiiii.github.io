@@ -247,6 +247,8 @@ function initMap() {
     document.getElementById("timer").style.display = "block";
     document.getElementById("final-results-modal").style.display = "none";		
     document.getElementById("gamemap").style.display = "block";
+    document.getElementById("selectGameMode").style.display = "block";
+    document.getElementById("roundCount").style.display = "block";
     returnButton.style.display = "block";
     overlayContainer.style.display = "block";
     buttonrow.style.display = "flex";
@@ -546,6 +548,8 @@ function returnToMainMenu() {
 	overlayContainer.style.display = "none";
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
+    document.getElementById("selectGameMode").style.display = "none";
+    document.getElementById("roundCount").style.display = "none";
     document.getElementById("expand-button").style.display = "block";
 	document.getElementById("result-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "none";
