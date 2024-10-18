@@ -259,17 +259,23 @@ function initMap() {
         ...panoramaOptions,
     });
 
+    console.log("randomlcoation",randomLocation)
+
     const streetViewService = new google.maps.StreetViewService();
-    streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
+    streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
         if (status === "OK") {
+            const preciseLocation = data.location.latLng;
+            
             const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
-                position: randomLocation,
+                position: preciseLocation,
                 pov: { heading: 34, pitch: 1 },
                 zoom: 1,
                 ...panoramaOptions,
             });
 
             gamemap.setStreetView(panorama);
+
+            console.log("randomlcoation",randomLocation)
             
             if (selectedGameMode == "EveryDistrict") {
                 minimapcenter = { lat: 38.4192, lng: 27.1287 };
