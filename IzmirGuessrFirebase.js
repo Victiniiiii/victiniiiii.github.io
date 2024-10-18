@@ -66,7 +66,7 @@ function changeNickname() {
         const currentUser = auth.currentUser;
         const ref = doc(db, `users/${currentUser.uid}/Userdata/${nickname}`);
         const userData = await transaction.get(ref);
-        const input = document.getElementById("changeUsernameInput").input;
+        const input = document.getElementById("changeUsernameInput").value;
         console.log("input:",input);
         if (badwords.some(badword => input.toLowerCase().includes(badword))) {
             alert("Please do not use bad words 😭")
