@@ -16,25 +16,49 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-window.loginWithGoogle = function () {
-	const provider = new GoogleAuthProvider();
+const secondButton = document.getElementById('secondButton');
+const thirdButton = document.getElementById('thirdButton');
 
-	signInWithPopup(auth, provider)
-		.then((result) => {
-			const user = result.user;
-			console.log("Logged in with Google:", user);
-		})
-		.catch((error) => {
-			console.error("Error during Google login:", error);
-		});
-};
+secondButton.addEventListener('click', () => {
+    if (secondButton.innerText == "Log in with Google") {
+        const provider = new GoogleAuthProvider();
+
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+                console.log("Logged in with Google:", user);
+            })
+            .catch((error) => {
+                console.error("Error during Google login:", error);
+            });
+    } else {
+        firebase.auth().signOut().then(() => {
+            console.log("User signed out successfully");
+        }).catch((error) => {
+            console.error("Error signing out: ", error);
+        });
+    }
+});
+
+thirdButton.addEventListener('click', () => {
+    const currentUser = auth.currentUser;
+	if (currentUser) { 
+        // TODO: Change username
+    } else {
+        alert("You have to be logged in to change username!")
+    }
+});
+
+
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
 		if (user.isAnonymous) {
 			window.document.getElementById("usernameHere").innerText = `Anonymous`;
+            window.document.getElementById("secondButton").innerText = `Log in with Google`;
 		} else {
 			window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
+            window.document.getElementById("secondButton").innerText = `Log Out`;
 		}
 	} else {
 		signInAnonymously(auth)

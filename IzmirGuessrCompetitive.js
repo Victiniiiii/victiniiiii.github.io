@@ -605,17 +605,12 @@ faqButton.addEventListener("click", function () {
 	}
 });
 
-
-
-
 const expandButton = document.getElementById('expand-button');
 
 expandButton.addEventListener('click', () => {
     if (expandButton.classList.contains('expanded')) {
-        // Start closing animation
         expandButton.classList.remove('expanded');
     } else {
-        // Start opening animation
         expandButton.classList.add('expanded');
     }
 });
