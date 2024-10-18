@@ -32,11 +32,13 @@ secondButton.addEventListener('click', () => {
                 console.error("Error during Google login:", error);
             });
     } else {
-        firebase.auth().signOut().then(() => {
-            console.log("User signed out successfully");
-        }).catch((error) => {
-            console.error("Error signing out: ", error);
-        });
+        signOut(auth)
+            .then(() => {
+                console.log("User signed out successfully");
+            })
+            .catch((error) => {
+                console.error("Error signing out: ", error);
+            });
     }
 });
 
