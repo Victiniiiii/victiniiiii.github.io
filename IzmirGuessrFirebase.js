@@ -34,6 +34,7 @@ secondButton.addEventListener('click', () => {
                     if (!userData.exists()) {
                         transaction.set(ref, { Nickname: currentUser.displayName });
                         console.log("Nickname set as",currentUser.displayName);
+                        nickname = currentUser.displayName
                     }
                 });
             })
@@ -55,19 +56,31 @@ thirdButton.addEventListener('click', () => {
     const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) { 
         document.getElementById("changeUsernameModal").style.display = "block";
-
-        /* runTransaction(db, async (transaction) => {
-            const userData = await transaction.get(ref);        
-            if (!userData.exists()) {
-                transaction.set(ref, { Nickname: currentUser.displayName });
-                console.log("Nickname set as",currentUser.displayName);
-            }
-        }); */
-
     } else {
         alert("You have to be logged in to change username!")
     }
 });
+
+function changeNickname() {
+    runTransaction(db, async (transaction) => {
+        const userData = await transaction.get(ref);
+        const input = document.getElementById("changeUsernameInput").input;
+        console.log("input:",input);
+        if (badwords.some(badword => input.toLowerCase().includes(badword))) {
+            alert("Please do not use bad words 😭")
+            return;
+        }   
+        if (userData.exists()) {
+            transaction.set(ref, { Nickname: input });
+            console.log("Nickname set as", input);
+            nickname = input;
+        } else {
+            transaction.set(ref, { Nickname: currentUser.displayName });
+            console.log("Something broke");
+            nickname = currentUser.displayName;
+        }
+    });
+}
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
@@ -75,7 +88,8 @@ onAuthStateChanged(auth, (user) => {
 			window.document.getElementById("usernameHere").innerText = `Anonymous`;
             window.document.getElementById("secondButton").innerText = `Log in with Google`;
 		} else {
-			window.document.getElementById("usernameHere").innerText = `Username: ${user.displayName}`;
+            nickname = user.displayName;
+			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
             window.document.getElementById("secondButton").innerText = `Log Out`;
 		}
 	} else {

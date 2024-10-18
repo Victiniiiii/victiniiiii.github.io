@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.gm-fullscreen-control {
+.gm-fullscreen-control { /* Full screen button at top right */
     background: rgb(0, 0, 0, 0.8) !important;
 }
 
