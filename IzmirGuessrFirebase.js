@@ -36,7 +36,6 @@ secondButton.addEventListener('click', () => {
                         console.log("Nickname set as",currentUser.displayName);
                     }
                 });
-                console.log(`Logged in as ${currentUser}`)
             })
             .catch((error) => {
                 console.error("Error during Google login:", error);
@@ -55,11 +54,15 @@ secondButton.addEventListener('click', () => {
 thirdButton.addEventListener('click', () => {
     const currentUser = auth.currentUser;
 	if (currentUser && !currentUser.isAnonymous) { 
+        document.getElementById("changeUsernameModal").style.display = "block";
 
-
-
-
-
+        /* runTransaction(db, async (transaction) => {
+            const userData = await transaction.get(ref);        
+            if (!userData.exists()) {
+                transaction.set(ref, { Nickname: currentUser.displayName });
+                console.log("Nickname set as",currentUser.displayName);
+            }
+        }); */
 
     } else {
         alert("You have to be logged in to change username!")

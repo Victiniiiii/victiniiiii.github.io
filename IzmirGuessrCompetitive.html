@@ -72,6 +72,23 @@
             z-index: 2;
         }
 
+        #changeUsernameModal {
+            display: none;
+            width: 80vw;
+            height: 80vw;
+            background-color: rgb(0, 0, 0, 0.8);
+            margin: 10vh 10vw 10vh 10vw;
+            position: relative;
+        }
+
+        #changeUsernameModalCloseButton {
+            position: absolute;
+            top: 1vw;
+            right: 1vw;
+            width: 5vw;
+            height: 5vw;
+        }
+
         @media (width > 767px) {
             body {
                 overflow: hidden;
@@ -100,6 +117,9 @@
                 <div class="buttonInsideButton"><a href="/contactme">Contact Me</a></div>
             </div>
 		</header>
+        <div id="changeUsernameModal">
+            <div id="changeUsernameModalCloseButton">x</div>
+        </div>
 		<div id="startpage" class="startpage">
 			<div id="faq-menu" class="faq-menu">
 				<p class="izmirfaqtext2"><u>How to play this game ?</u></p>
