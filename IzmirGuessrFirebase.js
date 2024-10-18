@@ -67,7 +67,6 @@ function changeNickname() {
         const ref = doc(db, `users/${currentUser.uid}/UserData/Nickname`);
         const userData = await transaction.get(ref);
         const input = document.getElementById("changeUsernameInput").value;
-        console.log("input:",input);
         if (badwords.some(badword => input.toLowerCase().includes(badword))) {
             alert("Please do not use bad words 😭")
             return;
@@ -84,34 +83,36 @@ function changeNickname() {
     });
 }
 
-onAuthStateChanged(auth, (user) => {
-	if (user) {
-		if (user.isAnonymous) {
-			window.document.getElementById("usernameHere").innerText = `Anonymous`;
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        if (user.isAnonymous) {
+            window.document.getElementById("usernameHere").innerText = `Anonymous`;
             window.document.getElementById("secondButton").innerText = `Log in with Google`;
-		} else {
-            const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
-            const docSnap = getDoc(ref);
-            if (docSnap.exists()) {
-                nickname = docSnap.data().Nickname;
+        } else {
+            const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);            
+            try {
+                const docSnap = await getDoc(ref);                
+                if (docSnap.exists()) {
+                    nickname = docSnap.data().Nickname;
+                } else {
+                    nickname = user.displayName;
+                }
                 window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
                 window.document.getElementById("secondButton").innerText = `Log Out`;
-            } else {
-                nickname = user.displayName;
-                window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
-                window.document.getElementById("secondButton").innerText = `Log Out`;
-            }            
-		}
-	} else {
-		signInAnonymously(auth)
-			.then((userCredential) => {
-				const user = userCredential.user;
-				console.log("Logged in anonymously:", user);
-			})
-			.catch((error) => {
-				console.error("Error during anonymous login:", error);
-			});
-	}
+            } catch (error) {
+                console.error("Error fetching nickname from Firestore:", error);
+            }
+        }
+    } else {
+        signInAnonymously(auth)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log("Logged in anonymously:", user);
+            })
+            .catch((error) => {
+                console.error("Error during anonymous login:", error);
+            });
+    }
 });
 
 async function saveData(district, score) {
