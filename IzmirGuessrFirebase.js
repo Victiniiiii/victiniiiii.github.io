@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, doc, setDoc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -24,9 +24,19 @@ secondButton.addEventListener('click', () => {
         const provider = new GoogleAuthProvider();
 
         signInWithPopup(auth, provider)
-            .then((result) => {
-                const user = result.user;
-                console.log("Logged in with Google:", user);
+            .then(() => {                   
+                const currentUser = auth.currentUser;
+                const userId = currentUser.uid;
+                const ref = doc(db, `users/${userId}/UserData/Nickname`);
+
+                runTransaction(db, async (transaction) => {
+                    const userData = await transaction.get(ref);        
+                    if (!userData.exists()) {
+                        transaction.set(ref, { Nickname: currentUser.displayName });
+                        console.log("Nickname set as",currentUser.displayName);
+                    }
+                });
+                console.log(`Logged in as ${currentUser}`)
             })
             .catch((error) => {
                 console.error("Error during Google login:", error);
@@ -44,14 +54,17 @@ secondButton.addEventListener('click', () => {
 
 thirdButton.addEventListener('click', () => {
     const currentUser = auth.currentUser;
-	if (currentUser) { 
-        // TODO: Change username
+	if (currentUser && !currentUser.isAnonymous) { 
+
+
+
+
+
+
     } else {
         alert("You have to be logged in to change username!")
     }
 });
-
-
 
 onAuthStateChanged(auth, (user) => {
 	if (user) {
