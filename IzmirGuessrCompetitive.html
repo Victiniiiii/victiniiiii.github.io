@@ -11,34 +11,6 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 	</head>
 	<style>
-        * {
-            box-sizing: border-box;
-        }
-
-        #title-section {
-            height: 8dvh;
-        }
-        
-		#buttonrow,
-		#gamemap {
-			display: none;
-		}
-
-		.gm-fullscreen-control {
-			background: rgb(0, 0, 0, 0.8) !important;
-		}
-
-		.gm-style div div a,
-		.gm-style-cc,
-		.leaflet-control { /* Unnecessary Text */
-			display: none !important;
-		}
-
-        div.gm-bundled-control:nth-child(2) { /* Compass Location */
-            left: 0;
-            right: 0;
-        }
-
         #expand-button {
             width: auto;
             max-height: 50px;
@@ -88,18 +60,6 @@
             height: 5vw;
             font-size: 5vw;
             color: white;
-        }
-
-        @media (width > 767px) {
-            body {
-                overflow: hidden;
-            }
-        }
-
-        @media (width < 768px) {
-            .startpage {
-                flex-direction: column;
-            }
         }
 	</style>
 	<body>

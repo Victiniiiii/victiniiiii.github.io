@@ -1,18 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+#title-section {
+    height: 8dvh;
+}
+
+#buttonrow,
+#gamemap {
+    display: none;
+}
+
+.gm-fullscreen-control {
+    background: rgb(0, 0, 0, 0.8) !important;
+}
+
+.gm-style div div a,
+.gm-style-cc,
+.leaflet-control { /* Unnecessary Text */
+    display: none !important;
+}
+
+div.gm-bundled-control:nth-child(2) { /* Compass Location */
+    left: 0;
+    right: 0;
+}
+
 @media (width > 767px) {
-	.fullscreenmodal {
-		width: 100vw;
-		top: 8vh;
-		height: 92vh;
-		position: absolute;
-		z-index: 1111111;
-		background-color: rgba(0, 0, 0, 0.8);
-		font-size: 2em;
-		color: white;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
+    body {
+        overflow: hidden;
+    }
 
 	#gamemap {
 		width: 100vw;
@@ -465,21 +482,6 @@
 }
 
 @media (width < 768px) {
-	.fullscreenmodal {
-		width: 100vw;
-		top: 6vh;
-		height: 94vh;
-		position: absolute;
-		z-index: 1111111;
-		background-color: rgba(0, 0, 0, 0.8);
-		font-size: 1rem;
-		color: white;
-		text-align: center;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	#gamemap {
 		width: 100vw;
 		height: 65svh;
@@ -750,9 +752,9 @@
 		width: 100vw;
 		height: 113svh;
 		display: flex;
-		flex-direction: column-reverse;
 		box-sizing: border-box;
 		margin-top: 1svh;
+        flex-direction: column;
 	}
 
 	.startpagelefthalf {
