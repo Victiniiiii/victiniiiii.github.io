@@ -25,7 +25,7 @@ a:active {
 
 .gm-style div div a,
 .gm-style-cc,
-.leaflet-control { /* Unnecessary Text */
+.leaflet-control { /* Unnecessary Map Text */
     display: none !important;
 }
 

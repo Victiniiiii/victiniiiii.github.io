@@ -242,6 +242,7 @@ function getRandomLocation() {
 function initMap() {
     randomLocation = getRandomLocation();
 
+    document.getElementById("expand-button").style.display = "none";
     document.getElementById("modaltoggle-button").style.display = "none";
     document.getElementById("timer").style.display = "block";
     document.getElementById("final-results-modal").style.display = "none";		
@@ -337,6 +338,8 @@ function initMap() {
             timerSeconds = 30;
             document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
             roundTimer = setInterval(updateTimer, 1000);
+            document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`
+            document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`
         } else {
             initMap();
         }
@@ -534,6 +537,7 @@ function returnToMainMenu() {
 	overlayContainer.style.display = "none";
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
+    document.getElementById("expand-button").style.display = "block";
 	document.getElementById("result-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "none";
 
