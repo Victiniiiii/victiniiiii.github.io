@@ -26,9 +26,58 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
     right: 0;
 }
 
-@media (width > 767px) {
+@media (width > 767px) { /* Big Screens */
     body {
+        background-image: url("../static/imageswebp/cloud.webp") ,url("../static/images/cloud.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        box-sizing: border-box;
+        font-family: Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         overflow: hidden;
+    }
+    
+    #title-section {
+        background-image: url("../static/imageswebp/thunder.webp"), url("../static/images/thunder.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border: 0.2vw solid black;
+        margin-bottom: 0.9dvh;
+    }
+    
+    .main-menu-text {
+        font-size: min(2dvw,4dvh);
+        text-align: center; 
+        color: white;
+        margin: 0;
+        text-shadow: 0.1vw 0.2vh #b5b5b5;
+        -webkit-backdrop-filter: blur(0.2vw);
+        backdrop-filter: blur(0.2vw);
+    }
+    
+    .main-menu-button {
+        cursor: pointer;
+        width: 8dvh;
+        height: 8dvh;
+        background-image: url("/static/imageswebp/vicinti3.webp"), url("/static/images/vicinti3.png");
+    }
+    
+    #title-section a div {
+        background-image: url("/static/imageswebp/vicinti87.webp"), url("/static/images/vicinti87.png");
+        width: 8dvh;
+        height: 8dvh;
+        background-size: contain;
     }
 
 	#gamemap {
@@ -482,6 +531,58 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 }
 
 @media (width < 768px) {
+    body {
+        background-image: url("../static/imageswebp/cloud.webp"), url("../static/images/cloud.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        font-family: Verdana, sans-serif;
+        display: flex;
+        margin: 0;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        height: 100%;
+    }
+    
+    #title-section {
+        background-image: url("../static/imageswebp/thunder.webp"), url("../static/images/thunder.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border: 0.5vw solid black;
+        margin-bottom: 0.1svh;
+        height: 8dvh;
+    }
+    
+    .main-menu-button {
+        cursor: pointer;
+        width: 6svh;
+        height: 6svh;
+    }
+    
+    #title-section a div {
+        background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
+        width: 6svh;
+        height: 6svh;
+        background-size: contain;
+    }
+    
+    .main-menu-text {
+        width: 100%;
+        font-size: min(4vw,2svh);
+        text-align: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        color: white;
+        margin: 0;
+    }
+
 	#gamemap {
 		width: 100vw;
 		height: 65svh;
