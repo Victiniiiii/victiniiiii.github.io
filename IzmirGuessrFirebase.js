@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, doc, increment, runTransaction } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, increment, getDoc, runTransaction } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -90,9 +90,17 @@ onAuthStateChanged(auth, (user) => {
 			window.document.getElementById("usernameHere").innerText = `Anonymous`;
             window.document.getElementById("secondButton").innerText = `Log in with Google`;
 		} else {
-            nickname = user.displayName;
-			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
-            window.document.getElementById("secondButton").innerText = `Log Out`;
+            const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
+            const docSnap = getDoc(ref);
+            if (docSnap.exists()) {
+                nickname = docSnap.data().Nickname;
+                window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
+                window.document.getElementById("secondButton").innerText = `Log Out`;
+            } else {
+                nickname = user.displayName;
+                window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
+                window.document.getElementById("secondButton").innerText = `Log Out`;
+            }            
 		}
 	} else {
 		signInAnonymously(auth)
