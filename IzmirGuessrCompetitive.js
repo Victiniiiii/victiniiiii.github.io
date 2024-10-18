@@ -615,12 +615,6 @@ expandButton.addEventListener('click', () => {
     }
 });
 
-const closeButton = document.getElementById("changeUsernameModalCloseButton");
-
-closeButton.addEventListener("click", () => {
-    if (closeButton.style.display == "none") {
-        closeButton.style.display = "block"
-    } else {
-        closeButton.style.display = "none"
-    }
+document.getElementById("changeUsernameModalCloseButton").addEventListener("click", () => {
+    document.getElementById("changeUsernameModal").style.display = "none"
 });
