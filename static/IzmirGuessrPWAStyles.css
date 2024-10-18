@@ -255,8 +255,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	#buttonrow {
-		width: 50vw;
-		margin-right: 50vw;
+		width: 90vw;
+		margin-right: 10vw;
 		height: 10dvh;
 		background-color: transparent;
 		font-size: min(0.4dvw, 0.8dvh);
@@ -274,7 +274,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
 		margin-top: 1.1dvh;
-		width: 5vw;
+		width: auto;
 		height: 4.3dvh;
 		line-height: 4.3dvh;
 		box-sizing: border-box;
@@ -283,11 +283,12 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		font-size: min(1.25dvw, 2.5dvh);
 		border-radius: min(0.25vw, 0.5vh);
 		cursor: pointer;
+        padding: 0 1em 0 1em;
 	}
 
 	.returnbutton {
-		width: 2.15vw;
-		height: 2.15vw;
+		width: 4.3dvh;
+		height: 4.3dvh;
 		margin-left: 0.5vw;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-refresh-dot' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4' /%3E%3Cpath d='M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4' /%3E%3Cpath d='M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0' /%3E%3C/svg%3E");
 		cursor: pointer;
@@ -296,8 +297,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	.izmirclose {
-		width: 2.15vw;
-		height: 2.15vw;
+		width: 4.3dvh;
+		height: 4.3dvh;
 		margin-right: 0.5vw;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-x' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M18 6l-12 12' /%3E%3Cpath d='M6 6l12 12' /%3E%3C/svg%3E");
 		box-sizing: border-box;
@@ -307,7 +308,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	.closeandreturn {
 		width: 5.3vw;
-		height: 2.15vw;
+		height: 4.3dvh;
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
 		margin-top: 1.1dvh;
@@ -318,8 +319,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	.alarmicon {
-		width: 2.15vw;
-		height: 2.15vw;
+		width: 4.3dvh;
+		height: 4.3dvh;
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-alarm-filled' width='40' height='40' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23000000' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M16 6.072a8 8 0 1 1 -11.995 7.213l-.005 -.285l.005 -.285a8 8 0 0 1 11.995 -6.643zm-4 2.928a1 1 0 0 0 -1 1v3l.007 .117a1 1 0 0 0 .993 .883h2l.117 -.007a1 1 0 0 0 .883 -.993l-.007 -.117a1 1 0 0 0 -.993 -.883h-1v-2l-.007 -.117a1 1 0 0 0 -.993 -.883z' stroke-width='0' fill='currentColor' /%3E%3Cpath d='M6.412 3.191a1 1 0 0 1 1.273 1.539l-.097 .08l-2.75 2a1 1 0 0 1 -1.273 -1.54l.097 -.08l2.75 -2z' stroke-width='0' fill='currentColor' /%3E%3Cpath d='M16.191 3.412a1 1 0 0 1 1.291 -.288l.106 .067l2.75 2a1 1 0 0 1 -1.07 1.685l-.106 -.067l-2.75 -2a1 1 0 0 1 -.22 -1.397z' stroke-width='0' fill='currentColor' /%3E%3C/svg%3E");
@@ -330,8 +331,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	#timer {
 		display: none;
 		width: 20vw;
-		height: 2.15vw;
-		line-height: 2.15vw;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
 		margin-right: 0.5vw;
 		box-sizing: border-box;
 		background-color: lightgray;
@@ -345,7 +346,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#timerandalarm {
 		width: 23.65vw;
-		height: 2.15vw;
+		height: 4.3dvh;
 		background-color: lightgray;
 		margin-left: 0.5vw;
 		margin-right: 0.5vw;
@@ -811,7 +812,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		display: none;
 		margin-left: 0.5svh;
 		margin-right: 0.5svh;
-		width: 8svh;
+		width: auto;
 		height: 4svh;
 		line-height: 4svh;
 		font-size: 1.5svh;
