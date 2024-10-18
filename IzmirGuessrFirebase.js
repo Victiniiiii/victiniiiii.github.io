@@ -90,6 +90,7 @@ async function changeNickname() {
 
         console.log("Nickname set as", input);
         window.document.getElementById("usernameHere").innerText = `Username: ${input}`;
+        document.getElementById("changeUsernameModal").style.display = "none";
     });
 }
 

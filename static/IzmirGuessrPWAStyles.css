@@ -2,6 +2,23 @@
     box-sizing: border-box;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: lightblue;
+}
+
+a:active {
+    color: white;
+}
+
 .gm-fullscreen-control { /* Full screen button at top right */
     background: rgb(0, 0, 0, 0.8) !important;
 }
