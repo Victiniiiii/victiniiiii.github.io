@@ -156,3 +156,4 @@ async function saveData(district, score) {
 }
 
 window.saveData = saveData;
+window.changeNickname = changeNickname;
