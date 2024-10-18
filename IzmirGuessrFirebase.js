@@ -63,6 +63,7 @@ thirdButton.addEventListener('click', () => {
 
 function changeNickname() {
     runTransaction(db, async (transaction) => {
+        const ref = doc(db, `users/${userId}/Userdata/${Nickname}`);
         const userData = await transaction.get(ref);
         const input = document.getElementById("changeUsernameInput").input;
         console.log("input:",input);
