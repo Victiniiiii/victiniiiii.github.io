@@ -264,10 +264,10 @@ function initMap() {
     const streetViewService = new google.maps.StreetViewService();
     streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
         if (status === "OK") {
-            const preciseLocation = data.location.latLng;
+            randomLocation = data.location.latLng;
             
             const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
-                position: preciseLocation,
+                position: randomLocation,
                 pov: { heading: 34, pitch: 1 },
                 zoom: 1,
                 ...panoramaOptions,
