@@ -61,25 +61,35 @@ thirdButton.addEventListener('click', () => {
     }
 });
 
-function changeNickname() {
-    runTransaction(db, async (transaction) => {
-        const currentUser = auth.currentUser;
-        const ref = doc(db, `users/${currentUser.uid}/UserData/Nickname`);
+async function changeNickname() {
+    const currentUser = auth.currentUser;
+    const ref = doc(db, `users/${currentUser.uid}/UserData/Nickname`);
+
+    await runTransaction(db, async (transaction) => {
         const userData = await transaction.get(ref);
         const input = document.getElementById("changeUsernameInput").value;
+        const now = Date.now();
+
         if (badwords.some(badword => input.toLowerCase().includes(badword))) {
-            alert("Please do not use bad words 😭")
+            alert("Please do not use bad words 😭");
             return;
-        }   
-        if (userData.exists()) {
-            transaction.set(ref, { Nickname: input });
-            console.log("Nickname set as", input);
-            nickname = input;
-        } else {
-            transaction.set(ref, { Nickname: currentUser.displayName });
-            console.log("Something broke");
-            nickname = currentUser.displayName;
         }
+
+        const lastNicknameChange = userData.exists() ? userData.data().lastNicknameChange?.toMillis() : null;
+
+        if (lastNicknameChange && now - lastNicknameChange < usernameCooldown) {
+            const timeLeft = usernameCooldown - (now - lastNicknameChange);
+            alert(`Please wait ${(timeLeft / 1000 / 60).toFixed(1)} more minutes before changing your nickname again.`);
+            return;
+        }
+
+        transaction.set(ref, {
+            Nickname: input,
+            lastNicknameChange: new firebase.firestore.Timestamp.fromMillis(now)
+        });
+
+        console.log("Nickname set as", input);
+        window.document.getElementById("usernameHere").innerText = `Username: ${input}`;
     });
 }
 
