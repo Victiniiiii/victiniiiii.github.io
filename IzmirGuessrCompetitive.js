@@ -232,6 +232,7 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    guessedLocationMarker = null;
     let formattedNames = initiallyGreenDistricts.map((district) => district.name);    
     shuffleArray(formattedNames);
     selectedDistrict = formattedNames[0];
