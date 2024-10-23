@@ -65,18 +65,9 @@
 			color: white;
 		}
 
-		#startpagerighthalf::after {
-			content: "";
-			width: 45vw;
-			height: 90dvh;
-		}
-
-		#stats,
-		#leaderboards,
-		#izmirfaq,
-		#start-button3 {
+		#stats, #leaderboards, #izmirfaq, #start-button3 {
 			width: 40%;
-			font-size: 2em;
+			font-size: 1.75em;
 			background-color: rgb(0, 0, 0, 0.8);
 			color: white;
 			border-radius: 1vw;
@@ -97,11 +88,25 @@
             background-color: rgb(0, 0, 0, 0.8);
             color: white;
             font-size: min(1.25vw, 2.5dvh);
-            border-radius: min(0,25vw, 0.5vh);
+            border-radius: 1vh;
             padding: 0 1em 0 1em;
+        }
+
+        .modalClose {
+            color: #aaa;
+            float: right;
+            font-size: 3vw;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 1vw;
         }
 	</style>
 	<body>
+        <div id="faq-menu">
+            <span class="modalClose" onclick="switchFAQ()">&times;</span>
+            <p><h1>How to play this game ?</h1></p>
+            <p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
+        </div>
 		<header id="title-section">
 			<a href="/">
 				<picture>
@@ -123,10 +128,6 @@
 			<button onclick="changeNickname()">Change</button>
 		</div>
 		<div id="startpage" class="startpage">
-			<div id="faq-menu" class="faq-menu">
-				<p class="izmirfaqtext2"><u>How to play this game ?</u></p>
-				<p class="izmirfaqtext3">When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
-			</div>
 			<div id="startpagelefthalf" class="startpagelefthalf">
 				<div id="map2"></div>
 				<div id="mainMapInfo">
@@ -171,7 +172,7 @@
 				<div id="izmirlastrows2">
 					<button id="leaderboards">Leaderboards</button>
 					<button id="stats">Stats</button>
-					<button id="izmirfaq" class="izmirfaq">How to Play</button>
+					<button id="izmirfaq" class="izmirfaq" onclick="switchFAQ()">How to Play</button>
 					<button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
 				</div>
             </div>
@@ -181,16 +182,14 @@
 			<div id="closeandreturn">
 				<div id="izmirclose" onclick="returnToMainMenu()"></div>
 				<div id="returnbutton" onclick="returnToStart()"></div>
-			</div>
-			<div id="timerandalarm" class="timerandalarm">
-				<div id="alarmicon" class="alarmicon"></div>
+                <div id="alarmicon"></div>
 				<div id="timer">Remaining: 30 Seconds</div>
 			</div>
 			<div id="selectGameMode"></div>
 			<div id="roundCount"></div>
 			<div id="modaltoggle-button" onclick="toggleModal()">Toggle</div>
 		</div>
-		<div id="final-results-modal" class="final-results-modal">
+		<div id="final-results-modal">
 			<div class="finalrow">
 				<p class="modalcontent">Congratulations!</p>
 			</div>

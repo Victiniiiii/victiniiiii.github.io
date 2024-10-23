@@ -32,6 +32,7 @@ const faqButton = document.getElementById("izmirfaq");
 const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll(".ilcebutton");
+const expandButton = document.getElementById('expand-button');
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -613,17 +614,14 @@ overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
 
-faqButton.addEventListener("click", function () {
-	faqMenu.classList.toggle("show");
 
-	if (startPageLeftHalf.style.display === "none") {
-		startPageLeftHalf.style.display = "block";
+function switchFAQ() {
+    if (faqMenu.style.display == "block") {
+        faqMenu.style.display = "none"
 	} else {
-		startPageLeftHalf.style.display = "none";
+        faqMenu.style.display = "block"
 	}
-});
-
-const expandButton = document.getElementById('expand-button');
+}
 
 expandButton.addEventListener('click', () => {
     if (expandButton.classList.contains('expanded')) {
