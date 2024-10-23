@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAuth, signInAnonymously, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 import { getFirestore, doc, increment, getDoc, runTransaction, Timestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -53,8 +53,7 @@ secondButton.addEventListener('click', () => {
 });
 
 thirdButton.addEventListener('click', () => {
-    const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) { 
+	if (auth.currentUser) { 
         document.getElementById("changeUsernameModal").style.display = "block";
     } else {
         alert("You have to be logged in to change username!")
@@ -62,8 +61,7 @@ thirdButton.addEventListener('click', () => {
 });
 
 async function changeNickname() {
-    const currentUser = auth.currentUser;
-    const ref = doc(db, `users/${currentUser.uid}/UserData/Nickname`);
+    const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
 
     await runTransaction(db, async (transaction) => {
         const userData = await transaction.get(ref);
@@ -96,40 +94,28 @@ async function changeNickname() {
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
-        if (user.isAnonymous) {
-            window.document.getElementById("usernameHere").innerText = `Anonymous`;
-            window.document.getElementById("secondButton").innerText = `Log in with Google`;
-        } else {
-            const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);            
-            try {
-                const docSnap = await getDoc(ref);                
-                if (docSnap.exists()) {
-                    nickname = docSnap.data().Nickname;
-                } else {
-                    nickname = user.displayName;
-                }
-                window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
-                window.document.getElementById("secondButton").innerText = `Log Out`;
-            } catch (error) {
-                console.error("Error fetching nickname from Firestore:", error);
+        const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);            
+        try {
+            const docSnap = await getDoc(ref);                
+            if (docSnap.exists()) {
+                nickname = docSnap.data().Nickname;
+            } else {
+                nickname = user.displayName;
             }
+            window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
+            window.document.getElementById("secondButton").innerText = `Log Out`;
+        } catch (error) {
+            console.error("Error fetching nickname from Firestore:", error);
         }
     } else {
-        signInAnonymously(auth)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                console.log("Logged in anonymously:", user);
-            })
-            .catch((error) => {
-                console.error("Error during anonymous login:", error);
-            });
+        window.document.getElementById("usernameHere").innerText = `Anonymous`;
+        window.document.getElementById("secondButton").innerText = `Log in with Google`;
     }
 });
 
 async function saveData(district, score) {
-	const currentUser = auth.currentUser;
-	if (currentUser && !currentUser.isAnonymous) {
-		const userId = currentUser.uid;
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
 		const ref = doc(db, `users/${userId}/GameData/${district}`);
 		const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
 
