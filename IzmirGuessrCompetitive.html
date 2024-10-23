@@ -88,6 +88,18 @@
             width: auto;
             height: auto;
         }
+
+        #selectGameMode, #roundCount {
+            width: auto;
+            height: 4.3dvh;
+            line-height: 4.3dvh;
+            margin: 1.1dvh 0.5vw 0 0.5vw;
+            background-color: rgb(0, 0, 0, 0.8);
+            color: white;
+            font-size: min(1.25vw, 2.5dvh);
+            border-radius: min(0,25vw, 0.5vh);
+            padding: 0 1em 0 1em;
+        }
 	</style>
 	<body>
 		<header id="title-section">
@@ -174,9 +186,9 @@
 				<div id="alarmicon" class="alarmicon"></div>
 				<div id="timer">Remaining: 30 Seconds</div>
 			</div>
-			<div id="selectGameMode" class="modaltoggle-button"></div>
-			<div id="roundCount" class="modaltoggle-button"></div>
-			<div id="modaltoggle-button" class="modaltoggle-button" onclick="toggleModal()">Toggle</div>
+			<div id="selectGameMode"></div>
+			<div id="roundCount"></div>
+			<div id="modaltoggle-button" onclick="toggleModal()">Toggle</div>
 		</div>
 		<div id="final-results-modal" class="final-results-modal">
 			<div class="finalrow">
