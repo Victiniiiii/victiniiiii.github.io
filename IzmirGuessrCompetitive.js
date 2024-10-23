@@ -233,9 +233,9 @@ function getRandomLocation() {
 
 function initMap() {
     guessedLocationMarker = null;
-    let formattedNames = initiallyGreenDistricts.map((district) => district.name);    
+    let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);    
     shuffleArray(formattedNames);
-    selectedDistrict = formattedNames[0];
+    selectedDistrict = districtsData.find(district => district.bounds === formattedNames[0]).name;
     randomLocation = getRandomLocation();
 
     document.getElementById("expand-button").style.display = "none";
