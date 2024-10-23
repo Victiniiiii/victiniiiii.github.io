@@ -207,16 +207,8 @@ function addAllDistricts() {
 	});
 }
 
-function formatlama() {
-    let formattedBounds = initiallyGreenDistricts.map((district) => district.bounds);    
-    shuffleArray(formattedBounds);    
-    let selectedBounds = formattedBounds[0];    
-    selectedDistrict = districtsData.find(district => district.bounds === selectedBounds).name;
-    return selectedBounds;
-}
-
 function getRandomLocation() {
-	let polygon = formatlama();
+	let polygon = districtsData.find(district => district.name === selectedDistrict).bounds
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
 	let minY = polygon[0][1];
@@ -240,6 +232,9 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    let formattedNames = initiallyGreenDistricts.map((district) => district.name);    
+    shuffleArray(formattedNames);
+    selectedDistrict = formattedNames[0];
     randomLocation = getRandomLocation();
 
     document.getElementById("expand-button").style.display = "none";
