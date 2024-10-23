@@ -45,15 +45,15 @@ const districtColors = [
     "brown",     // UrlaBounds
     "turquoise", // FocaBounds
     "darkblue",  // AliagaBounds
-    "orange",    // MenemenBounds
-    "black",     // CigliBounds
+    "green",    // MenemenBounds
+    "yellow",     // CigliBounds
     "blue",      // KarsiyakaBounds
     "green",     // BayrakliBounds
     "purple",    // KonakBounds
-    "green",     // BeydagBounds
+    "black",     // BeydagBounds
     "turquoise", // BornovaBounds
     "black",     // GuzelbahceBounds
-    "orange",    // KemalpasaBounds
+    "yellow",    // KemalpasaBounds
     "red",       // SeferihisarBounds
     "turquoise", // BalcovaBounds
     "orange",    // NarlidereBounds
