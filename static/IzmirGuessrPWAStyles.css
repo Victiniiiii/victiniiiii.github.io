@@ -296,7 +296,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		font-size: min(1.25dvw, 2.5dvh);
-		border-radius: min(0.25vw, 0.5vh);
+		border-radius: 1vh;
 		cursor: pointer;
 		padding: 0 1em 0 1em;
 	}
@@ -679,7 +679,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-		border-radius: min(0.5vw, 0.25svh);
+		border-radius: 1vh;
 	}
 
 	#closeandreturn {
