@@ -50,8 +50,8 @@ const districtLayers = [];
 
 // Leaflet Map:
 
-const initialLat = 38.609979;
-const initialLon = 27.398601;
+const initialLat = 38.545325; 
+const initialLon = 27.402211;
 let initialZoom;
 let maxZoomValue;
 let minZoomValue;
@@ -71,7 +71,7 @@ const map2 = L.map("map2", {
     minZoom: minZoomValue,
     maxBounds: [
         [39.444306, 28.559917],
-        [37.808722, 26.203444],
+        [37.708722, 26.203444],
     ], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
 
