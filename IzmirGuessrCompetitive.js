@@ -157,18 +157,7 @@ function toggleDistrict(input) {
         district = input;
     }
 
-    districtLayers.forEach((d) => {
-        d.layer.setStyle({ fill: false, color: "red" });
-        d.state = 0;
-    });
-
-    initiallyGreenDistricts.length = 0;
-
     const button = Array.from(buttons).find(b => b.innerText.trim() === district.name);
-
-    buttons.forEach((b) => {
-        b.style.backgroundColor = "red";
-    });
 
     if (district.layer.options.fill) {
         district.layer.setStyle({ fill: false, color: "red" });
@@ -200,9 +189,23 @@ function addAllDistricts() {
 		district.layer.setStyle({ fill: true, color: "green" });
 		district.state = 1;
 
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+        if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
+
+		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+	});
+}
+
+function removeAllDistricts() {
+    buttons.forEach((button) => {
+		button.style.backgroundColor = "red";
+	});
+	districtLayers.forEach((district) => {
+		district.layer.setStyle({ fill: true, color: "red" });
+		district.state = 0;
+
+        initiallyGreenDistricts.length = 0;
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
