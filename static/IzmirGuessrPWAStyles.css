@@ -398,11 +398,21 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 	}
 
-	#izmirlastrows2 {
+    #mainmenuCompetitiveChecksAndButtons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #mainmenuCompetitiveChecksAndButtons {
+        display: flex;
+        flex-direction: column;
+    }
+
+	#menubuttons {
 		width: auto;
 		height: auto;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		gap: 1vw;
 		align-items: center;
 		flex-wrap: wrap;
@@ -780,7 +790,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 	}
 
-	#izmirlastrows2 {
+	#menubuttons {
 		width: auto;
 		height: auto;
 		display: flex;
