@@ -364,7 +364,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#izmirilcebox {
 		width: 100%;
-		height: auto;
+		height: 40%;
 		align-items: center;
 		padding: 5vh 5% 2vh 5%;
 	}
@@ -401,11 +401,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
     #mainmenuCompetitiveChecksAndButtons {
         display: flex;
         flex-direction: row;
-    }
-
-    #mainmenuCompetitiveChecksAndButtons {
-        display: flex;
-        flex-direction: column;
+        width: 100%;
+        height: 40%;
     }
 
 	#menubuttons {
@@ -415,8 +412,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		flex-direction: column;
 		gap: 1vw;
 		align-items: center;
-		flex-wrap: wrap;
-		padding: 15vh 0 7vh 12.5%;
+        padding-right: 1vw;
 	}
 
 	.izmirayarlar {
@@ -746,7 +742,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#izmirilcebox {
 		width: 100vw;
-		height: 40svh;
+		height: 40%;
 		align-items: center;
 		width: 100vw;
 		height: 35svh;
@@ -789,6 +785,11 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		margin-left: 10vw;
 		text-align: center;
 	}
+
+    #mainmenuCompetitiveChecksAndButtons {
+        display: flex;
+        flex-direction: column;
+    }
 
 	#menubuttons {
 		width: auto;

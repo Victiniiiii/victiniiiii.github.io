@@ -65,19 +65,19 @@
 			color: white;
 		}
 
-		#stats, #leaderboards, #izmirfaq, #start-button3 {
-			width: 40%;
+		#menubuttons button {
+			width: calc(100% + 1vw);
 			font-size: 1.75em;
 			background-color: rgb(0, 0, 0, 0.8);
 			color: white;
 			border-radius: 1vw;
 		}
 
-        #rightSideStuff {
+        .blur {
             -webkit-backdrop-filter: blur(10px);
 			backdrop-filter: blur(10px);
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
         }
 
         #selectGameMode, #roundCount {
@@ -100,6 +100,25 @@
             cursor: pointer;
             margin-right: 1vw;
         }
+
+        #competitiveChecks {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            text-shadow: 2px 2px 2px black;
+            font-size: 1vw;
+            text-align: left;
+            padding: 0 0 2vw 2vw;
+        }
+
+        #menuarabox {
+            width: 100%;
+            height: 20%;
+            display: flex;
+            flex-direction: row;
+        }
 	</style>
 	<body>
         <div id="faq-menu">
@@ -107,6 +126,11 @@
             <p><h1>How to play this game ?</h1></p>
             <p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
         </div>
+        <div id="changeUsernameModal">
+			<div id="changeUsernameModalCloseButton">x</div>
+			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
+			<button onclick="changeNickname()">Change</button>
+		</div>
 		<header id="title-section">
 			<a href="/">
 				<picture>
@@ -121,12 +145,7 @@
 				<div class="buttonInsideButton" id="thirdButton">Change Username</div>
 				<div class="buttonInsideButton"><a href="/contactme">Contact Me</a></div>
 			</div>
-		</header>
-		<div id="changeUsernameModal">
-			<div id="changeUsernameModalCloseButton">x</div>
-			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
-			<button onclick="changeNickname()">Change</button>
-		</div>
+		</header>		
 		<div id="startpage" class="startpage">
 			<div id="startpagelefthalf" class="startpagelefthalf">
 				<div id="map2"></div>
@@ -137,54 +156,58 @@
 				</div>
 			</div>
 			<div id="startpagerighthalf">
-                <div id="rightSideStuff">
-				<div id="izmirilcebox">
-					<button class="ilcebutton" onclick="toggleDistrict('Aliağa')">Aliağa</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Balçova')">Balçova</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Bayındır')">Bayındır</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Bayraklı')">Bayraklı</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Bergama')">Bergama</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Beydağ')">Beydağ</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Bornova')">Bornova</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Buca')">Buca</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Çeşme')">Çeşme</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Çiğli')">Çiğli</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Dikili')">Dikili</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Foça')">Foça</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Gaziemir')">Gaziemir</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Güzelbahçe')">Güzelbahçe</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Karabağlar')">Karabağlar</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Karaburun')">Karaburun</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Karşıyaka')">Karşıyaka</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Kemalpaşa')">Kemalpaşa</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Kınık')">Kınık</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Kiraz')">Kiraz</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Konak')">Konak</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Menderes')">Menderes</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Menemen')">Menemen</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Narlıdere')">Narlıdere</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Ödemiş')">Ödemiş</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Seferihisar')">Seferihisar</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Selçuk')">Selçuk</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Tire')">Tire</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Torbalı')">Torbalı</button>
-					<button class="ilcebutton" onclick="toggleDistrict('Urla')">Urla</button>
-				</div>
-                <div id="mainmenuCompetitiveChecksAndButtons">
-                    <div id="competitiveChecks">
-                        Competitive Checks
-                        Only one or all districts selected: X
-                        No special game mode: X
-                        Time limit at 30 Seconds: X
+                <div class="blur">
+                    <div id="izmirilcebox">
+                        <button class="ilcebutton" onclick="toggleDistrict('Aliağa')">Aliağa</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Balçova')">Balçova</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Bayındır')">Bayındır</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Bayraklı')">Bayraklı</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Bergama')">Bergama</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Beydağ')">Beydağ</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Bornova')">Bornova</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Buca')">Buca</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Çeşme')">Çeşme</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Çiğli')">Çiğli</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Dikili')">Dikili</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Foça')">Foça</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Gaziemir')">Gaziemir</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Güzelbahçe')">Güzelbahçe</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Karabağlar')">Karabağlar</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Karaburun')">Karaburun</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Karşıyaka')">Karşıyaka</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Kemalpaşa')">Kemalpaşa</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Kınık')">Kınık</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Kiraz')">Kiraz</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Konak')">Konak</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Menderes')">Menderes</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Menemen')">Menemen</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Narlıdere')">Narlıdere</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Ödemiş')">Ödemiş</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Seferihisar')">Seferihisar</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Selçuk')">Selçuk</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Tire')">Tire</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Torbalı')">Torbalı</button>
+                        <button class="ilcebutton" onclick="toggleDistrict('Urla')">Urla</button>
                     </div>
-                    <div id="menubuttons">
-                        <button id="leaderboards">Leaderboards</button>
-                        <button id="stats">Stats</button>
-                        <button id="izmirfaq" class="izmirfaq" onclick="switchFAQ()">How to Play</button>
-                        <button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
-                    </div>
-                </div>				
-            </div>
+                    <div id="menuarabox"></div>
+                    <div id="mainmenuCompetitiveChecksAndButtons">
+                        <div id="competitiveChecks">
+                            <h1>Competitive Checks</h1>
+                            <p>Logged In: X</p>
+                            <p>Only one or all districts selected: X</p>
+                            <p>No special game mode: X</p>
+                            <p>Time limit at 30 Seconds: X</p>
+                            <p>You are NOT eligible for the leaderboard.</p>
+                        </div>                        
+                        <div id="menubuttons">
+                            <button id="gamesettings">Settings</button>
+                            <button id="leaderboards">Leaderboards</button>
+                            <button id="stats">Statistics</button>
+                            <button id="izmirfaq" class="izmirfaq" onclick="switchFAQ()">How to Play</button>
+                            <button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
+                        </div>
+                    </div>				
+                </div>
 			</div>
 		</div>
 		<div id="buttonrow" class="buttonrow">
