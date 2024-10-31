@@ -202,7 +202,7 @@ function removeAllDistricts() {
 		button.style.backgroundColor = "red";
 	});
 	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: true, color: "red" });
+		district.layer.setStyle({ fill: false, color: "red" });
 		district.state = 0;
 
         initiallyGreenDistricts.length = 0;
