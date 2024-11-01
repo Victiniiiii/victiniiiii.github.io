@@ -31,7 +31,7 @@ const confirmButton = document.getElementById("action-button");
 const faqButton = document.getElementById("izmirfaq");
 const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
-const buttons = document.querySelectorAll(".ilcebutton");
+const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById('expand-button');
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
