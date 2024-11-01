@@ -1,6 +1,8 @@
 * {
 	box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a, a:visited, a:active {
@@ -30,9 +32,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		background-image: url("../static/imageswebp/cloud.webp"), url("../static/images/cloud.png");
 		background-repeat: no-repeat;
 		background-size: cover;
-		background-attachment: fixed;
-		margin: 0;
-		padding: 0;
+		background-attachment: fixed;		
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -364,13 +364,14 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#izmirilcebox {
 		width: 100%;
-		height: 40%;
+		height: 30%;
 		align-items: center;
 		padding: 5vh 5% 2vh 5%;
 	}
 
-	.ilcebutton {
+	#izmirilcebox button {
 		font-size: min(1.5dvw, 3dvh);
+        padding: 0 0.3vw 0 0.3vw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	}
 
@@ -751,17 +752,17 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		backdrop-filter: blur(5px);
 	}
 
+    #izmirilcebox button {
+		font-size: 2.5svh;
+	}
+
 	.izmirfaq {
 		width: 50%;
 		height: 100%;
 		font-size: 2svh;
 		margin-left: 1vw;
 		margin-right: 1vw;
-	}
-
-	.ilcebutton {
-		font-size: 2.5svh;
-	}
+	}	
 
 	.izmirilcebottombuttons {
 		width: 100vw;
