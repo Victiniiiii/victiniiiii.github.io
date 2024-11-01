@@ -395,7 +395,6 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	.ilcesayisi {
 		font-size: min(1.2dvw, 2.4dvh);
 		margin-left: 1.6vw;
-		margin-bottom: 2dvh;
 		text-align: center;
 	}
 

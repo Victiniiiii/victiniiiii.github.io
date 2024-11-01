@@ -119,6 +119,12 @@
             height: 20%;
             display: flex;
             flex-direction: row;
+            align-items: center;
+        }
+
+        #menuarabox div {
+            width: 50%;
+            height: 100%;
         }
 	</style>
 	<body>
@@ -190,7 +196,20 @@
                         <button onclick="toggleDistrict('Torbalı')">Torbalı</button>
                         <button onclick="toggleDistrict('Urla')">Urla</button>
                     </div>
-                    <div id="menuarabox"></div>
+                    <div id="menuarabox">
+                        <div id="miniLeaderboard">
+                            <h1>Leaderboard</h1>
+                            <p>1. Victiniiiii</p>
+                            <p>2. asdasd</p>
+                            <p>3. greggerg</p>
+                        </div>
+                        <div id="yourStats">
+                            <h1>Your Stats:</h1>
+                            <p>Played Rounds: 1</p>
+                            <p>Success Percentage: 1004.05%</p>
+                            <p>Best High Score: 5000</p>
+                        </div>
+                    </div>
                     <div id="mainmenuCompetitiveChecksAndButtons">
                         <div id="competitiveChecks">
                             <h1>Competitive Checks</h1>

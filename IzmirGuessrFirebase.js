@@ -75,8 +75,8 @@ async function changeNickname() {
 
         const lastNicknameChange = userData.exists() ? userData.data().lastNicknameChange?.toMillis() : null;
 
-        if (lastNicknameChange && now - lastNicknameChange < usernameCooldown) {
-            const timeLeft = usernameCooldown - (now - lastNicknameChange);
+        if (lastNicknameChange && now - lastNicknameChange < nicknamecooldown) {
+            const timeLeft = nicknamecooldown - (now - lastNicknameChange);
             alert(`Please wait ${(timeLeft / 1000 / 60).toFixed(1)} more minutes before changing your nickname again.`);
             return;
         }

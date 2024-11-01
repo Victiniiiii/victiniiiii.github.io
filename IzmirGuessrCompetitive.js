@@ -16,7 +16,7 @@ let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to th
 // Firebase Settings:
 
 let nickname;
-const usernameCooldown = 300000; // 5 minutes ( 300,000 milliseconds )
+const nicknamecooldown = 300000; // 5 minutes ( 300,000 milliseconds )
 
 // HTML Elements:
 
