@@ -27,6 +27,16 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	right: 0;
 }
 
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (width > 767px) { /* Big Screens */	
 	body {
 		background-image: url("../static/imageswebp/cloud.webp"), url("../static/images/cloud.png");
