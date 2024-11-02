@@ -146,7 +146,7 @@ async function saveData(district, score) {
 					});
 				}
 
-				if (ref != ref2) {
+				if (selectedGameMode == "Every District") {
 					if (!userGameData2.exists()) {
 						transaction.set(ref2, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
 					} else {
