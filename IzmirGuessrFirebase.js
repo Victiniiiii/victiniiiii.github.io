@@ -16,112 +16,118 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const secondButton = document.getElementById('secondButton');
-const thirdButton = document.getElementById('thirdButton');
+const secondButton = document.getElementById("secondButton");
+const thirdButton = document.getElementById("thirdButton");
 
-secondButton.addEventListener('click', () => {
-    if (secondButton.innerText == "Log in with Google") {
-        const provider = new GoogleAuthProvider();
+secondButton.addEventListener("click", () => {
+	if (secondButton.innerText == "Log in with Google") {
+		const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider)
-            .then(() => {                   
-                const currentUser = auth.currentUser;
-                const userId = currentUser.uid;
-                const ref = doc(db, `users/${userId}/UserData/Nickname`);
+		signInWithPopup(auth, provider)
+			.then(() => {
+				const currentUser = auth.currentUser;
+				const userId = currentUser.uid;
+				const ref = doc(db, `users/${userId}/UserData/Nickname`);
 
-                runTransaction(db, async (transaction) => {
-                    const userData = await transaction.get(ref);        
-                    if (!userData.exists()) {
-                        transaction.set(ref, { Nickname: currentUser.displayName });
-                        console.log("Nickname set as",currentUser.displayName);
-                        nickname = currentUser.displayName
-                    }
-                });
-            })
-            .catch((error) => {
-                console.error("Error during Google login:", error);
-            });
-    } else {
-        signOut(auth)
-            .then(() => {
-                console.log("User signed out successfully");
-            })
-            .catch((error) => {
-                console.error("Error signing out: ", error);
-            });
-    }
+				runTransaction(db, async (transaction) => {
+					const userData = await transaction.get(ref);
+					if (!userData.exists()) {
+						transaction.set(ref, { Nickname: currentUser.displayName });
+						console.log("Nickname set as", currentUser.displayName);
+						nickname = currentUser.displayName;
+					}
+				});
+			})
+			.catch((error) => {
+				console.error("Error during Google login:", error);
+			});
+	} else {
+		signOut(auth)
+			.then(() => {
+				console.log("User signed out successfully");
+			})
+			.catch((error) => {
+				console.error("Error signing out: ", error);
+			});
+	}
 });
 
-thirdButton.addEventListener('click', () => {
-	if (auth.currentUser) { 
-        document.getElementById("changeUsernameModal").style.display = "block";
-    } else {
-        alert("You have to be logged in to change username!")
-    }
+thirdButton.addEventListener("click", () => {
+	if (auth.currentUser) {
+		document.getElementById("changeUsernameModal").style.display = "block";
+	} else {
+		alert("You have to be logged in to change username!");
+	}
 });
 
 async function changeNickname() {
-    const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
+	const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
 
-    await runTransaction(db, async (transaction) => {
-        const userData = await transaction.get(ref);
-        const input = document.getElementById("changeUsernameInput").value;
-        const now = Date.now();
+	await runTransaction(db, async (transaction) => {
+		const userData = await transaction.get(ref);
+		const input = document.getElementById("changeUsernameInput").value;
+		const now = Date.now();
 
-        if (badwords.some(badword => input.toLowerCase().includes(badword))) {
-            alert("Please do not use bad words 😭");
-            return;
-        }
+		if (badwords.some((badword) => input.toLowerCase().includes(badword))) {
+			alert("Please do not use bad words 😭");
+			return;
+		}
 
-        const lastNicknameChange = userData.exists() ? userData.data().lastNicknameChange?.toMillis() : null;
+		const lastNicknameChange = userData.exists() ? userData.data().lastNicknameChange?.toMillis() : null;
 
-        if (lastNicknameChange && now - lastNicknameChange < nicknamecooldown) {
-            const timeLeft = nicknamecooldown - (now - lastNicknameChange);
-            alert(`Please wait ${(timeLeft / 1000 / 60).toFixed(1)} more minutes before changing your nickname again.`);
-            return;
-        }
+		if (lastNicknameChange && now - lastNicknameChange < nicknamecooldown) {
+			const timeLeft = nicknamecooldown - (now - lastNicknameChange);
+			alert(`Please wait ${(timeLeft / 1000 / 60).toFixed(1)} more minutes before changing your nickname again.`);
+			return;
+		}
 
-        transaction.set(ref, {
-            Nickname: input,
-            lastNicknameChange: Timestamp.fromMillis(now)
-        });
+		transaction.set(ref, {
+			Nickname: input,
+			lastNicknameChange: Timestamp.fromMillis(now),
+		});
 
-        console.log("Nickname set as", input);
-        window.document.getElementById("usernameHere").innerText = `Username: ${input}`;
-        document.getElementById("changeUsernameModal").style.display = "none";
-    });
+		console.log("Nickname set as", input);
+		window.document.getElementById("usernameHere").innerText = `Username: ${input}`;
+		document.getElementById("changeUsernameModal").style.display = "none";
+	});
 }
 
 onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);            
-        try {
-            const docSnap = await getDoc(ref);                
-            if (docSnap.exists()) {
-                nickname = docSnap.data().Nickname;
-            } else {
-                nickname = user.displayName;
-            }
-            window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
-            window.document.getElementById("secondButton").innerText = `Log Out`;
-        } catch (error) {
-            console.error("Error fetching nickname from Firestore:", error);
-        }
-    } else {
-        window.document.getElementById("usernameHere").innerText = `Anonymous`;
-        window.document.getElementById("secondButton").innerText = `Log in with Google`;
-    }
+	if (user) {
+		const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
+		try {
+			const docSnap = await getDoc(ref);
+			if (docSnap.exists()) {
+				nickname = docSnap.data().Nickname;
+			} else {
+				nickname = user.displayName;
+			}
+			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
+			window.document.getElementById("secondButton").innerText = `Log Out`;
+		} catch (error) {
+			console.error("Error fetching nickname from Firestore:", error);
+		}
+	} else {
+		window.document.getElementById("usernameHere").innerText = `Anonymous`;
+		window.document.getElementById("secondButton").innerText = `Log in with Google`;
+	}
 });
 
 async function saveData(district, score) {
-	if (auth.currentUser) {
+	if (auth.currentUser && selectedGameMode != "Custom") {
 		const userId = auth.currentUser.uid;
 		const ref = doc(db, `users/${userId}/GameData/${district}`);
-		const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
+		let ref2;
+		if (selectedGameMode == "Every District") {
+			ref2 = doc(db, `users/${userId}/GameData/Every District`);
+		} else {
+			ref2 = doc(db, `users/${userId}/GameData/${district}`);
+		}
 
 		try {
 			await runTransaction(db, async (transaction) => {
 				const userGameData = await transaction.get(ref);
+				const userGameData2 = await transaction.get(ref2);
 
 				if (!userGameData.exists()) {
 					transaction.set(ref, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
@@ -138,27 +144,33 @@ async function saveData(district, score) {
 						roundCount: increment(1),
 					});
 				}
+
+				if (ref != ref2) {
+					if (!userGameData2.exists()) {
+						transaction.set(ref2, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
+					} else {
+						const data2 = userGameData2.data();
+						const highScore2 = data2.highScore;
+
+						if (totalPoints > highScore2) {
+							transaction.update(ref2, { highScore: totalPoints });
+						}
+
+						transaction.update(ref2, {
+							totalScore: increment(score),
+							roundCount: increment(1),
+						});
+					}
+				}
+
+				if (roundCount == 5) {
+					transaction.update(ref2, {
+						playCount: increment(1),
+					});
+				}
 			});
 		} catch (error) {
 			console.error("Transaction failed: ", error);
-		}
-
-		if (roundCount == 5) {
-			try {
-				await runTransaction(db, async (transaction) => {
-					const userGameData = await transaction.get(ref2);
-
-					if (!userGameData.exists()) {
-						transaction.set(ref2, { playCount: 1 });
-					} else {
-						transaction.update(ref2, {
-							playCount: increment(1),
-						});
-					}
-				});
-			} catch (error) {
-				console.error("Transaction failed: ", error);
-			}
 		}
 	}
 }
