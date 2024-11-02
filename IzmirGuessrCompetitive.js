@@ -660,3 +660,5 @@ expandButton.addEventListener("click", () => {
 document.getElementById("changeUsernameModalCloseButton").addEventListener("click", () => {
 	document.getElementById("changeUsernameModal").style.display = "none";
 });
+
+calculateDistrictData();

@@ -198,12 +198,10 @@ async function calculateDistrictData() {
 		});
 
         document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
-        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${totalScore / totalRoundCount / 10}%`
+        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${((totalScore / totalRoundCount * 10).toFixed(0))/100}%`
         document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
 	}
 }
-
-calculateDistrictData();
 
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
