@@ -176,35 +176,40 @@ async function saveData(district, score) {
 }
 
 async function calculateDistrictData() {
-    const gameDataRef = collection(db, "GameData");
-    let totalRoundCount = 0;
-    let totalScore = 0;
-    let bestHighScore = 0;
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+        
+		let totalRoundCount = 0;
+		let totalScore = 0;
+		let bestHighScore = 0;
 
-    const snapshot = await getDocs(gameDataRef);
-    snapshot.forEach(doc => {
-        const data = doc.data();
-        const districtName = doc.id;
+		const snapshot = await getDocs(gameDataRef);
+		snapshot.forEach((doc) => {
+			const data = doc.data();
+			const districtName = doc.id;
 
-        if (districtName !== "Every District") {
-            totalRoundCount += data.roundCount || 0;
-            totalScore += data.totalScore || 0;
-        }
+			if (districtName !== "Every District") {
+				totalRoundCount += data.roundCount || 0;
+				totalScore += data.totalScore || 0;
+			}
 
-        bestHighScore = Math.max(bestHighScore, data.highScore || 0);
-    });
+			bestHighScore = Math.max(bestHighScore, data.highScore || 0);
+		});
 
-    console.log("Total Round Count:", totalRoundCount);
-    console.log("Total Score:", totalScore);
-    console.log("Best High Score:", bestHighScore);
+		console.log("Total Round Count:", totalRoundCount);
+		console.log("Total Score:", totalScore);
+		console.log("Best High Score:", bestHighScore);
 
-    return { totalRoundCount, totalScore, bestHighScore };
+		return { totalRoundCount, totalScore, bestHighScore };
+	}
 }
 
-calculateDistrictData().then(result => {}).catch(error => {
-    console.error("Error calculating district data:", error);
-});
-
+calculateDistrictData()
+	.then((result) => {})
+	.catch((error) => {
+		console.error("Error calculating district data:", error);
+	});
 
 window.saveData = saveData;
 window.changeNickname = changeNickname;
