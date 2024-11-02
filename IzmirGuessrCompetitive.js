@@ -96,7 +96,7 @@ buttons.forEach((button) => {
 });
 
 document.addEventListener("contextmenu", function (event) {
-    event.preventDefault(); // Prevents the default right-click menu
+    // event.preventDefault(); // Prevents the default right-click menu TODO: ADD Later
     if (roundCount == 0 && !initiallyGreenDistricts.length == 0) {
         removeAllDistricts();
     } else if (roundCount == 0 && initiallyGreenDistricts.length == 0) {
@@ -472,7 +472,7 @@ function displayResults(distance, points) {
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
     
-    document.getElementById("points-info").textContent = `Points Earned: ${points}:`;
+    document.getElementById("points-info").textContent += `Points Earned: ${points}`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
