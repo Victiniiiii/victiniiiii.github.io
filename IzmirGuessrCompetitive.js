@@ -563,7 +563,7 @@ function playAgain() {
 }
 
 function returnToMainMenu() {
-	roundCount = 0;
+	roundCount = 0;    
 
 	startPage.style.display = "flex";
 	returnButton.style.display = "none";
@@ -579,6 +579,7 @@ function returnToMainMenu() {
 
 	refreshMap();
 	pauseTimer();
+    calculateDistrictData();
 }
 
 function startGame() {
