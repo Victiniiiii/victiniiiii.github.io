@@ -237,7 +237,7 @@ function getRandomLocation() {
 
 function initMap() {
     guessedLocationMarker = null;
-    let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);    
+    let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
     shuffleArray(formattedNames);
     selectedDistrict = districtsData.find(district => district.bounds === formattedNames[0]).name;
     randomLocation = getRandomLocation();
@@ -261,8 +261,6 @@ function initMap() {
         ...panoramaOptions,
     });
 
-    console.log("randomLocation before:", randomLocation)
-
     const streetViewService = new google.maps.StreetViewService();
     streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
         if (status === "OK") {
@@ -282,12 +280,12 @@ function initMap() {
     
             gamemap.setStreetView(panorama);
             
-            if (selectedGameMode == "EveryDistrict") {
+            if (initiallyGreenDistricts.length == 1) {
+                minimapcenter = (districtsData.find(d => d.name === selectedGameMode)).zoom;
+                minimapzoom = 12;                
+            } else {
                 minimapcenter = { lat: 38.4192, lng: 27.1287 };
                 minimapzoom = 10;
-            } else {
-                minimapcenter = (districtsData.find(d => d.name === selectedGameMode)).zoom;
-                minimapzoom = 12;
             }
 
             minimap = new google.maps.Map(document.getElementById("mini-map"), {
