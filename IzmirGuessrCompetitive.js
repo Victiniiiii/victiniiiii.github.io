@@ -429,9 +429,9 @@ function displayResults(distance, points) {
     const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
     const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
-    if (selectedGameMode == "EveryDistrict" && isPointInPolygon(guessedPoint,foundDistrict.designcoordinates)) {
+    if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint,foundDistrict.designcoordinates)) {
         points += 100;
-    } else if (selectedGameMode == "EveryDistrict") {
+    } else if (selectedGameMode == "Every District") {
         for (i = 0; i < foundDistrict.neighbors.length; i++) {
             let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
             if (isPointInPolygon(guessedPoint,foundNeighborDistrict.designcoordinates)  ) {
@@ -558,10 +558,12 @@ function returnToMainMenu() {
 
 function startGame() {
     if (roundCount == 0) {
-        if (initiallyGreenDistricts.length > 1) {
-            selectedGameMode = "EveryDistrict";
-        } else {
+        if (initiallyGreenDistricts.length == 30) {
+            selectedGameMode = "Every District";
+        } else if (initiallyGreenDistricts.length == 1) {
             selectedGameMode = initiallyGreenDistricts[0].name;
+        } else {
+            selectedGameMode = "Custom";
         }
         totalPoints = 0;
         roundPoints = [0, 0, 0, 0, 0];
