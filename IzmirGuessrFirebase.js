@@ -179,7 +179,7 @@ async function calculateDistrictData() {
 	if (auth.currentUser) {
 		const userId = auth.currentUser.uid;
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
-        
+
 		let totalRoundCount = 0;
 		let totalScore = 0;
 		let bestHighScore = 0;
@@ -205,11 +205,10 @@ async function calculateDistrictData() {
 	}
 }
 
-calculateDistrictData()
-	.then((result) => {})
-	.catch((error) => {
-		console.error("Error calculating district data:", error);
-	});
+calculateDistrictData().catch((error) => {
+	console.error("Error calculating district data:", error);
+});
 
+window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
