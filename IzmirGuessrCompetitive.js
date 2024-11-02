@@ -32,7 +32,7 @@ const faqButton = document.getElementById("izmirfaq");
 const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll("#izmirilcebox button");
-const expandButton = document.getElementById('expand-button');
+const expandButton = document.getElementById("expand-button");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -50,29 +50,29 @@ const districtLayers = [];
 
 // Leaflet Map:
 
-const initialLat = 38.545325; 
+const initialLat = 38.545325;
 const initialLon = 27.402211;
 let initialZoom;
 let maxZoomValue;
 let minZoomValue;
 
 if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
-    maxZoomValue = 9;
-    minZoomValue = 7;
-    initialZoom = 8;
+	maxZoomValue = 9;
+	minZoomValue = 7;
+	initialZoom = 8;
 } else {
-    maxZoomValue = 10;
-    minZoomValue = 8;
-    initialZoom = 9;
+	maxZoomValue = 10;
+	minZoomValue = 8;
+	initialZoom = 9;
 }
 
 const map2 = L.map("map2", {
-    maxZoom: maxZoomValue,
-    minZoom: minZoomValue,
-    maxBounds: [
-        [39.444306, 28.559917],
-        [37.708722, 26.203444],
-    ], // (North, East, South, West)
+	maxZoom: maxZoomValue,
+	minZoom: minZoomValue,
+	maxBounds: [
+		[39.444306, 28.559917],
+		[37.708722, 26.203444],
+	], // (North, East, South, West)
 }).setView([initialLat, initialLon], initialZoom);
 
 L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
@@ -94,11 +94,20 @@ buttons.forEach((button) => {
 	button.style.backgroundColor = "green";
 });
 
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault(); // Prevents the default right-click menu
+    if (roundCount == 0 && !initiallyGreenDistricts.length == 0) {
+        removeAllDistricts();
+    } else if (roundCount == 0 && initiallyGreenDistricts.length == 0) {
+        addAllDistricts();
+    }    
+});
+
 // Functions:
 
 function refreshMap() {
-    map2.setView([initialLat, initialLon], initialZoom);
-    map2.invalidateSize();
+	map2.setView([initialLat, initialLon], initialZoom);
+	map2.invalidateSize();
 }
 
 function isPointInPolygon(point, polygon) {
@@ -124,13 +133,13 @@ function shuffleArray(array) {
 	return array;
 }
 
-map2.on("mousedown", function (event) {    
+map2.on("mousedown", function (event) {
 	districtLayers.forEach((district) => {
 		const latLngs = district.layer.getLatLngs()[0];
 		const x = event.latlng.lng;
 		const y = event.latlng.lat;
 		let inside = false;
-        
+
 		for (let i = 0, j = latLngs.length - 1; i < latLngs.length; j = i++) {
 			const xi = latLngs[i].lng;
 			const yi = latLngs[i].lat;
@@ -143,42 +152,44 @@ map2.on("mousedown", function (event) {
 		}
 
 		if (inside) {
-			toggleDistrict(district);
+			setTimeout(function () {
+				toggleDistrict(district);
+			}, 100);
 		}
 	});
 });
 
 function toggleDistrict(input) {
-    let district;
+	let district;
 
-    if (typeof input === "string") {
-        district = districtLayers.find((d) => d.name === input);
-    } else {
-        district = input;
-    }
+	if (typeof input === "string") {
+		district = districtLayers.find((d) => d.name === input);
+	} else {
+		district = input;
+	}
 
-    const button = Array.from(buttons).find(b => b.innerText.trim() === district.name);
+	const button = Array.from(buttons).find((b) => b.innerText.trim() === district.name);
 
-    if (district.layer.options.fill) {
-        district.layer.setStyle({ fill: false, color: "red" });
-        district.state = 0;
-        if (button) button.style.backgroundColor = "red";
+	if (district.layer.options.fill) {
+		district.layer.setStyle({ fill: false, color: "red" });
+		district.state = 0;
+		if (button) button.style.backgroundColor = "red";
 
-        const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-        if (index !== -1) {
-            initiallyGreenDistricts.splice(index, 1);
-        }
-    } else {
-        district.layer.setStyle({ fill: true, color: "green" });
-        district.state = 1;
-        if (button) button.style.backgroundColor = "green";
+		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
+		if (index !== -1) {
+			initiallyGreenDistricts.splice(index, 1);
+		}
+	} else {
+		district.layer.setStyle({ fill: true, color: "green" });
+		district.state = 1;
+		if (button) button.style.backgroundColor = "green";
 
-        if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-            initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-        }
-    }
+		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+		}
+	}
 
-    ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+	ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 }
 
 function addAllDistricts() {
@@ -189,7 +200,7 @@ function addAllDistricts() {
 		district.layer.setStyle({ fill: true, color: "green" });
 		district.state = 1;
 
-        if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
 
@@ -198,26 +209,26 @@ function addAllDistricts() {
 }
 
 function removeAllDistricts() {
-    buttons.forEach((button) => {
+	buttons.forEach((button) => {
 		button.style.backgroundColor = "red";
 	});
 	districtLayers.forEach((district) => {
 		district.layer.setStyle({ fill: false, color: "red" });
 		district.state = 0;
 
-        initiallyGreenDistricts.length = 0;
+		initiallyGreenDistricts.length = 0;
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
 }
 
 function getRandomLocation() {
-	let polygon = districtsData.find(district => district.name === selectedDistrict).bounds
+	let polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
 	let minY = polygon[0][1];
 	let maxY = polygon[0][1];
-    let lat;
+	let lat;
 	let lng;
 
 	for (let i = 1; i < polygon.length; i++) {
@@ -226,7 +237,7 @@ function getRandomLocation() {
 		minY = Math.min(minY, polygon[i][1]);
 		maxY = Math.max(maxY, polygon[i][1]);
 	}
-	
+
 	do {
 		lat = Math.random() * (maxX - minX) + minX;
 		lng = Math.random() * (maxY - minY) + minY;
@@ -236,123 +247,123 @@ function getRandomLocation() {
 }
 
 function initMap() {
-    guessedLocationMarker = null;
-    let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
-    shuffleArray(formattedNames);
-    selectedDistrict = districtsData.find(district => district.bounds === formattedNames[0]).name;
-    randomLocation = getRandomLocation();
+	guessedLocationMarker = null;
+	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
+	shuffleArray(formattedNames);
+	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
+	randomLocation = getRandomLocation();
 
-    document.getElementById("expand-button").style.display = "none";
-    document.getElementById("modaltoggle-button").style.display = "none";
-    document.getElementById("timer").style.display = "block";
-    document.getElementById("final-results-modal").style.display = "none";		
-    document.getElementById("gamemap").style.display = "block";
-    document.getElementById("selectGameMode").style.display = "block";
-    document.getElementById("roundCount").style.display = "block";
-    returnButton.style.display = "block";
-    overlayContainer.style.display = "block";
-    buttonrow.style.display = "flex";
-    startPage.style.display = "none";
-    resultModal.style.display = "none";
+	document.getElementById("expand-button").style.display = "none";
+	document.getElementById("modaltoggle-button").style.display = "none";
+	document.getElementById("timer").style.display = "block";
+	document.getElementById("final-results-modal").style.display = "none";
+	document.getElementById("gamemap").style.display = "block";
+	document.getElementById("selectGameMode").style.display = "block";
+	document.getElementById("roundCount").style.display = "block";
+	returnButton.style.display = "block";
+	overlayContainer.style.display = "block";
+	buttonrow.style.display = "flex";
+	startPage.style.display = "none";
+	resultModal.style.display = "none";
 
-    gamemap = new google.maps.Map(document.getElementById("gamemap"), {
-        center: randomLocation,
-        zoom: 14,
-        ...panoramaOptions,
-    });
+	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
+		center: randomLocation,
+		zoom: 14,
+		...panoramaOptions,
+	});
 
-    const streetViewService = new google.maps.StreetViewService();
-    streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
-        if (status === "OK") {
-            const latLng = data.location.latLng;
-    
-            randomLocation = {
-                lat: latLng.lat(),
-                lng: latLng.lng()
-            };
-    
-            const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
-                position: randomLocation,
-                pov: { heading: 34, pitch: 1 },
-                zoom: 1,
-                ...panoramaOptions,
-            });
-    
-            gamemap.setStreetView(panorama);
-            
-            if (initiallyGreenDistricts.length == 1) {
-                minimapcenter = (districtsData.find(d => d.name === selectedGameMode)).zoom;
-                minimapzoom = 12;                
-            } else {
-                minimapcenter = { lat: 38.4192, lng: 27.1287 };
-                minimapzoom = 10;
-            }
+	const streetViewService = new google.maps.StreetViewService();
+	streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
+		if (status === "OK") {
+			const latLng = data.location.latLng;
 
-            minimap = new google.maps.Map(document.getElementById("mini-map"), {
-                center: minimapcenter,
-                zoom: minimapzoom,
-                draggable: true,
-                mapTypeControl: false,
-                clickableIcons: false,
-                ...panoramaOptions,
-                restriction: {
-                    latLngBounds: {
-                        north: 39.47,
-                        south: 37.85,
-                        east: 28.41,
-                        west: 26.21
-                    },
-                    strictBounds: true
-                },
-            });
+			randomLocation = {
+				lat: latLng.lat(),
+				lng: latLng.lng(),
+			};
 
-            google.maps.event.addListener(minimap, "click", function (event) {
-                if (guessedLocationMarker) {
-                    guessedLocationMarker.setMap(null);
-                }
+			const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
+				position: randomLocation,
+				pov: { heading: 34, pitch: 1 },
+				zoom: 1,
+				...panoramaOptions,
+			});
 
-                guessedLocationMarker = new google.maps.Marker({
-                    position: event.latLng,
-                    map: minimap,
-                    title: "Guessed Location",
-                    icon: "static/images/redpin.png",
-                });
-            });
+			gamemap.setStreetView(panorama);
 
-            google.maps.event.addListener(gamemap, "click", function (event) {
-                if (guessedLocationMarker) {
-                    guessedLocationMarker.setMap(null);
-                }
+			if (initiallyGreenDistricts.length == 1) {
+				minimapcenter = districtsData.find((d) => d.name === selectedGameMode).zoom;
+				minimapzoom = 12;
+			} else {
+				minimapcenter = { lat: 38.4192, lng: 27.1287 };
+				minimapzoom = 10;
+			}
 
-                guessedLocationMarker = new google.maps.Marker({
-                    position: event.latLng,
-                    map: minimap,
-                    title: "Original Location",
-                    icon: "static/images/greenpin.png",
-                });
-            });
+			minimap = new google.maps.Map(document.getElementById("mini-map"), {
+				center: minimapcenter,
+				zoom: minimapzoom,
+				draggable: true,
+				mapTypeControl: false,
+				clickableIcons: false,
+				...panoramaOptions,
+				restriction: {
+					latLngBounds: {
+						north: 39.47,
+						south: 37.85,
+						east: 28.41,
+						west: 26.21,
+					},
+					strictBounds: true,
+				},
+			});
 
-            document.getElementById("action-button").onclick = function () {
-                const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
-                const points = calculatePoints(distance);
-                displayResults(distance, points);
-            };
+			google.maps.event.addListener(minimap, "click", function (event) {
+				if (guessedLocationMarker) {
+					guessedLocationMarker.setMap(null);
+				}
 
-            resumeTimer();
+				guessedLocationMarker = new google.maps.Marker({
+					position: event.latLng,
+					map: minimap,
+					title: "Guessed Location",
+					icon: "static/images/redpin.png",
+				});
+			});
 
-            if (roundTimer) {
-                clearInterval(roundTimer);
-            }
+			google.maps.event.addListener(gamemap, "click", function (event) {
+				if (guessedLocationMarker) {
+					guessedLocationMarker.setMap(null);
+				}
 
-            timerSeconds = 30;
-            document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
-            roundTimer = setInterval(updateTimer, 1000);
-            document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`
-            document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`
-        } else {
-            initMap();
-        }
-    });
+				guessedLocationMarker = new google.maps.Marker({
+					position: event.latLng,
+					map: minimap,
+					title: "Original Location",
+					icon: "static/images/greenpin.png",
+				});
+			});
+
+			document.getElementById("action-button").onclick = function () {
+				const distance = google.maps.geometry.spherical.computeDistanceBetween(guessedLocationMarker.getPosition(), randomLocation);
+				const points = calculatePoints(distance);
+				displayResults(distance, points);
+			};
+
+			resumeTimer();
+
+			if (roundTimer) {
+				clearInterval(roundTimer);
+			}
+
+			timerSeconds = 30;
+			document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+			roundTimer = setInterval(updateTimer, 1000);
+			document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`;
+			document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`;
+		} else {
+			initMap();
+		}
+	});
 }
 
 function toggleModal() {
@@ -404,16 +415,18 @@ function returnToStart() {
 }
 
 function calculatePoints(distance) {
-    let points = (-1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48)
-    if (points < 0) {points = 0}
-    return Math.round(points);
+	let points = -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48;
+	if (points < 0) {
+		points = 0;
+	}
+	return Math.round(points);
 }
 
 function displayResults(distance, points) {
 	pauseTimer();
 	document.getElementById("gamemap").style.opacity = "1";
 
-    const resultMap = new google.maps.Map(document.getElementById("result-map"), {
+	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
 		center: randomLocation,
 		zoom: getZoomLevel(distance),
 		mapTypeControl: false,
@@ -426,25 +439,27 @@ function displayResults(distance, points) {
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 
-    const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
-    const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
+	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
+	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
-    if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint,foundDistrict.designcoordinates)) {
-        points += 100;
-    } else if (selectedGameMode == "Every District") {
-        for (i = 0; i < foundDistrict.neighbors.length; i++) {
-            let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
-            if (isPointInPolygon(guessedPoint,foundNeighborDistrict.designcoordinates)  ) {
-                points += 50;
-            }            
-        }        
-    }
+	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
+		points += 100;
+	} else if (selectedGameMode == "Every District") {
+		for (i = 0; i < foundDistrict.neighbors.length; i++) {
+			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
+			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
+				points += 50;
+			}
+		}
+	}
 
-    if (points > 1000) {points = 1000}
+	if (points > 1000) {
+		points = 1000;
+	}
 
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
-    saveData(selectedDistrict,(roundPoints[roundCount]));
+	saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
@@ -501,7 +516,7 @@ function displayResults(distance, points) {
 			line.setMap(resultMap);
 		}
 	}
-    roundCount++;
+	roundCount++;
 }
 
 function getZoomLevel(distance) {
@@ -534,7 +549,7 @@ function getZoomLevel(distance) {
 
 function playAgain() {
 	roundCount = 0;
-    startGame();
+	startGame();
 }
 
 function returnToMainMenu() {
@@ -546,9 +561,9 @@ function returnToMainMenu() {
 	overlayContainer.style.display = "none";
 	finalresultsmodal.style.display = "none";
 	buttonrow.style.display = "none";
-    document.getElementById("selectGameMode").style.display = "none";
-    document.getElementById("roundCount").style.display = "none";
-    document.getElementById("expand-button").style.display = "block";
+	document.getElementById("selectGameMode").style.display = "none";
+	document.getElementById("roundCount").style.display = "none";
+	document.getElementById("expand-button").style.display = "block";
 	document.getElementById("result-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "none";
 
@@ -557,26 +572,25 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-    if (roundCount == 0) {
-        if (initiallyGreenDistricts.length == 30) {
-            selectedGameMode = "Every District";
-        } else if (initiallyGreenDistricts.length == 1) {
-            selectedGameMode = initiallyGreenDistricts[0].name;
-        } else {
-            selectedGameMode = "Custom";
-        }
-        totalPoints = 0;
-        roundPoints = [0, 0, 0, 0, 0];
-        guessedCoordinates = [0, 0, 0, 0, 0];
-        actualCoordinates = [0, 0, 0, 0, 0];
-        finalgoruntulendimi = false;
-        
-    }
-	if (roundCount == 5) {        
-		document.getElementById("final-results-modal").style.display = "block";		
+	if (roundCount == 0) {
+		if (initiallyGreenDistricts.length == 30) {
+			selectedGameMode = "Every District";
+		} else if (initiallyGreenDistricts.length == 1) {
+			selectedGameMode = initiallyGreenDistricts[0].name;
+		} else {
+			selectedGameMode = "Custom";
+		}
+		totalPoints = 0;
+		roundPoints = [0, 0, 0, 0, 0];
+		guessedCoordinates = [0, 0, 0, 0, 0];
+		actualCoordinates = [0, 0, 0, 0, 0];
+		finalgoruntulendimi = false;
+	}
+	if (roundCount == 5) {
+		document.getElementById("final-results-modal").style.display = "block";
 		document.getElementById("overlay-container").style.display = "none";
-        finalgoruntulendimi = true;
-	} else {        
+		finalgoruntulendimi = true;
+	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
 		document.getElementById("result-modal").style.display = "none";
@@ -617,23 +631,22 @@ overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
 
-
 function switchFAQ() {
-    if (faqMenu.style.display == "block") {
-        faqMenu.style.display = "none"
+	if (faqMenu.style.display == "block") {
+		faqMenu.style.display = "none";
 	} else {
-        faqMenu.style.display = "block"
+		faqMenu.style.display = "block";
 	}
 }
 
-expandButton.addEventListener('click', () => {
-    if (expandButton.classList.contains('expanded')) {
-        expandButton.classList.remove('expanded');
-    } else {
-        expandButton.classList.add('expanded');
-    }
+expandButton.addEventListener("click", () => {
+	if (expandButton.classList.contains("expanded")) {
+		expandButton.classList.remove("expanded");
+	} else {
+		expandButton.classList.add("expanded");
+	}
 });
 
 document.getElementById("changeUsernameModalCloseButton").addEventListener("click", () => {
-    document.getElementById("changeUsernameModal").style.display = "none"
+	document.getElementById("changeUsernameModal").style.display = "none";
 });
