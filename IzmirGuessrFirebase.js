@@ -197,17 +197,13 @@ async function calculateDistrictData() {
 			bestHighScore = Math.max(bestHighScore, data.highScore || 0);
 		});
 
-		console.log("Total Round Count:", totalRoundCount);
-		console.log("Total Score:", totalScore);
-		console.log("Best High Score:", bestHighScore);
-
-		return { totalRoundCount, totalScore, bestHighScore };
+        document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
+        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${totalScore / totalRoundCount / 10}%`
+        document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
 	}
 }
 
-calculateDistrictData().catch((error) => {
-	console.error("Error calculating district data:", error);
-});
+calculateDistrictData();
 
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
