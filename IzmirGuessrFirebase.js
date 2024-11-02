@@ -86,7 +86,6 @@ async function changeNickname() {
 			lastNicknameChange: Timestamp.fromMillis(now),
 		});
 
-		console.log("Nickname set as", input);
 		window.document.getElementById("usernameHere").innerText = `Username: ${input}`;
 		document.getElementById("changeUsernameModal").style.display = "none";
 	});
@@ -199,7 +198,7 @@ async function calculateDistrictData() {
 		});
 
         document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
-        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${((totalScore / totalRoundCount * 10).toFixed(0))/100}%`
+        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${(totalScore / totalRoundCount / 10).toFixed(2)}%`
         document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
 	}
 }
