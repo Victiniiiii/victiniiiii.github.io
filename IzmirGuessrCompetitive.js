@@ -462,7 +462,11 @@ function displayResults(distance, points) {
 	saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
+	document.getElementById("points-info").textContent = `Points Earned: ${points}:`;
+    document.getElementById("points-info").textContent += `From Distance: ${points}:`;
+    document.getElementById("points-info").textContent += `Every District Mode - Same District: ${points}:`;
+    document.getElementById("points-info").textContent += `Every District Mode - Neighboring District: ${points}:`;
+    document.getElementById("points-info").textContent += `Deduction From Hints Used: ${points}:`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
