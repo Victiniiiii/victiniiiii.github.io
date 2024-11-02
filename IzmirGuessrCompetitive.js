@@ -11,6 +11,7 @@ let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0; // The round we are currently at (0 to 4)
 let timerSeconds = 30;
+let hintsAreEnabled = false;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 // Firebase Settings:
@@ -441,17 +442,25 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
+    document.getElementById("points-info").textContent += `From Distance: ${points}:`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
+        document.getElementById("points-info").textContent += `Every District Mode - Same District: +100 points`;
 	} else if (selectedGameMode == "Every District") {
 		for (i = 0; i < foundDistrict.neighbors.length; i++) {
 			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
 			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
 				points += 50;
+                document.getElementById("points-info").textContent += `Every District Mode - Neighboring District: +50 points`;
 			}
 		}
 	}
+    
+    if (hintsAreEnabled) {
+        points -= 200;
+        document.getElementById("points-info").textContent += `Deduction From Hints Used: -200 points`;
+    }
 
 	if (points > 1000) {
 		points = 1000;
@@ -462,11 +471,8 @@ function displayResults(distance, points) {
 	saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-	document.getElementById("points-info").textContent = `Points Earned: ${points}:`;
-    document.getElementById("points-info").textContent += `From Distance: ${points}:`;
-    document.getElementById("points-info").textContent += `Every District Mode - Same District: ${points}:`;
-    document.getElementById("points-info").textContent += `Every District Mode - Neighboring District: ${points}:`;
-    document.getElementById("points-info").textContent += `Deduction From Hints Used: ${points}:`;
+    
+    document.getElementById("points-info").textContent = `Points Earned: ${points}:`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
