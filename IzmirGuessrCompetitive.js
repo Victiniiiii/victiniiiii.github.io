@@ -662,4 +662,4 @@ document.getElementById("changeUsernameModalCloseButton").addEventListener("clic
 	document.getElementById("changeUsernameModal").style.display = "none";
 });
 
-calculateDistrictData();
+window.calculateDistrictData();
