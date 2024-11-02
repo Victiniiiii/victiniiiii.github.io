@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, doc, increment, getDoc, runTransaction, Timestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, increment, getDoc, getDocs, collection, runTransaction, Timestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -176,12 +176,12 @@ async function saveData(district, score) {
 }
 
 async function calculateDistrictData() {
-    const gameDataRef = db.collection("GameData");
+    const gameDataRef = collection(db, "GameData");
     let totalRoundCount = 0;
     let totalScore = 0;
     let bestHighScore = 0;
 
-    const snapshot = await gameDataRef.get();
+    const snapshot = await getDocs(gameDataRef);
     snapshot.forEach(doc => {
         const data = doc.data();
         const districtName = doc.id;
@@ -204,6 +204,7 @@ async function calculateDistrictData() {
 calculateDistrictData().then(result => {}).catch(error => {
     console.error("Error calculating district data:", error);
 });
+
 
 window.saveData = saveData;
 window.changeNickname = changeNickname;
