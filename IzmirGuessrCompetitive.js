@@ -455,9 +455,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "block";
 
-    roundCount++;
-
-	if (roundCount < 5) {
+	if (roundCount < 4) {
 		new google.maps.Marker({
 			position: randomLocation,
 			map: resultMap,
@@ -502,7 +500,8 @@ function displayResults(distance, points) {
 
 			line.setMap(resultMap);
 		}
-	}    
+	}
+    roundCount++;
 }
 
 function getZoomLevel(distance) {
