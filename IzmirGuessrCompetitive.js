@@ -442,7 +442,7 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    document.getElementById("points-info").textContent += `From Distance: ${points}:`;
+    document.getElementById("points-info").textContent = `From Distance: ${points}:`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
