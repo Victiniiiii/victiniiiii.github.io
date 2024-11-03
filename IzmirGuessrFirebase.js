@@ -257,19 +257,20 @@ async function logLeaderboard() {
 
 async function printAllUserNicknames() {
 	try {
-		const usersSnapshot = await db.collection("users").get();
+		const usersCollection = collection(db, "users");
+		const usersSnapshot = await getDocs(usersCollection);
 
-		usersSnapshot.forEach(async (userDoc) => {
+		for (const userDoc of usersSnapshot.docs) {
 			const userId = userDoc.id;
-			const nicknameRef = db.doc(`users/${userId}/UserData/Nickname`);
-			const nicknameDoc = await nicknameRef.get();
+			const nicknameRef = doc(db, `users/${userId}/UserData/Nickname`);
+			const nicknameDoc = await getDoc(nicknameRef);
 
-			if (nicknameDoc.exists) {
+			if (nicknameDoc.exists()) {
 				console.log(`Nickname for user ${userId}: ${nicknameDoc.data().nickname}`);
 			} else {
 				console.log(`No nickname found for user ${userId}`);
 			}
-		});
+		}
 	} catch (error) {
 		console.error("Error fetching nicknames:", error);
 	}
