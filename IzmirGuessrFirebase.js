@@ -227,20 +227,25 @@ async function calculateDistrictData() {
 }
 
 async function logStatistics() {
-	if (auth.currentUser) {
-		const userId = auth.currentUser.uid;
-		const gameDataRef = collection(db, `users/${userId}/GameData`);
-		const snapshot = await getDocs(gameDataRef);
+    if (auth.currentUser) {
+        const userId = auth.currentUser.uid;
+        const gameDataRef = collection(db, `users/${userId}/GameData`);
+        const snapshot = await getDocs(gameDataRef);
 
-		document.getElementById("statisticsMenuText").innerHTML = "";
+        const statisticsMenuText = document.getElementById("statisticsMenuText");
+        statisticsMenuText.innerHTML = "";
 
-		snapshot.forEach((doc) => {
-			const data = doc.data();
-			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
-		});
-	} else {
-		document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
-	}
+        if (snapshot.empty) {
+            statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
+        } else {
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
+            });
+        }
+    } else {
+        document.getElementById("statisticsMenuText").innerHTML = `<p>You need to be logged in to do this!</p>`;
+    }
 }
 
 async function logTopHighScores() {
