@@ -283,7 +283,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	#timer {
-		display: none;
+		display: block;
 		width: 20vw;
 		height: 4.3dvh;
 		line-height: 4.3dvh;
