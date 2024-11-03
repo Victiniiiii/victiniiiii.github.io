@@ -31,13 +31,14 @@ secondButton.addEventListener("click", () => {
 
 				runTransaction(db, async (transaction) => {
 					const userData = await transaction.get(ref);
-					if (!userData.exists()) {
-						transaction.set(ref, {
-                            Nickname: input,
-                            lastNicknameChange: Timestamp.fromMillis(Date.now),
-                        });
+                    console.log("test")
+					if (!userData.exists()) {						
 						console.log("Nickname set as", currentUser.displayName);
 						nickname = currentUser.displayName;
+                        transaction.set(ref, {
+                            Nickname: nickname,
+                            lastNicknameChange: Timestamp.fromMillis(Date.now),
+                        });
 					}
 				});
 			})
@@ -63,11 +64,16 @@ thirdButton.addEventListener("click", () => {
 	}
 });
 
-async function changeNickname() {
+async function changeNickname(type) {
 	const ref = doc(db, `users/${auth.currentUser.uid}`);
 
 	await runTransaction(db, async (transaction) => {
 		const userData = await transaction.get(ref);
+        if (type == "1") {
+
+        } else {
+
+        }
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
 
