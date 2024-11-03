@@ -98,10 +98,8 @@ onAuthStateChanged(auth, async (user) => {
 			const docSnap = await getDoc(ref);
 			if (docSnap.exists()) {
 				nickname = docSnap.data().Nickname;
-                console.log("1",nickname)
 			} else {
 				nickname = user.displayName;
-                console.log("12",user,user.displayName)
 			}
 			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
