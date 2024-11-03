@@ -119,6 +119,7 @@ onAuthStateChanged(auth, async (user) => {
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
 			competitiveCheck();
+            logTopHighScores();
 		} catch (error) {
 			console.error("Error fetching nickname from Firestore:", error);
 		}
@@ -126,6 +127,7 @@ onAuthStateChanged(auth, async (user) => {
 		window.document.getElementById("usernameHere").innerText = `Anonymous`;
 		window.document.getElementById("secondButton").innerText = `Log in with Google`;
 		competitiveCheck();
+        logTopHighScores();
 	}
 });
 
@@ -263,12 +265,14 @@ async function logTopHighScores() {
 		});
 	}
 
+    document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`
+
 	const topHighScores = Array.from(allHighScores.values())
 		.sort((a, b) => b.highScore - a.highScore)
 		.slice(0, 3);
 
 	topHighScores.forEach((score, index) => {
-		console.log(`${index + 1}. ${score.username} - High Score: ${score.highScore}`);
+        document.getElementById("miniLeaderboard").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`
 	});
 }
 
