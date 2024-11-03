@@ -117,7 +117,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		align-items: center;
 		margin-right: 3vw;
 		margin-bottom: 4dvh;
-		border: min(0.05vw, 0.05vh) solid black;        
+		border: 1px solid black;
 	}
 
 	#overlay-container.hovered {
@@ -132,7 +132,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		align-items: center;
 		margin-right: 3vw;
 		margin-bottom: 4dvh;
-		border: min(0.05vw, 0.05vh) solid black;
+		border: 1px solid black;
 	}
 
 	#action-button {
@@ -149,52 +149,47 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		height: 3dvh;
 	}
 
-	.modal {
+	#result-modal {
 		display: none;
 		flex-direction: column;
 		position: fixed;
+        justify-content: center;
 		z-index: 1;
 		width: 30vw;
 		height: 60dvh;
 		margin: 20dvh 0 0 35vw;
-		overflow: auto;
-		border: 1px solid black;
-		justify-content: center;
-		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
+		border: 1px solid white;
+        color: white;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 	}
 
 	#final-results-modal {
-		display: flex;
-		flex-direction: column;
-		display: none;
+        display: none;
+		flex-direction: column;		
 		position: absolute;
+        justify-content: center;
+        align-items: center;
 		z-index: 4;
 		width: 30vw;
-		height: 53dvh;
-		margin-top: 20dvh;
-		overflow: auto;
-		background-color: #fefefe;
-		padding: 0.5vw;
-		border: min(0.1vw, 0.2vh) solid black;
-		justify-content: center;
-		background-repeat: repeat;
-		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
-		align-items: center;
+		height: 60dvh;
+		margin: 20dvh 0 0 35vw;
+		border: 1px solid white;
+        color: white;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);		
 	}
 
 	.modalrow {
 		display: flex;
 		flex-direction: row;
-		width: 100%;
-		height: 5dvh;
-		justify-content: center;
+        justify-content: center;
 		text-align: center;
+        align-items: center;
+		width: 25vw;
+		height: 5dvh;
+        margin: 1vw 0 0 2.5vw;		
 		font-size: min(1dvw, 2dvh);
-		margin-top: 1vw;
-		-webkit-backdrop-filter: blur(0.5vw);
-		backdrop-filter: blur(0.5vw);
-		border: min(0.1vw, 0.2vh) solid black;
-		align-items: center;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 
 	.finalrow {
@@ -207,15 +202,10 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		justify-content: center;
 		text-align: center;
 		font-size: min(1dvw, 2dvh);
-		-webkit-backdrop-filter: blur(0.5vw);
-		backdrop-filter: blur(0.5vw);
-		border: min(0.2vw, 0.4vh) solid black;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		border: 1px solid black;
 		align-items: center;
-	}
-
-	.modalcontent {
-		flex: 1;
-		margin: 0;
 	}
 
 	#result-info {
@@ -235,7 +225,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		margin-right: 10vw;
 		height: 10dvh;
 		background-color: transparent;
-		font-size: min(0.4dvw, 0.8dvh);
+		font-size: min(0.35dvw, 0.7dvh);
 		z-index: 5;
 		position: absolute;
 		overflow: auto;

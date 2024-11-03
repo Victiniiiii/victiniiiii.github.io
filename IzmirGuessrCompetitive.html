@@ -299,22 +299,22 @@
 		</div>
 
 		<div id="gameplayBackground">
-            <div id="backgroundText">testText</div>
+            <div id="backgroundText"></div>
 			<div id="gamemap"></div>
 			<div id="overlay-container">
 				<div id="mini-map"></div>
 				<button id="action-button">Confirm & Calculate</button>
 			</div>
-			<div id="result-modal" class="modal">
+			<div id="result-modal">
 				<div id="result-map" class="result-map"></div>
 				<div class="modalrow">
-					<p id="distance-info" class="modalcontent"></p>
-					<p id="points-info" class="modalcontent"></p>
+					<p id="distance-info"></p>
+					<p id="points-info"></p>
 				</div>
 				<div class="modalrow">
-					<p id="totalPoints" class="modalcontent"></p>
-					<div class="modalcontent">
-						<button id="next-game-button" class="next-game-button" onclick="startGame()">Next Game</button>
+					<p id="totalPoints"></p>
+					<div>
+						<button id="next-game-button" onclick="startGame()">Next Game</button>
 					</div>
 				</div>
 			</div>
@@ -331,17 +331,17 @@
 			</div>
 			<div id="final-results-modal">
 				<div class="finalrow">
-					<p class="modalcontent">Congratulations!</p>
+					<p>Congratulations!</p>
 				</div>
 				<div class="finalrow">
-					<p id="totalPoints2" class="modalcontent"></p>
+					<p id="totalPoints2"></p>
 				</div>
 				<div class="finalrow">
-					<p class="modalcontent">Play Again?</p>
+					<p>Play Again?</p>
 				</div>
 				<div class="finalrow">
-					<button id="returntomenu-button" class="modalcontent" onclick="returnToMainMenu()">Return to Main Menu</button>
-					<button id="playagain-button" class="modalcontent" onclick="playAgain()">Play Again</button>
+					<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
+					<button id="playagain-button" onclick="playAgain()">Play Again</button>
 				</div>
 			</div>
 		</div>
