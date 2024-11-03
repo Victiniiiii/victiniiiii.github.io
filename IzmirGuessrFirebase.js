@@ -213,7 +213,7 @@ async function logHighScores() {
 
 		snapshot.forEach((doc) => {
 			const data = doc.data();
-			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore} </p>`;
+			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}</p>`;
 		});
 	} else {
         document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
