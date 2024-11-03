@@ -254,7 +254,7 @@ function getRandomLocation() {
 
 function initMap() {
 	guessedLocationMarker = null;
-    
+
 	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 	shuffleArray(formattedNames);
 	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
@@ -263,6 +263,7 @@ function initMap() {
     startPage.style.display = "none";    
     titleSection.style.display = "none";
     gameplayBackground.style.display = "block";
+    buttonrow.style.display = "flex";
 
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("final-results-modal").style.display = "none";
