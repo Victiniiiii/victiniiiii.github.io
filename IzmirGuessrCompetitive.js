@@ -33,6 +33,7 @@ const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
 const competitiveChecks = document.getElementById("competitiveChecks");
+const gameplayBackground = document.getElementById("gameplayBackground");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -261,6 +262,7 @@ function initMap() {
 	document.getElementById("timer").style.display = "block";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
+    gameplayBackground.style.display = "fixed";
 	document.getElementById("selectGameMode").style.display = "block";
 	document.getElementById("roundCount").style.display = "block";
 	returnButton.style.display = "block";
@@ -428,6 +430,7 @@ function calculatePoints(distance) {
 function displayResults(distance, points) {
 	pauseTimer();
 	document.getElementById("gamemap").style.opacity = "1";
+    gameplayBackground.style.display = "none";
 
 	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
 		center: randomLocation,
@@ -578,6 +581,7 @@ function returnToMainMenu() {
 	expandButton.style.display = "block";
 	document.getElementById("result-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "none";
+    gameplayBackground.style.display = "none"
 
 	refreshMap();
 	pauseTimer();
@@ -627,6 +631,7 @@ function updateTimer() {
 		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
+            gameplayBackground.style.display = "fixed";
 		}
 	}
 }
@@ -646,13 +651,14 @@ function competitiveCheck() {
         competitiveChecks.innerHTML += `<p> You need to be logged in to save your statistics! </p>`
         return;
     }
+
+    competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`
         
     if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
         competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`
         return;
     }
-
-    competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`
+    
     competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`
     competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`
     competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`
