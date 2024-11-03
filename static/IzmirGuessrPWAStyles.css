@@ -99,7 +99,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	.result-map {
-		height: 35dvh;
+		height: 40dvh;
 		width: 100%;
 		border: min(0.05vw, 0.1vh) solid black;
 		margin-bottom: 2dvh;
@@ -150,16 +150,15 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	.modal {
-		display: flex;
-		flex-direction: column;
 		display: none;
+		flex-direction: column;
 		position: fixed;
 		z-index: 1;
 		width: 30vw;
-		height: 53dvh;
-		margin-top: 20dvh;
+		height: 60dvh;
+		margin: 20dvh 0 0 35vw;
 		overflow: auto;
-		border: min(0.1vw, 0.2vh) solid black;
+		border: 1px solid black;
 		justify-content: center;
 		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
 	}
