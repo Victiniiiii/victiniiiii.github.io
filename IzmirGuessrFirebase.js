@@ -240,11 +240,11 @@ async function logTopHighScores() {
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
 
-	const allHighScores = [];
+	const allHighScores = new Map();
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
-		const username = userDoc.data().username;
+		const username = userDoc.data().Nickname;
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const gameDataSnapshot = await getDocs(gameDataRef);
 
@@ -252,19 +252,23 @@ async function logTopHighScores() {
 			const highScore = districtDoc.data().highScore;
 
 			if (highScore >= 100) {
-				allHighScores.push({
-					username: username,
-					district: districtDoc.id,
-					highScore: highScore,
-				});
+				if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
+					allHighScores.set(userId, {
+						username: username,
+						district: districtDoc.id,
+						highScore: highScore,
+					});
+				}
 			}
 		});
 	}
 
-	const topHighScores = allHighScores.sort((a, b) => b.highScore - a.highScore).slice(0, 3);
+	const topHighScores = Array.from(allHighScores.values())
+		.sort((a, b) => b.highScore - a.highScore)
+		.slice(0, 3);
 
 	topHighScores.forEach((score, index) => {
-		console.log(`Rank ${index + 1}: Username: ${score.username}, District: ${score.district}, High Score: ${score.highScore}`);
+		console.log(`${index + 1}. ${score.username} - High Score: ${score.highScore}`);
 	});
 }
 
