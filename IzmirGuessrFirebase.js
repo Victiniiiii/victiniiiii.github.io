@@ -203,7 +203,7 @@ async function calculateDistrictData() {
 	}
 }
 
-async function logHighScores() {
+async function logStatistics() {
 	if (auth.currentUser) {
 		const userId = auth.currentUser.uid;
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
@@ -252,7 +252,7 @@ async function logLeaderboard() {
 }
 
 window.logLeaderboard = logLeaderboard;
-window.logHighScores = logHighScores;
+window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
