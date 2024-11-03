@@ -177,36 +177,6 @@
         }
 	</style>
 	<body>
-		<div class="menumodal" id="faqMenu">
-            <div class="modalTitleRow">
-                <div class="modalTitle">How to play this game ?</div>
-                <div class="modalCloseButton">&#10006;</div>
-            </div>			
-			<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
-		</div>
-        <div class="menumodal" id="statsMenu">
-            <div class="modalTitleRow">
-                <div class="modalTitle">Statistics</div>
-                <div class="modalCloseButton">&#10006;</div>
-            </div>	
-            <button onclick="logStatistics()">Click here to get your statistics.</button>
-            <p id="statisticsMenuText"></p>
-        </div>
-        <div class="menumodal" id="leaderboardMenu">
-            <div class="modalTitleRow">
-                <div class="modalTitle">Leaderboard</div>
-                <div class="modalCloseButton">&#10006;</div>                
-            </div>	
-            <p>Disclaimer: You need at least 4000 points to qualify for the leaderboard.</p>
-        </div>
-		<div class="menumodal" id="changeUsernameModal">
-            <div class="modalTitleRow">
-                <div class="modalTitle">Change Nickname</div>
-                <div class="modalCloseButton">&#10006;</div>
-            </div>	
-			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
-			<button onclick="changeNickname()">Change</button>
-		</div>
 		<header id="title-section">
 			<a href="/">
 				<picture>
@@ -337,6 +307,37 @@
 					<button id="next-game-button" class="next-game-button" onclick="startGame()">Next Game</button>
 				</div>
 			</div>
+		</div>
+        <div class="menumodal" id="faqMenu">
+            <div class="modalTitleRow">
+                <div class="modalTitle">How to play this game ?</div>
+                <div class="modalCloseButton">&#10006;</div>
+            </div>			
+			<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
+		</div>
+        <div class="menumodal" id="statsMenu">
+            <div class="modalTitleRow">
+                <div class="modalTitle">Statistics</div>
+                <div class="modalCloseButton">&#10006;</div>
+            </div>	
+            <button onclick="logStatistics()">Click here to get your statistics.</button>
+            <p id="statisticsMenuText"></p>
+        </div>
+        <div class="menumodal" id="leaderboardMenu">
+            <div class="modalTitleRow">
+                <div class="modalTitle">Leaderboard</div>
+                <div class="modalCloseButton">&#10006;</div>                
+            </div>	
+            <p>Disclaimer: You need at least 100 points to qualify for the leaderboard.</p>
+            <p>This leaderboard will show top 10 for each district, but it's not ready yet.</p>
+        </div>
+		<div class="menumodal" id="changeUsernameModal">
+            <div class="modalTitleRow">
+                <div class="modalTitle">Change Nickname</div>
+                <div class="modalCloseButton">&#10006;</div>
+            </div>	
+			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
+			<button onclick="changeNickname()">Change</button>
 		</div>
 		<script src="badwords.js"></script>
 		<script type="module" src="IzmirGuessrFirebase.js"></script>
