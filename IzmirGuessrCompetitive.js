@@ -36,6 +36,7 @@ const competitiveChecks = document.getElementById("competitiveChecks");
 const gameplayBackground = document.getElementById("gameplayBackground");
 const backgroundText = document.getElementById("backgroundText");
 const titleSection = document.getElementById("title-section");
+const loadingScreen = document.getElementById("loadingScreen");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -253,6 +254,7 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
 	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
@@ -365,6 +367,7 @@ function initMap() {
 			roundTimer = setInterval(updateTimer, 1000);
 			document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`;
 			document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`;
+            loadingScreen.style.display = "none";
 		} else {
 			initMap();
 		}

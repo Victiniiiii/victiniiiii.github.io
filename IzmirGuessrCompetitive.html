@@ -193,6 +193,20 @@
             color: white;
             font-size: 1.5vw;
         }
+
+        #loadingScreen {
+            display: none;
+            position: fixed;
+            width: 100dvw;
+            height: 100dvh;
+            color: white;
+            background: black;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-size: 5vw;
+            z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+        }
 	</style>
 	<body>
 		<header id="title-section">
@@ -363,6 +377,7 @@
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button onclick="changeNickname()">Change</button>
 		</div>
+        <div id="loadingScreen">Loading...</div>
 
 		<script src="badwords.js"></script>
 		<script type="module" src="IzmirGuessrFirebase.js"></script>
