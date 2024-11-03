@@ -204,13 +204,16 @@ async function calculateDistrictData() {
 }
 
 async function logHighScores() {
-	const gameDataRef = collection(db, `users/${userId}/GameData`);
-	const snapshot = await getDocs(gameDataRef);
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const snapshot = await getDocs(gameDataRef);
 
-	snapshot.forEach((doc) => {
-		const data = doc.data();
-		console.log(`District: ${doc.id}, High Score: ${data.highScore}`);
-	});
+		snapshot.forEach((doc) => {
+			const data = doc.data();
+			console.log(`District: ${doc.id}, High Score: ${data.highScore}`);
+		});
+	}
 }
 
 window.logHighScores = logHighScores;
