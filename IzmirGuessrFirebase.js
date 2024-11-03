@@ -67,13 +67,17 @@ thirdButton.addEventListener("click", () => {
 	}
 });
 
-async function changeNickname(type) {
+async function changeNickname() {
 	const ref = doc(db, `users/${auth.currentUser.uid}`);
 
 	await runTransaction(db, async (transaction) => {
 		const userData = await transaction.get(ref);
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
+
+        if (input.length > 15) {
+            alert("Please choose a shorter nickname. ( The limit is 15 ) ( Because i said so )")
+        }
 
 		if (badwords.some((badword) => input.toLowerCase().includes(badword))) {
 			alert("Please do not use bad words 😭");
