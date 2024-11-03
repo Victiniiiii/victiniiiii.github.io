@@ -653,6 +653,10 @@ function competitiveCheck() {
     competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`
 }
 
+function openmodal(modalname) {
+    document.getElementById(`${modalname}`).style.display = "block";
+}
+
 // Adding Event Listeners:
 
 overlayContainer.addEventListener("mouseenter", function () {
@@ -662,10 +666,6 @@ overlayContainer.addEventListener("mouseenter", function () {
 overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
-
-function openmodal(modalname) {
-    document.getElementById(`${modalname}`).style.display = "block";
-}
 
 expandButton.addEventListener("click", () => {
 	if (expandButton.classList.contains("expanded")) {

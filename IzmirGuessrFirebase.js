@@ -76,7 +76,8 @@ async function changeNickname() {
 		const now = Date.now();
 
         if (input.length > 15) {
-            alert("Please choose a shorter nickname. ( The limit is 15 ) ( Because i said so )")
+            alert("Please choose a shorter nickname. ( The limit is 15 because i said so )")
+            return;
         }
 
 		if (badwords.some((badword) => input.toLowerCase().includes(badword))) {
