@@ -257,11 +257,11 @@ async function logLeaderboard() {
 
 async function printAllUserNicknames() {
 	try {
-		const usersSnapshot = await getFirestore().collection("users").get();
+		const usersSnapshot = await db.collection("users").get();
 
 		usersSnapshot.forEach(async (userDoc) => {
 			const userId = userDoc.id;
-			const nicknameRef = getFirestore().doc(`users/${userId}/UserData/Nickname`);
+			const nicknameRef = db.doc(`users/${userId}/UserData/Nickname`);
 			const nicknameDoc = await nicknameRef.get();
 
 			if (nicknameDoc.exists) {
