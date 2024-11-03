@@ -55,12 +55,26 @@
 			z-index: 999999999999999999999999;
 		}
 
+        .modalTitleRow {
+            width: 100%;
+            height: 4vw;
+            font-size: 3vw;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 3vh;
+        }
+
+        .modalTitle {
+            width: 76vw;
+            height: 100%;
+            font-weight: bold;
+            padding-left: 4vw;
+        }
+
 		.modalCloseButton {
-			margin-left: 76vw;
 			width: 4vw;
-			height: 4vw;
-			font-size: 4vw;
-			color: white;
+			height: 100%;			
 			cursor: pointer;
 		}
 
@@ -148,22 +162,31 @@
 	</style>
 	<body>
 		<div class="menumodal" id="faqMenu">
-			<div class="modalCloseButton">&times;</div>
-			<h1>How to play this game ?</h1>
+            <div class="modalTitleRow">
+                <div class="modalTitle">How to play this game ?</div>
+                <div class="modalCloseButton">&times;</div>
+            </div>			
 			<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
 		</div>
         <div class="menumodal" id="statsMenu">
-            <div class="modalCloseButton">&times;</div>
-            <p>Statistics</p>
+            <div class="modalTitleRow">
+                <div class="modalTitle">Statistics</div>
+                <div class="modalCloseButton">&times;</div>
+            </div>	
             <button onclick="logHighScores()">Click here to get your statistics.</button>
-            <p id="statisticsMenuText"></p>     
+            <p id="statisticsMenuText"></p>
         </div>
         <div class="menumodal" id="leaderboardMenu">
-            <div class="modalCloseButton">&times;</div>
-            <p>Leaderboard</p>
+            <div class="modalTitleRow">
+                <div class="modalTitle">Leaderboard</div>
+                <div class="modalCloseButton">&times;</div>
+            </div>	
         </div>
 		<div class="menumodal" id="changeUsernameModal">
-			<div class="modalCloseButton">&times;</div>
+            <div class="modalTitleRow">
+                <div class="modalTitle">Change Nickname</div>
+                <div class="modalCloseButton">&times;</div>
+            </div>	
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button onclick="changeNickname()">Change</button>
 		</div>
