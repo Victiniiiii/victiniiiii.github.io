@@ -31,14 +31,14 @@ secondButton.addEventListener("click", () => {
 
 				runTransaction(db, async (transaction) => {
 					const userData = await transaction.get(ref);
-                    console.log("test")
-					if (!userData.exists()) {						
+					console.log("test");
+					if (!userData.exists()) {
 						console.log("Nickname set as", currentUser.displayName);
 						nickname = currentUser.displayName;
-                        transaction.set(ref, {
-                            Nickname: nickname,
-                            lastNicknameChange: Timestamp.fromMillis(Date.now),
-                        });
+						transaction.set(ref, {
+							Nickname: nickname,
+							lastNicknameChange: 0,
+						});
 					}
 				});
 			})
@@ -69,11 +69,9 @@ async function changeNickname(type) {
 
 	await runTransaction(db, async (transaction) => {
 		const userData = await transaction.get(ref);
-        if (type == "1") {
-
-        } else {
-
-        }
+		if (type == "1") {
+		} else {
+		}
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
 
@@ -108,8 +106,16 @@ onAuthStateChanged(auth, async (user) => {
 			if (docSnap.exists()) {
 				nickname = docSnap.data().Nickname;
 			} else {
-				nickname = user.displayName;
+				runTransaction(db, async (transaction) => {
+					console.log("Nickname set as", currentUser.displayName);
+					nickname = currentUser.displayName;
+					transaction.set(ref, {
+						Nickname: nickname,
+						lastNicknameChange: 0,
+					});
+				});
 			}
+
 			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
