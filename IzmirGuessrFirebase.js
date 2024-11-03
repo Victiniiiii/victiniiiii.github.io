@@ -37,7 +37,6 @@ secondButton.addEventListener("click", () => {
 						nickname = currentUser.displayName;
 						transaction.set(ref, {
 							Nickname: nickname,
-							lastNicknameChange: 0,
 						});
 					}
 				});
@@ -69,9 +68,6 @@ async function changeNickname(type) {
 
 	await runTransaction(db, async (transaction) => {
 		const userData = await transaction.get(ref);
-		if (type == "1") {
-		} else {
-		}
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
 
@@ -111,7 +107,6 @@ onAuthStateChanged(auth, async (user) => {
 					console.log("Nickname set as", nickname);
 					transaction.set(ref, {
 						Nickname: nickname,
-						lastNicknameChange: 0,
 					});
 				});
 			}
