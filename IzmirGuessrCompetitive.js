@@ -32,6 +32,7 @@ const confirmButton = document.getElementById("action-button");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
+const competitiveChecks = document.getElementById("competitiveChecks");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -189,6 +190,7 @@ function toggleDistrict(input) {
 	}
 
 	ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+    competitiveCheck();
 }
 
 function addAllDistricts() {
@@ -205,6 +207,7 @@ function addAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
+    competitiveCheck();
 }
 
 function removeAllDistricts() {
@@ -219,6 +222,7 @@ function removeAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
+    competitiveCheck();
 }
 
 function getRandomLocation() {
@@ -628,6 +632,25 @@ function pauseTimer() {
 
 function resumeTimer() {
 	isTimerPaused = false;
+}
+
+function competitiveCheck() {
+    competitiveChecks.innerHTML = `<h1> Competitive Checks </h1>`
+    if (document.getElementById("secondButton").innerHTML == "Log in with Google") {
+        competitiveChecks.innerHTML += `<p> You need to be logged in to save your statistics! </p>`
+        return;
+    }
+        
+    if (initiallyGreenDistricts.length != 30 || initiallyGreenDistricts.length != 1) {
+        competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`
+        return;
+    }
+
+    competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`
+    competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`
+    competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`
+    competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`
+    competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`
 }
 
 // Adding Event Listeners:
