@@ -23,6 +23,10 @@ secondButton.addEventListener("click", () => {
 	if (secondButton.innerText == "Log in with Google") {
 		const provider = new GoogleAuthProvider();
 
+		provider.setCustomParameters({
+			prompt: "select_account",
+		});
+
 		signInWithPopup(auth, provider)
 			.then(() => {
 				const currentUser = auth.currentUser;
