@@ -255,6 +255,27 @@ async function logLeaderboard() {
 	});
 }
 
+async function printAllUserNicknames() {
+  try {
+    const usersSnapshot = await db.collection('users').get();
+
+    usersSnapshot.forEach(async (userDoc) => {
+      const userId = userDoc.id;
+      const nicknameRef = db.doc(`users/${userId}/UserData/Nickname`);
+      const nicknameDoc = await nicknameRef.get();
+
+      if (nicknameDoc.exists) {
+        console.log(`Nickname for user ${userId}: ${nicknameDoc.data().nickname}`);
+      } else {
+        console.log(`No nickname found for user ${userId}`);
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching nicknames:', error);
+  }
+}
+
+window.printAllUserNicknames = printAllUserNicknames;
 window.logLeaderboard = logLeaderboard;
 window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
