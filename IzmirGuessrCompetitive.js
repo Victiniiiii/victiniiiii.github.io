@@ -254,24 +254,19 @@ function getRandomLocation() {
 
 function initMap() {
 	guessedLocationMarker = null;
+    
 	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 	shuffleArray(formattedNames);
 	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 	randomLocation = getRandomLocation();
 
-    titleSection.style.display = "none"
-	expandButton.style.display = "none";
+    startPage.style.display = "none";    
+    titleSection.style.display = "none";
+    gameplayBackground.style.display = "block";
+
 	document.getElementById("modaltoggle-button").style.display = "none";
-	document.getElementById("timer").style.display = "block";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-    gameplayBackground.style.display = "block";
-	document.getElementById("selectGameMode").style.display = "block";
-	document.getElementById("roundCount").style.display = "block";
-	returnButton.style.display = "block";
-	overlayContainer.style.display = "block";
-	buttonrow.style.display = "flex";
-	startPage.style.display = "none";
 	resultModal.style.display = "none";
     backgroundText.innerHTML = ""
 
@@ -434,7 +429,6 @@ function calculatePoints(distance) {
 function displayResults(distance, points) {
 	pauseTimer();
 	document.getElementById("gamemap").style.opacity = "1";
-    document.getElementById("gameplayBackground").style.display = "block"
 
 	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
 		center: randomLocation,
@@ -574,19 +568,9 @@ function playAgain() {
 function returnToMainMenu() {
 	roundCount = 0;    
 
-	startPage.style.display = "flex";
-	returnButton.style.display = "none";
-	modaltogglebutton.style.display = "none";
-	overlayContainer.style.display = "none";
-	finalresultsmodal.style.display = "none";
-	buttonrow.style.display = "none";
-	document.getElementById("selectGameMode").style.display = "none";
-	document.getElementById("roundCount").style.display = "none";
-	expandButton.style.display = "block";
-	document.getElementById("result-modal").style.display = "none";
-	document.getElementById("gamemap").style.display = "none";
+	startPage.style.display = "flex";    
+    titleSection.style.display = "flex";
     gameplayBackground.style.display = "none";
-    titleSection.style.display = "block";
 
 	refreshMap();
 	pauseTimer();
