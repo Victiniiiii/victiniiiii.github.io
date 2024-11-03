@@ -413,13 +413,13 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
     }
 
 	#menubuttons {
-		width: auto;
+		width: 14vw;
 		height: auto;
 		display: flex;
 		flex-direction: column;
 		gap: 1vw;
 		align-items: center;
-        padding-right: 1vw;
+        padding: 0 1vw 0 1vw;
 	}
 
 	.izmirayarlar {

@@ -120,8 +120,8 @@
 		}
 
 		#competitiveChecks {
-			width: 80%;
-			height: 100%;
+			width: 30vw;
+			height: calc(100% - 3vw);
 			display: flex;
 			flex-direction: column;
 			color: white;
@@ -129,17 +129,21 @@
 			font-size: 1vw;
 			text-align: left;
 			padding: 0 0 2vw 2vw;
-			line-height: 2.5vw;
-		}
+			line-height: 2.3vw;
+            background: rgb(0, 0, 0, 0.4);
+            border: 1px solid black;
+            margin: 0 0 1vw 1vw;
+        }
 
 		#menuarabox {
-			width: 100%;
+			width: 43vw;
 			height: 30%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
             color: white;
             text-shadow: 2px 2px 2px black;
+            margin: 1vw;            
 		}
 
         #menuaraboxfirst {
@@ -147,17 +151,29 @@
             height: 80%;
             display: flex;
             flex-direction: row;
+            border: 1px solid black;
+            align-items: center;
         }
 
 		#miniLeaderboard,
 		#yourStats {
 			width: 50%;
-			height: 80%;
+			height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgb(0, 0, 0, 0.4);
 		}
 
         #menusettings {
             width: 100%;
             height: 20%;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(0, 0, 0, 0.4);
         }
 	</style>
 	<body>
@@ -179,8 +195,9 @@
         <div class="menumodal" id="leaderboardMenu">
             <div class="modalTitleRow">
                 <div class="modalTitle">Leaderboard</div>
-                <div class="modalCloseButton">&times;</div>
+                <div class="modalCloseButton">&times;</div>                
             </div>	
+            <p>Disclaimer: You need at least 4000 points to qualify for the leaderboard.</p>
         </div>
 		<div class="menumodal" id="changeUsernameModal">
             <div class="modalTitleRow">
@@ -264,7 +281,7 @@
 							</div>
 						</div>
                         <div id="menusettings">
-                            Game Settings will go here...
+                            <p>Game Settings will go here...</p>                            
                         </div>
 					</div>
 					<div id="mainmenuCompetitiveChecksAndButtons">
