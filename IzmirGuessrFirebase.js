@@ -236,6 +236,39 @@ async function logStatistics() {
 	}
 }
 
+async function logTopHighScores() {
+	const usersRef = collection(db, "users");
+	const usersSnapshot = await getDocs(usersRef);
+
+	const allHighScores = [];
+
+	for (const userDoc of usersSnapshot.docs) {
+		const userId = userDoc.id;
+		const username = userDoc.data().username;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const gameDataSnapshot = await getDocs(gameDataRef);
+
+		gameDataSnapshot.forEach((districtDoc) => {
+			const highScore = districtDoc.data().highScore;
+
+			if (highScore >= 100) {
+				allHighScores.push({
+					username: username,
+					district: districtDoc.id,
+					highScore: highScore,
+				});
+			}
+		});
+	}
+
+	const topHighScores = allHighScores.sort((a, b) => b.highScore - a.highScore).slice(0, 3);
+
+	topHighScores.forEach((score, index) => {
+		console.log(`Rank ${index + 1}: Username: ${score.username}, District: ${score.district}, High Score: ${score.highScore}`);
+	});
+}
+
+window.logTopHighScores = logTopHighScores;
 window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
