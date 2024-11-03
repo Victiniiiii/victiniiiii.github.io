@@ -106,9 +106,9 @@ onAuthStateChanged(auth, async (user) => {
 			if (docSnap.exists()) {
 				nickname = docSnap.data().Nickname;
 			} else {
-				runTransaction(db, async (transaction) => {
-					console.log("Nickname set as", currentUser.displayName);
-					nickname = currentUser.displayName;
+				nickname = user.displayName;
+				await runTransaction(db, async (transaction) => {
+					console.log("Nickname set as", nickname);
 					transaction.set(ref, {
 						Nickname: nickname,
 						lastNicknameChange: 0,
