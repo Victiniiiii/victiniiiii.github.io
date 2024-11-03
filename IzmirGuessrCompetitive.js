@@ -582,6 +582,7 @@ function returnToMainMenu() {
 	refreshMap();
 	pauseTimer();
     calculateDistrictData();
+    logTopHighScores();
 }
 
 function startGame() {
@@ -589,7 +590,7 @@ function startGame() {
         alert("You can't start the game with no districts selected!");
         return;
     }
-    
+
 	if (roundCount == 0) {
 		if (initiallyGreenDistricts.length == 30) {
 			selectedGameMode = "Every District";
