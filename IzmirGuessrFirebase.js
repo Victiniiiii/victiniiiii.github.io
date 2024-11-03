@@ -103,7 +103,7 @@ onAuthStateChanged(auth, async (user) => {
 			}
 			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
-            calculateDistrictData();
+			calculateDistrictData();
 		} catch (error) {
 			console.error("Error fetching nickname from Firestore:", error);
 		}
@@ -197,12 +197,23 @@ async function calculateDistrictData() {
 			bestHighScore = Math.max(bestHighScore, data.highScore || 0);
 		});
 
-        document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
-        document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${(totalScore / totalRoundCount / 10).toFixed(2)}%`
-        document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
+		document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
+		document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${(totalScore / totalRoundCount / 10).toFixed(2)}%`;
+		document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
 	}
 }
 
+async function logHighScores() {
+	const gameDataRef = collection(db, `users/${userId}/GameData`);
+	const snapshot = await getDocs(gameDataRef);
+
+	snapshot.forEach((doc) => {
+		const data = doc.data();
+		console.log(`District: ${doc.id}, High Score: ${data.highScore}`);
+	});
+}
+
+window.logHighScores = logHighScores;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
