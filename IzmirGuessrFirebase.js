@@ -229,18 +229,16 @@ async function logLeaderboard() {
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
-		const username = userDoc.data().username || "Unknown User";
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const gameDataSnapshot = await getDocs(gameDataRef);
 
 		gameDataSnapshot.forEach((districtDoc) => {
 			const highScore = districtDoc.data().highScore;
 
-			console.log(`User: ${username}, District: ${districtDoc.id}, High Score: ${highScore}`);
+			console.log(`User: TODO, District: ${districtDoc.id}, High Score: ${highScore}`);
 
 			if (highScore >= 4000) {
 				allHighScores.push({
-					username: username,
 					district: districtDoc.id,
 					highScore: highScore,
 				});
@@ -252,7 +250,7 @@ async function logLeaderboard() {
 
 	console.log("Top High Scores:");
 	topHighScores.forEach((score, index) => {
-		console.log(`Rank ${index + 1}: Username: ${score.username}, District: ${score.district}, High Score: ${score.highScore}`);
+		console.log(`Rank ${index + 1}: District: ${score.district}, High Score: ${score.highScore}`);
 	});
 }
 
