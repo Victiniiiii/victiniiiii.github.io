@@ -209,17 +209,49 @@ async function logHighScores() {
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const snapshot = await getDocs(gameDataRef);
 
-        document.getElementById("statisticsMenuText").innerHTML = "";
+		document.getElementById("statisticsMenuText").innerHTML = "";
 
 		snapshot.forEach((doc) => {
 			const data = doc.data();
 			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}</p>`;
 		});
 	} else {
-        document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
-    }
+		document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
+	}
 }
 
+async function logLeaderboard() {
+	const usersRef = collection(db, "users");
+	const usersSnapshot = await getDocs(usersRef);
+	const allHighScores = [];
+
+	for (const userDoc of usersSnapshot.docs) {
+		const userId = userDoc.id;
+		const username = userDoc.data().username;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const gameDataSnapshot = await getDocs(gameDataRef);
+
+		gameDataSnapshot.forEach((districtDoc) => {
+			const highScore = districtDoc.data().highScore;
+
+			if (highScore >= 4000) {
+				allHighScores.push({
+					username: username,
+					district: districtDoc.id,
+					highScore: highScore,
+				});
+			}
+		});
+	}
+
+	const topHighScores = allHighScores.sort((a, b) => b.highScore - a.highScore).slice(0, 3);
+
+	topHighScores.forEach((score, index) => {
+		console.log(`Rank ${index + 1}: Username: ${score.username}, District: ${score.district}, High Score: ${score.highScore}`);
+	});
+}
+
+window.logLeaderboard = logLeaderboard;
 window.logHighScores = logHighScores;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
