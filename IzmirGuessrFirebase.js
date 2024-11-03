@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-import { getFirestore, doc, increment, getDoc, getDocs, collection, runTransaction, Timestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, addDoc, increment, getDoc, getDocs, collection, runTransaction, Timestamp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCZF3dZgi6s9-rld7alzjlqw8fTOo7mW0g",
@@ -27,7 +27,7 @@ secondButton.addEventListener("click", () => {
 			.then(() => {
 				const currentUser = auth.currentUser;
 				const userId = currentUser.uid;
-				const ref = doc(db, `users/${userId}/UserData/Nickname`);
+				const ref = doc(db, `users/${userId}`);
 
 				runTransaction(db, async (transaction) => {
 					const userData = await transaction.get(ref);
@@ -61,7 +61,7 @@ thirdButton.addEventListener("click", () => {
 });
 
 async function changeNickname() {
-	const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
+	const ref = doc(db, `users/${auth.currentUser.uid}`);
 
 	await runTransaction(db, async (transaction) => {
 		const userData = await transaction.get(ref);
@@ -93,7 +93,7 @@ async function changeNickname() {
 
 onAuthStateChanged(auth, async (user) => {
 	if (user) {
-		const ref = doc(db, `users/${auth.currentUser.uid}/UserData/Nickname`);
+		const ref = doc(db, `users/${auth.currentUser.uid}`);
 		try {
 			const docSnap = await getDoc(ref);
 			if (docSnap.exists()) {
@@ -111,6 +111,7 @@ onAuthStateChanged(auth, async (user) => {
 	} else {
 		window.document.getElementById("usernameHere").innerText = `Anonymous`;
 		window.document.getElementById("secondButton").innerText = `Log in with Google`;
+		competitiveCheck();
 	}
 });
 
@@ -214,62 +215,13 @@ async function logStatistics() {
 
 		snapshot.forEach((doc) => {
 			const data = doc.data();
-			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}</p>`;
+			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
 		});
 	} else {
 		document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
 	}
 }
 
-async function logLeaderboard() {
-	const usersRef = collection(db, "users");
-	const usersSnapshot = await getDocs(usersRef);
-	const allHighScores = [];
-
-	console.log("Fetching users...");
-
-	for (const userDoc of usersSnapshot.docs) {
-		const userId = userDoc.id;
-		const gameDataRef = collection(db, `users/${userId}/GameData`);
-		const gameDataSnapshot = await getDocs(gameDataRef);
-
-		gameDataSnapshot.forEach((districtDoc) => {
-			const highScore = districtDoc.data().highScore;
-
-			console.log(`User: TODO, District: ${districtDoc.id}, High Score: ${highScore}`);
-
-			if (highScore >= 4000) {
-				allHighScores.push({
-					district: districtDoc.id,
-					highScore: highScore,
-				});
-			}
-		});
-	}
-
-	const topHighScores = allHighScores.sort((a, b) => b.highScore - a.highScore).slice(0, 3);
-
-	console.log("Top High Scores:");
-	topHighScores.forEach((score, index) => {
-		console.log(`Rank ${index + 1}: District: ${score.district}, High Score: ${score.highScore}`);
-	});
-}
-
-async function logUserIds() {
-    try {
-        const usersCollection = collection(db, 'users'); // Change 'users' to your collection name if different
-        const userSnapshot = await getDocs(usersCollection);
-        
-        userSnapshot.forEach((doc) => {
-            console.log(doc.id); // Log the document ID (user ID)
-        });
-    } catch (error) {
-        console.error("Error retrieving user IDs:", error);
-    }
-}
-
-window.logUserIds = logUserIds
-window.logLeaderboard = logLeaderboard;
 window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
