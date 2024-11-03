@@ -32,7 +32,10 @@ secondButton.addEventListener("click", () => {
 				runTransaction(db, async (transaction) => {
 					const userData = await transaction.get(ref);
 					if (!userData.exists()) {
-						transaction.set(ref, { Nickname: currentUser.displayName });
+						transaction.set(ref, {
+                            Nickname: input,
+                            lastNicknameChange: Timestamp.fromMillis(Date.now),
+                        });
 						console.log("Nickname set as", currentUser.displayName);
 						nickname = currentUser.displayName;
 					}
