@@ -262,7 +262,7 @@ function initMap() {
 	document.getElementById("timer").style.display = "block";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-    gameplayBackground.style.display = "fixed";
+    gameplayBackground.style.display = "block";
 	document.getElementById("selectGameMode").style.display = "block";
 	document.getElementById("roundCount").style.display = "block";
 	returnButton.style.display = "block";
@@ -631,7 +631,7 @@ function updateTimer() {
 		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
-            gameplayBackground.style.display = "fixed";
+            gameplayBackground.style.display = "block";
 		}
 	}
 }
