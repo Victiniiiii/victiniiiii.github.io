@@ -35,6 +35,7 @@ const expandButton = document.getElementById("expandButton");
 const competitiveChecks = document.getElementById("competitiveChecks");
 const gameplayBackground = document.getElementById("gameplayBackground");
 const backgroundText = document.getElementById("backgroundText");
+const titleSection = document.getElementById("title-section");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -58,7 +59,7 @@ let initialZoom;
 let maxZoomValue;
 let minZoomValue;
 
-if (parseInt(window.getComputedStyle(document.getElementById("title-section")).width) < 768) {
+if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	maxZoomValue = 9;
 	minZoomValue = 7;
 	initialZoom = 8;
@@ -258,6 +259,7 @@ function initMap() {
 	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 	randomLocation = getRandomLocation();
 
+    titleSection.style.display = "none"
 	expandButton.style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("timer").style.display = "block";
@@ -583,7 +585,8 @@ function returnToMainMenu() {
 	expandButton.style.display = "block";
 	document.getElementById("result-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "none";
-    gameplayBackground.style.display = "none"
+    gameplayBackground.style.display = "none";
+    titleSection.style.display = "block";
 
 	refreshMap();
 	pauseTimer();
