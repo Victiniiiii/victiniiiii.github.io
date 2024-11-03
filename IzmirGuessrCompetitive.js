@@ -34,6 +34,7 @@ const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
 const competitiveChecks = document.getElementById("competitiveChecks");
 const gameplayBackground = document.getElementById("gameplayBackground");
+const backgroundText = document.getElementById("backgroundText");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -270,6 +271,7 @@ function initMap() {
 	buttonrow.style.display = "flex";
 	startPage.style.display = "none";
 	resultModal.style.display = "none";
+    backgroundText.innerHTML = ""
 
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
@@ -430,7 +432,7 @@ function calculatePoints(distance) {
 function displayResults(distance, points) {
 	pauseTimer();
 	document.getElementById("gamemap").style.opacity = "1";
-    gameplayBackground.style.display = "none";
+    document.getElementById("gameplayBackground").style.display = "block"
 
 	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
 		center: randomLocation,
@@ -631,7 +633,7 @@ function updateTimer() {
 		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
-            gameplayBackground.style.display = "block";
+            backgroundText.innerHTML = "Your time is up, but you can still put your guess in"
 		}
 	}
 }
