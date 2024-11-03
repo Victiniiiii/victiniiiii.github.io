@@ -641,7 +641,7 @@ function competitiveCheck() {
         return;
     }
         
-    if (!(initiallyGreenDistricts.length == 30) || !(initiallyGreenDistricts.length == 1)) {
+    if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
         competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`
         return;
     }

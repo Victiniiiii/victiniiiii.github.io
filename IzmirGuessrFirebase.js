@@ -104,6 +104,7 @@ onAuthStateChanged(auth, async (user) => {
 			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
+            competitiveCheck();
 		} catch (error) {
 			console.error("Error fetching nickname from Firestore:", error);
 		}
