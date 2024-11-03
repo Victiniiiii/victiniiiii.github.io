@@ -209,11 +209,15 @@ async function logHighScores() {
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const snapshot = await getDocs(gameDataRef);
 
+        document.getElementById("statisticsMenuText").innerHTML = "";
+
 		snapshot.forEach((doc) => {
 			const data = doc.data();
-			console.log(`District: ${doc.id}, High Score: ${data.highScore}`);
+			document.getElementById("statisticsMenuText").innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore} </p>`;
 		});
-	}
+	} else {
+        document.getElementById("statisticsMenuText").innerHTML = `<p> You need to be logged in to do this! </p>`;
+    }
 }
 
 window.logHighScores = logHighScores;

@@ -14,7 +14,7 @@
 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 	</head>
 	<style>
-		#expand-button {
+		#expandButton {
 			width: auto;
 			max-height: 50px;
 			margin: auto 0.5vw auto 0;
@@ -38,7 +38,7 @@
 			border: 1px solid rgb(0, 0, 240);
 		}
 
-		#expand-button.expanded {
+		#expandButton.expanded {
 			max-height: 200px;
 			transition: 1.5s;
 			margin-top: calc(auto);
@@ -55,7 +55,7 @@
 			z-index: 999999999999999999999999;
 		}
 
-		#changeUsernameModalCloseButton {
+		.modalCloseButton {
 			margin-left: 76vw;
 			width: 4vw;
 			height: 4vw;
@@ -124,6 +124,8 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+            color: white;
+            text-shadow: 2px 2px 2px black;
 		}
 
         #menuaraboxfirst {
@@ -145,13 +147,23 @@
         }
 	</style>
 	<body>
-		<div id="faq-menu">
-			<span class="modalClose" onclick="switchFAQ()">&times;</span>
+		<div class="menumodal" id="faqMenu">
+			<div class="modalCloseButton">&times;</div>
 			<h1>How to play this game ?</h1>
 			<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
 		</div>
-		<div id="changeUsernameModal">
-			<div id="changeUsernameModalCloseButton">x</div>
+        <div class="menumodal" id="statsMenu">
+            <div class="modalCloseButton">&times;</div>
+            <p>Statistics</p>
+            <button onclick="logHighScores()">Click here to get your statistics.</button>
+            <p id="statisticsMenuText"></p>     
+        </div>
+        <div class="menumodal" id="leaderboardMenu">
+            <div class="modalCloseButton">&times;</div>
+            <p>Leaderboard</p>
+        </div>
+		<div class="menumodal" id="changeUsernameModal">
+			<div class="modalCloseButton">&times;</div>
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button onclick="changeNickname()">Change</button>
 		</div>
@@ -163,7 +175,7 @@
 				</picture>
 			</a>
 			<h1 class="main-menu-text">IzmirGuessr Competitive</h1>
-			<div id="expand-button">
+			<div id="expandButton">
 				<div class="buttonInsideButton" id="usernameHere">Logging in...</div>
 				<div class="buttonInsideButton" id="secondButton">Login with Google</div>
 				<div class="buttonInsideButton" id="thirdButton">Change Nickname</div>
@@ -229,7 +241,7 @@
 							</div>
 						</div>
                         <div id="menusettings">
-                            Stestsets
+                            Game Settings will go here...
                         </div>
 					</div>
 					<div id="mainmenuCompetitiveChecksAndButtons">
@@ -243,9 +255,9 @@
 						</div>
 						<div id="menubuttons">
 							<button id="gamesettings">Settings</button>
-							<button id="leaderboards">Leaderboards</button>
-							<button id="stats">Statistics</button>
-							<button id="izmirfaq" class="izmirfaq" onclick="switchFAQ()">How to Play</button>
+							<button id="leaderboards" onclick="openmodal('leaderboardMenu')">Leaderboards</button>
+							<button id="stats" onclick="openmodal('statsMenu')">Statistics</button>
+							<button id="izmirfaq" class="izmirfaq" onclick="openmodal('faqMenu')">How to Play</button>
 							<button id="start-button3" class="izmirstartgame" onclick="startGame()">Start Game</button>
 						</div>
 					</div>

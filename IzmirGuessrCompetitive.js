@@ -29,11 +29,9 @@ const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
 const confirmButton = document.getElementById("action-button");
-const faqButton = document.getElementById("izmirfaq");
-const faqMenu = document.getElementById("faq-menu");
 const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll("#izmirilcebox button");
-const expandButton = document.getElementById("expand-button");
+const expandButton = document.getElementById("expandButton");
 let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
@@ -642,12 +640,8 @@ overlayContainer.addEventListener("mouseleave", function () {
 	overlayContainer.classList.remove("hovered");
 });
 
-function switchFAQ() {
-	if (faqMenu.style.display == "block") {
-		faqMenu.style.display = "none";
-	} else {
-		faqMenu.style.display = "block";
-	}
+function openmodal(modalname) {
+    document.getElementById(`${modalname}`).style.display = "block";
 }
 
 expandButton.addEventListener("click", () => {
@@ -658,6 +652,10 @@ expandButton.addEventListener("click", () => {
 	}
 });
 
-document.getElementById("changeUsernameModalCloseButton").addEventListener("click", () => {
-	document.getElementById("changeUsernameModal").style.display = "none";
+Array.from(document.getElementsByClassName("modalCloseButton")).forEach(button => {
+	button.addEventListener("click", () => {
+		Array.from(document.getElementsByClassName("menumodal")).forEach(modal => {
+			modal.style.display = "none";
+		});
+	});
 });
