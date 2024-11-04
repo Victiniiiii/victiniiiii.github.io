@@ -483,8 +483,8 @@ function displayResults(distance, points) {
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
-    for (i = 0; i < roundCount; i++) {
-        document.getElementById("resultModalRight").innerHTML += `Round ${roundCount} Score: ${roundPoints[i-1]}` 
+    for (i = 1; i <= roundCount; i++) {
+        document.getElementById("resultModalRight").innerHTML += `Round ${roundCount} Score: ${roundPoints[i]}` 
     }
 
 	document.getElementById("result-modal").style.display = "flex";
