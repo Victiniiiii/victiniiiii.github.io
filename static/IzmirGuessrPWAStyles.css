@@ -161,7 +161,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
         display: none;
 		flex-direction: column;		
 		position: absolute;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 		z-index: 4;
 		width: 60vw;

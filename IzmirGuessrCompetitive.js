@@ -610,7 +610,7 @@ function startGame() {
 		finalgoruntulendimi = false;
 	}
 	if (roundCount == 5) {
-		document.getElementById("final-results-modal").style.display = "block";
+		document.getElementById("final-results-modal").style.display = "flex";
 		document.getElementById("overlay-container").style.display = "none";
 		finalgoruntulendimi = true;
 	} else {
