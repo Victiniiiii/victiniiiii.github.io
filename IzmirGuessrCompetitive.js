@@ -487,7 +487,7 @@ function displayResults(distance, points) {
         document.getElementById("resultModalRight").innerHTML += `Round ${roundCount} Score: ${roundPoints[i-1]}` 
     }
 
-	document.getElementById("result-modal").style.display = "block";
+	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "block";
 

@@ -185,9 +185,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
         justify-content: center;
 		text-align: center;
         align-items: center;
-		width: 25vw;
-		height: 5dvh;
-        margin: 1vw 0 0 2.5vw;		
+		width: auto;
+		height: auto;
 		font-size: min(1dvw, 2dvh);
 		-webkit-backdrop-filter: blur(10px);
 		backdrop-filter: blur(10px);

@@ -176,47 +176,49 @@
 			background: rgb(0, 0, 0, 0.4);
 		}
 
-        #gameplayBackground {
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
-            position: fixed;
-            z-index: 0;
-            display: none;
-        }
+		#gameplayBackground {
+			width: 100%;
+			height: 100%;
+			background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+			position: fixed;
+			z-index: 0;
+			display: none;
+		}
 
-        #backgroundText {
-            position: absolute;
-            width: 20vw;
-            height: 20vh;
-            margin: 40vh 40vw 40vh 40vw;
-            color: white;
-            font-size: 1.5vw;
-        }
+		#backgroundText {
+			position: absolute;
+			width: 20vw;
+			height: 20vh;
+			margin: 40vh 40vw 40vh 40vw;
+			color: white;
+			font-size: 1.5vw;
+		}
 
-        #loadingScreen {
-            display: none;
-            position: fixed;
-            width: 100dvw;
-            height: 100dvh;
-            color: white;
-            background: black;
-            align-items: center;
-            text-align: center;
-            justify-content: center;
-            font-size: 5vw;
-            z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
-        }
+		#loadingScreen {
+			display: none;
+			position: fixed;
+			width: 100dvw;
+			height: 100dvh;
+			color: white;
+			background: black;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			font-size: 5vw;
+			z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+		}
 
-        #resultModalRight, #resultModalLeft {
-            width: 15vw;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-        }
+		#resultModalRight,
+		#resultModalLeft,
+		#resultModalMiddle {
+			width: 15vw;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			text-align: center;
+		}
 	</style>
 	<body>
 		<header id="title-section">
@@ -309,26 +311,26 @@
 		</div>
 
 		<div id="gameplayBackground">
-            <div id="backgroundText"></div>
+			<div id="backgroundText"></div>
 			<div id="gamemap"></div>
 			<div id="overlay-container">
 				<div id="mini-map"></div>
 				<button id="action-button">Confirm & Calculate</button>
 			</div>
 			<div id="result-modal">
-                <div id="resultModalLeft"></div>
-				<div id="result-map"></div>
-				<div class="modalrow">
-					<p id="distance-info"></p>
-					<p id="points-info"></p>
-				</div>
-				<div class="modalrow">
-					<p id="totalPoints"></p>
-					<div>
+				<div id="resultModalLeft"></div>
+				<div id="resultModalMiddle">
+					<div id="result-map"></div>
+					<div class="modalrow">
+						<p id="distance-info"></p>
+						<p id="points-info"></p>
+					</div>
+					<div class="modalrow">
+						<p id="totalPoints"></p>
 						<button id="next-game-button" onclick="startGame()">Next Game</button>
 					</div>
 				</div>
-                <div id="resultModalRight"></div>
+				<div id="resultModalRight"></div>
 			</div>
 			<div id="buttonrow" class="buttonrow">
 				<div id="closeandreturn">
@@ -389,7 +391,7 @@
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button onclick="changeNickname()">Change</button>
 		</div>
-        <div id="loadingScreen">Loading...</div>
+		<div id="loadingScreen">Loading...</div>
 
 		<script src="badwords.js"></script>
 		<script type="module" src="IzmirGuessrFirebase.js"></script>
