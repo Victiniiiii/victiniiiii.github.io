@@ -98,13 +98,6 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		z-index: 3;
 	}
 
-	.result-map {
-		height: 40dvh;
-		width: 100%;
-		border: min(0.05vw, 0.1vh) solid black;
-		margin-bottom: 2dvh;
-	}
-
 	#overlay-container {
         display: none;
 		position: absolute;
@@ -148,16 +141,24 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		width: 50%;
 		height: 3dvh;
 	}
+    
+	#result-map {
+		height: 40dvh;
+		width: 30vw;
+		border: 1px solid black;
+		margin-bottom: 2dvh;
+	}
 
 	#result-modal {
 		display: none;
-		flex-direction: column;
+		flex-direction: row;
 		position: fixed;
         justify-content: center;
 		z-index: 1;
-		width: 30vw;
+		width: 60vw;
 		height: 60dvh;
-		margin: 20dvh 0 0 35vw;
+		margin: 20dvh 0 0 20vw;
+        padding: 1vw;
 		border: 1px solid white;
         color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
@@ -165,7 +166,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#final-results-modal {
         display: none;
-		flex-direction: column;		
+		flex-direction: row;		
 		position: absolute;
         justify-content: center;
         align-items: center;
@@ -375,7 +376,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		width: 42vw;
 		height: 8dvh;
 		margin-top: 1dvh;
-		border: min(0.05vw, 0.1vh) solid black;
+		border: 1px solid black;
 		display: flex;
 		flex-direction: row;
 		align-items: center;

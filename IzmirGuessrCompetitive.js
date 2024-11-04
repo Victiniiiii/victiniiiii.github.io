@@ -449,24 +449,24 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    document.getElementById("points-info").textContent = `From Distance: ${points}:`;
+    document.getElementById("resultModalLeft").textContent = `From Distance: ${points}:`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
-        document.getElementById("points-info").textContent += `Every District Mode - Same District: +100 points`;
+        document.getElementById("resultModalLeft").textContent += `Every District Mode - Same District: +100 points`;
 	} else if (selectedGameMode == "Every District") {
 		for (i = 0; i < foundDistrict.neighbors.length; i++) {
 			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
 			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
 				points += 50;
-                document.getElementById("points-info").textContent += `Every District Mode - Neighboring District: +50 points`;
+                document.getElementById("resultModalLeft").textContent += `Every District Mode - Neighboring District: +50 points`;
 			}
 		}
 	}
     
     if (hintsAreEnabled) {
         points -= 200;
-        document.getElementById("points-info").textContent += `Deduction From Hints Used: -200 points`;
+        document.getElementById("resultModalLeft").textContent += `Deduction From Hints Used: -200 points`;
     }
 
 	if (points > 1000) {
@@ -479,9 +479,13 @@ function displayResults(distance, points) {
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
     
-    document.getElementById("points-info").textContent += `Points Earned: ${points}`;
+    document.getElementById("points-info").textContent = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
+
+    for (i = 1; i <= roundCount; i++) {
+        document.getElementById("resultModalRight").innerHTML += `Round ${roundCount} Score: ${roundPoints[i-1]}` 
+    }
 
 	document.getElementById("result-modal").style.display = "block";
 	document.getElementById("overlay-container").style.display = "none";

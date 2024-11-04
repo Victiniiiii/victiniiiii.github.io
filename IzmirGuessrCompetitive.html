@@ -207,6 +207,16 @@
             font-size: 5vw;
             z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
         }
+
+        #resultModalRight, #resultModalLeft {
+            width: 15vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+        }
 	</style>
 	<body>
 		<header id="title-section">
@@ -306,7 +316,8 @@
 				<button id="action-button">Confirm & Calculate</button>
 			</div>
 			<div id="result-modal">
-				<div id="result-map" class="result-map"></div>
+                <div id="resultModalLeft"></div>
+				<div id="result-map"></div>
 				<div class="modalrow">
 					<p id="distance-info"></p>
 					<p id="points-info"></p>
@@ -317,6 +328,7 @@
 						<button id="next-game-button" onclick="startGame()">Next Game</button>
 					</div>
 				</div>
+                <div id="resultModalRight"></div>
 			</div>
 			<div id="buttonrow" class="buttonrow">
 				<div id="closeandreturn">
