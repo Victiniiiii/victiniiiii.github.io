@@ -144,7 +144,7 @@
 			color: white;
 			text-shadow: 2px 2px 2px black;
 			margin: 1vw;
-            font-size: 1.15vw;
+			font-size: 1.15vw;
 		}
 
 		#menuaraboxfirst {
@@ -218,21 +218,21 @@
 			justify-content: flex-start;
 			align-items: center;
 			text-align: center;
-            font-size: 1.35vw;
+			font-size: 1.35vw;
 		}
 
-        #resultModalRight {
-            padding-left: 1vw;
-        }
+		#resultModalRight {
+			padding-left: 1vw;
+		}
 
-        #resultModalLeft {
-            padding-right: 1vw;
-        }
+		#resultModalLeft {
+			padding-right: 1vw;
+		}
 
-        #resultModalTop {
-            display: flex;
-            flex-direction: row;
-        }
+		#resultModalTop {
+			display: flex;
+			flex-direction: row;
+		}
 
 		#resultModalBottom {
 			width: 60vw;
@@ -242,14 +242,14 @@
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-            gap: 4vw;
+			gap: 4vw;
 		}
 
-        #resultModalBottom button {
-            padding: 1vh 1vw 1vh 1vw;
-            color: white;
-            background-color: rgb(0, 0, 0, 0.8);
-        }
+		#resultModalBottom button, #playagain-button, #returntomenu-button {
+			padding: 1vh 1vw 1vh 1vw;
+			color: white;
+			background-color: rgb(0, 0, 0, 0.8);
+		}
 	</style>
 	<body>
 		<header id="title-section">
@@ -373,19 +373,11 @@
 				<div id="modaltoggle-button" onclick="toggleModal()">Toggle</div>
 			</div>
 			<div id="final-results-modal">
-				<div class="finalrow">
-					<p>Congratulations!</p>
-				</div>
-				<div class="finalrow">
-					<p id="totalPoints2"></p>
-				</div>
-				<div class="finalrow">
-					<p>Play Again?</p>
-				</div>
-				<div class="finalrow">
-					<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
-					<button id="playagain-button" onclick="playAgain()">Play Again</button>
-				</div>
+				<p>Congratulations!</p>
+				<p id="totalPoints2"></p>
+				<p>Play Again?</p>
+				<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
+				<button id="playagain-button" onclick="playAgain()">Play Again</button>
 			</div>
 		</div>
 
