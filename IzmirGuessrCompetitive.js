@@ -449,7 +449,8 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    document.getElementById("resultModalLeft").innerHTML = `<p>From Distance: ${points}</p>`;
+    document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>` 
+    document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
@@ -483,7 +484,7 @@ function displayResults(distance, points) {
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
-    document.getElementById("resultModalRight").innerHTML = "";
+    document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
     console.log(roundCount,"roundcount")
 
     for (i = 0; i <= roundCount; i++) {
