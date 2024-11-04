@@ -143,8 +143,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
     
 	#result-map {
-		height: 40dvh;
-		width: 30vw;
+        width: 100%;
+		height: 40dvh;		
 		border: 1px solid black;
 		margin-bottom: 2dvh;
 	}
