@@ -149,7 +149,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#result-modal {
 		display: none;
-		flex-direction: row;
+		flex-direction: column;
 		position: fixed;
         justify-content: center;
 		z-index: 1;
