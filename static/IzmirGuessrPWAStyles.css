@@ -143,10 +143,8 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
     
 	#result-map {
-        width: 100%;
+        width: 30vw;
 		height: 40dvh;		
-		border: 1px solid black;
-		margin-bottom: 2dvh;
 	}
 
 	#result-modal {
@@ -177,19 +175,6 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		border: 1px solid white;
         color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);		
-	}
-
-	.modalrow {
-		display: flex;
-		flex-direction: row;
-        justify-content: center;
-		text-align: center;
-        align-items: center;
-		width: auto;
-		height: auto;
-		font-size: min(1dvw, 2dvh);
-		-webkit-backdrop-filter: blur(10px);
-		backdrop-filter: blur(10px);
 	}
 
 	.finalrow {
