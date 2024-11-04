@@ -485,10 +485,9 @@ function displayResults(distance, points) {
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
     document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
-    console.log(roundCount,"roundcount")
 
     for (let i = 0; i <= roundCount; i++) {
-        document.getElementById("resultModalRight").innerHTML += `<p>Round ${roundCount + 1} Score: ${roundPoints[i]}</p>` 
+        document.getElementById("resultModalRight").innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>` 
     }
 
 	document.getElementById("result-modal").style.display = "flex";
