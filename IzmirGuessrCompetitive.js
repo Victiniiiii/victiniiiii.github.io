@@ -449,24 +449,24 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    document.getElementById("resultModalLeft").textContent = `From Distance: ${points}`;
+    document.getElementById("resultModalLeft").innerHTML = `<p>From Distance: ${points}</p>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
-        document.getElementById("resultModalLeft").textContent += `Every District Mode - Same District: +100 points`;
+        document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Same District: +100 points</p>`;
 	} else if (selectedGameMode == "Every District") {
 		for (i = 0; i < foundDistrict.neighbors.length; i++) {
 			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
 			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
 				points += 50;
-                document.getElementById("resultModalLeft").textContent += `Every District Mode - Neighboring District: +50 points`;
+                document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
 			}
 		}
 	}
     
     if (hintsAreEnabled) {
         points -= 200;
-        document.getElementById("resultModalLeft").textContent += `Deduction From Hints Used: -200 points`;
+        document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
     }
 
 	if (points > 1000) {
@@ -483,8 +483,11 @@ function displayResults(distance, points) {
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
+    document.getElementById("resultModalRight").innerHTML = "";
+    console.log(roundCount,"roundcount")
+
     for (i = 1; i <= roundCount; i++) {
-        document.getElementById("resultModalRight").innerHTML += `Round ${roundCount} Score: ${roundPoints[i]}` 
+        document.getElementById("resultModalRight").innerHTML += `<p>Round ${roundCount} Score: ${roundPoints[i]}</p>` 
     }
 
 	document.getElementById("result-modal").style.display = "flex";
