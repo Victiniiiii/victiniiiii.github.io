@@ -34,6 +34,11 @@ div.gm-bundled-control:nth-child(2) {
 	right: 0;
 }
 
+#mini-map .gmnoprint,
+#result-map .gmnoprint {
+    display: none !important;
+}
+
 .flexrow {
 	display: flex;
 	flex-direction: row;
@@ -205,11 +210,6 @@ div.gm-bundled-control:nth-child(2) {
 		height: 4.2dvh;
 	}
 
-	#mini-map .gmnoprint,
-	#result-map .gmnoprint {
-		display: none !important;
-	}
-
 	#buttonrow {
 		width: 90vw;
 		margin-right: 10vw;
@@ -312,12 +312,12 @@ div.gm-bundled-control:nth-child(2) {
 		z-index: 999991923912391923919239;
 	}
 
-	.startpage {
+	#startpage {
 		display: flex;
 		flex-direction: row;
 	}
 
-	.startpagelefthalf {
+	#startpagelefthalf {
 		width: 50vw;
 		height: 90dvh;
 		margin-right: 2vw;
@@ -332,7 +332,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		position: fixed;
-		z-index: 4198000000000000000000000000000000002;
+		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
 	}
 
 	#startpagerighthalf {
@@ -351,7 +351,6 @@ div.gm-bundled-control:nth-child(2) {
 	#izmirilcebox {
 		width: 100%;
 		height: 30%;
-		align-items: center;
 		padding: 2.5vh 5% 0 5%;
 	}
 
@@ -658,14 +657,8 @@ div.gm-bundled-control:nth-child(2) {
 
 @media (width < 768px) {
 	body {
-		background-image: url("../static/imageswebp/cloud.webp"), url("../static/images/cloud.png");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-		background-position: center;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 		display: flex;
-		margin: 0;
-		padding: 0;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -678,53 +671,52 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		border: 0.5vw solid black;
-		margin-bottom: 0.1svh;
+		border: 1px solid black;
+		margin-bottom: 0.1dvh;
 		height: 8dvh;
 	}
 
 	.main-menu-button {
 		cursor: pointer;
-		width: 8svh;
-		height: 8svh;
+		width: 8dvh;
+		height: 8dvh;
 	}
 
 	#title-section a div {
 		background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
-		width: 8svh;
-		height: 8svh;
+		width: 8dvh;
+		height: 8dvh;
 		background-size: contain;
 	}
 
 	.main-menu-text {
 		width: 100%;
-		font-size: min(4vw, 2svh);
+		font-size: 2dvh;
 		text-align: center;
-		margin-left: 1vw;
-		margin-right: 1vw;
+		margin-left: 1dvw;
+		margin-right: 1dvw;
 		color: white;
-		margin: 0;
 	}
 
 	#gamemap {
-		width: 100vw;
-		height: 65svh;
+		width: 100%;
+		height: 65dvh;
 		position: absolute;
 		z-index: 1;
 		display: none;
 	}
 
 	#mini-map {
-		width: 100vw;
-		height: 30svh;
+		width: 100%;
+		height: 30dvh;
 		z-index: 3;
 	}
 
 	.result-map {
-		height: 35svh;
 		width: 100%;
-		border: 0.05vw solid black;
-		margin-bottom: 2svh;
+		height: 35dvh;
+		border: 1px solid black;
+		margin-bottom: 2dvh;
 	}
 
 	#overlay-container {
@@ -733,280 +725,232 @@ div.gm-bundled-control:nth-child(2) {
 		bottom: 0;
 		right: 0;
 		width: 100%;
-		height: 35svh;
+		height: 35dvh;
 		z-index: 2;
 		flex-direction: column;
 		align-items: center;
-		border: 0.05vw solid black;
+		border: 1px solid black;
 	}
 
 	#overlay-container.hovered {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 35svh;
-		z-index: 2;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		border: 0.05vw solid black;
+		position: absolute;
+		align-items: center;		
+		width: 100%;
+		height: 35dvh;
+        bottom: 0;
+		right: 0;
+		z-index: 2;
+		border: 1px solid black;
 	}
 
 	#action-button {
 		width: 100%;
-		height: 5svh;
-		background-color: #4caf50; /* Green */
+		height: 5dvh;
+		background-color: #4caf50;
 		color: white;
 		border: none;
-		font-size: 1.2em;
-	}
-
-	.modal {
-		display: flex;
-		flex-direction: column;
-		display: none;
-		position: fixed;
-		z-index: 1;
-		width: 100vw;
-		height: 50svh;
-		margin-top: 20svh;
-		overflow: auto;
-		border: 1px solid black;
-		justify-content: center;
-		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
+		font-size: 3dvh;
 	}
 
 	#final-results-modal {
-		display: flex;
-		flex-direction: column;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 		display: none;
+		flex-direction: column;
 		position: absolute;
-		z-index: 4;
-		width: 100vw;
-		height: 50svh;
-		margin-top: 20svh;
-		overflow: auto;
-		background-color: #fefefe;
+		align-items: center;
+		justify-content: center;
+		background-repeat: repeat;
+		width: 100%;
+		height: 50dvh;
+		margin-top: 20dvh;
 		padding: 0.5vw;
 		border: 1px solid black;
-		justify-content: center;
-
-		background-repeat: repeat;
-		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
-		align-items: center;
+		overflow: auto;
+		z-index: 4;
 	}
 
 	.modalrow {
 		display: flex;
 		flex-direction: row;
-		width: 90vw;
-		height: 5svh;
-		margin-left: 5vw;
 		justify-content: center;
 		text-align: center;
-		font-size: 2svh;
-		margin-top: 2svh;
+		align-items: center;
+		width: 90dvw;
+		height: 5dvh;
+		margin-left: 5vw;
+		margin-top: 2dvh;
+		font-size: 2dvh;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 		border: 1px solid black;
-		align-items: center;
 	}
 
 	.finalrow {
 		display: flex;
 		flex-direction: row;
-		width: 90vw;
-		height: 5svh;
-		margin-left: 5vw;
-		margin-top: 6svh;
 		justify-content: center;
 		text-align: center;
-		font-size: 2svh;
+		align-items: center;
+		width: 90dvw;
+		height: 5dvh;
+		margin-left: 5dvw;
+		margin-top: 6dvh;
+		font-size: 2dvh;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
-		border: 0.2vw solid black;
-		align-items: center;
-	}
-
-	.modalcontent {
-		flex: 1;
-		margin: 0;
-		font-size: 1.5svh;
+		border: 1px solid black;
 	}
 
 	#result-info {
-		margin-top: 2.35svh;
+		margin-top: 2.35dvh;
 	}
 
 	#returntomenu-button,
 	#playagain-button {
-		height: 4.9svh;
-	}
-
-	#mini-map .gmnoprint,
-	#result-map .gmnoprint {
-		display: none !important;
+		height: 4.9dvh;
 	}
 
 	#buttonrow {
-		width: 85vw;
-		margin-left: -15vw;
-		height: 4svh;
-		background-color: transparent;
-		margin-top: 1.6svh;
-		font-size: 0.4vw;
-		z-index: 5;
-		position: absolute;
-		display: none;
+        background-color: transparent;
+        display: none;
 		flex-direction: row;
 		justify-content: flex-start;
+        position: absolute;
+		width: 85dvw;
+		margin-left: -15dvw;
+		height: 8dvw;
+		margin-top: 1.6dvh;
+		font-size: 0.4dvw;
+		z-index: 5;
 	}
 
 	#izmirclose {
-		width: 4svh;
-		height: 4svh;
+		width: 8dvw;
+		height: 8dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
 	}
 
-	#returnbutton {
-		margin-left: 0.5svh;
-		width: 4svh;
-		height: 4svh;
+	#returnbutton {		
+		width: 8dvw;
+		height: 8dvw;
+        margin-left: 1dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M19.933%2013.041a8%208%200%201%201%20-9.925%20-8.788c3.899%20-1%207.935%201.007%209.425%204.747%22%20%2F%3E%20%3Cpath%20d%3D%22M20%204v5h-5%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
 	}
 
 	#alarmicon {
-		width: 4svh;
-		height: 4svh;
-		margin-right: 0.5vw;
+		width: 8dvw;
+		height: 8dvw;
+		margin-right: 0.5dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
 	}
 
 	#timer {
 		display: none;
-		margin-right: 0.5svh;
-		width: 14svh;
-		height: 4svh;
-		line-height: 2svh;
-		color: black;
-		font-size: 1.3svh;
-		text-align: center;
+        text-align: center;	
+		width: 28dvw;
+		height: 8dvw;
+        margin-right: 1dvw;
+		line-height: 4dvw;
+		font-size: 2.5dvw;
+        color: black;
 	}
 
 	#modaltoggle-button {
 		display: none;
-		margin-left: 0.5svh;
-		margin-right: 0.5svh;
-		width: auto;
-		height: 4svh;
-		line-height: 4svh;
-		font-size: 1.5svh;
-		text-align: center;
-		background-color: rgb(0, 0, 0, 0.8);
-		color: white;
-		border-radius: 1vh;
+        text-align: center;
+        width: auto;
+		height: 4dvh;
+		margin: 0 1dvw 0 1dvw;		
+		line-height: 4dvh;
+		font-size: 1.5dvh;
+		border-radius: 2dvw;
+        background-color: rgb(0, 0, 0, 0.8);
+        color: white;
 	}
 
 	#closeandreturn {
-		width: 8.5svh;
-		height: 4svh;
-		margin-left: 0.5svh;
-		margin-right: 0.5svh;
-		display: flex;
+        display: flex;
 		flex-direction: row;
-		background-color: rgb(0, 0, 0, 0.8);
-		border-radius: min(0.5vw, 0.25svh);
+		width: 8.5dvh;
+		height: 4dvh;
+		margin: 0 1dvw 0 1dvw;
+		border-radius: 2dvw;
+        background-color: rgb(0, 0, 0, 0.8);
 	}
 
 	/* styles2.css */
 
 	#map2 {
-		width: 100vw;
-		height: 50svh;
-		display: block;
-		border: 0.5vw solid black;
+        display: block;
+		width: 100%;
+		height: 50dvh;		
+		border: 1px solid black;
 	}
 
-	.startpage {
-		width: 100vw;
-		height: 113svh;
-		display: flex;
-		margin-top: 1svh;
-		flex-direction: column;
+	#startpage {
+        display: flex;
+        flex-direction: column;
+		width: 100%;
+		height: auto;
+		margin-top: 1dvh;
 	}
 
-	.startpagelefthalf {
-		width: 100vw;
-		height: 50svh;
+	#startpagelefthalf {
+		width: 100%;
+		height: 50dvh;
 	}
 
 	.menumodal {
-		width: 100vw;
-		height: 100svh;
-		display: none;
+        display: none;
 		position: fixed;
+		width: 100%;
+		height: 100dvh;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
+        z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
 	}
 
 	#startpagerighthalf {
-		width: 100vw;
-		height: 63svh;
-		display: flex;
+        display: flex;
 		flex-direction: column;
-		border: 0.5vw solid black;
-		background-image: url("../static/imageswebp/izmirpixel.webp"), url("../static/images/izmirpixel.png");
-		background-repeat: repeat;
+        position: relative;
+		width: 100%;
+		height: auto;
+		border: 1px solid black;
+		background-image: url("../static/imageswebp/izmirguessrlogo.webp"), url("../static/images/izmirguessrlogo.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;		
 	}
 
 	#izmirilcebox {
-		width: 100vw;
-		height: 40%;
-		align-items: center;
-		width: 100vw;
-		height: 35svh;
+		width: 100%;
+		height: auto;
 		padding: 1vw;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 	}
 
 	#izmirilcebox button {
-		font-size: 2.5svh;
-	}
-
-	.izmirfaq {
-		width: 50%;
-		height: 100%;
-		font-size: 2svh;
-		margin-left: 1vw;
-		margin-right: 1vw;
-	}
-
-	.izmirilcebottombuttons {
-		width: 100vw;
-		height: 5svh;
-
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		-webkit-backdrop-filter: blur(5px);
-		backdrop-filter: blur(5px);
+        padding: 0 0.3vw 0 0.3vw;
+		font-size: 5dvw;		
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	}
 
 	.addremovebuttons {
-		font-size: 3vw;
-		margin: 0.1vw;
-		margin-left: 2vw;
+        margin: 0.1vw 0.1vw 0.1vw 2vw;
+		font-size: 3vw;		
 	}
 
-	.ilcesayisi {
+	#ilcesayisi {
+        text-align: center;
+        margin-left: 10vw;
 		font-size: 4vw;
-		margin-left: 10vw;
-		text-align: center;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -1015,30 +959,28 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#menubuttons {
+        display: flex;
+		flex-direction: column;
+        align-items: center;
 		width: auto;
-		height: auto;
-		display: flex;
-		flex-direction: row;
+		height: auto;		
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
-		align-items: center;
 	}
 
 	.izmirayarlar {
-		font-size: 4vw;
-		margin-left: 1vw;
-		margin-right: 10vw;
-		padding: 2vw;
-		display: flex;
+        display: flex;
 		flex-direction: row;
+        padding: 2vw;
+        margin: 0 10vw 0 1vw;
+		font-size: 4vw;
 	}
 
 	.izmirstartgame {
 		width: 100%;
 		height: 100%;
-		margin-left: 2vw;
-		font-size: 2svh;
-		margin-right: 1vw;
+		margin: 0 1vw 0 2vw;
+		font-size: 2dvh;
 	}
 
 	#izmirtime {
@@ -1046,43 +988,40 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#expandButton {
-		width: auto;
-		max-height: 50px;
-		margin: auto 0.5vw auto 0;
-		cursor: pointer;
+		width: 40vw;
+		max-height: 4dvh;
+        margin-right: 2dvw;
 		transition: 1.5s;
 		overflow: hidden;
 		z-index: 2;
 	}
 
 	.buttonInsideButton {
+        display: block;
+        text-align: center;
 		width: auto;
-		height: 50px;
-		background-color: rgb(0, 0, 120, 0.8);
-		font-size: 1.25em;
-		padding-left: 10px;
-		padding-right: 10px;
-		text-align: center;
-		line-height: 50px;
-		color: white;
-		display: block;
+        height: 4dvh;
+		font-size: 2.2dvw;
+		line-height: 4dvh;
+        background-color: rgb(0, 0, 120, 0.8);
 		border: 1px solid rgb(0, 0, 240);
+        color: white;
 	}
 
 	#expandButton.expanded {
-		max-height: 200px;
-		transition: 1.5s;
-		margin-top: calc(auto);
+		max-height: 16dvh;
+        margin-top: 12dvh;
+		transition: 1.5s;		
 		z-index: 9995;
 	}
 
 	#changeUsernameModal {
 		display: none;
+        position: fixed;
 		width: 80vw;
 		height: 80vh;
 		background-color: rgb(0, 0, 0, 0.8);
-		margin: 10vh 10vw 10vh 10vw;
-		position: fixed;
+		margin: 10vh 10vw 10vh 10vw;		
 		z-index: 999999999999999999999999;
 	}
 
@@ -1092,7 +1031,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 3vw;
 		color: white;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		margin-bottom: 3vh;
 	}
 
@@ -1114,11 +1053,12 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#menubuttons button {
-		width: calc(100% + 1vw);
-		font-size: 1.5vw;
+		width: 100%;
+		font-size: 5dvw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-		border-radius: 1vw;
+		border-radius: 1dvw;
+		margin-top: 1dvw;
 	}
 
 	.blur {
@@ -1151,50 +1091,51 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#competitiveChecks {
-		width: 30vw;
-		height: calc(100% - 3vw);
+		width: 100%;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		color: white;
 		text-shadow: 2px 2px 2px black;
-		font-size: 1vw;
-		text-align: left;
+		font-size: 3dvw;
+		text-align: center;
 		padding: 0 0 2vw 2vw;
-		line-height: 2.3vw;
+		line-height: 5dvw;
 		background: rgb(0, 0, 0, 0.4);
 		border: 1px solid black;
 		margin: 0 0 1vw 1vw;
 	}
 
 	#menuarabox {
-		width: 43vw;
-		height: 30%;
+		width: 100%;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		color: white;
 		text-shadow: 2px 2px 2px black;
 		margin: 1vw;
-		font-size: 1.15vw;
+		font-size: min(4vw, 2dvh);
 	}
 
 	#menuaraboxfirst {
 		width: 100%;
 		height: 80%;
 		display: flex;
-		flex-direction: row;
-		border: 1px solid black;
+		flex-direction: column;
 		align-items: center;
 	}
 
 	#miniLeaderboard,
 	#yourStats {
-		width: 50%;
-		height: 100%;
-		display: flex;
+        display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
+		width: 100%;
+		height: 100%;
+        margin-top: 1dvh;
+        border: 1px solid black;
 		background: rgb(0, 0, 0, 0.4);
 	}
 
@@ -1206,6 +1147,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		justify-content: center;
 		background: rgb(0, 0, 0, 0.4);
+		margin-top: 2dvh;
 	}
 
 	#gameplayBackground {
@@ -1219,11 +1161,11 @@ div.gm-bundled-control:nth-child(2) {
 
 	#backgroundText {
 		position: absolute;
-		width: 20vw;
-		height: 20vh;
-		margin: 40vh 40vw 40vh 40vw;
+		width: 20dvw;
+		height: 20dvh;
+		margin: 40dvh 40dvw 40dvh 40dvw;
 		color: white;
-		font-size: 1.5vw;
+		font-size: 3dvw;
 	}
 
 	#loadingScreen {
@@ -1262,7 +1204,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalTop {
 		display: flex;
-		flex-direction: row;
+		flex-direction: c;
 	}
 
 	#resultModalTop h1 {
@@ -1273,7 +1215,7 @@ div.gm-bundled-control:nth-child(2) {
 		width: 60vw;
 		height: 60dvh;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
