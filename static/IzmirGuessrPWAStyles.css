@@ -1,11 +1,13 @@
 * {
 	box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
 	color: white;
 	text-decoration: none;
 }
@@ -14,30 +16,36 @@ a:hover {
 	color: lightblue;
 }
 
-.gm-fullscreen-control { /* Full screen button at top right */
+.gm-fullscreen-control {
+	/* Full screen button at top right */
 	background: rgb(0, 0, 0, 0.8) !important;
 }
 
-.gm-style div div a, .gm-style-cc, .leaflet-control { /* Unnecessary Map Text */	
+.gm-style div div a,
+.gm-style-cc,
+.leaflet-control {
+	/* Unnecessary Map Text */
 	display: none !important;
 }
 
-div.gm-bundled-control:nth-child(2) { /* Compass Location */	
+div.gm-bundled-control:nth-child(2) {
+	/* Compass Location */
 	left: 0;
 	right: 0;
 }
 
 .flexrow {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .flexcolumn {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-@media (width > 767px) { /* Big Screens */	
+@media (width > 767px) {
+	/* Big Screens */
 	body {
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 		display: flex;
@@ -99,7 +107,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	#overlay-container {
-        display: none;
+		display: none;
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -136,40 +144,40 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		border: none;
 		font-size: min(1dvw, 2dvh);
 	}
-    
+
 	#result-map {
-        width: 30vw;
-		height: 40dvh;		
+		width: 30vw;
+		height: 40dvh;
 	}
 
 	#result-modal {
 		display: none;
 		flex-direction: column;
 		position: fixed;
-        justify-content: center;
+		justify-content: center;
 		z-index: 1;
 		width: 60vw;
 		height: 60dvh;
 		margin: 20dvh 0 0 20vw;
-        padding: 1vw;
+		padding: 1vw;
 		border: 1px solid white;
-        color: white;
+		color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 	}
 
 	#final-results-modal {
-        display: none;
-		flex-direction: column;		
+		display: none;
+		flex-direction: column;
 		position: absolute;
-        justify-content: space-around;
-        align-items: center;
+		justify-content: space-around;
+		align-items: center;
 		z-index: 4;
 		width: 60vw;
 		height: 60dvh;
 		margin: 20dvh 0 0 20vw;
 		border: 1px solid white;
-        color: white;
-		background: black;		
+		color: white;
+		background: black;
 	}
 
 	.finalrow {
@@ -192,11 +200,13 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		margin-top: 2.35dvh;
 	}
 
-	#returntomenu-button, #playagain-button {
+	#returntomenu-button,
+	#playagain-button {
 		height: 4.2dvh;
 	}
 
-	#mini-map .gmnoprint, #result-map .gmnoprint {
+	#mini-map .gmnoprint,
+	#result-map .gmnoprint {
 		display: none !important;
 	}
 
@@ -214,17 +224,17 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		justify-content: flex-start;
 	}
 
-    #closeandreturn {
-        display: flex;
+	#closeandreturn {
+		display: flex;
 		flex-direction: row;
 		width: auto;
 		height: 4.3dvh;
-        margin: 1.1dvh 0.5vw 0 0.5vw;		
+		margin: 1.1dvh 0.5vw 0 0.5vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		border-radius: 1vh;
 	}
 
-    #izmirclose {
+	#izmirclose {
 		width: 4.3dvh;
 		height: 4.3dvh;
 		margin-right: 0.5vw;
@@ -237,7 +247,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		width: 4.3dvh;
 		height: 4.3dvh;
 		margin-left: 0.5vw;
-        margin-right: 0.5vw;
+		margin-right: 0.5vw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M19.933%2013.041a8%208%200%201%201%20-9.925%20-8.788c3.899%20-1%207.935%201.007%209.425%204.747%22%20%2F%3E%20%3Cpath%20d%3D%22M20%204v5h-5%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		cursor: pointer;
 		background-size: 100% auto;
@@ -261,7 +271,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 	}
 
-    #modaltoggle-button {
+	#modaltoggle-button {
 		display: none;
 		width: auto;
 		height: 4.3dvh;
@@ -317,12 +327,12 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	.menumodal {
 		width: 80vw;
 		height: 80dvh;
-        margin: 10dvh 10vw 10dvh 10vw;
+		margin: 10dvh 10vw 10dvh 10vw;
 		display: none;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-        position: fixed;
-        z-index: 4198000000000000000000000000000000002;
+		position: fixed;
+		z-index: 4198000000000000000000000000000000002;
 	}
 
 	#startpagerighthalf {
@@ -347,7 +357,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#izmirilcebox button {
 		font-size: min(1.4dvw, 2.8dvh);
-        padding: 0 0.3vw 0 0.3vw;
+		padding: 0 0.3vw 0 0.3vw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	}
 
@@ -374,12 +384,12 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 	}
 
-    #mainmenuCompetitiveChecksAndButtons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 40%;
-    }
+	#mainmenuCompetitiveChecksAndButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 40%;
+	}
 
 	#menubuttons {
 		width: 14vw;
@@ -388,7 +398,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		flex-direction: column;
 		gap: 1vw;
 		align-items: center;
-        padding: 0 1vw 0 1vw;
+		padding: 0 1vw 0 1vw;
 	}
 
 	.izmirayarlar {
@@ -401,6 +411,249 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	#izmirtime {
 		font-size: min(1dvw, 2dvh);
 	}
+
+	#expandButton {
+		width: auto;
+		max-height: 50px;
+		margin: auto 0.5vw auto 0;
+		cursor: pointer;
+		transition: 1.5s;
+		overflow: hidden;
+		z-index: 2;
+	}
+
+	.buttonInsideButton {
+		width: auto;
+		height: 50px;
+		background-color: rgb(0, 0, 120, 0.8);
+		font-size: 1.25em;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: center;
+		line-height: 50px;
+		color: white;
+		display: block;
+		border: 1px solid rgb(0, 0, 240);
+	}
+
+	#expandButton.expanded {
+		max-height: 200px;
+		transition: 1.5s;
+		margin-top: calc(auto);
+		z-index: 9995;
+	}
+
+	#changeUsernameModal {
+		display: none;
+		width: 80vw;
+		height: 80vh;
+		background-color: rgb(0, 0, 0, 0.8);
+		margin: 10vh 10vw 10vh 10vw;
+		position: fixed;
+		z-index: 999999999999999999999999;
+	}
+
+	.modalTitleRow {
+		width: 100%;
+		height: 4vw;
+		font-size: 3vw;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 3vh;
+	}
+
+	.modalTitle {
+		width: 76vw;
+		height: 100%;
+		font-weight: bold;
+		padding-left: 4vw;
+	}
+
+	.modalCloseButton {
+		width: 4vw;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	#changeUsernameModalBox {
+		color: white;
+	}
+
+	#menubuttons button {
+		width: calc(100% + 1vw);
+		font-size: 1.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		border-radius: 1vw;
+	}
+
+	.blur {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		width: 100%;
+		height: 100%;
+	}
+
+	#selectGameMode,
+	#roundCount {
+		width: auto;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
+		margin: 1.1dvh 0.5vw 0 0.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: min(1.25vw, 2.5dvh);
+		border-radius: 1vh;
+		padding: 0 1em 0 1em;
+	}
+
+	.modalClose {
+		color: #aaa;
+		float: right;
+		font-size: 3vw;
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 1vw;
+	}
+
+	#competitiveChecks {
+		width: 30vw;
+		height: calc(100% - 3vw);
+		display: flex;
+		flex-direction: column;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		font-size: 1vw;
+		text-align: left;
+		padding: 0 0 2vw 2vw;
+		line-height: 2.3vw;
+		background: rgb(0, 0, 0, 0.4);
+		border: 1px solid black;
+		margin: 0 0 1vw 1vw;
+	}
+
+	#menuarabox {
+		width: 43vw;
+		height: 30%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		margin: 1vw;
+		font-size: 1.15vw;
+	}
+
+	#menuaraboxfirst {
+		width: 100%;
+		height: 80%;
+		display: flex;
+		flex-direction: row;
+		border: 1px solid black;
+		align-items: center;
+	}
+
+	#miniLeaderboard,
+	#yourStats {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background: rgb(0, 0, 0, 0.4);
+	}
+
+	#menusettings {
+		width: 100%;
+		height: 20%;
+		border: 1px solid black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgb(0, 0, 0, 0.4);
+	}
+
+	#gameplayBackground {
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		position: fixed;
+		z-index: 0;
+		display: none;
+	}
+
+	#backgroundText {
+		position: absolute;
+		width: 20vw;
+		height: 20vh;
+		margin: 40vh 40vw 40vh 40vw;
+		color: white;
+		font-size: 1.5vw;
+	}
+
+	#loadingScreen {
+		display: none;
+		position: fixed;
+		width: 100dvw;
+		height: 100dvh;
+		color: white;
+		background: black;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		font-size: 5vw;
+		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+	}
+
+	#resultModalRight,
+	#resultModalLeft {
+		width: 15vw;
+		height: 40dvh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		font-size: 1vw;
+	}
+
+	#resultModalRight {
+		padding-left: 1vw;
+	}
+
+	#resultModalLeft {
+		padding-right: 1vw;
+	}
+
+	#resultModalTop {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#resultModalTop h1 {
+		font-size: 1.3vw;
+	}
+
+	#resultModalBottom {
+		width: 60vw;
+		height: 60dvh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 4vw;
+	}
+
+	#resultModalBottom button,
+	#playagain-button,
+	#returntomenu-button {
+		padding: 1vh 1vw 1vh 1vw;
+		color: white;
+		background-color: rgb(0, 0, 0, 0.8);
+	}
 }
 
 @media (width < 768px) {
@@ -412,7 +665,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		background-position: center;
 		display: flex;
 		margin: 0;
-        padding: 0;
+		padding: 0;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -475,7 +728,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 	}
 
 	#overlay-container {
-        display: none;
+		display: none;
 		position: absolute;
 		bottom: 0;
 		right: 0;
@@ -695,7 +948,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		width: 100vw;
 		height: 100svh;
 		display: none;
-        position: fixed;
+		position: fixed;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 	}
@@ -721,7 +974,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		backdrop-filter: blur(5px);
 	}
 
-    #izmirilcebox button {
+	#izmirilcebox button {
 		font-size: 2.5svh;
 	}
 
@@ -731,7 +984,7 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		font-size: 2svh;
 		margin-left: 1vw;
 		margin-right: 1vw;
-	}	
+	}
 
 	.izmirilcebottombuttons {
 		width: 100vw;
@@ -756,10 +1009,10 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 		text-align: center;
 	}
 
-    #mainmenuCompetitiveChecksAndButtons {
-        display: flex;
-        flex-direction: column;
-    }
+	#mainmenuCompetitiveChecksAndButtons {
+		display: flex;
+		flex-direction: column;
+	}
 
 	#menubuttons {
 		width: auto;
@@ -790,5 +1043,248 @@ div.gm-bundled-control:nth-child(2) { /* Compass Location */
 
 	#izmirtime {
 		font-size: 3vw;
+	}
+
+	#expandButton {
+		width: auto;
+		max-height: 50px;
+		margin: auto 0.5vw auto 0;
+		cursor: pointer;
+		transition: 1.5s;
+		overflow: hidden;
+		z-index: 2;
+	}
+
+	.buttonInsideButton {
+		width: auto;
+		height: 50px;
+		background-color: rgb(0, 0, 120, 0.8);
+		font-size: 1.25em;
+		padding-left: 10px;
+		padding-right: 10px;
+		text-align: center;
+		line-height: 50px;
+		color: white;
+		display: block;
+		border: 1px solid rgb(0, 0, 240);
+	}
+
+	#expandButton.expanded {
+		max-height: 200px;
+		transition: 1.5s;
+		margin-top: calc(auto);
+		z-index: 9995;
+	}
+
+	#changeUsernameModal {
+		display: none;
+		width: 80vw;
+		height: 80vh;
+		background-color: rgb(0, 0, 0, 0.8);
+		margin: 10vh 10vw 10vh 10vw;
+		position: fixed;
+		z-index: 999999999999999999999999;
+	}
+
+	.modalTitleRow {
+		width: 100%;
+		height: 4vw;
+		font-size: 3vw;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 3vh;
+	}
+
+	.modalTitle {
+		width: 76vw;
+		height: 100%;
+		font-weight: bold;
+		padding-left: 4vw;
+	}
+
+	.modalCloseButton {
+		width: 4vw;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	#changeUsernameModalBox {
+		color: white;
+	}
+
+	#menubuttons button {
+		width: calc(100% + 1vw);
+		font-size: 1.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		border-radius: 1vw;
+	}
+
+	.blur {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		width: 100%;
+		height: 100%;
+	}
+
+	#selectGameMode,
+	#roundCount {
+		width: auto;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
+		margin: 1.1dvh 0.5vw 0 0.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: min(1.25vw, 2.5dvh);
+		border-radius: 1vh;
+		padding: 0 1em 0 1em;
+	}
+
+	.modalClose {
+		color: #aaa;
+		float: right;
+		font-size: 3vw;
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 1vw;
+	}
+
+	#competitiveChecks {
+		width: 30vw;
+		height: calc(100% - 3vw);
+		display: flex;
+		flex-direction: column;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		font-size: 1vw;
+		text-align: left;
+		padding: 0 0 2vw 2vw;
+		line-height: 2.3vw;
+		background: rgb(0, 0, 0, 0.4);
+		border: 1px solid black;
+		margin: 0 0 1vw 1vw;
+	}
+
+	#menuarabox {
+		width: 43vw;
+		height: 30%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		margin: 1vw;
+		font-size: 1.15vw;
+	}
+
+	#menuaraboxfirst {
+		width: 100%;
+		height: 80%;
+		display: flex;
+		flex-direction: row;
+		border: 1px solid black;
+		align-items: center;
+	}
+
+	#miniLeaderboard,
+	#yourStats {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		background: rgb(0, 0, 0, 0.4);
+	}
+
+	#menusettings {
+		width: 100%;
+		height: 20%;
+		border: 1px solid black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgb(0, 0, 0, 0.4);
+	}
+
+	#gameplayBackground {
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		position: fixed;
+		z-index: 0;
+		display: none;
+	}
+
+	#backgroundText {
+		position: absolute;
+		width: 20vw;
+		height: 20vh;
+		margin: 40vh 40vw 40vh 40vw;
+		color: white;
+		font-size: 1.5vw;
+	}
+
+	#loadingScreen {
+		display: none;
+		position: fixed;
+		width: 100dvw;
+		height: 100dvh;
+		color: white;
+		background: black;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		font-size: 5vw;
+		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+	}
+
+	#resultModalRight,
+	#resultModalLeft {
+		width: 15vw;
+		height: 40dvh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		font-size: 1vw;
+	}
+
+	#resultModalRight {
+		padding-left: 1vw;
+	}
+
+	#resultModalLeft {
+		padding-right: 1vw;
+	}
+
+	#resultModalTop {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#resultModalTop h1 {
+		font-size: 1.3vw;
+	}
+
+	#resultModalBottom {
+		width: 60vw;
+		height: 60dvh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 4vw;
+	}
+
+	#resultModalBottom button,
+	#playagain-button,
+	#returntomenu-button {
+		padding: 1vh 1vw 1vh 1vw;
+		color: white;
+		background-color: rgb(0, 0, 0, 0.8);
 	}
 }
