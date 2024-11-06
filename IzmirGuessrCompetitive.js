@@ -376,24 +376,24 @@ function initMap() {
 
 function toggleModal() {
 	if (roundCount < 5) {
-		if (resultModal.style.display === "block") {
+		if (resultModal.style.display === "flex") {
 			resultModal.style.display = "none";
 		} else {
-			resultModal.style.display = "block";
+			resultModal.style.display = "flex";
 		}
 	}
 
 	if (roundCount == 5) {
-		if (resultModal.style.display === "block") {
+		if (resultModal.style.display === "flex") {
 			resultModal.style.display = "none";
 			finalresultsmodal.style.display = "none";
-		} else if (finalresultsmodal.style.display === "block") {
+		} else if (finalresultsmodal.style.display === "flex") {
 			finalresultsmodal.style.display = "none";
 			resultModal.style.display = "none";
 		} else if (resultModal.style.display === "none" && finalresultsmodal.style.display === "none" && !finalgoruntulendimi) {
-			resultModal.style.display = "block";
+			resultModal.style.display = "flex";
 		} else {
-			finalresultsmodal.style.display = "block";
+			finalresultsmodal.style.display = "flex";
 		}
 	}
 }
@@ -492,7 +492,7 @@ function displayResults(distance, points) {
 
 	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
-	document.getElementById("modaltoggle-button").style.display = "block";
+	document.getElementById("modaltoggle-button").style.display = "flex";
 
 	if (roundCount < 4) {
 		new google.maps.Marker({
@@ -666,7 +666,7 @@ function competitiveCheck() {
 }
 
 function openmodal(modalname) {
-    document.getElementById(`${modalname}`).style.display = "block";
+    document.getElementById(`${modalname}`).style.display = "flex";
 }
 
 // Adding Event Listeners:
