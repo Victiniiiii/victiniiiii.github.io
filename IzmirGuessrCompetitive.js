@@ -99,10 +99,10 @@ buttons.forEach((button) => {
 });
 
 document.addEventListener("contextmenu", function (event) {
-    // event.preventDefault(); // Prevents the default right-click menu TODO: ADD Later
-    if (roundCount == 0 && !initiallyGreenDistricts.length == 0) {
+    event.preventDefault();    
+    if (titleSection.style.display == "flex" && !initiallyGreenDistricts.length == 0) {
         removeAllDistricts();
-    } else if (roundCount == 0 && initiallyGreenDistricts.length == 0) {
+    } else if (titleSection.style.display == "flex" && initiallyGreenDistricts.length == 0) {
         addAllDistricts();
     }    
 });
