@@ -100,9 +100,9 @@ buttons.forEach((button) => {
 
 document.addEventListener("contextmenu", function (event) {
     event.preventDefault();    
-    if (!buttonrow.style.display == "flex" && !initiallyGreenDistricts.length == 0) {
+    if (!(buttonrow.style.display == "flex") && !initiallyGreenDistricts.length == 0) {
         removeAllDistricts();
-    } else if (!buttonrow.style.display == "flex" && initiallyGreenDistricts.length == 0) {
+    } else if (!(buttonrow.style.display == "flex") && initiallyGreenDistricts.length == 0) {
         addAllDistricts();
     }    
 });
