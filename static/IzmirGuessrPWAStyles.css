@@ -824,7 +824,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		justify-content: flex-start;
 		position: absolute;
-		width: 85dvw;
+        width: auto;
 		height: 10dvw;
 		top: 0;
 		margin-top: 1.6dvh;
@@ -889,12 +889,16 @@ div.gm-bundled-control:nth-child(2) {
 	#closeandreturn {
 		display: flex;
 		flex-direction: row;
-		width: auto;
+		width: 85dvw;
 		height: 10dvw;
 		margin: 0 1dvw 0 1dvw;
 		border-radius: 2dvw;
 		background-color: rgb(0, 0, 0, 0.8);
 	}
+
+    #buttonRowOtherStuff {
+        width: 100%;
+    }
 
 	/* styles2.css */
 
