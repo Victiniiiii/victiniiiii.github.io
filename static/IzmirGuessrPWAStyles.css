@@ -782,6 +782,7 @@ div.gm-bundled-control:nth-child(2) {
 		z-index: 4;
         color: white;
         gap: 7dvw;
+        border: 1px solid white;
 	}
 
 	.modalrow {
@@ -1223,6 +1224,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		font-size: 4dvw;
+        border: 1px solid white;
 	}
 
 	#resultModalRight {
@@ -1251,6 +1253,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		gap: 2vw;
+        border: 1px solid white;
 	}
 
 	#resultModalBottom button,
