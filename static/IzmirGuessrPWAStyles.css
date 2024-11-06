@@ -442,16 +442,6 @@ div.gm-bundled-control:nth-child(2) {
 		z-index: 9995;
 	}
 
-	#changeUsernameModal {
-		display: none;
-		width: 80vw;
-		height: 80vh;
-		background-color: rgb(0, 0, 0, 0.8);
-		margin: 10vh 10vw 10vh 10vw;
-		position: fixed;
-		z-index: 999999999999999999999999;
-	}
-
 	.modalTitleRow {
 		width: 100%;
 		height: 4vw;
@@ -902,8 +892,15 @@ div.gm-bundled-control:nth-child(2) {
 
 	#startpagelefthalf {
 		width: 100%;
-		height: 50dvh;
+		height: auto;
 	}
+
+    #mainMapInfo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
 
 	.menumodal {
         display: none;
@@ -912,6 +909,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100dvh;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
+        flex-direction: column;
         z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
 	}
 
@@ -943,14 +941,17 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.addremovebuttons {
-        margin: 0.1vw 0.1vw 0.1vw 2vw;
-		font-size: 3vw;		
+        margin: 0.1vw 0.1vw 0.1vw 1vw;
+		font-size: 4vw;
+        background: transparent;
+        color: white;
 	}
 
 	#ilcesayisi {
         text-align: center;
-        margin-left: 10vw;
 		font-size: 4vw;
+        color: white;
+        margin-left: 4vw;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -974,13 +975,6 @@ div.gm-bundled-control:nth-child(2) {
         padding: 2vw;
         margin: 0 10vw 0 1vw;
 		font-size: 4vw;
-	}
-
-	.izmirstartgame {
-		width: 100%;
-		height: 100%;
-		margin: 0 1vw 0 2vw;
-		font-size: 2dvh;
 	}
 
 	#izmirtime {
@@ -1015,35 +1009,26 @@ div.gm-bundled-control:nth-child(2) {
 		z-index: 9995;
 	}
 
-	#changeUsernameModal {
-		display: none;
-        position: fixed;
-		width: 80vw;
-		height: 80vh;
-		background-color: rgb(0, 0, 0, 0.8);
-		margin: 10vh 10vw 10vh 10vw;		
-		z-index: 999999999999999999999999;
-	}
-
 	.modalTitleRow {
 		width: 100%;
-		height: 4vw;
-		font-size: 3vw;
+		height: 10vw;
+		font-size: 6vw;
 		color: white;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		margin-bottom: 3vh;
+        align-items: center;
 	}
 
 	.modalTitle {
-		width: 76vw;
+		width: 90vw;
 		height: 100%;
 		font-weight: bold;
 		padding-left: 4vw;
 	}
 
 	.modalCloseButton {
-		width: 4vw;
+		width: 10vw;
 		height: 100%;
 		cursor: pointer;
 	}
