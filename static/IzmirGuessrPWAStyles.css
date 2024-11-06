@@ -709,6 +709,21 @@ div.gm-bundled-control:nth-child(2) {
 		margin-bottom: 2dvh;
 	}
 
+    #result-modal {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		justify-content: center;
+		z-index: 1;
+		width: 60vw;
+		height: 60dvh;
+		margin: 20dvh 0 0 20vw;
+		padding: 1vw;
+		border: 1px solid white;
+		color: white;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+	}
+
 	#overlay-container {
 		display: none;
 		position: absolute;
