@@ -828,6 +828,8 @@ div.gm-bundled-control:nth-child(2) {
 		top: 0;
 		margin-top: 1.6dvh;
 		z-index: 5;
+        flex-wrap: wrap;
+        gap: 1vh;
 	}
 
 	#izmirclose {
@@ -886,7 +888,7 @@ div.gm-bundled-control:nth-child(2) {
 	#closeandreturn {
 		display: flex;
 		flex-direction: row;
-		width: 20dvw;
+		width: auto;
 		height: 10dvw;
 		margin: 0 1dvw 0 1dvw;
 		border-radius: 2dvw;
@@ -1075,7 +1077,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#selectGameMode,
 	#roundCount {
-		width: 25dvw;
+		width: auto;
 		height: 10dvw;
 		line-height: 10dvw;
 		margin: 0 0.5vw 0 0.5vw;
@@ -1086,10 +1088,6 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	#roundCount {
-		width: 20dvw;
 	}
 
 	.modalClose {
@@ -1172,11 +1170,12 @@ div.gm-bundled-control:nth-child(2) {
 
 	#backgroundText {
 		position: absolute;
-		width: 20dvw;
-		height: 20dvh;
-		margin: 40dvh 40dvw 40dvh 40dvw;
+		width: 80dvw;
+		height: 40dvh;
+		margin: 30dvh 10dvw 30dvh 10dvw;
 		color: white;
-		font-size: 3dvw;
+		font-size: 10dvw;
+        text-align: center;
 	}
 
 	#loadingScreen {
