@@ -707,6 +707,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: 35dvh;
 		border: 1px solid black;
 		margin-bottom: 2dvh;
+        order: 1;
 	}
 
 	#result-modal {
@@ -715,9 +716,9 @@ div.gm-bundled-control:nth-child(2) {
 		position: fixed;
 		justify-content: center;
 		z-index: 1;
-		width: 60vw;
-		height: 60dvh;
-		margin: 20dvh 0 0 20vw;
+		width: 80dvw;
+		height: 80dvh;
+		margin: 15dvh 0 0 10vw;
 		padding: 1vw;
 		border: 1px solid white;
 		color: white;
@@ -1205,11 +1206,11 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#resultModalRight {
-		padding-left: 1dvw;
+		order: 3;
 	}
 
 	#resultModalLeft {
-		padding-right: 1dvw;
+		order: 2;
 	}
 
 	#resultModalTop {
@@ -1222,8 +1223,8 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#resultModalBottom {
-		width: 60vw;
-		height: 60dvh;
+		width: auto;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
