@@ -330,10 +330,11 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.menumodal {
+        display: none;
+        flex-direction: column;
 		width: 80vw;
 		height: 80dvh;
-		margin: 10dvh 10vw 10dvh 10vw;
-		display: none;
+		margin: 10dvh 10vw 10dvh 10vw;		
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		position: fixed;
