@@ -515,9 +515,8 @@ function displayResults(distance, points) {
 			icon: "static/images/greenpin.png",
 		});
 
-		const lineCoordinates = [guessedCoordinates[roundCount], actualCoordinates[roundCount]];
 		const line = new google.maps.Polyline({
-			path: lineCoordinates,
+			path: [guessedCoordinates[roundCount], actualCoordinates[roundCount]],
 			geodesic: true,
 			strokeColor: "#FF0000", // Red
 			strokeOpacity: 1.0,
@@ -527,6 +526,7 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
+		guessedLocationMarker.setMap(null);
 
 		for (let i = 0; i < 5; i++) {
 			const guessedMarker = new google.maps.Marker({
@@ -551,24 +551,23 @@ function displayResults(distance, points) {
 				strokeWeight: 4,
 			});
 
-            guessedMarker.addListener('click', function () {
-                resultMap.setCenter(actualMarker.getPosition());
-            });
-        
-            actualMarker.addListener('click', function () {
-                resultMap.setCenter(actualMarker.getPosition());
-            });
+			guessedMarker.addListener("click", function () {
+				resultMap.setCenter(actualMarker.getPosition());
+			});
 
-            line.addListener('click', function () {
-                resultMap.setCenter(actualMarker.getPosition());
-            });
+			actualMarker.addListener("click", function () {
+				resultMap.setCenter(actualMarker.getPosition());
+			});
+
+			line.addListener("click", function () {
+				resultMap.setCenter(actualMarker.getPosition());
+			});
 
 			line.setMap(resultMap);
 
 			const button = document.createElement("button");
 			button.textContent = `Toggle Guessed Location ${i + 1}`;
 			button.id = `toggleGuessed${i + 1}`;
-
 			document.getElementById("resultModalLeft").appendChild(button);
 
 			button.addEventListener("click", () => {
@@ -579,6 +578,26 @@ function displayResults(distance, points) {
 				}
 			});
 		}
+
+		const hideAllButton = document.createElement("button");
+		hideAllButton.textContent = "Hide All Markers";
+		document.getElementById("resultModalLeft").appendChild(hideAllButton);
+		hideAllButton.addEventListener("click", () => {
+			for (let i = 0; i < 5; i++) {
+				new google.maps.Marker({ position: guessedCoordinates[i], map: null });
+				new google.maps.Marker({ position: actualCoordinates[i], map: null });
+			}
+		});
+
+		const showAllButton = document.createElement("button");
+		showAllButton.textContent = "Show All Markers";
+		document.getElementById("resultModalLeft").appendChild(showAllButton);
+		showAllButton.addEventListener("click", () => {
+			for (let i = 0; i < 5; i++) {
+				new google.maps.Marker({ position: guessedCoordinates[i], map: resultMap, icon: `static/images/redpin${i + 1}.png` });
+				new google.maps.Marker({ position: actualCoordinates[i], map: resultMap, icon: `static/images/greenpin${i + 1}.png` });
+			}
+		});
 	}
 	roundCount++;
 }
