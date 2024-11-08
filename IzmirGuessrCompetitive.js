@@ -528,38 +528,39 @@ function displayResults(distance, points) {
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
 		for (let i = 0; i < 5; i++) {
-			new google.maps.Marker({
-				position: guessedCoordinates[i],
-				map: resultMap,
-				title: `Guessed Location ${i + 1}`,
-				icon: `static/images/redpin${i + 1}.png`,
-			});
-
-			new google.maps.Marker({
-				position: actualCoordinates[i],
-				map: resultMap,
-				title: `Actual Location ${i + 1}`,
-				icon: `static/images/greenpin${i + 1}.png`,
-			});
-
+            const guessedMarker = new google.maps.Marker({
+                position: guessedCoordinates[i],
+                map: resultMap,
+                title: `Guessed Location ${i + 1}`,
+                icon: `static/images/redpin${i + 1}.png`,
+            });
+        
+            const actualMarker = new google.maps.Marker({
+                position: actualCoordinates[i],
+                map: resultMap,
+                title: `Actual Location ${i + 1}`,
+                icon: `static/images/greenpin${i + 1}.png`,
+            });
+        
             guessedMarker.addListener('click', function () {
                 resultMap.setCenter(guessedMarker.getPosition());
             });
         
             actualMarker.addListener('click', function () {
-                resultMap.setCenter(guessedMarker.getPosition());
+                resultMap.setCenter(actualMarker.getPosition());
             });
-
-			const line = new google.maps.Polyline({
-				path: [guessedCoordinates[i], actualCoordinates[i]],
-				geodesic: true,
-				strokeColor: colors[i],
-				strokeOpacity: 1.0,
-				strokeWeight: 4,
-			});
-
-			line.setMap(resultMap);
-		}
+        
+            const line = new google.maps.Polyline({
+                path: [guessedCoordinates[i], actualCoordinates[i]],
+                geodesic: true,
+                strokeColor: colors[i],
+                strokeOpacity: 1.0,
+                strokeWeight: 4,
+            });
+        
+            line.setMap(resultMap);
+        }
+        
 	}
 	roundCount++;
 }
