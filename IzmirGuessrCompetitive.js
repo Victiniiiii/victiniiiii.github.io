@@ -9,9 +9,10 @@ let totalPoints = 0;
 
 let selectedDistrict;
 let selectedGameMode;
-let roundCount = 0; // The round we are currently at (0 to 4)
+let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
+let gameOngoing = false;
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 // Firebase Settings:
@@ -100,9 +101,9 @@ buttons.forEach((button) => {
 
 document.addEventListener("contextmenu", function (event) {
     event.preventDefault();    
-    if (!(buttonrow.style.display == "flex") && !initiallyGreenDistricts.length == 0) {
+    if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
         removeAllDistricts();
-    } else if (!(buttonrow.style.display == "flex") && initiallyGreenDistricts.length == 0) {
+    } else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
         addAllDistricts();
     }    
 });
@@ -254,6 +255,7 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    gameOngoing = true;
     loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
@@ -577,7 +579,8 @@ function playAgain() {
 }
 
 function returnToMainMenu() {
-	roundCount = 0;    
+	roundCount = 0;
+    gameOngoing = false;
 
 	startPage.style.display = "flex";    
     titleSection.style.display = "flex";
