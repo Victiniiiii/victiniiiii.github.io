@@ -542,6 +542,14 @@ function displayResults(distance, points) {
 				icon: `static/images/greenpin${i + 1}.png`,
 			});
 
+            guessedMarker.addListener('click', function () {
+                resultMap.setCenter(guessedMarker.getPosition());
+            });
+        
+            actualMarker.addListener('click', function () {
+                resultMap.setCenter(guessedMarker.getPosition());
+            });
+
 			const line = new google.maps.Polyline({
 				path: [guessedCoordinates[i], actualCoordinates[i]],
 				geodesic: true,
