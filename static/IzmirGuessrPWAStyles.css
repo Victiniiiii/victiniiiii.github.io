@@ -73,8 +73,8 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		margin: 0;
 		text-shadow: 0.1vw 0.2vh #b5b5b5;
-		-webkit-backdrop-filter: blur(0.2vw);
-		backdrop-filter: blur(0.2vw);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
 	}
 
 	.main-menu-button {
@@ -701,26 +701,26 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		width: 100%;
 		border: 1px solid black;
-		margin-bottom: 0.1dvh;
-		height: 8dvh;
+		margin-bottom: 0.2dvw;
+		height: 16dvw;
 	}
 
 	.main-menu-button {
 		cursor: pointer;
-		width: 8dvh;
-		height: 8dvh;
+		width: 16dvw;
+		height: 16dvw;
 	}
 
 	#title-section a div {
 		background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
-		width: 8dvh;
-		height: 8dvh;
+		width: 16dvw;
+		height: 16dvw;
 		background-size: contain;
 	}
 
 	.main-menu-text {
 		width: 100%;
-		font-size: 2dvh;
+		font-size: 4dvw;
 		text-align: center;
 		margin-left: 1dvw;
 		margin-right: 1dvw;
@@ -957,7 +957,7 @@ div.gm-bundled-control:nth-child(2) {
 	#map2 {
 		display: block;
 		width: 100%;
-		height: 50dvh;
+		height: 100dvw;
 		border: 1px solid black;
 	}
 
@@ -966,7 +966,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		width: 100%;
 		height: auto;
-		margin-top: 1dvh;
+		margin-top: 2dvw;
 	}
 
 	#startpagelefthalf {
@@ -1072,7 +1072,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#expandButton {
 		width: 40vw;
-		max-height: 4dvh;
+		max-height: 8dvw;
 		margin-right: 2dvw;
 		transition: 1.5s;
 		overflow: hidden;
@@ -1084,17 +1084,17 @@ div.gm-bundled-control:nth-child(2) {
 		display: block;
 		text-align: center;
 		width: auto;
-		height: 4dvh;
+		height: 8dvw;
 		font-size: 2.2dvw;
-		line-height: 4dvh;
+		line-height: 8dvw;
 		background-color: rgb(0, 0, 120, 0.8);
 		border: 1px solid rgb(0, 0, 240);
 		color: white;
 	}
 
 	#expandButton.expanded {
-		max-height: 16dvh;
-		margin-top: 12dvh;
+		max-height: 32dvw;
+		margin-top: 24dvw;
 		transition: 1.5s;
 		z-index: 9995;
 	}
@@ -1208,7 +1208,7 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		text-shadow: 2px 2px 2px black;
 		margin: 1vw;
-		font-size: min(4vw, 2dvh);
+		font-size: 4dvw;
         transition: all 0.25s ease-in-out;
 	}
 
@@ -1229,7 +1229,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		width: 100%;
 		height: 100%;
-		margin-top: 1dvh;
+		margin-top: 2dvw;
 		border: 1px solid black;
 		background: rgb(0, 0, 0, 0.4);
         transition: all 0.25s ease-in-out;
@@ -1243,7 +1243,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		justify-content: center;
 		background: rgb(0, 0, 0, 0.4);
-		margin-top: 2dvh;
+		margin-top: 4dvw;
         transition: all 0.25s ease-in-out;
 	}
 
