@@ -65,6 +65,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	maxZoomValue = 9;
 	minZoomValue = 7;
 	initialZoom = 8;
+    minimapCloseButton();
 } else {
 	maxZoomValue = 10;
 	minZoomValue = 8;
@@ -670,6 +671,16 @@ function competitiveCheck() {
 
 function openmodal(modalname) {
     document.getElementById(`${modalname}`).style.display = "flex";
+}
+
+function minimapCloseButton() {
+    document.getElementById("overlay-container").style.display = "none";
+    document.getElementById("minimapOpenButton").style.display = "flex";
+}
+
+function minimapOpenButton() {
+    document.getElementById("overlay-container").style.display = "flex";
+    document.getElementById("minimapOpenButton").style.display = "none";
 }
 
 // Adding Event Listeners:
