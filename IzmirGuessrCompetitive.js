@@ -372,7 +372,7 @@ function initMap() {
 			}
 
 			timerSeconds = 30;
-			document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+			document.getElementById("timer").innerHTML = `Remaining: ${timerSeconds} Seconds`;
 			roundTimer = setInterval(updateTimer, 1000);
 			document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`;
 			document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`;
@@ -491,11 +491,11 @@ function displayResults(distance, points) {
 	totalPoints += roundPoints[roundCount];
 	saveData(selectedDistrict, roundPoints[roundCount]);
 
-	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
+	document.getElementById("distance-info").innerHTML = `Distance: ${distance.toFixed(0)} meters`;
 
-	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
-	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
-	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
+	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
+	document.getElementById("totalPoints").innerHTML = `Total Points: ${totalPoints}`;
+	document.getElementById("totalPoints2").innerHTML = `Total Points: ${totalPoints}`;
 
 	document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
 
@@ -529,11 +529,11 @@ function displayResults(distance, points) {
 		guessedLocationMarker.setMap(null);
 
         const hideAllButton = document.createElement("button");
-		hideAllButton.textContent = "Hide All Markers";
+		hideAllButton.innerHTML = "Hide All Markers";
         document.getElementById("resultModalLeft").appendChild(hideAllButton);
 
         const showAllButton = document.createElement("button");
-		showAllButton.textContent = "Show All Markers";
+		showAllButton.innerHTML = "Show All Markers";
 		document.getElementById("resultModalLeft").appendChild(showAllButton);
 
 		for (let i = 0; i < 5; i++) {
@@ -571,10 +571,18 @@ function displayResults(distance, points) {
 				resultMap.setCenter(actualMarker.getPosition());
 			});
 
+            const centerMarkerButton = document.createElement("button");
+            centerMarkerButton.innerHTML = `Center Button ${i + 1}`
+            centerMarkerButton.addEventListener("click", () => {
+				resultMap.setCenter(actualMarker.getPosition());
+			});
+
+            document.getElementById("resultModalLeft").appendChild(centerMarkerButton);
+
 			line.setMap(resultMap);
 
 			const button = document.createElement("button");
-			button.textContent = `Toggle Guessed Location ${i + 1}`;
+			button.innerHTML = `Toggle Guessed Location ${i + 1}`;
 			button.id = `toggleGuessed${i + 1}`;
 			document.getElementById("resultModalLeft").appendChild(button);
 
@@ -691,7 +699,7 @@ function updateTimer() {
 	if (!isTimerPaused) {
 		if (timerSeconds > 0) {
 			timerSeconds--;
-			document.getElementById("timer").textContent = `Remaining: ${timerSeconds} Seconds`;
+			document.getElementById("timer").innerHTML = `Remaining: ${timerSeconds} Seconds`;
 		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
