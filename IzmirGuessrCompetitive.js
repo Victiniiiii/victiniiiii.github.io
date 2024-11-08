@@ -66,12 +66,12 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	maxZoomValue = 9;
 	minZoomValue = 7;
 	initialZoom = 8;
-    mobileUser = true;    
+	mobileUser = true;
 } else {
 	maxZoomValue = 10;
 	minZoomValue = 8;
 	initialZoom = 9;
-    mobileUser = false;
+	mobileUser = false;
 }
 
 const map2 = L.map("map2", {
@@ -103,12 +103,12 @@ buttons.forEach((button) => {
 });
 
 document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();    
-    if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
-        removeAllDistricts();
-    } else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
-        addAllDistricts();
-    }    
+	event.preventDefault();
+	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
+		removeAllDistricts();
+	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
+		addAllDistricts();
+	}
 });
 
 // Functions:
@@ -198,7 +198,7 @@ function toggleDistrict(input) {
 	}
 
 	ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-    competitiveCheck();
+	competitiveCheck();
 }
 
 function addAllDistricts() {
@@ -215,7 +215,7 @@ function addAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
-    competitiveCheck();
+	competitiveCheck();
 }
 
 function removeAllDistricts() {
@@ -230,7 +230,7 @@ function removeAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
-    competitiveCheck();
+	competitiveCheck();
 }
 
 function getRandomLocation() {
@@ -258,29 +258,29 @@ function getRandomLocation() {
 }
 
 function initMap() {
-    gameOngoing = true;
-    loadingScreen.style.display = "flex";
+	gameOngoing = true;
+	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
-    if (mobileUser) {
-        minimapCloseButton();
-    }
+	if (mobileUser) {
+		minimapCloseButton();
+	}
 
 	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 	shuffleArray(formattedNames);
 	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 	randomLocation = getRandomLocation();
 
-    startPage.style.display = "none";    
-    titleSection.style.display = "none";
-    gameplayBackground.style.display = "block";
-    buttonrow.style.display = "flex";
+	startPage.style.display = "none";
+	titleSection.style.display = "none";
+	gameplayBackground.style.display = "block";
+	buttonrow.style.display = "flex";
 
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
 	resultModal.style.display = "none";
-    backgroundText.innerHTML = ""
+	backgroundText.innerHTML = "";
 
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
@@ -376,7 +376,7 @@ function initMap() {
 			roundTimer = setInterval(updateTimer, 1000);
 			document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`;
 			document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`;
-            loadingScreen.style.display = "none";
+			loadingScreen.style.display = "none";
 		} else {
 			initMap();
 		}
@@ -451,9 +451,9 @@ function displayResults(distance, points) {
 		...panoramaOptions,
 	});
 
-    if (mobileUser) {
-        document.getElementById("gamemap").style.height = "100dvh";
-    }
+	if (mobileUser) {
+		document.getElementById("gamemap").style.height = "100dvh";
+	}
 
 	guessedLocationMarker.setMap(resultMap);
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
@@ -462,26 +462,26 @@ function displayResults(distance, points) {
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
-    document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>` 
-    document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
+	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
+	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
-        document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Same District: +100 points</p>`;
+		document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Same District: +100 points</p>`;
 	} else if (selectedGameMode == "Every District") {
 		for (i = 0; i < foundDistrict.neighbors.length; i++) {
 			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
 			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
 				points += 50;
-                document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
+				document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
 			}
 		}
 	}
-    
-    if (hintsAreEnabled) {
-        points -= 200;
-        document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
-    }
+
+	if (hintsAreEnabled) {
+		points -= 200;
+		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
+	}
 
 	if (points > 1000) {
 		points = 1000;
@@ -492,16 +492,16 @@ function displayResults(distance, points) {
 	saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").textContent = `Distance: ${distance.toFixed(0)} meters`;
-    
-    document.getElementById("points-info").textContent = `Points Earned: ${points}`;
+
+	document.getElementById("points-info").textContent = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").textContent = `Total Points: ${totalPoints}`;
 	document.getElementById("totalPoints2").textContent = `Total Points: ${totalPoints}`;
 
-    document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
+	document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
 
-    for (let i = 0; i <= roundCount; i++) {
-        document.getElementById("resultModalRight").innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>` 
-    }
+	for (let i = 0; i <= roundCount; i++) {
+		document.getElementById("resultModalRight").innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>`;
+	}
 
 	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
@@ -527,28 +527,29 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
+
 		for (let i = 0; i < 5; i++) {
-            const guessedMarker = new google.maps.Marker({
-                position: guessedCoordinates[i],
-                map: resultMap,
-                title: `Guessed Location ${i + 1}`,
-                icon: `static/images/redpin${i + 1}.png`,
-            });
-        
-            const actualMarker = new google.maps.Marker({
-                position: actualCoordinates[i],
-                map: resultMap,
-                title: `Actual Location ${i + 1}`,
-                icon: `static/images/greenpin${i + 1}.png`,
-            });            
-        
-            const line = new google.maps.Polyline({
-                path: [guessedCoordinates[i], actualCoordinates[i]],
-                geodesic: true,
-                strokeColor: colors[i],
-                strokeOpacity: 1.0,
-                strokeWeight: 4,
-            });
+			const guessedMarker = new google.maps.Marker({
+				position: guessedCoordinates[i],
+				map: resultMap,
+				title: `Guessed Location ${i + 1}`,
+				icon: `static/images/redpin${i + 1}.png`,
+			});
+
+			const actualMarker = new google.maps.Marker({
+				position: actualCoordinates[i],
+				map: resultMap,
+				title: `Actual Location ${i + 1}`,
+				icon: `static/images/greenpin${i + 1}.png`,
+			});
+
+			const line = new google.maps.Polyline({
+				path: [guessedCoordinates[i], actualCoordinates[i]],
+				geodesic: true,
+				strokeColor: colors[i],
+				strokeOpacity: 1.0,
+				strokeWeight: 4,
+			});
 
             guessedMarker.addListener('click', function () {
                 resultMap.setCenter(actualMarker.getPosition());
@@ -561,10 +562,23 @@ function displayResults(distance, points) {
             line.addListener('click', function () {
                 resultMap.setCenter(actualMarker.getPosition());
             });
-        
-            line.setMap(resultMap);
-        }
-        
+
+			line.setMap(resultMap);
+
+			const button = document.createElement("button");
+			button.textContent = `Toggle Guessed Location ${i + 1}`;
+			button.id = `toggleGuessed${i + 1}`;
+
+			document.getElementById("resultModalLeft").appendChild(button);
+
+			button.addEventListener("click", () => {
+				if (guessedMarker.getMap()) {
+					guessedMarker.setMap(null);
+				} else {
+					guessedMarker.setMap(resultMap);
+				}
+			});
+		}
 	}
 	roundCount++;
 }
@@ -604,23 +618,23 @@ function playAgain() {
 
 function returnToMainMenu() {
 	roundCount = 0;
-    gameOngoing = false;
+	gameOngoing = false;
 
-	startPage.style.display = "flex";    
-    titleSection.style.display = "flex";
-    gameplayBackground.style.display = "none";
+	startPage.style.display = "flex";
+	titleSection.style.display = "flex";
+	gameplayBackground.style.display = "none";
 
 	refreshMap();
 	pauseTimer();
-    calculateDistrictData();
-    logTopHighScores();
+	calculateDistrictData();
+	logTopHighScores();
 }
 
 function startGame() {
-    if (initiallyGreenDistricts.length == 0) {
-        alert("You can't start the game with no districts selected!");
-        return;
-    }
+	if (initiallyGreenDistricts.length == 0) {
+		alert("You can't start the game with no districts selected!");
+		return;
+	}
 
 	if (roundCount == 0) {
 		if (initiallyGreenDistricts.length == 30) {
@@ -658,7 +672,7 @@ function updateTimer() {
 		} else {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
-            backgroundText.innerHTML = "Your time is up, but you can still put your guess in"
+			backgroundText.innerHTML = "Your time is up, but you can still put your guess in";
 		}
 	}
 }
@@ -673,43 +687,43 @@ function resumeTimer() {
 }
 
 function competitiveCheck() {
-    competitiveChecks.innerHTML = `<h1> Competitive Checks </h1>`
-    if (document.getElementById("secondButton").innerHTML == "Log in with Google") {
-        competitiveChecks.innerHTML += `<p> You need to be logged in to save your statistics! </p>`
-        return;
-    }
+	competitiveChecks.innerHTML = `<h1> Competitive Checks </h1>`;
+	if (document.getElementById("secondButton").innerHTML == "Log in with Google") {
+		competitiveChecks.innerHTML += `<p> You need to be logged in to save your statistics! </p>`;
+		return;
+	}
 
-    competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`
-        
-    if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
-        competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`
-        return;
-    }
-    
-    competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`
-    competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`
-    competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`
-    competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`
+	competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`;
+
+	if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
+		competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`;
+		return;
+	}
+
+	competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`;
+	competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`;
+	competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`;
+	competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`;
 }
 
 function openmodal(modalname) {
-    document.getElementById(`${modalname}`).style.display = "flex";
+	document.getElementById(`${modalname}`).style.display = "flex";
 }
 
 function minimapCloseButton() {
-    document.getElementById("overlay-container").style.zIndex = "-50";
-    document.getElementById("minimapOpenButton").style.display = "flex";
-    if (mobileUser) {
-        document.getElementById("gamemap").style.height = "100dvh";
-    }
+	document.getElementById("overlay-container").style.zIndex = "-50";
+	document.getElementById("minimapOpenButton").style.display = "flex";
+	if (mobileUser) {
+		document.getElementById("gamemap").style.height = "100dvh";
+	}
 }
 
 function minimapOpenButton() {
-    document.getElementById("overlay-container").style.zIndex = "2";
-    document.getElementById("minimapOpenButton").style.display = "none";
-    if (mobileUser) {
-        document.getElementById("gamemap").style.height = "65dvh";
-    }
+	document.getElementById("overlay-container").style.zIndex = "2";
+	document.getElementById("minimapOpenButton").style.display = "none";
+	if (mobileUser) {
+		document.getElementById("gamemap").style.height = "65dvh";
+	}
 }
 
 // Adding Event Listeners:
@@ -730,9 +744,9 @@ expandButton.addEventListener("click", () => {
 	}
 });
 
-Array.from(document.getElementsByClassName("modalCloseButton")).forEach(button => {
+Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
 	button.addEventListener("click", () => {
-		Array.from(document.getElementsByClassName("menumodal")).forEach(modal => {
+		Array.from(document.getElementsByClassName("menumodal")).forEach((modal) => {
 			modal.style.display = "none";
 		});
 	});
