@@ -540,15 +540,7 @@ function displayResults(distance, points) {
                 map: resultMap,
                 title: `Actual Location ${i + 1}`,
                 icon: `static/images/greenpin${i + 1}.png`,
-            });
-        
-            guessedMarker.addListener('click', function () {
-                resultMap.setCenter(guessedMarker.getPosition());
-            });
-        
-            actualMarker.addListener('click', function () {
-                resultMap.setCenter(actualMarker.getPosition());
-            });
+            });            
         
             const line = new google.maps.Polyline({
                 path: [guessedCoordinates[i], actualCoordinates[i]],
@@ -556,6 +548,18 @@ function displayResults(distance, points) {
                 strokeColor: colors[i],
                 strokeOpacity: 1.0,
                 strokeWeight: 4,
+            });
+
+            guessedMarker.addListener('click', function () {
+                resultMap.setCenter(actualMarker.getPosition());
+            });
+        
+            actualMarker.addListener('click', function () {
+                resultMap.setCenter(actualMarker.getPosition());
+            });
+
+            line.addListener('click', function () {
+                resultMap.setCenter(actualMarker.getPosition());
             });
         
             line.setMap(resultMap);
