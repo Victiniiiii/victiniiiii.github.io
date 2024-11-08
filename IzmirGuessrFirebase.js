@@ -75,10 +75,10 @@ async function changeNickname() {
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
 
-        if (input.length > 15) {
-            alert("Please choose a shorter nickname. ( The limit is 15 because i said so )")
-            return;
-        }
+		if (input.length > 15) {
+			alert("Please choose a shorter nickname. ( The limit is 15 because i said so )");
+			return;
+		}
 
 		if (badwords.some((badword) => input.toLowerCase().includes(badword))) {
 			alert("Please do not use bad words 😭");
@@ -124,7 +124,7 @@ onAuthStateChanged(auth, async (user) => {
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
 			competitiveCheck();
-            logTopHighScores();
+			logTopHighScores();
 		} catch (error) {
 			console.error("Error fetching nickname from Firestore:", error);
 		}
@@ -132,7 +132,7 @@ onAuthStateChanged(auth, async (user) => {
 		window.document.getElementById("usernameHere").innerText = `Anonymous`;
 		window.document.getElementById("secondButton").innerText = `Log in with Google`;
 		competitiveCheck();
-        logTopHighScores();
+		logTopHighScores();
 	}
 });
 
@@ -227,25 +227,25 @@ async function calculateDistrictData() {
 }
 
 async function logStatistics() {
-    if (auth.currentUser) {
-        const userId = auth.currentUser.uid;
-        const gameDataRef = collection(db, `users/${userId}/GameData`);
-        const snapshot = await getDocs(gameDataRef);
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const snapshot = await getDocs(gameDataRef);
 
-        const statisticsMenuText = document.getElementById("statisticsMenuText");
-        statisticsMenuText.innerHTML = "";
+		const statisticsMenuText = document.getElementById("statisticsMenuText");
+		statisticsMenuText.innerHTML = "";
 
-        if (snapshot.empty) {
-            statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
-        } else {
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
-            });
-        }
-    } else {
-        document.getElementById("statisticsMenuText").innerHTML = `<p>You need to be logged in to do this!</p>`;
-    }
+		if (snapshot.empty) {
+			statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
+		} else {
+			snapshot.forEach((doc) => {
+				const data = doc.data();
+				statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
+			});
+		}
+	} else {
+		document.getElementById("statisticsMenuText").innerHTML = `<p>You need to be logged in to do this!</p>`;
+	}
 }
 
 async function logTopHighScores() {
@@ -275,14 +275,12 @@ async function logTopHighScores() {
 		});
 	}
 
-    document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`
+	document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`;
 
-	const topHighScores = Array.from(allHighScores.values())
-		.sort((a, b) => b.highScore - a.highScore)
-		.slice(0, 3);
+	const topHighScores = Array.from(allHighScores.values()).sort((a, b) => b.highScore - a.highScore).slice(0, 3);
 
 	topHighScores.forEach((score, index) => {
-        document.getElementById("miniLeaderboard").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`
+		document.getElementById("miniLeaderboard").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`;
 	});
 }
 
