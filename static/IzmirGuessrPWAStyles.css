@@ -452,7 +452,6 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		display: block;
 		border: 1px solid rgb(0, 0, 240);
-        transition: all 0.25s ease-in-out;
 	}
 
 	#expandButton.expanded {
@@ -460,7 +459,6 @@ div.gm-bundled-control:nth-child(2) {
 		transition: 1.5s;
 		margin-top: calc(auto);
 		z-index: 9995;
-        transition: all 0.25s ease-in-out;
 	}
 
 	.modalTitleRow {
