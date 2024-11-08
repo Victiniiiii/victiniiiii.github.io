@@ -680,7 +680,7 @@ function openmodal(modalname) {
 }
 
 function minimapCloseButton() {
-    document.getElementById("overlay-container").style.display = "none";
+    document.getElementById("overlay-container").style.zIndex = "-50";
     document.getElementById("minimapOpenButton").style.display = "flex";
     if (mobileUser) {
         document.getElementById("gamemap").style.height = "100dvh";
@@ -688,7 +688,7 @@ function minimapCloseButton() {
 }
 
 function minimapOpenButton() {
-    document.getElementById("overlay-container").style.display = "flex";
+    document.getElementById("overlay-container").style.zIndex = "2";
     document.getElementById("minimapOpenButton").style.display = "none";
     if (mobileUser) {
         document.getElementById("gamemap").style.height = "65dvh";
