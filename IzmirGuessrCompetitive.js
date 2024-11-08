@@ -451,6 +451,10 @@ function displayResults(distance, points) {
 		...panoramaOptions,
 	});
 
+    if (mobileUser) {
+        document.getElementById("gamemap").style.height = "100dvh";
+    }
+
 	guessedLocationMarker.setMap(resultMap);
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
