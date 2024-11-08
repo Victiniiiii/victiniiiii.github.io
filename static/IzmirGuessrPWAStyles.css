@@ -171,7 +171,6 @@ div.gm-bundled-control:nth-child(2) {
         font-size: min(1dvw, 2dvh);
 		background-color: #4caf50;
 		color: white;
-		border: none;		
         cursor: pointer;
 	}
 
