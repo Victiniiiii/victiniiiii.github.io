@@ -528,6 +528,14 @@ function displayResults(distance, points) {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
 		guessedLocationMarker.setMap(null);
 
+        const hideAllButton = document.createElement("button");
+		hideAllButton.textContent = "Hide All Markers";
+        document.getElementById("resultModalLeft").appendChild(hideAllButton);
+
+        const showAllButton = document.createElement("button");
+		showAllButton.textContent = "Show All Markers";
+		document.getElementById("resultModalLeft").appendChild(showAllButton);
+
 		for (let i = 0; i < 5; i++) {
 			const guessedMarker = new google.maps.Marker({
 				position: guessedCoordinates[i],
@@ -573,31 +581,27 @@ function displayResults(distance, points) {
 			button.addEventListener("click", () => {
 				if (guessedMarker.getMap()) {
 					guessedMarker.setMap(null);
+                    actualMarker.setMap(null);
+                    line.setMap(null);
 				} else {
 					guessedMarker.setMap(resultMap);
+                    actualMarker.setMap(resultMap);
+                    line.setMap(resultMap);
 				}
 			});
+
+            hideAllButton.addEventListener('click', () => {
+                guessedMarker.setMap(null);
+                actualMarker.setMap(null);
+                line.setMap(null);
+            });
+        
+            showAllButton.addEventListener('click', () => {
+                guessedMarker.setMap(resultMap);
+                actualMarker.setMap(resultMap);
+                line.setMap(resultMap);
+            });
 		}
-
-		const hideAllButton = document.createElement("button");
-		hideAllButton.textContent = "Hide All Markers";
-		document.getElementById("resultModalLeft").appendChild(hideAllButton);
-		hideAllButton.addEventListener("click", () => {
-			for (let i = 0; i < 5; i++) {
-				new google.maps.Marker({ position: guessedCoordinates[i], map: null });
-				new google.maps.Marker({ position: actualCoordinates[i], map: null });
-			}
-		});
-
-		const showAllButton = document.createElement("button");
-		showAllButton.textContent = "Show All Markers";
-		document.getElementById("resultModalLeft").appendChild(showAllButton);
-		showAllButton.addEventListener("click", () => {
-			for (let i = 0; i < 5; i++) {
-				new google.maps.Marker({ position: guessedCoordinates[i], map: resultMap, icon: `static/images/redpin${i + 1}.png` });
-				new google.maps.Marker({ position: actualCoordinates[i], map: resultMap, icon: `static/images/greenpin${i + 1}.png` });
-			}
-		});
 	}
 	roundCount++;
 }
