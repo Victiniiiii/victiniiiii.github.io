@@ -12,8 +12,6 @@ let selectedGameMode;
 let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
-let gameOngoing = false;
-let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
 
 // Firebase Settings:
 
@@ -42,6 +40,8 @@ let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
 
+let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
+let gameOngoing = false;
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
@@ -52,6 +52,7 @@ let isTimerPaused = false;
 let finalgoruntulendimi = false;
 const initiallyGreenDistricts = [];
 const districtLayers = [];
+let mobileUser;
 
 // Leaflet Map:
 
@@ -65,11 +66,12 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	maxZoomValue = 9;
 	minZoomValue = 7;
 	initialZoom = 8;
-    minimapCloseButton();
+    mobileUser = true;    
 } else {
 	maxZoomValue = 10;
 	minZoomValue = 8;
 	initialZoom = 9;
+    mobileUser = false;
 }
 
 const map2 = L.map("map2", {
@@ -259,6 +261,10 @@ function initMap() {
     gameOngoing = true;
     loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
+
+    if (mobileUser) {
+        minimapCloseButton();
+    }
 
 	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 	shuffleArray(formattedNames);
@@ -676,11 +682,17 @@ function openmodal(modalname) {
 function minimapCloseButton() {
     document.getElementById("overlay-container").style.display = "none";
     document.getElementById("minimapOpenButton").style.display = "flex";
+    if (mobileUser) {
+        document.getElementById("gamemap").style.height = "100dvh";
+    }
 }
 
 function minimapOpenButton() {
     document.getElementById("overlay-container").style.display = "flex";
     document.getElementById("minimapOpenButton").style.display = "none";
+    if (mobileUser) {
+        document.getElementById("gamemap").style.height = "65dvh";
+    }
 }
 
 // Adding Event Listeners:
