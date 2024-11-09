@@ -1365,6 +1365,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalLeft {
 		order: 2;
+        height: 16dvw;
 	}
 
 	#resultModalTop {
