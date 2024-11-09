@@ -583,7 +583,6 @@ function displayResults(distance, points) {
 
 			const button = document.createElement("button");
 			button.innerHTML = `Toggle Guessed Location ${i + 1}`;
-			button.id = `toggleGuessed${i + 1}`;
 			document.getElementById("resultModalLeft").appendChild(button);
 
 			button.addEventListener("click", () => {
@@ -608,6 +607,14 @@ function displayResults(distance, points) {
                 guessedMarker.setMap(resultMap);
                 actualMarker.setMap(resultMap);
                 line.setMap(resultMap);
+            });
+
+            const copycoords = document.createElement("button");
+			copycoords.innerHTML = `Copy Coordinates Location ${i + 1}`;
+			document.getElementById("resultModalLeft").appendChild(copycoords);
+
+            copycoords.addEventListener('click', () => {
+                navigator.clipboard.writeText(actualCoordinates[i+1]);
             });
 		}
 	}

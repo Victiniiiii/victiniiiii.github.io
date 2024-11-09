@@ -1356,6 +1356,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 4dvw;
         border: 1px solid white;
         transition: all 0.25s ease-in-out;
+        overflow-y: scroll;
 	}
 
 	#resultModalRight {
