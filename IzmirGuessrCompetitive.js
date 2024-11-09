@@ -614,7 +614,7 @@ function displayResults(distance, points) {
 			document.getElementById("resultModalLeft").appendChild(copycoords);
 
             copycoords.addEventListener('click', () => {
-                navigator.clipboard.writeText(`${actualCoordinates[i+1].lat}, ${actualCoordinates[i+1].lng}`);
+                navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
             });
 		}
 	}
