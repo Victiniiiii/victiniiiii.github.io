@@ -177,8 +177,43 @@
 				<div class="modalTitle">Leaderboard</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-			<p>Disclaimer: You need at least 100 points to qualify for the leaderboard.</p>
-			<p>This leaderboard will show top 10 for each district, but it's not ready yet.</p>
+			<p>Disclaimer: You need at least 2500 points to qualify for the leaderboard.</p>
+            <select name="izmirDistricts" id="izmirDistrictSelect" onchange="this.size=1" onfocus="this.size=5" onblur="this.size=1">
+                <option value="" disabled selected>Select a district...</option>
+                <option value="Every District">Every District</option>
+                <option value="Aliağa">Aliağa</option>
+                <option value="Balçova">Balçova</option>
+                <option value="Bayındır">Bayındır</option>
+                <option value="Bayraklı">Bayraklı</option>
+                <option value="Bergama">Bergama</option>
+                <option value="Beydağ">Beydağ</option>
+                <option value="Bornova">Bornova</option>
+                <option value="Buca">Buca</option>
+                <option value="Çeşme">Çeşme</option>
+                <option value="Çiğli">Çiğli</option>
+                <option value="Dikili">Dikili</option>
+                <option value="Foça">Foça</option>
+                <option value="Gaziemir">Gaziemir</option>
+                <option value="Güzelbahçe">Güzelbahçe</option>
+                <option value="Karabağlar">Karabağlar</option>
+                <option value="Karaburun">Karaburun</option>
+                <option value="Karşıyaka">Karşıyaka</option>
+                <option value="Kemalpaşa">Kemalpaşa</option>
+                <option value="Kınık">Kınık</option>
+                <option value="Kiraz">Kiraz</option>
+                <option value="Konak">Konak</option>
+                <option value="Menderes">Menderes</option>
+                <option value="Menemen">Menemen</option>
+                <option value="Narlıdere">Narlıdere</option>
+                <option value="Ödemiş">Ödemiş</option>
+                <option value="Seferihisar">Seferihisar</option>
+                <option value="Selçuk">Selçuk</option>
+                <option value="Tire">Tire</option>
+                <option value="Torbalı">Torbalı</option>
+                <option value="Urla">Urla</option>
+            </select>            
+            <button onclick="leaderboardModal()">Show</button>
+            <div id="modalHighScores"></div>
 		</div>
 		<div class="menumodal" id="changeUsernameModal">
 			<div class="modalTitleRow">

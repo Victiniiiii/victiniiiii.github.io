@@ -267,7 +267,6 @@ async function logTopHighScores() {
 				if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
 					allHighScores.set(userId, {
 						username: username,
-						district: districtDoc.id,
 						highScore: highScore,
 					});
 				}
@@ -277,13 +276,62 @@ async function logTopHighScores() {
 
 	document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`;
 
-	const topHighScores = Array.from(allHighScores.values()).sort((a, b) => b.highScore - a.highScore).slice(0, 3);
+	const topHighScores = Array.from(allHighScores.values())
+		.sort((a, b) => b.highScore - a.highScore)
+		.slice(0, 3);
 
 	topHighScores.forEach((score, index) => {
 		document.getElementById("miniLeaderboard").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`;
 	});
 }
 
+async function leaderboardModal() {
+	const usersRef = collection(db, "users");
+	const usersSnapshot = await getDocs(usersRef);
+	const allHighScores = new Map();
+	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
+	console.log(chosenDistrict);
+
+	for (const userDoc of usersSnapshot.docs) {
+		const userId = userDoc.id;
+		const username = userDoc.data().Nickname;
+		console.log(username);
+
+		const gameDataRef = doc(db, `users/${userId}/GameData/${chosenDistrict}`);
+		const gameDataSnapshot = await getDoc(gameDataRef);
+
+		if (gameDataSnapshot.exists()) {
+			console.log("username");
+			const highScore = gameDataSnapshot.data().highScore;
+			console.log(highScore);
+
+			if (highScore >= 2500) {
+				if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
+					allHighScores.set(userId, {
+						username: username,
+						highScore: highScore,
+					});
+				}
+			}
+		}
+	}
+
+	document.getElementById("modalHighScores").innerHTML = `<h1>Leaderboard</h1>`;
+
+	const topHighScores = Array.from(allHighScores.values())
+		.sort((a, b) => b.highScore - a.highScore)
+		.slice(0, 10);
+
+	if (topHighScores.length > 0) {
+		topHighScores.forEach((score, index) => {
+			document.getElementById("modalHighScores").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`;
+		});
+	} else {
+		document.getElementById("modalHighScores").innerHTML = "Nobody has played on this district yet!";
+	}
+}
+
+window.leaderboardModal = leaderboardModal;
 window.logTopHighScores = logTopHighScores;
 window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
