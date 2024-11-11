@@ -1,73 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
-
-<url>
-  <loc>https://victiniiiii.github.io/</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/taratormusic</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/IzmirGuessr</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/ortalamator</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/npcbuybazaarsellflips</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/bazaarbuynpcsellflips</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/effectivehpcalculator</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/fortunevspristinecalculator</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/inferno</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/compost</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/flaskforge.html</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/bigoil</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://victiniiiii.github.io/contactme</loc>
-  <lastmod>2024-11-10T12:35:43+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://victiniiiii.github.io/</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/taratormusic</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/IzmirGuessr</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/ortalamator</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/npcbuybazaarsellflips</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/bazaarbuynpcsellflips</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/effectivehpcalculator</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/fortunevspristinecalculator</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/inferno</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/compost</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/flaskforge</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/bigoil</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://victiniiiii.github.io/contactme</loc>
+        <lastmod>2024-11-11</lastmod>
+        <priority>0.80</priority>
+    </url>
 </urlset>
