@@ -285,20 +285,16 @@ async function leaderboardModal() {
 	const usersSnapshot = await getDocs(usersRef);
 	const allHighScores = new Map();
 	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
-	console.log(chosenDistrict);
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
 		const username = userDoc.data().Nickname;
-		console.log(username);
 
 		const gameDataRef = doc(db, `users/${userId}/GameData/${chosenDistrict}`);
 		const gameDataSnapshot = await getDoc(gameDataRef);
 
 		if (gameDataSnapshot.exists()) {
-			console.log("username");
 			const highScore = gameDataSnapshot.data().highScore;
-			console.log(highScore);
 
 			if (highScore >= 2500) {
 				if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
