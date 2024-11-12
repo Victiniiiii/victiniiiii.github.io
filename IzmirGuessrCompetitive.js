@@ -711,6 +711,7 @@ function updateTimer() {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
 			backgroundText.innerHTML = "Your time is up, but you can still put your guess in";
+            minimapOpenButton();
 		}
 	}
 }
