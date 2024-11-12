@@ -207,7 +207,7 @@ async function calculateDistrictData() {
 			const data = doc.data();
 			const districtName = doc.id;
 
-			if (districtName !== "Every District") {
+			if (districtName !== "Every District" && districtName !== "Custom") {
 				totalRoundCount += data.roundCount || 0;
 				totalScore += data.totalScore || 0;
 			}
