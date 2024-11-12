@@ -137,15 +137,10 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 async function saveData(district, score) {
-	if (auth.currentUser && selectedGameMode != "Custom") {
+	if (auth.currentUser) {
 		const userId = auth.currentUser.uid;
 		const ref = doc(db, `users/${userId}/GameData/${district}`);
-		let ref2;
-		if (selectedGameMode == "Every District") {
-			ref2 = doc(db, `users/${userId}/GameData/Every District`);
-		} else {
-			ref2 = doc(db, `users/${userId}/GameData/${district}`);
-		}
+		const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
 
 		try {
 			await runTransaction(db, async (transaction) => {
@@ -168,7 +163,7 @@ async function saveData(district, score) {
 					});
 				}
 
-				if (selectedGameMode == "Every District") {
+				if (ref != ref2) {
 					if (!userGameData2.exists()) {
 						transaction.set(ref2, { totalScore: score, highScore: score, roundCount: 1, playCount: 0 });
 					} else {
