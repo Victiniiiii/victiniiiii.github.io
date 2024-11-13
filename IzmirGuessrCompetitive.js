@@ -258,6 +258,7 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    clearStreetView();
 	gameOngoing = true;
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
@@ -279,7 +280,6 @@ function initMap() {
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-    document.getElementById("gamemap").innerHTML = "";
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
 
@@ -409,7 +409,7 @@ function toggleModal() {
 }
 
 function returnToStart() {
-    document.getElementById("gamemap").innerHTML = "";
+    clearStreetView();
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
 		zoom: 14,
@@ -656,15 +656,15 @@ function playAgain() {
 	startGame();
 }
 
-function returnToMainMenu() {
+function returnToMainMenu() {    
 	roundCount = 0;
 	gameOngoing = false;
 
 	startPage.style.display = "flex";
 	titleSection.style.display = "flex";
 	gameplayBackground.style.display = "none";
-    document.getElementById("gamemap").innerHTML = "";
 
+    clearStreetView();
 	refreshMap();
 	pauseTimer();
 	calculateDistrictData();
@@ -766,6 +766,14 @@ function minimapOpenButton() {
 	if (mobileUser) {
 		document.getElementById("gamemap").style.height = "65dvh";
 	}
+}
+
+function clearStreetView() {
+    if (gamemap && gamemap.getStreetView()) {
+        gamemap.getStreetView().setVisible(false);
+        gamemap.getStreetView().setMap(null);
+        document.getElementById("gamemap").innerHTML = "";
+    }
 }
 
 // Adding Event Listeners:
