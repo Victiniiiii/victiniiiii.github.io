@@ -240,10 +240,6 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#result-info {
-		margin-top: 2.35dvh;
-	}
-
 	#returntomenu-button,
 	#playagain-button {
 		height: 4.2dvh;
@@ -918,10 +914,6 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#result-info {
-		margin-top: 2.35dvh;
-	}
-
 	#returntomenu-button,
 	#playagain-button {
 		height: 4.9dvh;
@@ -1027,7 +1019,6 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		width: 100%;
 		height: auto;
-		margin-top: 2dvw;
 	}
 
 	#startpagelefthalf {
@@ -1075,11 +1066,13 @@ div.gm-bundled-control:nth-child(2) {
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
         transition: all 0.25s ease-in-out;
+        text-align: center;
 	}
 
 	#izmirilcebox button {
 		padding: 0 0.3vw 0 0.3vw;
 		font-size: 5dvw;
+        
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
         transition: all 0.25s ease-in-out;
 	}
@@ -1104,6 +1097,8 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: column;
         transition: all 0.25s ease-in-out;
+        justify-content: center;
+        padding: 1dvw 1dvw 15dvw 1dvw;
 	}
 
 	#menubuttons {
@@ -1115,6 +1110,7 @@ div.gm-bundled-control:nth-child(2) {
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
         transition: all 0.25s ease-in-out;
+        margin-top: 2dvw;
 	}
 
 	.izmirayarlar {
@@ -1194,11 +1190,11 @@ div.gm-bundled-control:nth-child(2) {
 
 	#menubuttons button {
 		width: 100%;
-		font-size: 5dvw;
+		font-size: 7.5dvw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-		border-radius: 1dvw;
-		margin-top: 1dvw;
+		border-radius: 6dvw;
+		margin-top: 2dvw;
         transition: all 0.25s ease-in-out;
 	}
 
@@ -1252,11 +1248,9 @@ div.gm-bundled-control:nth-child(2) {
 		text-shadow: 2px 2px 2px black;
 		font-size: 3dvw;
 		text-align: center;
-		padding: 0 0 2vw 2vw;
-		line-height: 5dvw;
+		line-height: 7dvw;
 		background: rgb(0, 0, 0, 0.4);
-		border: 1px solid black;
-		margin: 0 0 1vw 1vw;
+		border: 1px solid black;		
         transition: all 0.25s ease-in-out;
 	}
 
@@ -1304,8 +1298,9 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		justify-content: center;
 		background: rgb(0, 0, 0, 0.4);
-		margin-top: 4dvw;
+		margin-top: 2dvw;
         transition: all 0.25s ease-in-out;
+        font-size: 5vw;
 	}
 
 	#gameplayBackground {
