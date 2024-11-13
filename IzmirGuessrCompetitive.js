@@ -280,6 +280,7 @@ function initMap() {
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
     document.getElementById("gamemap").innerHTML = "";
+    clearImageCache();
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
 
@@ -410,6 +411,7 @@ function toggleModal() {
 
 function returnToStart() {
     document.getElementById("gamemap").innerHTML = "";
+    clearImageCache();
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
 		zoom: 14,
@@ -665,6 +667,7 @@ function returnToMainMenu() {
 	gameplayBackground.style.display = "none";
     document.getElementById("gamemap").innerHTML = "";
 
+    clearImageCache();
 	refreshMap();
 	pauseTimer();
 	calculateDistrictData();
@@ -768,14 +771,17 @@ function minimapOpenButton() {
 	}
 }
 
-function clearStreetViewImageCache() {
-    const images = document.querySelectorAll('img[src*="streetviewpixels-pa.googleapis.com"]');
+function clearImageCache() {
+    const domains = ['googleapis.com', 'cartocdn.com', 'ggpht.com'];
+    const images = document.querySelectorAll('img');
+    
     images.forEach((img) => {
-        img.src = '';
-        img.src = img.src;
+        if (domains.some(domain => img.src.includes(domain))) {
+            img.src = '';
+            img.src = img.src;
+        }
     });
 }
-
 
 // Adding Event Listeners:
 
