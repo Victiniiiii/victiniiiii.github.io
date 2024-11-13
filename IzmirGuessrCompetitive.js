@@ -768,6 +768,15 @@ function minimapOpenButton() {
 	}
 }
 
+function clearStreetViewImageCache() {
+    const images = document.querySelectorAll('img[src*="streetviewpixels-pa.googleapis.com"]');
+    images.forEach((img) => {
+        img.src = '';
+        img.src = img.src;
+    });
+}
+
+
 // Adding Event Listeners:
 
 overlayContainer.addEventListener("mouseenter", function () {
