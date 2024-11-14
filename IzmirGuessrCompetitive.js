@@ -788,11 +788,12 @@ function clearImageCache() {
     const images = document.querySelectorAll('img');
     
     images.forEach((img) => {
-        if (domains.some(domain => img.src.includes(domain))) {
-            img.src = null;
-            console.log(domain);
+        const matchedDomain = domains.find(domain => img.src.includes(domain));
+        if (matchedDomain) {
+            img.src = '';
+            console.log(matchedDomain);
         }
-    });
+    });    
 }
 
 // Adding Event Listeners:
