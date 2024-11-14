@@ -788,6 +788,7 @@ function clearImageCache() {
     const images = document.querySelectorAll('img');
 
     images.forEach((img) => {
+        console.log(img.style.width)
         const src = img.src;
         console.log(`Checking image with src: ${src}`);
 
@@ -805,10 +806,6 @@ function clearImageCache() {
         if (matchedDomain) {
             img.src = '';
             console.log(`Cleared image from: ${matchedDomain}`);
-        }
-
-        if (img.style.width == "512px") {
-            console.log("512 px found!!!!! ! ! !  ! ! ")
         }
     });
 }
