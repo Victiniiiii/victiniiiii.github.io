@@ -786,14 +786,21 @@ function minimapOpenButton() {
 function clearImageCache() {
     const domains = ['streetviewpixels-pa.googleapis.com', 'lh3.ggpht.com', 'maps.googleapis.com'];
     const images = document.querySelectorAll('img');
-    
+
     images.forEach((img) => {
-        const matchedDomain = domains.find(domain => img.src.includes(domain));
-        if (matchedDomain) {
-            img.src = '';
-            console.log(matchedDomain);
+        try {
+            const imgUrl = new URL(img.src);
+            const hostname = imgUrl.hostname;
+
+            const matchedDomain = domains.find(domain => hostname.includes(domain));
+            if (matchedDomain) {
+                img.src = '';
+                console.log(`Cleared image from: ${matchedDomain}`);
+            }
+        } catch (e) {
+            console.error(`Error processing image: ${img.src}`, e);
         }
-    });    
+    });
 }
 
 // Adding Event Listeners:
