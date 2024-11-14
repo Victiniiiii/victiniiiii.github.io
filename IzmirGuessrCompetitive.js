@@ -806,6 +806,10 @@ function clearImageCache() {
             img.src = '';
             console.log(`Cleared image from: ${matchedDomain}`);
         }
+
+        if (img.style.width == "512px") {
+            console.log("512 px found!!!!! ! ! !  ! ! ")
+        }
     });
 }
 
