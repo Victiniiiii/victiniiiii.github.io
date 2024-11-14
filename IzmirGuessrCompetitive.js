@@ -784,7 +784,7 @@ function minimapOpenButton() {
 }
 
 function clearImageCache() {
-    const domains = ['streetviewpixels-pa.googleapis.com', 'ggpht.com'];
+    const domains = ['streetviewpixels-pa.googleapis.com', 'lh3.ggpht.com', 'maps.googleapis.com'];
     const images = document.querySelectorAll('img');
     
     images.forEach((img) => {
