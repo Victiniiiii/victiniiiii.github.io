@@ -784,7 +784,7 @@ function minimapOpenButton() {
 }
 
 function clearImageCache() {
-    const domains = ['googleapis.com', 'cartocdn.com', 'ggpht.com'];
+    const domains = ['googleapis.com', 'ggpht.com'];
     const images = document.querySelectorAll('img');
     
     images.forEach((img) => {
