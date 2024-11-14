@@ -808,3 +808,9 @@ Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button)
 		});
 	});
 });
+
+let marker = new Image();
+marker.src = 'static/images/redpin.png';
+marker.onload = function() {
+    marker = null;
+};
