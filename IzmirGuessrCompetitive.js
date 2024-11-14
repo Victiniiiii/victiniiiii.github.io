@@ -786,31 +786,14 @@ function minimapOpenButton() {
 function clearImageCache() {
     const domains = ['streetviewpixels-pa.googleapis.com', 'lh3.ggpht.com', 'maps.googleapis.com'];
     const images = document.querySelectorAll('img');
-
+    
     images.forEach((img) => {
-        console.log(img.style.width)
-        const src = img.src;
-        console.log(`Checking image with src: ${src}`);
-
-        let imgUrl;
-        if (src.startsWith('http://') || src.startsWith('https://')) {
-            imgUrl = new URL(src);
-        } else {
-            imgUrl = new URL(src, window.location.origin);
-        }
-
-        const hostname = imgUrl.hostname;
-        console.log(`Extracted hostname: ${hostname}`);
-
-        const matchedDomain = domains.find(domain => hostname.includes(domain));
+        const matchedDomain = domains.find(domain => img.src.includes(domain));
         if (matchedDomain) {
             img.src = '';
-            console.log(`Cleared image from: ${matchedDomain}`);
         }
-    });
+    });    
 }
-
-
 
 // Adding Event Listeners:
 
