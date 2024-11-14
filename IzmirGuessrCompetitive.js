@@ -285,8 +285,9 @@ function initMap() {
 	backgroundText.innerHTML = "";
 
     if (mobileUser) {
-        document.getElementById("action-button").style.width = "750%";
+        document.getElementById("action-button").style.width = "75%";
         document.getElementById("minimapCloseButton").style.width = "25%";
+        document.getElementById("minimapCloseButton").innerHTML = "Close";
     }
 
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
@@ -727,6 +728,7 @@ function updateTimer() {
             if (mobileUser) {
                 document.getElementById("action-button").style.width = "100%";
                 document.getElementById("minimapCloseButton").style.width = "0%";
+                document.getElementById("minimapCloseButton").innerHTML = "";
             }
 		}
 	}
