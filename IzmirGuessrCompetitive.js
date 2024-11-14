@@ -284,6 +284,11 @@ function initMap() {
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
 
+    if (mobileUser) {
+        document.getElementById("action-button").style.width = "750%";
+        document.getElementById("minimapCloseButton").style.width = "25%";
+    }
+
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
 		zoom: 14,
@@ -718,6 +723,11 @@ function updateTimer() {
 			document.getElementById("gamemap").style.opacity = "0";
 			backgroundText.innerHTML = "Your time is up, but you can still put your guess in";
             minimapOpenButton();
+
+            if (mobileUser) {
+                document.getElementById("action-button").style.width = "100%";
+                document.getElementById("minimapCloseButton").style.width = "0%";
+            }
 		}
 	}
 }
