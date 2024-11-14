@@ -789,8 +789,10 @@ function clearImageCache() {
 
     images.forEach((img) => {
         try {
-            const imgUrl = new URL(img.src);
+            const imgUrl = new URL(img.src, window.location.origin);
             const hostname = imgUrl.hostname;
+            
+            console.log(`Checking image with hostname: ${hostname}`);
 
             const matchedDomain = domains.find(domain => hostname.includes(domain));
             if (matchedDomain) {
@@ -802,6 +804,7 @@ function clearImageCache() {
         }
     });
 }
+
 
 // Adding Event Listeners:
 
