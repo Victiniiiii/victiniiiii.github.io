@@ -789,8 +789,8 @@ function clearImageCache() {
     
     images.forEach((img) => {
         if (domains.some(domain => img.src.includes(domain))) {
-            img.src = '';
-            img.src = img.src;
+            img.src = null;
+            console.log("object");
         }
     });
 }
