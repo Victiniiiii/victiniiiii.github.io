@@ -788,22 +788,27 @@ function clearImageCache() {
     const images = document.querySelectorAll('img');
 
     images.forEach((img) => {
-        try {
-            const imgUrl = new URL(img.src, window.location.origin);
-            const hostname = imgUrl.hostname;
-            
-            console.log(`Checking image with hostname: ${hostname}`);
+        const src = img.src;
+        console.log(`Checking image with src: ${src}`);
 
-            const matchedDomain = domains.find(domain => hostname.includes(domain));
-            if (matchedDomain) {
-                img.src = '';
-                console.log(`Cleared image from: ${matchedDomain}`);
-            }
-        } catch (e) {
-            console.error(`Error processing image: ${img.src}`, e);
+        let imgUrl;
+        if (src.startsWith('http://') || src.startsWith('https://')) {
+            imgUrl = new URL(src);
+        } else {
+            imgUrl = new URL(src, window.location.origin);
+        }
+
+        const hostname = imgUrl.hostname;
+        console.log(`Extracted hostname: ${hostname}`);
+
+        const matchedDomain = domains.find(domain => hostname.includes(domain));
+        if (matchedDomain) {
+            img.src = '';
+            console.log(`Cleared image from: ${matchedDomain}`);
         }
     });
 }
+
 
 
 // Adding Event Listeners:
