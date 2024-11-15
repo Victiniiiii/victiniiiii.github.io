@@ -6,6 +6,16 @@
 		<meta name="description" content="IzmirGuessr is a game where you try to find where you are based on a random location in Google Maps." />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Victiniiiii" />
+		<meta property="og:title" content="IzmirGuessr Competitive" />
+		<meta property="og:description" content="IzmirGuessr is a game where you explore Izmir and break high scores!" />
+		<meta property="og:image" content="https://victiniiiii.github.io/static/imageswebp/izmirguessrlogo.webp" />
+		<meta property="og:url" content="https://victiniiiii.github.io/IzmirGuessrCompetitive" />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="IzmirGuessr Competitive" />
+		<meta name="twitter:description" content="IzmirGuessr is a game where you explore Izmir and break high scores!" />
+		<meta name="twitter:image" content="https://victiniiiii.github.io/static/imageswebp/izmirguessrlogo.webp" />
+		<meta name="twitter:url" content="https://example.com/my-web-page" />
 		<title>IzmirGuessr Competitive</title>
 		<link rel="icon" href="static/images/vic32.png" type="image/png" />
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
@@ -105,22 +115,22 @@
 
 		<div id="gameplayBackground">
 			<div id="backgroundText"></div>
-            <div id="minimapOpenButton" onclick="minimapOpenButton()">
-                <svg xmlns="http://www.w3.org/2000/svg" x-bind:width="size" x-bind:height="size" viewBox="0 0 24 24" fill="none" width="30" height="30" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" x-bind:stroke-width="stroke" stroke="currentColor">
-                    <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"></path>
-                    <path d="M9 4v13"></path>
-                    <path d="M15 7v5.5"></path>
-                    <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"></path>
-                    <path d="M19 18v.01"></path>
-                </svg>
-            </div>
+			<div id="minimapOpenButton" onclick="minimapOpenButton()">
+				<svg xmlns="http://www.w3.org/2000/svg" x-bind:width="size" x-bind:height="size" viewBox="0 0 24 24" fill="none" width="30" height="30" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" x-bind:stroke-width="stroke" stroke="currentColor">
+					<path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5"></path>
+					<path d="M9 4v13"></path>
+					<path d="M15 7v5.5"></path>
+					<path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879z"></path>
+					<path d="M19 18v.01"></path>
+				</svg>
+			</div>
 			<div id="gamemap"></div>
 			<div id="overlay-container">
 				<div id="mini-map"></div>
-                <div id="minimapButtons">
-                    <div id="action-button">Confirm & Calculate</div>
-                    <div id="minimapCloseButton" onclick="minimapCloseButton()">Close</div>
-                </div>				
+				<div id="minimapButtons">
+					<div id="action-button">Confirm & Calculate</div>
+					<div id="minimapCloseButton" onclick="minimapCloseButton()">Close</div>
+				</div>
 			</div>
 			<div id="result-modal">
 				<div id="resultModalTop">
@@ -178,43 +188,43 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<p>Disclaimer: You need at least 2500 points to qualify for the leaderboard.</p>
-            <select name="izmirDistricts" id="izmirDistrictSelect" onchange="this.size=1" onfocus="this.size=5" onblur="this.size=1">
-                <option value="" disabled selected>Select a district...</option>
-                <option value="Every District">Every District</option>
-                <option value="Custom">Custom</option>
-                <option value="Aliağa">Aliağa</option>
-                <option value="Balçova">Balçova</option>
-                <option value="Bayındır">Bayındır</option>
-                <option value="Bayraklı">Bayraklı</option>
-                <option value="Bergama">Bergama</option>
-                <option value="Beydağ">Beydağ</option>
-                <option value="Bornova">Bornova</option>
-                <option value="Buca">Buca</option>
-                <option value="Çeşme">Çeşme</option>
-                <option value="Çiğli">Çiğli</option>
-                <option value="Dikili">Dikili</option>
-                <option value="Foça">Foça</option>
-                <option value="Gaziemir">Gaziemir</option>
-                <option value="Güzelbahçe">Güzelbahçe</option>
-                <option value="Karabağlar">Karabağlar</option>
-                <option value="Karaburun">Karaburun</option>
-                <option value="Karşıyaka">Karşıyaka</option>
-                <option value="Kemalpaşa">Kemalpaşa</option>
-                <option value="Kınık">Kınık</option>
-                <option value="Kiraz">Kiraz</option>
-                <option value="Konak">Konak</option>
-                <option value="Menderes">Menderes</option>
-                <option value="Menemen">Menemen</option>
-                <option value="Narlıdere">Narlıdere</option>
-                <option value="Ödemiş">Ödemiş</option>
-                <option value="Seferihisar">Seferihisar</option>
-                <option value="Selçuk">Selçuk</option>
-                <option value="Tire">Tire</option>
-                <option value="Torbalı">Torbalı</option>
-                <option value="Urla">Urla</option>
-            </select>            
-            <button onclick="leaderboardModal()">Show</button>
-            <div id="modalHighScores"></div>
+			<select name="izmirDistricts" id="izmirDistrictSelect" onchange="this.size=1" onfocus="this.size=5" onblur="this.size=1">
+				<option value="" disabled selected>Select a district...</option>
+				<option value="Every District">Every District</option>
+				<option value="Custom">Custom</option>
+				<option value="Aliağa">Aliağa</option>
+				<option value="Balçova">Balçova</option>
+				<option value="Bayındır">Bayındır</option>
+				<option value="Bayraklı">Bayraklı</option>
+				<option value="Bergama">Bergama</option>
+				<option value="Beydağ">Beydağ</option>
+				<option value="Bornova">Bornova</option>
+				<option value="Buca">Buca</option>
+				<option value="Çeşme">Çeşme</option>
+				<option value="Çiğli">Çiğli</option>
+				<option value="Dikili">Dikili</option>
+				<option value="Foça">Foça</option>
+				<option value="Gaziemir">Gaziemir</option>
+				<option value="Güzelbahçe">Güzelbahçe</option>
+				<option value="Karabağlar">Karabağlar</option>
+				<option value="Karaburun">Karaburun</option>
+				<option value="Karşıyaka">Karşıyaka</option>
+				<option value="Kemalpaşa">Kemalpaşa</option>
+				<option value="Kınık">Kınık</option>
+				<option value="Kiraz">Kiraz</option>
+				<option value="Konak">Konak</option>
+				<option value="Menderes">Menderes</option>
+				<option value="Menemen">Menemen</option>
+				<option value="Narlıdere">Narlıdere</option>
+				<option value="Ödemiş">Ödemiş</option>
+				<option value="Seferihisar">Seferihisar</option>
+				<option value="Selçuk">Selçuk</option>
+				<option value="Tire">Tire</option>
+				<option value="Torbalı">Torbalı</option>
+				<option value="Urla">Urla</option>
+			</select>
+			<button onclick="leaderboardModal()">Show</button>
+			<div id="modalHighScores"></div>
 		</div>
 		<div class="menumodal" id="changeUsernameModal">
 			<div class="modalTitleRow">
