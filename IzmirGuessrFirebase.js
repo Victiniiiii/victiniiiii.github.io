@@ -230,8 +230,6 @@ async function logStatistics() {
 		const statisticsMenuText = document.getElementById("statisticsMenuText");
 		statisticsMenuText.innerHTML = "";
 
-		console.log(snapshot);
-
 		if (snapshot.empty) {
 			statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
 		} else {
