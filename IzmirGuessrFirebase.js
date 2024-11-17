@@ -230,13 +230,20 @@ async function logStatistics() {
 		const statisticsMenuText = document.getElementById("statisticsMenuText");
 		statisticsMenuText.innerHTML = "";
 
-        console.log(snapshot);
+		console.log(snapshot);
 
 		if (snapshot.empty) {
 			statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
 		} else {
+			let documents = [];
 			snapshot.forEach((doc) => {
-				const data = doc.data();
+				documents.push({ id: doc.id, data: doc.data() });
+			});
+
+			documents.sort((a, b) => a.id.localeCompare(b.id, "tr"));
+
+			documents.forEach((doc) => {
+				const data = doc.data;
 				statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
 			});
 		}
