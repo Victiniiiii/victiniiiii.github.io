@@ -61,6 +61,21 @@ div.gm-bundled-control:nth-child(2) {
     background-color: aliceblue;
 }
 
+.modalContent {
+    display: flex;
+    flex-direction: row;
+}
+
+.modalLeft {
+    width: 20%;
+    padding: 2vw;
+}
+
+.modalRight {
+    width: 80%;
+    padding: 2vw;
+}
+
 @media (width > 767px) {
 	/* Big Screens */
 	body {
