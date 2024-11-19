@@ -67,13 +67,17 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 .modalLeft {
-    width: 20%;
-    padding: 2vw;
+    width: 80%;
+    padding: 2dvw;
 }
 
 .modalRight {
-    width: 80%;
-    padding: 2vw;
+    width: 20%;
+    padding: 2dvw;
+}
+
+.modalLeft, .modalRight {
+    height: calc(80dvh - 4vw);
 }
 
 @media (width > 767px) {
