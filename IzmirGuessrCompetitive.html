@@ -172,18 +172,56 @@
 				<div class="modalTitle">How to play this game ?</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-			<div class="modalContent">
-				<div class="modalLeft">When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</div>
-				<div class="modalRight">
-					<!-- Bu kısmı basınca aşağı expandlanan div'ler ile yap -->
-					<button>What is this game?</button>
-					<button>What are the differences from the original IzmirGuessr?</button>
-					<button>What everything stands for in the game</button>
-					<button>Why should i login?</button>
-					<button>What are the plans for the future of the game?</button>
+			<div id="FAQ" class="modalContent">
+                <!-- Bu kısmı basınca aşağı expandlanan div'ler ile yap -->
+                    <button>What is this game?</button>
+                    When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !
+                    
+                    <button>What are the differences from the original IzmirGuessr?</button>
+                    The differences from the original game are:
+                    - New design and backend maps
+                    - Dark mode
+                    - Harder difficulties
+                    - Cleaner code
+                    - Toggleable minimap
+                    - More precise coordinates
+                    - Ability to check coordinates after game
+                    - User system                    
+                    - Quicker matchmaking
+                    - Match history ( TODO )
+                    - Sharing played games ( TODO )
+                    - Achievements ( TODO )
+                    - New game modes ( TODO )
+
+                    <button>What everything stands for in the game</button>
+                    What everything stands for TODO
+
+                    <button>Why should i login?</button>
+                    You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history ( TODO ) between multiple devices for free.
+
+                    <button>What are the plans for the future of the game?</button>
+                    These are the current plans:
+
+                    - Finish the backend maps ( Almost done )
+                    - Sorting in statistics tab
+                    - Finish all the modals
+                    - Make the game longer ( Possibly 10 rounds ) to avoid lucky 5000 scores ( also will add changeable round counts )
+                    - New final screen
+                    - 3 Language support ( TR - ENG - FR )
+                    - Sharing your games as a small key for others to play the exact same coordinates
+                    - Match history
+                    - A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at
+                    - A map in leaderboard to show district winners ( and 2. and 3. rankers )					
+					
 					<button>How are the scores calculated?</button>
+                    This is the function i use to calculate scores:
+                    -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48
+
 					<button>What are some hidden features in the game?</button>
-				</div>
+                    Current hidden features are:
+
+                    - Right click in main menu to toggle all districts
+                    - Playing Every District game mode grants extra score if you guess the correct district
 			</div>
 		</div>
 		<div class="menumodal" id="statsMenu">
