@@ -172,56 +172,64 @@
 				<div class="modalTitle">How to play this game ?</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-			<div id="FAQ" class="modalContent">
-                <!-- Bu kısmı basınca aşağı expandlanan div'ler ile yap -->
-                    <button>What is this game?</button>
-                    When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !
-                    
-                    <button>What are the differences from the original IzmirGuessr?</button>
-                    The differences from the original game are:
-                    - New design and backend maps
-                    - Dark mode
-                    - Harder difficulties
-                    - Cleaner code
-                    - Toggleable minimap
-                    - More precise coordinates
-                    - Ability to check coordinates after game
-                    - User system                    
-                    - Quicker matchmaking
-                    - Match history ( TODO )
-                    - Sharing played games ( TODO )
-                    - Achievements ( TODO )
-                    - New game modes ( TODO )
+			<div class="modalContent flexcolumn">
+				<!-- Bu kısmı basınca aşağı expandlanan div'ler ile yap -->
+				<button>What is this game?</button>
+				<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
 
-                    <button>What everything stands for in the game</button>
-                    What everything stands for TODO
+				<button>What are the differences from the original IzmirGuessr?</button>
+				<p>The differences from the original game are:</p>
+				<p>- New design and backend maps</p>
+				<p>- Dark mode</p>
+				<p>- Harder difficulties</p>
+				<p>- Cleaner code</p>
+				<p>- Toggleable minimap</p>
+				<p>- More precise coordinates</p>
+				<p>- Ability to check coordinates after game</p>
+				<p>- User system</p>
+				<p>- Quicker matchmaking</p>
+				<p>- Match history ( TODO )</p>
+				<p>- Sharing played games ( TODO )</p>
+				<p>- Achievements ( TODO )</p>
+				<p>- New game modes ( TODO )</p>
 
-                    <button>Why should i login?</button>
-                    You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history ( TODO ) between multiple devices for free.
+				<button>What everything stands for in the game</button>
+				<div class="flexrow">
+					<img width="40px" height="40px" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20" />
+					<p>Return to main menu</p>
+				</div>
+				<div class="flexrow">
+					<img
+						width="40px"
+						height="40px"
+						src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M19.933%2013.041a8%208%200%201%201%20-9.925%20-8.788c3.899%20-1%207.935%201.007%209.425%204.747%22%20%2F%3E%20%3Cpath%20d%3D%22M20%204v5h-5%22%20%2F%3E%20%3C%2Fsvg%3E%20"
+					/>
+					<p>Return to the location you have started ( Because you need to guess the original location )</p>
+				</div>
 
-                    <button>What are the plans for the future of the game?</button>
-                    These are the current plans:
+				<button>Why should i login?</button>
+				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history ( TODO ) between multiple devices for free.</p>
 
-                    - Finish the backend maps ( Almost done )
-                    - Sorting in statistics tab
-                    - Finish all the modals
-                    - Make the game longer ( Possibly 10 rounds ) to avoid lucky 5000 scores ( also will add changeable round counts )
-                    - New final screen
-                    - 3 Language support ( TR - ENG - FR )
-                    - Sharing your games as a small key for others to play the exact same coordinates
-                    - Match history
-                    - A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at
-                    - A map in leaderboard to show district winners ( and 2. and 3. rankers )					
-					
-					<button>How are the scores calculated?</button>
-                    This is the function i use to calculate scores:
-                    -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48
+				<button>What are the plans for the future of the game?</button>
+				<p>These are the current plans:</p>
+				<p>- Finish the backend maps ( Almost done )</p>
+				<p>- Sorting in statistics tab</p>
+				<p>- Finish all the modals</p>
+				<p>- Make the game longer ( Possibly 10 rounds ) to avoid lucky 5000 scores ( also will add changeable round counts )</p>
+				<p>- New final screen</p>
+				<p>- 3 Language support ( TR - ENG - FR )</p>
+				<p>- Sharing your games as a small key for others to play the exact same coordinates</p>
+				<p>- Match history</p>
+				<p>- A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at</p>
+				<p>- A map in leaderboard to show district winners ( and 2. and 3. rankers )</p>
 
-					<button>What are some hidden features in the game?</button>
-                    Current hidden features are:
+				<button>How are the scores calculated?</button>
+				<p>This is the function i use to calculate scores: -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48</p>
 
-                    - Right click in main menu to toggle all districts
-                    - Playing Every District game mode grants extra score if you guess the correct district
+				<button>What are some hidden features in the game?</button>
+				<p>Current hidden features are:</p>
+                <p>- Right click in main menu to toggle all districts</p>
+                <p>- Playing Every District game mode grants extra score if you guess the correct district</p>
 			</div>
 		</div>
 		<div class="menumodal" id="statsMenu">
@@ -229,7 +237,7 @@
 				<div class="modalTitle">Statistics</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-            <p>Disclaimer: Data of the games played in Every District and Custom settings are counted for both those and the original district.</p>
+			<p>Disclaimer: Data of the games played in Every District and Custom settings are counted for both those and the original district.</p>
 			<div class="modalContent">
 				<div class="modalLeft">
 					<p id="statisticsMenuText"></p>
