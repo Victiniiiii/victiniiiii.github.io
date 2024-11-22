@@ -136,7 +136,7 @@ async function bazaarconnect() {
 
 	for (let i = 1; i <= 131; i++) {
 		const osuruk = document.getElementById(`spreadsheet${i}`);
-		osuruk.style.backgroundColor = "transparent";
+		osuruk.style.backgroundColor = "rgb(0,0,0,0.3)";
 	}
 
 	if (speedLevel !== null && speedLevel !== undefined && speedLevel !== "" && speedLevel != 25) {
