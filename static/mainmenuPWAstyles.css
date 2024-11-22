@@ -1,3 +1,9 @@
+h6 {
+    margin-top: 1vw;
+    font-size: 0.75vw;
+    line-height: 1vw;
+}
+
 @media (min-width: 768px) {
     * {
         box-sizing: border-box;
@@ -218,24 +224,42 @@
         font-size: clamp(1vw,1.3vw,1.6vw);
         line-height: 4svh;
         animation: fadeIn 2s ease;
+        transition: height 0.5s ease-in-out;
         color: white;
         border-radius: 2vw;
         position: relative;
-        z-index: 1;
-        overflow: hidden;
+        z-index: 1;        
         scroll-snap-align: center;
         text-align: center;
         margin: -1vh 0 3vh 0;
+        overflow: hidden;
+    }
+
+    .mainmenuproject.expanded {
+        height: 40svh;
     }
 
     .mainmenuproject img {
         width: 20vw;
         height: 25svh;
+        max-height: 25svh;
         transition: transform 0.3s ease;
+        z-index: 2;
     }
 
     .mainmenuproject img:hover {
         transform: scale(1.5);
+    }
+
+    .projectname {
+        position: relative;
+        z-index: 3;
+        color: white;
+        overflow: hidden;
+        padding: 0 1vw 0 1vw;
+        text-align: center;
+        background-color: rgb(50, 50, 50, 1);
+        font-size: 1.15vw;
     }
 
     .mainmenuproject div {
@@ -279,7 +303,7 @@
     .mainmenunotready {
         width: 20vw;
         height: 31svh;
-        z-index: 2;
+        z-index: 8 !important;
         background-color: rgb(25, 25, 25, 0.85);
         position: absolute;
         cursor: not-allowed;
