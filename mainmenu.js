@@ -18,9 +18,9 @@ function switchtab(clicked) {
 	clicked.scrollTop = 0;
 }
 
-document.querySelectorAll(".mainmenuproject").forEach(function (name) {
+document.querySelectorAll(".projectname").forEach(function (name) {
     name.addEventListener("click", function () {
-        name.classList.toggle("expanded");
+        name.parentElement.classList.toggle("expanded");
     });
 });
 
