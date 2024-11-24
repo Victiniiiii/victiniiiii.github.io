@@ -28,10 +28,10 @@
 			</a>
 			<h1 class="main-menu-text">Ortalamatör</h1>
 			<div class="project-buttons">
-                <div class="category-button">
-                    <div id="download-btn">Download App</div>
-                </div>                
-				<div class="category-button">					
+				<div class="category-button">
+					<div id="download-btn">Download App</div>
+				</div>
+				<div class="category-button">
 					<a href="/contactme">Contact Me</a>
 				</div>
 			</div>
@@ -244,8 +244,8 @@
 					);
 				});
 			} else {
-                document.getElementById("download-btn").style.color = "red";
-            }
+				document.getElementById("download-btn").style.color = "red";
+			}
 
 			let deferredPrompt;
 
@@ -255,16 +255,29 @@
 			});
 
 			document.getElementById("download-btn").addEventListener("click", async () => {
+
+				if (checkIfInstalled()) {
+					alert("You already have the app installed.");
+					return;
+				}
+
 				if (deferredPrompt) {
 					deferredPrompt.prompt();
+					const { outcome } = await deferredPrompt.userChoice;
+					console.log(`User response to the install prompt: ${outcome}`);
 					deferredPrompt = null;
-                    console.log("app not installed");
-				}                
+				}
 			});
 
-			window.addEventListener("appinstalled", () => {
-                console.log("app installed");
-			});
+			function checkIfInstalled() {
+				const isInstalled = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone;
+
+				if (isInstalled) {
+					alert("You already have the app installed.");
+                    return true;
+				}
+                return false;
+			}
 		</script>
 	</body>
 </html>
