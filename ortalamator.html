@@ -29,7 +29,7 @@
 			<h1 class="main-menu-text">Ortalamatör</h1>
 			<div class="project-buttons">
                 <div class="category-button">
-                    <div id="download-btn" style="display: none">Download App</div>
+                    <div id="download-btn">Download App</div>
                 </div>                
 				<div class="category-button">					
 					<a href="/contactme">Contact Me</a>
@@ -250,7 +250,6 @@
 			window.addEventListener("beforeinstallprompt", (e) => {
 				e.preventDefault();
 				deferredPrompt = e;
-				document.getElementById("download-btn").style.display = "flex";
 			});
 
 			document.getElementById("download-btn").addEventListener("click", async () => {
@@ -262,7 +261,6 @@
 			});
 
 			window.addEventListener("appinstalled", () => {
-				document.getElementById("download-btn").style.display = "none";
                 console.log("app installed");
 			});
 		</script>
