@@ -250,22 +250,26 @@
 			let deferredPrompt;
 
 			window.addEventListener("beforeinstallprompt", (e) => {
+				console.log("beforeinstallprompt event fired");
 				e.preventDefault();
 				deferredPrompt = e;
 			});
 
 			document.getElementById("download-btn").addEventListener("click", async () => {
-
+				console.log("Download button clicked");
 				if (checkIfInstalled()) {
-					alert("You already have the app installed.");
+					console.log("App is already installed.");
 					return;
 				}
 
 				if (deferredPrompt) {
+					console.log("Triggering install prompt");
 					deferredPrompt.prompt();
 					const { outcome } = await deferredPrompt.userChoice;
 					console.log(`User response to the install prompt: ${outcome}`);
 					deferredPrompt = null;
+				} else {
+					alert("Install prompt is not available. Make sure you are using a supported browser.");
 				}
 			});
 
@@ -274,9 +278,9 @@
 
 				if (isInstalled) {
 					alert("You already have the app installed.");
-                    return true;
+					return true;
 				}
-                return false;
+				return false;
 			}
 		</script>
 	</body>
