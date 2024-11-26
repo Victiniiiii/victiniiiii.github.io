@@ -1,9 +1,3 @@
-h6 {
-    margin-top: 1vw;
-    font-size: 0.75vw;
-    line-height: 1vw;
-}
-
 html, body {
     overscroll-behavior: none;
 }
@@ -61,6 +55,12 @@ html, body {
         100% {
             background-color: #ff4136;
         }
+    }
+
+    h6 {
+        margin-top: 1vw;
+        font-size: 0.75vw;
+        line-height: 1vw;
     }
 
     #mainmenuleftbox {
@@ -375,6 +375,12 @@ html, body {
         }
     }
 
+    h6 {
+        margin-top: 1vw;
+        font-size: 3.75vw;
+        overflow-wrap: break-word;
+    }
+
     #mainmenuleftbox {
         width: 34vw;
         height: 80svh;
@@ -546,6 +552,11 @@ html, body {
         z-index: 1;
         overflow: hidden;
         scroll-snap-align: center;
+        transition: height 0.5s ease-in-out;
+    }
+
+    .mainmenuproject.expanded {
+        height: 40svh;
     }
 
     .mainmenuproject img {
@@ -561,11 +572,8 @@ html, body {
     .projectname {
         z-index: 3;
         color: white;
-        white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
         font-size: 2svh;
-        line-height: 2svh;
         padding: 0 3vw 0 3vw;
         text-align: center;
     }
