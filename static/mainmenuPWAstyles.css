@@ -103,6 +103,7 @@ html, body {
         z-index: -1;
         border-top-left-radius: 3vw;
         border-bottom-left-radius: 3vw;
+        border-bottom-right-radius: 3vw;
     }
 
     #mainmenugeneralprojects,
