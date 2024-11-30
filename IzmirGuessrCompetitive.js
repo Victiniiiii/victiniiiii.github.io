@@ -795,6 +795,10 @@ function clearImageCache() {
     });    
 }
 
+function alertNotReadyYet() {
+    alert("This feature is not ready yet!")
+}
+
 // Adding Event Listeners:
 
 overlayContainer.addEventListener("mouseenter", function () {
