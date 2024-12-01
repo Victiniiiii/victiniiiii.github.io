@@ -1,17 +1,18 @@
-// Game Points:
-
-let roundPoints = [0, 0, 0, 0, 0];
-let guessedCoordinates = [0, 0, 0, 0, 0];
-let actualCoordinates = [0, 0, 0, 0, 0];
-let totalPoints = 0;
-
 // Game Settings:
 
 let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0;
+let roundLimit = 5;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
+
+// Game Points:
+
+let roundPoints = new Array(roundLimit).fill(0);
+let guessedCoordinates = new Array(roundLimit).fill(0);
+let actualCoordinates = new Array(roundLimit).fill(0);
+let totalPoints = 0;
 
 // Firebase Settings:
 
@@ -392,7 +393,7 @@ function initMap() {
 }
 
 function toggleModal() {
-	if (roundCount < 5) {
+	if (roundCount < roundLimit) {
 		if (resultModal.style.display === "flex") {
 			resultModal.style.display = "none";
 		} else {
@@ -400,7 +401,7 @@ function toggleModal() {
 		}
 	}
 
-	if (roundCount == 5) {
+	if (roundCount == roundLimit) {
 		if (resultModal.style.display === "flex") {
 			resultModal.style.display = "none";
 			finalresultsmodal.style.display = "none";
@@ -517,7 +518,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
 
-	if (roundCount < 4) {
+	if (roundCount < (roundLimit - 1)) {
 		new google.maps.Marker({
 			position: randomLocation,
 			map: resultMap,
@@ -546,7 +547,7 @@ function displayResults(distance, points) {
 		showAllButton.innerHTML = "Show All Markers";
 		document.getElementById("resultModalLeft").appendChild(showAllButton);
 
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < roundLimit; i++) {
 			const guessedMarker = new google.maps.Marker({
 				position: guessedCoordinates[i],
 				map: resultMap,
@@ -694,13 +695,19 @@ function startGame() {
 		} else {
 			selectedGameMode = "Custom";
 		}
-		totalPoints = 0;
-		roundPoints = [0, 0, 0, 0, 0];
-		guessedCoordinates = [0, 0, 0, 0, 0];
-		actualCoordinates = [0, 0, 0, 0, 0];
+		
+        roundPoints.length = 0;
+        guessedCoordinates.length = 0;
+        actualCoordinates.length = 0;
+
+		roundPoints.fill(0, 0, roundLimit);
+		guessedCoordinates.fill(0, 0, roundLimit);
+		actualCoordinates.fill(0, 0, roundLimit);
+
 		finalgoruntulendimi = false;
+        totalPoints = 0;
 	}
-	if (roundCount == 5) {
+	if (roundCount == roundLimit) {
 		document.getElementById("final-results-modal").style.display = "flex";
 		document.getElementById("overlay-container").style.display = "none";
 		finalgoruntulendimi = true;
