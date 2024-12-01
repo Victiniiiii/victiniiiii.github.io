@@ -102,12 +102,12 @@
 					<div id="mainmenuCompetitiveChecksAndButtons">
 						<div id="competitiveChecks">Loading...</div>
 						<div id="menubuttons">
-                            <button id="achievements" onclick="alertNotReadyYet()">Achievements</button>
-                            <button id="matchHistory" onclick="alertNotReadyYet()">Match History</button>
+							<button id="achievements" onclick="openmodal('achievementsmenu')">Achievements</button>
+							<button id="matchHistory" onclick="alertNotReadyYet()">Match History</button>
 							<button id="leaderboards" onclick="openmodal('leaderboardMenu')">Leaderboards</button>
 							<button id="stats" onclick="openmodal('statsMenu')">Statistics</button>
 							<button onclick="openmodal('faqMenu')">How to Play</button>
-                            <button id="gamesettings" onclick="alertNotReadyYet()">Settings</button>
+							<button id="gamesettings" onclick="alertNotReadyYet()">Settings</button>
 							<button onclick="startGame()">Start Game</button>
 						</div>
 					</div>
@@ -227,12 +227,12 @@
 
 				<button>How are the scores calculated?</button>
 				<p>This is the function i use to calculate scores: -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48</p>
-                <p>This is a special curved function i made to give the player more points when close to target, but still give some points when it's not that close. </p>
+				<p>This is a special curved function i made to give the player more points when close to target, but still give some points when it's not that close.</p>
 
 				<button>What are some hidden features in the game?</button>
 				<p>Current hidden features are:</p>
-                <p>- Right click in main menu to toggle all districts</p>
-                <p>- Playing Every District game mode grants extra score if you guess the correct district</p>
+				<p>- Right click in main menu to toggle all districts</p>
+				<p>- Playing Every District game mode grants extra score if you guess the correct district</p>
 			</div>
 		</div>
 		<div class="menumodal" id="statsMenu">
@@ -248,6 +248,23 @@
 				<div class="modalRight">
 					<button onclick="logStatistics()">Click here to get your statistics.</button>
 				</div>
+			</div>
+		</div>
+		<div class="menumodal" id="achievementsmenu">
+			<div class="modalTitleRow">
+				<div class="modalTitle">Statistics</div>
+				<div class="modalCloseButton">&#10006;</div>
+			</div>
+			<div class="modalContent flexcolumn">
+				<p>Warning: Not ready yet...</p>
+				<p>Bronze - Silver - Gold - Diamond</p>
+				<p>Play a game in 1 - 5 - 15 - 30 districts.</p>
+				<p>Earn 5000 score in 1 - 5 - 15 - 30 districts.</p>
+				<p>Earn MAX points in 1 - 5 - 15 - 30 districts.</p>
+				<p>Guess a location with +750 points under 10 seconds.</p>
+                <p>Guess a location with MAX points under 5 seconds.</p>
+                <p>Guess a location under 10 meters.</p>
+                <p>Play a total of 50 - 250 - 1000 - 5000 rounds.</p>
 			</div>
 		</div>
 		<div class="menumodal" id="leaderboardMenu">
