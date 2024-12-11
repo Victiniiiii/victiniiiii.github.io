@@ -7,6 +7,28 @@
 
 html, body {
     overscroll-behavior: none;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #222;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+    border: 2px solid #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
 }
 
 a,
@@ -1252,7 +1274,6 @@ div.gm-bundled-control:nth-child(2) {
 	#selectGameMode,
 	#roundCount {
 		height: 10dvw;
-		line-height: 10dvw;
 		margin: 0 0.5vw 0 0.5vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
@@ -1262,6 +1283,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		justify-content: center;
         transition: all 0.25s ease-in-out;
+        text-align: center;
 	}
 
     #selectGameMode {
@@ -1400,6 +1422,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalRight {
 		order: 3;
+        height: 24dvw;
 	}
 
 	#resultModalLeft {
