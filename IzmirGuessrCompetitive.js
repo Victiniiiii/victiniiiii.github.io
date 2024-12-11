@@ -768,8 +768,9 @@ function competitiveCheck() {
 
     if (roundLimit != 10) {
         competitiveChecks.innerHTML += `<p> You have to play 10 round games to get on the leaderboard! </p>`;
+        return;
     }
-    
+
     competitiveChecks.innerHTML += `<p> Round limit on 10 rounds: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`;
@@ -813,7 +814,7 @@ function alertNotReadyYet() {
 }
 
 function saveRoundLimit() {
-    let roundLimit = document.getElementById('roundLimitSelector').value;
+    roundLimit = document.getElementById('roundLimitSelector').value;
     localStorage.setItem('roundLimit', roundLimit);
 }
 
