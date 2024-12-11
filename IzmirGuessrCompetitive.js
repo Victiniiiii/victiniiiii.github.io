@@ -3,7 +3,7 @@
 let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0;
-let roundLimit = localStorage.getItem('roundLimit') ? parseInt(localStorage.getItem('roundLimit'), 10) : 5;
+let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
 
@@ -280,16 +280,16 @@ function initMap() {
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-    document.getElementById("gamemap").innerHTML = "";
-    clearImageCache();
+	document.getElementById("gamemap").innerHTML = "";
+	clearImageCache();
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
 
-    if (mobileUser) {
-        document.getElementById("action-button").style.width = "75%";
-        document.getElementById("minimapCloseButton").style.width = "25%";
-        document.getElementById("minimapCloseButton").innerHTML = "Close";
-    }
+	if (mobileUser) {
+		document.getElementById("action-button").style.width = "75%";
+		document.getElementById("minimapCloseButton").style.width = "25%";
+		document.getElementById("minimapCloseButton").innerHTML = "Close";
+	}
 
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
@@ -384,7 +384,7 @@ function initMap() {
 			document.getElementById("timer").innerHTML = `Remaining: ${timerSeconds} Seconds`;
 			roundTimer = setInterval(updateTimer, 1000);
 			document.getElementById("selectGameMode").innerText = `Selected Mode: ${selectedGameMode}`;
-			document.getElementById("roundCount").innerText = `Round ${roundCount + 1}`;
+			document.getElementById("roundCount").innerText = `Round ${roundCount + 1} of ${roundLimit}`;
 			loadingScreen.style.display = "none";
 		} else {
 			initMap();
@@ -417,8 +417,8 @@ function toggleModal() {
 }
 
 function returnToStart() {
-    document.getElementById("gamemap").innerHTML = "";
-    clearImageCache();
+	document.getElementById("gamemap").innerHTML = "";
+	clearImageCache();
 	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
 		center: randomLocation,
 		zoom: 14,
@@ -518,7 +518,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
 
-	if (roundCount < (roundLimit - 1)) {
+	if (roundCount < roundLimit - 1) {
 		new google.maps.Marker({
 			position: randomLocation,
 			map: resultMap,
@@ -536,14 +536,15 @@ function displayResults(distance, points) {
 
 		line.setMap(resultMap);
 	} else {
-		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF"]; // Red, Yellow, Green, Blue, Magenta
+		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
+
 		guessedLocationMarker.setMap(null);
 
-        const hideAllButton = document.createElement("button");
+		const hideAllButton = document.createElement("button");
 		hideAllButton.innerHTML = "Hide All Markers";
-        document.getElementById("resultModalLeft").appendChild(hideAllButton);
+		document.getElementById("resultModalLeft").appendChild(hideAllButton);
 
-        const showAllButton = document.createElement("button");
+		const showAllButton = document.createElement("button");
 		showAllButton.innerHTML = "Show All Markers";
 		document.getElementById("resultModalLeft").appendChild(showAllButton);
 
@@ -582,13 +583,13 @@ function displayResults(distance, points) {
 				resultMap.setCenter(actualMarker.getPosition());
 			});
 
-            const centerMarkerButton = document.createElement("button");
-            centerMarkerButton.innerHTML = `Center Button ${i + 1}`
-            centerMarkerButton.addEventListener("click", () => {
+			const centerMarkerButton = document.createElement("button");
+			centerMarkerButton.innerHTML = `Center Button ${i + 1}`;
+			centerMarkerButton.addEventListener("click", () => {
 				resultMap.setCenter(actualMarker.getPosition());
 			});
 
-            document.getElementById("resultModalLeft").appendChild(centerMarkerButton);
+			document.getElementById("resultModalLeft").appendChild(centerMarkerButton);
 
 			line.setMap(resultMap);
 
@@ -599,34 +600,34 @@ function displayResults(distance, points) {
 			button.addEventListener("click", () => {
 				if (guessedMarker.getMap()) {
 					guessedMarker.setMap(null);
-                    actualMarker.setMap(null);
-                    line.setMap(null);
+					actualMarker.setMap(null);
+					line.setMap(null);
 				} else {
 					guessedMarker.setMap(resultMap);
-                    actualMarker.setMap(resultMap);
-                    line.setMap(resultMap);
+					actualMarker.setMap(resultMap);
+					line.setMap(resultMap);
 				}
 			});
 
-            hideAllButton.addEventListener('click', () => {
-                guessedMarker.setMap(null);
-                actualMarker.setMap(null);
-                line.setMap(null);
-            });
-        
-            showAllButton.addEventListener('click', () => {
-                guessedMarker.setMap(resultMap);
-                actualMarker.setMap(resultMap);
-                line.setMap(resultMap);
-            });
+			hideAllButton.addEventListener("click", () => {
+				guessedMarker.setMap(null);
+				actualMarker.setMap(null);
+				line.setMap(null);
+			});
 
-            const copycoords = document.createElement("button");
+			showAllButton.addEventListener("click", () => {
+				guessedMarker.setMap(resultMap);
+				actualMarker.setMap(resultMap);
+				line.setMap(resultMap);
+			});
+
+			const copycoords = document.createElement("button");
 			copycoords.innerHTML = `Copy Coordinates Location ${i + 1}`;
 			document.getElementById("resultModalLeft").appendChild(copycoords);
 
-            copycoords.addEventListener('click', () => {
-                navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
-            });
+			copycoords.addEventListener("click", () => {
+				navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
+			});
 		}
 	}
 	roundCount++;
@@ -672,9 +673,9 @@ function returnToMainMenu() {
 	startPage.style.display = "flex";
 	titleSection.style.display = "flex";
 	gameplayBackground.style.display = "none";
-    document.getElementById("gamemap").innerHTML = "";
+	document.getElementById("gamemap").innerHTML = "";
 
-    clearImageCache();
+	clearImageCache();
 	refreshMap();
 	pauseTimer();
 	calculateDistrictData();
@@ -695,17 +696,17 @@ function startGame() {
 		} else {
 			selectedGameMode = "Custom";
 		}
-		
-        roundPoints.length = 0;
-        guessedCoordinates.length = 0;
-        actualCoordinates.length = 0;
+
+		roundPoints.length = 0;
+		guessedCoordinates.length = 0;
+		actualCoordinates.length = 0;
 
 		roundPoints.fill(0, 0, roundLimit);
 		guessedCoordinates.fill(0, 0, roundLimit);
 		actualCoordinates.fill(0, 0, roundLimit);
 
 		finalgoruntulendimi = false;
-        totalPoints = 0;
+		totalPoints = 0;
 	}
 	if (roundCount == roundLimit) {
 		document.getElementById("final-results-modal").style.display = "flex";
@@ -730,13 +731,13 @@ function updateTimer() {
 			clearInterval(roundTimer);
 			document.getElementById("gamemap").style.opacity = "0";
 			backgroundText.innerHTML = "Your time is up, but you can still put your guess in";
-            minimapOpenButton();
+			minimapOpenButton();
 
-            if (mobileUser) {
-                document.getElementById("action-button").style.width = "100%";
-                document.getElementById("minimapCloseButton").style.width = "0%";
-                document.getElementById("minimapCloseButton").innerHTML = "";
-            }
+			if (mobileUser) {
+				document.getElementById("action-button").style.width = "100%";
+				document.getElementById("minimapCloseButton").style.width = "0%";
+				document.getElementById("minimapCloseButton").innerHTML = "";
+			}
 		}
 	}
 }
@@ -765,13 +766,6 @@ function competitiveCheck() {
 	}
 
 	competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`;
-
-    if (roundLimit != 10) {
-        competitiveChecks.innerHTML += `<p> You have to play 10 round games to get on the leaderboard! </p>`;
-        return;
-    }
-
-    competitiveChecks.innerHTML += `<p> Round limit on 10 rounds: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`;
@@ -798,24 +792,24 @@ function minimapOpenButton() {
 }
 
 function clearImageCache() {
-    const domains = ['streetviewpixels-pa.googleapis.com', 'lh3.ggpht.com', 'maps.googleapis.com'];
-    const images = document.querySelectorAll('img');
-    
-    images.forEach((img) => {
-        const matchedDomain = domains.find(domain => img.src.includes(domain));
-        if (matchedDomain) {
-            img.src = '';
-        }
-    });    
+	const domains = ["streetviewpixels-pa.googleapis.com", "lh3.ggpht.com", "maps.googleapis.com"];
+	const images = document.querySelectorAll("img");
+
+	images.forEach((img) => {
+		const matchedDomain = domains.find((domain) => img.src.includes(domain));
+		if (matchedDomain) {
+			img.src = "";
+		}
+	});
 }
 
 function alertNotReadyYet() {
-    alert("This feature is not ready yet!")
+	alert("This feature is not ready yet!");
 }
 
 function saveRoundLimit() {
-    roundLimit = document.getElementById('roundLimitSelector').value;
-    localStorage.setItem('roundLimit', roundLimit);
+	roundLimit = document.getElementById("roundLimitSelector").value;
+	localStorage.setItem("roundLimit", roundLimit);
 }
 
 // Adding Event Listeners:
@@ -845,9 +839,9 @@ Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button)
 });
 
 let marker = new Image();
-marker.src = 'static/images/redpin.png';
-marker.onload = function() {
-    marker = null;
+marker.src = "static/images/redpin.png";
+marker.onload = function () {
+	marker = null;
 };
 
-document.getElementById('roundLimitSelector').value = roundLimit;
+document.getElementById("roundLimitSelector").value = roundLimit;
