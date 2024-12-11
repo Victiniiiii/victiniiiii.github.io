@@ -3,7 +3,7 @@
 let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0;
-let roundLimit = 5;
+let roundLimit = localStorage.getItem('roundLimit') ? parseInt(localStorage.getItem('roundLimit'), 10) : 5;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
 
@@ -760,11 +760,17 @@ function competitiveCheck() {
 	competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`;
 
 	if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
-		competitiveChecks.innerHTML += `<p> You need select only one or all districts to save your statistics! </p>`;
+		competitiveChecks.innerHTML += `<p> You need select only one or all districts to get on the leaderboard! </p>`;
 		return;
 	}
 
 	competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`;
+
+    if (roundLimit != 10) {
+        competitiveChecks.innerHTML += `<p> You have to play 10 round games to get on the leaderboard! </p>`;
+    }
+    
+    competitiveChecks.innerHTML += `<p> Round limit on 10 rounds: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`;
 	competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`;
@@ -806,6 +812,11 @@ function alertNotReadyYet() {
     alert("This feature is not ready yet!")
 }
 
+function saveRoundLimit() {
+    let roundLimit = document.getElementById('roundLimitSelector').value;
+    localStorage.setItem('roundLimit', roundLimit);
+}
+
 // Adding Event Listeners:
 
 overlayContainer.addEventListener("mouseenter", function () {
@@ -837,3 +848,5 @@ marker.src = 'static/images/redpin.png';
 marker.onload = function() {
     marker = null;
 };
+
+document.getElementById('roundLimitSelector').value = roundLimit;

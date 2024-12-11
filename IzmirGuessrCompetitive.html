@@ -96,7 +96,12 @@
 							</div>
 						</div>
 						<div id="menusettings">
-							<p>Game Settings will go here...</p>
+							<label for="roundLimitSelector">Set Round Limit:</label>
+							<select id="roundLimitSelector" onchange="saveRoundLimit()">
+								<option value="3">3</option>
+								<option value="5">5</option>
+								<option value="10">10</option>
+							</select>
 						</div>
 					</div>
 					<div id="mainmenuCompetitiveChecksAndButtons">
@@ -262,9 +267,9 @@
 				<p>Earn 5000 score in 1 - 5 - 15 - 30 districts.</p>
 				<p>Earn MAX points in 1 - 5 - 15 - 30 districts.</p>
 				<p>Guess a location with +750 points under 10 seconds.</p>
-                <p>Guess a location with MAX points under 5 seconds.</p>
-                <p>Guess a location under 10 meters.</p>
-                <p>Play a total of 50 - 250 - 1000 - 5000 rounds.</p>
+				<p>Guess a location with MAX points under 5 seconds.</p>
+				<p>Guess a location under 10 meters.</p>
+				<p>Play a total of 50 - 250 - 1000 - 5000 rounds.</p>
 			</div>
 		</div>
 		<div class="menumodal" id="leaderboardMenu">
