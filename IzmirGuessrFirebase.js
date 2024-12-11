@@ -153,7 +153,7 @@ async function saveData(district, score) {
 					const data = userGameData.data();
 					const highScore = data.highScore;
 
-					if (totalPoints > highScore) {
+					if (totalPoints > highScore && ref == ref2) {
 						transaction.update(ref, { highScore: totalPoints });
 					}
 
