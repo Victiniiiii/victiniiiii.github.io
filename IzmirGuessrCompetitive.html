@@ -108,11 +108,10 @@
 						<div id="competitiveChecks">Loading...</div>
 						<div id="menubuttons">
 							<button id="achievements" onclick="openmodal('achievementsmenu')">Achievements</button>
-							<button id="matchHistory" onclick="alertNotReadyYet()">Match History</button>
+							<button id="matchHistory" onclick="openmodal('matchHistoryMenu')">Match History</button>
 							<button id="leaderboards" onclick="openmodal('leaderboardMenu')">Leaderboards</button>
 							<button id="stats" onclick="openmodal('statsMenu')">Statistics</button>
 							<button onclick="openmodal('faqMenu')">How to Play</button>
-							<button id="gamesettings" onclick="alertNotReadyYet()">Settings</button>
 							<button onclick="startGame()">Start Game</button>
 						</div>
 					</div>
@@ -257,7 +256,7 @@
 		</div>
 		<div class="menumodal" id="achievementsmenu">
 			<div class="modalTitleRow">
-				<div class="modalTitle">Statistics</div>
+				<div class="modalTitle">Achievements</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<div class="modalContent flexcolumn">
@@ -270,6 +269,16 @@
 				<p>Guess a location with MAX points under 5 seconds.</p>
 				<p>Guess a location under 10 meters.</p>
 				<p>Play a total of 50 - 250 - 1000 - 5000 rounds.</p>
+			</div>
+		</div>
+        <div class="menumodal" id="matchHistoryMenu">
+			<div class="modalTitleRow">
+				<div class="modalTitle">Match History</div>
+				<div class="modalCloseButton">&#10006;</div>
+			</div>
+			<div class="modalContent flexcolumn">
+				<p>Warning: Not ready yet...</p>
+                <p>This page will show your match history up to last 100 matches.</p>
 			</div>
 		</div>
 		<div class="menumodal" id="leaderboardMenu">

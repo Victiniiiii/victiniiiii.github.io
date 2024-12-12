@@ -329,9 +329,14 @@ async function leaderboardModal() {
 	}
 }
 
+async function matchHistory() {
+    console.log("not ready yet");
+}
+
 window.leaderboardModal = leaderboardModal;
 window.logTopHighScores = logTopHighScores;
 window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
+window.matchHistory = matchHistory;

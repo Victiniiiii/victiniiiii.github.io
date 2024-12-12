@@ -3,9 +3,10 @@
 let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0;
-let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
+let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
+document.getElementById("roundLimitSelector").value = roundLimit;
 
 // Game Points:
 
@@ -22,14 +23,11 @@ const nicknamecooldown = 300000; // 5 minutes ( 300,000 milliseconds )
 // HTML Elements:
 
 const startPage = document.getElementById("startpage");
-const returnButton = document.getElementById("returnbutton");
 const modaltogglebutton = document.getElementById("modaltoggle-button");
 const overlayContainer = document.getElementById("overlay-container");
 const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
-const confirmButton = document.getElementById("action-button");
-const startPageLeftHalf = document.querySelector(".startpagelefthalf");
 const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
 const competitiveChecks = document.getElementById("competitiveChecks");
@@ -42,6 +40,8 @@ let gamemap = document.getElementById("gamemap"); // Has to be "let"
 // Game Elements:
 
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
+const initiallyGreenDistricts = [];
+const districtLayers = [];
 let gameOngoing = false;
 let guessedLocationMarker;
 let randomLocation;
@@ -51,8 +51,6 @@ let minimapzoom;
 let roundTimer;
 let isTimerPaused = false;
 let finalgoruntulendimi = false;
-const initiallyGreenDistricts = [];
-const districtLayers = [];
 let mobileUser;
 
 // Leaflet Map:
@@ -712,6 +710,7 @@ function startGame() {
 		document.getElementById("final-results-modal").style.display = "flex";
 		document.getElementById("overlay-container").style.display = "none";
 		finalgoruntulendimi = true;
+        matchHistory();
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
@@ -803,10 +802,6 @@ function clearImageCache() {
 	});
 }
 
-function alertNotReadyYet() {
-	alert("This feature is not ready yet!");
-}
-
 function saveRoundLimit() {
 	roundLimit = document.getElementById("roundLimitSelector").value;
 	localStorage.setItem("roundLimit", roundLimit);
@@ -843,5 +838,3 @@ marker.src = "static/images/redpin.png";
 marker.onload = function () {
 	marker = null;
 };
-
-document.getElementById("roundLimitSelector").value = roundLimit;
