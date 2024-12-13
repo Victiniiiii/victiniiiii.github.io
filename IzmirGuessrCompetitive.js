@@ -19,7 +19,7 @@ let totalPoints = 0;
 // Firebase Settings:
 
 let nickname;
-const nicknamecooldown = 300000; // 5 minutes ( 300,000 milliseconds )
+const nicknamecooldown = 60000; // 1 minute ( 60,000 milliseconds )
 
 // HTML Elements:
 
@@ -714,7 +714,7 @@ function startGame() {
 		document.getElementById("final-results-modal").style.display = "flex";
 		document.getElementById("overlay-container").style.display = "none";
 		finalgoruntulendimi = true;
-        matchHistory();
+        saveMatchHistory();
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";

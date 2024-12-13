@@ -329,8 +329,27 @@ async function leaderboardModal() {
 	}
 }
 
-async function matchHistory() {
-    console.log("not ready yet");
+async function saveMatchHistory() {
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+        const d = new Date();
+        const currentDate = (`${d.getDate().toString().padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()} ${String(d.getHours()).padStart(2, "0")}:${String(d.getSeconds()).padStart(2, "0")}`);
+
+		await runTransaction(db, async (transaction) => {
+            let endingScore = 0;
+            let wastedTime = 0;
+
+			for (let i = 0; i < roundLimit; i++) {
+				const matchHistoryRoundRef = collection(db, `users/${userId}/MatchHistory/Round ${i+1}`);
+				transaction.set(matchHistoryRoundRef, { score: roundPoints[i], time: roundTimes[i], coordinates: actualCoordinates[i] });
+                endingScore += roundPoints[i];
+                wastedTime += roundTimes[i];
+			}
+
+			const matchHistoryTotalRef = collection(db, `users/${userId}/MatchHistory/Total`);
+			transaction.set(matchHistoryTotalRef, { date: currentDate, totalScore: endingScore, totalTime: wastedTime, gameMode: selectedGameMode });
+		});
+	}
 }
 
 window.leaderboardModal = leaderboardModal;
@@ -339,4 +358,4 @@ window.logStatistics = logStatistics;
 window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
-window.matchHistory = matchHistory;
+window.saveMatchHistory = saveMatchHistory;
