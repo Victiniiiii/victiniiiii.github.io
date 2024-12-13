@@ -13,6 +13,7 @@ document.getElementById("roundLimitSelector").value = roundLimit;
 let roundPoints = new Array(roundLimit).fill(0);
 let guessedCoordinates = new Array(roundLimit).fill(0);
 let actualCoordinates = new Array(roundLimit).fill(0);
+let roundTimes = new Array(roundLimit).fill(0);
 let totalPoints = 0;
 
 // Firebase Settings:
@@ -468,6 +469,7 @@ function displayResults(distance, points) {
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
+    roundTimes[roundCount] = (30 - timerSeconds);
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
@@ -698,10 +700,12 @@ function startGame() {
 		roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		actualCoordinates.length = 0;
+        roundTimes.length = 0;
 
 		roundPoints.fill(0, 0, roundLimit);
 		guessedCoordinates.fill(0, 0, roundLimit);
 		actualCoordinates.fill(0, 0, roundLimit);
+        roundTimes.fill(0, 0, roundLimit);
 
 		finalgoruntulendimi = false;
 		totalPoints = 0;
