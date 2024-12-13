@@ -340,7 +340,7 @@ async function saveMatchHistory() {
             let wastedTime = 0;
 
 			for (let i = 0; i < roundLimit; i++) {
-				const matchHistoryRoundRef = collection(db, `users/${userId}/MatchHistory/Round ${i+1}`);
+				const matchHistoryRoundRef = collection(db, `users/${userId}/MatchHistory/Round${i+1}`);
 				transaction.set(matchHistoryRoundRef, { score: roundPoints[i], time: roundTimes[i], coordinates: actualCoordinates[i] });
                 endingScore += roundPoints[i];
                 wastedTime += roundTimes[i];
