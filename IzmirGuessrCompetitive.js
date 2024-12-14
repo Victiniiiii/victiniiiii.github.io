@@ -415,32 +415,6 @@ function toggleModal() {
 	}
 }
 
-function returnToStart() {
-	document.getElementById("gamemap").innerHTML = "";
-	clearImageCache();
-	gamemap = new google.maps.Map(document.getElementById("gamemap"), {
-		center: randomLocation,
-		zoom: 14,
-		...panoramaOptions,
-	});
-
-	const streetViewService = new google.maps.StreetViewService();
-	streetViewService.getPanorama({ location: randomLocation, radius: 25 }, function (data, status) {
-		if (status === "OK") {
-			const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
-				position: randomLocation,
-				pov: { heading: 34, pitch: 1 },
-				zoom: 1,
-				...panoramaOptions,
-			});
-
-			gamemap.setStreetView(panorama);
-		} else {
-			returnToStart();
-		}
-	});
-}
-
 function calculatePoints(distance) {
 	let points = -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48;
 	if (points < 0) {
