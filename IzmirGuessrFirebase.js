@@ -366,11 +366,11 @@ async function loadMatchHistory() {
 				documents.push({ id: doc.id, data: doc.data() });
 			});
 
-			documents.sort((a, b) => a.id.localeCompare(b.id, "tr"));
+			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
 
 			documents.forEach((doc) => {
 				const data = doc.data;
-				modalMatchHistory.innerHTML += `<p> Date: ${data.date}, Game Mode: ${doc.gameMode}, Score: ${data.score}, Round Times: ${data.time}, Coordinates: ${data.coordinates}%</p>`;
+				modalMatchHistory.innerHTML += `<p> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${data.score}, Round Times: ${data.time}, Coordinates: ${data.coordinates.lat} ${data.coordinates.lng}</p>`;
 			});
 		}
 	} else {
