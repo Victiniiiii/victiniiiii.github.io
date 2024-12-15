@@ -369,7 +369,7 @@ async function loadMatchHistory() {
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
 
 			documents.forEach((doc) => {
-				const data = doc.data();
+				const data = doc.data;
                 const totalScore = data.score.reduce((acc, score) => acc + score, 0);
 				modalMatchHistory.innerHTML += `<br> <p> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </p> <br>`;
                 for ( i = 0; i < data.score.length; i++) {

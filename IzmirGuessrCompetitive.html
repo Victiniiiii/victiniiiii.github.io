@@ -256,17 +256,18 @@
 				<p>Play a total of 50 - 250 - 1000 - 5000 rounds.</p>
 			</div>
 		</div>
-        <div class="menumodal" id="matchHistoryMenu">
+		<div class="menumodal" id="matchHistoryMenu">
 			<div class="modalTitleRow">
 				<div class="modalTitle">Match History</div>
 				<div class="modalCloseButton">&#10006;</div>
+				<div class="modalContent"></div>
+				<div class="modalLeft">
+					<div id="modalMatchHistory"></div>
+				</div>
+				<div class="modalRight">
+					<button onclick="loadMatchHistory()">Load Match History</button>
+				</div>
 			</div>
-            <div class="modalLeft">
-                <div id="modalMatchHistory"></div>
-            </div>
-            <div class="modalRight">
-                <button onclick="loadMatchHistory()">Load Match History</button>
-            </div>
 		</div>
 		<div class="menumodal" id="leaderboardMenu">
 			<div class="modalTitleRow">
