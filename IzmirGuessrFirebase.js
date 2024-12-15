@@ -349,6 +349,35 @@ async function saveMatchHistory() {
 	}
 }
 
+async function loadMatchHistory() {
+    if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+		const matchHistoryRef = collection(db, `users/${userId}/MatchHistory`);
+		const snapshot = await getDocs(matchHistoryRef);
+
+		const modalMatchHistory = document.getElementById("modalMatchHistory");
+		modalMatchHistory.innerHTML = "";
+
+		if (snapshot.empty) {
+			modalMatchHistory.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
+		} else {
+			let documents = [];
+			snapshot.forEach((doc) => {
+				documents.push({ id: doc.id, data: doc.data() });
+			});
+
+			documents.sort((a, b) => a.id.localeCompare(b.id, "tr"));
+
+			documents.forEach((doc) => {
+				const data = doc.data;
+				modalMatchHistory.innerHTML += `<p> Date: ${data.date}, Game Mode: ${doc.gameMode}, Score: ${data.score}, Round Times: ${data.time}, Coordinates: ${data.coordinates}%</p>`;
+			});
+		}
+	} else {
+		document.getElementById("modalMatchHistory").innerHTML = `<p>You need to be logged in to do this!</p>`;
+	}
+}
+
 window.leaderboardModal = leaderboardModal;
 window.logTopHighScores = logTopHighScores;
 window.logStatistics = logStatistics;
@@ -356,3 +385,4 @@ window.calculateDistrictData = calculateDistrictData;
 window.saveData = saveData;
 window.changeNickname = changeNickname;
 window.saveMatchHistory = saveMatchHistory;
+window.loadMatchHistory = loadMatchHistory;
