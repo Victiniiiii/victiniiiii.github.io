@@ -371,7 +371,7 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<br> <h1> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </h1> <br>`;
+				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </h2> <br>`;    
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
