@@ -350,7 +350,7 @@ async function saveMatchHistory() {
 }
 
 async function loadMatchHistory() {
-    if (auth.currentUser) {
+	if (auth.currentUser) {
 		const userId = auth.currentUser.uid;
 		const matchHistoryRef = collection(db, `users/${userId}/MatchHistory`);
 		const snapshot = await getDocs(matchHistoryRef);
@@ -370,11 +370,11 @@ async function loadMatchHistory() {
 
 			documents.forEach((doc) => {
 				const data = doc.data;
-                const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<br> <p> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </p> <br>`;
-                for ( let i = 0; i < data.score.length; i++) {
-                    modalMatchHistory.innerHTML += `<p> Round ${i + 1} --> Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
-                }
+				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
+				modalMatchHistory.innerHTML += `<br> <h1> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </h1> <br>`;
+				for (let i = 0; i < data.score.length; i++) {
+					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
+				}
 			});
 		}
 	} else {
