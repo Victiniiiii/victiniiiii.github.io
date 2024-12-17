@@ -792,6 +792,7 @@ function createMatchSharingCode() {
     for (let i = 0; i < roundLimit; i++) {
         matchSharingCode += "/"
         matchSharingCode += actualCoordinates[i].lat;
+        matchSharingCode += "/"
         matchSharingCode += actualCoordinates[i].lng;
     }
     console.log('matchSharingCode :>> ', matchSharingCode);

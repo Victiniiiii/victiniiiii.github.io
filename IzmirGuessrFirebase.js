@@ -228,7 +228,7 @@ async function logStatistics() {
 		const snapshot = await getDocs(gameDataRef);
 
 		const statisticsMenuText = document.getElementById("statisticsMenuText");
-		statisticsMenuText.innerHTML = "";
+		statisticsMenuText.innerHTML = "Loading...";
 
 		if (snapshot.empty) {
 			statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
@@ -253,8 +253,9 @@ async function logStatistics() {
 async function logTopHighScores() {
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
-
 	const allHighScores = new Map();
+
+    document.getElementById("miniLeaderboard").innerHTML = `Loading...`;
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
@@ -291,6 +292,7 @@ async function leaderboardModal() {
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
 	const allHighScores = new Map();
+    document.getElementById("modalHighScores").innerHTML = `Loading...`;
 	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
 
 	for (const userDoc of usersSnapshot.docs) {
@@ -344,6 +346,7 @@ async function saveMatchHistory() {
 				score: roundPoints,
 				time: roundTimes,
 				coordinates: actualCoordinates,
+                matchCode: matchSharingCode,
 			});
 		});
 	}
@@ -356,7 +359,7 @@ async function loadMatchHistory() {
 		const snapshot = await getDocs(matchHistoryRef);
 
 		const modalMatchHistory = document.getElementById("modalMatchHistory");
-		modalMatchHistory.innerHTML = "";
+		modalMatchHistory.innerHTML = "Loading...";
 
 		if (snapshot.empty) {
 			modalMatchHistory.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
@@ -371,7 +374,7 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} </h2> <br>`;    
+				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} Match Sharing Code: ${data.matchCode}</h2> <br>`;
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
