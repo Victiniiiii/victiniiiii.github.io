@@ -24,9 +24,7 @@ const nicknamecooldown = 60000; // 1 minute ( 60,000 milliseconds )
 // HTML Elements:
 
 const startPage = document.getElementById("startpage");
-const modaltogglebutton = document.getElementById("modaltoggle-button");
 const overlayContainer = document.getElementById("overlay-container");
-const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
 const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
@@ -272,7 +270,7 @@ function initMap() {
 	startPage.style.display = "none";
 	titleSection.style.display = "none";
 	gameplayBackground.style.display = "block";
-	buttonrow.style.display = "flex";
+	document.getElementById("buttonrow").style.display = "flex";
 
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
@@ -681,7 +679,7 @@ function startGame() {
     document.getElementById("overlay-container").style.display = "block";
     document.getElementById("modaltoggle-button").style.display = "none";
     document.getElementById("result-modal").style.display = "none";
-    modaltogglebutton.style.display = "none";
+    document.getElementById("modaltoggle-button").style.display = "none";
 
     resumeTimer();
     initMap();
