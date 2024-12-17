@@ -26,7 +26,6 @@ const nicknamecooldown = 60000; // 1 minute ( 60,000 milliseconds )
 const startPage = document.getElementById("startpage");
 const modaltogglebutton = document.getElementById("modaltoggle-button");
 const overlayContainer = document.getElementById("overlay-container");
-const finalresultsmodal = document.getElementById("final-results-modal");
 const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
 const buttons = document.querySelectorAll("#izmirilcebox button");
@@ -44,14 +43,13 @@ let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to th
 const initiallyGreenDistricts = [];
 const districtLayers = [];
 let gameOngoing = false;
+let isTimerPaused = false;
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
 let minimapcenter;
 let minimapzoom;
 let roundTimer;
-let isTimerPaused = false;
-let finalgoruntulendimi = false;
 let mobileUser;
 let matchSharingCode;
 
@@ -278,7 +276,6 @@ function initMap() {
 	buttonrow.style.display = "flex";
 
 	document.getElementById("modaltoggle-button").style.display = "none";
-	document.getElementById("final-results-modal").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
 	document.getElementById("gamemap").innerHTML = "";
 	clearImageCache();
@@ -393,26 +390,10 @@ function initMap() {
 }
 
 function toggleModal() {
-	if (roundCount < roundLimit) {
-		if (resultModal.style.display === "flex") {
-			resultModal.style.display = "none";
-		} else {
-			resultModal.style.display = "flex";
-		}
-	}
-
-	if (roundCount == roundLimit) {
-		if (resultModal.style.display === "flex") {
-			resultModal.style.display = "none";
-			finalresultsmodal.style.display = "none";
-		} else if (finalresultsmodal.style.display === "flex") {
-			finalresultsmodal.style.display = "none";
-			resultModal.style.display = "none";
-		} else if (resultModal.style.display === "none" && finalresultsmodal.style.display === "none" && !finalgoruntulendimi) {
-			resultModal.style.display = "flex";
-		} else {
-			finalresultsmodal.style.display = "flex";
-		}
+	if (resultModal.style.display === "flex") {
+		resultModal.style.display = "none";
+	} else {
+		resultModal.style.display = "flex";
 	}
 }
 
@@ -442,12 +423,14 @@ function displayResults(distance, points) {
 
 	guessedLocationMarker.setMap(resultMap);
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
+
 	guessedCoordinates[roundCount] = { lat: guessedLatLng.lat, lng: guessedLatLng.lng };
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
-    roundTimes[roundCount] = (30 - timerSeconds);
+	roundTimes[roundCount] = 30 - timerSeconds;
 
 	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
+
 	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
 	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
 
@@ -493,7 +476,10 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
 
-	if (roundCount < roundLimit - 1) {
+	if (roundCount != roundLimit) {
+        document.getElementById("returntomenu-button").style.display = "none";
+        document.getElementById("startGameButton").innerHTML = "Next Game"
+
 		new google.maps.Marker({
 			position: randomLocation,
 			map: resultMap,
@@ -512,6 +498,12 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
+        document.getElementById("returntomenu-button").style.display = "flex";
+        document.getElementById("startGameButton").disabled = true;
+        document.getElementById("startGameButton").innerHTML = "Play Again ?"
+        setTimeout(() => {
+            document.getElementById("startGameButton").disabled = false;
+        }, 3000);
 
 		guessedLocationMarker.setMap(null);
 
@@ -636,11 +628,6 @@ function getZoomLevel(distance) {
 	}
 }
 
-function playAgain() {
-	roundCount = 0;
-	startGame();
-}
-
 function returnToMainMenu() {
 	roundCount = 0;
 	gameOngoing = false;
@@ -675,22 +662,21 @@ function startGame() {
 		roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		actualCoordinates.length = 0;
-        roundTimes.length = 0;
+		roundTimes.length = 0;
 
 		roundPoints.fill(0, 0, roundLimit);
 		guessedCoordinates.fill(0, 0, roundLimit);
 		actualCoordinates.fill(0, 0, roundLimit);
-        roundTimes.fill(0, 0, roundLimit);
+		roundTimes.fill(0, 0, roundLimit);
 
-		finalgoruntulendimi = false;
 		totalPoints = 0;
 	}
+
 	if (roundCount == roundLimit) {
-		document.getElementById("final-results-modal").style.display = "flex";
 		document.getElementById("overlay-container").style.display = "none";
-		finalgoruntulendimi = true;
-        saveMatchHistory();
-        createMatchSharingCode();
+		saveMatchHistory();
+		createMatchSharingCode();
+		roundCount = 0;
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
@@ -788,14 +774,14 @@ function saveRoundLimit() {
 }
 
 function createMatchSharingCode() {
-    matchSharingCode = selectedDistrict;
-    for (let i = 0; i < roundLimit; i++) {
-        matchSharingCode += "/"
-        matchSharingCode += actualCoordinates[i].lat;
-        matchSharingCode += "/"
-        matchSharingCode += actualCoordinates[i].lng;
-    }
-    console.log('matchSharingCode :>> ', matchSharingCode);
+	matchSharingCode = selectedDistrict;
+	for (let i = 0; i < roundLimit; i++) {
+		matchSharingCode += "/";
+		matchSharingCode += actualCoordinates[i].lat;
+		matchSharingCode += "/";
+		matchSharingCode += actualCoordinates[i].lng;
+	}
+	console.log("matchSharingCode :>> ", matchSharingCode);
 }
 
 // Adding Event Listeners:

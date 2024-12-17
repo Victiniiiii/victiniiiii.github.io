@@ -149,7 +149,8 @@
 					<p id="distance-info"></p>
 					<p id="points-info"></p>
 					<p id="totalPoints"></p>
-					<button onclick="startGame()">Next Game</button>
+                    <button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
+					<button id="startGameButton" onclick="startGame()">Next Game</button>
 				</div>
 			</div>
 			<div id="buttonrow">
@@ -163,13 +164,6 @@
 					<div id="roundCount"></div>
 					<div id="modaltoggle-button" onclick="toggleModal()">Toggle</div>
 				</div>
-			</div>
-			<div id="final-results-modal">
-				<p>Congratulations!</p>
-				<p id="totalPoints2"></p>
-				<p>Play Again?</p>
-				<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
-				<button id="playagain-button" onclick="playAgain()">Play Again</button>
 			</div>
 		</div>
 
@@ -195,21 +189,18 @@
 				<p>- User system</p>
 				<p>- Quicker matchmaking</p>
 				<p>- Match history</p>
-				<p>- Sharing played games ( TODO )</p>
+				<p>- Sharing played games</p>
 				<p>- Achievements ( TODO )</p>
 				<p>- New game modes ( TODO )</p>
 
 				<button>Why should i login?</button>
-				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history ( TODO ) between multiple devices for free.</p>
+				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</p>
 
 				<button>What are the plans for the future of the game?</button>
 				<p>These are the current plans:</p>
-				<p>- Finish the backend maps ( Almost done )</p>
 				<p>- Sorting in statistics tab</p>
 				<p>- Finish all the modals</p>
-				<p>- New final screen</p>
 				<p>- 2 Language support ( TR - ENG )</p>
-				<p>- Sharing your games as a small key for others to play the exact same coordinates</p>
 				<p>- A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at</p>
 				<p>- A map in leaderboard to show district winners ( and 2. and 3. rankers )</p>
 
