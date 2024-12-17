@@ -53,6 +53,7 @@ let roundTimer;
 let isTimerPaused = false;
 let finalgoruntulendimi = false;
 let mobileUser;
+let matchSharingCode;
 
 // Leaflet Map:
 
@@ -689,6 +690,7 @@ function startGame() {
 		document.getElementById("overlay-container").style.display = "none";
 		finalgoruntulendimi = true;
         saveMatchHistory();
+        createMatchSharingCode();
 	} else {
 		document.getElementById("overlay-container").style.display = "block";
 		document.getElementById("modaltoggle-button").style.display = "none";
@@ -783,6 +785,15 @@ function clearImageCache() {
 function saveRoundLimit() {
 	roundLimit = document.getElementById("roundLimitSelector").value;
 	localStorage.setItem("roundLimit", roundLimit);
+}
+
+function createMatchSharingCode() {
+    matchSharingCode = selectedDistrict;
+    for (let i = 0; i < roundLimit; i++) {
+        matchSharingCode += "/"
+        matchSharingCode += actualCoordinates[i];
+    }
+    console.log('matchSharingCode :>> ', matchSharingCode);
 }
 
 // Adding Event Listeners:
