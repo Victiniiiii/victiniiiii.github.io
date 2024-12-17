@@ -71,6 +71,8 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 8;
 	initialZoom = 9;
 	mobileUser = false;
+    document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
+    document.getElementById("menuTip").style.color = "white";
 }
 
 const map2 = L.map("map2", {
@@ -472,15 +474,17 @@ function displayResults(distance, points) {
 	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
+    document.getElementById("shareMatch").style.display = "none";
 
     document.getElementById("startGameButton").disabled = true;
+    document.getElementById("startGameButton").style.backgroundColor = "gray";
     setTimeout(() => {
         document.getElementById("startGameButton").disabled = false;
+        document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
     }, 3000);
 
 	if (roundCount != roundLimit - 1) {
-        document.getElementById("returntomenu-button").style.display = "none";
-        document.getElementById("startGameButton").innerHTML = "Next Game"
+        document.getElementById("startGameButton").innerHTML = "Next Game";
 
 		new google.maps.Marker({
 			position: randomLocation,
@@ -500,8 +504,12 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
-        document.getElementById("returntomenu-button").style.display = "flex";        
-        document.getElementById("startGameButton").innerHTML = "Play Again ?"
+        document.getElementById("startGameButton").innerHTML = "Play Again?";
+        document.getElementById("shareMatch").style.display = "flex";
+
+        saveMatchHistory();
+		createMatchSharingCode();
+
 		guessedLocationMarker.setMap(null);
 
 		const hideAllButton = document.createElement("button");
@@ -670,8 +678,6 @@ function startGame() {
 	}
 
 	if (roundCount == roundLimit) {
-		saveMatchHistory();
-		createMatchSharingCode();
 		roundCount = 0;
 	}
 

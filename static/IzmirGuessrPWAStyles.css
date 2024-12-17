@@ -104,16 +104,11 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 .flexrow {
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: center;
-}
-
-.flexcolumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
     text-align: center;
 }
 
@@ -280,14 +275,9 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#returntomenu-button {
-		height: 4.2dvh;
-	}
-
 	#buttonrow {
 		width: 90vw;
 		margin-right: 10vw;
-		height: 10dvh;
 		background-color: transparent;
 		font-size: min(0.35dvw, 0.7dvh);
 		z-index: 5;
@@ -326,7 +316,6 @@ div.gm-bundled-control:nth-child(2) {
 	#alarmicon {
 		width: 4.3dvh;
 		height: 4.3dvh;
-		margin-left: 1vw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
 	}
@@ -717,6 +706,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalLeft {
 		padding-right: 1vw;
+        direction: rtl;
 	}
 
 	#resultModalTop {
@@ -731,14 +721,15 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#resultModalBottom {
-		width: 60vw;
+		width: 100%;
 		height: 60dvh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		gap: 4vw;
+		gap: 2vw;
+        padding: 2vw;
         transition: all 0.25s ease-in-out;
 	}
 
@@ -929,10 +920,6 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#returntomenu-button {
-		height: 4.9dvh;
-	}
-
 	#buttonrow {
 		background-color: transparent;
 		display: none;
@@ -976,6 +963,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 4dvw;
 		color: white;
 		flex-shrink: 0;
+        padding-right: 3vw;
 	}
 
 	#modaltoggle-button {
@@ -996,7 +984,7 @@ div.gm-bundled-control:nth-child(2) {
 	#closeandreturn {
 		display: flex;
 		flex-direction: row;
-		width: 80dvw;
+		width: auto;
 		height: 10dvw;
 		margin: 0 1dvw 0 1dvw;
 		border-radius: 2dvw;
@@ -1009,6 +997,10 @@ div.gm-bundled-control:nth-child(2) {
         display: flex;
         flex-direction: row;
         pointer-events: all;
+    }
+
+    .flexrow button {
+        height: 100%;
     }
 
 	/* styles2.css */

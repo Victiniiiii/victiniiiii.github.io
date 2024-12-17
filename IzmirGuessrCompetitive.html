@@ -83,7 +83,7 @@
 						<button onclick="toggleDistrict('Torbalı')">Torbalı</button>
 						<button onclick="toggleDistrict('Urla')">Urla</button>
 					</div>
-                    <p>Tip: Right click to toggle all districts...</p>
+					<p id="menuTip"></p>
 					<div id="menuarabox">
 						<div id="menuaraboxfirst">
 							<div id="miniLeaderboard">
@@ -102,6 +102,16 @@
 								<option value="3">3</option>
 								<option value="5">5</option>
 								<option value="10">10</option>
+							</select>
+							<select id="gameModeSelector" onchange="">
+								<option value="CityCenter">Coming Soon...</option>
+								<option value="AVM">Coming Soon...</option>
+								<option value="MetroTrain">Coming Soon...</option>
+								<option value="Landmarks">Coming Soon...</option>
+								<option value="Coastal">Coming Soon...</option>
+								<option value="Universities">Coming Soon...</option>
+								<option value="Industry">Coming Soon...</option>
+								<option value="MainRoads">Coming Soon...</option>
 							</select>
 						</div>
 					</div>
@@ -146,16 +156,16 @@
 					<div id="resultModalRight"></div>
 				</div>
 				<div id="resultModalBottom">
-                    <div class="flexrow">
-                        <p id="distance-info"></p>
-                        <p id="points-info"></p>
-                        <p id="totalPoints"></p>
-                    </div>
-                    <div class="flexrow">
-                        <button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
-                        <button id="startGameButton" onclick="startGame()">Next Game</button>
-                        <button id="shareMatch" onclick="copyMatchSharingCode()">Copy Match Code</button>
-                    </div>
+					<div class="flexrow">
+						<p id="distance-info"></p>
+						<p id="points-info"></p>
+						<p id="totalPoints"></p>
+					</div>
+					<div class="flexrow">
+						<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
+						<button id="shareMatch" onclick="copyMatchSharingCode()">Copy Match Code</button>
+						<button id="startGameButton" onclick="startGame()">Next Game</button>
+					</div>
 				</div>
 			</div>
 			<div id="buttonrow">
@@ -167,7 +177,15 @@
 				<div id="buttonRowOtherStuff">
 					<div id="selectGameMode"></div>
 					<div id="roundCount"></div>
-					<div id="modaltoggle-button" onclick="toggleModal()">Toggle</div>
+					<div id="modaltoggle-button" onclick="toggleModal()">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2">
+							<path d="M12 13v-8l-3 3m6 0l-3 -3"></path>
+							<path d="M9 17l1 0"></path>
+							<path d="M14 17l1 0"></path>
+							<path d="M19 17l1 0"></path>
+							<path d="M4 17l1 0"></path>
+						</svg>
+					</div>
 				</div>
 			</div>
 		</div>
