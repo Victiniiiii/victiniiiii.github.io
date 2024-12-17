@@ -458,6 +458,7 @@ div.gm-bundled-control:nth-child(2) {
 		width: 100%;
 		height: 40%;
         transition: all 0.25s ease-in-out;
+        padding-bottom: 1vw;
 	}
 
 	#menubuttons {
@@ -600,7 +601,7 @@ div.gm-bundled-control:nth-child(2) {
 		line-height: 2.3vw;
 		background: rgb(0, 0, 0, 0.4);
 		border: 1px solid black;
-		margin: 0 0 1vw 1vw;
+		margin: 0 0 2vw 1vw;
         transition: all 0.25s ease-in-out;
 	}
 
@@ -608,22 +609,14 @@ div.gm-bundled-control:nth-child(2) {
 		width: 43vw;
 		height: 30%;
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center;
+        justify-content: center;
 		color: white;
 		text-shadow: 2px 2px 2px black;
+        border: 1px solid black;
 		margin: 1vw;
 		font-size: 1.15vw;
-        transition: all 0.25s ease-in-out;
-	}
-
-	#menuaraboxfirst {
-		width: 100%;
-		height: 80%;
-		display: flex;
-		flex-direction: row;
-		border: 1px solid black;
-		align-items: center;
         transition: all 0.25s ease-in-out;
 	}
 
@@ -633,20 +626,8 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-start;
 		align-items: center;
-		background: rgb(0, 0, 0, 0.4);
-        transition: all 0.25s ease-in-out;
-	}
-
-	#menusettings {
-		width: 100%;
-		height: 20%;
-		border: 1px solid black;
-		display: flex;
-		align-items: center;
-		justify-content: left;
-        padding: 0 1vw 0 1vw;
+        justify-content: center;
 		background: rgb(0, 0, 0, 0.4);
         transition: all 0.25s ease-in-out;
 	}
@@ -740,11 +721,17 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-    #roundLimitSelector {
+    #roundLimitSelector, #gameModeSelector {
         background-color: black;
         color: white;
         padding: 0.25vw;
         margin-left: 0.5vw;
+        margin-right: 1vw;
+        width: 5vw;
+    }
+
+    #competitiveChecks div {
+        justify-content: unset;
     }
 }
 
@@ -1394,10 +1381,11 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-    #roundLimitSelector {
+    #roundLimitSelector, #gameModeSelector {
         background-color: black;
         color: white;
         padding: 0.2vw;
         margin-left: 1vw;
+        margin-right: 2vw;
     }
 }

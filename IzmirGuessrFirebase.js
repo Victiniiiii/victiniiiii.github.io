@@ -123,7 +123,6 @@ onAuthStateChanged(auth, async (user) => {
 			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
-			competitiveCheck();
 			logTopHighScores();
 		} catch (error) {
 			console.error("Error fetching nickname from Firestore:", error);
@@ -131,7 +130,6 @@ onAuthStateChanged(auth, async (user) => {
 	} else {
 		window.document.getElementById("usernameHere").innerText = `Anonymous`;
 		window.document.getElementById("secondButton").innerText = `Log in with Google`;
-		competitiveCheck();
 		logTopHighScores();
 	}
 });

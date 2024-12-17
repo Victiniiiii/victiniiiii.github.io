@@ -85,38 +85,41 @@
 					</div>
 					<p id="menuTip"></p>
 					<div id="menuarabox">
-						<div id="menuaraboxfirst">
-							<div id="miniLeaderboard">
-								<h1>Leaderboard</h1>
-							</div>
-							<div id="yourStats">
-								<h1>Your Stats</h1>
-								<p id="statsPlayedRounds">Played Rounds: 0</p>
-								<p id="statsPercentages">Success Percentage: 0.00%</p>
-								<p id="statsHighScore">Best High Score: 0</p>
-							</div>
+						<div id="miniLeaderboard">
+							<h1>Leaderboard</h1>
 						</div>
-						<div id="menusettings">
-							<label for="roundLimitSelector">Set Round Limit:</label>
-							<select id="roundLimitSelector" onchange="saveRoundLimit()">
-								<option value="3">3</option>
-								<option value="5">5</option>
-								<option value="10">10</option>
-							</select>
-							<select id="gameModeSelector" onchange="">
-								<option value="CityCenter">Coming Soon...</option>
-								<option value="AVM">Coming Soon...</option>
-								<option value="MetroTrain">Coming Soon...</option>
-								<option value="Landmarks">Coming Soon...</option>
-								<option value="Coastal">Coming Soon...</option>
-								<option value="Universities">Coming Soon...</option>
-								<option value="Industry">Coming Soon...</option>
-								<option value="MainRoads">Coming Soon...</option>
-							</select>
+						<div id="yourStats">
+							<h1>Your Stats</h1>
+							<p id="statsPlayedRounds">Played Rounds: 0</p>
+							<p id="statsPercentages">Success Percentage: 0.00%</p>
+							<p id="statsHighScore">Best High Score: 0</p>
 						</div>
 					</div>
 					<div id="mainmenuCompetitiveChecksAndButtons">
-						<div id="competitiveChecks">Loading...</div>
+						<div id="competitiveChecks">
+							<div class="flexrow">
+								<label for="roundLimitSelector">Set Round Limit:</label>
+								<select id="roundLimitSelector" onchange="saveRoundLimit()">
+									<option value="3">3</option>
+									<option value="5">5</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+							<div class="flexrow">
+								<label for="gameModeSelector">Select Game Mode:</label>
+								<select id="gameModeSelector" onchange="">
+									<option value="Classic">Classic</option>
+									<option value="CityCenter">Coming Soon...</option>
+									<option value="AVM">Coming Soon...</option>
+									<option value="MetroTrain">Coming Soon...</option>
+									<option value="Landmarks">Coming Soon...</option>
+									<option value="Coastal">Coming Soon...</option>
+									<option value="Universities">Coming Soon...</option>
+									<option value="Industry">Coming Soon...</option>
+									<option value="MainRoads">Coming Soon...</option>
+								</select>
+							</div>
+						</div>
 						<div id="menubuttons">
 							<button id="achievements" onclick="openmodal('achievementsmenu')">Achievements</button>
 							<button id="matchHistory" onclick="openmodal('matchHistoryMenu')">Match History</button>
@@ -170,14 +173,14 @@
 			</div>
 			<div id="buttonrow">
 				<div id="closeandreturn">
-					<div id="izmirclose" onclick="returnToMainMenu()"></div>
+					<div title="Return to Main Menu" id="izmirclose" onclick="returnToMainMenu()"></div>
 					<div id="alarmicon"></div>
 					<div id="timer">Remaining: 30 Seconds</div>
 				</div>
 				<div id="buttonRowOtherStuff">
 					<div id="selectGameMode"></div>
 					<div id="roundCount"></div>
-					<div id="modaltoggle-button" onclick="toggleModal()">
+					<div title="Toggle the Results" id="modaltoggle-button" onclick="toggleModal()">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2">
 							<path d="M12 13v-8l-3 3m6 0l-3 -3"></path>
 							<path d="M9 17l1 0"></path>

@@ -30,7 +30,6 @@ const buttonrow = document.getElementById("buttonrow");
 const resultModal = document.getElementById("result-modal");
 const buttons = document.querySelectorAll("#izmirilcebox button");
 const expandButton = document.getElementById("expandButton");
-const competitiveChecks = document.getElementById("competitiveChecks");
 const gameplayBackground = document.getElementById("gameplayBackground");
 const backgroundText = document.getElementById("backgroundText");
 const titleSection = document.getElementById("title-section");
@@ -73,6 +72,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	mobileUser = false;
     document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
     document.getElementById("menuTip").style.color = "white";
+    document.getElementById("menuTip").style.textShadow = "2px 2px 2px black";
 }
 
 const map2 = L.map("map2", {
@@ -199,7 +199,6 @@ function toggleDistrict(input) {
 	}
 
 	ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-	competitiveCheck();
 }
 
 function addAllDistricts() {
@@ -216,7 +215,6 @@ function addAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
-	competitiveCheck();
 }
 
 function removeAllDistricts() {
@@ -231,7 +229,6 @@ function removeAllDistricts() {
 
 		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
 	});
-	competitiveCheck();
 }
 
 function getRandomLocation() {
@@ -717,26 +714,6 @@ function pauseTimer() {
 
 function resumeTimer() {
 	isTimerPaused = false;
-}
-
-function competitiveCheck() {
-	competitiveChecks.innerHTML = `<h1> Competitive Checks </h1>`;
-	if (document.getElementById("secondButton").innerHTML == "Log in with Google") {
-		competitiveChecks.innerHTML += `<p> You need to be logged in to save your statistics! </p>`;
-		return;
-	}
-
-	competitiveChecks.innerHTML += `<p> Logged in: &#10004 </p>`;
-
-	if (!(initiallyGreenDistricts.length == 30) && !(initiallyGreenDistricts.length == 1)) {
-		competitiveChecks.innerHTML += `<p> You need select only one or all districts to get on the leaderboard! </p>`;
-		return;
-	}
-
-	competitiveChecks.innerHTML += `<p> Only one or all districts selected: &#10004 </p>`;
-	competitiveChecks.innerHTML += `<p> No special game mode: &#10004 </p>`;
-	competitiveChecks.innerHTML += `<p> Time limit at 30 Seconds: &#10004 </p>`;
-	competitiveChecks.innerHTML += `<p> You are eligible for the leaderboard. </p>`;
 }
 
 function openmodal(modalname) {
