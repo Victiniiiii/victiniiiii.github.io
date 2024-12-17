@@ -791,7 +791,8 @@ function createMatchSharingCode() {
     matchSharingCode = selectedDistrict;
     for (let i = 0; i < roundLimit; i++) {
         matchSharingCode += "/"
-        matchSharingCode += actualCoordinates[i];
+        matchSharingCode += actualCoordinates[i].lat;
+        matchSharingCode += actualCoordinates[i].lng;
     }
     console.log('matchSharingCode :>> ', matchSharingCode);
 }
