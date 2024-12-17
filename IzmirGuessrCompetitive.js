@@ -461,11 +461,8 @@ function displayResults(distance, points) {
 	saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").innerHTML = `Distance: ${distance.toFixed(0)} meters`;
-
 	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").innerHTML = `Total Points: ${totalPoints}`;
-	document.getElementById("totalPoints2").innerHTML = `Total Points: ${totalPoints}`;
-
 	document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
 
 	for (let i = 0; i <= roundCount; i++) {
