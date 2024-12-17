@@ -240,6 +240,8 @@ async function logStatistics() {
 
 			documents.sort((a, b) => a.id.localeCompare(b.id, "tr"));
 
+            statisticsMenuText.innerHTML = "";
+
 			documents.forEach((doc) => {
 				const data = doc.data;
 				statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
@@ -370,11 +372,12 @@ async function loadMatchHistory() {
 			});
 
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
+            modalMatchHistory.innerHTML = "";
 
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} Match Sharing Code: ${data.matchCode}</h2> <br>`;
+				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2> <h6>Match Sharing Code: ${data.matchCode}</h6> <br>`;
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
