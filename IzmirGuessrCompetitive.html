@@ -146,11 +146,16 @@
 					<div id="resultModalRight"></div>
 				</div>
 				<div id="resultModalBottom">
-					<p id="distance-info"></p>
-					<p id="points-info"></p>
-					<p id="totalPoints"></p>
-                    <button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
-					<button id="startGameButton" onclick="startGame()">Next Game</button>
+                    <div class="flexrow">
+                        <p id="distance-info"></p>
+                        <p id="points-info"></p>
+                        <p id="totalPoints"></p>
+                    </div>
+                    <div class="flexrow">
+                        <button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
+                        <button id="startGameButton" onclick="startGame()">Next Game</button>
+                        <button id="shareMatch" onclick="copyMatchSharingCode()">Copy Match Code</button>
+                    </div>
 				</div>
 			</div>
 			<div id="buttonrow">

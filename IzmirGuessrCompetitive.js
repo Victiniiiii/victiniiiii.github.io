@@ -778,7 +778,12 @@ function createMatchSharingCode() {
 		matchSharingCode += "/";
 		matchSharingCode += actualCoordinates[i].lng;
 	}
-	console.log("matchSharingCode :>> ", matchSharingCode);
+}
+
+function copyMatchSharingCode() {
+    navigator.clipboard.writeText(matchSharingCode).then(() => {
+        alert("Match sharing code copied! Share it with your friends to play the same locations!");
+    })    
 }
 
 // Adding Event Listeners:

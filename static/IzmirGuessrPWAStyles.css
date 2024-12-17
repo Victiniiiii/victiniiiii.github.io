@@ -280,8 +280,7 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#returntomenu-button,
-	#playagain-button {
+	#returntomenu-button {
 		height: 4.2dvh;
 	}
 
@@ -735,7 +734,7 @@ div.gm-bundled-control:nth-child(2) {
 		width: 60vw;
 		height: 60dvh;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
@@ -743,9 +742,7 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#resultModalBottom button,
-	#playagain-button,
-	#returntomenu-button {
+	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
@@ -932,8 +929,7 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#returntomenu-button,
-	#playagain-button {
+	#returntomenu-button {
 		height: 4.9dvh;
 	}
 
@@ -1399,9 +1395,7 @@ div.gm-bundled-control:nth-child(2) {
         transition: all 0.25s ease-in-out;
 	}
 
-	#resultModalBottom button,
-	#playagain-button,
-	#returntomenu-button {
+	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
