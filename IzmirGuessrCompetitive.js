@@ -473,7 +473,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
 
-	if (roundCount != roundLimit) {
+	if (roundCount != roundLimit - 1) {
         document.getElementById("returntomenu-button").style.display = "none";
         document.getElementById("startGameButton").innerHTML = "Next Game"
 
