@@ -473,6 +473,11 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
 
+    document.getElementById("startGameButton").disabled = true;
+    setTimeout(() => {
+        document.getElementById("startGameButton").disabled = false;
+    }, 3000);
+
 	if (roundCount != roundLimit - 1) {
         document.getElementById("returntomenu-button").style.display = "none";
         document.getElementById("startGameButton").innerHTML = "Next Game"
@@ -495,13 +500,8 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
-        document.getElementById("returntomenu-button").style.display = "flex";
-        document.getElementById("startGameButton").disabled = true;
+        document.getElementById("returntomenu-button").style.display = "flex";        
         document.getElementById("startGameButton").innerHTML = "Play Again ?"
-        setTimeout(() => {
-            document.getElementById("startGameButton").disabled = false;
-        }, 3000);
-
 		guessedLocationMarker.setMap(null);
 
 		const hideAllButton = document.createElement("button");
@@ -670,18 +670,18 @@ function startGame() {
 	}
 
 	if (roundCount == roundLimit) {
-		document.getElementById("overlay-container").style.display = "none";
 		saveMatchHistory();
 		createMatchSharingCode();
 		roundCount = 0;
-	} else {
-		document.getElementById("overlay-container").style.display = "block";
-		document.getElementById("modaltoggle-button").style.display = "none";
-		document.getElementById("result-modal").style.display = "none";
-		modaltogglebutton.style.display = "none";
-		resumeTimer();
-		initMap();
 	}
+
+    document.getElementById("overlay-container").style.display = "block";
+    document.getElementById("modaltoggle-button").style.display = "none";
+    document.getElementById("result-modal").style.display = "none";
+    modaltogglebutton.style.display = "none";
+
+    resumeTimer();
+    initMap();
 }
 
 function updateTimer() {
