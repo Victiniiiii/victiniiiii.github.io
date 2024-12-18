@@ -5,30 +5,31 @@
 	padding: 0;
 }
 
-html, body {
-    overscroll-behavior: none;
-    scrollbar-width: thin;
-    scrollbar-color: #555 #222;
+html,
+body {
+	overscroll-behavior: none;
+	scrollbar-width: thin;
+	scrollbar-color: #555 #222;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+	width: 10px;
+	height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #222;
-    border-radius: 10px;
+	background: #222;
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 10px;
-    border: 2px solid #222;
+	background: #555;
+	border-radius: 10px;
+	border: 2px solid #222;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #777;
+	background: #777;
 }
 
 a,
@@ -66,50 +67,51 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 #minimapOpenButton {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    color: black;
-    z-index: 9999999999999999;
-    cursor: pointer;
-    border-radius: 20px;
-    background-color: aliceblue;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 10px;
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	color: black;
+	z-index: 9999999999999999;
+	cursor: pointer;
+	border-radius: 20px;
+	background-color: aliceblue;
 }
 
 .modalContent {
-    display: flex;
-    flex-direction: row;
-    overflow-y: scroll;
+	display: flex;
+	flex-direction: row;
+	overflow-y: scroll;
 }
 
 .modalLeft {
-    width: 80%;
-    padding: 2dvw;
+	width: 80%;
+	padding: 2dvw;
 }
 
 .modalRight {
-    width: 20%;
-    padding: 2dvw;
+	width: 20%;
+	padding: 2dvw;
 }
 
-.modalLeft, .modalRight {
-    height: calc(80dvh - 4vw);
+.modalLeft,
+.modalRight {
+	height: calc(80dvh - 4vw);
 }
 
 .flexrow {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	text-align: center;
 }
 
 @media (width > 767px) {
@@ -187,8 +189,8 @@ div.gm-bundled-control:nth-child(2) {
 		margin-right: 3vw;
 		margin-bottom: 4dvh;
 		border: 1px solid black;
-        transition: all 0.25s ease-in-out;
-        flex-wrap: wrap;
+		transition: all 0.25s ease-in-out;
+		flex-wrap: wrap;
 	}
 
 	#overlay-container.hovered {
@@ -206,36 +208,36 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid black;
 	}
 
-    #minimapButtons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+	#minimapButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
 		height: 15%;
-    }
-
-	#action-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-		width: 75%;
-		height: 100%;
-        font-size: min(1dvw, 2dvh);
-		background-color: #4caf50;
-		color: white;
-        cursor: pointer;
 	}
 
-    #minimapCloseButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 25%;
+	#action-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 75%;
 		height: 100%;
-        font-size: min(1dvw, 2dvh);
-        background: orangered;
-        color: white;
-        cursor: pointer;        
-    }
+		font-size: min(1dvw, 2dvh);
+		background-color: #4caf50;
+		color: white;
+		cursor: pointer;
+	}
+
+	#minimapCloseButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		font-size: min(1dvw, 2dvh);
+		background: orangered;
+		color: white;
+		cursor: pointer;
+	}
 
 	#result-map {
 		width: 30vw;
@@ -255,7 +257,8 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid white;
 		color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
+		border-radius: 2.5vw;
 	}
 
 	.finalrow {
@@ -272,7 +275,7 @@ div.gm-bundled-control:nth-child(2) {
 		backdrop-filter: blur(10px);
 		border: 1px solid black;
 		align-items: center;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#buttonrow {
@@ -286,23 +289,9 @@ div.gm-bundled-control:nth-child(2) {
 		display: none;
 		flex-direction: row;
 		justify-content: flex-start;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
+		pointer-events: all;
 	}
-
-	#closeandreturn {
-		display: flex;
-		flex-direction: row;
-		width: auto;
-		height: 4.3dvh;
-		margin: 1.1dvh 0.5vw 0 0.5vw;
-		background-color: rgb(0, 0, 0, 0.8);
-		border-radius: 1vh;
-	}
-
-    #buttonRowOtherStuff {
-        display: flex;
-        flex-direction: row;
-    }
 
 	#izmirclose {
 		width: 4.3dvh;
@@ -311,6 +300,11 @@ div.gm-bundled-control:nth-child(2) {
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		cursor: pointer;
 		background-size: 100% auto;
+        background-color: rgb(0, 0, 0, 0.8);
+        border-radius: 1vh;
+        margin-top: 1.1dvh;
+        margin-right: 0.5vw;
+        margin-left: 0.5vw;
 	}
 
 	#alarmicon {
@@ -318,6 +312,10 @@ div.gm-bundled-control:nth-child(2) {
 		height: 4.3dvh;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
+        background-color: rgb(0, 0, 0, 0.8);
+        margin-top: 1.1dvh;
+        border-top-left-radius: 1vh;
+        border-bottom-left-radius: 1vh;
 	}
 
 	#timer {
@@ -328,6 +326,11 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		font-size: min(1.5dvw, 3dvh);
 		text-align: center;
+        background-color: rgb(0, 0, 0, 0.8);
+        margin-top: 1.1dvh;
+        margin-right: 0.5vw;
+        border-top-right-radius: 1vh;
+        border-bottom-right-radius: 1vh;
 	}
 
 	#modaltoggle-button {
@@ -369,7 +372,7 @@ div.gm-bundled-control:nth-child(2) {
 		position: absolute;
 		margin-top: 85dvh;
 		z-index: 999991923912391923919239;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#startpage {
@@ -382,20 +385,20 @@ div.gm-bundled-control:nth-child(2) {
 		height: 90dvh;
 		margin-right: 2vw;
 		position: relative;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.menumodal {
-        display: none;
-        flex-direction: column;
+		display: none;
+		flex-direction: column;
 		width: 80vw;
 		height: 80dvh;
-		margin: 10dvh 10vw 10dvh 10vw;		
+		margin: 10dvh 10vw 10dvh 10vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		position: fixed;
 		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#startpagerighthalf {
@@ -409,21 +412,21 @@ div.gm-bundled-control:nth-child(2) {
 		background-position: center;
 		background-size: cover;
 		position: relative;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#izmirilcebox {
 		width: 100%;
 		height: 30%;
 		padding: 2.5vh 5% 0 5%;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#izmirilcebox button {
 		font-size: min(1.4dvw, 2.8dvh);
 		padding: 0 0.3vw 0 0.3vw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.izmirilcebottombuttons {
@@ -435,21 +438,21 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		align-items: center;
 		border-radius: min(0.5vw, 1vh);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.addremovebuttons {
 		font-size: min(1.6dvw, 3.2dvh);
 		margin: 0.1vw;
 		margin-left: 1.5vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.ilcesayisi {
 		font-size: min(1.2dvw, 2.4dvh);
 		margin-left: 1.6vw;
 		text-align: center;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -457,8 +460,8 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		width: 100%;
 		height: 40%;
-        transition: all 0.25s ease-in-out;
-        padding-bottom: 1vw;
+		transition: all 0.25s ease-in-out;
+		padding-bottom: 1vw;
 	}
 
 	#menubuttons {
@@ -469,7 +472,7 @@ div.gm-bundled-control:nth-child(2) {
 		gap: 0.1vw;
 		align-items: center;
 		padding: 0 1vw 0 1vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.izmirayarlar {
@@ -477,12 +480,12 @@ div.gm-bundled-control:nth-child(2) {
 		margin-left: 5vw;
 		transform: scale(1.5);
 		margin-right: 2vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#izmirtime {
 		font-size: min(1dvw, 2dvh);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#expandButton {
@@ -493,7 +496,7 @@ div.gm-bundled-control:nth-child(2) {
 		transition: 1.5s;
 		overflow: hidden;
 		z-index: 2;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.buttonInsideButton {
@@ -525,7 +528,7 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 3vh;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.modalTitle {
@@ -533,19 +536,19 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100%;
 		font-weight: bold;
 		padding-left: 4vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.modalCloseButton {
 		width: 4vw;
 		height: 100%;
 		cursor: pointer;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#changeUsernameModalBox {
 		color: white;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menubuttons button {
@@ -554,7 +557,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		border-radius: 1vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.blur {
@@ -569,13 +572,13 @@ div.gm-bundled-control:nth-child(2) {
 		width: auto;
 		height: 4.3dvh;
 		line-height: 4.3dvh;
-		margin: 1.1dvh 0.5vw 0 0.5vw;
+		margin: 1.1dvh 0.5vw 0 0;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		font-size: min(1.25vw, 2.5dvh);
 		border-radius: 1vh;
 		padding: 0 1em 0 1em;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.modalClose {
@@ -585,7 +588,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-weight: bold;
 		cursor: pointer;
 		margin-right: 1vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#competitiveChecks {
@@ -602,7 +605,7 @@ div.gm-bundled-control:nth-child(2) {
 		background: rgb(0, 0, 0, 0.4);
 		border: 1px solid black;
 		margin: 0 0 2vw 1vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menuarabox {
@@ -611,13 +614,13 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-        justify-content: center;
+		justify-content: center;
 		color: white;
 		text-shadow: 2px 2px 2px black;
-        border: 1px solid black;
+		border: 1px solid black;
 		margin: 1vw;
 		font-size: 1.15vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#miniLeaderboard,
@@ -627,9 +630,9 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-        justify-content: center;
+		justify-content: center;
 		background: rgb(0, 0, 0, 0.4);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#gameplayBackground {
@@ -638,7 +641,7 @@ div.gm-bundled-control:nth-child(2) {
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 		position: fixed;
 		z-index: 0;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 		display: none;
 	}
 
@@ -649,7 +652,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin: 40vh 40vw 40vh 40vw;
 		color: white;
 		font-size: 1.5vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#loadingScreen {
@@ -664,7 +667,7 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: center;
 		font-size: 5vw;
 		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalRight,
@@ -677,8 +680,8 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		font-size: 1vw;
-        transition: all 0.25s ease-in-out;
-        overflow-y: scroll;
+		transition: all 0.25s ease-in-out;
+		overflow-y: scroll;
 	}
 
 	#resultModalRight {
@@ -687,18 +690,18 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalLeft {
 		padding-right: 1vw;
-        direction: rtl;
+		direction: rtl;
 	}
 
 	#resultModalTop {
 		display: flex;
 		flex-direction: row;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalTop h1 {
 		font-size: 1.3vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalBottom {
@@ -710,29 +713,38 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		gap: 2vw;
-        padding: 2vw;
-        transition: all 0.25s ease-in-out;
+		padding: 2vw;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
-    #roundLimitSelector, #gameModeSelector {
-        background-color: black;
-        color: white;
-        padding: 0.25vw;
-        margin-left: 0.5vw;
-        margin-right: 1vw;
-        width: 5vw;
-    }
+	#roundLimitSelector,
+	#gameModeSelector {
+		background-color: black;
+		color: white;
+		padding: 0.25vw;
+		margin-left: 0.5vw;
+		margin-right: 1vw;
+		width: 5vw;
+	}
 
-    #competitiveChecks div {
-        justify-content: unset;
-    }
+	#competitiveChecks div {
+		justify-content: unset;
+	}
+
+	#resultModalLeft button {
+		background-color: rgb(0, 0, 0, 0.8);
+		padding: 0 5px 0 5px;
+		border-radius: 5px;
+		color: white;
+		font-size: 0.75vw;
+	}
 }
 
 @media (width < 768px) {
@@ -796,9 +808,8 @@ div.gm-bundled-control:nth-child(2) {
 		width: 100%;
 		height: 35dvh;
 		border: 1px solid black;
-		margin-bottom: 2dvh;
-        order: 1;
-        transition: all 0.25s ease-in-out;
+		order: 1;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#result-modal {
@@ -808,13 +819,13 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: center;
 		z-index: 1;
 		width: 80dvw;
-		height: 80dvh;
-		margin: 15dvh 0 0 10vw;
+		height: auto;
+		margin: 20dvh 0 0 10vw;
 		padding: 1vw;
 		border: 1px solid white;
 		color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#overlay-container {
@@ -828,7 +839,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		align-items: center;
 		border: 1px solid black;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#overlay-container.hovered {
@@ -844,34 +855,34 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid black;
 	}
 
-    #minimapButtons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+	#minimapButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
 		height: 15%;
-    }
+	}
 
 	#action-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 75%;
 		height: 100%;
-        font-size: 3dvh;
+		font-size: 3dvh;
 		background-color: #4caf50;
 		color: white;
 	}
 
-    #minimapCloseButton {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 25%;
+	#minimapCloseButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25%;
 		height: 100%;
-        font-size: 3dvh;
-        background: orangered;
-        color: white;
-    }
+		font-size: 3dvh;
+		background: orangered;
+		color: white;
+	}
 
 	.modalrow {
 		display: flex;
@@ -887,7 +898,7 @@ div.gm-bundled-control:nth-child(2) {
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 		border: 1px solid black;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.finalrow {
@@ -904,24 +915,24 @@ div.gm-bundled-control:nth-child(2) {
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
 		border: 1px solid black;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#buttonrow {
-		background-color: transparent;
 		display: none;
+		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: flex-start;
 		position: absolute;
-        width: auto;
-		height: 10dvw;
+		width: auto;
+		height: auto;
 		top: 0;
 		margin-top: 1.6dvh;
 		z-index: 5;
-        flex-wrap: wrap;
-        gap: 1vh;
-        pointer-events: none;
-        transition: all 0.25s ease-in-out;
+		gap: 1vh;
+		pointer-events: all;
+		background-color: transparent;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#izmirclose {
@@ -929,7 +940,10 @@ div.gm-bundled-control:nth-child(2) {
 		height: 10dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
-        flex-shrink: 0;
+		flex-shrink: 0;
+        order: 1;
+        background-color: rgb(0, 0, 0, 0.8);
+        border-radius: 2dvw;
 	}
 
 	#alarmicon {
@@ -938,7 +952,10 @@ div.gm-bundled-control:nth-child(2) {
 		margin-right: 2dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
-        flex-shrink: 0;
+		flex-shrink: 0;
+        order: 2;
+        background-color: rgb(0, 0, 0, 0.8);
+        border-radius: 2dvw;
 	}
 
 	#timer {
@@ -950,7 +967,10 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 4dvw;
 		color: white;
 		flex-shrink: 0;
-        padding-right: 3vw;
+		padding: 0 5px 0 5px;
+        order: 3;
+        background-color: rgb(0, 0, 0, 0.8);
+        border-radius: 2dvw;
 	}
 
 	#modaltoggle-button {
@@ -966,29 +986,12 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		align-items: center;
 		justify-content: center;
+        order: 4;
 	}
 
-	#closeandreturn {
-		display: flex;
-		flex-direction: row;
-		width: auto;
-		height: 10dvw;
-		margin: 0 1dvw 0 1dvw;
-		border-radius: 2dvw;
-		background-color: rgb(0, 0, 0, 0.8);
-        pointer-events: all;
+	.flexrow button {
+		height: 100%;
 	}
-
-    #buttonRowOtherStuff {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        pointer-events: all;
-    }
-
-    .flexrow button {
-        height: 100%;
-    }
 
 	/* styles2.css */
 
@@ -1016,7 +1019,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.menumodal {
@@ -1028,7 +1031,7 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		flex-direction: column;
 		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#startpagerighthalf {
@@ -1050,16 +1053,16 @@ div.gm-bundled-control:nth-child(2) {
 		padding: 1vw;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
-        transition: all 0.25s ease-in-out;
-        text-align: center;
+		transition: all 0.25s ease-in-out;
+		text-align: center;
 	}
 
 	#izmirilcebox button {
 		padding: 0 0.3vw 0 0.3vw;
 		font-size: 5dvw;
-        
+
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.addremovebuttons {
@@ -1067,7 +1070,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 4vw;
 		background: transparent;
 		color: white;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#ilcesayisi {
@@ -1075,15 +1078,15 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 4vw;
 		color: white;
 		margin-left: 4vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
 		display: flex;
 		flex-direction: column;
-        transition: all 0.25s ease-in-out;
-        justify-content: center;
-        padding: 1dvw 1dvw 15dvw 1dvw;
+		transition: all 0.25s ease-in-out;
+		justify-content: center;
+		padding: 1dvw 1dvw 15dvw 1dvw;
 	}
 
 	#menubuttons {
@@ -1094,8 +1097,8 @@ div.gm-bundled-control:nth-child(2) {
 		height: auto;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
-        transition: all 0.25s ease-in-out;
-        margin-top: 2dvw;
+		transition: all 0.25s ease-in-out;
+		margin-top: 2dvw;
 	}
 
 	.izmirayarlar {
@@ -1104,12 +1107,12 @@ div.gm-bundled-control:nth-child(2) {
 		padding: 2vw;
 		margin: 0 10vw 0 1vw;
 		font-size: 4vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#izmirtime {
 		font-size: 3vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#expandButton {
@@ -1119,7 +1122,7 @@ div.gm-bundled-control:nth-child(2) {
 		transition: 1.5s;
 		overflow: hidden;
 		z-index: 2;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.buttonInsideButton {
@@ -1150,7 +1153,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		margin-bottom: 3vh;
 		align-items: center;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.modalTitle {
@@ -1158,19 +1161,19 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100%;
 		font-weight: bold;
 		padding-left: 4vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.modalCloseButton {
 		width: 10vw;
 		height: 100%;
 		cursor: pointer;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#changeUsernameModalBox {
 		color: white;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menubuttons button {
@@ -1180,7 +1183,7 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		border-radius: 6dvw;
 		margin-top: 2dvw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.blur {
@@ -1188,7 +1191,7 @@ div.gm-bundled-control:nth-child(2) {
 		backdrop-filter: blur(10px);
 		width: 100%;
 		height: 100%;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#selectGameMode,
@@ -1202,17 +1205,20 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-        transition: all 0.25s ease-in-out;
-        text-align: center;
+		transition: all 0.25s ease-in-out;
+		text-align: center;
+        padding: 0 5px 0 5px;
 	}
 
-    #selectGameMode {
-        width: 63dvw;
-    }
+	#selectGameMode {
+		width: auto;
+        order: 5;
+	}
 
-    #roundCount {
-        width: 18dvw;
-    }
+	#roundCount {
+		width: auto;
+        order: 6;
+	}
 
 	.modalClose {
 		color: #aaa;
@@ -1221,7 +1227,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-weight: bold;
 		cursor: pointer;
 		margin-right: 1vw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#competitiveChecks {
@@ -1235,8 +1241,8 @@ div.gm-bundled-control:nth-child(2) {
 		text-align: center;
 		line-height: 7dvw;
 		background: rgb(0, 0, 0, 0.4);
-		border: 1px solid black;		
-        transition: all 0.25s ease-in-out;
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menuarabox {
@@ -1249,7 +1255,7 @@ div.gm-bundled-control:nth-child(2) {
 		text-shadow: 2px 2px 2px black;
 		margin: 1vw;
 		font-size: 4dvw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menuaraboxfirst {
@@ -1258,7 +1264,7 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#miniLeaderboard,
@@ -1272,7 +1278,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin-top: 2dvw;
 		border: 1px solid black;
 		background: rgb(0, 0, 0, 0.4);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#menusettings {
@@ -1282,11 +1288,11 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		align-items: center;
 		justify-content: left;
-        padding-left: 1vw;
+		padding-left: 1vw;
 		background: rgb(0, 0, 0, 0.4);
 		margin-top: 2dvw;
-        transition: all 0.25s ease-in-out;
-        font-size: 5vw;
+		transition: all 0.25s ease-in-out;
+		font-size: 5vw;
 	}
 
 	#gameplayBackground {
@@ -1296,7 +1302,7 @@ div.gm-bundled-control:nth-child(2) {
 		position: fixed;
 		z-index: 0;
 		display: none;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#backgroundText {
@@ -1306,8 +1312,8 @@ div.gm-bundled-control:nth-child(2) {
 		margin: 30dvh 10dvw 30dvh 10dvw;
 		color: white;
 		font-size: 10dvw;
-        text-align: center;
-        transition: all 0.25s ease-in-out;
+		text-align: center;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#loadingScreen {
@@ -1322,7 +1328,7 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: center;
 		font-size: 5vw;
 		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalRight,
@@ -1335,30 +1341,30 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		font-size: 4dvw;
-        border: 1px solid white;
-        transition: all 0.25s ease-in-out;
-        overflow-y: scroll;
+		border: 1px solid white;
+		transition: all 0.25s ease-in-out;
+		overflow-y: scroll;
 	}
 
 	#resultModalRight {
 		order: 3;
-        height: 24dvw;
+		height: 24dvw;
 	}
 
 	#resultModalLeft {
 		order: 2;
-        height: 16dvw;
+		height: 16dvw;
 	}
 
 	#resultModalTop {
 		display: flex;
 		flex-direction: column;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalTop h1 {
 		font-size: 5dvw;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalBottom {
@@ -1370,22 +1376,36 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		gap: 2vw;
-        border: 1px solid white;
-        transition: all 0.25s ease-in-out;
+		border: 1px solid white;
+		transition: all 0.25s ease-in-out;
 	}
 
 	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
-    #roundLimitSelector, #gameModeSelector {
-        background-color: black;
-        color: white;
-        padding: 0.2vw;
-        margin-left: 1vw;
-        margin-right: 2vw;
-    }
+	#roundLimitSelector,
+	#gameModeSelector {
+		background-color: black;
+		color: white;
+		padding: 0.2vw;
+		margin-left: 1vw;
+		margin-right: 2vw;
+	}
+
+	#resultModalLeft button {
+		background-color: rgb(0, 0, 0, 0.8);
+		padding: 0 5px 0 5px;
+		border-radius: 10px;
+		color: white;
+		font-size: 4.5vw;
+		margin-top: 1vw;
+	}
+
+	.flexrow p {
+		font-size: 3.5vw;
+	}
 }

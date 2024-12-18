@@ -68,9 +68,9 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 8;
 	initialZoom = 9;
 	mobileUser = false;
-    document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
-    document.getElementById("menuTip").style.color = "white";
-    document.getElementById("menuTip").style.textShadow = "2px 2px 2px black";
+	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
+	document.getElementById("menuTip").style.color = "white";
+	document.getElementById("menuTip").style.textShadow = "2px 2px 2px black";
 }
 
 const map2 = L.map("map2", {
@@ -469,17 +469,17 @@ function displayResults(distance, points) {
 	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("modaltoggle-button").style.display = "flex";
-    document.getElementById("shareMatch").style.display = "none";
+	document.getElementById("shareMatch").style.display = "none";
 
-    document.getElementById("startGameButton").disabled = true;
-    document.getElementById("startGameButton").style.backgroundColor = "gray";
-    setTimeout(() => {
-        document.getElementById("startGameButton").disabled = false;
-        document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-    }, 3000);
+	document.getElementById("startGameButton").disabled = true;
+	document.getElementById("startGameButton").style.backgroundColor = "gray";
+	setTimeout(() => {
+		document.getElementById("startGameButton").disabled = false;
+		document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+	}, 3000);
 
 	if (roundCount != roundLimit - 1) {
-        document.getElementById("startGameButton").innerHTML = "Next Game";
+		document.getElementById("startGameButton").innerHTML = "Next Game";
 
 		new google.maps.Marker({
 			position: randomLocation,
@@ -499,10 +499,10 @@ function displayResults(distance, points) {
 		line.setMap(resultMap);
 	} else {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
-        document.getElementById("startGameButton").innerHTML = "Play Again?";
-        document.getElementById("shareMatch").style.display = "flex";
+		document.getElementById("startGameButton").innerHTML = "Play Again?";
+		document.getElementById("shareMatch").style.display = "flex";
 
-        saveMatchHistory();
+		saveMatchHistory();
 		createMatchSharingCode();
 
 		guessedLocationMarker.setMap(null);
@@ -595,13 +595,6 @@ function displayResults(distance, points) {
 			copycoords.addEventListener("click", () => {
 				navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
 			});
-
-            toggleButton.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-            centerMarkerButton.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-            copycoords.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-            toggleButton.style.color = "white";
-            centerMarkerButton.style.color = "white";
-            copycoords.style.color = "white";
 		}
 	}
 	roundCount++;
@@ -683,13 +676,13 @@ function startGame() {
 		roundCount = 0;
 	}
 
-    document.getElementById("overlay-container").style.display = "block";
-    document.getElementById("modaltoggle-button").style.display = "none";
-    document.getElementById("result-modal").style.display = "none";
-    document.getElementById("modaltoggle-button").style.display = "none";
+	document.getElementById("overlay-container").style.display = "block";
+	document.getElementById("modaltoggle-button").style.display = "none";
+	document.getElementById("result-modal").style.display = "none";
+	document.getElementById("modaltoggle-button").style.display = "none";
 
-    resumeTimer();
-    initMap();
+	resumeTimer();
+	initMap();
 }
 
 function updateTimer() {
@@ -769,9 +762,9 @@ function createMatchSharingCode() {
 }
 
 function copyMatchSharingCode() {
-    navigator.clipboard.writeText(matchSharingCode).then(() => {
-        alert("Match sharing code copied! Share it with your friends to play the same locations!");
-    })    
+	navigator.clipboard.writeText(matchSharingCode).then(() => {
+		alert("Match sharing code copied! Share it with your friends to play the same locations!");
+	});
 }
 
 // Adding Event Listeners:
@@ -800,16 +793,18 @@ Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button)
 	});
 });
 
-document.querySelectorAll('button').forEach(button => {
-    const buttonStyle = window.getComputedStyle(button);
-    if (buttonStyle.backgroundColor === 'rgba(0, 0, 0, 0.8)') {
-        button.addEventListener('mouseenter', () => {
-            button.style.backgroundColor = 'gray';
-        });
-        button.addEventListener('mouseleave', () => {
-            button.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-        });
-    }
+document.querySelectorAll("button").forEach((button) => {
+	const buttonStyle = window.getComputedStyle(button);
+	if (buttonStyle.backgroundColor === "rgba(0, 0, 0, 0.8)") {
+		button.addEventListener("mouseenter", () => {
+			button.style.backgroundColor = "gray";
+		});
+		button.addEventListener("mouseleave", () => {
+			if (!button.disabled) {
+				button.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+			}
+		});
+	}
 });
 
 let marker = new Image();
