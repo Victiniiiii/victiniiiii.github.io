@@ -68,9 +68,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 8;
 	initialZoom = 9;
 	mobileUser = false;
-	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
-	document.getElementById("menuTip").style.color = "white";
-	document.getElementById("menuTip").style.textShadow = "2px 2px 2px black";
+	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";    
 }
 
 const map2 = L.map("map2", {
