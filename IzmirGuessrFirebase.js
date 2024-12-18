@@ -346,7 +346,6 @@ async function saveMatchHistory() {
 				score: roundPoints,
 				time: roundTimes,
 				coordinates: actualCoordinates,
-                matchCode: matchSharingCode,
 			});
 		});
 	}

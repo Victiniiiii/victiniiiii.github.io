@@ -757,12 +757,21 @@ function createMatchSharingCode() {
 		matchSharingCode += "/";
 		matchSharingCode += actualCoordinates[i].lng;
 	}
+    matchSharingCode = encodeUTF8toBase64(matchSharingCode);
 }
 
 function copyMatchSharingCode() {
 	navigator.clipboard.writeText(matchSharingCode).then(() => {
 		alert("Match sharing code copied! Share it with your friends to play the same locations!");
 	});
+}
+
+function encodeUTF8toBase64(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+}
+
+function decodeBase64toUTF8(str) {
+    return decodeURIComponent(escape(atob(str)));
 }
 
 // Adding Event Listeners:
