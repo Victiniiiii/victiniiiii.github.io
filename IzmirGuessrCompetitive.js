@@ -560,11 +560,11 @@ function displayResults(distance, points) {
 
 			line.setMap(resultMap);
 
-			const button = document.createElement("button");
-			button.innerHTML = `Toggle Guessed Location ${i + 1}`;
-			document.getElementById("resultModalLeft").appendChild(button);
+			const toggleButton = document.createElement("button");
+			toggleButton.innerHTML = `Toggle Guessed Location ${i + 1}`;
+			document.getElementById("resultModalLeft").appendChild(toggleButton);
 
-			button.addEventListener("click", () => {
+			toggleButton.addEventListener("click", () => {
 				if (guessedMarker.getMap()) {
 					guessedMarker.setMap(null);
 					actualMarker.setMap(null);
@@ -595,6 +595,13 @@ function displayResults(distance, points) {
 			copycoords.addEventListener("click", () => {
 				navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
 			});
+
+            toggleButton.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+            centerMarkerButton.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+            copycoords.style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+            toggleButton.style.color = "white";
+            centerMarkerButton.style.color = "white";
+            copycoords.style.color = "white";
 		}
 	}
 	roundCount++;
@@ -791,6 +798,18 @@ Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button)
 			modal.style.display = "none";
 		});
 	});
+});
+
+document.querySelectorAll('button').forEach(button => {
+    const buttonStyle = window.getComputedStyle(button);
+    if (buttonStyle.backgroundColor === 'rgba(0, 0, 0, 0.8)') {
+        button.addEventListener('mouseenter', () => {
+            button.style.backgroundColor = 'gray';
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        });
+    }
 });
 
 let marker = new Image();
