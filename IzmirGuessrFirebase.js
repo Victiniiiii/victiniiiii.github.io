@@ -386,15 +386,15 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
-				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
+				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);				
 
-				copycode.addEventListener("click", () => {
-					navigator.clipboard.writeText(uniqueMatchSharingCode).then(() => {
+                modalMatchHistory.appendChild(copycode);
+
+                copycode.addEventListener("click", () => {
+					navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
 					});
 				});
-
-                modalMatchHistory.appendChild(copycode);
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
