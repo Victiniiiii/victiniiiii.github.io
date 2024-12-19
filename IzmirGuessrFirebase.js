@@ -391,11 +391,12 @@ async function loadMatchHistory() {
 				modalMatchHistory.appendChild(copycoords);
 
 				copycoords.addEventListener("click", () => {
-					navigator.clipboard.writeText(uniqueMatchSharingCode);
+					navigator.clipboard.writeText(`${uniqueMatchSharingCode}`);
+                    alert("Match sharing code copied! Share it with your friends to play the same locations!");
 				});
 
 				for (let i = 0; i < data.score.length; i++) {
-					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
+					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}</p>`;
 				}
 			});
 		}
