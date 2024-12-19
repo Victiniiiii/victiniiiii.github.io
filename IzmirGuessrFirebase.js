@@ -238,7 +238,7 @@ async function logStatistics() {
 
 			documents.sort((a, b) => a.id.localeCompare(b.id, "tr"));
 
-            statisticsMenuText.innerHTML = "";
+			statisticsMenuText.innerHTML = "";
 
 			documents.forEach((doc) => {
 				const data = doc.data;
@@ -255,7 +255,7 @@ async function logTopHighScores() {
 	const usersSnapshot = await getDocs(usersRef);
 	const allHighScores = new Map();
 
-    document.getElementById("miniLeaderboard").innerHTML = `Loading...`;
+	document.getElementById("miniLeaderboard").innerHTML = `Loading...`;
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
@@ -292,7 +292,7 @@ async function leaderboardModal() {
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
 	const allHighScores = new Map();
-    document.getElementById("modalHighScores").innerHTML = `Loading...`;
+	document.getElementById("modalHighScores").innerHTML = `Loading...`;
 	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
 
 	for (const userDoc of usersSnapshot.docs) {
@@ -369,12 +369,31 @@ async function loadMatchHistory() {
 			});
 
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
-            modalMatchHistory.innerHTML = "";
+			modalMatchHistory.innerHTML = "";
 
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<br> <h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2> <h6>Match Sharing Code: ${data.matchCode}</h6> <br>`;
+				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2> <br> <h6>Match Sharing Code: ${data.matchCode}</h6> <br>`;
+
+				const copycoords = document.createElement("button");
+				copycoords.innerHTML = `Copy Match Sharing Code`;
+
+				let uniqueMatchSharingCode = data.gameMode;
+				for (let i = 0; i < data.score.length; i++) {
+					uniqueMatchSharingCode += "/";
+					uniqueMatchSharingCode += data.coordinates[i].lat;
+					uniqueMatchSharingCode += "/";
+					uniqueMatchSharingCode += data.coordinates[i].lng;
+				}
+				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
+
+				modalMatchHistory.appendChild(copycoords);
+
+				copycoords.addEventListener("click", () => {
+					navigator.clipboard.writeText(uniqueMatchSharingCode);
+				});
+
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
