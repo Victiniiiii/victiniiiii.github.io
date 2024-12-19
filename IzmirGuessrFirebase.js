@@ -387,21 +387,14 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
 				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
-                console.log('uniqueMatchSharingCode :>> ', uniqueMatchSharingCode);
-
-				modalMatchHistory.appendChild(copycoords);
 
 				copycoords.addEventListener("click", () => {
-					navigator.clipboard
-						.writeText(`${uniqueMatchSharingCode}`)
-						.then(() => {
-							alert("Match sharing code copied! Share it with your friends to play the same locations!");
-						})
-						.catch((err) => {
-							console.error("Failed to copy text: ", err);
-							alert("Failed to copy match sharing code. Please try again.");
-						});
+					navigator.clipboard.writeText(uniqueMatchSharingCode).then(() => {
+						alert("Match sharing code copied! Share it with your friends to play the same locations!");
+					});
 				});
+
+                modalMatchHistory.appendChild(copycoords);
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
