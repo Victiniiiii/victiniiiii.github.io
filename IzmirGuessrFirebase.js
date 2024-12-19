@@ -374,7 +374,7 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2> <br> <h6>Match Sharing Code: ${data.matchCode}</h6> <br>`;
+				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2><br>`;
 
 				const copycoords = document.createElement("button");
 				copycoords.innerHTML = `Copy Match Sharing Code`;
@@ -391,12 +391,19 @@ async function loadMatchHistory() {
 				modalMatchHistory.appendChild(copycoords);
 
 				copycoords.addEventListener("click", () => {
-					navigator.clipboard.writeText(`${uniqueMatchSharingCode}`);
-                    alert("Match sharing code copied! Share it with your friends to play the same locations!");
+					navigator.clipboard
+						.writeText(`${uniqueMatchSharingCode}`)
+						.then(() => {
+							alert("Match sharing code copied! Share it with your friends to play the same locations!");
+						})
+						.catch((err) => {
+							console.error("Failed to copy text: ", err);
+							alert("Failed to copy match sharing code. Please try again.");
+						});
 				});
 
 				for (let i = 0; i < data.score.length; i++) {
-					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}</p>`;
+					modalMatchHistory.innerHTML += `<p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
 			});
 		}
