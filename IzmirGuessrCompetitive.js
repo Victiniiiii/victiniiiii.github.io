@@ -68,7 +68,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 8;
 	initialZoom = 9;
 	mobileUser = false;
-	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";    
+	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
 }
 
 const map2 = L.map("map2", {
@@ -757,7 +757,7 @@ function createMatchSharingCode() {
 		matchSharingCode += "/";
 		matchSharingCode += actualCoordinates[i].lng;
 	}
-    matchSharingCode = encodeUTF8toBase64(matchSharingCode);
+	matchSharingCode = encodeUTF8toBase64(matchSharingCode);
 }
 
 function copyMatchSharingCode() {
@@ -767,11 +767,30 @@ function copyMatchSharingCode() {
 }
 
 function encodeUTF8toBase64(str) {
-    return btoa(unescape(encodeURIComponent(str)));
+	return btoa(unescape(encodeURIComponent(str)));
 }
 
 function decodeBase64toUTF8(str) {
-    return decodeURIComponent(escape(atob(str)));
+	return decodeURIComponent(escape(atob(str)));
+}
+
+function sortStatistics() {
+	const statisticsMenuText = document.getElementById("statisticsMenuText");
+	const statisticsElements = Array.from(statisticsMenuText.querySelectorAll("p"));
+
+	if (statisticsElements.length === 0) {
+		alert("No statistics to sort! Please fetch your statistics first.");
+		return;
+	}
+
+	statisticsElements.sort((a, b) => {
+		const scoreA = parseFloat(a.textContent.match(/High Score: (\d+)/)[1]);
+		const scoreB = parseFloat(b.textContent.match(/High Score: (\d+)/)[1]);
+		return scoreB - scoreA;
+	});
+
+	statisticsMenuText.innerHTML = "";
+	statisticsElements.forEach((element) => statisticsMenuText.appendChild(element));
 }
 
 // Adding Event Listeners:

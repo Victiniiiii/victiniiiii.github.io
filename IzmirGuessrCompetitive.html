@@ -199,6 +199,9 @@
 				<button>What is this game?</button>
 				<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
 
+                <button>Why should i login?</button>
+				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</p>
+
 				<button>What are the differences from the original IzmirGuessr?</button>
 				<p>The differences from the original game are:</p>
 				<p>- New design and backend maps</p>
@@ -213,10 +216,7 @@
 				<p>- Match history</p>
 				<p>- Sharing played games</p>
 				<p>- Achievements ( TODO )</p>
-				<p>- New game modes ( TODO )</p>
-
-				<button>Why should i login?</button>
-				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</p>
+				<p>- New game modes ( TODO )</p>				
 
 				<button>What are the plans for the future of the game?</button>
 				<p>These are the current plans:</p>
@@ -229,11 +229,6 @@
 				<button>How are the scores calculated?</button>
 				<p>This is the function i use to calculate scores: -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48</p>
 				<p>This is a special curved function i made to give the player more points when close to target, but still give some points when it's not that close.</p>
-
-				<button>What are some hidden features in the game?</button>
-				<p>Current hidden features are:</p>
-				<p>- Right click in main menu to toggle all districts</p>
-				<p>- Playing Every District game mode grants extra score if you guess the correct district</p>
 			</div>
 		</div>
 		<div class="menumodal" id="statsMenu">
@@ -248,6 +243,7 @@
 				</div>
 				<div class="modalRight">
 					<button onclick="logStatistics()">Click here to get your statistics.</button>
+                    <button onclick="sortStatistics()">Sort high to low</button>
 				</div>
 			</div>
 		</div>
