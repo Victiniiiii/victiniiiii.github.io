@@ -376,8 +376,8 @@ async function loadMatchHistory() {
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
 				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
 
-				const copycoords = document.createElement("button");
-				copycoords.innerHTML = `Copy Match Sharing Code`;
+				const copycode = document.createElement("button");
+				copycode.innerHTML = `Copy Match Sharing Code`;
 
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
@@ -388,13 +388,13 @@ async function loadMatchHistory() {
 				}
 				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
 
-				copycoords.addEventListener("click", () => {
+				copycode.addEventListener("click", () => {
 					navigator.clipboard.writeText(uniqueMatchSharingCode).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
 					});
 				});
 
-                modalMatchHistory.appendChild(copycoords);
+                modalMatchHistory.appendChild(copycode);
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
