@@ -646,7 +646,7 @@ function startGame() {
 		return;
 	}
 
-	if (roundCount == 0) {
+	if (roundCount == 0 || roundCount == roundLimit) {
 		if (initiallyGreenDistricts.length == 30) {
 			selectedGameMode = "Every District";
 		} else if (initiallyGreenDistricts.length == 1) {
@@ -667,11 +667,7 @@ function startGame() {
 
 		totalPoints = 0;
 	}
-
-	if (roundCount == roundLimit) {
-		roundCount = 0;
-	}
-
+    
 	document.getElementById("overlay-container").style.display = "block";
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
