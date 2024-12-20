@@ -111,11 +111,6 @@ document.addEventListener("contextmenu", function (event) {
 
 // Functions:
 
-function refreshMap() {
-	map2.setView([initialLat, initialLon], initialZoom);
-	map2.invalidateSize();
-}
-
 function isPointInPolygon(point, polygon) {
 	let x = point[0],
 		y = point[1];
@@ -636,8 +631,10 @@ function returnToMainMenu() {
 	gameplayBackground.style.display = "none";
 	document.getElementById("gamemap").innerHTML = "";
 
+    map2.setView([initialLat, initialLon], initialZoom);
+	map2.invalidateSize();
+
 	clearImageCache();
-	refreshMap();
 	pauseTimer();
 	calculateDistrictData();
 	logTopHighScores();

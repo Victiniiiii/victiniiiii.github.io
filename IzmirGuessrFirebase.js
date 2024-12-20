@@ -386,14 +386,17 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
-				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);				
+				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
+                
+                console.log('copycode :>> ', copycode);
 
                 modalMatchHistory.appendChild(copycode);
 
                 copycode.addEventListener("click", () => {
-					navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
+                    console.log("Working!")
+					/* navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
-					});
+					}); */
 				});
 
 				for (let i = 0; i < data.score.length; i++) {
