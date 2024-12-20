@@ -423,7 +423,7 @@ function displayResults(distance, points) {
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
 	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
-	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
+	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p><br>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;

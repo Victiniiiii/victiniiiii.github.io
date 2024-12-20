@@ -124,6 +124,12 @@ div.gm-bundled-control:nth-child(2) {
 	border-radius: 1vh;
 }
 
+.copycodeButton {
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
+    padding: 1vh 0 1vh 0;
+}
+
 @media (width > 767px) {
 	/* Big Screens */
 	body {

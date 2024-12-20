@@ -381,6 +381,7 @@ async function loadMatchHistory() {
 				const copycode = document.createElement("button");
 				copycode.innerHTML = `Copy Match Sharing Code`;
 				copycode.id = `copycode${j++}`;
+                copycode.className = "copycodeButton";
                 modalMatchHistory.appendChild(copycode);
 				
 				let uniqueMatchSharingCode = data.gameMode;
