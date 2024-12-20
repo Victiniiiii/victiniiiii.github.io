@@ -666,8 +666,9 @@ function startGame() {
 		roundTimes.fill(0, 0, roundLimit);
 
 		totalPoints = 0;
+        roundCount = 0;
 	}
-    
+
 	document.getElementById("overlay-container").style.display = "block";
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
