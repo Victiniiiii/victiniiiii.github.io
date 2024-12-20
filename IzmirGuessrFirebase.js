@@ -397,7 +397,7 @@ async function loadMatchHistory() {
 				}
 			});
 
-            for (i = 0; i < j; i++) {
+            for (let i = 0; i < j; i++) {
                 document.getElementById(`copycode${i}`).addEventListener("click", () => {
 					navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
