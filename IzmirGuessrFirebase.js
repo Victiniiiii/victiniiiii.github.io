@@ -371,6 +371,7 @@ async function loadMatchHistory() {
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
 			modalMatchHistory.innerHTML = "";
 			let j = 0;
+            let uniqueCodes = [];
 
 			documents.forEach((doc) => {
 				const data = doc.data;
@@ -380,14 +381,8 @@ async function loadMatchHistory() {
 				const copycode = document.createElement("button");
 				copycode.innerHTML = `Copy Match Sharing Code`;
 				copycode.id = `copycode${j++}`;
-				copycode.addEventListener("click", () => {
-					console.log("Working!");
-					/* navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
-						alert("Match sharing code copied! Share it with your friends to play the same locations!");
-					}); */
-				});
-                console.log("copycode :>> ", copycode);
-
+                modalMatchHistory.appendChild(copycode);
+				
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
 					uniqueMatchSharingCode += "/";
@@ -395,14 +390,20 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
-				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
-
-				modalMatchHistory.appendChild(copycode);
+                uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));				
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
 			});
+
+            for (i = 0; i < j; i++) {
+                document.getElementById(`copycode${i}`).addEventListener("click", () => {
+					navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
+						alert("Match sharing code copied! Share it with your friends to play the same locations!");
+					});
+				});
+            }
 		}
 	} else {
 		document.getElementById("modalMatchHistory").innerHTML = `<p>You need to be logged in to do this!</p>`;
