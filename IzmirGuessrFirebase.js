@@ -392,8 +392,8 @@ async function loadMatchHistory() {
 
                 modalMatchHistory.appendChild(copycode);
 
-                copycode.addEventListener("click", () => {
-                    console.log("Working!")
+                copycode.addEventListener("mousedown", () => {
+                    console.log("Working!");
 					/* navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
 					}); */
