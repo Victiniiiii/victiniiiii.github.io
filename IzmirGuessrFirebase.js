@@ -377,7 +377,7 @@ async function loadMatchHistory() {
 				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
 
 				const copycode = document.createElement("button");
-				copycode.innerHTML = `Copy Match Sharing Code`;
+				copycode.innerHTML = `Copy Match Sharing Code`;                
 
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
@@ -385,6 +385,7 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += data.coordinates[i].lat;
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
+                    copycode.id = `copycode${i}`;
 				}
 				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
                 
@@ -392,7 +393,7 @@ async function loadMatchHistory() {
 
                 modalMatchHistory.appendChild(copycode);
 
-                copycode.addEventListener("mousedown", () => {
+                copycode.addEventListener("click", () => {
                     console.log("Working!");
 					/* navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
