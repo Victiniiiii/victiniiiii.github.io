@@ -370,14 +370,16 @@ async function loadMatchHistory() {
 
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
 			modalMatchHistory.innerHTML = "";
+            let j = 0;
 
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
+				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;                
 
 				const copycode = document.createElement("button");
-				copycode.innerHTML = `Copy Match Sharing Code`;                
+				copycode.innerHTML = `Copy Match Sharing Code`;
+                copycode.id = `copycode${j++}`;
 
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
@@ -385,20 +387,19 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += data.coordinates[i].lat;
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
-                    copycode.id = `copycode${i}`;
 				}
 				uniqueMatchSharingCode = encodeUTF8toBase64(uniqueMatchSharingCode);
                 
                 console.log('copycode :>> ', copycode);
 
-                modalMatchHistory.appendChild(copycode);
-
                 copycode.addEventListener("click", () => {
-                    console.log("Working!");
+                    console.log("Working!")
 					/* navigator.clipboard.writeText(`uniqueMatchSharingCode`).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
 					}); */
 				});
+
+                modalMatchHistory.appendChild(copycode);                
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
