@@ -63,6 +63,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 7;
 	initialZoom = 8;
 	mobileUser = true;
+    document.getElementById("menuTip").style.display = "none";
 } else {
 	maxZoomValue = 10;
 	minZoomValue = 8;

@@ -118,10 +118,9 @@ div.gm-bundled-control:nth-child(2) {
 	color: white;
 	text-shadow: black 4px 4px 4px;
 	background-color: rgba(0, 0, 0, 0.5);
-	margin: 0 12vw 0 12vw;
 	width: auto;
 	display: inline-block;
-	padding: 0 1vh 0 1vh;
+	padding: 1vh;
 	border-radius: 1vh;
 }
 
@@ -450,20 +449,6 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	.addremovebuttons {
-		font-size: min(1.6dvw, 3.2dvh);
-		margin: 0.1vw;
-		margin-left: 1.5vw;
-		transition: all 0.25s ease-in-out;
-	}
-
-	.ilcesayisi {
-		font-size: min(1.2dvw, 2.4dvh);
-		margin-left: 1.6vw;
-		text-align: center;
-		transition: all 0.25s ease-in-out;
-	}
-
 	#mainmenuCompetitiveChecksAndButtons {
 		display: flex;
 		flex-direction: row;
@@ -475,12 +460,12 @@ div.gm-bundled-control:nth-child(2) {
 
 	#menubuttons {
 		width: 14vw;
-		height: auto;
+		height: 75%;
 		display: flex;
 		flex-direction: column;
 		gap: 0.1vw;
 		align-items: center;
-		padding: 0 1vw 0 1vw;
+		padding: 1vw;
 		transition: all 0.25s ease-in-out;
 	}
 
@@ -602,7 +587,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#competitiveChecks {
 		width: 30vw;
-		height: calc(100% - 3vw);
+		height: 75%;
 		display: flex;
 		flex-direction: column;
 		color: white;
@@ -756,6 +741,30 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 0.75vw;
 		margin-bottom: 0.5vh;
 	}
+
+	#mainMapInfo button,
+	#mainMapInfo select {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+	}
+
+	#mainMapInfo p,
+	#mainMapInfo label {
+		color: white;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+    select#gameModeSelector {
+        width: 7.5vw;
+    }
+    
+    select#roundLimitSelector {
+        width: 4vw;
+    }
 }
 
 @media (width < 768px) {
@@ -1030,9 +1039,11 @@ div.gm-bundled-control:nth-child(2) {
 
 	#mainMapInfo {
 		display: flex;
+        flex-wrap: wrap;
 		flex-direction: row;
+        row-gap: 2vw;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-evenly;
 		transition: all 0.25s ease-in-out;
 	}
 
@@ -1076,22 +1087,6 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 5dvw;
 
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-		transition: all 0.25s ease-in-out;
-	}
-
-	.addremovebuttons {
-		margin: 0.1vw 0.1vw 0.1vw 1vw;
-		font-size: 4vw;
-		background: transparent;
-		color: white;
-		transition: all 0.25s ease-in-out;
-	}
-
-	#ilcesayisi {
-		text-align: center;
-		font-size: 4vw;
-		color: white;
-		margin-left: 4vw;
 		transition: all 0.25s ease-in-out;
 	}
 
@@ -1422,4 +1417,28 @@ div.gm-bundled-control:nth-child(2) {
 	.flexrow p {
 		font-size: 3.5vw;
 	}
+
+	#mainMapInfo button,
+	#mainMapInfo select {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 4vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+	}
+
+	#mainMapInfo p,
+	#mainMapInfo label {
+		color: white;
+		font-size: 4vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+    select#gameModeSelector {
+        width: 24vw;
+    }
+    
+    select#roundLimitSelector {
+        width: 12vw;
+    }
 }
