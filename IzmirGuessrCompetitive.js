@@ -717,6 +717,10 @@ function startGame(sharedGame) {
 	if (sharedGame == "yes") {
 		currentlyPlayingSharedGame = "true";
 	} else if (sharedGame == "no") {
+        if (initiallyGreenDistricts.length == 0) {
+            alert("You can't start the game with no districts selected!");
+            return;
+        }
         if (initiallyGreenDistricts.length == 30) {
 			selectedGameMode = "Every District";
 		} else if (initiallyGreenDistricts.length == 1) {
@@ -728,11 +732,6 @@ function startGame(sharedGame) {
 		currentlyPlayingSharedGame = "false";
         actualCoordinates.fill(0, 0, roundLimit);
         actualCoordinates.length = 0;
-	}
-
-	if (initiallyGreenDistricts.length == 0) {
-		alert("You can't start the game with no districts selected!");
-		return;
 	}
 
 	if (roundCount == 0 || roundCount == roundLimit) {
