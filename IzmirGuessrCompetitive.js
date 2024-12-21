@@ -128,8 +128,32 @@ function switchMainMenuMapType() {
 				initiallyGreenDistricts.push({ bounds: district.bounds });
 			}
 		});
-    } else if (mode === "YourPerformance") {
+	} else if (mode === "YourPerformance") {
+		statisticsMap().then((statistics) => {
+			statistics
+				.filter((stat) => stat.district !== "Custom" && stat.district !== "Every District")
+				.forEach((stat) => {
+					const district = districtsData.find((d) => d.name === stat.district);
 
+					if (district) {
+						const normalizedScore = Math.min(stat.highScore / 10000, 1);
+						const color = `rgb(${255 - 255 * normalizedScore}, ${255 * normalizedScore}, 0)`;
+
+						const coordinates = modeType === "design" ? district.designcoordinates : district.bounds;
+						const polygon = L.polygon(coordinates, {
+							fill: true,
+							color: color,
+						}).addTo(map2);
+
+						districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+
+						polygon.bindPopup(`
+                            <strong>${stat.district}</strong><br>
+                            High Score: ${stat.highScore}
+                        `);
+					}
+				});
+		});
 	} else {
 		getDistrictWinners().then((winners) => {
 			winners.forEach((winner) => {
@@ -157,7 +181,7 @@ function switchMainMenuMapType() {
 }
 
 setTimeout(() => {
-    switchMainMenuMapType();
+	switchMainMenuMapType();
 }, 1000);
 
 function isPointInPolygon(point, polygon) {
