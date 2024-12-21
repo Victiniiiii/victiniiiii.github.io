@@ -42,6 +42,7 @@ let districtLayers = [];
 let previousMode = "DistrictBorders";
 let gameOngoing = false;
 let isTimerPaused = false;
+let currentlyPlayingSharedGame = false;
 let guessedLocationMarker;
 let randomLocation;
 let minimap;
@@ -327,29 +328,29 @@ function initMap() {
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
-	if (mobileUser) {
-		minimapCloseButton();
-	}
-
-	let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
-	shuffleArray(formattedNames);
-	selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
-	randomLocation = getRandomLocation();
+	if (currentlyPlayingSharedGame == "false") {
+		let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
+		shuffleArray(formattedNames);
+		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
+		randomLocation = getRandomLocation();
+	} else {
+        randomLocation = actualCoordinates[roundCount];
+    }
 
 	startPage.style.display = "none";
 	titleSection.style.display = "none";
 	gameplayBackground.style.display = "block";
 	document.getElementById("buttonrow").style.display = "flex";
-
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-	document.getElementById("gamemap").innerHTML = "";
-	clearImageCache();
+	document.getElementById("gamemap").innerHTML = "";	
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
+    clearImageCache();
 
-	if (mobileUser) {
-		document.getElementById("action-button").style.width = "75%";
+    if (mobileUser) {
+		minimapCloseButton();
+        document.getElementById("action-button").style.width = "75%";
 		document.getElementById("minimapCloseButton").style.width = "25%";
 		document.getElementById("minimapCloseButton").innerHTML = "Close";
 	}
@@ -455,14 +456,6 @@ function initMap() {
 	});
 }
 
-function toggleModal() {
-	if (resultModal.style.display === "flex") {
-		resultModal.style.display = "none";
-	} else {
-		resultModal.style.display = "flex";
-	}
-}
-
 function calculatePoints(distance) {
 	let points = -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48;
 	if (points < 0) {
@@ -524,7 +517,10 @@ function displayResults(distance, points) {
 
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
-	saveData(selectedDistrict, roundPoints[roundCount]);
+
+	if (currentlyPlayingSharedGame == false) {
+		saveData(selectedDistrict, roundPoints[roundCount]);
+	}
 
 	document.getElementById("distance-info").innerHTML = `Distance: ${distance.toFixed(0)} meters`;
 	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
@@ -571,8 +567,10 @@ function displayResults(distance, points) {
 		document.getElementById("startGameButton").innerHTML = "Play Again?";
 		document.getElementById("shareMatch").style.display = "flex";
 
-		saveMatchHistory();
-		createMatchSharingCode();
+		if (currentlyPlayingSharedGame == false) {
+			saveMatchHistory();
+			createMatchSharingCode();
+		}
 
 		guessedLocationMarker.setMap(null);
 
@@ -715,7 +713,13 @@ function returnToMainMenu() {
 	logTopHighScores();
 }
 
-function startGame() {
+function startGame(sharedGame) {
+	if (sharedGame == "yes") {
+		currentlyPlayingSharedGame = "true";
+	} else if (sharedGame == "no") {
+		currentlyPlayingSharedGame = "false";
+	}
+
 	if (initiallyGreenDistricts.length == 0) {
 		alert("You can't start the game with no districts selected!");
 		return;
@@ -786,6 +790,14 @@ function openmodal(modalname) {
 	document.getElementById(`${modalname}`).style.display = "flex";
 }
 
+function toggleModal() {
+	if (resultModal.style.display === "flex") {
+		resultModal.style.display = "none";
+	} else {
+		resultModal.style.display = "flex";
+	}
+}
+
 function minimapCloseButton() {
 	document.getElementById("overlay-container").style.zIndex = "-50";
 	document.getElementById("minimapOpenButton").style.display = "flex";
@@ -842,6 +854,27 @@ function encodeUTF8toBase64(str) {
 
 function decodeBase64toUTF8(str) {
 	return decodeURIComponent(escape(atob(str)));
+}
+
+function enterMatchSharingCode() {
+	let theCode = document.getElementById("matchSharingCodeInput").value;
+	theCode = decodeBase64toUTF8(theCode);
+	const parts = theCode.split("/");
+	const districtName = parts[0];
+	const coordinates = parts.slice(1).map(Number);
+	const roundsCount = coordinates.length / 2;
+
+	const rounds = [];
+	for (let i = 0; i < coordinates.length; i += 2) {
+		rounds.push({ lat: coordinates[i], lng: coordinates[i + 1] });
+	}
+
+	currentlyPlayingSharedGame = true;
+	startGame("yes");
+
+	console.log(`District Name: ${districtName}`);
+	console.log(`Number of Rounds: ${roundsCount}`);
+	console.log("Rounds Coordinates:", rounds);
 }
 
 function sortStatistics(criteria) {
@@ -931,10 +964,12 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 
 document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
-	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
-		removeAllDistricts();
-	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
-		addAllDistricts();
+	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+		if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
+			removeAllDistricts();
+		} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
+			addAllDistricts();
+		}
 	}
 });
 

@@ -126,13 +126,16 @@
 									<option value="MainRoads">Main Roads</option>
 								</select>
 							</div>
+							<div class="flexrow">
+								<button class="coolButton" onclick="openmodal('enterCodeModal')" id="enterCode">Play Shared Game</button>
+							</div>
 						</div>
 						<div id="menubuttons">
 							<button id="matchHistory" onclick="openmodal('matchHistoryMenu')">Match History</button>
 							<button id="leaderboards" onclick="openmodal('leaderboardMenu')">Leaderboards</button>
 							<button id="stats" onclick="openmodal('statsMenu')">Statistics</button>
 							<button onclick="openmodal('faqMenu')">How to Play</button>
-							<button onclick="startGame()">Start Game</button>
+							<button onclick="startGame('no')">Start Game</button>
 						</div>
 					</div>
 				</div>
@@ -173,7 +176,7 @@
 					<div class="flexrow">
 						<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
 						<button id="shareMatch" onclick="copyMatchSharingCode()">Copy Match Code</button>
-						<button id="startGameButton" onclick="startGame()">Next Game</button>
+						<button id="startGameButton" onclick="startGame('maybe')">Next Game</button>
 					</div>
 				</div>
 			</div>
@@ -209,7 +212,6 @@
 						</div>
 						<div class="faq-answer">When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun!</div>
 					</div>
-
 					<div class="faq">
 						<div class="faq-question">
 							Why should I login?
@@ -217,7 +219,6 @@
 						</div>
 						<div class="faq-answer">You can login with your Google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</div>
 					</div>
-
 					<div class="faq">
 						<div class="faq-question">
 							What are the differences from the original IzmirGuessr?
@@ -226,7 +227,7 @@
 						<div class="faq-answer">
 							<p>The differences from the original game are:</p>
 							<ul>
-								<li>New design and backend maps</li>
+								<li>New design, backend and score maps</li>
 								<li>Dark mode</li>
 								<li>Harder difficulties</li>
 								<li>Cleaner code</li>
@@ -241,7 +242,6 @@
 							</ul>
 						</div>
 					</div>
-
 					<div class="faq">
 						<div class="faq-question">
 							What are the plans for the future of the game?
@@ -250,15 +250,11 @@
 						<div class="faq-answer">
 							<p>These are the current plans:</p>
 							<ul>
-								<li>Sorting in statistics tab</li>
-								<li>Finish all the modals</li>
 								<li>2 Language support (TR - ENG)</li>
-								<li>A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at</li>
-								<li>A map in leaderboard to show district winners (and 2nd and 3rd rankers)</li>
+								<li>New game modes and settings</li>
 							</ul>
 						</div>
 					</div>
-
 					<div class="faq">
 						<div class="faq-question">
 							How are the scores calculated?
@@ -364,6 +360,16 @@
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button class="coolButton" onclick="changeNickname()">Change</button>
 		</div>
+        <div class="menumodal" id="enterCodeModal">
+            <div class="modalTitleRow">
+				<div class="modalTitle">Enter Game Code</div>
+				<div class="modalCloseButton">&#10006;</div>
+			</div>
+            <p>If you have a game code, you can play that game by pasting it here.</p>
+            <p>Playing shared games do not count for statistics or the leaderboard.</p>
+			<input id="matchSharingCodeInput" type="text" aria-label="usernameinput" />
+			<button class="coolButton" onclick="enterMatchSharingCode()">Play</button>
+        </div>
 		<div id="loadingScreen">Loading...</div>
 
 		<script src="badwords.js"></script>
