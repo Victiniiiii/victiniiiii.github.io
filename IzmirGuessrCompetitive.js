@@ -109,7 +109,6 @@ function switchMainMenuMapType() {
 	});
 
 	districtLayers = [];
-	initiallyGreenDistricts = [];
 
 	if (mode === "DistrictBorders" || mode === "YourPerformance" || mode === "Leaderboard") {
 		modeType = "design";
@@ -122,12 +121,13 @@ function switchMainMenuMapType() {
 	if (mode === "DistrictBorders" || mode === "GameBorders" || mode === "CityCenterBorders") {
 		districtsData.forEach((district) => {
 			const coordinates = mode === "CityCenterBorders" ? district.center : modeType === "design" ? district.designcoordinates : district.bounds;
-			const polygon = L.polygon(coordinates, { fill: true, color: "green" }).addTo(map2);
-			districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+			const isGreen = initiallyGreenDistricts.some((greenDistrict) => JSON.stringify(greenDistrict.bounds) === JSON.stringify(district.bounds));
+			const state = isGreen ? 1 : 0;
+            const color = isGreen ? "green" : "red";
+            const fill = isGreen ? true : false;
 
-			if (district.state === 1) {
-				initiallyGreenDistricts.push({ bounds: district.bounds });
-			}
+            const polygon = L.polygon(coordinates, { fill: fill, color: color }).addTo(map2);
+			districtLayers.push({ name: district.name, layer: polygon, state: state, bounds: district.bounds });
 		});
 	} else if (mode === "YourPerformance") {
 		statisticsMap().then((statistics) => {
@@ -182,6 +182,9 @@ function switchMainMenuMapType() {
 }
 
 setTimeout(() => {
+	districtsData.forEach((district) => {
+		initiallyGreenDistricts.push({ bounds: district.bounds });
+	});
 	switchMainMenuMapType();
 }, 1000);
 
@@ -201,12 +204,12 @@ function isPointInPolygon(point, polygon) {
 }
 
 function findDistrict(coordinate) {
-    for (let district of districtsData) {
-        if (isPointInPolygon(coordinate, district.bounds)) {
-            return district;
-        }
-    }
-    return null;
+	for (let district of districtsData) {
+		if (isPointInPolygon(coordinate, district.bounds)) {
+			return district;
+		}
+	}
+	return null;
 }
 
 function shuffleArray(array) {
@@ -343,9 +346,9 @@ function initMap() {
 		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 		randomLocation = getRandomLocation();
 	} else {
-        randomLocation = actualCoordinates[roundCount];
-        selectedDistrict = findDistrict(randomLocation);
-    }
+		randomLocation = actualCoordinates[roundCount];
+		selectedDistrict = findDistrict(randomLocation);
+	}
 
 	startPage.style.display = "none";
 	titleSection.style.display = "none";
@@ -353,14 +356,14 @@ function initMap() {
 	document.getElementById("buttonrow").style.display = "flex";
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
-	document.getElementById("gamemap").innerHTML = "";	
+	document.getElementById("gamemap").innerHTML = "";
 	resultModal.style.display = "none";
 	backgroundText.innerHTML = "";
-    clearImageCache();
+	clearImageCache();
 
-    if (mobileUser) {
+	if (mobileUser) {
 		minimapCloseButton();
-        document.getElementById("action-button").style.width = "75%";
+		document.getElementById("action-button").style.width = "75%";
 		document.getElementById("minimapCloseButton").style.width = "25%";
 		document.getElementById("minimapCloseButton").innerHTML = "Close";
 	}
@@ -727,11 +730,11 @@ function startGame(sharedGame) {
 	if (sharedGame == "yes") {
 		currentlyPlayingSharedGame = true;
 	} else if (sharedGame == "no") {
-        if (initiallyGreenDistricts.length == 0) {
-            alert("You can't start the game with no districts selected!");
-            return;
-        }
-        if (initiallyGreenDistricts.length == 30) {
+		if (initiallyGreenDistricts.length == 0) {
+			alert("You can't start the game with no districts selected!");
+			return;
+		}
+		if (initiallyGreenDistricts.length == 30) {
 			selectedGameMode = "Every District";
 		} else if (initiallyGreenDistricts.length == 1) {
 			selectedGameMode = initiallyGreenDistricts[0].name;
@@ -740,17 +743,17 @@ function startGame(sharedGame) {
 		}
 
 		currentlyPlayingSharedGame = false;
-        actualCoordinates.fill(0, 0, roundLimit);
-        actualCoordinates.length = 0;
+		actualCoordinates.fill(0, 0, roundLimit);
+		actualCoordinates.length = 0;
 	}
 
 	if (roundCount == 0 || roundCount == roundLimit) {
 		roundPoints.length = 0;
-		guessedCoordinates.length = 0;		
+		guessedCoordinates.length = 0;
 		roundTimes.length = 0;
 
 		roundPoints.fill(0, 0, roundLimit);
-		guessedCoordinates.fill(0, 0, roundLimit);		
+		guessedCoordinates.fill(0, 0, roundLimit);
 		roundTimes.fill(0, 0, roundLimit);
 
 		totalPoints = 0;
@@ -879,11 +882,11 @@ function enterMatchSharingCode() {
 		rounds.push({ lat: coordinates[i], lng: coordinates[i + 1] });
 	}
 
-    actualCoordinates.fill(0, 0, roundLimit);
-    actualCoordinates.length = 0;
-    actualCoordinates = rounds;
-    selectedGameMode = districtName;
-    roundLimit = roundsCount;
+	actualCoordinates.fill(0, 0, roundLimit);
+	actualCoordinates.length = 0;
+	actualCoordinates = rounds;
+	selectedGameMode = districtName;
+	roundLimit = roundsCount;
 
 	currentlyPlayingSharedGame = true;
 	startGame("yes");
