@@ -336,6 +336,7 @@ function getRandomLocation() {
 }
 
 function initMap() {
+    closeAllModals();
 	gameOngoing = true;
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
@@ -760,6 +761,10 @@ function startGame(sharedGame) {
 		roundCount = 0;
 	}
 
+    if (roundCount == roundLimit) {
+        sharedGame = "no";
+    }
+
 	document.getElementById("overlay-container").style.display = "block";
 	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
@@ -824,6 +829,12 @@ function minimapOpenButton() {
 	if (mobileUser) {
 		document.getElementById("gamemap").style.height = "65dvh";
 	}
+}
+
+function closeAllModals() {
+    Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
+        button.click();
+    });
 }
 
 function clearImageCache() {
