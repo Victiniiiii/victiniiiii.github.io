@@ -87,22 +87,19 @@ div.gm-bundled-control:nth-child(2) {
 .modalContent {
 	display: flex;
 	flex-direction: row;
-	overflow-y: scroll;
 }
 
 .modalLeft {
 	width: 80%;
+    height: 100%;
 	padding: 2dvw;
+    overflow-y: auto;
 }
 
 .modalRight {
 	width: 20%;
+    height: 100%;
 	padding: 2dvw;
-}
-
-.modalLeft,
-.modalRight {
-	height: calc(80dvh - 4vw);
 }
 
 .flexrow {
@@ -112,6 +109,11 @@ div.gm-bundled-control:nth-child(2) {
 	align-items: center;
 	justify-content: space-evenly;
 	text-align: center;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
 }
 
 #menuTip {
@@ -128,6 +130,89 @@ div.gm-bundled-control:nth-child(2) {
     color: white;
     background-color: rgb(0, 0, 0, 0.8);
     padding: 1vh 0 1vh 0;
+}
+
+.coolButton {
+    color: white;
+    background-color: rgb(0, 0, 0, 0.8);
+    padding: 0.25vw 1vw 0.25vw 1vw;
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+}
+
+.faq-container {
+    width: 60vw;
+    height: calc(80dvh - 7vw);
+    margin: auto;
+    border-radius: 1vw;
+    overflow-y: auto;
+}
+
+.faq {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    margin-bottom: 1vh;
+    border-radius: 1vw;    
+}
+
+.faq-question {
+    padding: 1vw;
+    cursor: pointer;
+    font-size: 1vw;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+
+.faq-question:hover {
+    background-color: #2a2a2a;   
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw; 
+}
+
+.faq-answer {
+    display: none;
+    padding: 1vw;
+    font-size: 1vw;
+    color: #ccc;
+    max-height: 0;
+    border-top: 1px solid #333;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+}
+
+.faq-answer ul, .faq-answer li, .faq-answer p {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.faq.open .faq-answer {
+    max-height: 100vh;
+    display: block;
+}
+
+.faq.open .faq-question {
+    background-color: #2a2a2a;
+}
+
+.faq.open .faq-question:hover {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important; 
+}
+
+.faq.open .arrow {
+    transform: rotate(180deg);
 }
 
 @media (width > 767px) {

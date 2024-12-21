@@ -63,7 +63,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	minZoomValue = 7;
 	initialZoom = 8;
 	mobileUser = true;
-    document.getElementById("menuTip").style.display = "none";
+	document.getElementById("menuTip").style.display = "none";
 } else {
 	maxZoomValue = 10;
 	minZoomValue = 8;
@@ -100,14 +100,14 @@ buttons.forEach((button) => {
 	button.style.backgroundColor = "green";
 });
 
-document.addEventListener("contextmenu", function (event) {
+/* document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
 		addAllDistricts();
 	}
-});
+}); */
 
 // Functions:
 
@@ -631,7 +631,7 @@ function returnToMainMenu() {
 	gameplayBackground.style.display = "none";
 	document.getElementById("gamemap").innerHTML = "";
 
-    map2.setView([initialLat, initialLon], initialZoom);
+	map2.setView([initialLat, initialLon], initialZoom);
 	map2.invalidateSize();
 
 	clearImageCache();
@@ -666,7 +666,7 @@ function startGame() {
 		roundTimes.fill(0, 0, roundLimit);
 
 		totalPoints = 0;
-        roundCount = 0;
+		roundCount = 0;
 	}
 
 	document.getElementById("overlay-container").style.display = "block";
@@ -769,19 +769,32 @@ function decodeBase64toUTF8(str) {
 	return decodeURIComponent(escape(atob(str)));
 }
 
-function sortStatistics() {
+function sortStatistics(criteria) {
 	const statisticsMenuText = document.getElementById("statisticsMenuText");
 	const statisticsElements = Array.from(statisticsMenuText.querySelectorAll("p"));
 
-	if (statisticsElements.length === 0) {
+	if (statisticsElements.length === 0 || document.getElementById("statisticsMenuText").innerText == "You need to be logged in to do this!") {
 		alert("No statistics to sort! Please fetch your statistics first.");
 		return;
 	}
 
 	statisticsElements.sort((a, b) => {
-		const scoreA = parseFloat(a.textContent.match(/High Score: (\d+)/)[1]);
-		const scoreB = parseFloat(b.textContent.match(/High Score: (\d+)/)[1]);
-		return scoreB - scoreA;
+		const parseData = (text, pattern) => {
+			const match = text.match(pattern);
+			return match ? parseFloat(match[1]) : 0;
+		};
+
+		const patterns = {
+			highscores: /High Score: (\d+)/,
+			gamesplayed: /Games Played: (\d+)/,
+			roundsplayed: /Rounds Played: (\d+)/,
+			successpercentage: /Success Percentage: ([\d.]+)%/,
+		};
+
+		const valueA = parseData(a.textContent, patterns[criteria]);
+		const valueB = parseData(b.textContent, patterns[criteria]);
+
+		return valueB - valueA;
 	});
 
 	statisticsMenuText.innerHTML = "";
@@ -826,6 +839,19 @@ document.querySelectorAll("button").forEach((button) => {
 			}
 		});
 	}
+});
+
+document.querySelectorAll(".faq-question").forEach((question) => {
+	question.addEventListener("click", () => {
+		document.querySelectorAll(".faq").forEach((faq) => {
+			if (faq !== question.parentElement) {
+				faq.classList.remove("open");
+			}
+		});
+
+		const faq = question.parentElement;
+		faq.classList.toggle("open");
+	});
 });
 
 let marker = new Image();

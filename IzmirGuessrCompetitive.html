@@ -201,39 +201,76 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<div class="modalContent flexcolumn">
-				<!-- Bu kısmı basınca aşağı expandlanan div'ler ile yap -->
-				<button>What is this game?</button>
-				<p>When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun !</p>
+				<div class="faq-container">
+					<div class="faq">
+						<div class="faq-question">
+							What is this game?
+							<span class="arrow">&#9660;</span>
+						</div>
+						<div class="faq-answer">When you start up the game you will spawn in a random street in Izmir, if you have selected districts the playzone will be restricted to those districts, and you have to guess where you are based on your surroundings. You need to mark your guess in the small map in the bottom right, and you will get points depending on how close your guess is to the original destination. Have fun!</div>
+					</div>
 
-				<button>Why should i login?</button>
-				<p>You can login with your google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</p>
+					<div class="faq">
+						<div class="faq-question">
+							Why should I login?
+							<span class="arrow">&#9660;</span>
+						</div>
+						<div class="faq-answer">You can login with your Google without using a password to save your statistics, get on the leaderboard and check your match history between multiple devices for free.</div>
+					</div>
 
-				<button>What are the differences from the original IzmirGuessr?</button>
-				<p>The differences from the original game are:</p>
-				<p>- New design and backend maps</p>
-				<p>- Dark mode</p>
-				<p>- Harder difficulties</p>
-				<p>- Cleaner code</p>
-				<p>- Toggleable minimap</p>
-				<p>- More precise coordinates</p>
-				<p>- Ability to check coordinates after game</p>
-				<p>- User system</p>
-				<p>- Quicker matchmaking</p>
-				<p>- Match history</p>
-				<p>- Sharing played games</p>
-				<p>- New game modes ( TODO )</p>
+					<div class="faq">
+						<div class="faq-question">
+							What are the differences from the original IzmirGuessr?
+							<span class="arrow">&#9660;</span>
+						</div>
+						<div class="faq-answer">
+							<p>The differences from the original game are:</p>
+							<ul>
+								<li>New design and backend maps</li>
+								<li>Dark mode</li>
+								<li>Harder difficulties</li>
+								<li>Cleaner code</li>
+								<li>Toggleable minimap</li>
+								<li>More precise coordinates</li>
+								<li>Ability to check coordinates after game</li>
+								<li>User system</li>
+								<li>Quicker matchmaking</li>
+								<li>Match history</li>
+								<li>Sharing played games</li>
+								<li>New game modes (TODO)</li>
+							</ul>
+						</div>
+					</div>
 
-				<button>What are the plans for the future of the game?</button>
-				<p>These are the current plans:</p>
-				<p>- Sorting in statistics tab</p>
-				<p>- Finish all the modals</p>
-				<p>- 2 Language support ( TR - ENG )</p>
-				<p>- A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at</p>
-				<p>- A map in leaderboard to show district winners ( and 2. and 3. rankers )</p>
+					<div class="faq">
+						<div class="faq-question">
+							What are the plans for the future of the game?
+							<span class="arrow">&#9660;</span>
+						</div>
+						<div class="faq-answer">
+							<p>These are the current plans:</p>
+							<ul>
+								<li>Sorting in statistics tab</li>
+								<li>Finish all the modals</li>
+								<li>2 Language support (TR - ENG)</li>
+								<li>A new map in the main menu with your previous guessed coordinates colored based on scores to show which locations you are better at</li>
+								<li>A map in leaderboard to show district winners (and 2nd and 3rd rankers)</li>
+							</ul>
+						</div>
+					</div>
 
-				<button>How are the scores calculated?</button>
-				<p>This is the function i use to calculate scores: -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48</p>
-				<p>This is a special curved function i made to give the player more points when close to target, but still give some points when it's not that close.</p>
+					<div class="faq">
+						<div class="faq-question">
+							How are the scores calculated?
+							<span class="arrow">&#9660;</span>
+						</div>
+						<div class="faq-answer">
+							<p>This is the function I use to calculate scores:</p>
+							<code>-1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48</code>
+							<p>This is a special curved function I made to give the player more points when close to target, but still give some points when it's not that close.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="menumodal" id="statsMenu">
@@ -247,8 +284,11 @@
 					<p id="statisticsMenuText"></p>
 				</div>
 				<div class="modalRight">
-					<button onclick="logStatistics()">Click here to get your statistics.</button>
-					<button onclick="sortStatistics()">Sort high to low</button>
+					<button class="coolButton" onclick="logStatistics()">Click here to get your statistics.</button>
+					<button class="coolButton" onclick="sortStatistics('highscores')">Sort by High Scores</button>
+					<button class="coolButton" onclick="sortStatistics('gamesplayed')">Sort by Games Played</button>
+					<button class="coolButton" onclick="sortStatistics('roundsplayed')">Sort by Rounds Played</button>
+					<button class="coolButton" onclick="sortStatistics('successpercentage')">Sort by Success Percentage</button>
 				</div>
 			</div>
 		</div>
@@ -262,7 +302,7 @@
 					<div id="modalMatchHistory"></div>
 				</div>
 				<div class="modalRight">
-					<button onclick="loadMatchHistory()">Load Match History</button>
+					<button class="coolButton" onclick="loadMatchHistory()">Load Match History</button>
 				</div>
 			</div>
 		</div>
@@ -277,8 +317,8 @@
 					<div id="modalHighScores"></div>
 				</div>
 				<div class="modalRight">
-					<select name="izmirDistricts" id="izmirDistrictSelect" onchange="this.size=1" onfocus="this.size=5" onblur="this.size=1">
-						<option value="" disabled selected>Select a district...</option>
+					<select class="coolButton" name="izmirDistricts" id="izmirDistrictSelect" onchange="this.size=1" onfocus="this.size=5" onblur="this.size=1">
+						<option value="Select" disabled selected>Select a district...</option>
 						<option value="Every District">Every District</option>
 						<option value="Custom">Custom</option>
 						<option value="Aliağa">Aliağa</option>
@@ -312,7 +352,7 @@
 						<option value="Torbalı">Torbalı</option>
 						<option value="Urla">Urla</option>
 					</select>
-					<button onclick="leaderboardModal()">Show</button>
+					<button class="coolButton" onclick="leaderboardModal()">Show</button>
 				</div>
 			</div>
 		</div>
@@ -322,7 +362,7 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
-			<button onclick="changeNickname()">Change</button>
+			<button class="coolButton" onclick="changeNickname()">Change</button>
 		</div>
 		<div id="loadingScreen">Loading...</div>
 

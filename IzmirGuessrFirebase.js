@@ -289,11 +289,17 @@ async function logTopHighScores() {
 }
 
 async function leaderboardModal() {
+    const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
+    
+    if (chosenDistrict == "Select") {
+        alert("Please select a district before checking the leaderboard!");
+        return;
+    }
+
+    document.getElementById("modalHighScores").innerHTML = `Loading...`;
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
-	const allHighScores = new Map();
-	document.getElementById("modalHighScores").innerHTML = `Loading...`;
-	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
+	const allHighScores = new Map();	
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
