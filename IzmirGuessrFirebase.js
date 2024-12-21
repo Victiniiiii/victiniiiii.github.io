@@ -251,24 +251,24 @@ async function logStatistics() {
 }
 
 async function statisticsMap() {
-    if (auth.currentUser) {
-        const userId = auth.currentUser.uid;
-        const gameDataRef = collection(db, `users/${userId}/GameData`);
-        const snapshot = await getDocs(gameDataRef);
+	if (auth.currentUser) {
+		const userId = auth.currentUser.uid;
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const snapshot = await getDocs(gameDataRef);
 
-        let highScores = [];
+		let highScores = [];
 
-        if (!snapshot.empty) {
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                highScores.push({ district: doc.id, highScore: data.highScore });
-            });
-        }
+		if (!snapshot.empty) {
+			snapshot.forEach((doc) => {
+				const data = doc.data();
+				highScores.push({ district: doc.id, highScore: data.highScore });
+			});
+		}
 
-        return highScores;
-    } else {
-        return null;
-    }
+		return highScores;
+	} else {
+		return null;
+	}
 }
 
 async function logTopHighScores() {
@@ -310,17 +310,17 @@ async function logTopHighScores() {
 }
 
 async function leaderboardModal() {
-    const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
-    
-    if (chosenDistrict == "Select") {
-        alert("Please select a district before checking the leaderboard!");
-        return;
-    }
+	const chosenDistrict = document.getElementById("izmirDistrictSelect").value;
 
-    document.getElementById("modalHighScores").innerHTML = `Loading...`;
+	if (chosenDistrict == "Select") {
+		alert("Please select a district before checking the leaderboard!");
+		return;
+	}
+
+	document.getElementById("modalHighScores").innerHTML = `Loading...`;
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
-	const allHighScores = new Map();	
+	const allHighScores = new Map();
 
 	for (const userDoc of usersSnapshot.docs) {
 		const userId = userDoc.id;
@@ -332,13 +332,11 @@ async function leaderboardModal() {
 		if (gameDataSnapshot.exists()) {
 			const highScore = gameDataSnapshot.data().highScore;
 
-			if (highScore >= 2500) {
-				if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
-					allHighScores.set(userId, {
-						username: username,
-						highScore: highScore,
-					});
-				}
+			if (!allHighScores.has(userId) || allHighScores.get(userId).highScore < highScore) {
+				allHighScores.set(userId, {
+					username: username,
+					highScore: highScore,
+				});
 			}
 		}
 	}
@@ -359,45 +357,45 @@ async function leaderboardModal() {
 }
 
 async function getDistrictWinners() {
-    const usersRef = collection(db, "users");
-    const usersSnapshot = await getDocs(usersRef);
-    const districtWinners = [];
+	const usersRef = collection(db, "users");
+	const usersSnapshot = await getDocs(usersRef);
+	const districtWinners = [];
 
-    for (const userDoc of usersSnapshot.docs) {
-        const userId = userDoc.id;
-        const username = userDoc.data().Nickname;
+	for (const userDoc of usersSnapshot.docs) {
+		const userId = userDoc.id;
+		const username = userDoc.data().Nickname;
 
-        const gameDataRef = collection(db, `users/${userId}/GameData`);
-        const gameDataSnapshot = await getDocs(gameDataRef);
+		const gameDataRef = collection(db, `users/${userId}/GameData`);
+		const gameDataSnapshot = await getDocs(gameDataRef);
 
-        gameDataSnapshot.forEach((districtDoc) => {
-            const districtName = districtDoc.id;
-            const districtData = districtDoc.data();
+		gameDataSnapshot.forEach((districtDoc) => {
+			const districtName = districtDoc.id;
+			const districtData = districtDoc.data();
 
-            if (districtData.highScore) {
-                const existingWinnerIndex = districtWinners.findIndex(winner => winner.district === districtName);
-                
-                if (existingWinnerIndex === -1) {
-                    districtWinners.push({
-                        district: districtName,
-                        username: username,
-                        highScore: districtData.highScore,
-                    });
-                } else {
-                    const existingWinner = districtWinners[existingWinnerIndex];
-                    if (existingWinner.highScore < districtData.highScore) {
-                        districtWinners[existingWinnerIndex] = {
-                            district: districtName,
-                            username: username,
-                            highScore: districtData.highScore,
-                        };
-                    }
-                }
-            }
-        });
-    }
+			if (districtData.highScore) {
+				const existingWinnerIndex = districtWinners.findIndex((winner) => winner.district === districtName);
 
-    return districtWinners;
+				if (existingWinnerIndex === -1) {
+					districtWinners.push({
+						district: districtName,
+						username: username,
+						highScore: districtData.highScore,
+					});
+				} else {
+					const existingWinner = districtWinners[existingWinnerIndex];
+					if (existingWinner.highScore < districtData.highScore) {
+						districtWinners[existingWinnerIndex] = {
+							district: districtName,
+							username: username,
+							highScore: districtData.highScore,
+						};
+					}
+				}
+			}
+		});
+	}
+
+	return districtWinners;
 }
 
 async function saveMatchHistory() {
@@ -440,7 +438,7 @@ async function loadMatchHistory() {
 			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
 			modalMatchHistory.innerHTML = "";
 			let j = 0;
-            let uniqueCodes = [];
+			let uniqueCodes = [];
 
 			documents.forEach((doc) => {
 				const data = doc.data;
@@ -450,9 +448,9 @@ async function loadMatchHistory() {
 				const copycode = document.createElement("button");
 				copycode.innerHTML = `Copy Match Sharing Code`;
 				copycode.id = `copycode${j++}`;
-                copycode.className = "copycodeButton";
-                modalMatchHistory.appendChild(copycode);
-				
+				copycode.className = "copycodeButton";
+				modalMatchHistory.appendChild(copycode);
+
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
 					uniqueMatchSharingCode += "/";
@@ -460,20 +458,20 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += "/";
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
-                uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));				
+				uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));
 
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
 			});
 
-            for (let i = 0; i < j; i++) {
-                document.getElementById(`copycode${i}`).addEventListener("click", () => {
+			for (let i = 0; i < j; i++) {
+				document.getElementById(`copycode${i}`).addEventListener("click", () => {
 					navigator.clipboard.writeText(uniqueCodes[i]).then(() => {
 						alert("Match sharing code copied! Share it with your friends to play the same locations!");
 					});
 				});
-            }
+			}
 		}
 	} else {
 		document.getElementById("modalMatchHistory").innerHTML = `<p>You need to be logged in to do this!</p>`;

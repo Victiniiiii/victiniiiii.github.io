@@ -200,6 +200,15 @@ function isPointInPolygon(point, polygon) {
 	return inside;
 }
 
+function findDistrict(coordinate) {
+    for (let district of districtsData) {
+        if (isPointInPolygon(coordinate, district.bounds)) {
+            return district;
+        }
+    }
+    return null;
+}
+
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		let j = Math.floor(Math.random() * (i + 1));
@@ -335,6 +344,7 @@ function initMap() {
 		randomLocation = getRandomLocation();
 	} else {
         randomLocation = actualCoordinates[roundCount];
+        selectedDistrict = findDistrict(randomLocation);
     }
 
 	startPage.style.display = "none";
@@ -831,7 +841,7 @@ function saveRoundLimit() {
 }
 
 function createMatchSharingCode() {
-	matchSharingCode = selectedDistrict;
+	matchSharingCode = selectedGameMode;
 	for (let i = 0; i < roundLimit; i++) {
 		matchSharingCode += "/";
 		matchSharingCode += actualCoordinates[i].lat;
@@ -872,7 +882,7 @@ function enterMatchSharingCode() {
     actualCoordinates.fill(0, 0, roundLimit);
     actualCoordinates.length = 0;
     actualCoordinates = rounds;
-    selectedDistrict = districtName;
+    selectedGameMode = districtName;
     roundLimit = roundsCount;
 
 	currentlyPlayingSharedGame = true;
