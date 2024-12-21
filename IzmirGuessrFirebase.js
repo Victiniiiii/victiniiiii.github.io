@@ -374,7 +374,7 @@ async function getDistrictWinners() {
             const districtName = districtDoc.id;
             const districtData = districtDoc.data();
 
-            if (districtData.highScore && districtData.highScore >= 2500) {
+            if (districtData.highScore) {
                 const existingWinnerIndex = districtWinners.findIndex(winner => winner.district === districtName);
                 
                 if (existingWinnerIndex === -1) {
