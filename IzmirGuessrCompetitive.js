@@ -717,6 +717,14 @@ function startGame(sharedGame) {
 	if (sharedGame == "yes") {
 		currentlyPlayingSharedGame = "true";
 	} else if (sharedGame == "no") {
+        if (initiallyGreenDistricts.length == 30) {
+			selectedGameMode = "Every District";
+		} else if (initiallyGreenDistricts.length == 1) {
+			selectedGameMode = initiallyGreenDistricts[0].name;
+		} else {
+			selectedGameMode = "Custom";
+		}
+
 		currentlyPlayingSharedGame = "false";
         actualCoordinates.fill(0, 0, roundLimit);
         actualCoordinates.length = 0;
@@ -728,14 +736,6 @@ function startGame(sharedGame) {
 	}
 
 	if (roundCount == 0 || roundCount == roundLimit) {
-		if (initiallyGreenDistricts.length == 30) {
-			selectedGameMode = "Every District";
-		} else if (initiallyGreenDistricts.length == 1) {
-			selectedGameMode = initiallyGreenDistricts[0].name;
-		} else {
-			selectedGameMode = "Custom";
-		}
-
 		roundPoints.length = 0;
 		guessedCoordinates.length = 0;		
 		roundTimes.length = 0;
