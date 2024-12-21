@@ -712,6 +712,7 @@ function getZoomLevel(distance) {
 function returnToMainMenu() {
 	roundCount = 0;
 	gameOngoing = false;
+    currentlyPlayingSharedGame = false;
 
 	startPage.style.display = "flex";
 	titleSection.style.display = "flex";
@@ -762,7 +763,7 @@ function startGame(sharedGame) {
 	}
 
     if (roundCount == roundLimit) {
-        sharedGame = "no";
+        currentlyPlayingSharedGame = false;
     }
 
 	document.getElementById("overlay-container").style.display = "block";
