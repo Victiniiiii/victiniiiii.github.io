@@ -746,7 +746,7 @@ function startGame() {
 		actualCoordinates.length = 0;
 	}
 
-	if (roundCount == 0 || roundCount == roundLimit) {
+	if (roundCount == 0 || roundCount == roundLimit - 1) {
 		roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		roundTimes.length = 0;
@@ -759,7 +759,7 @@ function startGame() {
 		roundCount = 0;
 	}
 
-	if (roundCount == roundLimit) {
+	if (roundCount == roundLimit - 1) {
 		currentlyPlayingSharedGame = false;
 	}
 
