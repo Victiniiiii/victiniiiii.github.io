@@ -873,6 +873,7 @@ function enterMatchSharingCode() {
     actualCoordinates.fill(0, 0, roundLimit);
     actualCoordinates.length = 0;
     actualCoordinates = rounds;
+    selectedDistrict = districtName;
 
 	currentlyPlayingSharedGame = true;
 	startGame("yes");
