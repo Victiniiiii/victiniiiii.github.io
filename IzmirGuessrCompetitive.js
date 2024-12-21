@@ -718,6 +718,8 @@ function startGame(sharedGame) {
 		currentlyPlayingSharedGame = "true";
 	} else if (sharedGame == "no") {
 		currentlyPlayingSharedGame = "false";
+        actualCoordinates.fill(0, 0, roundLimit);
+        actualCoordinates.length = 0;
 	}
 
 	if (initiallyGreenDistricts.length == 0) {
@@ -735,13 +737,11 @@ function startGame(sharedGame) {
 		}
 
 		roundPoints.length = 0;
-		guessedCoordinates.length = 0;
-		actualCoordinates.length = 0;
+		guessedCoordinates.length = 0;		
 		roundTimes.length = 0;
 
 		roundPoints.fill(0, 0, roundLimit);
-		guessedCoordinates.fill(0, 0, roundLimit);
-		actualCoordinates.fill(0, 0, roundLimit);
+		guessedCoordinates.fill(0, 0, roundLimit);		
 		roundTimes.fill(0, 0, roundLimit);
 
 		totalPoints = 0;
@@ -859,6 +859,7 @@ function decodeBase64toUTF8(str) {
 function enterMatchSharingCode() {
 	let theCode = document.getElementById("matchSharingCodeInput").value;
 	theCode = decodeBase64toUTF8(theCode);
+
 	const parts = theCode.split("/");
 	const districtName = parts[0];
 	const coordinates = parts.slice(1).map(Number);
@@ -869,12 +870,12 @@ function enterMatchSharingCode() {
 		rounds.push({ lat: coordinates[i], lng: coordinates[i + 1] });
 	}
 
+    actualCoordinates.fill(0, 0, roundLimit);
+    actualCoordinates.length = 0;
+    actualCoordinates = rounds;
+
 	currentlyPlayingSharedGame = true;
 	startGame("yes");
-
-	console.log(`District Name: ${districtName}`);
-	console.log(`Number of Rounds: ${roundsCount}`);
-	console.log("Rounds Coordinates:", rounds);
 }
 
 function sortStatistics(criteria) {

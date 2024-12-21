@@ -84,11 +84,6 @@ div.gm-bundled-control:nth-child(2) {
 	background-color: aliceblue;
 }
 
-.modalContent {
-	display: flex;
-	flex-direction: row;
-}
-
 .modalLeft {
 	width: 80%;
     height: 100%;
@@ -857,6 +852,13 @@ div.gm-bundled-control:nth-child(2) {
     select#roundLimitSelector {
         width: 4vw;
     }
+
+    .modalContent {
+        display: flex;
+        flex-direction: row;
+        width: 80vw;
+        height: calc(80dvh - 3vh - 4vw);
+    }
 }
 
 @media (width < 768px) {
@@ -1532,5 +1534,10 @@ div.gm-bundled-control:nth-child(2) {
     
     select#roundLimitSelector {
         width: 12vw;
+    }
+
+    .modalContent {
+        display: flex;
+        flex-direction: row;
     }
 }
