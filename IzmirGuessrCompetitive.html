@@ -358,16 +358,18 @@
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
 			<button class="coolButton" onclick="changeNickname()">Change</button>
 		</div>
-        <div class="menumodal" id="enterCodeModal">
-            <div class="modalTitleRow">
+		<div class="menumodal" id="enterCodeModal">
+			<div class="modalTitleRow">
 				<div class="modalTitle">Enter Game Code</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-            <p>If you have a game code, you can play that game by pasting it here.</p>
-            <p>Playing shared games do not count for statistics or the leaderboard.</p>
-			<input id="matchSharingCodeInput" type="text" aria-label="usernameinput" />
-			<button class="coolButton" onclick="enterMatchSharingCode()">Play</button>
-        </div>
+			<div class="flexcolumn">
+				<p>If you have a game code, you can play that game by pasting it here.</p>
+				<p>Playing shared games do not count for statistics or the leaderboard.</p>
+				<input id="matchSharingCodeInput" type="text" aria-label="usernameinput" />
+				<button id="matchSharingPlayButton" onclick="enterMatchSharingCode()">Play</button>
+			</div>
+		</div>
 		<div id="loadingScreen">Loading...</div>
 
 		<script src="badwords.js"></script>

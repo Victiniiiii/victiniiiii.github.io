@@ -337,7 +337,7 @@ function initMap() {
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
-	if (currentlyPlayingSharedGame == "false") {
+	if (currentlyPlayingSharedGame == false) {
 		let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 		shuffleArray(formattedNames);
 		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
@@ -725,7 +725,7 @@ function returnToMainMenu() {
 
 function startGame(sharedGame) {
 	if (sharedGame == "yes") {
-		currentlyPlayingSharedGame = "true";
+		currentlyPlayingSharedGame = true;
 	} else if (sharedGame == "no") {
         if (initiallyGreenDistricts.length == 0) {
             alert("You can't start the game with no districts selected!");
@@ -739,7 +739,7 @@ function startGame(sharedGame) {
 			selectedGameMode = "Custom";
 		}
 
-		currentlyPlayingSharedGame = "false";
+		currentlyPlayingSharedGame = false;
         actualCoordinates.fill(0, 0, roundLimit);
         actualCoordinates.length = 0;
 	}

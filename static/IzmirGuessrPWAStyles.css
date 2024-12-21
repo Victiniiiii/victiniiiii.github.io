@@ -109,6 +109,8 @@ div.gm-bundled-control:nth-child(2) {
 .flexcolumn {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #menuTip {
@@ -208,6 +210,23 @@ div.gm-bundled-control:nth-child(2) {
 
 .faq.open .arrow {
     transform: rotate(180deg);
+}
+
+#matchSharingCodeInput {
+    width: 60vw;
+    height: 5vw;
+    font-size: 2vw;
+    margin-top: 5vw;
+}
+
+#matchSharingPlayButton {
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    width: 20vw;
+    height: 5vw;
+    margin-top: 5vw;
+    cursor: pointer;
+    font-size: 2vw;
 }
 
 @media (width > 767px) {
@@ -858,6 +877,11 @@ div.gm-bundled-control:nth-child(2) {
         flex-direction: row;
         width: 80vw;
         height: calc(80dvh - 3vh - 4vw);
+    }
+
+    #enterCode {
+        margin-left: 0;
+        margin-top: 1vh;
     }
 }
 
