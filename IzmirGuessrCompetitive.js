@@ -580,6 +580,7 @@ function displayResults(distance, points) {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
 		document.getElementById("startGameButton").innerHTML = "Play Again?";
 		document.getElementById("shareMatch").style.display = "flex";
+        currentlyPlayingSharedGame = false;
 
 		if (!currentlyPlayingSharedGame) {
 			saveMatchHistory();
@@ -746,7 +747,7 @@ function startGame() {
 		actualCoordinates.length = 0;
 	}
 
-	if (roundCount == 0 || roundCount == roundLimit - 1) {
+	if (roundCount == 0 || roundCount == roundLimit) {
 		roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		roundTimes.length = 0;
@@ -757,10 +758,6 @@ function startGame() {
 
 		totalPoints = 0;
 		roundCount = 0;
-	}
-
-	if (roundCount == roundLimit - 1) {
-		currentlyPlayingSharedGame = false;
 	}
 
 	document.getElementById("overlay-container").style.display = "block";
