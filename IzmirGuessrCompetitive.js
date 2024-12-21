@@ -37,8 +37,9 @@ let gamemap = document.getElementById("gamemap"); // Has to be "let"
 // Game Elements:
 
 let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
-const initiallyGreenDistricts = [];
-const districtLayers = [];
+let initiallyGreenDistricts = [];
+let districtLayers = [];
+let previousMode = "DistrictBorders";
 let gameOngoing = false;
 let isTimerPaused = false;
 let guessedLocationMarker;
@@ -72,7 +73,7 @@ if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
 	document.getElementById("menuTip").innerHTML = "Tip: Right click to toggle all districts...";
 }
 
-const map2 = L.map("map2", {
+let map2 = L.map("map2", {
 	maxZoom: maxZoomValue,
 	minZoom: minZoomValue,
 	maxBounds: [
@@ -96,20 +97,73 @@ districtsData.forEach((district) => {
 	}
 });
 
-buttons.forEach((button) => {
-	button.style.backgroundColor = "green";
-});
-
-/* document.addEventListener("contextmenu", function (event) {
-	event.preventDefault();
-	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
-		removeAllDistricts();
-	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
-		addAllDistricts();
-	}
-}); */
-
 // Functions:
+
+function generateColor(username) {
+	let hash = 0;
+	for (let i = 0; i < username.length; i++) {
+		hash = username.charCodeAt(i) + ((hash << 5) - hash);
+	}
+	const color = "#" + (hash & 0x00ffffff).toString(16).padStart(6, "0");
+	return color;
+}
+
+function switchMainMenuMapType() {
+	const mode = document.getElementById("mapModeSelector").value;
+	let modeType;
+
+	districtLayers.forEach((layer) => {
+		map2.removeLayer(layer.layer);
+	});
+
+	districtLayers = [];
+	initiallyGreenDistricts = [];
+
+	if (mode === "DistrictBorders" || mode === "YourPerformance" || mode === "Leaderboard") {
+		modeType = "design";
+	} else if (mode === "GameBorders") {
+		modeType = "bounds";
+	} else if (mode === "CityCenterBorders") {
+		modeType = "center";
+	}
+
+	if (mode === "DistrictBorders" || mode === "GameBorders" || mode === "CityCenterBorders") {
+		districtsData.forEach((district) => {
+			const coordinates = mode === "CityCenterBorders" ? district.center : modeType === "design" ? district.designcoordinates : district.bounds;
+			const polygon = L.polygon(coordinates, { fill: true, color: "green" }).addTo(map2);
+			districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+
+			if (district.state === 1) {
+				initiallyGreenDistricts.push({ bounds: district.bounds });
+			}
+		});
+    } else if (mode === "YourPerformance") {
+
+	} else {
+		getDistrictWinners().then((winners) => {
+			winners.forEach((winner) => {
+				const district = districtsData.find((d) => d.name === winner.district);
+
+				if (district) {
+					const winnerColor = generateColor(winner.username);
+					const coordinates = mode === "CityCenterBorders" ? district.center : modeType === "design" ? district.designcoordinates : district.bounds;
+					const polygon = L.polygon(coordinates, {
+						fill: true,
+						color: winnerColor,
+					}).addTo(map2);
+
+					districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
+
+					polygon.bindPopup(`
+                        <strong>${winner.username}</strong><br>
+                        High Score: ${winner.highScore}
+                    `);
+				}
+			});
+		});
+	}
+	previousMode = mode;
+}
 
 function isPointInPolygon(point, polygon) {
 	let x = point[0],
@@ -135,29 +189,31 @@ function shuffleArray(array) {
 }
 
 map2.on("mousedown", function (event) {
-	districtLayers.forEach((district) => {
-		const latLngs = district.layer.getLatLngs()[0];
-		const x = event.latlng.lng;
-		const y = event.latlng.lat;
-		let inside = false;
+	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+		districtLayers.forEach((district) => {
+			const latLngs = district.layer.getLatLngs()[0];
+			const x = event.latlng.lng;
+			const y = event.latlng.lat;
+			let inside = false;
 
-		for (let i = 0, j = latLngs.length - 1; i < latLngs.length; j = i++) {
-			const xi = latLngs[i].lng;
-			const yi = latLngs[i].lat;
-			const xj = latLngs[j].lng;
-			const yj = latLngs[j].lat;
+			for (let i = 0, j = latLngs.length - 1; i < latLngs.length; j = i++) {
+				const xi = latLngs[i].lng;
+				const yi = latLngs[i].lat;
+				const xj = latLngs[j].lng;
+				const yj = latLngs[j].lat;
 
-			const intersect = yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
+				const intersect = yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi;
 
-			if (intersect) inside = !inside;
-		}
+				if (intersect) inside = !inside;
+			}
 
-		if (inside) {
-			setTimeout(function () {
-				toggleDistrict(district);
-			}, 100);
-		}
-	});
+			if (inside) {
+				setTimeout(function () {
+					toggleDistrict(district);
+				}, 100);
+			}
+		});
+	}
 });
 
 function toggleDistrict(input) {
@@ -852,6 +908,15 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 		const faq = question.parentElement;
 		faq.classList.toggle("open");
 	});
+});
+
+document.addEventListener("contextmenu", function (event) {
+	event.preventDefault();
+	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
+		removeAllDistricts();
+	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
+		addAllDistricts();
+	}
 });
 
 let marker = new Image();

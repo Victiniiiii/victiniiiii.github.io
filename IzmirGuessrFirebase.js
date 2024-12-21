@@ -250,6 +250,27 @@ async function logStatistics() {
 	}
 }
 
+async function statisticsMap() {
+    if (auth.currentUser) {
+        const userId = auth.currentUser.uid;
+        const gameDataRef = collection(db, `users/${userId}/GameData`);
+        const snapshot = await getDocs(gameDataRef);
+
+        let highScores = [];
+
+        if (!snapshot.empty) {
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                highScores.push({ district: doc.id, highScore: data.highScore });
+            });
+        }
+
+        return highScores;
+    } else {
+        return null;
+    }
+}
+
 async function logTopHighScores() {
 	const usersRef = collection(db, "users");
 	const usersSnapshot = await getDocs(usersRef);
@@ -335,6 +356,48 @@ async function leaderboardModal() {
 	} else {
 		document.getElementById("modalHighScores").innerHTML = "Nobody has played on this district yet!";
 	}
+}
+
+async function getDistrictWinners() {
+    const usersRef = collection(db, "users");
+    const usersSnapshot = await getDocs(usersRef);
+    const districtWinners = [];
+
+    for (const userDoc of usersSnapshot.docs) {
+        const userId = userDoc.id;
+        const username = userDoc.data().Nickname;
+
+        const gameDataRef = collection(db, `users/${userId}/GameData`);
+        const gameDataSnapshot = await getDocs(gameDataRef);
+
+        gameDataSnapshot.forEach((districtDoc) => {
+            const districtName = districtDoc.id;
+            const districtData = districtDoc.data();
+
+            if (districtData.highScore && districtData.highScore >= 2500) {
+                const existingWinnerIndex = districtWinners.findIndex(winner => winner.district === districtName);
+                
+                if (existingWinnerIndex === -1) {
+                    districtWinners.push({
+                        district: districtName,
+                        username: username,
+                        highScore: districtData.highScore,
+                    });
+                } else {
+                    const existingWinner = districtWinners[existingWinnerIndex];
+                    if (existingWinner.highScore < districtData.highScore) {
+                        districtWinners[existingWinnerIndex] = {
+                            district: districtName,
+                            username: username,
+                            highScore: districtData.highScore,
+                        };
+                    }
+                }
+            }
+        });
+    }
+
+    return districtWinners;
 }
 
 async function saveMatchHistory() {
@@ -425,3 +488,4 @@ window.saveData = saveData;
 window.changeNickname = changeNickname;
 window.saveMatchHistory = saveMatchHistory;
 window.loadMatchHistory = loadMatchHistory;
+window.getDistrictWinners = getDistrictWinners;

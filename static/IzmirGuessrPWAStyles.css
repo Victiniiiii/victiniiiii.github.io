@@ -526,6 +526,7 @@ div.gm-bundled-control:nth-child(2) {
 		padding: 0 0.3vw 0 0.3vw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
+        background-color: green;
 	}
 
 	.izmirilcebottombuttons {
@@ -1176,9 +1177,9 @@ div.gm-bundled-control:nth-child(2) {
 	#izmirilcebox button {
 		padding: 0 0.3vw 0 0.3vw;
 		font-size: 5dvw;
-
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
+        background-color: green;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
