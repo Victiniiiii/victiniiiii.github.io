@@ -1219,6 +1219,27 @@ a {
 	font-size: min(1dvw, 2dvh);
 }
 
+.fullscreenmodal {
+    width: 100vw;
+    top: 10vh;
+    height: 90vh;
+    position: absolute;
+    z-index: 1111111;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.fullscreenmodal a {
+    color: red;
+    cursor: pointer;
+}
+
 
 
 
