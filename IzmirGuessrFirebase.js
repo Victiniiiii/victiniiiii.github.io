@@ -489,3 +489,4 @@ window.changeNickname = changeNickname;
 window.saveMatchHistory = saveMatchHistory;
 window.loadMatchHistory = loadMatchHistory;
 window.getDistrictWinners = getDistrictWinners;
+window.statisticsMap = statisticsMap;

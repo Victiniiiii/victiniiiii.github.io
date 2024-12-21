@@ -88,15 +88,6 @@ L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
 	maxZoom: 19,
 }).addTo(map2);
 
-districtsData.forEach((district) => {
-	const polygon = L.polygon(district.designcoordinates, { fill: true, color: "green" }).addTo(map2);
-	districtLayers.push({ name: district.name, layer: polygon, state: 1, bounds: district.bounds });
-
-	if (district.state === 1) {
-		initiallyGreenDistricts.push({ bounds: district.bounds });
-	}
-});
-
 // Functions:
 
 function generateColor(username) {
@@ -164,6 +155,10 @@ function switchMainMenuMapType() {
 	}
 	previousMode = mode;
 }
+
+setTimeout(() => {
+    switchMainMenuMapType();
+}, 1000);
 
 function isPointInPolygon(point, polygon) {
 	let x = point[0],
