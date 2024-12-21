@@ -123,10 +123,10 @@ function switchMainMenuMapType() {
 			const coordinates = mode === "CityCenterBorders" ? district.center : modeType === "design" ? district.designcoordinates : district.bounds;
 			const isGreen = initiallyGreenDistricts.some((greenDistrict) => JSON.stringify(greenDistrict.bounds) === JSON.stringify(district.bounds));
 			const state = isGreen ? 1 : 0;
-            const color = isGreen ? "green" : "red";
-            const fill = isGreen ? true : false;
+			const color = isGreen ? "green" : "red";
+			const fill = isGreen ? true : false;
 
-            const polygon = L.polygon(coordinates, { fill: fill, color: color }).addTo(map2);
+			const polygon = L.polygon(coordinates, { fill: fill, color: color }).addTo(map2);
 			districtLayers.push({ name: district.name, layer: polygon, state: state, bounds: district.bounds });
 		});
 	} else if (mode === "YourPerformance") {
@@ -336,19 +336,19 @@ function getRandomLocation() {
 }
 
 function initMap() {
-    closeAllModals();
+	closeAllModals();
 	gameOngoing = true;
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
 
-	if (currentlyPlayingSharedGame == false) {
-		let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
+	if (currentlyPlayingSharedGame) {
+		randomLocation = actualCoordinates[roundCount];
+		selectedDistrict = findDistrict(randomLocation);
+	} else {
+        let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 		shuffleArray(formattedNames);
 		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 		randomLocation = getRandomLocation();
-	} else {
-		randomLocation = actualCoordinates[roundCount];
-		selectedDistrict = findDistrict(randomLocation);
 	}
 
 	startPage.style.display = "none";
@@ -532,7 +532,7 @@ function displayResults(distance, points) {
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
 
-	if (currentlyPlayingSharedGame == false) {
+	if (!currentlyPlayingSharedGame) {
 		saveData(selectedDistrict, roundPoints[roundCount]);
 	}
 
@@ -581,7 +581,7 @@ function displayResults(distance, points) {
 		document.getElementById("startGameButton").innerHTML = "Play Again?";
 		document.getElementById("shareMatch").style.display = "flex";
 
-		if (currentlyPlayingSharedGame == false) {
+		if (!currentlyPlayingSharedGame) {
 			saveMatchHistory();
 			createMatchSharingCode();
 		}
@@ -712,7 +712,7 @@ function getZoomLevel(distance) {
 function returnToMainMenu() {
 	roundCount = 0;
 	gameOngoing = false;
-    currentlyPlayingSharedGame = false;
+	currentlyPlayingSharedGame = false;
 
 	startPage.style.display = "flex";
 	titleSection.style.display = "flex";
@@ -728,10 +728,8 @@ function returnToMainMenu() {
 	logTopHighScores();
 }
 
-function startGame(sharedGame) {
-	if (sharedGame == "yes") {
-		currentlyPlayingSharedGame = true;
-	} else if (sharedGame == "no") {
+function startGame() {
+	if (!currentlyPlayingSharedGame) {
 		if (initiallyGreenDistricts.length == 0) {
 			alert("You can't start the game with no districts selected!");
 			return;
@@ -744,7 +742,6 @@ function startGame(sharedGame) {
 			selectedGameMode = "Custom";
 		}
 
-		currentlyPlayingSharedGame = false;
 		actualCoordinates.fill(0, 0, roundLimit);
 		actualCoordinates.length = 0;
 	}
@@ -762,9 +759,9 @@ function startGame(sharedGame) {
 		roundCount = 0;
 	}
 
-    if (roundCount == roundLimit) {
-        currentlyPlayingSharedGame = false;
-    }
+	if (roundCount == roundLimit) {
+		currentlyPlayingSharedGame = false;
+	}
 
 	document.getElementById("overlay-container").style.display = "block";
 	document.getElementById("modaltoggle-button").style.display = "none";
@@ -833,9 +830,9 @@ function minimapOpenButton() {
 }
 
 function closeAllModals() {
-    Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
-        button.click();
-    });
+	Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
+		button.click();
+	});
 }
 
 function clearImageCache() {
@@ -901,7 +898,7 @@ function enterMatchSharingCode() {
 	roundLimit = roundsCount;
 
 	currentlyPlayingSharedGame = true;
-	startGame("yes");
+	startGame();
 }
 
 function sortStatistics(criteria) {
