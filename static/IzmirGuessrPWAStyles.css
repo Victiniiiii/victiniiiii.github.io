@@ -1087,7 +1087,6 @@ div.gm-bundled-control:nth-child(2) {
 	#alarmicon {
 		width: 10dvw;
 		height: 10dvw;
-		margin-right: 2dvw;
 		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
 		background-size: 100% auto;
 		flex-shrink: 0;
@@ -1564,6 +1563,7 @@ div.gm-bundled-control:nth-child(2) {
     .modalContent {
         display: flex;
         flex-direction: row;
+        height: calc(80dvh - 10vw - 3vh)
     }
 
     .modalLeft {
@@ -1585,7 +1585,7 @@ div.gm-bundled-control:nth-child(2) {
 
     .faq-container {
         width: 100vw;
-        height: calc(80dvh - 7vw);
+        height: calc(80dvh - 10vw - 3vh);
         margin: auto;
         border-radius: 1vw;
         overflow-y: auto;
