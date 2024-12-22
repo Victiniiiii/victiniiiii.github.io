@@ -126,7 +126,7 @@ div.gm-bundled-control:nth-child(2) {
 .copycodeButton {
     color: white;
     background-color: rgb(0, 0, 0, 0.8);
-    padding: 1vh 0 1vh 0;
+    padding: 1vh 0.5vw 1vh 0.5vw;
 }
 
 .coolButton {

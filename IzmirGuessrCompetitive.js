@@ -282,33 +282,37 @@ function toggleDistrict(input) {
 }
 
 function addAllDistricts() {
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "green";
-	});
-	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: true, color: "green" });
-		district.state = 1;
+	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+		buttons.forEach((button) => {
+			button.style.backgroundColor = "green";
+		});
+		districtLayers.forEach((district) => {
+			district.layer.setStyle({ fill: true, color: "green" });
+			district.state = 1;
 
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-		}
+			if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+				initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+			}
 
-		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-	});
+			ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+		});
+	}
 }
 
 function removeAllDistricts() {
-	buttons.forEach((button) => {
-		button.style.backgroundColor = "red";
-	});
-	districtLayers.forEach((district) => {
-		district.layer.setStyle({ fill: false, color: "red" });
-		district.state = 0;
+	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+		buttons.forEach((button) => {
+			button.style.backgroundColor = "red";
+		});
+		districtLayers.forEach((district) => {
+			district.layer.setStyle({ fill: false, color: "red" });
+			district.state = 0;
 
-		initiallyGreenDistricts.length = 0;
+			initiallyGreenDistricts.length = 0;
 
-		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-	});
+			ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+		});
+	}
 }
 
 function getRandomLocation() {
@@ -345,7 +349,7 @@ function initMap() {
 		randomLocation = actualCoordinates[roundCount];
 		selectedDistrict = findDistrict(randomLocation);
 	} else {
-        let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
+		let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
 		shuffleArray(formattedNames);
 		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
 		randomLocation = getRandomLocation();
@@ -580,7 +584,7 @@ function displayResults(distance, points) {
 		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
 		document.getElementById("startGameButton").innerHTML = "Play Again?";
 		document.getElementById("shareMatch").style.display = "flex";
-        currentlyPlayingSharedGame = false;
+		currentlyPlayingSharedGame = false;
 
 		if (!currentlyPlayingSharedGame) {
 			saveMatchHistory();
@@ -730,25 +734,22 @@ function returnToMainMenu() {
 }
 
 function startGame() {
-	if (!currentlyPlayingSharedGame) {
-		if (initiallyGreenDistricts.length == 0) {
-			alert("You can't start the game with no districts selected!");
-			return;
-		}
-		if (initiallyGreenDistricts.length == 30) {
-			selectedGameMode = "Every District";
-		} else if (initiallyGreenDistricts.length == 1) {
-			selectedGameMode = initiallyGreenDistricts[0].name;
-		} else {
-			selectedGameMode = "Custom";
-		}
-
-		actualCoordinates.fill(0, 0, roundLimit);
-		actualCoordinates.length = 0;
-	}
-
 	if (roundCount == 0 || roundCount == roundLimit) {
-		roundPoints.length = 0;
+        if (!currentlyPlayingSharedGame) {
+            if (initiallyGreenDistricts.length == 0) {
+                alert("You can't start the game with no districts selected!");
+                return;
+            }
+            if (initiallyGreenDistricts.length == 30) {
+                selectedGameMode = "Every District";
+            } else if (initiallyGreenDistricts.length == 1) {
+                selectedGameMode = initiallyGreenDistricts[0].name;
+            } else {
+                selectedGameMode = "Custom";
+            }
+        }		
+
+        roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		roundTimes.length = 0;
 
@@ -985,12 +986,10 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 
 document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
-	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-		if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
-			removeAllDistricts();
-		} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
-			addAllDistricts();
-		}
+	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
+		removeAllDistricts();
+	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
+		addAllDistricts();
 	}
 });
 
