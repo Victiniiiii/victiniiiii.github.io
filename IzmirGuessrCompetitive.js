@@ -61,13 +61,13 @@ let maxZoomValue;
 let minZoomValue;
 
 if (parseInt(window.getComputedStyle(titleSection).width) < 768) {
-	maxZoomValue = 9;
+	maxZoomValue = 10;
 	minZoomValue = 7;
 	initialZoom = 8;
 	mobileUser = true;
 	document.getElementById("menuTip").style.display = "none";
 } else {
-	maxZoomValue = 10;
+	maxZoomValue = 11;
 	minZoomValue = 8;
 	initialZoom = 9;
 	mobileUser = false;
