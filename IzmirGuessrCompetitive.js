@@ -2,6 +2,7 @@
 
 let selectedDistrict;
 let selectedGameMode;
+let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("gamemode") : document.getElementById("gameModeSelector").value;
 let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
@@ -316,7 +317,13 @@ function removeAllDistricts() {
 }
 
 function getRandomLocation() {
-	let polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
+    let polygon;
+    if (menuModeToggle == "Classic") {
+        polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
+    } else if (menuModeToggle == "DistrictCenter") {
+        polygon = districtsData.find((district) => district.name === selectedDistrict).center;
+    }
+	
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
 	let minY = polygon[0][1];
@@ -848,6 +855,11 @@ function clearImageCache() {
 function saveRoundLimit() {
 	roundLimit = document.getElementById("roundLimitSelector").value;
 	localStorage.setItem("roundLimit", roundLimit);
+}
+
+function saveGameMode() {
+    menuModeToggle = document.getElementById("gameModeSelector").value;
+	localStorage.setItem("gamemode", menuModeToggle);
 }
 
 function createMatchSharingCode() {
