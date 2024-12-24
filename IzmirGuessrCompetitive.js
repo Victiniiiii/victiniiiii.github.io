@@ -320,7 +320,7 @@ function getRandomLocation() {
     let polygon;
     if (menuModeToggle == "Classic") {
         polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
-    } else if (menuModeToggle == "DistrictCenter") {
+    } else if (menuModeToggle == "DistrictCenters") {
         polygon = districtsData.find((district) => district.name === selectedDistrict).center;
     }
 	
