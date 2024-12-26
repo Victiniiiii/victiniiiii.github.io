@@ -407,6 +407,14 @@ function initMap() {
 				...panoramaOptions,
 			});
 
+            if (noMoving) {
+                panoramaOptions.linksControl = true;
+            }
+
+            if (noTurning) {
+                panoramaOptions.panControl = true;
+            }
+
 			gamemap.setStreetView(panorama);
 
 			if (initiallyGreenDistricts.length == 1) {

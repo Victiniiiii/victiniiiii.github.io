@@ -787,6 +787,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin-left: 0.5vw;
 		margin-right: 1vw;
 		width: 5vw;
+        height: 15%;
 	}
 
 	#competitiveChecks div {
