@@ -6,6 +6,7 @@ let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("ga
 let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
+let hintCircle;
 let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
 document.getElementById("roundLimitSelector").value = roundLimit;
 
@@ -317,13 +318,13 @@ function removeAllDistricts() {
 }
 
 function getRandomLocation() {
-    let polygon;
-    if (menuModeToggle == "Classic") {
-        polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
-    } else if (menuModeToggle == "DistrictCenters") {
-        polygon = districtsData.find((district) => district.name === selectedDistrict).center;
-    }
-	
+	let polygon;
+	if (menuModeToggle == "Classic") {
+		polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
+	} else if (menuModeToggle == "DistrictCenters") {
+		polygon = districtsData.find((district) => district.name === selectedDistrict).center;
+	}
+
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
 	let minY = polygon[0][1];
@@ -742,21 +743,21 @@ function returnToMainMenu() {
 
 function startGame() {
 	if (roundCount == 0 || roundCount == roundLimit) {
-        if (!currentlyPlayingSharedGame) {
-            if (initiallyGreenDistricts.length == 0) {
-                alert("You can't start the game with no districts selected!");
-                return;
-            }
-            if (initiallyGreenDistricts.length == 30) {
-                selectedGameMode = "Every District";
-            } else if (initiallyGreenDistricts.length == 1) {
-                selectedGameMode = initiallyGreenDistricts[0].name;
-            } else {
-                selectedGameMode = "Custom";
-            }
-        }		
+		if (!currentlyPlayingSharedGame) {
+			if (initiallyGreenDistricts.length == 0) {
+				alert("You can't start the game with no districts selected!");
+				return;
+			}
+			if (initiallyGreenDistricts.length == 30) {
+				selectedGameMode = "Every District";
+			} else if (initiallyGreenDistricts.length == 1) {
+				selectedGameMode = initiallyGreenDistricts[0].name;
+			} else {
+				selectedGameMode = "Custom";
+			}
+		}
 
-        roundPoints.length = 0;
+		roundPoints.length = 0;
 		guessedCoordinates.length = 0;
 		roundTimes.length = 0;
 
@@ -767,6 +768,12 @@ function startGame() {
 		totalPoints = 0;
 		roundCount = 0;
 	}
+
+    if (hintCircle) {
+        hintCircle.setMap(null);
+        hintCircle = null;
+        hintsAreEnabled = false;
+    }
 
 	document.getElementById("overlay-container").style.display = "block";
 	document.getElementById("modaltoggle-button").style.display = "none";
@@ -858,7 +865,7 @@ function saveRoundLimit() {
 }
 
 function saveGameMode() {
-    menuModeToggle = document.getElementById("gameModeSelector").value;
+	menuModeToggle = document.getElementById("gameModeSelector").value;
 	localStorage.setItem("gamemode", menuModeToggle);
 }
 
@@ -941,6 +948,23 @@ function sortStatistics(criteria) {
 
 	statisticsMenuText.innerHTML = "";
 	statisticsElements.forEach((element) => statisticsMenuText.appendChild(element));
+}
+
+function useHint() {
+	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.")) {
+		hintsAreEnabled = true;
+
+        hintCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: minimap,
+            center: minimapcenter,
+            radius: 1000
+        });        
+	}
 }
 
 // Adding Event Listeners:
