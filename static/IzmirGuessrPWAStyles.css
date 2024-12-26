@@ -791,10 +791,6 @@ div.gm-bundled-control:nth-child(2) {
 		width: 5vw;
 	}
 
-	#competitiveChecks .flexrow {
-		height: 15%;
-	}
-
 	#competitiveChecks div {
 		justify-content: unset;
 	}

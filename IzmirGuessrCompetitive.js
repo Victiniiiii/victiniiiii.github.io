@@ -7,9 +7,6 @@ let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
 let hintCircle;
-let noMoving = localStorage.getItem("noMoving") ? localStorage.getItem("noMoving") : document.getElementById("noMoving").value;
-let noTurning = localStorage.getItem("noTurning") ? localStorage.getItem("noTurning") : document.getElementById("noTurning").value;
-let pointOneSeconds = localStorage.getItem("pointOneSeconds") ? localStorage.getItem("pointOneSeconds") : document.getElementById("pointOneSeconds").value;
 let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
 document.getElementById("roundLimitSelector").value = roundLimit;
 
@@ -403,8 +400,6 @@ function initMap() {
 				pov: { heading: 34, pitch: 1 },
 				zoom: 1,
 				...panoramaOptions,
-                ...(noMoving ? { linksControl: true } : {}),
-                ...(noTurning ? { panControl: true } : {})
 			});            
 
 			gamemap.setStreetView(panorama);
@@ -534,15 +529,15 @@ function displayResults(distance, points) {
 				document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
 			}
 		}
-	}
-
-	if (hintsAreEnabled) {
-		points -= 200;
-		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
-	}
+	}	
 
 	if (points > 1000) {
 		points = 1000;
+	}
+
+    if (hintsAreEnabled) {
+		points -= 200;
+		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 	}
 
 	roundPoints[roundCount] = parseInt(points);
