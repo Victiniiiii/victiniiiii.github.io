@@ -950,9 +950,26 @@ function sortStatistics(criteria) {
 	statisticsElements.forEach((element) => statisticsMenuText.appendChild(element));
 }
 
+function getNewRandomLocation(radius) {
+    const r = radius / 6378137, θ = Math.random() * 2 * Math.PI;
+    return {
+        lat: randomLocation.lat + r * Math.cos(θ) * 180 / Math.PI,
+        lng: randomLocation.lng + r * Math.sin(θ) * 180 / Math.PI / Math.cos(randomLocation.lat * Math.PI / 180)
+    };
+}
+
 function useHint() {
-	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.")) {
+	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.") && !hintsAreEnabled) {
 		hintsAreEnabled = true;
+        let distance;
+
+        if (selectedGameMode == "Every District") {
+            distance = 5000;
+        } else {
+            distance = 500;
+        }
+
+        const newCircleCenter = getNewRandomLocation(distance)
 
         hintCircle = new google.maps.Circle({
             strokeColor: '#FF0000',
@@ -961,8 +978,8 @@ function useHint() {
             fillColor: '#FF0000',
             fillOpacity: 0.35,
             map: minimap,
-            center: minimapcenter,
-            radius: 1000
+            center: newCircleCenter,
+            radius: distance
         });        
 	}
 }
