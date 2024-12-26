@@ -7,6 +7,9 @@ let roundCount = 0;
 let timerSeconds = 30;
 let hintsAreEnabled = false;
 let hintCircle;
+let noMoving = localStorage.getItem("noMoving") ? localStorage.getItem("noMoving") : document.getElementById("noMoving").value;
+let noTurning = localStorage.getItem("noTurning") ? localStorage.getItem("noTurning") : document.getElementById("noTurning").value;
+let pointOneSeconds = localStorage.getItem("pointOneSeconds") ? localStorage.getItem("pointOneSeconds") : document.getElementById("pointOneSeconds").value;
 let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
 document.getElementById("roundLimitSelector").value = roundLimit;
 

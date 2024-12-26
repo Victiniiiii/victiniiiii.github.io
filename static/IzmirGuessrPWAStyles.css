@@ -780,8 +780,7 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#roundLimitSelector,
-	#gameModeSelector {
+	.flexrow select {
 		background-color: black;
 		color: white;
 		padding: 0.25vw;
@@ -1514,8 +1513,7 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#roundLimitSelector,
-	#gameModeSelector {
+	.flexrow select {
 		background-color: black;
 		color: white;
 		padding: 0.2vw;
