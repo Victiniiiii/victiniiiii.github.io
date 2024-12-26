@@ -94,10 +94,10 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 .flexcolumn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 #menuTip {
@@ -111,77 +111,79 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 .copycodeButton {
-    color: white;
-    background-color: rgb(0, 0, 0, 0.8);
-    padding: 1vh 0.5vw 1vh 0.5vw;
+	color: white;
+	background-color: rgb(0, 0, 0, 0.8);
+	padding: 1vh 0.5vw 1vh 0.5vw;
 }
 
 .coolButton {
-    color: white;
-    background-color: rgb(0, 0, 0, 0.8);
-    padding: 0.25vw 1vw 0.25vw 1vw;
-    margin-left: 2vw;
-    margin-bottom: 1vh;
+	color: white;
+	background-color: rgb(0, 0, 0, 0.8);
+	padding: 0.25vw 1vw 0.25vw 1vw;
+	margin-left: 2vw;
+	margin-bottom: 1vh;
 }
 
 .faq {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    margin-bottom: 1vh;
-    border-radius: 1vw;    
+	background-color: #1e1e1e;
+	border: 1px solid #333;
+	margin-bottom: 1vh;
+	border-radius: 1vw;
 }
 
 .faq-question:hover {
-    background-color: #2a2a2a;   
-    border-bottom-right-radius: 1vw;
-    border-bottom-left-radius: 1vw; 
+	background-color: #2a2a2a;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
 }
 
-.faq-answer ul, .faq-answer li, .faq-answer p {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+.faq-answer ul,
+.faq-answer li,
+.faq-answer p {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .arrow {
-    transition: transform 0.3s;
+	transition: transform 0.3s;
 }
 
 .faq.open .faq-answer {
-    max-height: 100vh;
-    display: block;
+	max-height: 100vh;
+	display: block;
 }
 
 .faq.open .faq-question {
-    background-color: #2a2a2a;
+	background-color: #2a2a2a;
 }
 
 .faq.open .faq-question:hover {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important; 
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
 }
 
 .faq.open .arrow {
-    transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 #matchSharingCodeInput {
-    width: 60vw;
-    height: 5vw;
-    font-size: 2vw;
-    margin-top: 5vw;
+	width: 60vw;
+	height: 5vw;
+	font-size: 2vw;
+	margin-top: 5vw;
 }
 
 #matchSharingPlayButton {
-    background-color: rgb(0, 0, 0, 0.8);
-    color: white;
-    width: 20vw;
-    height: 5vw;
-    margin-top: 5vw;
-    cursor: pointer;
-    font-size: 2vw;
+	background-color: rgb(0, 0, 0, 0.8);
+	color: white;
+	width: 20vw;
+	height: 5vw;
+	margin-top: 5vw;
+	cursor: pointer;
+	font-size: 2vw;
 }
 
 @media (width > 767px) {
@@ -495,7 +497,7 @@ div.gm-bundled-control:nth-child(2) {
 		padding: 0 0.3vw 0 0.3vw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
-        background-color: green;
+		background-color: green;
 	}
 
 	.izmirilcebottombuttons {
@@ -787,7 +789,10 @@ div.gm-bundled-control:nth-child(2) {
 		margin-left: 0.5vw;
 		margin-right: 1vw;
 		width: 5vw;
-        height: 15%;
+	}
+
+	#competitiveChecks .flexrow {
+		height: 15%;
 	}
 
 	#competitiveChecks div {
@@ -819,70 +824,70 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-    select#gameModeSelector {
-        width: 7.5vw;
-    }
-    
-    select#roundLimitSelector {
-        width: 4vw;
-    }
+	select#gameModeSelector {
+		width: 7.5vw;
+	}
 
-    .modalContent {
-        display: flex;
-        flex-direction: row;
-        width: 80vw;
-        height: calc(80dvh - 3vh - 4vw);
-    }
+	select#roundLimitSelector {
+		width: 4vw;
+	}
 
-    #enterCode {
-        margin-left: 0;
-        margin-top: 1vh;
-    }
+	.modalContent {
+		display: flex;
+		flex-direction: row;
+		width: 80vw;
+		height: calc(80dvh - 3vh - 4vw);
+	}
 
-    .modalLeft {
-        width: 80%;
-        height: 100%;
-        padding: 2dvw;
-        overflow-y: auto;
-    }
-    
-    .modalRight {
-        width: 20%;
-        height: 100%;
-        padding: 2dvw;
-    }
+	#enterCode {
+		margin-left: 0;
+		margin-top: 1vh;
+	}
 
-    .faq-container {
-        width: 60vw;
-        height: calc(80dvh - 7vw);
-        margin: auto;
-        border-radius: 1vw;
-        overflow-y: auto;
-    }
+	.modalLeft {
+		width: 80%;
+		height: 100%;
+		padding: 2dvw;
+		overflow-y: auto;
+	}
 
-    .faq-question {
-        padding: 1vw;
-        cursor: pointer;
-        font-size: 1vw;
-        font-weight: bold;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top-left-radius: 1vw;
-        border-top-right-radius: 1vw;
-    }
+	.modalRight {
+		width: 20%;
+		height: 100%;
+		padding: 2dvw;
+	}
 
-    .faq-answer {
-        display: none;
-        padding: 1vw;
-        font-size: 4vw;
-        color: #ccc;
-        max-height: 0;
-        border-top: 1px solid #333;
-        transition: max-height 0.5s ease;
-        overflow: hidden;
-    }
+	.faq-container {
+		width: 60vw;
+		height: calc(80dvh - 7vw);
+		margin: auto;
+		border-radius: 1vw;
+		overflow-y: auto;
+	}
+
+	.faq-question {
+		padding: 1vw;
+		cursor: pointer;
+		font-size: 1vw;
+		font-weight: bold;
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+	}
+
+	.faq-answer {
+		display: none;
+		padding: 1vw;
+		font-size: 4vw;
+		color: #ccc;
+		max-height: 0;
+		border-top: 1px solid #333;
+		transition: max-height 0.5s ease;
+		overflow: hidden;
+	}
 }
 
 @media (width < 768px) {
@@ -1156,9 +1161,9 @@ div.gm-bundled-control:nth-child(2) {
 
 	#mainMapInfo {
 		display: flex;
-        flex-wrap: wrap;
+		flex-wrap: wrap;
 		flex-direction: row;
-        row-gap: 2vw;
+		row-gap: 2vw;
 		align-items: center;
 		justify-content: space-evenly;
 		transition: all 0.25s ease-in-out;
@@ -1169,7 +1174,7 @@ div.gm-bundled-control:nth-child(2) {
 		position: fixed;
 		width: 100%;
 		height: 80dvh;
-        top: 10dvh;
+		top: 10dvh;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
 		flex-direction: column;
@@ -1205,7 +1210,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 5dvw;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
-        background-color: green;
+		background-color: green;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -1551,66 +1556,66 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-    select#gameModeSelector {
-        width: 24vw;
-    }
-    
-    select#roundLimitSelector {
-        width: 12vw;
-    }
+	select#gameModeSelector {
+		width: 24vw;
+	}
 
-    .modalContent {
-        display: flex;
-        flex-direction: row;
-        height: calc(80dvh - 10vw - 3vh)
-    }
+	select#roundLimitSelector {
+		width: 12vw;
+	}
 
-    .modalLeft {
-        width: 65%;
-        height: 100%;
-        padding: 2dvw;
-        overflow-y: auto;
-    }
-    
-    .modalRight {
-        width: 35%;
-        height: 100%;
-        padding: 2dvw;
-    }
+	.modalContent {
+		display: flex;
+		flex-direction: row;
+		height: calc(80dvh - 10vw - 3vh);
+	}
 
-    #izmirDistrictSelect {
-        width: 80%;
-    }
+	.modalLeft {
+		width: 65%;
+		height: 100%;
+		padding: 2dvw;
+		overflow-y: auto;
+	}
 
-    .faq-container {
-        width: 100vw;
-        height: calc(80dvh - 10vw - 3vh);
-        margin: auto;
-        border-radius: 1vw;
-        overflow-y: auto;
-    }
+	.modalRight {
+		width: 35%;
+		height: 100%;
+		padding: 2dvw;
+	}
 
-    .faq-question {
-        padding: 1vw;
-        cursor: pointer;
-        font-size: 5vw;
-        font-weight: bold;
-        color: #fff;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top-left-radius: 1vw;
-        border-top-right-radius: 1vw;
-    }
+	#izmirDistrictSelect {
+		width: 80%;
+	}
 
-    .faq-answer {
-        display: none;
-        padding: 1vw;
-        font-size: 4vw;
-        color: #ccc;
-        max-height: 0;
-        border-top: 1px solid #333;
-        transition: max-height 0.5s ease;
-        overflow: hidden;
-    }
+	.faq-container {
+		width: 100vw;
+		height: calc(80dvh - 10vw - 3vh);
+		margin: auto;
+		border-radius: 1vw;
+		overflow-y: auto;
+	}
+
+	.faq-question {
+		padding: 1vw;
+		cursor: pointer;
+		font-size: 5vw;
+		font-weight: bold;
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+	}
+
+	.faq-answer {
+		display: none;
+		padding: 1vw;
+		font-size: 4vw;
+		color: #ccc;
+		max-height: 0;
+		border-top: 1px solid #333;
+		transition: max-height 0.5s ease;
+		overflow: hidden;
+	}
 }

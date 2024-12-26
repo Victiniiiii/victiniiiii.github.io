@@ -393,11 +393,9 @@ function initMap() {
 	const streetViewService = new google.maps.StreetViewService();
 	streetViewService.getPanorama({ location: randomLocation, radius: 200 }, function (data, status) {
 		if (status === "OK") {
-			const latLng = data.location.latLng;
-
 			randomLocation = {
-				lat: latLng.lat(),
-				lng: latLng.lng(),
+				lat: data.location.latLng.lat(),
+				lng: data.location.latLng.lng(),
 			};
 
 			const panorama = new google.maps.StreetViewPanorama(document.getElementById("gamemap"), {
@@ -405,15 +403,9 @@ function initMap() {
 				pov: { heading: 34, pitch: 1 },
 				zoom: 1,
 				...panoramaOptions,
-			});
-
-            if (noMoving) {
-                panoramaOptions.linksControl = true;
-            }
-
-            if (noTurning) {
-                panoramaOptions.panControl = true;
-            }
+                ...(noMoving ? { linksControl: true } : {}),
+                ...(noTurning ? { panControl: true } : {})
+			});            
 
 			gamemap.setStreetView(panorama);
 
