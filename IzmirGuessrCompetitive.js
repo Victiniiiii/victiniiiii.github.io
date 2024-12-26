@@ -987,7 +987,7 @@ function toggleButton() {
 function useHint() {
 	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.") && !hintsAreEnabled) {
 		hintsAreEnabled = true;
-		let distance;        
+		let distance;
 
 		if (selectedGameMode == "Every District") {
 			distance = 5000;
@@ -995,7 +995,7 @@ function useHint() {
 			distance = 500;
 		}
 
-        let randomNumber = Math.floor(Math.random() * distance);
+		let randomNumber = Math.floor(Math.random() * distance);
 		const newCircleCenter = getNewRandomLocation(randomNumber);
 
 		hintCircle = new google.maps.Circle({
@@ -1007,13 +1007,10 @@ function useHint() {
 			map: minimap,
 			center: newCircleCenter,
 			radius: distance,
-			clickable: true,
+			clickable: false,
 		});
 
-		const bounds = new google.maps.LatLngBounds();
-		bounds.extend(circle.getBounds().getSouthWest());
-		bounds.extend(circle.getBounds().getNorthEast());
-		minimap.fitBounds(bounds);
+		minimap.setCenter(new google.maps.LatLng(newCircleCenter.lat, newCircleCenter.lng));
 	}
 }
 
