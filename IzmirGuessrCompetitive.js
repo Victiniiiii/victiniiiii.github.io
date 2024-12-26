@@ -987,7 +987,7 @@ function toggleButton() {
 function useHint() {
 	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.") && !hintsAreEnabled) {
 		hintsAreEnabled = true;
-		let distance;
+		let distance;        
 
 		if (selectedGameMode == "Every District") {
 			distance = 5000;
@@ -995,7 +995,8 @@ function useHint() {
 			distance = 500;
 		}
 
-		const newCircleCenter = getNewRandomLocation(distance);
+        let randomNumber = Math.floor(Math.random() * distance);
+		const newCircleCenter = getNewRandomLocation(randomNumber);
 
 		hintCircle = new google.maps.Circle({
 			strokeColor: "#FF0000",
