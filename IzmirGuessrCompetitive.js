@@ -349,6 +349,7 @@ function getRandomLocation() {
 
 function initMap() {
 	closeAllModals();
+	toggleButton();
 	gameOngoing = true;
 	loadingScreen.style.display = "flex";
 	guessedLocationMarker = null;
@@ -367,7 +368,6 @@ function initMap() {
 	titleSection.style.display = "none";
 	gameplayBackground.style.display = "block";
 	document.getElementById("buttonrow").style.display = "flex";
-	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("gamemap").style.display = "block";
 	document.getElementById("gamemap").innerHTML = "";
 	resultModal.style.display = "none";
@@ -492,6 +492,7 @@ function calculatePoints(distance) {
 
 function displayResults(distance, points) {
 	pauseTimer();
+	toggleButton();
 	document.getElementById("gamemap").style.opacity = "1";
 
 	const resultMap = new google.maps.Map(document.getElementById("result-map"), {
@@ -559,7 +560,6 @@ function displayResults(distance, points) {
 
 	document.getElementById("result-modal").style.display = "flex";
 	document.getElementById("overlay-container").style.display = "none";
-	document.getElementById("modaltoggle-button").style.display = "flex";
 	document.getElementById("shareMatch").style.display = "none";
 
 	document.getElementById("startGameButton").disabled = true;
@@ -769,16 +769,14 @@ function startGame() {
 		roundCount = 0;
 	}
 
-    if (hintCircle) {
-        hintCircle.setMap(null);
-        hintCircle = null;
-        hintsAreEnabled = false;
-    }
+	if (hintCircle) {
+		hintCircle.setMap(null);
+		hintCircle = null;
+		hintsAreEnabled = false;
+	}
 
 	document.getElementById("overlay-container").style.display = "block";
-	document.getElementById("modaltoggle-button").style.display = "none";
 	document.getElementById("result-modal").style.display = "none";
-	document.getElementById("modaltoggle-button").style.display = "none";
 
 	resumeTimer();
 	initMap();
@@ -951,36 +949,70 @@ function sortStatistics(criteria) {
 }
 
 function getNewRandomLocation(radius) {
-    const r = radius / 6378137, θ = Math.random() * 2 * Math.PI;
-    return {
-        lat: randomLocation.lat + r * Math.cos(θ) * 180 / Math.PI,
-        lng: randomLocation.lng + r * Math.sin(θ) * 180 / Math.PI / Math.cos(randomLocation.lat * Math.PI / 180)
-    };
+	const r = radius / 6378137,
+		θ = Math.random() * 2 * Math.PI;
+	return {
+		lat: randomLocation.lat + (r * Math.cos(θ) * 180) / Math.PI,
+		lng: randomLocation.lng + (r * Math.sin(θ) * 180) / Math.PI / Math.cos((randomLocation.lat * Math.PI) / 180),
+	};
+}
+
+function toggleButton() {
+	const button = document.getElementById("modaltoggle-button");
+	if (button.innerHTML.includes("M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7")) {
+		button.setAttribute("title", "Toggle the Results");
+		button.setAttribute("onclick", "toggleModal()");
+		button.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2">
+                <path d="M12 13v-8l-3 3m6 0l-3 -3"></path>
+                <path d="M9 17l1 0"></path>
+                <path d="M14 17l1 0"></path>
+                <path d="M19 17l1 0"></path>
+                <path d="M4 17l1 0"></path>
+            </svg>
+        `;
+	} else {
+		button.setAttribute("title", "Take a Hint");
+		button.setAttribute("onclick", "useHint()");
+		button.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2">
+                <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7"></path>
+                <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3"></path>
+                <path d="M9.7 17l4.6 0"></path>
+            </svg>
+        `;
+	}
 }
 
 function useHint() {
 	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.") && !hintsAreEnabled) {
 		hintsAreEnabled = true;
-        let distance;
+		let distance;
 
-        if (selectedGameMode == "Every District") {
-            distance = 5000;
-        } else {
-            distance = 500;
-        }
+		if (selectedGameMode == "Every District") {
+			distance = 5000;
+		} else {
+			distance = 500;
+		}
 
-        const newCircleCenter = getNewRandomLocation(distance)
+		const newCircleCenter = getNewRandomLocation(distance);
 
-        hintCircle = new google.maps.Circle({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-            map: minimap,
-            center: newCircleCenter,
-            radius: distance
-        });        
+		hintCircle = new google.maps.Circle({
+			strokeColor: "#FF0000",
+			strokeOpacity: 0.8,
+			strokeWeight: 2,
+			fillColor: "#FF0000",
+			fillOpacity: 0.35,
+			map: minimap,
+			center: newCircleCenter,
+			radius: distance,
+			clickable: true,
+		});
+
+		const bounds = new google.maps.LatLngBounds();
+		bounds.extend(circle.getBounds().getSouthWest());
+		bounds.extend(circle.getBounds().getNorthEast());
+		minimap.fitBounds(bounds);
 	}
 }
 
