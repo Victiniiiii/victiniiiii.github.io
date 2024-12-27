@@ -2,12 +2,13 @@
 
 let selectedDistrict;
 let selectedGameMode;
-let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("gamemode") : document.getElementById("gameModeSelector").value;
 let roundCount = 0;
 let timerSeconds = 30;
-let hintsAreEnabled = false;
 let hintCircle;
-let roundLimit = localStorage.getItem("roundLimit") ? parseInt(localStorage.getItem("roundLimit"), 10) : 5;
+let hintsAreEnabled = false;
+let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("gamemode") : "Classic";
+let roundLimit = localStorage.getItem("roundLimit") ? localStorage.getItem("roundLimit") : 5;
+document.getElementById("gameModeSelector").value = menuModeToggle;
 document.getElementById("roundLimitSelector").value = roundLimit;
 
 // Game Points:
