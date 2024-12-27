@@ -329,10 +329,8 @@ function getRandomLocation() {
 	let polygon;
 	if (menuModeToggle == "Classic") {
 		polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
-        console.log("1");
 	} else {
 		polygon = districtsData.find((district) => district.name === selectedDistrict).center;
-        console.log("2");
 	}
 
 	let minX = polygon[0][0];

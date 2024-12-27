@@ -878,7 +878,7 @@ div.gm-bundled-control:nth-child(2) {
 	.faq-answer {
 		display: none;
 		padding: 1vw;
-		font-size: 4vw;
+		font-size: 1vw;
 		color: #ccc;
 		max-height: 0;
 		border-top: 1px solid #333;
