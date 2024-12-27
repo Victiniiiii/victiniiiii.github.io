@@ -260,20 +260,27 @@ function toggleDistrict(input) {
 	}
 
 	const button = Array.from(buttons).find((b) => b.innerText.trim() === district.name);
+	const isGreen = initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds);
 
-	if (district.layer.options.fill) {
-		district.layer.setStyle({ fill: false, color: "red" });
+	if (isGreen) {
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+			district.layer.setStyle({ fill: false, color: "red" });
+		}
+
 		district.state = 0;
-		if (button) button.style.backgroundColor = "red";
+		button.style.backgroundColor = "red";
 
 		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
 		if (index !== -1) {
 			initiallyGreenDistricts.splice(index, 1);
 		}
 	} else {
-		district.layer.setStyle({ fill: true, color: "green" });
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+			district.layer.setStyle({ fill: true, color: "green" });
+		}
+
 		district.state = 1;
-		if (button) button.style.backgroundColor = "green";
+		button.style.backgroundColor = "green";
 
 		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
@@ -284,37 +291,37 @@ function toggleDistrict(input) {
 }
 
 function addAllDistricts() {
-	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-		buttons.forEach((button) => {
-			button.style.backgroundColor = "green";
-		});
-		districtLayers.forEach((district) => {
+	buttons.forEach((button) => {
+		button.style.backgroundColor = "green";
+	});
+	districtLayers.forEach((district) => {
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
 			district.layer.setStyle({ fill: true, color: "green" });
-			district.state = 1;
+		}
 
-			if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-				initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-			}
+		district.state = 1;
 
-			ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-		});
-	}
+		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+		}
+
+		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+	});
 }
 
 function removeAllDistricts() {
-	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-		buttons.forEach((button) => {
-			button.style.backgroundColor = "red";
-		});
-		districtLayers.forEach((district) => {
+	buttons.forEach((button) => {
+		button.style.backgroundColor = "red";
+	});
+	districtLayers.forEach((district) => {
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
 			district.layer.setStyle({ fill: false, color: "red" });
-			district.state = 0;
+		}
 
-			initiallyGreenDistricts.length = 0;
-
-			ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
-		});
-	}
+		district.state = 0;
+		initiallyGreenDistricts.length = 0;
+		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+	});
 }
 
 function getRandomLocation() {
