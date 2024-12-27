@@ -400,7 +400,7 @@ function initMap() {
 				pov: { heading: 34, pitch: 1 },
 				zoom: 1,
 				...panoramaOptions,
-			});            
+			});
 
 			gamemap.setStreetView(panorama);
 
@@ -529,13 +529,13 @@ function displayResults(distance, points) {
 				document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
 			}
 		}
-	}	
+	}
 
 	if (points > 1000) {
 		points = 1000;
 	}
 
-    if (hintsAreEnabled) {
+	if (hintsAreEnabled) {
 		points -= 200;
 		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 	}
@@ -983,32 +983,34 @@ function toggleButton() {
 }
 
 function useHint() {
-	if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.") && !hintsAreEnabled) {
-		hintsAreEnabled = true;
-		let distance;
+	if (!hintsAreEnabled) {
+		if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.")) {
+			hintsAreEnabled = true;
+			let distance;
 
-		if (selectedGameMode == "Every District") {
-			distance = 5000;
-		} else {
-			distance = 500;
+			if (selectedGameMode == "Every District") {
+				distance = 5000;
+			} else {
+				distance = 500;
+			}
+
+			let randomNumber = Math.floor(Math.random() * distance);
+			const newCircleCenter = getNewRandomLocation(randomNumber);
+
+			hintCircle = new google.maps.Circle({
+				strokeColor: "#FF0000",
+				strokeOpacity: 0.8,
+				strokeWeight: 2,
+				fillColor: "#FF0000",
+				fillOpacity: 0.35,
+				map: minimap,
+				center: newCircleCenter,
+				radius: distance,
+				clickable: false,
+			});
+
+			minimap.setCenter(new google.maps.LatLng(newCircleCenter.lat, newCircleCenter.lng));
 		}
-
-		let randomNumber = Math.floor(Math.random() * distance);
-		const newCircleCenter = getNewRandomLocation(randomNumber);
-
-		hintCircle = new google.maps.Circle({
-			strokeColor: "#FF0000",
-			strokeOpacity: 0.8,
-			strokeWeight: 2,
-			fillColor: "#FF0000",
-			fillOpacity: 0.35,
-			map: minimap,
-			center: newCircleCenter,
-			radius: distance,
-			clickable: false,
-		});
-
-		minimap.setCenter(new google.maps.LatLng(newCircleCenter.lat, newCircleCenter.lng));
 	}
 }
 
