@@ -888,7 +888,7 @@ div.gm-bundled-control:nth-child(2) {
 
     .bmc-btn {
         /* Coffee Button */
-        border: 1px solid white;
+        border: 1px solid white !important;
         min-width: 0 !important;
         height: 7vh !important;
         border-radius: 2vh !important;
@@ -1636,6 +1636,6 @@ div.gm-bundled-control:nth-child(2) {
         font-size: 4vh !important;
         padding: 0 8vw 0 4vw !important;
         line-height: unset !important;
-        margin-bottom: 1vh;
+        margin-bottom: 1vh !important;
     }
 }
