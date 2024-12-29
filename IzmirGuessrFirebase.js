@@ -210,7 +210,7 @@ async function calculateDistrictData() {
 			if (districtName !== "Every District" && districtName !== "Custom") {
 				totalRoundCount += data.roundCount || 0;
 				totalScore += data.totalScore || 0;
-                totalGameCount += data.gameCount || 0;
+                totalGameCount += data.playCount || 0;
                 uniqueDistrictCount++
 			}
 
