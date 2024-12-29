@@ -555,7 +555,7 @@ function displayResults(distance, points) {
 		saveData(selectedDistrict, roundPoints[roundCount]);
 	}
 
-	document.getElementById("distance-info").innerHTML = `Distance: ${distance.toFixed(0)} meters`;
+	document.getElementById("distance-info").innerHTML = `Guess Distance: ${distance.toFixed(0)}m`;
 	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").innerHTML = `Total Points: ${totalPoints}`;
 	document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
