@@ -196,9 +196,11 @@ async function calculateDistrictData() {
 		const userId = auth.currentUser.uid;
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 
+        let totalGameCount = 0;
 		let totalRoundCount = 0;
 		let totalScore = 0;
 		let bestHighScore = 0;
+        let uniqueDistrictCount = 0;
 
 		const snapshot = await getDocs(gameDataRef);
 		snapshot.forEach((doc) => {
@@ -208,14 +210,18 @@ async function calculateDistrictData() {
 			if (districtName !== "Every District" && districtName !== "Custom") {
 				totalRoundCount += data.roundCount || 0;
 				totalScore += data.totalScore || 0;
+                totalGameCount += data.gameCount || 0;
+                uniqueDistrictCount++
 			}
 
 			bestHighScore = Math.max(bestHighScore, data.highScore || 0);
 		});
 
+        document.getElementById("statsPlayedGames").innerHTML = `Total Game Count: ${totalGameCount}`;
 		document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
 		document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${(totalScore / totalRoundCount / 10).toFixed(2)}%`;
-		document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
+		document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;        
+        document.getElementById("statsUniqueDistricts").innerHTML = `Unique Districts Played: ${uniqueDistrictCount}`;
 	}
 }
 
