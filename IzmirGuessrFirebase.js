@@ -302,7 +302,7 @@ async function logTopHighScores() {
 
 	const topHighScores = Array.from(allHighScores.values())
 		.sort((a, b) => b.highScore - a.highScore)
-		.slice(0, 3);
+		.slice(0, 5);
 
 	topHighScores.forEach((score, index) => {
 		document.getElementById("miniLeaderboard").innerHTML += `<p>${index + 1}. ${score.username} - High Score: ${score.highScore}</p>`;
