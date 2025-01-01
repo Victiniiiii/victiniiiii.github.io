@@ -548,6 +548,10 @@ function displayResults(distance, points) {
 		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 	}
 
+	if (points < 0) {
+		points = 0;
+	}
+
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
 
