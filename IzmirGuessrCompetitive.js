@@ -39,7 +39,7 @@ let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
 
-let theKey = "AIzaSyBvjbX7ao3UbTO56SwG9IJ_KAXOtM5Guo4"; // It's restricted to the page
+let theKey = "AIzaSyDMa5mnLnHb8EICt_OMOUB_y0gj8Kd_6uk"; // It's restricted to the page
 let initiallyGreenDistricts = [];
 let districtLayers = [];
 let previousMode = "DistrictBorders";
