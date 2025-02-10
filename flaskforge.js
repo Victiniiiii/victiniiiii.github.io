@@ -10,7 +10,6 @@ async function gemstonenames() {
 		const flawlessGem = data.products[`FLAWLESS_${gemName}`]?.quick_status;
 		const perfectGem = data.products[`PERFECT_${gemName}`]?.quick_status;
 
-		// Check if gem data exists
 		if (!fineGem || !flawlessGem || !perfectGem) {
 			console.error(`Gem data not found for ${gemName}`);
 			return {
@@ -28,7 +27,6 @@ async function gemstonenames() {
 
 		const formatNumber = (number) => Math.floor(number).toLocaleString().replace(/,/g, ",");
 
-		// Capitalize the gem names
 		const capitalizedGemName = gemName
 			.toLowerCase()
 			.split("_")
@@ -46,14 +44,12 @@ async function gemstonenames() {
 	return gemstoneSentences;
 }
 
-// Call the gemstonenames function and update the text in HTML
 gemstonenames().then((sentences) => {
 	const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
 		acc[`text${index + 1}`] = sentence;
 		return acc;
 	}, {});
 
-	// Update the text in HTML using innerHTML
 	Object.entries(gemstoneTexts).forEach(([key, value]) => {
 		document.getElementById(key).innerHTML = value;
 	});

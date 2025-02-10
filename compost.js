@@ -60,10 +60,8 @@ async function bazaarconnect() {
 		coinsPerRefill: -1,
 	};
 
-	// Loop through each upgrade option
 	for (let i = 0; i < upgradeNames.length; i++) {
 		if (upgradeLevels[i] === 25) {
-			// Skip calculation and display if upgrade level is already 25
 			upgradeResults[i].innerText = "This upgrade can not be increased further.";
 			continue;
 		}
@@ -96,7 +94,6 @@ async function bazaarconnect() {
 		const newMachineRuntime = Math.min(newOrgMatterCapMultiplier / newOrgMatterConsumed, newFuelCapMultiplier / newFuelConsumed);
 		const newCoinsPerRefill = Math.floor(newTotalProfitPerHour * newMachineRuntime);
 
-		// Check if the new values are greater than the current maximums
 		if (newTotalProfitPerHour > maxValues.coinsPerHour) {
 			maxValues.coinsPerHour = newTotalProfitPerHour;
 			maxIndices.coinsPerHour = i;
@@ -114,11 +111,9 @@ async function bazaarconnect() {
 			maxIndices.coinsPerRefill = i;
 		}
 
-		// Display the upgrade result
 		upgradeResults[i].innerHTML = `If you upgrade ${upgradeNames[i]}, you will make ${Math.floor(newTotalProfitPerHour).toLocaleString()} coins per hour, ${Math.floor(newTotalProfitPerDay).toLocaleString()} coins per day, the composter will work for ${newMachineRuntime.toFixed(2)} hours, making you ${newCoinsPerRefill.toLocaleString()} coins per refill.`;
 	}
 
-	// Color the upgrade result with the maximum values in red
 	if (maxIndices.coinsPerHour !== -1) {
 		const upgradeResultCoinsPerHour = upgradeResults[maxIndices.coinsPerHour].innerHTML;
 		upgradeResults[maxIndices.coinsPerHour].innerHTML = upgradeResultCoinsPerHour.replace(/(\d{1,3},)*\d{3} coins per hour/g, (match) => `<span style="color:red">${match}</span>`);
@@ -205,7 +200,7 @@ async function getbestmatterandfuel() {
 	const enchantedcocoabeans = data.products[`ENCHANTED_COCOA`]?.quick_status.sellPrice.toFixed(0);
 	const organicenchantedcocoabeans = enchantedcocoabeans / 64;
 
-	const enchantedhaybale = data.products[`ENCHANTED_HAY_BLOCK`]?.quick_status.sellPrice.toFixed(0);
+	const enchantedhaybale = data.products[`ENCHANTED_HAY_BALE`]?.quick_status.sellPrice.toFixed(0);
 	const organicenchantedhaybale = enchantedhaybale / 1296;
 
 	const enchantedmelonblock = data.products[`ENCHANTED_MELON_BLOCK`]?.quick_status.sellPrice.toFixed(0);
@@ -317,7 +312,7 @@ async function compostspreadsheet() {
 	const response = await fetch("https://api.hypixel.net/v2/skyblock/bazaar");
 	const data = await response.json();
 
-	const enchantedhaybale = data.products[`ENCHANTED_HAY_BLOCK`]?.quick_status.sellPrice.toFixed(0);
+	const enchantedhaybale = data.products[`ENCHANTED_HAY_BALE`]?.quick_status.sellPrice.toFixed(0);
 	const tightlytiedhaybale = data.products["TIGHTLY_TIED_HAY_BALE"]?.quick_status.sellPrice.toFixed(0);
 	const enchantedgoldencarrot = data.products["ENCHANTED_GOLDEN_CARROT"]?.quick_status.sellPrice.toFixed(0);
 
