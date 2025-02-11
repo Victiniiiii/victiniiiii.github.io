@@ -254,6 +254,9 @@ async function getbestmatterandfuel() {
 	const squash = data.products[`SQUASH`]?.quick_status.sellPrice.toFixed(0);
 	const organicsquash = squash / 10000;
 
+    const enchantedwheat = data.products["ENCHANTED_WHEAT"]?.quick_status.sellPrice.toFixed(0);
+    const organicwheat = enchantedwheat / 160;
+
 	const organicMatters = [
 		{ name: "Box of Seeds", price: matterboxofseeds },
 		{ name: "Cropie", price: organiccropie },
@@ -278,6 +281,7 @@ async function getbestmatterandfuel() {
 		{ name: "Enchanted Seeds", price: organicechantedseeds },
 		{ name: "Enchanted Sugar Cane", price: organicenchantedsugarcane },
 		{ name: "Enchanted Sugar", price: organicenchantedsugar },
+        { name: "Enchanted Wheat", price: organicwheat },
 		{ name: "Fermento", price: organicfermento },
 		{ name: "Flowering Bouquet", price: organicfloweringbouquet },
 		{ name: "Mutant Nether Wart", price: organicmutantnetherwart },
