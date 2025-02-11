@@ -201,7 +201,7 @@ async function getbestmatterandfuel() {
 	const organicenchantedcocoabeans = enchantedcocoabeans / 64;
 
 	const enchantedhaybale = data.products[`ENCHANTED_HAY_BALE`]?.quick_status.sellPrice.toFixed(0);
-	const organicenchantedhaybale = enchantedhaybale / 1296;
+	const organicenchantedhaybale = enchantedhaybale / 25600;
 
 	const enchantedmelonblock = data.products[`ENCHANTED_MELON_BLOCK`]?.quick_status.sellPrice.toFixed(0);
 	const organicenchantedmelonblock = enchantedmelonblock / 5120;
@@ -313,7 +313,7 @@ async function compostspreadsheet() {
 	const data = await response.json();
 
 	const enchantedhaybale = data.products[`ENCHANTED_HAY_BALE`]?.quick_status.sellPrice.toFixed(0);
-	const tightlytiedhaybale = data.products["TIGHTLY_TIED_HAY_BALE"]?.quick_status.sellPrice.toFixed(0);
+	const enchantedwheat = data.products["ENCHANTED_WHEAT"]?.quick_status.sellPrice.toFixed(0);
 	const enchantedgoldencarrot = data.products["ENCHANTED_GOLDEN_CARROT"]?.quick_status.sellPrice.toFixed(0);
 
 	const enchantedbakedpotato = data.products[`ENCHANTED_BAKED_POTATO`]?.quick_status.sellPrice.toFixed(0);
@@ -350,7 +350,7 @@ async function compostspreadsheet() {
 
 		switch (i) {
 			case 1:
-				value = enchantedhaybale * 16;
+				value = enchantedwheat * 128;
 				break;
 			case 2:
 				value = enchantedbakedpotato * 1;
@@ -380,7 +380,7 @@ async function compostspreadsheet() {
 				value = mutantnetherwart * 1;
 				break;
 			case 11:
-				value = enchantedhaybale * 32;
+				value = enchantedwheat * 256;
 				break;
 			case 12:
 				value = enchantedbakedpotato * 2;
@@ -410,7 +410,7 @@ async function compostspreadsheet() {
 				value = mutantnetherwart * 2;
 				break;
 			case 21:
-				value = enchantedhaybale * 64;
+				value = enchantedwheat * 512;
 				break;
 			case 22:
 				value = enchantedbakedpotato * 4;
@@ -440,7 +440,7 @@ async function compostspreadsheet() {
 				value = mutantnetherwart * 4;
 				break;
 			case 31:
-				value = tightlytiedhaybale * 1;
+				value = enchantedhaybale * 8;
 				break;
 			case 32:
 				value = enchantedbakedpotato * 8;
@@ -470,7 +470,7 @@ async function compostspreadsheet() {
 				value = cropie * 3 + mutantnetherwart * 8;
 				break;
 			case 41:
-				value = cropie * 6 + tightlytiedhaybale * 2;
+				value = cropie * 6 + enchantedhaybale * 16;
 				break;
 			case 42:
 				value = cropie * 6 + enchantedbakedpotato * 16;
@@ -500,7 +500,7 @@ async function compostspreadsheet() {
 				value = cropie * 12 + mutantnetherwart * 16;
 				break;
 			case 51:
-				value = cropie * 32 + tightlytiedhaybale * 3;
+				value = cropie * 32 + enchantedhaybale * 24;
 				break;
 			case 52:
 				value = cropie * 32 + enchantedbakedpotato * 32;
@@ -530,7 +530,7 @@ async function compostspreadsheet() {
 				value = cropie * 64 + mutantnetherwart * 32;
 				break;
 			case 61:
-				value = cropie * 128 + tightlytiedhaybale * 4;
+				value = cropie * 128 + enchantedhaybale * 32;
 				break;
 			case 62:
 				value = cropie * 128 + enchantedbakedpotato * 48;
@@ -560,7 +560,7 @@ async function compostspreadsheet() {
 				value = squash * 3 + mutantnetherwart * 48;
 				break;
 			case 71:
-				value = squash * 6 + tightlytiedhaybale * 6;
+				value = squash * 6 + enchantedhaybale * 48;
 				break;
 			case 72:
 				value = squash * 6 + enchantedbakedpotato * 64;
@@ -590,7 +590,7 @@ async function compostspreadsheet() {
 				value = squash * 12 + mutantnetherwart * 64;
 				break;
 			case 81:
-				value = squash * 32 + tightlytiedhaybale * 8;
+				value = squash * 32 + enchantedhaybale * 64;
 				break;
 			case 82:
 				value = squash * 32 + enchantedbakedpotato * 96;
@@ -620,7 +620,7 @@ async function compostspreadsheet() {
 				value = squash * 64 + mutantnetherwart * 96;
 				break;
 			case 91:
-				value = squash * 128 + tightlytiedhaybale * 10;
+				value = squash * 128 + enchantedhaybale * 80;
 				break;
 			case 92:
 				value = squash * 128 + enchantedbakedpotato * 128;
@@ -650,7 +650,7 @@ async function compostspreadsheet() {
 				value = fermento * 3 + mutantnetherwart * 160;
 				break;
 			case 101:
-				value = fermento * 6 + tightlytiedhaybale * 13;
+				value = fermento * 6 + enchantedhaybale * 104;
 				break;
 			case 102:
 				value = fermento * 6 + enchantedbakedpotato * 192;
@@ -680,7 +680,7 @@ async function compostspreadsheet() {
 				value = fermento * 12 + mutantnetherwart * 224;
 				break;
 			case 111:
-				value = condensedfermento * 4 + tightlytiedhaybale * 16;
+				value = condensedfermento * 4 + enchantedhaybale * 128;
 				break;
 			case 112:
 				value = condensedfermento * 4 + enchantedbakedpotato * 256;
@@ -710,7 +710,7 @@ async function compostspreadsheet() {
 				value = condensedfermento * 7 + mutantnetherwart * 288;
 				break;
 			case 121:
-				value = condensedfermento * 14 + tightlytiedhaybale * 20;
+				value = condensedfermento * 14 + enchantedhaybale * 160;
 				break;
 			case 122:
 				value = condensedfermento * 14 + enchantedbakedpotato * 320;
@@ -725,7 +725,7 @@ async function compostspreadsheet() {
 				value = condensedfermento * 14 + enchantedbrownmushroomblock * 1216;
 				break;
 			case 126:
-				value = cropie * 245 + squash * 245 + fermento * 21 + condensedfermento * 25 + enchantedhaybale * 112 + tightlytiedhaybale * 83 + enchantedgoldencarrot * 1166;
+				value = cropie * 245 + squash * 245 + fermento * 21 + condensedfermento * 25 + enchantedhaybale * 664 + enchantedwheat * 896 + enchantedgoldencarrot * 1166;
 				break;
 			case 127:
 				value = cropie * 245 + squash * 245 + fermento * 21 + condensedfermento * 25 + enchantedbakedpotato * 1167 + enchantedpumpkin * 64 + polishedpumpkin * 591;
@@ -740,7 +740,7 @@ async function compostspreadsheet() {
 				value = cropie * 245 + squash * 245 + fermento * 21 + condensedfermento * 25 + enchantedbrownmushroom * 32 + enchantedbrownmushroomblock * 2660 + enchantedredmushroomblock * 2002 + mutantnetherwart * 943;
 				break;
 			case 131:
-				value = cropie * 1225 + squash * 1225 + fermento * 95 + condensedfermento * 125 + enchantedhaybale * 112 + tightlytiedhaybale * 83 + enchantedgoldencarrot * 1166 + enchantedbakedpotato * 1167 + enchantedpumpkin * 64 + polishedpumpkin * 591 + enchantedsugarcane * 1167 + enchantedmelonblock * 1740 + enchantedcactus * 592 + enchantedcookie * 1653 + enchantedbrownmushroom * 32 + enchantedbrownmushroomblock * 2660 + enchantedredmushroomblock * 2002 + mutantnetherwart * 943;
+				value = cropie * 1225 + squash * 1225 + fermento * 95 + condensedfermento * 125 + enchantedhaybale * 664 + enchantedwheat * 896 + enchantedgoldencarrot * 1166 + enchantedbakedpotato * 1167 + enchantedpumpkin * 64 + polishedpumpkin * 591 + enchantedsugarcane * 1167 + enchantedmelonblock * 1740 + enchantedcactus * 592 + enchantedcookie * 1653 + enchantedbrownmushroom * 32 + enchantedbrownmushroomblock * 2660 + enchantedredmushroomblock * 2002 + mutantnetherwart * 943;
 				break;
 			default:
 				value = 0; // If 0 its broken
