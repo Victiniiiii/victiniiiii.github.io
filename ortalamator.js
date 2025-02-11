@@ -182,7 +182,47 @@ function switchMode(mode) {
 		stat22Mode.style.zIndex = "0";
 		donem8Mode.innerHTML = getSemesterContent(8);
 	}
+    
 	loadSavedDropdowns();
+
+	document.querySelectorAll("select").forEach((select) => {
+		select.addEventListener("change", function () {
+			calculateGPA();
+		});
+	});
+
+	const italicWords = [
+		"(4) VERİ TABANI:",
+		"(4) SIMULATION:",
+		"(4) BİYOİSTATİSTİK:",
+		"(4) OLASILIK TEORİSİ:",
+		"(4) KATEGORİK VERİ ANALİZİ:",
+		"(3) SEÇMELİ - 1:",
+		"(4) ALAN ARAŞTIRMALARI:",
+		"(4) VERİ TABANI PROGRAMLAMA:",
+		"(4) COMPUTER AIDED SYSTEM SIMULATION AND MODELING:",
+		"(4) C++ İLE PROGRAMLAMA:",
+		"(3) SEÇMELİ - 2:",
+		"(5) ZAMAN SERİLERİ:",
+		"(5) EXPLORATORY DATA ANALYSIS:",
+		"(5) STATISTICAL RELIABILITY ANALYSIS:",
+		"(5) GÜNCEL PROGRAMLAMA DİLLERİ:",
+		"(5) ROBUST STATISTICS:",
+		"(5) SIRA İSTATİSTİKLERİ:",
+		"(5) EKONOMETRİK MODELLER:",
+		"(5) SÜREÇ KONTROLÜNDE PROBLEM ÇÖZME YÖNTEMLERİ:",
+		"(5) SANAYİ EKONOMİSİ:",
+	];
+
+	document.querySelectorAll("span").forEach((span) => {
+		const spanText = span.innerHTML;
+
+		italicWords.forEach((italicWord) => {
+			if (spanText.includes(italicWord)) {
+				span.style.color = "rgb(200,200,200)";
+			}
+		});
+	});
 }
 
 function calculateFinalNote() {
@@ -426,7 +466,7 @@ window.onclick = function (event) {
 	} else if (!event.target.matches("#settingsModal")) {
 		document.getElementById("settingsModal").style.display = "none";
 	}
-    
+
 	if (!event.target.matches(".modeButton") && !event.target.matches(".semesterButton")) {
 		var dropdowns = document.getElementsByClassName("dropdown-content");
 		var i;
@@ -458,7 +498,7 @@ function getSemesterContent(semester) {
 	var content = "<ul>";
 
 	semesterData.forEach(function (lesson) {
-		content += `<li>${lesson.subject}: ${createDropdownMenu(lesson.id, getCurrentGrade(lesson.id))}</li>`;
+		content += `<li> <span>${lesson.subject}:</span> ${createDropdownMenu(lesson.id, getCurrentGrade(lesson.id))}</li>`;
 	});
 
 	content += "</ul>";
@@ -765,12 +805,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	for (let i = 8; i >= 1; i--) {
 		switchMode(`DONEM${i}`);
 	}
-
-	document.querySelectorAll("select").forEach((select) => {
-		select.addEventListener("change", function () {
-			calculateGPA();
-		});
-	});
 
 	document.querySelectorAll(".custom-submenu-content a").forEach((item) => {
 		item.addEventListener("click", function (event) {
