@@ -762,5 +762,11 @@ document.addEventListener('DOMContentLoaded', () => {
         switchMode(`DONEM${i}`);
     }
 
+    document.querySelectorAll("select").forEach(select => {
+        select.addEventListener("change", function() {
+            calculateGPA();
+        });
+    });
+
     calculateGPA();
 });
