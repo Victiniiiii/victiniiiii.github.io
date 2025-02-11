@@ -182,7 +182,7 @@ function switchMode(mode) {
 		stat22Mode.style.zIndex = "0";
 		donem8Mode.innerHTML = getSemesterContent(8);
 	}
-    loadSavedDropdowns();
+	loadSavedDropdowns();
 }
 
 function calculateFinalNote() {
@@ -347,7 +347,7 @@ function getSemesterData(semester) {
 				{ id: "regresyon", subject: "(7) REGRESSION ANALYSIS" },
 				{ id: "arastir", subject: "(6) ARAŞTIRMA YÖNTEMLERİ" },
 				{ id: "isthazyaz", subject: "(6) İSTATİSTİKSEL HAZIR YAZILIMLAR" },
-                { id: "secmeli1", subject: "(3) SEÇMELİ - 1"},
+				{ id: "secmeli1", subject: "(3) SEÇMELİ - 1" },
 			];
 			break;
 		case 6:
@@ -359,7 +359,7 @@ function getSemesterData(semester) {
 				{ id: "skolas", subject: "(7) STOKASTİK SÜREÇLER" },
 				{ id: "param", subject: "(6) PARAMETRİK OLMAYAN İSTATİSTİKSEL YÖNTEMLER" },
 				{ id: "ornek", subject: "(6) ÖRNEKLEME" },
-                { id: "secmeli2", subject: "(3) SEÇMELİ - 2"},
+				{ id: "secmeli2", subject: "(3) SEÇMELİ - 2" },
 			];
 			break;
 		case 7:
@@ -534,7 +534,7 @@ function calculateGPA() {
 		olateo: 4,
 		simu: 4,
 		katego: 4,
-        secmeli1: 3,
+		secmeli1: 3,
 
 		alan: 4,
 		cassm: 4,
@@ -543,7 +543,7 @@ function calculateGPA() {
 		param: 6,
 		ornek: 6,
 		verii: 4,
-        secmeli2: 3,
+		secmeli2: 3,
 
 		zaman: 5,
 		explo: 5,
@@ -680,15 +680,15 @@ function calculateGPA() {
 		}
 	}
 
-	var gpaYear1 = totalCreditsYear1 !== 0 ? (totalPointsYear1 / totalCreditsYear1).toFixed(2) : 0.00;
-	var gpaYear2 = totalCreditsYear2 !== 0 ? (totalPointsYear2 / totalCreditsYear2).toFixed(2) : 0.00;
-	var gpaYear3 = totalCreditsYear3 !== 0 ? (totalPointsYear3 / totalCreditsYear3).toFixed(2) : 0.00;
-	var gpaYear4 = totalCreditsYear4 !== 0 ? (totalPointsYear4 / totalCreditsYear4).toFixed(2) : 0.00;
+	var gpaYear1 = totalCreditsYear1 !== 0 ? (totalPointsYear1 / totalCreditsYear1).toFixed(2) : 0.0;
+	var gpaYear2 = totalCreditsYear2 !== 0 ? (totalPointsYear2 / totalCreditsYear2).toFixed(2) : 0.0;
+	var gpaYear3 = totalCreditsYear3 !== 0 ? (totalPointsYear3 / totalCreditsYear3).toFixed(2) : 0.0;
+	var gpaYear4 = totalCreditsYear4 !== 0 ? (totalPointsYear4 / totalCreditsYear4).toFixed(2) : 0.0;
 
-    let test1 = parseFloat(gpaYear1);
-    let test2 = parseFloat(gpaYear2);
-    let test3 = parseFloat(gpaYear3);
-    let test4 = parseFloat(gpaYear4);
+	let test1 = parseFloat(gpaYear1);
+	let test2 = parseFloat(gpaYear2);
+	let test3 = parseFloat(gpaYear3);
+	let test4 = parseFloat(gpaYear4);
 
 	document.getElementById("gpaYear1").innerText = test1.toFixed(2);
 	document.getElementById("gpaYear2").innerText = test2.toFixed(2);
@@ -744,29 +744,37 @@ function updateValues(target, value) {
 	}
 }
 
-document.querySelectorAll(".custom-submenu-content a").forEach((item) => {
-	item.addEventListener("click", function (event) {
-		event.preventDefault();
-		const value = parseInt(this.textContent.replace("%", ""));
-		const target = this.parentElement.getAttribute("data-target");
-		document.getElementById(target + "Value").textContent = "%" + value;
-		updateValues(target, value);
-	});
-});
-
-switchMode("STAT22");
-document.addEventListener('DOMContentLoaded', () => {
-    loadSavedDropdowns();
-
-    for (let i = 8; i >= 1; i--) {
-        switchMode(`DONEM${i}`);
-    }
-
+function setAllSelectsTo(grade) {
     document.querySelectorAll("select").forEach(select => {
-        select.addEventListener("change", function() {
-            calculateGPA();
-        });
+        select.value = grade;
+        saveDropdownValue(select.id);
     });
-
     calculateGPA();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+	switchMode("STAT22");
+	loadSavedDropdowns();
+
+	for (let i = 8; i >= 1; i--) {
+		switchMode(`DONEM${i}`);
+	}
+
+	document.querySelectorAll("select").forEach((select) => {
+		select.addEventListener("change", function () {
+			calculateGPA();
+		});
+	});
+
+	document.querySelectorAll(".custom-submenu-content a").forEach((item) => {
+		item.addEventListener("click", function (event) {
+			event.preventDefault();
+			const value = parseInt(this.textContent.replace("%", ""));
+			const target = this.parentElement.getAttribute("data-target");
+			document.getElementById(target + "Value").textContent = "%" + value;
+			updateValues(target, value);
+		});
+	});
+
+	calculateGPA();
 });
