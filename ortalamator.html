@@ -36,6 +36,11 @@
 				</div>
 			</div>
 		</header>
+        <div id="settingsModal">
+            <p>Tüm notları değiştir:</p>
+            <p>Notlarını siteden yapıştır: </p>
+            <p>(nasıl olacağını gösteren GIF )</p>
+        </div>
 		<div id="buttonContainer">
 			<button class="modeButton" onclick="switchMode('STAT22')">Ortalama</button>
 			<button class="modeButton" onclick="switchMode('EXAM')">Harf Notu</button>
@@ -43,7 +48,7 @@
 		</div>
 		<div id="rectangle">
 			<div class="rightrectangle" id="rightrectangle">
-				<div class="rightrectangleButton" onclick="calculateGPA()">Hesapla</div>
+				<div class="rightrectangleButton" id="openSettingsButton" onclick="openSettings()">Ayarlar</div>
 				<div class="rightrectangletext">AGNO:&nbsp;<span id="calculatedGPA">0</span></div>
 			</div>
 			<div class="middleRectangle" id="nodonemMode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Başlamak için yukarıdan bir dönem seçiniz.</div>

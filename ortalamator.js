@@ -421,6 +421,12 @@ function loadSavedDropdowns() {
 }
 
 window.onclick = function (event) {
+	if (event.target.matches("#openSettingsButton")) {
+		document.getElementById("settingsModal").style.display = "block";
+	} else if (!event.target.matches("#settingsModal")) {
+		document.getElementById("settingsModal").style.display = "none";
+	}
+    
 	if (!event.target.matches(".modeButton") && !event.target.matches(".semesterButton")) {
 		var dropdowns = document.getElementsByClassName("dropdown-content");
 		var i;
@@ -745,11 +751,11 @@ function updateValues(target, value) {
 }
 
 function setAllSelectsTo(grade) {
-    document.querySelectorAll("select").forEach(select => {
-        select.value = grade;
-        saveDropdownValue(select.id);
-    });
-    calculateGPA();
+	document.querySelectorAll("select").forEach((select) => {
+		select.value = grade;
+		saveDropdownValue(select.id);
+	});
+	calculateGPA();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
