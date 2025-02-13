@@ -1947,28 +1947,44 @@
 				calculateGPA();
 			}
 
-			function extractLessons(inputText) {
+			function extractAndUpdateLessons(inputText) {
 				const lines = inputText
 					.split("\n")
 					.map((line) => line.trim())
-					.filter((line) => line.length > 0);
+					.filter((line) => line);
 				const dataLines = lines.slice(2);
-
 				let lessons = dataLines
 					.map((line) => {
 						const columns = line.split("\t").map((col) => col.trim());
 						return { name: columns[4], grade: columns[12] };
 					})
 					.filter((item) => item.name && item.grade);
-
 				lessons = lessons.filter((item) => item.name !== "Kredi | akts" && item.name !== "HAZIRLIK SINIFI (Y)");
-
 				const uniqueLessons = lessons.reduce((acc, lesson) => {
 					acc[lesson.name] = lesson;
 					return acc;
 				}, {});
-
-				return Object.values(uniqueLessons);
+				lessons = Object.values(uniqueLessons);
+				const liElements = document.querySelectorAll("li");
+				liElements.forEach((li) => {
+					const span = li.querySelector("span");
+					const select = li.querySelector("select");
+					if (!span || !select) return;
+					const spanText = span.textContent;
+					const match = spanText.match(/^\(\d+\)\s*(.*?)\s*:/);
+					if (match) {
+						const spanLessonName = match[1];
+						lessons.forEach((lesson) => {
+							if (spanLessonName === lesson.name) {
+								const option = select.querySelector(`option[value="${lesson.grade}"]`);
+								if (option) {
+									select.value = lesson.grade;
+									select.dispatchEvent(new Event("change", { bubbles: true }));
+								}
+							}
+						});
+					}
+				});
 			}
 
 			document.addEventListener("DOMContentLoaded", () => {
