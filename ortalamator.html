@@ -1466,13 +1466,13 @@
 
 				switchMode("EXAMRESULTS");
 				examResultsText.innerHTML = `
-    AA almak için: ${requiredFinalNoteAA > 100 ? "Alamaz" : requiredFinalNoteAA}<br>
-    BA almak için: ${requiredFinalNoteBA > 100 ? "Alamaz" : requiredFinalNoteBA}<br>
-    BB almak için: ${requiredFinalNoteBB > 100 ? "Alamaz" : requiredFinalNoteBB}<br>
-    CB almak için: ${requiredFinalNoteCB > 100 ? "Alamaz" : requiredFinalNoteCB}<br>
-    CC almak için: ${requiredFinalNoteCC > 100 ? "Alamaz" : requiredFinalNoteCC}<br>
-    DC almak için: ${requiredFinalNoteDC > 100 ? "Alamaz" : requiredFinalNoteDC}<br>
-    DD almak için: ${requiredFinalNoteDD > 100 ? "Alamaz" : requiredFinalNoteDD}<br>`;
+			    AA almak için: ${requiredFinalNoteAA > 100 ? "Alamaz" : requiredFinalNoteAA}<br>
+			    BA almak için: ${requiredFinalNoteBA > 100 ? "Alamaz" : requiredFinalNoteBA}<br>
+			    BB almak için: ${requiredFinalNoteBB > 100 ? "Alamaz" : requiredFinalNoteBB}<br>
+			    CB almak için: ${requiredFinalNoteCB > 100 ? "Alamaz" : requiredFinalNoteCB}<br>
+			    CC almak için: ${requiredFinalNoteCC > 100 ? "Alamaz" : requiredFinalNoteCC}<br>
+			    DC almak için: ${requiredFinalNoteDC > 100 ? "Alamaz" : requiredFinalNoteDC}<br>
+			    DD almak için: ${requiredFinalNoteDD > 100 ? "Alamaz" : requiredFinalNoteDD}<br>`;
 			}
 
 			function getSemesterData(semester) {
@@ -1947,6 +1947,107 @@
 				calculateGPA();
 			}
 
+			let secmeliDersler1 = [
+				"KUR'ÂN OKUMA VE ANLAMA I",
+				"MESNEVİ OKUMALARI",
+				"FARSÇA I",
+				"DİJİTAL KÜTÜPHANE PROGRAMLARI",
+				"DİN SOSYOLOJİSİNE GİRİŞ",
+				"ANA KONULARIYLA KUR'AN",
+				"KUR'ÂN-TARİH İLİŞKİSİ ÜZERİNE OKUMALAR",
+				"İLK DÖNEM İSLAM TARİHİ OKUMALARI",
+				"DİNLER TARİHİ",
+				"TÜRK MUSİKİ SANATI I",
+				"HALK OYUNLARI",
+				"İLETİŞİM VE MÜZİK I",
+				"TOPLU SES EĞİTİMİ VE KORO UYGULAMALARI I",
+				"TEMEL MÜZİK TERMİNOLOJİSİ I",
+				"TÜRK SANAT MÜZİĞİ REPERTUVARI I",
+				"iLAÇ-DIŞI MADDELERİN TOKSİKOLOJİSİ VE ZEHİRLENMELER",
+				"MODERN TÜRK EDEBİYATINDA ŞİİR",
+				"MİTOLOJİ",
+				"ÇEVİRİYE GİRİŞ-I",
+				"BİLİM KURGU",
+				"ANTİK ÖN ASYA UYGARLIKLARI",
+				"İNSAN DAVRANIŞLARINI ANLAMAK",
+				"BASIC COMPUTER PROGRAMMING WITH MATLAB",
+				"GIDA VE TARIMSAL ÜRÜN ATIK YÖNTEMİ",
+				"PSCHOLOGY OF CLOSE RELATIONSHIPS",
+				"PSYCHOLOGY OF CLOSE RELATIONSHIPS",
+				"YEREL VE SÖZLÜ TARİH ARAŞTIRMALARI",
+				"ÇOCUK KORUMA SİSTEMİ",
+				"DÜŞÜK KODLU WEB VE MOBİL UYGULAMA GELİŞTİRME",
+				"CİNSEL SAĞLIK EĞİTİMİ",
+				"TEXTILE MANUFACTURING PROCESS FROM FIBER TO GARMENT WITH THE INNOVATIVE E-LEARNING METHODS",
+				"BİLİŞ VE BEYİN: İNSAN ZİHNİNİN SIRLARI",
+				"YENİ MEDYA TEKNOLOJİLERİ VE DİJİTAL YAYINCILIK",
+				"INFORMATION MANAGEMENT",
+				"ÖĞRETİMDE SOSYAL MEDİA VE WEB2.0 ARAÇLARI",
+				"BİYOFİZİK",
+				"ENERJİ KAYNAKLARI FİZİĞİ",
+				"UNDERSTANDING PLANT LIFE",
+				"LABORATUVARDA KALİTE YÖNETİMİ",
+				"ENERJİ VE ÇEVRE",
+				"FİZİK YASALARI ÜZERİNE VE CERN DENEYLERİ",
+				"AŞI BİLİMİ VE TEKNOLOJİLERİ",
+				"GIDA GÜVENLİĞİ (MİKROBİYOLOJİ AĞIRLIKLI)",
+				"GIDA GÜVENLİĞİ",
+				"BİYOTEKNOLOJİ",
+				"BİTKİLERİN MİKROSKOPİK DÜNYASI",
+				"BİLİM FELSEFESİ",
+				"MATEMATİK HER YERDE",
+				"MODERN ASTRONOMİ",
+				"VİDEO YAPIM TEKNİKLERİ",
+				"TEKNOKÜLTÜR VE SANAL DÜ NYALAR",
+				"HAVACILIK HUKUKU",
+				"ENGLISH SPEAKING-I",
+				"TAHRİBATSIZ MUAYENE",
+				"KOMPOZİT TEKNOLOJİ-I",
+				"HASTA GÜVENLİĞİ VE EKİP KAYNAK YÖNETİMİ",
+				"KİŞİSEL GELİŞİM",
+				"GENERAL HEALTH AND FIRST AID",
+				"SAĞLIK BİLİMLERİNDE GİRİŞİMCİLİK VE İNOVASYON",
+				"HUMAN RESOURCE MANAGEMENT",
+				"REKLAMDA YARATICILIK VE YARATICI STRATEJİLER",
+				"MAGAZİN HABERCİLİĞİ",
+				"TÜRK SİNEMASI",
+				"MEDYA VE TOPLUM",
+				"INTRODUCTION TO TEXTILE ENGINEERING",
+				"POLİMER KOMPOZİT ÜRETİM YÖNTEMLERİ",
+				"BACTERIA, BIOFILM AND BIOLOGICAL DENITRIFICATION",
+				"DRINKING AND WASTE WATER TECHNOLOGY",
+				"İNOVASYON, TEKNOLOJİ VE GİRİŞİMCİLİK",
+				"MİKROALGLERİN KULLANIM ALANLARI",
+				"GİRİŞİMCİLİK, FİKRİ VE SINAİ MÜLKİYET HAKLARINA GİRİŞ",
+				"İYİ TARIM UYGULAMALARI",
+				"TIBBİ VE AROMATİK BİTKİ YETİŞTİRİCİLİĞİ",
+				"SÜT HAYVANLARI YETİŞTİRİCİLİĞİ",
+				"SAĞLIKLI BESLENME",
+				"SAĞLIKLI YAŞAM VE EGZERSİZ",
+				"ÜREME SAĞLIĞI",
+				"YÜZME",
+				"BASKETBOL",
+				"HAREKET EĞİTİMİ",
+				"DENİZDE GÜVENLİK",
+				"TEHLİKELİ SUCUL CANLILAR",
+				"SU ÜRÜNLERİ İŞLETMECİLİĞİ",
+				"AKVARYUM DÜNYASI",
+				"OKSİDAN STRES VE ANTİOKSİDANLAR",
+				"OPTIMUM NUTRITION FOR HEALTH",
+				"KADIN HASTALIKLARI VE DOĞUM PRATİĞİNİN GELİŞEN TEKNOLOJİ İLE DEĞİŞİMİ",
+				"TIPTA YAPAY ZEKA KULLANIMI",
+				"ENGLISH FOR BUSINESS AND ENTREPRENEURSHIP",
+				"GİRİŞİMCİLİK VE YENİLİK ODAKLI ARAŞTIRMA SÜREÇLERİ",
+				"YARATICI DÜŞÜNME SANATI",
+				"GİRİŞİMCİLİKTE YATIRIM KARAR ANALİZLERİ",
+				"TIBBİ VE AROMATİK BİTKİ YETİŞTİRİCİLİĞİNİN TEMEL İLKELERİ",
+				"GIDA GÜVENLİĞİ",
+				"AKILLI TARIM",
+				"HAVZA HİDROBİYOLOJİSİ VE SEDİMANTASYON",
+			];
+
+			let secmelidersler2 = [];
+
 			function extractAndUpdateLessons(inputText) {
 				const lines = inputText
 					.split("\n")
@@ -1973,13 +2074,19 @@
 					const spanText = span.textContent;
 					const match = spanText.match(/^\(\d+\)\s*(.*?)\s*:/);
 					if (match) {
-						const spanLessonName = match[1];
+						const spanLessonName = match[1].trim();
 						lessons.forEach((lesson) => {
 							if (spanLessonName === lesson.name) {
 								const option = select.querySelector(`option[value="${lesson.grade}"]`);
 								if (option) {
 									select.value = lesson.grade;
 									select.dispatchEvent(new Event("change", { bubbles: true }));
+								}
+								if (typeof secmeliDersler1 !== "undefined" && secmeliDersler1.includes(lesson.name)) {
+									span.textContent = "SEÇMELİ - 1:";
+								}
+								if (typeof secmeliDersler2 !== "undefined" && secmeliDersler2.includes(lesson.name)) {
+									span.textContent = "SEÇMELİ - 2:";
 								}
 							}
 						});
