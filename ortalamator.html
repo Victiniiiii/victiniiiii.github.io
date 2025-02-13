@@ -15,7 +15,6 @@
 		<meta name="twitter:url" content="https://victiniiiii.github.io/ortalamator" />
 		<title>Ortalamatör</title>
 		<link rel="icon" href="static/images/vic32.png" type="image/png" />
-		<link rel="stylesheet" type="text/css" href="static/ortalamatorPWAstyles.css" />
 		<link rel="manifest" href="/ortalamatormanifest.json" />
 	</head>
 	<body>
@@ -38,8 +37,21 @@
 		</header>
 		<div id="settingsModal">
 			<p>Tüm notları değiştir:</p>
+			<select id="tumNotlariDegistir" onchange="setAllSelectsTo(value)">
+				<option value="AA">AA</option>
+				<option value="BA">BA</option>
+				<option value="BB">BB</option>
+				<option value="CB">CB</option>
+				<option value="CC">CC</option>
+				<option value="DC">DC</option>
+				<option value="DD">DD</option>
+				<option value="FD">FD</option>
+				<option value="FF">FF</option>
+				<option value="--">--</option>
+			</select>
 			<p>Notlarını siteden yapıştır:</p>
-			<p>(nasıl olacağını gösteren GIF )</p>
+            <textarea name="notYapistir" id="notYapistir"></textarea>
+			<button onclick="extractAndUpdateLessons()">Yapıştır!</button>
 		</div>
 		<div id="buttonContainer">
 			<button class="modeButton" onclick="switchMode('STAT22')">Ortalama</button>
@@ -48,7 +60,7 @@
 		</div>
 		<div id="rectangle">
 			<div class="rightrectangle" id="rightrectangle">
-				<div class="rightrectangleButton" id="openSettingsButton" onclick="openSettings()">Ayarlar</div>
+				<div class="rightrectangleButton" id="openSettingsButton">Ayarlar</div>
 				<div class="rightrectangletext">AGNO:&nbsp;<span id="calculatedGPA">0</span></div>
 			</div>
 			<div class="middleRectangle" id="nodonemMode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Başlamak için yukarıdan bir dönem seçiniz.</div>
@@ -202,8 +214,8 @@
 				</ul>
 				<h3>Neden DD almam için bile 45 gerekiyor?</h3>
 				<p>Ham başarı puanına karşılık gelen ve başarılı kategorisinde değerlendirilen harf notlarını alabilmek için, öğrenciler final sınavından yüz üzerinden en az 45 almalıdır.</p>
-                <h3>Neden bazı dersler gri renkte?</h3>
-                <p>Seçmeli olarak alınan dersler gri renkle gösterilmiştir.</p>
+				<h3>Neden bazı dersler gri renkte?</h3>
+				<p>Seçmeli olarak alınan dersler gri renkle gösterilmiştir.</p>
 			</div>
 			<div id="stat22Mode">
 				<div class="semesterButtonsContainer">
@@ -391,7 +403,7 @@
 				#faqMode {
 					font-size: 1dvw;
 					display: none;
-                    padding: 0 10vw;
+					padding: 0 10vw;
 				}
 
 				#stat22Mode {
@@ -1613,7 +1625,7 @@
 			}
 
 			window.onclick = function (event) {
-				if (event.target.matches("#openSettingsButton")) {
+				if (event.target.matches("#openSettingsButton") || event.target.matches("#tumNotlariDegistir") || event.target.matches("#notYapistir")) {
 					document.getElementById("settingsModal").style.display = "block";
 				} else if (!event.target.matches("#settingsModal")) {
 					document.getElementById("settingsModal").style.display = "none";
@@ -2051,8 +2063,12 @@
 
 			let secmelidersler2 = [];
 
-			function extractAndUpdateLessons(inputText) {
-				const lines = inputText
+			function extractAndUpdateLessons() {
+                setAllSelectsTo("--");
+				const lines = document
+					.getElementById("notYapistir")
+					.value
+					.trim()
 					.split("\n")
 					.map((line) => line.trim())
 					.filter((line) => line);
