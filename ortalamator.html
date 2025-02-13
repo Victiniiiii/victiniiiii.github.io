@@ -50,8 +50,8 @@
 				<option value="--">--</option>
 			</select>
 			<p>Notlarını siteden yapıştır:</p>
-            <textarea name="notYapistir" id="notYapistir"></textarea>
-			<button onclick="extractAndUpdateLessons()">Yapıştır!</button>
+			<textarea name="notYapistir" placeholder="Notlarını buraya yapıştır!" id="notYapistir"></textarea>
+			<button id="notYapistirButton" onclick="extractAndUpdateLessons()">Yapıştır!</button>
 		</div>
 		<div id="buttonContainer">
 			<button class="modeButton" onclick="switchMode('STAT22')">Ortalama</button>
@@ -258,16 +258,6 @@
 			html,
 			body {
 				overscroll-behavior: none;
-			}
-
-			#settingsModal {
-				display: none;
-				width: 90vw;
-				height: 90svh;
-				margin: 9svh 5vw 1svh 5vw;
-				background-color: rgb(0, 0, 0, 0.9);
-				position: fixed;
-				z-index: 1231231321111111111111111111111111111111123213;
 			}
 
 			@media (min-width: 768px) {
@@ -605,13 +595,14 @@
 
 				.rightrectangleButton {
 					width: 80%;
-					height: 50%;
+					height: 20%;
 					display: flex;
 					text-align: center;
 					align-items: center;
 					justify-content: center;
-					font-size: 2.08dvw;
-					border: 0.05vw solid white;
+					font-size: 2.1dvw;
+					border: 1px solid white;
+                    border-radius: 10px;
 					cursor: pointer;
 					margin: auto;
 					color: white;
@@ -620,15 +611,14 @@
 
 				.rightrectangletext {
 					width: 80%;
-					height: 50%;
+					height: 80%;
 					display: flex;
 					text-align: center;
 					align-items: center;
 					justify-content: center;
 					font-size: 1.3dvw;
-					border: 0.05vw solid white;
 					margin: auto;
-					color: white;
+					color: greenyellow;
 				}
 
 				.custom-dropdown {
@@ -709,6 +699,37 @@
 					z-index: 0;
 					pointer-events: none;
 					clip-path: polygon(0 9vh, 100% 9vh, 100% 100%, 0 100%);
+				}
+
+				#settingsModal {
+					display: none;
+					width: 50vw;
+					height: 40svh;
+					margin: 19svh 25vw 41svh 25vw;
+					background-color: rgb(0, 0, 0, 0.9);
+					border-radius: 40px;
+					border: 1px solid white;
+					position: fixed;
+					z-index: 1231231321111111111111111111111111111111123213;
+					flex-direction: column;
+					align-items: center;
+                    text-align: center;
+				}
+
+				#tumNotlariDegistir {
+					width: 5vw;
+				}
+
+				#notYapistir {
+					width: 30vw;
+					height: 10vh;
+					margin-bottom: 3vh;
+                    text-align: center;
+				}
+
+				#notYapistirButton {
+					width: 15vw;
+					height: 5vh;
 				}
 			}
 
@@ -1051,27 +1072,28 @@
 
 				.rightrectangleButton {
 					width: 100%;
-					height: 50%;
+					height: 20%;
 					display: flex;
 					text-align: center;
 					align-items: center;
 					justify-content: center;
 					font-size: 4vw;
 					background-color: transparent;
-					color: orange;
-					border: 5svh white;
+					color: white;
+					border-bottom: 1px solid white;
+                    border-radius: 5px;
 					cursor: pointer;
 				}
 
 				.rightrectangletext {
 					width: 100%;
-					height: 50%;
+					height: 80%;
 					display: flex;
 					text-align: center;
 					align-items: center;
 					justify-content: center;
 					font-size: 3vw;
-					color: white;
+					color: greenyellow;
 				}
 
 				#donem1Mode,
@@ -1158,6 +1180,36 @@
 					z-index: 0;
 					pointer-events: none;
 					clip-path: polygon(0 7svh, 100% 7svh, 100% 100%, 0 100%);
+				}
+
+				#settingsModal {
+					display: none;
+					width: 60vw;
+					height: 50svh;
+					margin: 19svh 20vw 31svh 20vw;
+					background-color: rgb(0, 0, 0, 0.9);
+					border-radius: 20px;
+					border: 1px solid white;
+					position: fixed;
+					z-index: 1231231321111111111111111111111111111111123213;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				#tumNotlariDegistir {
+					width: 20vw;
+				}
+
+				#notYapistir {
+					width: 50vw;
+					height: 10vh;
+					margin-bottom: 3vh;
+                    text-align: center;
+				}
+
+				#notYapistirButton {
+					width: 25vw;
+					height: 5vh;
 				}
 			}
 		</style>
@@ -1625,8 +1677,8 @@
 			}
 
 			window.onclick = function (event) {
-				if (event.target.matches("#openSettingsButton") || event.target.matches("#tumNotlariDegistir") || event.target.matches("#notYapistir")) {
-					document.getElementById("settingsModal").style.display = "block";
+				if (event.target.matches("#openSettingsButton") || event.target.matches("#tumNotlariDegistir") || event.target.matches("#notYapistir") || event.target.closest("#settingsModal p")) {
+					document.getElementById("settingsModal").style.display = "flex";
 				} else if (!event.target.matches("#settingsModal")) {
 					document.getElementById("settingsModal").style.display = "none";
 				}
@@ -2064,11 +2116,10 @@
 			let secmelidersler2 = [];
 
 			function extractAndUpdateLessons() {
-                setAllSelectsTo("--");
+				setAllSelectsTo("--");
 				const lines = document
 					.getElementById("notYapistir")
-					.value
-					.trim()
+					.value.trim()
 					.split("\n")
 					.map((line) => line.trim())
 					.filter((line) => line);
@@ -2171,7 +2222,7 @@
 					console.log(`User response to the install prompt: ${outcome}`);
 					deferredPrompt = null;
 				} else {
-					alert("Install prompt is not available. Make sure you are using a supported browser.");
+					alert("Install prompt is not available. Make sure you are using a supported browser like Microsoft Edge on PC, or Google Chrome at mobile phones.");
 				}
 			});
 
