@@ -29,6 +29,29 @@
 				justify-content: center;
 			}
 		}
+
+        #divanContainer {
+            width: 80vw;
+            height: 60vh;
+            background-color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            margin-top: 5vh;
+        }
+
+        #divanContainer div {
+            display: flex;
+            flex-direction: row;
+            height: 25%;
+        }
+        
+        #divanContainer div p {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 	</style>
 	<body>
 		<header id="title-section">
@@ -49,7 +72,41 @@
 			<div id="settings-bar">Press here to access the bazaar settings.</div>
 			<div id="toggle-container"></div>
 		</div>
-		<div id="itemsContainer"></div>
+		<div id="divanContainer">
+            <div id="helmet">
+                <picture>
+                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+					<img src="/static/images/divanHelmet.png" />
+                </picture>
+                <p>
+                    Total Cost:
+                    (gray text) Gemstone Mixtures:
+                    Divan Fragments:
+                    Gemstones:
+                </p>
+            </div>
+            <div id="chestplate">
+                <picture>
+                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+					<img src="/static/images/divanHelmet.png" />
+                </picture>
+                <p></p>
+            </div>
+            <div id="leggings">
+                <picture>
+                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+					<img src="/static/images/divanHelmet.png" />
+                </picture>
+                <p></p>
+            </div>
+            <div id="boots">
+                <picture>
+                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+					<img src="/static/images/divanHelmet.png" />
+                </picture>
+                <p></p>
+            </div>
+        </div>
 	</body>
 	<script>
 		let itemsarray = [
@@ -138,9 +195,9 @@
 				const img = document.createElement("img");
 
 				if (WebPSupport) {
-					img.src = `static/imageswebp/${item.image}.webp`;
+					img.src = `static/imageswebp/${item.id}.webp`;
 				} else {
-					img.src = `static/images/${item.image}.png`;
+					img.src = `static/images/${item.id}.png`;
 				}
 
 				imagePlaceholder.appendChild(img);
