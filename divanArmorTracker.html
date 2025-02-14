@@ -9,6 +9,10 @@
 		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
 	</head>
 	<style>
+        * {
+            box-sizing: border-box;
+        }
+        
 		#settings.expanded #toggle-container {
 			height: 12vh !important;
 			display: grid;
@@ -52,6 +56,11 @@
 			align-items: center;
 			justify-content: center;
 		}
+
+        .armor {
+            width: 15vh;
+            height: 15vh;
+        }
 	</style>
 	<body>
 		<header id="title-section">
@@ -75,29 +84,29 @@
 		<div id="divanContainer">
 			<div id="helmet">
 				<picture>
-					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
-					<img src="/static/images/divanHelmet.png" />
+					<source srcset="/static/imageswebp/HELMET_OF_DIVAN.webp" type="image/webp" />
+					<img class="armor" src="/static/images/HELMET_OF_DIVAN.png" />
 				</picture>
 				<p>Total Cost: (gray text) Gemstone Mixtures: Divan Fragments: Gemstones:</p>
 			</div>
 			<div id="chestplate">
 				<picture>
-					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
-					<img src="/static/images/divanHelmet.png" />
+					<source srcset="/static/imageswebp/GOLDEN_CHESTPLATE.webp" type="image/webp" />
+					<img class="armor" src="/static/images/GOLDEN_CHESTPLATE.png" />
 				</picture>
 				<p></p>
 			</div>
 			<div id="leggings">
 				<picture>
-					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
-					<img src="/static/images/divanHelmet.png" />
+					<source srcset="/static/imageswebp/GOLDEN_LEGGINGS.webp" type="image/webp" />
+					<img class="armor" src="/static/images/GOLDEN_LEGGINGS.png" />
 				</picture>
 				<p></p>
 			</div>
 			<div id="boots">
 				<picture>
-					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
-					<img src="/static/images/divanHelmet.png" />
+					<source srcset="/static/imageswebp/GOLDEN_BOOTS.webp" type="image/webp" />
+					<img class="armor" src="/static/images/GOLDEN_BOOTS.png" />
 				</picture>
 				<p></p>
 			</div>
