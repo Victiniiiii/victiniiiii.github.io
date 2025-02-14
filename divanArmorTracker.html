@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Divan Armor Tracker</title>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
+	</head>
+	<style>
+		#settings.expanded #toggle-container {
+			height: 12vh !important;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		.inferno-savior {
+			display: flex;
+		}
+
+		@media (max-width: 767px) {
+			#settings {
+				margin-top: 2vh;
+			}
+			.inferno-savior {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	</style>
+	<body>
+		<header id="title-section">
+			<a href="/">
+				<picture>
+					<source srcset="/static/imageswebp/vicinti3.webp" type="image/webp" />
+					<img class="main-menu-button" src="/static/images/vicinti3.png" />
+				</picture>
+			</a>
+			<h1 class="main-menu-text">Divan Armor Tracker</h1>
+			<div class="project-buttons">
+				<div class="category-button">
+					<a href="/contactme">Contact Me</a>
+				</div>
+			</div>
+		</header>
+		<div id="settings">
+			<div id="settings-bar">Press here to access the bazaar settings.</div>
+			<div id="toggle-container"></div>
+		</div>
+		<div id="itemsContainer"></div>
+	</body>
+	<script>
+		let itemsarray = [
+			{
+				name: "Gemstone Mixture",
+				id: "GEMSTONE_MIXTURE",
+				price: "0",
+				toggle: false,
+			},
+			{
+				name: "Divan Fragment",
+				id: "DIVAN_FRAGMENT",
+				price: "0",
+				toggle: false,
+			},
+			{
+				name: "Flawless Ruby Gemstone",
+				id: "FLAWLESS_RUBY_GEM",
+				price: "0",
+				toggle: false,
+			},
+		];
+
+		function format(x) {
+			return Number.parseFloat(x)
+				.toString()
+				.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		}
+
+		async function getPricesFromAPI() {
+			const response = await fetch("https://api.hypixel.net/v2/skyblock/bazaar");
+			const data = await response.json();
+
+			itemsarray.forEach((item) => {
+				item.price = data.products[item.id]?.quick_status[item.toggle ? "buyPrice" : "sellPrice"];
+				document.getElementById(`prices${item.id}`).innerText = format(item.price.toFixed(0)) + " coins";
+			});
+		}
+
+		document.addEventListener("DOMContentLoaded", function () {
+			let webptest = new Image(1, 1);
+			webptest.src = "/static/imageswebp/webpdot.webp";
+			webptest.width > 0 && webptest.height > 0 ? (WebPSupport = true) : (WebPSupport = false);
+
+			document.getElementById("settings-bar").addEventListener("click", function () {
+				document.getElementById("settings").classList.toggle("expanded");
+			});
+
+            getPricesFromAPI();
+
+			const container = document.getElementById("toggle-container");
+			const toggleSwitches = document.querySelectorAll(".toggle-switch");
+
+			toggleSwitches.forEach((toggleSwitch, index) => {
+				let item = itemsarray[index];
+
+				if (item.toggle) {
+					toggleSwitch.classList.add("active");
+				} else {
+					toggleSwitch.classList.remove("active");
+				}
+
+				toggleSwitch.addEventListener("click", async function () {
+					item.toggle = !item.toggle;
+					toggleSwitch.classList.toggle("active");
+					await getPricesFromAPI();
+				});
+			});			
+
+			for (let i = 0; i < itemsarray.length; i++) {
+				const item = itemsarray[i];
+
+				const row = document.createElement("div");
+				row.className = "toggleitemnamerow";
+
+				const nameDiv = document.createElement("div");
+				nameDiv.className = "toggleitemname";
+				nameDiv.textContent = item.name;
+
+				const groupDiv = document.createElement("div");
+				groupDiv.className = "toggle-group";
+
+				const imagePlaceholder = document.createElement("div");
+				imagePlaceholder.className = "NbBsImage";
+
+				const img = document.createElement("img");
+
+				if (WebPSupport) {
+					img.src = `static/imageswebp/${item.image}.webp`;
+				} else {
+					img.src = `static/images/${item.image}.png`;
+				}
+
+				imagePlaceholder.appendChild(img);
+
+				const instasellLabel = document.createElement("span");
+				instasellLabel.className = "toggle-label";
+				instasellLabel.textContent = "Instasell";
+
+				const toggleSwitch = document.createElement("div");
+				toggleSwitch.className = "toggle-switch";
+				toggleSwitch.dataset.id = item.id;
+
+				const sellOrderLabel = document.createElement("span");
+				sellOrderLabel.className = "toggle-label";
+				sellOrderLabel.textContent = "Sell Order";
+
+				const newDivThatIMadeUp = document.createElement("div");
+				newDivThatIMadeUp.className = "inferno-savior";
+
+				groupDiv.appendChild(imagePlaceholder);
+				groupDiv.appendChild(newDivThatIMadeUp);
+				newDivThatIMadeUp.appendChild(instasellLabel);
+				newDivThatIMadeUp.appendChild(toggleSwitch);
+				newDivThatIMadeUp.appendChild(sellOrderLabel);
+
+				const pricesDiv = document.createElement("div");
+				pricesDiv.className = "toggle-groupnames";
+				pricesDiv.id = `prices${item.id}`;
+
+				row.appendChild(nameDiv);
+				row.appendChild(groupDiv);
+				row.appendChild(pricesDiv);
+
+				container.appendChild(row);
+			}
+		});
+	</script>
+</html>
