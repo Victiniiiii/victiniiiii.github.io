@@ -30,28 +30,28 @@
 			}
 		}
 
-        #divanContainer {
-            width: 80vw;
-            height: 60vh;
-            background-color: antiquewhite;
-            display: flex;
-            flex-direction: column;
-            margin-top: 5vh;
-        }
+		#divanContainer {
+			width: 80vw;
+			height: 60vh;
+			background-color: antiquewhite;
+			display: flex;
+			flex-direction: column;
+			margin-top: 5vh;
+		}
 
-        #divanContainer div {
-            display: flex;
-            flex-direction: row;
-            height: 25%;
-        }
-        
-        #divanContainer div p {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+		#divanContainer div {
+			display: flex;
+			flex-direction: row;
+			height: 25%;
+		}
+
+		#divanContainer div p {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	</style>
 	<body>
 		<header id="title-section">
@@ -73,40 +73,35 @@
 			<div id="toggle-container"></div>
 		</div>
 		<div id="divanContainer">
-            <div id="helmet">
-                <picture>
-                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+			<div id="helmet">
+				<picture>
+					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
 					<img src="/static/images/divanHelmet.png" />
-                </picture>
-                <p>
-                    Total Cost:
-                    (gray text) Gemstone Mixtures:
-                    Divan Fragments:
-                    Gemstones:
-                </p>
-            </div>
-            <div id="chestplate">
-                <picture>
-                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+				</picture>
+				<p>Total Cost: (gray text) Gemstone Mixtures: Divan Fragments: Gemstones:</p>
+			</div>
+			<div id="chestplate">
+				<picture>
+					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
 					<img src="/static/images/divanHelmet.png" />
-                </picture>
-                <p></p>
-            </div>
-            <div id="leggings">
-                <picture>
-                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+				</picture>
+				<p></p>
+			</div>
+			<div id="leggings">
+				<picture>
+					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
 					<img src="/static/images/divanHelmet.png" />
-                </picture>
-                <p></p>
-            </div>
-            <div id="boots">
-                <picture>
-                    <source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
+				</picture>
+				<p></p>
+			</div>
+			<div id="boots">
+				<picture>
+					<source srcset="/static/imageswebp/divanHelmet.webp" type="image/webp" />
 					<img src="/static/images/divanHelmet.png" />
-                </picture>
-                <p></p>
-            </div>
-        </div>
+				</picture>
+				<p></p>
+			</div>
+		</div>
 	</body>
 	<script>
 		let itemsarray = [
@@ -144,6 +139,9 @@
 				item.price = data.products[item.id]?.quick_status[item.toggle ? "buyPrice" : "sellPrice"];
 				document.getElementById(`prices${item.id}`).innerText = format(item.price.toFixed(0)) + " coins";
 			});
+
+            let armorPrices = [10 * itemsarray[0].price + 5 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 8 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 7 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 4 * itemsarray[1].price + itemsarray[2].price];
+            console.log(armorPrices);
 		}
 
 		document.addEventListener("DOMContentLoaded", function () {
@@ -155,7 +153,7 @@
 				document.getElementById("settings").classList.toggle("expanded");
 			});
 
-            getPricesFromAPI();
+			getPricesFromAPI();
 
 			const container = document.getElementById("toggle-container");
 			const toggleSwitches = document.querySelectorAll(".toggle-switch");
@@ -174,7 +172,7 @@
 					toggleSwitch.classList.toggle("active");
 					await getPricesFromAPI();
 				});
-			});			
+			});
 
 			for (let i = 0; i < itemsarray.length; i++) {
 				const item = itemsarray[i];
