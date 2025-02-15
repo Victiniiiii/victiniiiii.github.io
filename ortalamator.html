@@ -54,7 +54,7 @@
 			<button id="notYapistirButton" onclick="extractAndUpdateLessons()">Yapıştır!</button>
 		</div>
 		<div id="buttonContainer">
-			<button class="modeButton" onclick="switchMode('STAT22')">Ortalama</button>
+			<button class="modeButton" onclick="switchMode(lastDonem)">Ortalama</button>
 			<button class="modeButton" onclick="switchMode('EXAM')">Harf Notu</button>
 			<button class="modeButton" onclick="switchMode('FAQ')">SSS</button>
 		</div>
@@ -63,7 +63,7 @@
 				<div class="rightrectangleButton" id="openSettingsButton">Ayarlar</div>
 				<div class="rightrectangletext">AGNO:&nbsp;<span id="calculatedGPA">0</span></div>
 			</div>
-			<div class="middleRectangle" id="nodonemMode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Başlamak için yukarıdan bir dönem seçiniz.</div>
+			<div class="middleRectangle" id="nodonemMode">Başlamak için yukarıdan bir dönem seçiniz.</div>
 			<div class="middleRectangle" id="donem1Mode"></div>
 			<div class="middleRectangle" id="donem2Mode"></div>
 			<div class="middleRectangle" id="donem3Mode"></div>
@@ -274,6 +274,15 @@
 
 				a {
 					text-decoration: none;
+				}
+
+				#nodonemMode {
+					font-size: 2em !important;
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					align-items: center;
+					padding: 30px 50px;
 				}
 
 				#title-section {
@@ -717,7 +726,7 @@
 					margin: 0;
 					height: 100svh;
 					overflow: hidden;
-                    background: radial-gradient(at 22% 24%, #17a042 0px, transparent 50%), radial-gradient(at 91% 29%, #5d9764 0px, transparent 50%), radial-gradient(at 81% 74%, #c750ba 0px, transparent 50%), radial-gradient(at 21% 75%, #861d22 0px, transparent 50%), radial-gradient(at 60% 6%, #dfd56d 0px, transparent 50%), #0d109b;
+					background: radial-gradient(at 22% 24%, #17a042 0px, transparent 50%), radial-gradient(at 91% 29%, #5d9764 0px, transparent 50%), radial-gradient(at 81% 74%, #c750ba 0px, transparent 50%), radial-gradient(at 21% 75%, #861d22 0px, transparent 50%), radial-gradient(at 60% 6%, #dfd56d 0px, transparent 50%), #0d109b;
 					color: #e0e0e0;
 					position: relative;
 					z-index: 1;
@@ -725,6 +734,15 @@
 
 				a {
 					text-decoration: none;
+				}
+
+				#nodonemMode {
+					font-size: 1em !important;
+					display: flex;
+					flex-direction: column;
+					text-align: center;
+					align-items: center;
+					padding: 10px 50px;
 				}
 
 				#title-section {
@@ -984,7 +1002,7 @@
 					height: 60%;
 					position: absolute;
 					top: 45%;
-					left: 35%;
+					left: 36%;
 					transform: translate(-50%, -50%);
 					display: flex;
 					text-align: left;
@@ -1009,7 +1027,7 @@
 					background-color: white;
 					position: absolute;
 					top: 45%;
-					right: 40%;
+					right: 39%;
 					transform: translate(195%, -50%);
 					display: flex;
 					text-align: center;
@@ -1018,7 +1036,8 @@
 					font-size: 5vw;
 					margin: auto;
 					border: 1px solid #000;
-					border-radius: 8px;
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
 					-webkit-backdrop-filter: blur(5px);
 					backdrop-filter: blur(5px);
 					background-color: rgba(255, 255, 255, 0.5);
@@ -1127,9 +1146,9 @@
 
 				#settingsModal {
 					display: none;
-					width: 60vw;
-					height: 50svh;
-					margin: 19svh 20vw 31svh 20vw;
+					width: 84vw;
+					height: 55svh;
+					margin: 19svh 8vw 26svh 8vw;
 					background-color: rgb(0, 0, 0, 0.9);
 					border-radius: 20px;
 					border: 1px solid white;
@@ -1157,6 +1176,7 @@
 			}
 		</style>
 		<script>
+            let lastDonem = "STAT22";
 			function switchMode(mode) {
 				var rightrectangle = document.querySelector(".rightrectangle");
 				var middleRectangle = document.querySelector(".middleRectangle");
@@ -1262,6 +1282,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem1Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem1Mode.innerHTML = getSemesterContent(1);
 				} else if (mode === "DONEM2") {
 					stat22Mode.style.display = "block";
@@ -1273,6 +1294,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem2Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem2Mode.innerHTML = getSemesterContent(2);
 				} else if (mode === "DONEM3") {
 					stat22Mode.style.display = "block";
@@ -1284,6 +1306,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem3Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem3Mode.innerHTML = getSemesterContent(3);
 				} else if (mode === "DONEM4") {
 					stat22Mode.style.display = "block";
@@ -1295,6 +1318,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem4Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem4Mode.innerHTML = getSemesterContent(4);
 				} else if (mode === "DONEM5") {
 					stat22Mode.style.display = "block";
@@ -1306,6 +1330,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem5Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem5Mode.innerHTML = getSemesterContent(5);
 				} else if (mode === "DONEM6") {
 					stat22Mode.style.display = "block";
@@ -1317,6 +1342,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem6Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem6Mode.innerHTML = getSemesterContent(6);
 				} else if (mode === "DONEM7") {
 					stat22Mode.style.display = "block";
@@ -1328,6 +1354,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem7Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem7Mode.innerHTML = getSemesterContent(7);
 				} else if (mode === "DONEM8") {
 					stat22Mode.style.display = "block";
@@ -1339,6 +1366,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem8Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
+                    lastDonem = mode;
 					donem8Mode.innerHTML = getSemesterContent(8);
 				}
 
