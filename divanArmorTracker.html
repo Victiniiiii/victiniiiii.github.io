@@ -38,10 +38,13 @@
 		#divanContainer {
 			width: 80vw;
 			height: 60vh;
-			background-color: antiquewhite;
+			background-color: rgb(0,0,0,0.65);
 			display: flex;
 			flex-direction: column;
 			margin-top: 5vh;
+            color: white;
+            border-radius: 20px;
+            padding-left: 10px;
 		}
 
 		#divanContainer div {
@@ -157,9 +160,7 @@
 
 			let mixtures = [5, 8, 7, 4];
 			for (i = 0; i < 4; i++) {
-				document.getElementById(`text${i}`).innerHTML = `<p>Total Cost: ${format((10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0)) + " coins"}</p> <p class="grayText"> Gemstone Mixtures: ${format((10 * itemsarray[0].price).toFixed(0)) + " coins"} </p> <p class="grayText"> Divan Fragments: ${format((mixtures[i] * itemsarray[1].price).toFixed(0)) + " coins"}</p> <p class="grayText">Gemstones: ${
-					format(itemsarray[2].price.toFixed(0)) + " coins"
-				}</p>`;
+				document.getElementById(`text${i}`).innerHTML = `<p>Total Cost: ${format((10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0)) + " coins"}</p> <p class="grayText"> Gemstone Mixtures: ${format((10 * itemsarray[0].price).toFixed(0)) + " coins"} </p> <p class="grayText"> Divan Fragments: ${format((mixtures[i] * itemsarray[1].price).toFixed(0)) + " coins"}</p> <p class="grayText">Gemstones: ${format(itemsarray[2].price.toFixed(0)) + " coins"}</p>`;
 			}
 		}
 
