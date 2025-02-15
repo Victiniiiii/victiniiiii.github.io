@@ -63,7 +63,7 @@
 				<div class="rightrectangleButton" id="openSettingsButton">Ayarlar</div>
 				<div class="rightrectangletext">AGNO:&nbsp;<span id="calculatedGPA">0</span></div>
 			</div>
-			<div class="middleRectangle" id="nodonemMode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Başlamak için yukarıdan bir dönem seçiniz.</div>
+			<div class="middleRectangle" id="nodonemMode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Başlamak için yukarıdan bir dönem seçiniz.</div>
 			<div class="middleRectangle" id="donem1Mode"></div>
 			<div class="middleRectangle" id="donem2Mode"></div>
 			<div class="middleRectangle" id="donem3Mode"></div>
@@ -248,7 +248,6 @@
 				<div class="stat22Rectangle">4. Sene:&nbsp; <span id="gpaYear4"> 0.00</span></div>
 			</div>
 		</div>
-		<div class="stars"></div>
 		<style>
 			* {
 				box-sizing: border-box;
@@ -261,18 +260,6 @@
 			}
 
 			@media (min-width: 768px) {
-				@keyframes gradientAnimation {
-					0% {
-						background-position: 0% 0%;
-					}
-					50% {
-						background-position: 100% 100%;
-					}
-					100% {
-						background-position: 0% 0%;
-					}
-				}
-
 				body {
 					padding: 0;
 					display: flex;
@@ -282,12 +269,7 @@
 					margin: 0;
 					height: 100vh;
 					overflow: hidden;
-					background: linear-gradient(45deg, #001f3f, #003366, #001f3f);
-					background-size: 400% 400%;
-					animation: gradientAnimation 20s ease infinite;
-					color: #e0e0e0;
-					position: relative;
-					z-index: 1;
+					background: radial-gradient(at 22% 24%, #17a042 0px, transparent 50%), radial-gradient(at 91% 29%, #5d9764 0px, transparent 50%), radial-gradient(at 81% 74%, #c750ba 0px, transparent 50%), radial-gradient(at 21% 75%, #861d22 0px, transparent 50%), radial-gradient(at 60% 6%, #dfd56d 0px, transparent 50%), #0d109b;
 				}
 
 				a {
@@ -602,7 +584,7 @@
 					justify-content: center;
 					font-size: 2.1dvw;
 					border: 1px solid white;
-                    border-radius: 10px;
+					border-radius: 10px;
 					cursor: pointer;
 					margin: auto;
 					color: white;
@@ -688,19 +670,6 @@
 					display: none;
 				}
 
-				.stars {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) repeat;
-					background-size: 10px 10px;
-					z-index: 0;
-					pointer-events: none;
-					clip-path: polygon(0 9vh, 100% 9vh, 100% 100%, 0 100%);
-				}
-
 				#settingsModal {
 					display: none;
 					width: 50vw;
@@ -713,7 +682,8 @@
 					z-index: 1231231321111111111111111111111111111111123213;
 					flex-direction: column;
 					align-items: center;
-                    text-align: center;
+					text-align: center;
+					color: white;
 				}
 
 				#tumNotlariDegistir {
@@ -724,7 +694,7 @@
 					width: 30vw;
 					height: 10vh;
 					margin-bottom: 3vh;
-                    text-align: center;
+					text-align: center;
 				}
 
 				#notYapistirButton {
@@ -734,18 +704,6 @@
 			}
 
 			@media (max-width: 767px) {
-				@keyframes gradientAnimation {
-					0% {
-						background-position: 0% 0%;
-					}
-					50% {
-						background-position: 100% 100%;
-					}
-					100% {
-						background-position: 0% 0%;
-					}
-				}
-
 				body {
 					background-repeat: no-repeat;
 					background-size: cover;
@@ -759,9 +717,7 @@
 					margin: 0;
 					height: 100svh;
 					overflow: hidden;
-					background: linear-gradient(45deg, #001f3f, #003366, #001f3f);
-					background-size: 400% 400%;
-					animation: gradientAnimation 20s ease infinite;
+                    background: radial-gradient(at 22% 24%, #17a042 0px, transparent 50%), radial-gradient(at 91% 29%, #5d9764 0px, transparent 50%), radial-gradient(at 81% 74%, #c750ba 0px, transparent 50%), radial-gradient(at 21% 75%, #861d22 0px, transparent 50%), radial-gradient(at 60% 6%, #dfd56d 0px, transparent 50%), #0d109b;
 					color: #e0e0e0;
 					position: relative;
 					z-index: 1;
@@ -1081,7 +1037,7 @@
 					background-color: transparent;
 					color: white;
 					border-bottom: 1px solid white;
-                    border-radius: 5px;
+					border-radius: 5px;
 					cursor: pointer;
 				}
 
@@ -1169,19 +1125,6 @@
 					flex-direction: row;
 				}
 
-				.stars {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px) repeat;
-					background-size: 10px 10px;
-					z-index: 0;
-					pointer-events: none;
-					clip-path: polygon(0 7svh, 100% 7svh, 100% 100%, 0 100%);
-				}
-
 				#settingsModal {
 					display: none;
 					width: 60vw;
@@ -1204,7 +1147,7 @@
 					width: 50vw;
 					height: 10vh;
 					margin-bottom: 3vh;
-                    text-align: center;
+					text-align: center;
 				}
 
 				#notYapistirButton {
@@ -1426,7 +1369,7 @@
 					"(5) ROBUST STATISTICS:",
 					"(5) SIRA İSTATİSTİKLERİ:",
 					"(5) EKONOMETRİK MODELLER:",
-					"(5) R PROGRAMLAMA DİLİ İLE İSTATİSTİK"
+					"(5) R PROGRAMLAMA DİLİ İLE İSTATİSTİK",
 				];
 
 				document.querySelectorAll("span").forEach((span) => {
@@ -1434,7 +1377,7 @@
 
 					italicWords.forEach((italicWord) => {
 						if (spanText.includes(italicWord)) {
-							span.style.color = "rgb(200,200,200)";
+							span.style.color = "rgb(212,212,212)";
 						}
 					});
 				});
