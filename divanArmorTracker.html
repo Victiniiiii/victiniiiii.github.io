@@ -9,10 +9,11 @@
 		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
 	</head>
 	<style>
-        * {
-            box-sizing: border-box;
-        }
-        
+		* {
+			box-sizing: border-box;
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+		}
+
 		#settings.expanded #toggle-container {
 			height: 12vh !important;
 			display: grid;
@@ -52,15 +53,20 @@
 		#divanContainer div p {
 			text-align: center;
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
 			align-items: center;
-			justify-content: center;
+			justify-content: space-evenly;
+			width: 100%;
 		}
 
-        .armor {
-            width: 15vh;
-            height: 15vh;
-        }
+		.armor {
+			width: 15vh;
+			height: 15vh;
+		}
+
+		.grayText {
+			color: gray;
+		}
 	</style>
 	<body>
 		<header id="title-section">
@@ -87,28 +93,28 @@
 					<source srcset="/static/imageswebp/HELMET_OF_DIVAN.webp" type="image/webp" />
 					<img class="armor" src="/static/images/HELMET_OF_DIVAN.png" />
 				</picture>
-				<p>Total Cost: (gray text) Gemstone Mixtures: Divan Fragments: Gemstones:</p>
+				<p id="text0"></p>
 			</div>
 			<div id="chestplate">
 				<picture>
 					<source srcset="/static/imageswebp/GOLDEN_CHESTPLATE.webp" type="image/webp" />
 					<img class="armor" src="/static/images/GOLDEN_CHESTPLATE.png" />
 				</picture>
-				<p></p>
+				<p id="text1"></p>
 			</div>
 			<div id="leggings">
 				<picture>
 					<source srcset="/static/imageswebp/GOLDEN_LEGGINGS.webp" type="image/webp" />
 					<img class="armor" src="/static/images/GOLDEN_LEGGINGS.png" />
 				</picture>
-				<p></p>
+				<p id="text2"></p>
 			</div>
 			<div id="boots">
 				<picture>
 					<source srcset="/static/imageswebp/GOLDEN_BOOTS.webp" type="image/webp" />
 					<img class="armor" src="/static/images/GOLDEN_BOOTS.png" />
 				</picture>
-				<p></p>
+				<p id="text3"></p>
 			</div>
 		</div>
 	</body>
@@ -149,8 +155,12 @@
 				document.getElementById(`prices${item.id}`).innerText = format(item.price.toFixed(0)) + " coins";
 			});
 
-            let armorPrices = [10 * itemsarray[0].price + 5 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 8 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 7 * itemsarray[1].price + itemsarray[2].price, 10 * itemsarray[0].price + 4 * itemsarray[1].price + itemsarray[2].price];
-            console.log(armorPrices);
+			let mixtures = [5, 8, 7, 4];
+			for (i = 0; i < 4; i++) {
+				document.getElementById(`text${i}`).innerHTML = `<p>Total Cost: ${format((10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0)) + " coins"}</p> <p class="grayText"> Gemstone Mixtures: ${format((10 * itemsarray[0].price).toFixed(0)) + " coins"} </p> <p class="grayText"> Divan Fragments: ${format((mixtures[i] * itemsarray[1].price).toFixed(0)) + " coins"}</p> <p class="grayText">Gemstones: ${
+					format(itemsarray[2].price.toFixed(0)) + " coins"
+				}</p>`;
+			}
 		}
 
 		document.addEventListener("DOMContentLoaded", function () {
@@ -163,25 +173,6 @@
 			});
 
 			getPricesFromAPI();
-
-			const container = document.getElementById("toggle-container");
-			const toggleSwitches = document.querySelectorAll(".toggle-switch");
-
-			toggleSwitches.forEach((toggleSwitch, index) => {
-				let item = itemsarray[index];
-
-				if (item.toggle) {
-					toggleSwitch.classList.add("active");
-				} else {
-					toggleSwitch.classList.remove("active");
-				}
-
-				toggleSwitch.addEventListener("click", async function () {
-					item.toggle = !item.toggle;
-					toggleSwitch.classList.toggle("active");
-					await getPricesFromAPI();
-				});
-			});
 
 			for (let i = 0; i < itemsarray.length; i++) {
 				const item = itemsarray[i];
@@ -238,8 +229,31 @@
 				row.appendChild(groupDiv);
 				row.appendChild(pricesDiv);
 
-				container.appendChild(row);
+				document.getElementById("toggle-container").appendChild(row);
 			}
+
+			const toggleSwitches = document.querySelectorAll(".toggle-switch");
+
+			toggleSwitches.forEach((toggleSwitch) => {
+				const dataId = toggleSwitch.getAttribute("data-id");
+				console.log(dataId);
+
+				let item = itemsarray.find((item) => item.id == dataId);
+
+				if (!item) return;
+
+				if (item.toggle) {
+					toggleSwitch.classList.add("active");
+				} else {
+					toggleSwitch.classList.remove("active");
+				}
+
+				toggleSwitch.addEventListener("click", async function () {
+					item.toggle = !item.toggle;
+					toggleSwitch.classList.toggle("active");
+					await getPricesFromAPI();
+				});
+			});
 		});
 	</script>
 </html>
