@@ -1649,6 +1649,8 @@ a {
 
 
 
+
+
 #settings {
 	width: 80vw;
 	background-color: rgba(0, 0, 0, 0.4);
@@ -1659,6 +1661,7 @@ a {
 	box-sizing: border-box;
 	border: 0.1vw solid white;
 	font-size: 1.5vh;
+    margin-top: 2vh;
 }
 
 #settings-bar {
@@ -2039,6 +2042,12 @@ a {
 .toggleitemnamerow {
 	display: flex;
 	flex-direction: column;
+}
+
+.inferno-savior {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .toggleitemname {

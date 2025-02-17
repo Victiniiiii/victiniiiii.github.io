@@ -4,229 +4,229 @@ let itemsarray = [
 	{
 		name: "Acacia Wood",
 		id: "LOG:2",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5",
-        image: "Acacia_Wood"
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+		image: "Acacia_Wood",
 	},
 	{
 		name: "Carrot",
 		id: "CARROT_ITEM",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10",
-        image: "Carrot"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "10",
+		image: "Carrot",
 	},
 	{
 		name: "Cocoa Beans",
 		id: "INK_SACK:3",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "5",
-        image: "Cocoa_Beans"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "5",
+		image: "Cocoa_Beans",
 	},
 	{
 		name: "Coal",
 		id: "COAL",
-        amount: "640",
-        source: "Mine Merchant",
-        npc: "4",
-        image: "Coal"
+		amount: "640",
+		source: "Mine Merchant",
+		npc: "4",
+		image: "Coal",
 	},
 	{
 		name: "Cobblestone",
 		id: "COBBLESTONE",
-        amount: "1280",
-        source: "Mine Merchant, Builder",
-        npc: "2.5", // mean of all sellers
-        image: "Cobblestone"
+		amount: "1280",
+		source: "Mine Merchant, Builder",
+		npc: "2.5", // mean of all sellers
+		image: "Cobblestone",
 	},
 	{
 		name: "End Stone",
 		id: "ENDER_STONE",
-        amount: "640",
-        source: "Pearl Dealer",
-        npc: "10",
-        image: "End_Stone"
+		amount: "640",
+		source: "Pearl Dealer",
+		npc: "10",
+		image: "End_Stone",
 	},
 	{
 		name: "Experience Bottle",
 		id: "EXP_BOTTLE",
-        amount: "640",
-        source: "Librarian",
-        npc: "30",
-        image: "Experience_Bottle"
+		amount: "640",
+		source: "Librarian",
+		npc: "30",
+		image: "Experience_Bottle",
 	},
-    {
-        name: "Flint",
-        id: "FLINT",
-        amount: "640",
-        source: "Pat",
-        npc: "6",
-        image: "Flint"
-    },
-    {
+	{
+		name: "Flint",
+		id: "FLINT",
+		amount: "640",
+		source: "Pat",
+		npc: "6",
+		image: "Flint",
+	},
+	{
 		name: "Grand Experience Bottle",
 		id: "GRAND_EXP_BOTTLE",
-        amount: "640",
-        source: "Mage Emissary",
-        npc: "5000",
-        image: "Experience_Bottle"
+		amount: "640",
+		source: "Mage Emissary",
+		npc: "5000",
+		image: "Experience_Bottle",
 	},
 	{
 		name: "Gunpowder",
 		id: "SULPHUR",
-        amount: "640",
-        source: "Adventurer",
-        npc: "10",
-        image: "Gunpowder"
+		amount: "640",
+		source: "Adventurer",
+		npc: "10",
+		image: "Gunpowder",
 	},
 	{
 		name: "Ice",
 		id: "ICE",
-        amount: "640",
-        source: "Merchant",
-        npc: "1",
-        image: "Ice"
+		amount: "640",
+		source: "Merchant",
+		npc: "1",
+		image: "Ice",
 	},
 	{
 		name: "Iron Ingot",
 		id: "IRON_INGOT",
-        amount: "1280",
-        source: "Mine Merchant, Iron Forger",
-        npc: "5.25", // mean of all sellers
-        image: "Iron_Ingot"
+		amount: "1280",
+		source: "Mine Merchant, Iron Forger",
+		npc: "5.25", // mean of all sellers
+		image: "Iron_Ingot",
 	},
 	{
 		name: "Jungle Wood",
 		id: "LOG:3",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5",
-        image: "Jungle_Wood"
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+		image: "Jungle_Wood",
 	},
 	{
 		name: "Magma Cream",
 		id: "MAGMA_CREAM",
-        amount: "640",
-        source: "Alchemist",
-        npc: "20",
-        image: "Magma_Cream"
+		amount: "640",
+		source: "Alchemist",
+		npc: "20",
+		image: "Magma_Cream",
 	},
 	{
 		name: "Melon",
 		id: "MELON",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "4",
-        image: "Melon"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "4",
+		image: "Melon",
 	},
 	{
 		name: "Oak Wood",
 		id: "LOG",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5",
-        image: "Oak_Wood"
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+		image: "Oak_Wood",
 	},
 	{
 		name: "Packed Ice",
 		id: "PACKED_ICE",
-        amount: "640",
-        source: "Builder",
-        npc: "9",
-        image: "Packed_Ice"
+		amount: "640",
+		source: "Builder",
+		npc: "9",
+		image: "Packed_Ice",
 	},
 	{
 		name: "Pufferfish",
 		id: "RAW_FISH:3",
-        amount: "640",
-        source: "Fish Merchant",
-        npc: "40",
-        image: "Pufferfish"
+		amount: "640",
+		source: "Fish Merchant",
+		npc: "40",
+		image: "Pufferfish",
 	},
 	{
 		name: "Potato",
 		id: "POTATO_ITEM",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10",
-        image: "Potato"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "10",
+		image: "Potato",
 	},
 	{
 		name: "Pumpkin",
 		id: "PUMPKIN",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "25",
-        image: "Pumpkin"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "25",
+		image: "Pumpkin",
 	},
 	{
 		name: "Raw Fish",
 		id: "RAW_FISH",
-        amount: "640",
-        source: "Fish Merchant",
-        npc: "20",
-        image: "Raw_Fish"
+		amount: "640",
+		source: "Fish Merchant",
+		npc: "20",
+		image: "Raw_Fish",
 	},
 	{
 		name: "Sand",
 		id: "SAND",
-        amount: "1280",
-        source: "Farm Merchant, Builder",
-        npc: "3", // mean of all sellers
-        image: "Sand"
+		amount: "1280",
+		source: "Farm Merchant, Builder",
+		npc: "3", // mean of all sellers
+		image: "Sand",
 	},
 	{
 		name: "Slimeball",
 		id: "SLIME_BALL",
-        amount: "640",
-        source: "Adventurer",
-        npc: "14",
-        image: "Slimeball"
+		amount: "640",
+		source: "Adventurer",
+		npc: "14",
+		image: "Slimeball",
 	},
 	{
 		name: "Spruce Wood",
 		id: "LOG:1",
-        amount: "640",
-        source: "Lumber Merchant",
-        npc: "5",
-        image: "Spruce_Wood"
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+		image: "Spruce_Wood",
 	},
 	{
 		name: "String",
 		id: "STRING",
-        amount: "640",
-        source: "Adventurer",
-        npc: "10",
-        image: "String"
+		amount: "640",
+		source: "Adventurer",
+		npc: "10",
+		image: "String",
 	},
 	{
 		name: "Sugar Cane",
 		id: "SUGAR_CANE",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10",
-        image: "Sugar_Cane"
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "10",
+		image: "Sugar_Cane",
 	},
 	{
 		name: "Wheat",
 		id: "WHEAT",
-        amount: "640",
-        source: "Farm Merchant",
-        npc: "10",
-        image: "Wheat"
-	}
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "10",
+		image: "Wheat",
+	},
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-    var webptest = new Image(1,1);
-    webptest.src = "/static/imageswebp/webpdot.webp";
-    if (webptest.width > 0 && webptest.height > 0) {
-        WebPSupport = 1;
-    } else {
-        WebPSupport = 0;
-    }
+	var webptest = new Image(1, 1);
+	webptest.src = "/static/imageswebp/webpdot.webp";
+	if (webptest.width > 0 && webptest.height > 0) {
+		WebPSupport = 1;
+	} else {
+		WebPSupport = 0;
+	}
 
 	const savedToggleStates = localStorage.getItem("toggleStates");
 	if (savedToggleStates) {
@@ -234,6 +234,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	} else {
 		toggleStates = Array(itemsarray.length).fill(true);
 	}
+
+	document.getElementById("settings-bar").addEventListener("click", function () {
+        document.getElementById("settings").classList.toggle("expanded");
+      });
+      
 
 	const container = document.getElementById("toggle-container");
 
@@ -253,13 +258,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		const imagePlaceholder = document.createElement("div");
 		imagePlaceholder.className = "NbBsImage";
 
-        const img = document.createElement("img");
+		const img = document.createElement("img");
 
-        if (WebPSupport == 1) {
-            img.src = `static/imageswebp/${item.image}.webp`;
-        } else {
-            img.src = `static/images/${item.image}.png`;
-        }
+		if (WebPSupport == 1) {
+			img.src = `static/imageswebp/${item.image}.webp`;
+		} else {
+			img.src = `static/images/${item.image}.png`;
+		}
 
 		imagePlaceholder.appendChild(img);
 
@@ -275,11 +280,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		sellOrderLabel.className = "toggle-label";
 		sellOrderLabel.textContent = "Sell Order";
 
-        const newDivThatIMadeUp = document.createElement("div");
-        newDivThatIMadeUp.className = "inferno-savior";
+		const newDivThatIMadeUp = document.createElement("div");
+		newDivThatIMadeUp.className = "inferno-savior";
 
 		groupDiv.appendChild(imagePlaceholder);
-        groupDiv.appendChild(newDivThatIMadeUp);
+		groupDiv.appendChild(newDivThatIMadeUp);
 		newDivThatIMadeUp.appendChild(instasellLabel);
 		newDivThatIMadeUp.appendChild(toggleSwitch);
 		newDivThatIMadeUp.appendChild(sellOrderLabel);
@@ -310,30 +315,26 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	});
 
-	document.getElementById("settings-bar").addEventListener("click", function () {
-		document.getElementById("settings").classList.toggle("expanded");
-	});
+	const NbBsSpace = document.getElementById("NbBsSpace");
 
-    const NbBsSpace = document.getElementById("NbBsSpace");
+	for (let i = 0; i < itemsarray.length; i++) {
+		const nbbsText = document.createElement("div");
+		nbbsText.className = "NbBsBox";
+		nbbsText.id = `NbBsBox${i}`;
 
-    for (let i = 0; i < itemsarray.length; i++) {
-        const nbbsText = document.createElement("div");
-        nbbsText.className = "NbBsBox";
-        nbbsText.id = `NbBsBox${i}`
+		const nbbsImage = document.createElement("img");
+		if (WebPSupport == 1) {
+			nbbsImage.src = `static/imageswebp/${itemsarray[i].image}.webp`;
+		} else {
+			nbbsImage.src = `static/images/${itemsarray[i].image}.png`;
+		}
 
-        const nbbsImage = document.createElement("img");
-        if (WebPSupport == 1) {
-            nbbsImage.src = `static/imageswebp/${itemsarray[i].image}.webp`
-        } else {
-            nbbsImage.src = `static/images/${itemsarray[i].image}.png`
-        }
-        
-        const theBox = document.createElement("div");
+		const theBox = document.createElement("div");
 
-        NbBsSpace.appendChild(theBox);
-        theBox.appendChild(nbbsImage);
-        theBox.appendChild(nbbsText);    
-    }
+		NbBsSpace.appendChild(theBox);
+		theBox.appendChild(nbbsImage);
+		theBox.appendChild(nbbsText);
+	}
 	bazaarconnect();
 });
 
@@ -343,19 +344,19 @@ async function bazaarconnect() {
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
-        document.getElementById(`NbBsBox${i}`).innerHTML = itemsarray[i].name + "<br>";
-        document.getElementById(`NbBsBox${i}`).innerHTML += "Profit: ";
-        document.getElementById(`NbBsBox${i}`).innerHTML += format((itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc)).toFixed(0)) + " coins<br>"
-        if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 100000) {
-            document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#0f6319"
-        } else if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 10000){
-            document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#81cc8a"
-        } else if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 0){
-            document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#d5db23"
-        } else {
-            document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#db2323"
-        }
-        document.getElementById(`NbBsBox${i}`).innerHTML += `Source: ${itemsarray[i].source}`;
+		document.getElementById(`NbBsBox${i}`).innerHTML = itemsarray[i].name + "<br>";
+		document.getElementById(`NbBsBox${i}`).innerHTML += "Profit: ";
+		document.getElementById(`NbBsBox${i}`).innerHTML += format((itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc)).toFixed(0)) + " coins<br>";
+		if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 100000) {
+			document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#0f6319";
+		} else if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 10000) {
+			document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#81cc8a";
+		} else if (itemsarray[i].amount * (data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] - itemsarray[i].npc) > 0) {
+			document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#d5db23";
+		} else {
+			document.getElementById(`NbBsBox${i}`).style.backgroundColor = "#db2323";
+		}
+		document.getElementById(`NbBsBox${i}`).innerHTML += `Source: ${itemsarray[i].source}`;
 	}
 }
 
