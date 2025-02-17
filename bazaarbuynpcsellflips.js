@@ -3,25 +3,21 @@ let itemsarray = [
     {
         "name": "Enchanted Melon Block",
         "id" : "ENCHANTED_MELON_BLOCK",
-        "img" : "Enchanted_Melon_Block",
         "npc" : "51200"
     },
     {
         "name": "Fine Ruby Gemstone",
         "id" : "FINE_RUBY_GEM",
-        "img" : "Fine_Ruby_Gemstone",
         "npc" : "19200"
     },
     {
         "name": "Enchanted Sulphur",
         "id" : "ENCHANTED_SULPHUR",
-        "img" : "Enchanted_Sulphur",
         "npc" : "1600"
     },
     {
         "name": "Enchanted Gold",
         "id" : "ENCHANTED_GOLD",
-        "img" : "Enchanted_Gold",
         "npc" : "480"
     }
 ]
@@ -63,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = document.createElement("img");
 
         if (WebPSupport == 1) {
-            img.src = `static/imageswebp/${item.img}.webp`;
+            img.src = `static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
         } else {
-            img.src = `static/images/${item.img}.png`;
+            img.src = `static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
         }
 
 		imagePlaceholder.appendChild(img);
@@ -127,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const bbnsImage = document.createElement("img");
         if (WebPSupport == 1) {
-            bbnsImage.src = `static/imageswebp/${itemsarray[i].img}.webp`
+            bbnsImage.src =  `static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
         } else {
-            bbnsImage.src = `static/images/${itemsarray[i].img}.png`
+            bbnsImage.src =  `static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
         }
 
         const bbnsText = document.createElement("div");
