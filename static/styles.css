@@ -2238,6 +2238,10 @@ a {
 	flex-direction: row;
 }
 
+.bzbuynpcsellboxes img {
+    margin-left: 1vw;
+}
+
 .BbNsText {
 	display: flex;
 	width: calc(80vw - 15vh);
@@ -2293,4 +2297,17 @@ a {
 	width: 5vh;
 	height: 5vh;
 	margin: 0 1vw 0 1vw;
+}
+
+.flexcolumn {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+#itemsContainer {
+    margin-top: 10vh;
 }

@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         theBox.appendChild(bbnsImage)
         theBox.appendChild(bbnsText);
-        document.body.appendChild(theBox);    
+        document.getElementById("itemsContainer").appendChild(theBox);    
     }
 
     bazaarconnect();
