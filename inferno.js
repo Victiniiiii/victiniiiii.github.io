@@ -4,241 +4,208 @@ let itemsarray = [
     {
         name: "Enchanted Coal",
         id: "ENCHANTED_COAL",
-        image: "Enchanted_Coal",
         price: "0"
     },
     {
         name: "Enchanted Sulphur",
         id: "ENCHANTED_SULPHUR",
-        image: "Enchanted_Sulphur",
         price: "0"
     },
     {
         name: "Chili Pepper",
         id: "CHILI_PEPPER",
-        image: "Chili_Pepper",
         price: "0"
     },
     {
         name: "Capsaicin Eyedrops",
         id: "CAPSAICIN_EYEDROPS_NO_CHARGES",
-        image: "Capsaicin_Eyedrops",
         price: "0"
     },
     {
         name: "Crude Gabagool",
         id: "CRUDE_GABAGOOL",
-        image: "Crude_Gabagool",
         price: "0"
     },
     {
         name: "Derelict Ashe",
         id: "DERELICT_ASHE",
-        image: "Derelict_Ashe",
         price: "0"
     },
     {
         name: "Hypergolic Gabagool",
         id: "HYPERGOLIC_GABAGOOL",
-        image: "Hypergolic_Gabagool",
         price: "0"
     },
     {
         name: "Hypergolic Ionized Ceramics",
         id: "HYPERGOLIC_IONIZED_CERAMICS",
-        image: "Hypergolic_Ionized_Ceramics",
         price: "0"
     },
     {
         name: "Gabagool Distillate",
         id: "CRUDE_GABAGOOL_DISTILLATE",
-        image: "Gabagool_Distillate",
         price: "0"
     },
     {
         name: "Blaze Rod Distillate",
         id: "BLAZE_ROD_DISTILLATE",
-        image: "Blaze_Rod_Distillate",
         price: "0"
     },
     {
         name: "Glowstone Distillate",
         id: "GLOWSTONE_DUST_DISTILLATE",
-        image: "Glowstone_Distillate",
         price: "0"
     },
     {
         name: "Magma Cream Distillate",
         id: "MAGMA_CREAM_DISTILLATE",
-        image: "Magma_Cream_Nether_Wart_Distillate",
+        image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
         price: "0"
     },
     {
         name: "Nether Wart Distillate",
         id: "NETHER_STALK_DISTILLATE",
-        image: "Magma_Cream_Nether_Wart_Distillate",
+        image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
         price: "0"
     },
     {
         name: "Inferno Fuel Block",
         id: "INFERNO_FUEL_BLOCK",
-        image: "Inferno_Fuel_Block",
         price: "0"
     },
     {
         name: "Entropy Suppressor",
         id: "ENTROPY_SUPPRESSOR",
-        image: "Entropy_Suppressor",
         price: "0"
     },
     {
         name: "Jalapeno Book",
         id: "JALAPENO_BOOK",
-        image: "Jalapeno_Book",
         price: "0"
     },
     {
         name: "Sulphuric Coal",
         id: "SULPHURIC_COAL",
-        image: "Sulphuric_Coal",
         price: "0"
     },
     {
         name: "Habanero Tactics IV",
         id: "ENCHANTMENT_ULTIMATE_HABANERO_TACTICS_4",
-        image: "Enchanted_Book",
+        image: "ENCHANTED_BOOK",
         price: "0"
     },
     {
         name: "Stuffed Chili Pepper",
         id: "STUFFED_CHILI_PEPPER",
-        image: "Stuffed_Chili_Pepper",
         price: "0"
     },
     {
         name: "Cayenne IV",
         id: "ENCHANTMENT_CAYENNE_4",
-        image: "Enchanted_Book",
+        image: "ENCHANTED_BOOK",
         price: "0"
     },
     {
         name: "Inferno Vertex",
         id: "INFERNO_VERTEX",
-        image: "Inferno_Vertex",
         price: "0"
     },
     {
         name: "Inferno Apex",
         id: "INFERNO_APEX",
-        image: "Inferno_Apex",
         price: "0"
     },
     {
         name: "Reaper Pepper",
         id: "REAPER_PEPPER",
-        image: "Reaper_Pepper",
         price: "0"
     },
     {
         name: "Re-heated Gummy Polar Bear",
         id: "REHEATED_GUMMY_POLAR_BEAR",
-        image: "Re-heated_Gummy_Polar_Bear",
         price: "0"
     },
     {
         name: "Enchanted Snow Block",
         id: "ENCHANTED_SNOW_BLOCK",
-        image: "Enchanted_Snow_Block",
         price: "0"
     },
     {
-        name: "Enchanted_Slimeball",
+        name: "Enchanted Slimeball",
         id: "ENCHANTED_SLIME_BALL",
-        image: "Enchanted_Slimeball",
         price: "0"
     },
     {
         name: "Kelvin Interter",
         id: "KELVIN_INVERTER",
-        image: "Kelvin_Inverter",
         price: "0"
     },
     {
         name: "Enchanted Paper",
         id: "ENCHANTED_PAPER",
-        image: "Enchanted_Paper",
         price: "0"
     },
     {
         name: "Wood Singularity",
         id: "WOOD_SINGULARITY",
-        image: "Wood_Singularity",
         price: "0"
     },
     {
         name: "Enchanted Iron Block",
         id: "ENCHANTED_IRON_BLOCK",
-        image: "Enchanted_Iron_Block",
         price: "0"
     },
     {
         name: "Enchanted Brown Mushroom Block",
         id: "ENCHANTED_HUGE_MUSHROOM_1",
-        image: "Enchanted_Brown_Mushroom_Block",
-        price: "0"
+        price: "0",
+        image: "ENCHANTED_BROWN_MUSHROOM_BLOCK"
     },
     {
-        name: "Enchanted_Rabbit_Hide",
+        name: "Enchanted Rabbit Hide",
         id: "ENCHANTED_RABBIT_HIDE",
-        image: "Enchanted_Rabbit_Hide",
         price: "0"
     },
     {
         name: "Volta",
         id: "VOLTA",
-        image: "Volta",
         price: "0"
     },
     {
         name: "Blaze Rod",
         id: "BLAZE_ROD",
-        image: "Blaze_Rod",
         price: "0"
     },
     {
         name: "Glowstone Dust",
         id: "GLOWSTONE_DUST",
-        image: "Glowstone_Dust",
         price: "0"
     },
     {
         name: "Magma Cream",
         id: "MAGMA_CREAM",
-        image: "Magma_Cream",
         price: "0"
     },
     {
         name: "Nether Wart",
         id: "NETHER_STALK",
-        image: "Nether_Wart",
+        image: "NETHER_WART",
         price: "0"
     },
     {
         name: "Power Crystal",
         id: "POWER_CRYSTAL",
-        image: "Enchanted_Nether_Star",
+        image: "ENCHANTED_NETHER_STAR",
         price: "0"
     },
     {
         name: "Scorched Power Crystal",
         id: "SCORCHED_POWER_CRYSTAL",
-        image: "Scorched_Power_Crystal",
         price: "0"
     },
     {
         name: "Molten Powder",
         id: "MOLTEN_POWDER",
-        image: "Molten_Powder",
         price: "0"
     }
 ]
@@ -282,9 +249,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = document.createElement("img");
 
         if (WebPSupport == 1) {
-            img.src = `static/imageswebp/${item.image}.webp`;
+            img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`; 
         } else {
-            img.src = `static/images/${item.image}.png`;
+            img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`; 
         }
 
 		imagePlaceholder.appendChild(img);
@@ -764,7 +731,7 @@ async function minionprofits() {
 	if (htmlminioncount < 1 || htmlminioncount > 31) {
 		htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
 	} else {
-		infernorow1.style.backgroundImage = "url('static/imageswebp/Crude_Gabagool.webp'), url('static/images/Crude_Gabagool.png')";
+		infernorow1.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
 		infernooneminionprofit.innerHTML = `One minion makes ${oneminionhourlyprofit} coins per hour and ${oneminiondailyprofit} per day.`;
 		infernoallminionprofit.innerHTML = `All the minions combined make ${minionhourlyprofit} coins per hour and ${miniondailyprofit} per day.`;
 		infernoallcosts.innerHTML = `Using this fuel and beacon will cost you ${expenses} coins per day.`;
@@ -775,23 +742,23 @@ async function minionprofits() {
 		if (htmlfueltype != "nothing") {
 			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/Crude_Gabagool.webp'), url('static/images/Crude_Gabagool.png')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
 			} else if (chosenfuel == "Blaze Rod") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/Blaze_Rod.webp'), url('static/images/Blaze_Rod.png')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/BLAZE_ROD.webp'), url('static/images/BLAZE_ROD.png')";
 			} else if (chosenfuel == "Magma Cream") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/Magma_Cream.webp'), url('static/images/Magma_Cream.png')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/MAGMA_CREAM.webp'), url('static/images/MAGMA_CREAM.png')";
 			} else if (chosenfuel == "Nether Wart") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/Nether_Wart.webp'), url('static/images/Nether_Wart.png')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/NETHER_WART.webp'), url('static/images/NETHER_WART.png')";
 			} else if (chosenfuel == "Glowstone Dust") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/Glowstone_Dust.webp'), url('static/images/Glowstone_Dust.png')";
+				infernorow2.style.backgroundImage = "url('static/imageswebp/GLOWSTONE_DUST.webp'), url('static/images/GLOWSTONE_DUST.png')";
 			}
 			console.log(chosenfuel);
 		}
 		if (checkifitst3 == 1 || checkifitst3 == 1.3) {
-			infernorow3.style.backgroundImage = "url('static/imageswebp/Chili_Pepper.webp'), url('static/images/Chili_Pepper.png')";
-			infernorow4.style.backgroundImage = "url('static/imageswebp/Inferno_Vertex.webp'), url('static/images/Inferno_Vertex.png')";
-			infernorow5.style.backgroundImage = "url('static/imageswebp/Inferno_Apex.webp'), url('static/images/Inferno_Apex.png')";
-			infernorow6.style.backgroundImage = "url('static/imageswebp/Reaper_Pepper.webp'), url('static/images/Reaper_Pepper.png')";
+			infernorow3.style.backgroundImage = "url('static/imageswebp/CHILI_PEPPER.webp'), url('static/images/CHILI_PEPPER.png')";
+			infernorow4.style.backgroundImage = "url('static/imageswebp/INFERNO_VERTEX.webp'), url('static/images/INFERNO_VERTEX.png')";
+			infernorow5.style.backgroundImage = "url('static/imageswebp/INFERNO_APEX.webp'), url('static/images/INFERNO_APEX.png')";
+			infernorow6.style.backgroundImage = "url('static/imageswebp/REAPER_PEPPER.webp'), url('static/images/REAPER_PEPPER.png')";
 			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
 			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
 			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
