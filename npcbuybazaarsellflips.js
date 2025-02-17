@@ -7,7 +7,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Lumber Merchant",
 		npc: "5",
-		image: "Acacia_Wood",
+        image: "ACACIA_WOOD"
 	},
 	{
 		name: "Carrot",
@@ -15,7 +15,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "10",
-		image: "Carrot",
+        image: "CARROT"
 	},
 	{
 		name: "Cocoa Beans",
@@ -23,7 +23,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "5",
-		image: "Cocoa_Beans",
+        image: "COCOA_BEANS"
 	},
 	{
 		name: "Coal",
@@ -31,15 +31,13 @@ let itemsarray = [
 		amount: "640",
 		source: "Mine Merchant",
 		npc: "4",
-		image: "Coal",
 	},
 	{
 		name: "Cobblestone",
 		id: "COBBLESTONE",
 		amount: "1280",
 		source: "Mine Merchant, Builder",
-		npc: "2.5", // mean of all sellers
-		image: "Cobblestone",
+		npc: "2.5", // average of all sellers
 	},
 	{
 		name: "End Stone",
@@ -47,7 +45,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Pearl Dealer",
 		npc: "10",
-		image: "End_Stone",
 	},
 	{
 		name: "Experience Bottle",
@@ -55,7 +52,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Librarian",
 		npc: "30",
-		image: "Experience_Bottle",
+        image: "EXPERIENCE_BOTTLE"
 	},
 	{
 		name: "Flint",
@@ -63,7 +60,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Pat",
 		npc: "6",
-		image: "Flint",
 	},
 	{
 		name: "Grand Experience Bottle",
@@ -71,7 +67,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Mage Emissary",
 		npc: "5000",
-		image: "Experience_Bottle",
+        image: "EXPERIENCE_BOTTLE"
 	},
 	{
 		name: "Gunpowder",
@@ -79,7 +75,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Adventurer",
 		npc: "10",
-		image: "Gunpowder",
+        image: "GUNPOWDER"
 	},
 	{
 		name: "Ice",
@@ -87,15 +83,13 @@ let itemsarray = [
 		amount: "640",
 		source: "Merchant",
 		npc: "1",
-		image: "Ice",
 	},
 	{
 		name: "Iron Ingot",
 		id: "IRON_INGOT",
 		amount: "1280",
 		source: "Mine Merchant, Iron Forger",
-		npc: "5.25", // mean of all sellers
-		image: "Iron_Ingot",
+		npc: "5.25", // average of all sellers
 	},
 	{
 		name: "Jungle Wood",
@@ -103,7 +97,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Lumber Merchant",
 		npc: "5",
-		image: "Jungle_Wood",
+        image: "JUNGLE_WOOD"
 	},
 	{
 		name: "Magma Cream",
@@ -111,7 +105,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Alchemist",
 		npc: "20",
-		image: "Magma_Cream",
 	},
 	{
 		name: "Melon",
@@ -119,7 +112,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "4",
-		image: "Melon",
 	},
 	{
 		name: "Oak Wood",
@@ -127,7 +119,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Lumber Merchant",
 		npc: "5",
-		image: "Oak_Wood",
+        image: "OAK_WOOD"
 	},
 	{
 		name: "Packed Ice",
@@ -135,7 +127,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Builder",
 		npc: "9",
-		image: "Packed_Ice",
 	},
 	{
 		name: "Pufferfish",
@@ -143,7 +134,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Fish Merchant",
 		npc: "40",
-		image: "Pufferfish",
+        image: "PUFFERFISH"
 	},
 	{
 		name: "Potato",
@@ -151,7 +142,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "10",
-		image: "Potato",
+        image: "POTATO"
 	},
 	{
 		name: "Pumpkin",
@@ -159,7 +150,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "25",
-		image: "Pumpkin",
 	},
 	{
 		name: "Raw Fish",
@@ -167,15 +157,13 @@ let itemsarray = [
 		amount: "640",
 		source: "Fish Merchant",
 		npc: "20",
-		image: "Raw_Fish",
 	},
 	{
 		name: "Sand",
 		id: "SAND",
 		amount: "1280",
 		source: "Farm Merchant, Builder",
-		npc: "3", // mean of all sellers
-		image: "Sand",
+		npc: "3", // average of all sellers
 	},
 	{
 		name: "Slimeball",
@@ -183,7 +171,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Adventurer",
 		npc: "14",
-		image: "Slimeball",
+        image: "SLIMEBALL"
 	},
 	{
 		name: "Spruce Wood",
@@ -191,7 +179,7 @@ let itemsarray = [
 		amount: "640",
 		source: "Lumber Merchant",
 		npc: "5",
-		image: "Spruce_Wood",
+        image: "SPRUCE_WOOD"
 	},
 	{
 		name: "String",
@@ -199,7 +187,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Adventurer",
 		npc: "10",
-		image: "String",
 	},
 	{
 		name: "Sugar Cane",
@@ -207,7 +194,6 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "10",
-		image: "Sugar_Cane",
 	},
 	{
 		name: "Wheat",
@@ -215,18 +201,160 @@ let itemsarray = [
 		amount: "640",
 		source: "Farm Merchant",
 		npc: "10",
-		image: "Wheat",
 	},
+    {
+		name: "Rotten Flesh",
+		id: "ROTTEN_FLESH",
+		amount: "640",
+		source: "Adventurer",
+		npc: "8",
+	},
+    {
+		name: "Bone",
+		id: "BONE",
+		amount: "640",
+		source: "Adventurer",
+		npc: "8",
+	},
+    {
+		name: "Birch Wood",
+		id: "LOG:2",
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+        image: "BIRCH_WOOD"
+	},
+    {
+		name: "Dark Oak Wood",
+		id: "LOG_2:1",
+		amount: "640",
+		source: "Lumber Merchant",
+		npc: "5",
+        image: "DARK_OAK_WOOD"
+	},
+    {
+		name: "Raw Salmon",
+		id: "RAW_FISH:1",
+		amount: "640",
+		source: "Fish Merchant",
+		npc: "30",
+        image: "RAW_SALMON"
+	},
+    {
+		name: "Clownfish",
+		id: "RAW_FISH:2",
+		amount: "640",
+		source: "Fish Merchant",
+		npc: "100",
+        image: "CLOWNFISH"
+	},
+    {
+		name: "Gold Ingot",
+		id: "GOLD_INGOT",
+		amount: "1280",
+		source: "Mine Merchant, Gold Forger",
+		npc: "5.75",
+	},
+    {
+		name: "Gravel",
+		id: "GRAVEL",
+		amount: "1920",
+		source: "Mine Merchant, Builder, Pat",
+		npc: "4.33",
+	},
+    {
+		name: "Red Mushroom",
+		id: "RED_MUSHROOM",
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "12",
+	},
+    {
+		name: "Brown Mushroom",
+		id: "BROWN_MUSHROOM",
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "12",
+	},
+    {
+		name: "Cactus",
+		id: "CACTUS",
+		amount: "640",
+		source: "Farm Merchant",
+		npc: "3",
+	},
+    {
+		name: "White Wool",
+		id: "WOOL",
+		amount: "640",
+		source: "Wool Weaver",
+		npc: "32",
+        image: "WHITE_WOOL"
+	},
+    {
+		name: "Netherrack",
+		id: "NETHERRACK",
+		amount: "640",
+		source: "Builder",
+		npc: "2",
+	},
+    {
+		name: "Obsidian",
+		id: "OBSIDIAN",
+		amount: "640",
+		source: "Pearl Dealer",
+		npc: "50",
+	},
+    {
+		name: "Nether Wart",
+		id: "NETHER_STALK",
+		amount: "640",
+		source: "Alchemist",
+		npc: "10",
+        image: "NETHER_WART"
+	},
+    {
+		name: "Ghast Tear",
+		id: "GHAST_TEAR",
+		amount: "640",
+		source: "Alchemist",
+		npc: "200",
+	},
+    {
+		name: "Rabbit's Foot",
+		id: "RABBIT_FOOT",
+		amount: "640",
+		source: "Alchemist",
+		npc: "10",
+	},
+    {
+		name: "Spider Eye",
+		id: "SPIDER_EYE",
+		amount: "640",
+		source: "Alchemist",
+		npc: "12",
+	},
+    {
+		name: "Redstone",
+		id: "REDSTONE",
+		amount: "640",
+		source: "Mad Redstone Engineer",
+		npc: "4",
+	},
+    {
+		name: "Superboom TNT",
+		id: "SUPERBOOM_TNT",
+		amount: "1280",
+		source: "Walter, Ophelia",
+		npc: "2750",
+        image: "ENCHANTED_TNT"
+	}
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
 	webptest.src = "/static/imageswebp/webpdot.webp";
-	if (webptest.width > 0 && webptest.height > 0) {
-		WebPSupport = 1;
-	} else {
-		WebPSupport = 0;
-	}
+	webptest.width > 0 && webptest.height > 0 ? WebPSupport = 1 : WebPSupport = 0;	
 
 	const savedToggleStates = localStorage.getItem("toggleStates");
 	if (savedToggleStates) {
@@ -261,9 +389,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const img = document.createElement("img");
 
 		if (WebPSupport == 1) {
-			img.src = `static/imageswebp/${item.image}.webp`;
+			img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
 		} else {
-			img.src = `static/images/${item.image}.png`;
+			img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
 		}
 
 		imagePlaceholder.appendChild(img);
@@ -324,10 +452,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		const nbbsImage = document.createElement("img");
 		if (WebPSupport == 1) {
-			nbbsImage.src = `static/imageswebp/${itemsarray[i].image}.webp`;
-		} else {
-			nbbsImage.src = `static/images/${itemsarray[i].image}.png`;
-		}
+            nbbsImage.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
+        } else {
+            nbbsImage.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
+        }        
 
 		const theBox = document.createElement("div");
 
@@ -343,6 +471,7 @@ async function bazaarconnect() {
 	const data = await response.json();
 
 	for (let i = 0; i < itemsarray.length; i++) {
+        console.log(format(data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins");
 		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0)) + " coins";
 		document.getElementById(`NbBsBox${i}`).innerHTML = itemsarray[i].name + "<br>";
 		document.getElementById(`NbBsBox${i}`).innerHTML += "Profit: ";
