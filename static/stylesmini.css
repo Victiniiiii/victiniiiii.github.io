@@ -1781,6 +1781,7 @@ a {
 	backdrop-filter: blur(25px);
 	-webkit-backdrop-filter: blur(25px);
 	background: rgba(0, 0, 0, 0.4);
+    margin-top: 10vh;
 }
 
 .infernoprofittitle {
@@ -2284,6 +2285,7 @@ a {
 	flex-wrap: wrap;
 	gap: 1vw;
 	justify-content: center;
+    margin-top: 10vh;
 }
 
 .NbBsImage img {
