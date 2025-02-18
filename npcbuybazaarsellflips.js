@@ -528,14 +528,13 @@ async function bazaarconnect() {
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		let price = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] || 0;
-		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(price.toFixed(0)) + " coins";
-
+		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(price.toFixed(0)) + (parseInt(price.toFixed(0)) === 1 ? " coin" : " coins");
 		derpy ? (price *= 1 - taxRate / 25) : (price *= 1 - taxRate / 100);
 		let profit = diaz ? (itemsarray[i].amount * 10 * (price - itemsarray[i].npc)).toFixed(0) : (itemsarray[i].amount * (price - itemsarray[i].npc)).toFixed(0);
 
 		const box = document.getElementById(`NbBsBox${i}`);
 		box.innerHTML = `${itemsarray[i].name}<br>`;
-		box.innerHTML += `Profit: ${format(profit)} coins<br>`;
+		box.innerHTML += `Profit: ${format(profit)}${parseInt(profit) === 1 ? " coin" : " coins"}<br>`;
 		box.innerHTML += `Source: ${itemsarray[i].source}<br>`;
 
 		if (profit > 100000) {
