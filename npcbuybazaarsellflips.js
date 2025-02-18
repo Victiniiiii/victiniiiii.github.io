@@ -351,6 +351,10 @@ let itemsarray = [
 	},
 ];
 
+let derpy = false;
+let diaz = false;
+let taxRate = "1.25";
+
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
 	webptest.src = "/static/imageswebp/webpdot.webp";
@@ -427,8 +431,45 @@ document.addEventListener("DOMContentLoaded", function () {
 		container.appendChild(row);
 	}
 
+    document.querySelectorAll(".three-way-toggle").forEach(toggle => {
+        toggle.addEventListener("click", function () {
+            if (this.classList.contains("active")) {
+                this.classList.remove("active");
+                this.classList.add("middle");
+                taxRate = "1.125";
+                document.getElementById("TaxRateText").innerText = "%1.125";
+            } else if (this.classList.contains("middle")) {
+                this.classList.remove("middle");
+                taxRate = "1";
+                document.getElementById("TaxRateText").innerText = "%1";
+            } else {
+                this.classList.add("active");
+                taxRate = "1.25";
+                document.getElementById("TaxRateText").innerText = "%1.25";
+            }
+        });
+    });
+
 	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch, index) {
-		if (toggleStates[index]) {
+        const dataId = toggleSwitch.getAttribute("data-id");
+        if (dataId == "Derpy") {            
+            toggleSwitch.addEventListener("click", async function () {
+                toggleSwitch.classList.toggle("active");
+                console.log("12");
+                derpy = !derpy;
+                derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
+            });
+            return;
+        } else if (dataId == "Diaz") {
+            toggleSwitch.addEventListener("click", async function () {
+                toggleSwitch.classList.toggle("active");
+                diaz = !diaz;
+                diaz ? document.getElementById("DiazText").innerText = "On" : document.getElementById("DiazText").innerText = "Off";
+            });
+            return;
+        }
+
+		if (toggleStates[index - 2]) {
 			toggleSwitch.classList.add("active");
 		} else {
 			toggleSwitch.classList.remove("active");
@@ -436,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		toggleSwitch.addEventListener("click", function () {
 			toggleSwitch.classList.toggle("active");
-			toggleStates[index] = !toggleStates[index];
+			toggleStates[index - 2] = !toggleStates[index - 2];
 			localStorage.setItem("toggleStates", JSON.stringify(toggleStates));
 			bazaarconnect();
 		});

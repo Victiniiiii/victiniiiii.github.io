@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>NPC Buy Bazaar Sell Flips</title>
-		<link rel="icon" href="static/images/vic32.png" type="image/png"/>
-		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)"/>
-		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)"/>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
 	</head>
 	<body>
 		<header id="title-section">
 			<a href="/">
 				<picture>
-                    <source srcset="/static/imageswebp/vicinti3.webp" type="image/webp">
-                    <img class="main-menu-button" src="/static/images/vicinti3.png">
-                </picture>
+					<source srcset="/static/imageswebp/vicinti3.webp" type="image/webp" />
+					<img class="main-menu-button" src="/static/images/vicinti3.png" />
+				</picture>
 			</a>
 			<h1 class="main-menu-text">NPC Buy Bazaar Sell Flips</h1>
 			<div class="project-buttons">
@@ -23,11 +23,29 @@
 				</div>
 			</div>
 		</header>
-        <div id="settings">
-            <div id="settings-bar">Press here to access the bazaar settings.</div>
-            <div id="toggle-container"></div>
-        </div>
-        <div id="NbBsSpace"></div>
+		<div id="settings">
+			<div id="settings-bar">Press here to access the bazaar settings.</div>
+			<div id="toggle-container">
+				<div class="top-row">
+					<div>
+						Tax Rate:
+						<div data-id="TaxRate" class="three-way-toggle"></div>
+						<div id="TaxRateText">%1</div>
+					</div>
+					<div>
+						Derpy:
+						<div data-id="Derpy" class="toggle-switch"></div>
+						<div id="DerpyText">Off</div>
+					</div>
+					<div>
+						Diaz Shopping Spree:
+						<div data-id="Diaz" class="toggle-switch"></div>
+						<div id="DiazText">Off</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="NbBsSpace"></div>
 	</body>
-    <script src="npcbuybazaarsellflips.js"></script>
+	<script src="npcbuybazaarsellflips.js"></script>
 </html>

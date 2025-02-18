@@ -1723,9 +1723,14 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     border: 1px solid white;
     padding: 10px 0;
+}
+
+.top-row div {
+    display: flex;
+    flex-direction: row;
 }
 
 .toggle-line {
