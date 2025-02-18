@@ -1,0 +1,1653 @@
+* {
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	overscroll-behavior: none;
+	scrollbar-width: thin;
+	scrollbar-color: #555 #222;
+}
+
+select {
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #222;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #555;
+	border-radius: 10px;
+	border: 2px solid #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #777;
+}
+
+a,
+a:visited,
+a:active {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: lightblue;
+}
+
+.gm-fullscreen-control {
+	/* Full screen button at top right */
+	background: rgb(0, 0, 0, 0.8) !important;
+}
+
+.gm-style div div a,
+.gm-style-cc,
+.leaflet-control {
+	/* Unnecessary Map Text */
+	display: none !important;
+}
+
+div.gm-bundled-control:nth-child(2) {
+	/* Compass Location */
+	left: 0;
+	right: 0;
+}
+
+#mini-map .gmnoprint,
+#result-map .gmnoprint {
+	display: none !important;
+}
+
+#minimapOpenButton {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 10px;
+	width: 40px;
+	height: 40px;
+	background: transparent;
+	color: black;
+	z-index: 9999999999999999;
+	cursor: pointer;
+	border-radius: 20px;
+	background-color: aliceblue;
+}
+
+.flexrow {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.flexcolumn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#menuTip {
+	color: white;
+	text-shadow: black 4px 4px 4px;
+	background-color: rgba(0, 0, 0, 0.5);
+	width: auto;
+	display: inline-block;
+	padding: 1vh;
+	border-radius: 1vh;
+}
+
+.copycodeButton {
+	color: white;
+	background-color: rgb(0, 0, 0, 0.8);
+	padding: 1vh 0.5vw 1vh 0.5vw;
+}
+
+.coolButton {
+	color: white;
+	background-color: rgb(0, 0, 0, 0.8);
+	padding: 0.25vw 1vw 0.25vw 1vw;
+	margin-left: 2vw;
+	margin-bottom: 1vh;
+}
+
+.faq {
+	background-color: #1e1e1e;
+	border: 1px solid #333;
+	margin-bottom: 1vh;
+	border-radius: 1vw;
+}
+
+.faq-question:hover {
+	background-color: #2a2a2a;
+	border-bottom-right-radius: 1vw;
+	border-bottom-left-radius: 1vw;
+}
+
+.faq-answer ul,
+.faq-answer li,
+.faq-answer p {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.arrow {
+	transition: transform 0.3s;
+}
+
+.faq.open .faq-answer {
+	max-height: 100vh;
+	display: block;
+}
+
+.faq.open .faq-question {
+	background-color: #2a2a2a;
+}
+
+.faq.open .faq-question:hover {
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+
+.faq.open .arrow {
+	transform: rotate(180deg);
+}
+
+#matchSharingCodeInput {
+	width: 60vw;
+	height: 5vw;
+	font-size: 2vw;
+	margin-top: 5vw;
+}
+
+#matchSharingPlayButton {
+	background-color: rgb(0, 0, 0, 0.8);
+	color: white;
+	width: 20vw;
+	height: 5vw;
+	margin-top: 5vw;
+	cursor: pointer;
+	font-size: 2vw;
+}
+
+#modaltoggle-button svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (width > 767px) {
+	/* Big Screens */
+	body {
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		overflow: hidden;
+	}
+
+	#title-section {
+		background-image: url("../static/imageswebp/thunder.webp"), url("../static/images/thunder.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		border: 0.2vw solid black;
+		margin-bottom: 0.9dvh;
+		height: 8dvh;
+	}
+
+	.main-menu-text {
+		font-size: min(2dvw, 4dvh);
+		text-align: center;
+		color: white;
+		margin: 0;
+		text-shadow: 0.1vw 0.2vh #b5b5b5;
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+	}
+
+	.main-menu-button {
+		cursor: pointer;
+		width: 8dvh;
+		height: 8dvh;
+		background-image: url("/static/imageswebp/vicinti3.webp"), url("/static/images/vicinti3.png");
+	}
+
+	#title-section a div {
+		background-image: url("/static/imageswebp/vicinti87.webp"), url("/static/images/vicinti87.png");
+		width: 8dvh;
+		height: 8dvh;
+		background-size: contain;
+	}
+
+	#gamemap {
+		width: 100vw;
+		height: 100dvh;
+		position: absolute;
+		z-index: 1;
+		display: none;
+	}
+
+	#mini-map {
+		width: 100%;
+		height: 85%;
+		z-index: 3;
+	}
+
+	#overlay-container {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 20vw;
+		height: 30dvh;
+		z-index: 2;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 3vw;
+		margin-bottom: 4dvh;
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
+		flex-wrap: wrap;
+	}
+
+	#overlay-container.hovered {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 30vw;
+		height: 45dvh;
+		z-index: 3;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 3vw;
+		margin-bottom: 4dvh;
+		border: 1px solid black;
+	}
+
+	#minimapButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 15%;
+	}
+
+	#action-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 75%;
+		height: 100%;
+		font-size: min(1dvw, 2dvh);
+		background-color: #4caf50;
+		color: white;
+		cursor: pointer;
+	}
+
+	#minimapCloseButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		font-size: min(1dvw, 2dvh);
+		background: orangered;
+		color: white;
+		cursor: pointer;
+	}
+
+	#result-map {
+		width: 30vw;
+		height: 40dvh;
+	}
+
+	#result-modal {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		justify-content: center;
+		z-index: 1;
+		width: 60vw;
+		height: 60dvh;
+		margin: 20dvh 0 0 20vw;
+		padding: 1vw;
+		border: 1px solid white;
+		color: white;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		transition: all 0.25s ease-in-out;
+		border-radius: 2.5vw;
+	}
+
+	.finalrow {
+		display: flex;
+		flex-direction: row;
+		width: 20vw;
+		height: 5dvh;
+		margin-left: 4.5vw;
+		margin-top: 6dvh;
+		justify-content: center;
+		text-align: center;
+		font-size: min(1dvw, 2dvh);
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		border: 1px solid black;
+		align-items: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#buttonrow {
+		width: auto;
+		background-color: transparent;
+		font-size: min(0.35dvw, 0.7dvh);
+		z-index: 5;
+		position: absolute;
+		display: none;
+		flex-direction: row;
+		justify-content: flex-start;
+		transition: all 0.25s ease-in-out;
+		pointer-events: all;
+	}
+
+	#izmirclose {
+		width: 4.3dvh;
+		height: 4.3dvh;
+		margin-right: 0.5vw;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20");
+		cursor: pointer;
+		background-size: 100% auto;
+		background-color: rgb(0, 0, 0, 0.8);
+		border-radius: 1vh;
+		margin-top: 1.1dvh;
+		margin-right: 0.5vw;
+		margin-left: 0.5vw;
+	}
+
+	#alarmicon {
+		width: 4.3dvh;
+		height: 4.3dvh;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
+		background-size: 100% auto;
+		background-color: rgb(0, 0, 0, 0.8);
+		margin-top: 1.1dvh;
+		border-top-left-radius: 1vh;
+		border-bottom-left-radius: 1vh;
+	}
+
+	#timer {
+		display: block;
+		width: 20vw;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
+		color: white;
+		font-size: min(1.5dvw, 3dvh);
+		text-align: center;
+		background-color: rgb(0, 0, 0, 0.8);
+		margin-top: 1.1dvh;
+		margin-right: 0.5vw;
+		border-top-right-radius: 1vh;
+		border-bottom-right-radius: 1vh;
+	}
+
+	#modaltoggle-button {
+		display: flex;
+		width: auto;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
+		margin-left: 0.5vw;
+		margin-right: 0.5vw;
+		margin-top: 1.1dvh;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: min(1.25dvw, 2.5dvh);
+		border-radius: 1vh;
+		cursor: pointer;
+		padding: 0 1em 0 1em;
+	}
+
+	/* menu styles */
+
+	#map2 {
+		width: 50vw;
+		height: 90dvh;
+		display: block;
+		border: 1px solid black;
+		position: absolute;
+	}
+
+	#mainMapInfo {
+		width: 50vw;
+		height: 5dvh;
+		background: linear-gradient(0deg, rgb(10, 10, 10, 0.9) 30%, rgb(40, 40, 40, 0.8) 100%);
+		color: white;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		text-align: center;
+		position: absolute;
+		margin-top: 85dvh;
+		z-index: 999991923912391923919239;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#startpage {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#startpagelefthalf {
+		width: 50vw;
+		height: 90dvh;
+		margin-right: 2vw;
+		position: relative;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.menumodal {
+		display: none;
+		flex-direction: column;
+		width: 80vw;
+		height: 80dvh;
+		margin: 10dvh 10vw 10dvh 10vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		position: fixed;
+		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#startpagerighthalf {
+		width: 45vw;
+		height: 90dvh;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid black;
+		background-image: url("../static/imageswebp/izmirguessrlogo.webp"), url("../static/images/izmirguessrlogo.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: relative;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#izmirilcebox {
+		width: 100%;
+		height: 30%;
+		padding: 2.5vh 5% 0 5%;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#izmirilcebox button {
+		font-size: min(1.4dvw, 2.8dvh);
+		padding: 0 0.3vw 0 0.3vw;
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		transition: all 0.25s ease-in-out;
+		background-color: green;
+	}
+
+	.izmirilcebottombuttons {
+		width: 42vw;
+		height: 8dvh;
+		margin-top: 1dvh;
+		border: 1px solid black;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		border-radius: min(0.5vw, 1vh);
+		transition: all 0.25s ease-in-out;
+	}
+
+	#mainmenuCompetitiveChecksAndButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 40%;
+		transition: all 0.25s ease-in-out;
+		padding-bottom: 1vw;
+	}
+
+	#menubuttons {
+		width: 14vw;
+		height: 75%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.1vw;
+		align-items: center;
+		padding: 0 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.izmirayarlar {
+		font-size: min(1dvw, 2dvh);
+		margin-left: 5vw;
+		transform: scale(1.5);
+		margin-right: 2vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#izmirtime {
+		font-size: min(1dvw, 2dvh);
+		transition: all 0.25s ease-in-out;
+	}
+
+	#expandButton {
+		width: auto;
+		max-height: 7vh;
+		margin: auto 0.5vw auto 0;
+		cursor: pointer;
+		transition: 1.5s;
+		overflow: hidden;
+		z-index: 2;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.buttonInsideButton {
+		width: auto;
+		height: 7vh;
+		background-color: rgb(0, 0, 120, 0.8);
+		font-size: 1vw;
+		padding-left: 1vw;
+		padding-right: 1vw;
+		text-align: center;
+		line-height: 7vh;
+		color: white;
+		display: block;
+		border: 1px solid rgb(0, 0, 240);
+	}
+
+	#expandButton.expanded {
+		max-height: 28vh;
+		transition: 1.5s;
+		margin-top: calc(auto);
+		z-index: 9995;
+	}
+
+	.modalTitleRow {
+		width: 100%;
+		height: 4vw;
+		font-size: 3vw;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 3vh;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.modalTitle {
+		width: 76vw;
+		height: 100%;
+		font-weight: bold;
+		padding-left: 4vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.modalCloseButton {
+		width: 4vw;
+		height: 100%;
+		cursor: pointer;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#changeUsernameModalBox {
+		color: white;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menubuttons button {
+		width: calc(100% + 1vw);
+        height: 21%;
+		font-size: 1.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		border-radius: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.blur {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		width: 100%;
+		height: 100%;
+	}
+
+	#selectGameMode,
+	#roundCount {
+		width: auto;
+		height: 4.3dvh;
+		line-height: 4.3dvh;
+		margin: 1.1dvh 0.5vw 0 0;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: min(1.25vw, 2.5dvh);
+		border-radius: 1vh;
+		padding: 0 1em 0 1em;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.modalClose {
+		color: #aaa;
+		float: right;
+		font-size: 3vw;
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#competitiveChecks {
+		width: 30vw;
+		height: 75%;
+		display: flex;
+		flex-direction: column;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		font-size: 1vw;
+		text-align: left;
+		padding: 0 0 2vw 2vw;
+		line-height: 2.3vw;
+		background: rgb(0, 0, 0, 0.4);
+		border: 1px solid black;
+		margin: 0 0 2vw 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menuarabox {
+		width: 43vw;
+		height: 30%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		border: 1px solid black;
+		margin: 1vw;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#miniLeaderboard,
+	#yourStats {
+		width: 50%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background: rgb(0, 0, 0, 0.4);
+		transition: all 0.25s ease-in-out;
+	}
+
+	#gameplayBackground {
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		position: fixed;
+		z-index: 0;
+		transition: all 0.25s ease-in-out;
+		display: none;
+	}
+
+	#backgroundText {
+		position: absolute;
+		width: 20vw;
+		height: 20vh;
+		margin: 40vh 40vw 40vh 40vw;
+		color: white;
+		font-size: 1.5vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#loadingScreen {
+		display: none;
+		position: fixed;
+		width: 100dvw;
+		height: 100dvh;
+		color: white;
+		background: black;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		font-size: 5vw;
+		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalRight,
+	#resultModalLeft {
+		width: 15vw;
+		height: 40dvh;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+		overflow-y: scroll;
+	}
+
+	#resultModalRight {
+		padding-left: 1vw;
+	}
+
+	#resultModalLeft {
+		padding-right: 1vw;
+		direction: rtl;
+	}
+
+	#resultModalTop {
+		display: flex;
+		flex-direction: row;
+		transition: all 0.25s ease-in-out;
+		padding-top: 3vh;
+	}
+
+	#resultModalTop h1 {
+		font-size: 1.3vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalBottom {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 2vw;
+		padding: 2vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalBottom button {
+		padding: 1vh 1vw 1vh 1vw;
+		color: white;
+		background-color: rgb(0, 0, 0, 0.8);
+		transition: all 0.25s ease-in-out;
+	}
+
+	.flexrow select {
+		background-color: black;
+		color: white;
+		padding: 0.25vw;
+		margin-left: 0.5vw;
+		margin-right: 1vw;
+		width: 5vw;
+	}
+
+	#competitiveChecks div {
+		justify-content: unset;
+	}
+
+	#resultModalLeft button {
+		background-color: rgb(0, 0, 0, 0.8);
+		padding: 0 5px 0 5px;
+		border-radius: 5px;
+		color: white;
+		font-size: 0.75vw;
+		margin-bottom: 0.5vh;
+	}
+
+	#mainMapInfo button,
+	#mainMapInfo select {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+	}
+
+	#mainMapInfo p,
+	#mainMapInfo label {
+		color: white;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	select#gameModeSelector {
+		width: 7.5vw;
+	}
+
+	select#roundLimitSelector {
+		width: 3vw;
+	}
+
+	.modalContent {
+		display: flex;
+		flex-direction: row;
+		width: 80vw;
+		height: calc(80dvh - 3vh - 4vw);
+	}
+
+	#enterCode {
+		margin-left: 0;
+		margin-top: 1vh;
+	}
+
+	.modalLeft {
+		width: 80%;
+		height: 100%;
+		padding: 2dvw;
+		overflow-y: auto;
+	}
+
+	.modalRight {
+		width: 20%;
+		height: 100%;
+		padding: 2dvw;
+	}
+
+	.faq-container {
+		width: 60vw;
+		height: calc(80dvh - 7vw);
+		margin: auto;
+		border-radius: 1vw;
+		overflow-y: auto;
+	}
+
+	.faq-question {
+		padding: 1vw;
+		cursor: pointer;
+		font-size: 1vw;
+		font-weight: bold;
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+	}
+
+	.faq-answer {
+		display: none;
+		padding: 1vw;
+		font-size: 1vw;
+		color: #ccc;
+		max-height: 0;
+		border-top: 1px solid #333;
+		transition: max-height 0.5s ease;
+		overflow: hidden;
+	}
+
+    .bmc-btn {
+        /* Coffee Button */
+        border: 1px solid white !important;
+        min-width: 0 !important;
+        height: 7vh !important;
+        border-radius: 2vh !important;
+        font-size: 4vh !important;
+        padding: 0 1vw !important;
+        line-height: unset !important;
+    }
+}
+
+@media (width < 768px) {
+	body {
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#title-section {
+		background-image: url("../static/imageswebp/thunder.webp"), url("../static/images/thunder.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		border: 1px solid black;
+		margin-bottom: 0.2dvw;
+		height: 16dvw;
+	}
+
+	.main-menu-button {
+		cursor: pointer;
+		width: 16dvw;
+		height: 16dvw;
+	}
+
+	#title-section a div {
+		background-image: url("/static/imageswebp/vicinti50.webp"), url("/static/images/vicinti50.png");
+		width: 16dvw;
+		height: 16dvw;
+		background-size: contain;
+	}
+
+	.main-menu-text {
+		width: 100%;
+		font-size: 4dvw;
+		text-align: center;
+		margin-left: 1dvw;
+		margin-right: 1dvw;
+		color: white;
+	}
+
+	#gamemap {
+		width: 100%;
+		height: 65dvh;
+		position: absolute;
+		z-index: 1;
+		display: none;
+	}
+
+	#mini-map {
+		width: 100%;
+		height: 30dvh;
+		z-index: 3;
+	}
+
+	#result-map {
+		width: 100%;
+		height: 35dvh;
+		border: 1px solid black;
+		order: 1;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#result-modal {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		justify-content: center;
+		z-index: 1;
+		width: 80dvw;
+		height: auto;
+		margin: 20dvh 0 0 10vw;
+		padding: 1vw;
+		border: 1px solid white;
+		color: white;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		transition: all 0.25s ease-in-out;
+	}
+
+	#overlay-container {
+		display: none;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 35dvh;
+		z-index: 2;
+		flex-direction: column;
+		align-items: center;
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#overlay-container.hovered {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		align-items: center;
+		width: 100%;
+		height: 35dvh;
+		bottom: 0;
+		right: 0;
+		z-index: 2;
+		border: 1px solid black;
+	}
+
+	#minimapButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		height: 15%;
+	}
+
+	#action-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 75%;
+		height: 100%;
+		font-size: 3dvh;
+		background-color: #4caf50;
+		color: white;
+	}
+
+	#minimapCloseButton {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		font-size: 3dvh;
+		background: orangered;
+		color: white;
+	}
+
+	.modalrow {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		width: 90dvw;
+		height: 5dvh;
+		margin-left: 5vw;
+		margin-top: 2dvh;
+		font-size: 2dvh;
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.finalrow {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		width: 90dvw;
+		height: 5dvh;
+		margin-left: 5dvw;
+		margin-top: 6dvh;
+		font-size: 2dvh;
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#buttonrow {
+		display: none;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: flex-start;
+		position: absolute;
+		width: auto;
+		height: auto;
+		top: 0;
+		margin-top: 1.6dvh;
+		z-index: 5;
+		gap: 1vw;
+		pointer-events: all;
+		background-color: transparent;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#izmirclose {
+		width: 10dvw;
+		height: 10dvw;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M18%206l-12%2012%22%20%2F%3E%20%3Cpath%20d%3D%22M6%206l12%2012%22%20%2F%3E%20%3C%2Fsvg%3E%20");
+		background-size: 100% auto;
+		flex-shrink: 0;
+		order: 1;
+		background-color: rgb(0, 0, 0, 0.8);
+		border-radius: 2dvw;
+        margin-left: 0.5dvw;
+	}
+
+	#alarmicon {
+		width: 10dvw;
+		height: 10dvw;
+		background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23FFFFFF%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20%3E%20%3Cpath%20d%3D%22M12%2013m-7%200a7%207%200%201%200%2014%200a7%207%200%201%200%20-14%200%22%20%2F%3E%20%3Cpath%20d%3D%22M12%2010l0%203l2%200%22%20%2F%3E%20%3Cpath%20d%3D%22M7%204l-2.75%202%22%20%2F%3E%20%3Cpath%20d%3D%22M17%204l2.75%202%22%20%2F%3E%20%3C%2Fsvg%3E%20");
+		background-size: 100% auto;
+		flex-shrink: 0;
+		order: 2;
+		background-color: rgb(0, 0, 0, 0.8);
+		border-top-left-radius: 2dvw;
+		border-bottom-left-radius: 2dvw;
+	}
+
+	#timer {
+		display: flex;
+		text-align: center;
+		width: auto;
+		height: 10dvw;
+		line-height: 10dvw;
+		font-size: 4dvw;
+		color: white;
+		flex-shrink: 0;
+		padding: 0 5px 0 5px;
+		order: 3;
+		background-color: rgb(0, 0, 0, 0.8);
+		margin-left: -1vw;
+		border-top-right-radius: 2dvw;
+		border-bottom-right-radius: 2dvw;
+	}
+
+	#modaltoggle-button {
+		display: flex;
+		text-align: center;
+		width: 10dvw;
+		height: 10dvw;
+		margin: 0 1dvw 0 1dvw;
+		line-height: 10dvw;
+		font-size: 4dvw;
+		border-radius: 2dvw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		align-items: center;
+		justify-content: center;
+		order: 4;
+	}
+
+	.flexrow button {
+		height: 100%;
+	}
+
+	/* styles2.css */
+
+	#map2 {
+		display: block;
+		width: 100%;
+		height: 100dvw;
+		border: 1px solid black;
+	}
+
+	#startpage {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: auto;
+	}
+
+	#startpagelefthalf {
+		width: 100%;
+		height: auto;
+	}
+
+	#mainMapInfo {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		row-gap: 2vw;
+		align-items: center;
+		justify-content: space-evenly;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.menumodal {
+		display: none;
+		position: fixed;
+		width: 100%;
+		height: 80dvh;
+		top: 10dvh;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		flex-direction: column;
+		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
+		transition: all 0.25s ease-in-out;
+        padding: 5vw;
+	}
+
+	#startpagerighthalf {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		height: auto;
+		border: 1px solid black;
+		background-image: url("../static/imageswebp/izmirguessrlogo.webp"), url("../static/images/izmirguessrlogo.jpg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	#izmirilcebox {
+		width: 100%;
+		height: auto;
+		padding: 1vw;
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		transition: all 0.25s ease-in-out;
+		text-align: center;
+	}
+
+	#izmirilcebox button {
+		padding: 0 0.3vw 0 0.3vw;
+		font-size: 5dvw;
+		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+		transition: all 0.25s ease-in-out;
+		background-color: green;
+	}
+
+	#mainmenuCompetitiveChecksAndButtons {
+		display: flex;
+		flex-direction: column;
+		transition: all 0.25s ease-in-out;
+		justify-content: center;
+		padding: 1dvw 1dvw 15dvw 1dvw;
+	}
+
+	#menubuttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: auto;
+		height: auto;
+		-webkit-backdrop-filter: blur(5px);
+		backdrop-filter: blur(5px);
+		transition: all 0.25s ease-in-out;
+		margin-top: 2dvw;
+	}
+
+	.izmirayarlar {
+		display: flex;
+		flex-direction: row;
+		padding: 2vw;
+		margin: 0 10vw 0 1vw;
+		font-size: 4vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#izmirtime {
+		font-size: 3vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#expandButton {
+		width: 40vw;
+		max-height: 8dvw;
+		margin-right: 2dvw;
+		transition: 1.5s;
+		overflow: hidden;
+		z-index: 2;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.buttonInsideButton {
+		display: block;
+		text-align: center;
+		width: auto;
+		height: 8dvw;
+		font-size: 2.2dvw;
+		line-height: 8dvw;
+		background-color: rgb(0, 0, 120, 0.8);
+		border: 1px solid rgb(0, 0, 240);
+		color: white;
+	}
+
+	#expandButton.expanded {
+		max-height: 32dvw;
+		margin-top: 24dvw;
+		transition: 1.5s;
+		z-index: 9995;
+	}
+
+	.modalTitleRow {
+		width: 100%;
+		height: 10vw;
+		font-size: 6vw;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 3vh;
+		align-items: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.modalTitle {
+		width: 90vw;
+		height: 100%;
+		font-weight: bold;
+		padding-left: 4vw;
+		transition: all 0.25s ease-in-out;
+        text-align: center;
+	}
+
+	.modalCloseButton {
+		width: 10vw;
+		height: 100%;
+		cursor: pointer;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#changeUsernameModalBox {
+		color: white;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menubuttons button {
+		width: 100%;
+		font-size: 7.5dvw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		border-radius: 6dvw;
+		margin-top: 2dvw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.blur {
+		-webkit-backdrop-filter: blur(10px);
+		backdrop-filter: blur(10px);
+		width: 100%;
+		height: 100%;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#selectGameMode,
+	#roundCount {
+		height: 10dvw;
+		margin: 0 0.5vw 0 0.5vw;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 4dvw;
+		border-radius: 2dvw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.25s ease-in-out;
+		text-align: center;
+		padding: 0 5px 0 5px;
+	}
+
+	#selectGameMode {
+		width: auto;
+		order: 5;
+	}
+
+	#roundCount {
+		width: auto;
+		order: 6;
+	}
+
+	.modalClose {
+		color: #aaa;
+		float: right;
+		font-size: 3vw;
+		font-weight: bold;
+		cursor: pointer;
+		margin-right: 1vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#competitiveChecks {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		font-size: 3dvw;
+		text-align: center;
+		line-height: 7dvw;
+		background: rgb(0, 0, 0, 0.4);
+		border: 1px solid black;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menuarabox {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		margin: 1vw;
+		font-size: 4dvw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menuaraboxfirst {
+		width: 100%;
+		height: 80%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#miniLeaderboard,
+	#yourStats {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		margin-top: 2dvw;
+		border: 1px solid black;
+		background: rgb(0, 0, 0, 0.4);
+		transition: all 0.25s ease-in-out;
+	}
+
+	#menusettings {
+		width: 100%;
+		height: 20%;
+		border: 1px solid black;
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		padding-left: 1vw;
+		background: rgb(0, 0, 0, 0.4);
+		margin-top: 2dvw;
+		transition: all 0.25s ease-in-out;
+		font-size: 5vw;
+	}
+
+	#gameplayBackground {
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
+		position: fixed;
+		z-index: 0;
+		display: none;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#backgroundText {
+		position: absolute;
+		width: 80dvw;
+		height: 40dvh;
+		margin: 30dvh 10dvw 30dvh 10dvw;
+		color: white;
+		font-size: 10dvw;
+		text-align: center;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#loadingScreen {
+		display: none;
+		position: fixed;
+		width: 100dvw;
+		height: 100dvh;
+		color: white;
+		background: black;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		font-size: 5vw;
+		z-index: 7543666666666666666666666666668345762345782364592873465298376458923756492384562983756289374569823746589237645892364985697;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalRight,
+	#resultModalLeft {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		text-align: center;
+		font-size: 4dvw;
+		border: 1px solid white;
+		transition: all 0.25s ease-in-out;
+		overflow-y: scroll;
+	}
+
+	#resultModalRight {
+		order: 3;
+		height: 24dvw;
+	}
+
+	#resultModalLeft {
+		order: 2;
+		height: 16dvw;
+	}
+
+	#resultModalTop {
+		display: flex;
+		flex-direction: column;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalTop h1 {
+		font-size: 5dvw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalBottom {
+		width: auto;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 2vw;
+		border: 1px solid white;
+		transition: all 0.25s ease-in-out;
+	}
+
+	#resultModalBottom button {
+		padding: 1vh 1vw 1vh 1vw;
+		color: white;
+		background-color: rgb(0, 0, 0, 0.8);
+		transition: all 0.25s ease-in-out;
+	}
+
+	.flexrow select {
+		background-color: black;
+		color: white;
+		padding: 0.2vw;
+		margin-left: 1vw;
+		margin-right: 2vw;
+	}
+
+	#resultModalLeft button {
+		background-color: rgb(0, 0, 0, 0.8);
+		padding: 0 5px 0 5px;
+		border-radius: 10px;
+		color: white;
+		font-size: 4.5vw;
+		margin-top: 1vw;
+	}
+
+	.flexrow p {
+		font-size: 3vw;
+	}
+
+	#mainMapInfo button,
+	#mainMapInfo select {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 4vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+	}
+
+	#mainMapInfo p,
+	#mainMapInfo label {
+		color: white;
+		font-size: 4vw;
+		transition: all 0.25s ease-in-out;
+	}
+
+	select#gameModeSelector {
+		width: 36vw;
+	}
+
+	select#roundLimitSelector {
+		width: 12vw;
+	}
+
+	.modalContent {
+		display: flex;
+		flex-direction: row;
+		height: calc(80dvh - 10vw - 3vh);
+	}
+
+	.modalLeft {
+		width: 65%;
+		height: 100%;
+		padding: 2dvw;
+		overflow-y: auto;
+	}
+
+	.modalRight {
+		width: 35%;
+		height: 100%;
+		padding: 2dvw;
+	}
+
+	#izmirDistrictSelect {
+		width: 80%;
+	}
+
+	.faq-container {
+		width: 100vw;
+		height: calc(80dvh - 10vw - 3vh);
+		margin: auto;
+		border-radius: 1vw;
+		overflow-y: auto;
+	}
+
+	.faq-question {
+		padding: 1vw;
+		cursor: pointer;
+		font-size: 5vw;
+		font-weight: bold;
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-top-left-radius: 1vw;
+		border-top-right-radius: 1vw;
+	}
+
+	.faq-answer {
+		display: none;
+		padding: 1vw;
+		font-size: 4vw;
+		color: #ccc;
+		max-height: 0;
+		border-top: 1px solid #333;
+		transition: max-height 0.5s ease;
+		overflow: hidden;
+	}
+
+    .bmc-btn {
+        /* Coffee Button */
+        border: 1px solid white !important;
+        min-width: 0 !important;
+        height: 7vh !important;
+        border-radius: 2vh !important;
+        font-size: 4vh !important;
+        padding: 0 8vw 0 4vw !important;
+        line-height: unset !important;
+        margin-bottom: 1vh !important;
+    }
+}
