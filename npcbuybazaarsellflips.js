@@ -3,7 +3,7 @@ let WebPSupport = 2;
 let itemsarray = [
 	{
 		name: "Acacia Wood",
-		id: "LOG:2",
+		id: "LOG_2",
 		amount: "640",
 		source: "Lumber Merchant",
 		npc: "5",
