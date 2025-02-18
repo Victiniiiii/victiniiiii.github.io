@@ -341,14 +341,6 @@ let itemsarray = [
 		source: "Mad Redstone Engineer",
 		npc: "4",
 	},
-	{
-		name: "Superboom TNT",
-		id: "SUPERBOOM_TNT",
-		amount: "1280",
-		source: "Walter, Ophelia",
-		npc: "2750",
-		image: "ENCHANTED_TNT",
-	},
 ];
 
 let derpy = false;
