@@ -1694,6 +1694,24 @@ a {
     transform: scaleY(1);
 }
 
+.top-row {
+    grid-column: span 4;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;    
+}
+
+.top-rows-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px 0;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .toggle-line {
 	display: flex;
 	flex-direction: row;

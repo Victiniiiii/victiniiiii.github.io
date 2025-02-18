@@ -27,8 +27,11 @@
 			<div id="settings-bar">Press here to access the bazaar settings.</div>
 			<div id="toggle-container">
 				<div class="top-row">
-					Derpy
-					<div data-id="Derpy" class="toggle-switch"></div>
+					<div class="top-rows-div">
+						Derpy
+						<div data-id="Derpy" class="toggle-switch"></div>
+                        <div id="DerpyText">Off</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -188,6 +191,7 @@
 					toggleSwitch.addEventListener("click", async function () {
 						toggleSwitch.classList.toggle("active");
 						derpy = !derpy;
+                        derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off"; 
 					});
 				}
 

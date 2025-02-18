@@ -1728,7 +1728,7 @@ a {
     padding: 10px 0;
 }
 
-.top-row div {
+.top-rows-div {
     display: flex;
     flex-direction: row;
 }
