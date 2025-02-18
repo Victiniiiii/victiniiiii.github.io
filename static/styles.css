@@ -1731,6 +1731,9 @@ a {
 .top-rows-div {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .toggle-line {
