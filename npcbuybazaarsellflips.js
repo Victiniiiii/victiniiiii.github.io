@@ -353,7 +353,7 @@ let itemsarray = [
 
 let derpy = false;
 let diaz = false;
-let taxRate = "1";
+let taxRate = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
@@ -431,42 +431,45 @@ document.addEventListener("DOMContentLoaded", function () {
 		container.appendChild(row);
 	}
 
-    document.querySelectorAll(".three-way-toggle").forEach(toggle => {
-        toggle.addEventListener("click", function () {
-            if (this.classList.contains("active")) {
-                this.classList.remove("active");
-                this.classList.add("middle");
-                taxRate = "1.125";
-                document.getElementById("TaxRateText").innerText = "%1.125";
-            } else if (this.classList.contains("middle")) {
-                this.classList.remove("middle");
-                taxRate = "1";
-                document.getElementById("TaxRateText").innerText = "%1";
-            } else {
-                this.classList.add("active");
-                taxRate = "1.25";
-                document.getElementById("TaxRateText").innerText = "%1.25";
-            }
-        });
-    });
+	document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+		toggle.addEventListener("click", function () {
+			if (this.classList.contains("active")) {
+				this.classList.remove("active");
+				this.classList.add("middle");
+				taxRate = 1.125;
+				document.getElementById("TaxRateText").innerText = "%1.125";
+			} else if (this.classList.contains("middle")) {
+				this.classList.remove("middle");
+				taxRate = 1;
+				document.getElementById("TaxRateText").innerText = "%1";
+			} else {
+				this.classList.add("active");
+				taxRate = 1.25;
+				document.getElementById("TaxRateText").innerText = "%1.25";
+			}
+            bazaarconnect();
+		});
+	});
 
 	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch, index) {
-        const dataId = toggleSwitch.getAttribute("data-id");
-        if (dataId == "Derpy") {            
-            toggleSwitch.addEventListener("click", async function () {
-                toggleSwitch.classList.toggle("active");
-                derpy = !derpy;
-                derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
-            });
-            return;
-        } else if (dataId == "Diaz") {
-            toggleSwitch.addEventListener("click", async function () {
-                toggleSwitch.classList.toggle("active");
-                diaz = !diaz;
-                diaz ? document.getElementById("DiazText").innerText = "On" : document.getElementById("DiazText").innerText = "Off";
-            });
-            return;
-        }
+		const dataId = toggleSwitch.getAttribute("data-id");
+		if (dataId == "Derpy") {
+			toggleSwitch.addEventListener("click", async function () {
+				toggleSwitch.classList.toggle("active");
+				derpy = !derpy;
+				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
+                bazaarconnect();
+			});
+			return;
+		} else if (dataId == "Diaz") {
+			toggleSwitch.addEventListener("click", async function () {
+				toggleSwitch.classList.toggle("active");
+				diaz = !diaz;
+				diaz ? (document.getElementById("DiazText").innerText = "On") : (document.getElementById("DiazText").innerText = "Off");
+                bazaarconnect();
+			});
+			return;
+		}
 
 		if (toggleStates[index - 2]) {
 			toggleSwitch.classList.add("active");
@@ -513,7 +516,9 @@ async function bazaarconnect() {
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		let price = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] || 0;
-		let profit = (itemsarray[i].amount * (price - itemsarray[i].npc)).toFixed(0);
+        derpy ? price *= 1 - taxRate/25 : price *= 1 - taxRate/100;
+		
+		let profit = diaz ? (itemsarray[i].amount * 10 * (price - itemsarray[i].npc)).toFixed(0) : (itemsarray[i].amount * (price - itemsarray[i].npc)).toFixed(0);
 
 		const box = document.getElementById(`NbBsBox${i}`);
 		box.innerHTML = `${itemsarray[i].name}<br>`;
