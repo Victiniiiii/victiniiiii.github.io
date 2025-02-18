@@ -25,7 +25,12 @@
 		</header>
 		<div id="settings">
 			<div id="settings-bar">Press here to access the bazaar settings.</div>
-			<div id="toggle-container"></div>
+			<div id="toggle-container">
+				<div class="top-row">
+					Derpy
+					<div data-id="Derpy" class="toggle-switch"></div>
+				</div>
+			</div>
 		</div>
 		<div id="divanContainer">
 			<div id="helmet">
@@ -79,6 +84,8 @@
 				toggle: false,
 			},
 		];
+
+		let derpy = false;
 
 		function format(x) {
 			return Number.parseFloat(x)
@@ -176,6 +183,13 @@
 
 			toggleSwitches.forEach((toggleSwitch) => {
 				const dataId = toggleSwitch.getAttribute("data-id");
+
+				if (dataId == "Derpy") {
+					toggleSwitch.addEventListener("click", async function () {
+						toggleSwitch.classList.toggle("active");
+						derpy = !derpy;
+					});
+				}
 
 				let item = itemsarray.find((item) => item.id == dataId);
 
