@@ -210,6 +210,9 @@ let itemsarray = [
     }
 ]
 
+let taxRate = "1";
+let derpy = false;
+
 document.addEventListener("DOMContentLoaded", function () {
     let webptest = new Image(1,1);
     webptest.src = "/static/imageswebp/webpdot.webp";
@@ -287,9 +290,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		container.appendChild(row);
 	}
+    
+    document.querySelectorAll(".three-way-toggle").forEach(toggle => {
+        toggle.addEventListener("click", function () {
+            if (this.classList.contains("active")) {
+                this.classList.remove("active");
+                this.classList.add("middle");
+                taxRate = "1.125";
+                document.getElementById("TaxRateText").innerText = "%1.125";
+            } else if (this.classList.contains("middle")) {
+                this.classList.remove("middle");
+                taxRate = "1";
+                document.getElementById("TaxRateText").innerText = "%1";
+            } else {
+                this.classList.add("active");
+                taxRate = "1.25";
+                document.getElementById("TaxRateText").innerText = "%1.25";
+            }
+        });
+    });
 
 	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch, index) {
-		if (toggleStates[index]) {
+        const dataId = toggleSwitch.getAttribute("data-id");
+        if (dataId == "Derpy") {            
+            toggleSwitch.addEventListener("click", async function () {
+                toggleSwitch.classList.toggle("active");
+                derpy = !derpy;
+                derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
+            });
+            return;
+        }
+		if (toggleStates[index - 1]) {
 			toggleSwitch.classList.add("active");
 		} else {
 			toggleSwitch.classList.remove("active");
@@ -297,7 +328,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		toggleSwitch.addEventListener("click", function () {
 			toggleSwitch.classList.toggle("active");
-			toggleStates[index] = !toggleStates[index];
+			toggleStates[index - 1] = !toggleStates[index - 1];
 			localStorage.setItem("toggleStates", JSON.stringify(toggleStates));
 			bazaarconnect();
 		});

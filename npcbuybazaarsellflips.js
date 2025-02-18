@@ -353,7 +353,7 @@ let itemsarray = [
 
 let derpy = false;
 let diaz = false;
-let taxRate = "1.25";
+let taxRate = "1";
 
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
@@ -455,7 +455,6 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dataId == "Derpy") {            
             toggleSwitch.addEventListener("click", async function () {
                 toggleSwitch.classList.toggle("active");
-                console.log("12");
                 derpy = !derpy;
                 derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
             });
