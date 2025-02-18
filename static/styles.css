@@ -2314,6 +2314,15 @@ a {
     margin-top: 10vh;
 }
 
+
+
+
+
+
+.grayText {
+    color: gray;
+}
+
 #divanContainer {
     width: 80vw;
     height: 60vh;
