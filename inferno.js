@@ -210,8 +210,21 @@ let itemsarray = [
 	},
 ];
 
-let taxRate = 1;
 let derpy = 1;
+let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
+document.getElementById("TaxRateText").innerText = "%" + taxRate;
+document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+	if (taxRate == 1) {
+		toggle.classList.remove("middle");
+		toggle.classList.remove("active");
+	} else if (taxRate == 1.125) {
+		toggle.classList.remove("active");
+		toggle.classList.add("middle");
+	} else if (taxRate == 1.25) {
+		toggle.classList.remove("middle");
+		toggle.classList.add("active");
+	}
+});
 
 document.addEventListener("DOMContentLoaded", function () {
 	let webptest = new Image(1, 1);
@@ -297,16 +310,15 @@ document.addEventListener("DOMContentLoaded", function () {
 				this.classList.remove("active");
 				this.classList.add("middle");
 				taxRate = 1.125;
-				document.getElementById("TaxRateText").innerText = "%1.125";
 			} else if (this.classList.contains("middle")) {
 				this.classList.remove("middle");
 				taxRate = 1;
-				document.getElementById("TaxRateText").innerText = "%1";
 			} else {
 				this.classList.add("active");
 				taxRate = 1.25;
-				document.getElementById("TaxRateText").innerText = "%1.25";
 			}
+			localStorage.setItem("taxRate", taxRate);
+			document.getElementById("TaxRateText").innerText = "%" + taxRate;
 			bazaarconnect();
 		});
 	});

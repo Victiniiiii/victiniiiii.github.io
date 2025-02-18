@@ -353,7 +353,20 @@ let itemsarray = [
 
 let derpy = false;
 let diaz = false;
-let taxRate = 1;
+let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
+document.getElementById("TaxRateText").innerText = "%" + taxRate;
+document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+	if (taxRate == 1) {
+		toggle.classList.remove("middle");
+		toggle.classList.remove("active");
+	} else if (taxRate == 1.125) {
+		toggle.classList.remove("active");
+		toggle.classList.add("middle");
+	} else if (taxRate == 1.25) {
+		toggle.classList.remove("middle");
+		toggle.classList.add("active");
+	}
+});
 
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
@@ -437,17 +450,16 @@ document.addEventListener("DOMContentLoaded", function () {
 				this.classList.remove("active");
 				this.classList.add("middle");
 				taxRate = 1.125;
-				document.getElementById("TaxRateText").innerText = "%1.125";
 			} else if (this.classList.contains("middle")) {
 				this.classList.remove("middle");
 				taxRate = 1;
-				document.getElementById("TaxRateText").innerText = "%1";
 			} else {
 				this.classList.add("active");
 				taxRate = 1.25;
-				document.getElementById("TaxRateText").innerText = "%1.25";
 			}
-            bazaarconnect();
+			localStorage.setItem("taxRate", taxRate);
+			document.getElementById("TaxRateText").innerText = "%" + taxRate;
+			bazaarconnect();
 		});
 	});
 
@@ -458,7 +470,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				toggleSwitch.classList.toggle("active");
 				derpy = !derpy;
 				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
-                bazaarconnect();
+				bazaarconnect();
 			});
 			return;
 		} else if (dataId == "Diaz") {
@@ -466,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				toggleSwitch.classList.toggle("active");
 				diaz = !diaz;
 				diaz ? (document.getElementById("DiazText").innerText = "On") : (document.getElementById("DiazText").innerText = "Off");
-                bazaarconnect();
+				bazaarconnect();
 			});
 			return;
 		}
@@ -516,16 +528,15 @@ async function bazaarconnect() {
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		let price = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] || 0;
-        derpy ? price *= 1 - taxRate/25 : price *= 1 - taxRate/100;
-		
+		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(price.toFixed(0)) + " coins";
+
+		derpy ? (price *= 1 - taxRate / 25) : (price *= 1 - taxRate / 100);
 		let profit = diaz ? (itemsarray[i].amount * 10 * (price - itemsarray[i].npc)).toFixed(0) : (itemsarray[i].amount * (price - itemsarray[i].npc)).toFixed(0);
 
 		const box = document.getElementById(`NbBsBox${i}`);
 		box.innerHTML = `${itemsarray[i].name}<br>`;
 		box.innerHTML += `Profit: ${format(profit)} coins<br>`;
 		box.innerHTML += `Source: ${itemsarray[i].source}<br>`;
-
-		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(price.toFixed(0)) + " coins";
 
 		if (profit > 100000) {
 			box.style.backgroundColor = "#0f6319";
