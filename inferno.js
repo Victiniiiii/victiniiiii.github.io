@@ -1,234 +1,234 @@
 let toggleStates;
 let WebPSupport = 2;
 let itemsarray = [
-    {
-        name: "Enchanted Coal",
-        id: "ENCHANTED_COAL",
-        price: "0"
-    },
-    {
-        name: "Enchanted Sulphur",
-        id: "ENCHANTED_SULPHUR",
-        price: "0"
-    },
-    {
-        name: "Chili Pepper",
-        id: "CHILI_PEPPER",
-        price: "0"
-    },
-    {
-        name: "Capsaicin Eyedrops",
-        id: "CAPSAICIN_EYEDROPS_NO_CHARGES",
-        price: "0"
-    },
-    {
-        name: "Crude Gabagool",
-        id: "CRUDE_GABAGOOL",
-        price: "0"
-    },
-    {
-        name: "Derelict Ashe",
-        id: "DERELICT_ASHE",
-        price: "0"
-    },
-    {
-        name: "Hypergolic Gabagool",
-        id: "HYPERGOLIC_GABAGOOL",
-        price: "0"
-    },
-    {
-        name: "Hypergolic Ionized Ceramics",
-        id: "HYPERGOLIC_IONIZED_CERAMICS",
-        price: "0"
-    },
-    {
-        name: "Gabagool Distillate",
-        id: "CRUDE_GABAGOOL_DISTILLATE",
-        price: "0"
-    },
-    {
-        name: "Blaze Rod Distillate",
-        id: "BLAZE_ROD_DISTILLATE",
-        price: "0"
-    },
-    {
-        name: "Glowstone Distillate",
-        id: "GLOWSTONE_DUST_DISTILLATE",
-        price: "0"
-    },
-    {
-        name: "Magma Cream Distillate",
-        id: "MAGMA_CREAM_DISTILLATE",
-        image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
-        price: "0"
-    },
-    {
-        name: "Nether Wart Distillate",
-        id: "NETHER_STALK_DISTILLATE",
-        image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
-        price: "0"
-    },
-    {
-        name: "Inferno Fuel Block",
-        id: "INFERNO_FUEL_BLOCK",
-        price: "0"
-    },
-    {
-        name: "Entropy Suppressor",
-        id: "ENTROPY_SUPPRESSOR",
-        price: "0"
-    },
-    {
-        name: "Jalapeno Book",
-        id: "JALAPENO_BOOK",
-        price: "0"
-    },
-    {
-        name: "Sulphuric Coal",
-        id: "SULPHURIC_COAL",
-        price: "0"
-    },
-    {
-        name: "Habanero Tactics IV",
-        id: "ENCHANTMENT_ULTIMATE_HABANERO_TACTICS_4",
-        image: "ENCHANTED_BOOK",
-        price: "0"
-    },
-    {
-        name: "Stuffed Chili Pepper",
-        id: "STUFFED_CHILI_PEPPER",
-        price: "0"
-    },
-    {
-        name: "Cayenne IV",
-        id: "ENCHANTMENT_CAYENNE_4",
-        image: "ENCHANTED_BOOK",
-        price: "0"
-    },
-    {
-        name: "Inferno Vertex",
-        id: "INFERNO_VERTEX",
-        price: "0"
-    },
-    {
-        name: "Inferno Apex",
-        id: "INFERNO_APEX",
-        price: "0"
-    },
-    {
-        name: "Reaper Pepper",
-        id: "REAPER_PEPPER",
-        price: "0"
-    },
-    {
-        name: "Re-heated Gummy Polar Bear",
-        id: "REHEATED_GUMMY_POLAR_BEAR",
-        price: "0"
-    },
-    {
-        name: "Enchanted Snow Block",
-        id: "ENCHANTED_SNOW_BLOCK",
-        price: "0"
-    },
-    {
-        name: "Enchanted Slimeball",
-        id: "ENCHANTED_SLIME_BALL",
-        price: "0"
-    },
-    {
-        name: "Kelvin Interter",
-        id: "KELVIN_INVERTER",
-        price: "0"
-    },
-    {
-        name: "Enchanted Paper",
-        id: "ENCHANTED_PAPER",
-        price: "0"
-    },
-    {
-        name: "Wood Singularity",
-        id: "WOOD_SINGULARITY",
-        price: "0"
-    },
-    {
-        name: "Enchanted Iron Block",
-        id: "ENCHANTED_IRON_BLOCK",
-        price: "0"
-    },
-    {
-        name: "Enchanted Brown Mushroom Block",
-        id: "ENCHANTED_HUGE_MUSHROOM_1",
-        price: "0",
-        image: "ENCHANTED_BROWN_MUSHROOM_BLOCK"
-    },
-    {
-        name: "Enchanted Rabbit Hide",
-        id: "ENCHANTED_RABBIT_HIDE",
-        price: "0"
-    },
-    {
-        name: "Volta",
-        id: "VOLTA",
-        price: "0"
-    },
-    {
-        name: "Blaze Rod",
-        id: "BLAZE_ROD",
-        price: "0"
-    },
-    {
-        name: "Glowstone Dust",
-        id: "GLOWSTONE_DUST",
-        price: "0"
-    },
-    {
-        name: "Magma Cream",
-        id: "MAGMA_CREAM",
-        price: "0"
-    },
-    {
-        name: "Nether Wart",
-        id: "NETHER_STALK",
-        image: "NETHER_WART",
-        price: "0"
-    },
-    {
-        name: "Power Crystal",
-        id: "POWER_CRYSTAL",
-        image: "ENCHANTED_NETHER_STAR",
-        price: "0"
-    },
-    {
-        name: "Scorched Power Crystal",
-        id: "SCORCHED_POWER_CRYSTAL",
-        price: "0"
-    },
-    {
-        name: "Molten Powder",
-        id: "MOLTEN_POWDER",
-        price: "0"
-    }
-]
+	{
+		name: "Enchanted Coal",
+		id: "ENCHANTED_COAL",
+		price: "0",
+	},
+	{
+		name: "Enchanted Sulphur",
+		id: "ENCHANTED_SULPHUR",
+		price: "0",
+	},
+	{
+		name: "Chili Pepper",
+		id: "CHILI_PEPPER",
+		price: "0",
+	},
+	{
+		name: "Capsaicin Eyedrops",
+		id: "CAPSAICIN_EYEDROPS_NO_CHARGES",
+		price: "0",
+	},
+	{
+		name: "Crude Gabagool",
+		id: "CRUDE_GABAGOOL",
+		price: "0",
+	},
+	{
+		name: "Derelict Ashe",
+		id: "DERELICT_ASHE",
+		price: "0",
+	},
+	{
+		name: "Hypergolic Gabagool",
+		id: "HYPERGOLIC_GABAGOOL",
+		price: "0",
+	},
+	{
+		name: "Hypergolic Ionized Ceramics",
+		id: "HYPERGOLIC_IONIZED_CERAMICS",
+		price: "0",
+	},
+	{
+		name: "Gabagool Distillate",
+		id: "CRUDE_GABAGOOL_DISTILLATE",
+		price: "0",
+	},
+	{
+		name: "Blaze Rod Distillate",
+		id: "BLAZE_ROD_DISTILLATE",
+		price: "0",
+	},
+	{
+		name: "Glowstone Distillate",
+		id: "GLOWSTONE_DUST_DISTILLATE",
+		price: "0",
+	},
+	{
+		name: "Magma Cream Distillate",
+		id: "MAGMA_CREAM_DISTILLATE",
+		image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
+		price: "0",
+	},
+	{
+		name: "Nether Wart Distillate",
+		id: "NETHER_STALK_DISTILLATE",
+		image: "MAGMA_CREAM_NETHER_WART_DISTILLATE",
+		price: "0",
+	},
+	{
+		name: "Inferno Fuel Block",
+		id: "INFERNO_FUEL_BLOCK",
+		price: "0",
+	},
+	{
+		name: "Entropy Suppressor",
+		id: "ENTROPY_SUPPRESSOR",
+		price: "0",
+	},
+	{
+		name: "Jalapeno Book",
+		id: "JALAPENO_BOOK",
+		price: "0",
+	},
+	{
+		name: "Sulphuric Coal",
+		id: "SULPHURIC_COAL",
+		price: "0",
+	},
+	{
+		name: "Habanero Tactics IV",
+		id: "ENCHANTMENT_ULTIMATE_HABANERO_TACTICS_4",
+		image: "ENCHANTED_BOOK",
+		price: "0",
+	},
+	{
+		name: "Stuffed Chili Pepper",
+		id: "STUFFED_CHILI_PEPPER",
+		price: "0",
+	},
+	{
+		name: "Cayenne IV",
+		id: "ENCHANTMENT_CAYENNE_4",
+		image: "ENCHANTED_BOOK",
+		price: "0",
+	},
+	{
+		name: "Inferno Vertex",
+		id: "INFERNO_VERTEX",
+		price: "0",
+	},
+	{
+		name: "Inferno Apex",
+		id: "INFERNO_APEX",
+		price: "0",
+	},
+	{
+		name: "Reaper Pepper",
+		id: "REAPER_PEPPER",
+		price: "0",
+	},
+	{
+		name: "Re-heated Gummy Polar Bear",
+		id: "REHEATED_GUMMY_POLAR_BEAR",
+		price: "0",
+	},
+	{
+		name: "Enchanted Snow Block",
+		id: "ENCHANTED_SNOW_BLOCK",
+		price: "0",
+	},
+	{
+		name: "Enchanted Slimeball",
+		id: "ENCHANTED_SLIME_BALL",
+		price: "0",
+	},
+	{
+		name: "Kelvin Interter",
+		id: "KELVIN_INVERTER",
+		price: "0",
+	},
+	{
+		name: "Enchanted Paper",
+		id: "ENCHANTED_PAPER",
+		price: "0",
+	},
+	{
+		name: "Wood Singularity",
+		id: "WOOD_SINGULARITY",
+		price: "0",
+	},
+	{
+		name: "Enchanted Iron Block",
+		id: "ENCHANTED_IRON_BLOCK",
+		price: "0",
+	},
+	{
+		name: "Enchanted Brown Mushroom Block",
+		id: "ENCHANTED_HUGE_MUSHROOM_1",
+		price: "0",
+		image: "ENCHANTED_BROWN_MUSHROOM_BLOCK",
+	},
+	{
+		name: "Enchanted Rabbit Hide",
+		id: "ENCHANTED_RABBIT_HIDE",
+		price: "0",
+	},
+	{
+		name: "Volta",
+		id: "VOLTA",
+		price: "0",
+	},
+	{
+		name: "Blaze Rod",
+		id: "BLAZE_ROD",
+		price: "0",
+	},
+	{
+		name: "Glowstone Dust",
+		id: "GLOWSTONE_DUST",
+		price: "0",
+	},
+	{
+		name: "Magma Cream",
+		id: "MAGMA_CREAM",
+		price: "0",
+	},
+	{
+		name: "Nether Wart",
+		id: "NETHER_STALK",
+		image: "NETHER_WART",
+		price: "0",
+	},
+	{
+		name: "Power Crystal",
+		id: "POWER_CRYSTAL",
+		image: "ENCHANTED_NETHER_STAR",
+		price: "0",
+	},
+	{
+		name: "Scorched Power Crystal",
+		id: "SCORCHED_POWER_CRYSTAL",
+		price: "0",
+	},
+	{
+		name: "Molten Powder",
+		id: "MOLTEN_POWDER",
+		price: "0",
+	},
+];
 
 let taxRate = 1;
 let derpy = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
-    let webptest = new Image(1,1);
-    webptest.src = "/static/imageswebp/webpdot.webp";
-    if (webptest.width > 0 && webptest.height > 0) {
-        WebPSupport = 1;
-    } else {
-        WebPSupport = 0;
-    }
+	let webptest = new Image(1, 1);
+	webptest.src = "/static/imageswebp/webpdot.webp";
+	if (webptest.width > 0 && webptest.height > 0) {
+		WebPSupport = 1;
+	} else {
+		WebPSupport = 0;
+	}
 
 	const savedToggleStates = localStorage.getItem("toggleStates");
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
 	} else {
-        toggleStates = Array(39).fill(false);
-        toggleStates[6] = true;
-        toggleStates.fill(true, 14, 24);
+		toggleStates = Array(39).fill(false);
+		toggleStates[6] = true;
+		toggleStates.fill(true, 14, 24);
 	}
 
 	const container = document.getElementById("toggle-container");
@@ -249,13 +249,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		const imagePlaceholder = document.createElement("div");
 		imagePlaceholder.className = "NbBsImage";
 
-        const img = document.createElement("img");
+		const img = document.createElement("img");
 
-        if (WebPSupport == 1) {
-            img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`; 
-        } else {
-            img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`; 
-        }
+		if (WebPSupport == 1) {
+			img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
+		} else {
+			img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
+		}
 
 		imagePlaceholder.appendChild(img);
 
@@ -271,11 +271,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		sellOrderLabel.className = "toggle-label";
 		sellOrderLabel.textContent = "Sell Order";
 
-        const newDivThatIMadeUp = document.createElement("div");
-        newDivThatIMadeUp.className = "inferno-savior";
+		const newDivThatIMadeUp = document.createElement("div");
+		newDivThatIMadeUp.className = "inferno-savior";
 
 		groupDiv.appendChild(imagePlaceholder);
-        groupDiv.appendChild(newDivThatIMadeUp)
+		groupDiv.appendChild(newDivThatIMadeUp);
 		newDivThatIMadeUp.appendChild(instasellLabel);
 		newDivThatIMadeUp.appendChild(toggleSwitch);
 		newDivThatIMadeUp.appendChild(sellOrderLabel);
@@ -290,38 +290,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		container.appendChild(row);
 	}
-    
-    document.querySelectorAll(".three-way-toggle").forEach(toggle => {
-        toggle.addEventListener("click", function () {
-            if (this.classList.contains("active")) {
-                this.classList.remove("active");
-                this.classList.add("middle");
-                taxRate = 1.125;
-                document.getElementById("TaxRateText").innerText = "%1.125";
-            } else if (this.classList.contains("middle")) {
-                this.classList.remove("middle");
-                taxRate = 1;
-                document.getElementById("TaxRateText").innerText = "%1";
-            } else {
-                this.classList.add("active");
-                taxRate = 1.25;
-                document.getElementById("TaxRateText").innerText = "%1.25";
-            }
-            bazaarconnect();
-        });
-    });
+
+	document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+		toggle.addEventListener("click", function () {
+			if (this.classList.contains("active")) {
+				this.classList.remove("active");
+				this.classList.add("middle");
+				taxRate = 1.125;
+				document.getElementById("TaxRateText").innerText = "%1.125";
+			} else if (this.classList.contains("middle")) {
+				this.classList.remove("middle");
+				taxRate = 1;
+				document.getElementById("TaxRateText").innerText = "%1";
+			} else {
+				this.classList.add("active");
+				taxRate = 1.25;
+				document.getElementById("TaxRateText").innerText = "%1.25";
+			}
+			bazaarconnect();
+		});
+	});
 
 	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch, index) {
-        const dataId = toggleSwitch.getAttribute("data-id");
-        if (dataId == "Derpy") {            
-            toggleSwitch.addEventListener("click", async function () {
-                toggleSwitch.classList.toggle("active");
-                derpy == 1 ? derpy = 4 : derpy = 1;
-                derpy == 4? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
-            });
-            bazaarconnect();
-            return;
-        }
+		const dataId = toggleSwitch.getAttribute("data-id");
+		if (dataId == "Derpy") {
+			toggleSwitch.addEventListener("click", async function () {
+				toggleSwitch.classList.toggle("active");
+				derpy == 1 ? (derpy = 4) : (derpy = 1);
+				derpy == 4 ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
+			});
+			bazaarconnect();
+			return;
+		}
 		if (toggleStates[index - 1]) {
 			toggleSwitch.classList.add("active");
 		} else {
@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-	bazaarconnect();    
+	bazaarconnect();
 });
 
 async function bazaarconnect() {
@@ -348,15 +348,15 @@ async function bazaarconnect() {
 	const data = await response.json();
 
 	for (let i = 0; i < itemsarray.length; i++) {
-        itemsarray[i].price = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0)
+		itemsarray[i].price = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"].toFixed(0);
 		document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(itemsarray[i].price) + " coins";
 	}
 
-    recipecalculate();
-    minioncraftingcosts();
-    if (document.getElementById("empty").innerText != "Press the calculate button at the top right to start.") {
-        minionprofits();
-    }
+	recipecalculate();
+	minioncraftingcosts();
+	if (document.getElementById("empty").innerText != "Press the calculate button at the top right to start.") {
+		minionprofits();
+	}
 }
 
 const infernooneminionprofit = document.getElementById("infernooneminionprofit");
@@ -673,9 +673,11 @@ async function minionprofits() {
 	}
 
 	var htmleyedrop = document.getElementById("eyedrops").value;
-	if (checkifitst3 == 1 && htmleyedrop == "yes") {
-		checkifitst3 += 0.3;
+	if (htmleyedrop == "yes") {
 		expenses += parseFloat(eyedropbuy);
+		if (checkifitst3 == 1) {
+			checkifitst3 += 0.3;
+		}
 	}
 
 	var htmlbeacontier = document.getElementById("beaconlevel").value;
@@ -720,11 +722,6 @@ async function minionprofits() {
 
 	var htmlupgrades1 = document.getElementById("upgrades1").value;
 	var htmlupgrades2 = document.getElementById("upgrades2").value;
-	if (htmlupgrades1 == "super-compactor-3000" || htmlupgrades2 == "super-compactor-3000") {
-		compactor = true;
-	} else {
-		compactor = false;
-	}
 	if (htmlupgrades1 == "minion-expander") {
 		extraspeeds += 5;
 	}
@@ -747,7 +744,7 @@ async function minionprofits() {
 		(checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions * parseFloat(apexprice) +
 		(checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions * parseFloat(reaperprice);
 
-    miniondailyprofit = (1 - (taxRate/100*derpy)) * miniondailyprofit;
+	miniondailyprofit = (1 - (taxRate / 100) * derpy) * miniondailyprofit;
 
 	possiblehypergoliccraftingamount = (dailytotalminionactions * htmlminioncount) / 6912;
 	profitfromcraftinghypergolicper = parseFloat(hypergolicgabagoolprice) - 75.25 * parseFloat(enchantedsulphurprice) - 6912 * parseFloat(crudegabagoolprice) - 1204 * parseFloat(enchantedcoalprice);
@@ -776,9 +773,9 @@ async function minionprofits() {
 		infernoafterexpenses.innerHTML = `That will leave you with <span style="color: turquoise; font-weight: bold; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);">${coinsleft} coins</span> after your expenses.`;
 		htmlempty.innerHTML = `&nbsp`;
 		htmlinfernogain.innerHTML = `The items you will get will be:`;
-		infernobasegain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * (1 - specialproduction) * parseFloat(crudegabagoolprice)).toFixed(0))} coins,`;
+		infernobasegain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * (1 - specialproduction) * parseFloat(crudegabagoolprice)).toFixed(0))} coins,`;
 		if (htmlfueltype != "nothing") {
-			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate/100*derpy)) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
+			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate / 100) * derpy) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
 				infernorow2.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
 			} else if (chosenfuel == "Blaze Rod") {
@@ -796,10 +793,10 @@ async function minionprofits() {
 			infernorow4.style.backgroundImage = "url('static/imageswebp/INFERNO_VERTEX.webp'), url('static/images/INFERNO_VERTEX.png')";
 			infernorow5.style.backgroundImage = "url('static/imageswebp/INFERNO_APEX.webp'), url('static/images/INFERNO_APEX.png')";
 			infernorow6.style.backgroundImage = "url('static/imageswebp/REAPER_PEPPER.webp'), url('static/images/REAPER_PEPPER.png')";
-			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
-			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
-			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
-			infernoreapergain.innerHTML = `${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format(((checkifitst3 / 458182) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(reaperprice)).toFixed(0))} coins,`;
+			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
+			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
+			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
+			infernoreapergain.innerHTML = `${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format(((checkifitst3 / 458182) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(reaperprice)).toFixed(0))} coins,`;
 		}
 	}
 }
@@ -812,17 +809,17 @@ async function minioncraftingcosts() {
 	const blazecrafting1 = parseFloat(itemsarray[33].price) * 80;
 
 	tiercraftingitems = [
-		(derelictasheprice * 80 + blazecrafting1),
-		(derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 8 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 24 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 56 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 120 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 248 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 504 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 760 + vertexprice * 16 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 1016 + vertexprice * 64 + derelictasheprice * 400 + blazecrafting1),
-		(moltenpowderprice * 1272 + vertexprice * 112 + apexprice + derelictasheprice * 400 + blazecrafting1),
+		derelictasheprice * 80 + blazecrafting1,
+		derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 8 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 24 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 56 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 120 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 248 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 504 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 760 + vertexprice * 16 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 1016 + vertexprice * 64 + derelictasheprice * 400 + blazecrafting1,
+		moltenpowderprice * 1272 + vertexprice * 112 + apexprice + derelictasheprice * 400 + blazecrafting1,
 	];
 
 	tiercraftingitemsderelictashes = [80, 400, 400, 400, 400, 400, 400, 400, 400, 400, 400];
@@ -890,3 +887,11 @@ function format(x) {
 		.toString()
 		.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+
+document.querySelectorAll(".infernoprofitbox select, .infernoprofitbox input").forEach((select) => {
+	select.addEventListener("change", function () {
+		if (document.getElementById("empty").innerText.trim() !== "Press the calculate button at the top right to start.") {
+			minionprofits();
+		}
+	});
+});
