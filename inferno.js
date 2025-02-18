@@ -210,8 +210,8 @@ let itemsarray = [
     }
 ]
 
-let taxRate = "1";
-let derpy = false;
+let taxRate = 1;
+let derpy = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
     let webptest = new Image(1,1);
@@ -296,17 +296,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.classList.contains("active")) {
                 this.classList.remove("active");
                 this.classList.add("middle");
-                taxRate = "1.125";
+                taxRate = 1.125;
                 document.getElementById("TaxRateText").innerText = "%1.125";
             } else if (this.classList.contains("middle")) {
                 this.classList.remove("middle");
-                taxRate = "1";
+                taxRate = 1;
                 document.getElementById("TaxRateText").innerText = "%1";
             } else {
                 this.classList.add("active");
-                taxRate = "1.25";
+                taxRate = 1.25;
                 document.getElementById("TaxRateText").innerText = "%1.25";
             }
+            bazaarconnect();
         });
     });
 
@@ -315,9 +316,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (dataId == "Derpy") {            
             toggleSwitch.addEventListener("click", async function () {
                 toggleSwitch.classList.toggle("active");
-                derpy = !derpy;
-                derpy ? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
+                derpy == 1 ? derpy = 4 : derpy = 1;
+                derpy == 4? document.getElementById("DerpyText").innerText = "On" : document.getElementById("DerpyText").innerText = "Off";                
             });
+            bazaarconnect();
             return;
         }
 		if (toggleStates[index - 1]) {
@@ -352,6 +354,9 @@ async function bazaarconnect() {
 
     recipecalculate();
     minioncraftingcosts();
+    if (document.getElementById("empty").innerText != "Press the calculate button at the top right to start.") {
+        minionprofits();
+    }
 }
 
 const infernooneminionprofit = document.getElementById("infernooneminionprofit");
@@ -742,6 +747,8 @@ async function minionprofits() {
 		(checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions * parseFloat(apexprice) +
 		(checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions * parseFloat(reaperprice);
 
+    miniondailyprofit = (1 - (taxRate/100*derpy)) * miniondailyprofit;
+
 	possiblehypergoliccraftingamount = (dailytotalminionactions * htmlminioncount) / 6912;
 	profitfromcraftinghypergolicper = parseFloat(hypergolicgabagoolprice) - 75.25 * parseFloat(enchantedsulphurprice) - 6912 * parseFloat(crudegabagoolprice) - 1204 * parseFloat(enchantedcoalprice);
 	profitfromcraftinghypergolic = possiblehypergoliccraftingamount * profitfromcraftinghypergolicper;
@@ -769,9 +776,9 @@ async function minionprofits() {
 		infernoafterexpenses.innerHTML = `That will leave you with <span style="color: turquoise; font-weight: bold; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);">${coinsleft} coins</span> after your expenses.`;
 		htmlempty.innerHTML = `&nbsp`;
 		htmlinfernogain.innerHTML = `The items you will get will be:`;
-		infernobasegain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction) * parseFloat(crudegabagoolprice)).toFixed(0))} coins,`;
+		infernobasegain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * (1 - specialproduction) * parseFloat(crudegabagoolprice)).toFixed(0))} coins,`;
 		if (htmlfueltype != "nothing") {
-			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * specialproduction * specialfueloutput).toFixed(0))} coins,`;
+			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate/100*derpy)) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
 				infernorow2.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
 			} else if (chosenfuel == "Blaze Rod") {
@@ -783,17 +790,16 @@ async function minionprofits() {
 			} else if (chosenfuel == "Glowstone Dust") {
 				infernorow2.style.backgroundImage = "url('static/imageswebp/GLOWSTONE_DUST.webp'), url('static/images/GLOWSTONE_DUST.png')";
 			}
-			console.log(chosenfuel);
 		}
 		if (checkifitst3 == 1 || checkifitst3 == 1.3) {
 			infernorow3.style.backgroundImage = "url('static/imageswebp/CHILI_PEPPER.webp'), url('static/images/CHILI_PEPPER.png')";
 			infernorow4.style.backgroundImage = "url('static/imageswebp/INFERNO_VERTEX.webp'), url('static/images/INFERNO_VERTEX.png')";
 			infernorow5.style.backgroundImage = "url('static/imageswebp/INFERNO_APEX.webp'), url('static/images/INFERNO_APEX.png')";
 			infernorow6.style.backgroundImage = "url('static/imageswebp/REAPER_PEPPER.webp'), url('static/images/REAPER_PEPPER.png')";
-			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
-			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
-			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
-			infernoreapergain.innerHTML = `${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions * parseFloat(reaperprice)).toFixed(0))} coins,`;
+			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
+			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
+			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
+			infernoreapergain.innerHTML = `${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format(((checkifitst3 / 458182) * htmlminioncount * (1 - (taxRate/100*derpy)) * dailytotalminionactions * parseFloat(reaperprice)).toFixed(0))} coins,`;
 		}
 	}
 }
