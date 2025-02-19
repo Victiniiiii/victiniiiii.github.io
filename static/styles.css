@@ -1885,39 +1885,28 @@ a:active, a:focus {
     margin-top: 10vh;
 }
 
-.infernoprofittitle {
-	width: 80vw;
-	height: 5vh;
+#infernoprofittitleboxx {
+    background-color: rgb(0,100,200,0.6);
+	color: white;
+	font-size: 1.5vw;
+	font-weight: bolder;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 1vw;
-	box-sizing: border-box;
-	border: 0.1vw solid white;
-	color: white;
+	border: 1px solid white;
 }
 
-.infernoprofittitletext {
-	width: 60vw;
-	height: 5vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.infernoprofitcalculatebutton {
-	width: 20vw;
-	height: 5vh;
-	background-color: #397d24;
+#infernoprofitcalculatebutton {
+	background-color: rgb(0,200,100,0.6);
 	color: white;
-	font-size: 1vw;
-	font-weight: bold;
+	font-size: 1.5vw;
+	font-weight: bolder;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	box-sizing: border-box;
-	border: 0.1vw solid white;
+	border: 1px solid white;
 	cursor: pointer;
+    box-shadow: 4px 4px 16px greenyellow;
 }
 
 .infernoprofitrow {
@@ -1946,7 +1935,9 @@ a:active, a:focus {
 
 #minioncount,
 #miniontier,
-#infusion {
+#infusion,
+#freewill,
+#postcard {
 	font-size: 1.5vw;
 	margin-left: 1vw;
 	width: 5vw;

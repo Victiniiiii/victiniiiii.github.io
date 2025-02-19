@@ -732,6 +732,12 @@ async function minionprofits() {
 		extraspeeds += 0;
 	}
 
+    let freewillValue = document.getElementById("freewill").value;
+    let postcardValue = document.getElementById("postcard").value;
+
+    freewillValue == "yes" ? extraspeeds += 10 : extraspeeds += 0;
+    postcardValue == "yes" ? extraspeeds += 5 : extraspeeds += 0;
+
 	var htmlupgrades1 = document.getElementById("upgrades1").value;
 	var htmlupgrades2 = document.getElementById("upgrades2").value;
 	if (htmlupgrades1 == "minion-expander") {
