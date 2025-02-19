@@ -1036,8 +1036,8 @@
 					font-size: 5vw;
 					margin: auto;
 					border: 1px solid #000;
-                    border-top-left-radius: 8px;
-                    border-bottom-left-radius: 8px;
+					border-top-left-radius: 8px;
+					border-bottom-left-radius: 8px;
 					-webkit-backdrop-filter: blur(5px);
 					backdrop-filter: blur(5px);
 					background-color: rgba(255, 255, 255, 0.5);
@@ -1176,7 +1176,7 @@
 			}
 		</style>
 		<script>
-            let lastDonem = "STAT22";
+			let lastDonem = "STAT22";
 			function switchMode(mode) {
 				var rightrectangle = document.querySelector(".rightrectangle");
 				var middleRectangle = document.querySelector(".middleRectangle");
@@ -1282,7 +1282,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem1Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem1Mode.innerHTML = getSemesterContent(1);
 				} else if (mode === "DONEM2") {
 					stat22Mode.style.display = "block";
@@ -1294,7 +1294,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem2Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem2Mode.innerHTML = getSemesterContent(2);
 				} else if (mode === "DONEM3") {
 					stat22Mode.style.display = "block";
@@ -1306,7 +1306,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem3Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem3Mode.innerHTML = getSemesterContent(3);
 				} else if (mode === "DONEM4") {
 					stat22Mode.style.display = "block";
@@ -1318,7 +1318,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem4Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem4Mode.innerHTML = getSemesterContent(4);
 				} else if (mode === "DONEM5") {
 					stat22Mode.style.display = "block";
@@ -1330,7 +1330,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem5Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem5Mode.innerHTML = getSemesterContent(5);
 				} else if (mode === "DONEM6") {
 					stat22Mode.style.display = "block";
@@ -1342,7 +1342,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem6Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem6Mode.innerHTML = getSemesterContent(6);
 				} else if (mode === "DONEM7") {
 					stat22Mode.style.display = "block";
@@ -1354,7 +1354,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem7Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem7Mode.innerHTML = getSemesterContent(7);
 				} else if (mode === "DONEM8") {
 					stat22Mode.style.display = "block";
@@ -1366,7 +1366,7 @@
 					rightrectangle.style.zIndex = "2";
 					donem8Mode.style.zIndex = "1";
 					stat22Mode.style.zIndex = "0";
-                    lastDonem = mode;
+					lastDonem = mode;
 					donem8Mode.innerHTML = getSemesterContent(8);
 				}
 
@@ -1982,7 +1982,7 @@
 				calculateGPA();
 			}
 
-			let secmeliDersler1 = [
+			const secmeliDersler1 = [
 				"KUR'ÂN OKUMA VE ANLAMA I",
 				"MESNEVİ OKUMALARI",
 				"FARSÇA I",
@@ -2081,7 +2081,86 @@
 				"HAVZA HİDROBİYOLOJİSİ VE SEDİMANTASYON",
 			];
 
-			let secmelidersler2 = [];
+			const secmeliDersler2 = [
+				"YEREL VE SÖZLÜ TARİH ARAŞTIRMALARI",
+				"BİYOTEKNOLOJİ",
+				"ELEKTRİK TESİSATLARINDA KORUMA VE GÜVENLİK",
+				"DİN VE SANAT",
+				"DİNLER VE KADIN",
+				"FARÇA II",
+				"KUR'AN OKUMA VE ANLAMA II",
+				"HZ. PEYGAMBERİN HAYATININ ÇAĞDAŞ YORUMU",
+				"TÜRK TASAVVUF TARİHİ II",
+				"SAĞLIKLI DİŞLER SAĞLIKLI BİREYLER",
+				"İLETİŞİM VE MÜZİK II",
+				"SANAT MÜZİK VE RİTİM",
+				"TEMEL MÜZİK TERMİNOLOJİSİ II",
+				"TÜRK MÜZİKİ SANATI II",
+				"TÜRK SANAT MÜZİĞİ REPERTUVARI II",
+				"TOPLU SES EĞİTİMİ VE KORO UYGULAMALARI II",
+				"TÜRK MÜZİĞİ",
+				"ÇEVRE BİLİNCİ",
+				"KENTLİLİK BİLİNCİ VE İZMİR TARİHİ",
+				"YAŞAMA SANATI",
+				"MATEMATİKSEL DÜŞÜNME",
+				"MODERN FİZİĞE GİRİŞ",
+				"TEMEL ASTRONOMİ",
+				"TEKNOLOJİK İLERLEMELERDE FİZİK YASALARININ ÖNEMİ",
+				"ÇEVRE TEKNOLOJİSİ",
+				"ROCK MÜZİK TARİHİ",
+				"HASTA GÜVENLİĞİ VE EKİP KAYNAK YÖNETİMİ",
+				"ÜREME SAĞLIĞINDA TEMEL KONU VE KAVRAMLAR",
+				"EKOLOJİK İKTİSAT",
+				"HUKUK BAKIMINDAN DEMOKRASİ VE İNSAN HAKLARI",
+				"KÜRESEL TOPLUMDA KADIN",
+				"RİSK YÖNETİMİ",
+				"DİJİTAL OKURYAZARLIK",
+				"GİRİŞİMCİLİKTE TASARIM ODAKLI DÜŞÜNME",
+				"AKILLI TARIM",
+				"HOBİ BAHÇELERİNDE BİTKİ SAĞLIĞI",
+				"TIBBİ VE AROMATİK BİTKİ YETİŞTİRİCİLİĞİNİN TEMEL İLKELERİ",
+				"ÇİM SPOR ALANLARI",
+				"GIDA GÜVENLİĞİ",
+				"ANTİK YUNAN VE ROMA UYGARLIKLARI",
+				"ANTİK ÖN ASYA UYGARLIKLARI",
+				"BİLİM KURGU",
+				"EDEBİYAT VE DOĞA",
+				"KÜLTÜR SOSYOLOJİSİ",
+				"YUNAN VE ROMA MİTOLOJİSİ",
+				"ROMA DÜNYASI",
+				"İNSAN DAVRANIŞLARINI ANLAMAK",
+				"ÇOCUK KORUMA SİSTEMİ",
+				"MEDYA OKUR YAZARLIĞI",
+				"DÜŞÜK KODLU WEB VE MOBİL UYGULAMA GELİŞTİRME",
+				"EĞİTİMDE SOSYAL MEDYA VE WEB ARAÇLARI",
+				"OSMANLI TÜRKÇESİ",
+				"GIDA GÜVENLİĞİ",
+				"MİKROALGELERİN KULLANIM ALANLARI",
+				"ALGORİTMA VE VERİ YAPILARI",
+				"İNSAN KAYNAKLARI YÖNETİMİ",
+				"FUTBOL HAKEMLİĞİ",
+				"YÜZME",
+				"DÜNYA MUTFAKLARINDA SU ÜRÜNLERİ VE PİŞİRME TEKNİKLERİNİN ETKİSİ",
+				"DENİZDE CANLI KALABİLME",
+				"SU ÜRÜNLERİ İŞLETMECİLİĞİ",
+				"TIPTA YAPAY ZEKA KULLANIMI",
+				"GİRİŞİMCİLİKTE GÜNCEL KONULAR",
+				"GİRİŞİMCİLİK VE İŞ PLANI HAZIRLAMA",
+				"GIDA VE TARIMSAL ÜRÜN ATIK YÖNETİMİ",
+				"21. YÜZYIL İŞ DÜNYA YETKİNLİKLERİ",
+				"WEB TASARIMI",
+				"AŞI BİLİMİ VE TEKNOLOJİLERİ",
+				"ÇEVRE KİMYASI",
+				"GIDA GÜVENLİĞİ (MİKROBİYOLOJİ AĞIRLIKLI)",
+				"GÜNLÜK HAYATIMIZDAKİ KİMYASAL ÜRÜNLER",
+				"SOSYAL MEDYA",
+				"AUTEUR SİNEMASI",
+				"SEMİYOLOJİ",
+				"KİŞİSEL İMAJ YÖNETİMİ",
+				"REKLAMDA HEDEF KİTLE",
+				"MALZEME BİLGİSİ",
+				"ÜRÜN TASARIMI VE ÜRETİMİ",
+			];
 
 			function extractAndUpdateLessons() {
 				setAllSelectsTo("--");
@@ -2099,6 +2178,13 @@
 					})
 					.filter((item) => item.name && item.grade);
 				lessons = lessons.filter((item) => item.name !== "Kredi | akts" && item.name !== "HAZIRLIK SINIFI (Y)");
+				lessons.forEach((lesson) => {
+					if (secmeliDersler1.includes(lesson.name)) {
+						lesson.name = "SEÇMELİ - 1";
+					} else if (secmeliDersler2.includes(lesson.name)) {
+						lesson.name = "SEÇMELİ - 2";
+					}
+				});
 				const uniqueLessons = lessons.reduce((acc, lesson) => {
 					acc[lesson.name] = lesson;
 					return acc;
@@ -2112,19 +2198,14 @@
 					const spanText = span.textContent;
 					const match = spanText.match(/^\(\d+\)\s*(.*?)\s*:/);
 					if (match) {
-						const spanLessonName = match[1].trim();
+						let spanLessonName = match[1].trim();
 						lessons.forEach((lesson) => {
-							if (spanLessonName === lesson.name) {
+                            console.log(spanLessonName);
+							if (spanLessonName === lesson.name) {                                
 								const option = select.querySelector(`option[value="${lesson.grade}"]`);
 								if (option) {
 									select.value = lesson.grade;
 									select.dispatchEvent(new Event("change", { bubbles: true }));
-								}
-								if (typeof secmeliDersler1 !== "undefined" && secmeliDersler1.includes(lesson.name)) {
-									span.textContent = "SEÇMELİ - 1:";
-								}
-								if (typeof secmeliDersler2 !== "undefined" && secmeliDersler2.includes(lesson.name)) {
-									span.textContent = "SEÇMELİ - 2:";
 								}
 							}
 						});
