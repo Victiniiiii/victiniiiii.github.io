@@ -442,7 +442,7 @@ async function recipecalculate() {
 	cayennerecipe = Math.round(cayennerecipe).toLocaleString();
 	cayennecraft.innerHTML = `Crafting Cayenne IV Book costs ${cayennerecipe} coins and buying it costs ${cayenne4price} coins.`;
 
-	habanerorecipe = parseFloat(stuffedchilipepperprice) * 32 + parseFloat(enchantedbrownmushroomblockprice) * 16 + parseFloat(enchantedrabbithideprice) * 16 + parseFloat(voltaprice) * 8;
+	habanerorecipe = parseFloat(stuffedchilipepperprice) * 4 + parseFloat(enchantedbrownmushroomblockprice) * 128 + parseFloat(enchantedrabbithideprice) * 16 + parseFloat(voltaprice) * 4;
 	habanerorecipe = Math.round(habanerorecipe).toLocaleString();
 	habanerotactics4price = Math.round(habanerotactics4price).toLocaleString();
 	habanerocraft.innerHTML = `Crafting Habanero Tactics IV Book costs ${habanerorecipe} coins and buying it costs ${habanerotactics4price} coins.`;
