@@ -2086,14 +2086,16 @@ a:active, a:focus {
 	margin-bottom: 5vh;
 	backdrop-filter: blur(25px);
 	-webkit-backdrop-filter: blur(25px);
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	gap: 1rem;
+    width: 80vw;
 }
 
 .infernominioncraftingtier {
-	width: 40vw;
+	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: row;
