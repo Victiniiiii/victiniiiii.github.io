@@ -892,6 +892,10 @@ async function minioncraftingcosts() {
 			divElement.innerHTML = `The total cost is: ${format(tiercraftingitems[i - 1])} coins.`;
 		}
 	}
+
+    for (let i = 2; i <= 11; i++) {
+        document.getElementById(`infernoMinionUpgradeCosts${i}`).innerHTML = `The cost for upgrading is: ${format(tiercraftingitems[i - 1] - tiercraftingitems[i - 2])} coins.`;
+    }
 }
 
 function format(x) {
