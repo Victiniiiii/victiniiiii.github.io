@@ -18,7 +18,15 @@ body {
 }
 
 a {
+	color: inherit;
 	text-decoration: none;
+	outline: none;
+	user-select: none;
+}
+
+a:active, a:focus {
+    color: inherit;
+    outline: none;
 }
 
 #title-section {
