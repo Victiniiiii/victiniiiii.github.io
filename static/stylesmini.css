@@ -1961,6 +1961,7 @@ a:active, a:focus {
 	font-size: 2vw;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 2px black;
 }
 
 #infernodroprates {
@@ -2091,19 +2092,29 @@ a:active, a:focus {
 }
 
 #infernoinfotitle {
-	font-size: 3vh;
+	font-size: 5.5vw;
 	margin-bottom: 5vh;
+    width: 100%;
+    font-weight: bolder;
 }
 
 .infernoinfoquestion {
 	font-weight: bold;
-	font-size: 2vh;
-	margin-bottom: 0.15vh;
+	font-size: 1.9vh;
+	margin-bottom: 0.5vh;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
 }
 
 .infernoinfoanswer {
 	font-size: 1.6vh;
-	margin-bottom: 2vh;
+	margin-bottom: 3vh;
+    margin-top: 0.5vh;
+    width: 100%;
+    text-align: left;
 }
 
 .toggleitemnamerow {
