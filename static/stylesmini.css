@@ -1767,6 +1767,38 @@ a:active, a:focus {
 	background-color: green;
 }
 
+.three-way-toggle {
+    position: relative;
+    width: 18vw; 
+    height: 6vw; 
+    background-color: #ccc;
+    border-radius: 3vw;
+    cursor: pointer;
+    margin: 0 2.5vw;
+}
+
+.three-way-toggle::before {
+    content: "";
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+    width: 5vw;
+    height: 5vw;
+    background-color: red;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.three-way-toggle.middle::before {
+    left: 6.5vw;
+    background-color: yellow;
+}
+
+.three-way-toggle.active::before {
+    left: 12.5vw;
+    background-color: green;
+}
+
 .toggle-group {
 	display: flex;
 	align-items: center;
