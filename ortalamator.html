@@ -13,6 +13,9 @@
 		<meta name="twitter:description" content="Ortalama hesaplamanın daha kolay bir yolu olmamıştı..." />
 		<meta name="twitter:image" content="https://victiniiiii.github.io/static/images/ortalamator512.png" />
 		<meta name="twitter:url" content="https://victiniiiii.github.io/ortalamator" />
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
 		<title>Ortalamatör</title>
 		<link rel="icon" href="static/images/vic32.png" type="image/png" />
 		<link rel="manifest" href="/ortalamatormanifest.json" />
@@ -2200,8 +2203,8 @@
 					if (match) {
 						let spanLessonName = match[1].trim();
 						lessons.forEach((lesson) => {
-                            console.log(spanLessonName);
-							if (spanLessonName === lesson.name) {                                
+							console.log(spanLessonName);
+							if (spanLessonName === lesson.name) {
 								const option = select.querySelector(`option[value="${lesson.grade}"]`);
 								if (option) {
 									select.value = lesson.grade;
