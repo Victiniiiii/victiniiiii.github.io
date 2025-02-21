@@ -330,6 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				toggleSwitch.classList.toggle("active");
 				derpy == 1 ? (derpy = 4) : (derpy = 1);
 				derpy == 4 ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
+                bazaarconnect();
 			});
 			bazaarconnect();
 			return;
@@ -755,6 +756,7 @@ async function minionprofits() {
 
 	let miniondailyprofit;
 	let dailytotalminionactions = 86400 / 2 / (minionwaitingtime / fuelmultiplier / ((100 + extraspeeds) / 100)); // this many actions per day
+    if (derpy == 4) {dailytotalminionactions *= 2}
 	miniondailyprofit =
 		htmlminioncount * dailytotalminionactions * ((1 - specialproduction) * parseFloat(crudegabagoolprice) + specialproduction * specialfueloutput) +
 		(checkifitst3 / 136) * htmlminioncount * dailytotalminionactions * parseFloat(chilipepperprice) +
