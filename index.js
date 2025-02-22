@@ -4,6 +4,32 @@ if (window.location.hash) {
 	document.getElementById(window.location.hash.slice(1)).click();
 }
 
+let modal = document.getElementById("warningModal");
+let proceedBtn = document.getElementById("proceedBtn");
+let cancelBtn = document.getElementById("cancelBtn");
+let targetLink = null;
+
+document.querySelectorAll("a").forEach(function (anchor) {
+	if (anchor.hostname !== window.location.hostname) {
+		anchor.addEventListener("click", function (event) {
+			event.preventDefault();
+			targetLink = anchor.href;
+			modal.style.display = "flex";
+		});
+	}
+});
+
+proceedBtn.addEventListener("click", function () {
+	if (targetLink) {
+		window.open(targetLink, "_blank");
+	}
+	modal.style.display = "none";
+});
+
+cancelBtn.addEventListener("click", function () {
+	modal.style.display = "none";
+});
+
 function switchtab(clicked) {
 	const generaltab = document.getElementById("mainmenugeneralprojects");
 	const skyblocktab = document.getElementById("mainmenuskyblockprojects");
@@ -19,9 +45,9 @@ function switchtab(clicked) {
 }
 
 document.querySelectorAll(".projectname").forEach(function (name) {
-    name.addEventListener("click", function () {
-        name.parentElement.classList.toggle("expanded");
-    });
+	name.addEventListener("click", function () {
+		name.parentElement.classList.toggle("expanded");
+	});
 });
 
 document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
