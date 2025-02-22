@@ -133,6 +133,20 @@
 			}
 		}
 
+        function substractTaxes(input) {
+            let taxes = 1200; // 2 Days of auctioning
+            if (input < 10000000) {
+                taxes += input/100;
+            } else if (input < 100000000) {
+                taxes += input/100*3;
+            } else {
+                taxes += input/100*3.5;
+            }
+
+            if ((input - taxes) < 10000000 && input < 1200000) return 1000000;
+            return input - taxes;
+        }
+
 		function filterValues(arr) {
 			if (arr.length === 0) {
 				return arr;
