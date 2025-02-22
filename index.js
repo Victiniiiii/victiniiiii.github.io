@@ -19,6 +19,13 @@ document.querySelectorAll("a").forEach(function (anchor) {
 	}
 });
 
+document.addEventListener("click", function (event) {
+	if (!document.getElementById("warningModal").contains(event.target) &&
+		!document.querySelector(".mainmenuproject")?.contains(event.target)) {
+		document.getElementById("cancelBtn").click();
+	}
+});
+
 proceedBtn.addEventListener("click", function () {
 	if (targetLink) {
 		window.open(targetLink, "_blank");
