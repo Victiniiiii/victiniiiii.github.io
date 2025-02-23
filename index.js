@@ -9,20 +9,17 @@ let proceedBtn = document.getElementById("proceedBtn");
 let cancelBtn = document.getElementById("cancelBtn");
 let targetLink = null;
 
-document.querySelectorAll("a").forEach(function (anchor) {
-	if (anchor.hostname !== window.location.hostname) {
-		anchor.addEventListener("click", function (event) {
-			event.preventDefault();
-			targetLink = anchor.href;
-			modal.style.display = "flex";
-		});
-	}
-});
-
 document.addEventListener("click", function (event) {
-	if (!document.getElementById("warningModal").contains(event.target) &&
-		!document.querySelector(".mainmenuproject")?.contains(event.target)) {
-		document.getElementById("cancelBtn").click();
+    let anchor = event.target.closest("a");
+	if (anchor && anchor.hostname !== window.location.hostname) {
+		event.preventDefault();
+		targetLink = anchor.href;
+		modal.style.display = "flex";
+		return;
+	}
+
+	if (!modal.contains(event.target) && !event.target.closest("a") && !event.target.closest("img")) {
+		cancelBtn.click();
 	}
 });
 
