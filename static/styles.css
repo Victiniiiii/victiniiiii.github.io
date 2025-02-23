@@ -2416,10 +2416,6 @@ a:active, a:focus {
 
 
 
-.grayText {
-    color: gray;
-}
-
 #divanContainer {
     width: 80vw;
     height: 60vh;
@@ -2432,7 +2428,7 @@ a:active, a:focus {
     padding-left: 10px;
 }
 
-#divanContainer div {
+.armor {
     display: flex;
     flex-direction: row;
     height: 25%;
@@ -2447,7 +2443,23 @@ a:active, a:focus {
     width: 100%;
 }
 
-.armor {
+.armorPhoto {
     width: 15vh;
     height: 15vh;
+}
+
+.divanBox {
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 3.75vh);
+    justify-content: center;
+    align-items: center;
+}
+
+.divanBoxBox {
+    width: calc(100% - 15vh);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

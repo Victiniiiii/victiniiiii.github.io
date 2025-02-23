@@ -342,7 +342,7 @@ body {
 		color: white;
         flex-direction: column;
 		padding: 20px;
-		border-radius: 10px;
+		border-radius: 20px;
         z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 }
