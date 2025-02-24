@@ -42,19 +42,19 @@ body {
 
 	@keyframes hotColors {
 		0% {
-			background-color: #ff4136;
+			background-color: #001f3f;
 		}
 		25% {
-			background-color: #ff851b;
+			background-color: #ff4136;
 		}
 		50% {
-			background-color: #ffdc00;
+			background-color: #ff851b;
 		}
 		75% {
-			background-color: #ff6300;
+			background-color: #ffdc00;
 		}
 		100% {
-			background-color: #ff4136;
+			background-color: #001f3f;
 		}
 	}
 
