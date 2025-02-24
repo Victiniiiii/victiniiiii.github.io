@@ -2288,10 +2288,11 @@ a:active, a:focus {
 
 .bzbuynpcsellboxes {
 	width: 80vw;
-	height: 12vh;
+	height: auto;
 	background-color: rgb(0, 0, 0, 0.8);
 	border-radius: 1vw;
 	margin-bottom: 4vh;
+    padding: 10px 0;
 	box-sizing: border-box;
 	color: white;
 	display: flex;
