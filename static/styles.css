@@ -1997,13 +1997,14 @@ a:active, a:focus {
 }
 
 #infernodroprates {
-	width: 80vw;
+	width: 40vw;
 	height: 37.5vh;
+    backdrop-filter: blur(25px);
+	-webkit-backdrop-filter: blur(25px);
 }
 
 .infernodropratesrows {
 	width: 40vw;
-	margin-left: 20vw;
 	height: 7.5vh;
 	color: white;
 	display: flex;
@@ -2012,9 +2013,7 @@ a:active, a:focus {
 	align-items: center;
 	box-sizing: border-box;
 	border: 0.1vw solid white;
-	background: rgba(0, 0, 0, 0.4);
-	backdrop-filter: blur(25px);
-	-webkit-backdrop-filter: blur(25px);
+	background: rgba(0, 0, 0, 0.4);	
 }
 
 .infernodropratesrowsphotos {
@@ -2025,6 +2024,8 @@ a:active, a:focus {
 #infernocraftingprofits {
 	width: 80vw;
 	height: auto;
+    backdrop-filter: blur(25px);
+	-webkit-backdrop-filter: blur(25px);
 }
 
 .infernocraftingprofitsrow {
@@ -2043,8 +2044,6 @@ a:active, a:focus {
 	border: 0.1vw solid white;
 	padding: 1vw;
 	margin-bottom: 1vh;
-	backdrop-filter: blur(25px);
-	-webkit-backdrop-filter: blur(25px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -2058,8 +2057,6 @@ a:active, a:focus {
 	box-sizing: border-box;
 	border: 0.1vw solid white;
 	margin-bottom: 1vh;
-	backdrop-filter: blur(25px);
-	-webkit-backdrop-filter: blur(25px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
