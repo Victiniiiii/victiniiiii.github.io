@@ -252,24 +252,25 @@ async function bazaarconnect() {
     const response = await fetch("https://api.hypixel.net/v2/skyblock/bazaar");
     const data = await response.json();
     
-    let itemProfits = [];
+    let boxesWithProfit = [];
 
     for (let i = 0; i < itemsarray.length; i++) {
         let ableToSellCount = (200000000 / itemsarray[i].npc).toFixed(0);
         let buyPrice = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] || 0;
         let profit = ableToSellCount * (itemsarray[i].npc - buyPrice);
-        
-        let element = document.querySelector(`#itemsContainer .bzbuynpcsellboxes:nth-child(${i + 1})`);
-        itemProfits.push({ element, profit });
+
+        const box = document.getElementById(`BbNs${i + 1}Text`);
 
         document.getElementById(`prices${itemsarray[i].id}`).innerHTML = format(buyPrice.toFixed(0)) + " coins";
         document.getElementById(`BbNs${i + 1}Text`).innerHTML = `If you buy ${ableToSellCount} ${itemsarray[i].name} from the bazaar, and sell it to NPC, you will make ${format(profit.toFixed(0))} coins.`;
+
+        boxesWithProfit.push({ box: box.parentElement, profit: parseFloat(profit) });
     }
 
-    itemProfits.sort((a, b) => b.profit - a.profit);
+    boxesWithProfit.sort((a, b) => b.profit - a.profit);
 
-    let container = document.getElementById("itemsContainer");
-    itemProfits.forEach(item => container.appendChild(item.element));
+	const itemsContainer = document.getElementById("itemsContainer");
+	boxesWithProfit.forEach((item) => itemsContainer.appendChild(item.box));
 }
 
 
