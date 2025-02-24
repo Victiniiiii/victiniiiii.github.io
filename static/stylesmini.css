@@ -169,10 +169,10 @@ a:active, a:focus {
     gap: 10vh;
 }
 
-.contact-box img {
+.contact-box svg {
     width: 64px;
     height: 64px;
-    border-radius: 32px;
+    border-radius: 16px;
 }
 
 .contact-box a {
