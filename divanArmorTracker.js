@@ -40,7 +40,7 @@ async function getPricesFromAPI() {
 	});
 
 	for (let i = 0; i < 4; i++) {
-        armorCosts[i] = (10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0);
+		armorCosts[i] = (10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0);
 		document.getElementById(`cost${i}`).innerHTML = `<p>Total Cost: ${format(armorCosts[i]) + " coins"}</p>`;
 	}
 }
@@ -59,15 +59,15 @@ async function auctionsAPI() {
 			values.push(element.startingBid);
 		});
 
-		armorPrices[i] = filterValues(values)[0];		
+		armorPrices[i] = filterValues(values)[0];
 	}
 
-    for (let i = 0; i < armorPieces.length; i++) {
-        document.getElementById(`tax${i}`).innerHTML = `Taxes: ${format((armorPrices[i] - substractTaxes(armorPrices[i])).toFixed(0))} coins.`;
+	for (let i = 0; i < armorPieces.length; i++) {
+		document.getElementById(`tax${i}`).innerHTML = `Taxes: ${format((armorPrices[i] - substractTaxes(armorPrices[i])).toFixed(0))} coins.`;
 		document.getElementById(`auction${i}`).innerHTML = `Auction price: ${format(armorPrices[i])} coins`;
 		document.getElementById(`notax${i}`).innerHTML = `After taxes: ${format(substractTaxes(armorPrices[i]).toFixed(0))} coins.`;
 		document.getElementById(`profit${i}`).innerHTML = `Profit: ${format((substractTaxes(armorPrices[i]) - armorCosts[i]).toFixed(0))} coins.`;
-    }
+	}
 }
 
 function substractTaxes(input) {
@@ -80,6 +80,7 @@ function substractTaxes(input) {
 		taxes += (input / 100) * 3.5;
 	}
 
+	if (derpy) taxes *= 4;
 	if (input - taxes < 1000000 && input < 1200000) return 1000000;
 	return input - taxes;
 }
@@ -180,6 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				toggleSwitch.classList.toggle("active");
 				derpy = !derpy;
 				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
+				await getPricesFromAPI();
+				await auctionsAPI();
 			});
 		}
 
@@ -197,6 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			item.toggle = !item.toggle;
 			toggleSwitch.classList.toggle("active");
 			await getPricesFromAPI();
+			await auctionsAPI();
 		});
 	});
 });
