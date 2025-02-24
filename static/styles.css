@@ -1257,16 +1257,17 @@ a:active, a:focus {
 }
 
 .fullscreenmodal {
-    width: 100vw;
-    top: 10vh;
-    height: 90vh;
+    width: 100%;
+    top: 9%;
+    height: 91%;
     position: absolute;
     z-index: 1111111;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     font-size: 3rem;
     color: white;
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;

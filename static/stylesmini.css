@@ -1216,13 +1216,12 @@ a:active, a:focus {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    width: 100vw;
-    top: 10vh;
-    height: 90vh;    
+    width: 100%;
+    top: 8vh;
+    height: 92vh;    
     z-index: 1111111;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     font-size: 1.5rem;
-    line-height: 3rem;
     color: white;
     text-align: center;    
     justify-content: center;
