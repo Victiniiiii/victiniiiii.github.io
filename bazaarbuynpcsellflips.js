@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         WebPSupport = 0;
     }
 
-	const savedToggleStates = localStorage.getItem("toggleStates");
+	const savedToggleStates = localStorage.getItem("toggleStatesBazaarBuy");
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
 	} else {
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleSwitch.addEventListener("click", function () {
             toggleSwitch.classList.toggle("active");
             toggleStates[index] = !toggleStates[index];
-            localStorage.setItem("toggleStates", JSON.stringify(toggleStates));
+            localStorage.setItem("toggleStatesBazaarBuy", JSON.stringify(toggleStates));
             bazaarconnect();
         });
 	});

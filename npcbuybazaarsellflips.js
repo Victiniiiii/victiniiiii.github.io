@@ -365,7 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	webptest.src = "/static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = 1) : (WebPSupport = 0);
 
-	const savedToggleStates = localStorage.getItem("toggleStates");
+	const savedToggleStates = localStorage.getItem("toggleStatesNpcBuy");
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
 	} else {
@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		toggleSwitch.addEventListener("click", function () {
 			toggleSwitch.classList.toggle("active");
 			toggleStates[index - 2] = !toggleStates[index - 2];
-			localStorage.setItem("toggleStates", JSON.stringify(toggleStates));
+			localStorage.setItem("toggleStatesNpcBuy", JSON.stringify(toggleStates));
 			bazaarconnect();
 		});
 	});
