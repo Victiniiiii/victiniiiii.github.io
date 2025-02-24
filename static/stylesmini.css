@@ -1239,9 +1239,8 @@ a:active, a:focus {
 
 .compostprofit {
 	margin-left: 2vw;
-	font-size: min(1.7vw, 0.9vh);
-	height: 3vh;
-	line-height: 1.5vh;
+	font-size: 1.4vh;
+	line-height: 1.75vh;
 	text-align: center;
 }
 
