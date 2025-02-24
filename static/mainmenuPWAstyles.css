@@ -3,61 +3,61 @@ body {
 	overscroll-behavior: none;
 }
 
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blueShades {
+    0% {
+        background-color: #001f3f;
+    }
+    25% {
+        background-color: #0074d9;
+    }
+    50% {
+        background-color: #7fdbff;
+    }
+    75% {
+        background-color: #39cccc;
+    }
+    100% {
+        background-color: #001f3f;
+    }
+}
+
+@keyframes hotColors {
+    0% {
+        background-color: #ff4136;
+    }
+    25% {
+        background-color: #ff851b;
+    }
+    50% {
+        background-color: #ffdc00;
+    }
+    75% {
+        background-color: #ff6300;
+    }
+    100% {
+        background-color: #ff4136;
+    }
+}
+
 @media (min-width: 768px) {
-	* {
-		box-sizing: border-box;
-		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		text-decoration: none;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes blueShades {
-		0% {
-			background-color: #001f3f;
-		}
-		25% {
-			background-color: #0074d9;
-		}
-		50% {
-			background-color: #7fdbff;
-		}
-		75% {
-			background-color: #39cccc;
-		}
-		100% {
-			background-color: #001f3f;
-		}
-	}
-
-	@keyframes hotColors {
-		0% {
-			background-color: #001f3f;
-		}
-		25% {
-			background-color: #ff4136;
-		}
-		50% {
-			background-color: #ff851b;
-		}
-		75% {
-			background-color: #ffdc00;
-		}
-		100% {
-			background-color: #001f3f;
-		}
-	}
-
 	h6 {
 		margin-top: 1vw;
 		font-size: 0.75vw;
@@ -348,60 +348,6 @@ body {
 }
 
 @media (max-width: 767px) {
-	* {
-		box-sizing: border-box;
-		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		text-decoration: none;
-		text-align: center;
-		margin: 0;
-		padding: 0;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
-		}
-	}
-
-	@keyframes blueShades {
-		0% {
-			background-color: #001f3f;
-		}
-		25% {
-			background-color: #0074d9;
-		}
-		50% {
-			background-color: #7fdbff;
-		}
-		75% {
-			background-color: #39cccc;
-		}
-		100% {
-			background-color: #001f3f;
-		}
-	}
-
-	@keyframes hotColors {
-		0% {
-			background-color: #ff4136;
-		}
-		25% {
-			background-color: #ff851b;
-		}
-		50% {
-			background-color: #ffdc00;
-		}
-		75% {
-			background-color: #ff6300;
-		}
-		100% {
-			background-color: #ff4136;
-		}
-	}
-
 	h6 {
 		margin-top: 1vw;
 		font-size: 3.75vw;
