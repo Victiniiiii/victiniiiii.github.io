@@ -308,8 +308,8 @@ body {
 	}
 
 	.mainmenulanguage svg {
-		width: 7svh;
-		height: 7svh;
+		width: 8vh;
+		height: 8vh;
 	}
 
 	.mainmenunotready {
@@ -586,8 +586,9 @@ body {
 	}
 
 	.mainmenulanguage svg {
-		width: 7svh;
-		height: 7svh;
+		width: 6vh;
+		height: 6vh;
+        margin-left: 1.5vh !important;
 	}
 
 	.mainmenunotready {
