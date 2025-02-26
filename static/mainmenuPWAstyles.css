@@ -551,7 +551,8 @@ body {
 		z-index: 3;
 		color: white;
 		overflow: hidden;
-		font-size: 2svh;
+		font-size: 1.9svh;
+        line-height: 2.8svh;
 		padding: 0 3vw 0 3vw;
 		text-align: center;
 	}
