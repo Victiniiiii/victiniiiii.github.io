@@ -508,10 +508,8 @@ async function minionprofits() {
 		htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
 	} else if (htmlminioncount > 0 && htmlminioncount < 11) {
 		extraspeeds += htmlminioncount * 18;
-	} else if (htmlminioncount > 10 && htmlminioncount < 33) {
-		extraspeeds += 180;
 	} else {
-		console.log("Minion count error.");
+		extraspeeds += 180;
 	}
 
 	var htmlminiontier = document.getElementById("miniontier").value;
@@ -554,7 +552,7 @@ async function minionprofits() {
 
 	var htmlfueltype = document.getElementById("fueltype").value;
 	var fuelmultiplier = 1;
-	var specialproduction = 0;
+	var specialproduction = 0.8;
 	var specialfueloutput = 0;
 	var checkifitst3 = 0;
 	var expenses = 0;
@@ -563,12 +561,12 @@ async function minionprofits() {
 	if (htmlfueltype == "nothing") {
 		fuelmultiplier = 1;
 		checkifitst3 = 0;
+        specialproduction = 0;
 	} else if (htmlfueltype == "t1-gabagool") {
 		fuelmultiplier = 11;
 		checkifitst3 = 0;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(crudegabagoolprice);
-		specialproduction += 0.8;
 		chosenfuel = "Crude Gabagool";
 		expenses += htmlminioncount * (6 * parseFloat(gabagooldistillateprice) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t1-blazerod") {
@@ -576,7 +574,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(blazerodprice);
-		specialproduction += 0.8;
 		chosenfuel = "Blaze Rod";
 		expenses += htmlminioncount * (6 * parseFloat(blazeroddistillateprice) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t1-glowstone") {
@@ -584,7 +581,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 2.5;
 		specialfueloutput += parseFloat(glowstonedustprice * 2.5);
-		specialproduction += 0.8;
 		chosenfuel = "Glowstone Dust";
 		expenses += htmlminioncount * (6 * parseFloat(glowstonedistillateprice) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t1-magmacream") {
@@ -592,7 +588,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 2;
 		specialfueloutput += parseFloat(magmacreamprice * 2);
-		specialproduction += 0.8;
 		chosenfuel = "Magma Cream";
 		expenses += htmlminioncount * (6 * parseFloat(magmacreamdistillateprice) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t1-netherwart") {
@@ -600,7 +595,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 5;
 		specialfueloutput += parseFloat(netherwartprice * 5);
-		specialproduction += 0.8;
 		chosenfuel = "Nether Wart";
 		expenses += htmlminioncount * (6 * parseFloat(netherwartdistillateprice) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t2-gabagool") {
@@ -608,7 +602,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(crudegabagoolprice);
-		specialproduction += 0.8;
 		chosenfuel = "Crude Gabagool";
 		expenses += htmlminioncount * (6 * parseFloat(gabagooldistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t2-blazerod") {
@@ -616,7 +609,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(blazerodprice);
-		specialproduction += 0.8;
 		chosenfuel = "Blaze Rod";
 		expenses += htmlminioncount * (6 * parseFloat(blazeroddistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t2-glowstone") {
@@ -624,7 +616,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 2.5;
 		specialfueloutput += parseFloat(glowstonedustprice * 2.5);
-		specialproduction += 0.8;
 		chosenfuel = "Glowstone Dust";
 		expenses += htmlminioncount * (6 * parseFloat(glowstonedistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t2-magmacream") {
@@ -632,7 +623,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 2;
 		specialfueloutput += parseFloat(magmacreamprice * 2);
-		specialproduction += 0.8;
 		chosenfuel = "Magma Cream";
 		expenses += htmlminioncount * (6 * parseFloat(magmacreamdistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t2-netherwart") {
@@ -640,7 +630,6 @@ async function minionprofits() {
 		checkifitst3 = 0;
 		specialfuelitem = 5;
 		specialfueloutput += parseFloat(netherwartprice * 5);
-		specialproduction += 0.8;
 		chosenfuel = "Nether Wart";
 		expenses += htmlminioncount * (6 * parseFloat(netherwartdistillateprice) + parseFloat(bestsulphuriccoal) + 24 * parseFloat(bestfuelgabagool) + parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t3-gabagool") {
@@ -648,7 +637,6 @@ async function minionprofits() {
 		checkifitst3 = 1;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(crudegabagoolprice);
-		specialproduction += 0.8;
 		chosenfuel = "Crude Gabagool";
 		expenses += htmlminioncount * (6 * parseFloat(gabagooldistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t3-blazerod") {
@@ -656,7 +644,6 @@ async function minionprofits() {
 		checkifitst3 = 1;
 		specialfuelitem = 1;
 		specialfueloutput += parseFloat(blazerodprice);
-		specialproduction += 0.8;
 		chosenfuel = "Blaze Rod";
 		expenses += htmlminioncount * (6 * parseFloat(blazeroddistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t3-glowstone") {
@@ -664,7 +651,6 @@ async function minionprofits() {
 		checkifitst3 = 1;
 		specialfuelitem = 2.5;
 		specialfueloutput += parseFloat(glowstonedustprice * 2.5);
-		specialproduction += 0.8;
 		chosenfuel = "Glowstone Dust";
 		expenses += htmlminioncount * (6 * parseFloat(glowstonedistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t3-magmacream") {
@@ -672,7 +658,6 @@ async function minionprofits() {
 		checkifitst3 = 1;
 		specialfuelitem = 2;
 		specialfueloutput += parseFloat(magmacreamprice * 2);
-		specialproduction += 0.8;
 		chosenfuel = "Magma Cream";
 		expenses += htmlminioncount * (6 * parseFloat(magmacreamdistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	} else if (htmlfueltype == "t3-netherwart") {
@@ -680,7 +665,6 @@ async function minionprofits() {
 		checkifitst3 = 1;
 		specialfuelitem = 5;
 		specialfueloutput += parseFloat(netherwartprice * 5);
-		specialproduction += 0.8;
 		chosenfuel = "Nether Wart";
 		expenses += htmlminioncount * (6 * parseFloat(netherwartdistillateprice) + 25 * parseFloat(bestsulphuriccoal) + 288 * parseFloat(bestfuelgabagool) + 2 * parseFloat(infernofuelblockprice));
 	}
@@ -795,7 +779,7 @@ async function minionprofits() {
 		htmlinfernogain.innerHTML = `The items you will get will be:`;
 		infernobasegain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * (1 - specialproduction)).toFixed(0))} base Crude Gabagool worth ${format((htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * (1 - specialproduction) * parseFloat(crudegabagoolprice)).toFixed(0))} coins,`;
 		if (htmlfueltype != "nothing") {
-			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate / 100) * derpy) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
+			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialproduction * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate / 100) * derpy) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
 				infernorow2.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
 			} else if (chosenfuel == "Blaze Rod") {
