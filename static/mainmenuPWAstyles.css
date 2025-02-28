@@ -456,17 +456,17 @@ body {
 
 	#general,
 	#general::before {
-		border-top-left-radius: 2.5svh;
+		margin: 0 1px 0 1px;
 	}
 
 	#skyblock,
 	#skyblock::before {
-		margin: 0 1px 0 1px;
+		border-top-right-radius: 2.5svh;
 	}
 
 	#other,
 	#other::before {
-		border-top-right-radius: 2.5svh;
+		border-top-left-radius: 2.5svh;
 	}
 
 	#general::before,
