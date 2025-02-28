@@ -37,20 +37,46 @@ cancelBtn.addEventListener("click", function () {
 function switchtab(clicked) {
 	const generaltab = document.getElementById("mainmenugeneralprojects");
 	const skyblocktab = document.getElementById("mainmenuskyblockprojects");
-	const otherstab = document.getElementById("mainmenuotherprojects");
+	const aboutMe = document.getElementById("aboutMe");
 
 	generaltab.style.display = "none";
 	skyblocktab.style.display = "none";
-	otherstab.style.display = "none";
+	aboutMe.style.display = "none";
 	clicked.style.display = "grid";
+
+	if (clicked.id === "aboutMe") {
+		clicked.style.display = "flex";
+		clicked.style.color = "white";
+	}
 
 	window.location.hash = clicked.id.slice(8, -8);
 	clicked.scrollTop = 0;
+
+	updateExpandedHeights();
+}
+
+function updateExpandedHeights() {
+	let baseHeight = window.innerWidth > 768 ? window.innerHeight * 0.3 : window.innerHeight * 0.2;
+    let marginBottom = window.innerWidth > 768 ? 30 : 10;
+
+	document.querySelectorAll("h6").forEach(function (h6) {
+		let grandParent = h6.parentElement?.parentElement;
+		if (!grandParent) return;
+
+		let h6Height = h6.offsetHeight;
+
+		if (grandParent.classList.contains("expanded")) {
+			grandParent.style.height = baseHeight + h6Height + marginBottom + "px";
+		} else {
+			grandParent.style.height = baseHeight + "px";
+		}
+	});
 }
 
 document.querySelectorAll(".projectname").forEach(function (name) {
 	name.addEventListener("click", function () {
 		name.parentElement.classList.toggle("expanded");
+		updateExpandedHeights();
 	});
 });
 

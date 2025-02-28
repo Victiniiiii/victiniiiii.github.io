@@ -4,57 +4,61 @@ body {
 }
 
 * {
-    box-sizing: border-box;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	text-decoration: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#aboutMe {
+	flex-direction: column;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes blueShades {
-    0% {
-        background-color: #001f3f;
-    }
-    25% {
-        background-color: #0074d9;
-    }
-    50% {
-        background-color: #7fdbff;
-    }
-    75% {
-        background-color: #39cccc;
-    }
-    100% {
-        background-color: #001f3f;
-    }
+	0% {
+		background-color: #001f3f;
+	}
+	25% {
+		background-color: #0074d9;
+	}
+	50% {
+		background-color: #7fdbff;
+	}
+	75% {
+		background-color: #39cccc;
+	}
+	100% {
+		background-color: #001f3f;
+	}
 }
 
 @keyframes hotColors {
-    0% {
-        background-color: #001f3f;
-    }
-    25% {
-        background-color: #ff4136;
-    }
-    50% {
-        background-color: #ff851b;
-    }
-    75% {
-        background-color: #ffdc00;
-    }
-    100% {
-        background-color: #001f3f;
-    }
+	0% {
+		background-color: #001f3f;
+	}
+	25% {
+		background-color: #ff4136;
+	}
+	50% {
+		background-color: #ff851b;
+	}
+	75% {
+		background-color: #ffdc00;
+	}
+	100% {
+		background-color: #001f3f;
+	}
 }
 
 @media (min-width: 768px) {
@@ -109,7 +113,7 @@ body {
 
 	#mainmenugeneralprojects,
 	#mainmenuskyblockprojects,
-	#mainmenuotherprojects {
+	#aboutMe {
 		width: 60vw;
 		height: 80svh;
 		margin: 0 10vw 0 0;
@@ -129,9 +133,9 @@ body {
 
 	#mainmenugeneralprojects::-webkit-scrollbar,
 	#mainmenuskyblockprojects::-webkit-scrollbar,
-	#mainmenuotherprojects::-webkit-scrollbar,
+	#aboutMe::-webkit-scrollbar,
 	#mainmenuskyblockprojects,
-	#mainmenuotherprojects {
+	#aboutMe {
 		display: none;
 	}
 
@@ -168,17 +172,17 @@ body {
 
 	#general,
 	#general::before {
-		border-top-left-radius: 2.5svh;
+		margin: 0 0.1vw 0 0.1vw;
 	}
 
 	#skyblock,
 	#skyblock::before {
-		margin: 0 0.1vw 0 0.1vw;
+		border-top-right-radius: 2.5svh;
 	}
 
 	#other,
 	#other::before {
-		border-top-right-radius: 2.5svh;
+		border-top-left-radius: 2.5svh;
 	}
 
 	#general::before,
@@ -245,10 +249,6 @@ body {
 		text-align: center;
 		margin: -1vh 0 3vh 0;
 		overflow: hidden;
-	}
-
-	.mainmenuproject.expanded {
-		height: 40svh;
 	}
 
 	.mainmenuproject img {
@@ -334,16 +334,16 @@ body {
 		left: 40%;
 		width: 20%;
 		height: 20%;
-        border: 1px solid white;
+		border: 1px solid white;
 		background: rgba(0, 0, 0, 0.9);
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		color: white;
-        flex-direction: column;
+		flex-direction: column;
 		padding: 20px;
 		border-radius: 20px;
-        z-index: 999999999999999999999999999999999999999999999999999999999999;
+		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 }
 
@@ -398,7 +398,7 @@ body {
 
 	#mainmenugeneralprojects,
 	#mainmenuskyblockprojects,
-	#mainmenuotherprojects {
+	#aboutMe {
 		width: 59vw;
 		height: 80svh;
 		background-color: black;
@@ -416,9 +416,9 @@ body {
 
 	#mainmenugeneralprojects::-webkit-scrollbar,
 	#mainmenuskyblockprojects::-webkit-scrollbar,
-	#mainmenuotherprojects::-webkit-scrollbar,
+	#aboutMe::-webkit-scrollbar,
 	#mainmenuskyblockprojects,
-	#mainmenuotherprojects {
+	#aboutMe {
 		display: none;
 	}
 
@@ -533,10 +533,6 @@ body {
 		transition: height 0.5s ease-in-out;
 	}
 
-	.mainmenuproject.expanded {
-		height: 40svh;
-	}
-
 	.mainmenuproject img {
 		width: 53vw;
 		height: 17svh;
@@ -552,7 +548,7 @@ body {
 		color: white;
 		overflow: hidden;
 		font-size: 1.9svh;
-        line-height: 2.8svh;
+		line-height: 2.8svh;
 		padding: 0 3vw 0 3vw;
 		text-align: center;
 	}
@@ -589,7 +585,7 @@ body {
 	.mainmenulanguage svg {
 		width: 6vh;
 		height: 6vh;
-        margin-left: 1.5vh !important;
+		margin-left: 1.5vh !important;
 	}
 
 	.mainmenunotready {
@@ -607,7 +603,7 @@ body {
 		padding-bottom: 20svh;
 	}
 
-    #warningModal {
+	#warningModal {
 		display: none;
 		position: fixed;
 		top: 0;
@@ -619,9 +615,9 @@ body {
 		justify-content: center;
 		text-align: center;
 		color: white;
-        flex-direction: column;
+		flex-direction: column;
 		padding: 20px;
 		border-radius: 10px;
-        z-index: 999999999999999999999999999999999999999999999999999999999999;
+		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 }
