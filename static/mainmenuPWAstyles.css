@@ -28,38 +28,49 @@ body {
 @keyframes blueShades {
 	0% {
 		background-color: #001f3f;
+		box-shadow: 0 8px 16px rgba(0, 31, 63, 0.5);
 	}
 	25% {
 		background-color: #0074d9;
+		box-shadow: 0 8px 16px rgba(0, 116, 217, 0.5);
 	}
 	50% {
 		background-color: #7fdbff;
+		box-shadow: 0 8px 16px rgba(127, 219, 255, 0.5);
 	}
 	75% {
 		background-color: #39cccc;
+		box-shadow: 0 8px 16px rgba(57, 204, 204, 0.5);
 	}
 	100% {
 		background-color: #001f3f;
+		box-shadow: 0 8px 16px rgba(0, 31, 63, 0.5);
 	}
 }
 
 @keyframes hotColors {
 	0% {
 		background-color: #001f3f;
+		box-shadow: 0 8px 16px rgba(0, 31, 63, 0.5);
 	}
 	25% {
 		background-color: #ff4136;
+		box-shadow: 0 8px 16px rgba(255, 65, 54, 0.5);
 	}
 	50% {
 		background-color: #ff851b;
+		box-shadow: 0 8px 16px rgba(255, 133, 27, 0.5);
 	}
 	75% {
 		background-color: #ffdc00;
+		box-shadow: 0 8px 16px rgba(255, 220, 0, 0.5);
 	}
 	100% {
 		background-color: #001f3f;
+		box-shadow: 0 8px 16px rgba(0, 31, 63, 0.5);
 	}
 }
+
 
 @media (min-width: 768px) {
 	h6 {
