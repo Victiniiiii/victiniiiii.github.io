@@ -1,5 +1,3 @@
-document.body.style.background = "radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.875) 100%)";
-
 if (window.location.hash) {
 	document.getElementById(window.location.hash.slice(1)).click();
 }
@@ -37,17 +35,17 @@ cancelBtn.addEventListener("click", function () {
 function switchtab(clicked) {
 	const generaltab = document.getElementById("mainmenugeneralprojects");
 	const skyblocktab = document.getElementById("mainmenuskyblockprojects");
-	const aboutme = document.getElementById("aboutme");
+	const aboutme = document.getElementById("aboutMeBox");
 
 	generaltab.style.display = "none";
 	skyblocktab.style.display = "none";
 	aboutme.style.display = "none";
 	clicked.style.display = "grid";
 
-	if (clicked.id === "aboutme") {
+	if (clicked.id === "aboutMeBox") {
 		clicked.style.display = "flex";
 		clicked.style.color = "white";
-        window.location.hash = clicked.id
+        window.location.hash = clicked.id;
 	} else {
         window.location.hash = clicked.id.slice(8, -8);
     }

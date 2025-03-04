@@ -3,6 +3,11 @@ body {
 	overscroll-behavior: none;
 }
 
+body {
+    background: radial-gradient(at 88% 32%, #1f0071 0px, transparent 50%), radial-gradient(at 82% 81%, #322c5f 0px, transparent 50%), radial-gradient(at 10% 20%, #2f3466 0px, transparent 50%), radial-gradient(at 22% 89%, #42133e 0px, transparent 50%), #000000;
+    overflow: hidden;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -12,8 +17,28 @@ body {
 	padding: 0;
 }
 
-#aboutMe {
+#aboutMeBox {
 	flex-direction: column;
+    background-color: black;
+    padding: 0 5vw !important;
+    gap: 0 !important;
+    align-items: start;
+    line-height: 2.5vh;
+}
+
+#aboutMeBox p {
+    animation: fadeIn 2s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 1vw;
+}
+
+#aboutMeBox svg, pre {
+    width: 2.5vh;
+    height: 2.5vh;
 }
 
 @keyframes fadeIn {
@@ -81,7 +106,7 @@ body {
 	#mainmenuleftbox {
 		width: 15vw;
 		height: 80svh;
-		margin: 0 5vw 0 10vw;
+		margin: 0 5vw 7.5svh 10vw;
 		background-color: black;
 		display: flex;
 		flex-direction: column;
@@ -123,7 +148,7 @@ body {
 
 	#mainmenugeneralprojects,
 	#mainmenuskyblockprojects,
-	#aboutMe {
+	#aboutMeBox {
 		width: 60vw;
 		height: 80svh;
 		margin: 0 10vw 0 0;
@@ -143,9 +168,9 @@ body {
 
 	#mainmenugeneralprojects::-webkit-scrollbar,
 	#mainmenuskyblockprojects::-webkit-scrollbar,
-	#aboutMe::-webkit-scrollbar,
+	#aboutMeBox::-webkit-scrollbar,
 	#mainmenuskyblockprojects,
-	#aboutMe {
+	#aboutMeBox {
 		display: none;
 	}
 
@@ -190,14 +215,14 @@ body {
 		border-top-right-radius: 2.5svh;
 	}
 
-	#other,
-	#other::before {
+	#aboutme,
+	#aboutme::before {
 		border-top-left-radius: 2.5svh;
 	}
 
 	#general::before,
 	#skyblock::before,
-	#other::before {
+	#aboutme::before {
 		content: "";
 		position: absolute;
 		top: -1px;
@@ -301,7 +326,8 @@ body {
 		background-color: rgb(0, 0, 0, 0.8);
 		border-bottom-left-radius: 1vw;
 		border-top-right-radius: 1vw;
-		border: 1px solid white;
+        border-bottom: 1px solid white;
+        border-left: 1px solid white;
 		padding: 0.1vh 1vw 0 1vw;
 	}
 
@@ -408,7 +434,7 @@ body {
 
 	#mainmenugeneralprojects,
 	#mainmenuskyblockprojects,
-	#aboutMe {
+	#aboutMeBox {
 		width: 59vw;
 		height: 80svh;
 		background-color: black;
@@ -426,9 +452,9 @@ body {
 
 	#mainmenugeneralprojects::-webkit-scrollbar,
 	#mainmenuskyblockprojects::-webkit-scrollbar,
-	#aboutMe::-webkit-scrollbar,
+	#aboutMeBox::-webkit-scrollbar,
 	#mainmenuskyblockprojects,
-	#aboutMe {
+	#aboutMeBox {
 		display: none;
 	}
 
@@ -474,14 +500,14 @@ body {
 		border-top-right-radius: 2.5svh;
 	}
 
-	#other,
-	#other::before {
+	#aboutme,
+	#aboutme::before {
 		border-top-left-radius: 2.5svh;
 	}
 
 	#general::before,
 	#skyblock::before,
-	#other::before {
+	#aboutme::before {
 		content: "";
 		position: absolute;
 		top: -1px;
@@ -576,7 +602,8 @@ body {
 		background-color: rgb(0, 0, 0, 0.8);
 		border-bottom-left-radius: 2vh;
 		border-top-right-radius: 2vh;
-		border: 1px solid white;
+		border-bottom: 1px solid white;
+        border-left: 1px solid white;
 		color: white;
 		padding: 0.25vh 2vw 0 2vw;
 	}
