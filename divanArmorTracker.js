@@ -110,9 +110,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-	await getPricesFromAPI();
-	await auctionsAPI();
-
 	for (let i = 0; i < itemsarray.length; i++) {
 		const item = itemsarray[i];
 
@@ -203,4 +200,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 			await auctionsAPI();
 		});
 	});
+    
+    await getPricesFromAPI();
+	await auctionsAPI();
 });
