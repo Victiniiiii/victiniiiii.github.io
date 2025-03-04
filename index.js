@@ -1,4 +1,5 @@
 if (window.location.hash) {
+    console.log(document.getElementById(window.location.hash.slice(1)));
 	document.getElementById(window.location.hash.slice(1)).click();
 }
 
@@ -45,7 +46,7 @@ function switchtab(clicked) {
 	if (clicked.id === "aboutMeBox") {
 		clicked.style.display = "flex";
 		clicked.style.color = "white";
-        window.location.hash = clicked.id;
+        window.location.hash = "aboutme";
 	} else {
         window.location.hash = clicked.id.slice(8, -8);
     }

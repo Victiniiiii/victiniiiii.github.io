@@ -4,8 +4,8 @@ body {
 }
 
 body {
-    background: radial-gradient(at 88% 32%, #1f0071 0px, transparent 50%), radial-gradient(at 82% 81%, #322c5f 0px, transparent 50%), radial-gradient(at 10% 20%, #2f3466 0px, transparent 50%), radial-gradient(at 22% 89%, #42133e 0px, transparent 50%), #000000;
-    overflow: hidden;
+	background: radial-gradient(at 88% 32%, #1f0071 0px, transparent 50%), radial-gradient(at 82% 81%, #322c5f 0px, transparent 50%), radial-gradient(at 10% 20%, #2f3466 0px, transparent 50%), radial-gradient(at 22% 89%, #42133e 0px, transparent 50%), #000000;
+	overflow: hidden;
 }
 
 * {
@@ -19,26 +19,15 @@ body {
 
 #aboutMeBox {
 	flex-direction: column;
-    background-color: black;
-    padding: 0 5vw !important;
-    gap: 0 !important;
-    align-items: start;
-    line-height: 2.5vh;
+	background-color: black;
+	padding: 0 5vw !important;
+	gap: 0 !important;
+	align-items: start;
+	overflow-y: scroll;
 }
 
 #aboutMeBox p {
-    animation: fadeIn 2s ease;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     text-align: left;
-    gap: 1vw;
-}
-
-#aboutMeBox svg, pre {
-    width: 2.5vh;
-    height: 2.5vh;
 }
 
 @keyframes fadeIn {
@@ -326,8 +315,8 @@ body {
 		background-color: rgb(0, 0, 0, 0.8);
 		border-bottom-left-radius: 1vw;
 		border-top-right-radius: 1vw;
-        border-bottom: 1px solid white;
-        border-left: 1px solid white;
+		border-bottom: 1px solid white;
+		border-left: 1px solid white;
 		padding: 0.1vh 1vw 0 1vw;
 	}
 
@@ -380,6 +369,27 @@ body {
 		padding: 20px;
 		border-radius: 20px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
+	}
+
+	#aboutMeBox div {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		text-align: left;
+		gap: 1vw;
+		line-height: 2.5vh;
+		flex-wrap: wrap;
+	}
+
+	#aboutMeBox svg,
+	pre {
+		width: 2.5vh;
+		height: 2.5vh;
+	}
+
+	#aboutMeBox * {
+		animation: fadeIn 2s ease;
 	}
 }
 
@@ -603,7 +613,7 @@ body {
 		border-bottom-left-radius: 2vh;
 		border-top-right-radius: 2vh;
 		border-bottom: 1px solid white;
-        border-left: 1px solid white;
+		border-left: 1px solid white;
 		color: white;
 		padding: 0.25vh 2vw 0 2vw;
 	}
@@ -656,5 +666,32 @@ body {
 		padding: 20px;
 		border-radius: 10px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
+	}
+
+	#aboutMeBox {
+		padding-top: 60vh !important;
+	}
+
+	#aboutMeBox div {
+		animation: fadeIn 2s ease;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: start;
+		text-align: left;
+		line-height: 2.5vh;
+		margin-top: 1vh;
+		line-break: auto;
+		width: 50vw;
+		flex-wrap: wrap;
+	}
+
+	#aboutMeBox svg,
+	#aboutMeBox pre {
+		width: 2.5vh;
+		height: 2.5vh;
+        min-width: 2.5vh;
+        min-height: 2.5vh;
+		margin: 0 1vh;
 	}
 }
