@@ -101,7 +101,7 @@ function filterValues(arr) {
 	return arr.filter((value) => value >= lowerBound && value <= upperBound);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
 	let webptest = new Image(1, 1);
 	webptest.src = "/static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = true) : (WebPSupport = false);
@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
 
-	getPricesFromAPI();
-	auctionsAPI();
+	await getPricesFromAPI();
+	await auctionsAPI();
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		const item = itemsarray[i];
