@@ -21,13 +21,15 @@ body {
 	flex-direction: column;
 	background-color: black;
 	padding: 0 5vw !important;
-	gap: 0 !important;
+	gap: 1vh !important;
 	align-items: start;
 	overflow-y: scroll;
+	justify-content: unset !important;
+    padding-bottom: 3vh !important;
 }
 
 #aboutMeBox p {
-    text-align: left;
+	text-align: left;
 }
 
 @keyframes fadeIn {
@@ -321,15 +323,13 @@ body {
 	}
 
 	.mainmenulanguage {
-		width: 0vw;
-		height: 4svh;
+		width: 8vh;
+		height: 8vh;
 		position: absolute;
 		top: 0;
 		left: 0;
-		font-size: 2rem;
 		border-bottom-right-radius: 1vw;
 		padding-left: 1vw;
-		line-height: 4svh;
 	}
 
 	.mainmenulanguage svg {
@@ -370,6 +370,25 @@ body {
 		border-radius: 20px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
+
+    #warningModalButtons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #warningModalButtons button {
+        margin: 2.5vh;
+        margin-top: 6.5vh;
+        padding: 1vh 1vw;
+        background-color: rgb(0,0,0);
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    #aboutMeBox {
+        padding-top: 3vh !important;
+    }
 
 	#aboutMeBox div {
 		display: flex;
@@ -653,27 +672,39 @@ body {
 	#warningModal {
 		display: none;
 		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.5);
+		top: 25%;
+		left: 10%;
+		width: 80%;
+		height: 50%;
+		border: 1px solid white;
+		background: rgba(0, 0, 0, 0.9);
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		color: white;
+        font-size: 3vh;
 		flex-direction: column;
 		padding: 20px;
 		border-radius: 10px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 
-	#aboutMeBox {
-		padding-top: 60vh !important;
-	}
+    #warningModalButtons {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #warningModalButtons button {
+        margin: 2.5vh;
+        margin-top: 6.5vh;
+        padding: 2vh 10vw;
+        background-color: rgb(0,0,0);
+        border-radius: 10px;
+        color: white;
+    }
 
 	#aboutMeBox div {
-		animation: fadeIn 2s ease;
+		width: 50vw;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -681,17 +712,21 @@ body {
 		text-align: left;
 		line-height: 2.5vh;
 		margin-top: 1vh;
-		line-break: auto;
-		width: 50vw;
-		flex-wrap: wrap;
+		overflow-wrap: break-word;
+		word-break: normal;
+		hyphens: auto;
 	}
 
 	#aboutMeBox svg,
 	#aboutMeBox pre {
 		width: 2.5vh;
 		height: 2.5vh;
-        min-width: 2.5vh;
-        min-height: 2.5vh;
-		margin: 0 1vh;
+		min-width: 2.5vh;
+		min-height: 2.5vh;
+		margin-right: 1vh;
+	}
+
+	#aboutMeBox * {
+		animation: fadeIn 2s ease;
 	}
 }
