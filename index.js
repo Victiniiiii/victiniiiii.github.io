@@ -37,21 +37,22 @@ cancelBtn.addEventListener("click", function () {
 function switchtab(clicked) {
 	const generaltab = document.getElementById("mainmenugeneralprojects");
 	const skyblocktab = document.getElementById("mainmenuskyblockprojects");
-	const aboutMe = document.getElementById("aboutMe");
+	const aboutme = document.getElementById("aboutme");
 
 	generaltab.style.display = "none";
 	skyblocktab.style.display = "none";
-	aboutMe.style.display = "none";
+	aboutme.style.display = "none";
 	clicked.style.display = "grid";
 
-	if (clicked.id === "aboutMe") {
+	if (clicked.id === "aboutme") {
 		clicked.style.display = "flex";
 		clicked.style.color = "white";
-	}
+        window.location.hash = clicked.id
+	} else {
+        window.location.hash = clicked.id.slice(8, -8);
+    }
 
-	window.location.hash = clicked.id.slice(8, -8);
 	clicked.scrollTop = 0;
-
 	updateExpandedHeights();
 }
 
