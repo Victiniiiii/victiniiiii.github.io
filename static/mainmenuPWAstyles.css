@@ -8,12 +8,6 @@ body {
 	overflow: hidden;
 }
 
-@media screen and (orientation: landscape) {
-    body {
-        transform: rotate(90deg); /* Prevents rotating the page in mobile */
-    }
-}
-
 * {
 	box-sizing: border-box;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -32,6 +26,7 @@ body {
 	overflow-y: scroll;
 	justify-content: unset !important;
     padding-bottom: 3vh !important;
+    overflow-x: hidden;
 }
 
 #aboutMeBox p {
@@ -419,6 +414,12 @@ body {
 }
 
 @media (max-width: 767px) {
+    @media screen and (orientation: landscape) {
+        body {
+            transform: rotate(270deg); /* Prevents rotating the page in mobile */
+        }
+    }
+
 	h6 {
 		margin-top: 1vw;
 		font-size: 3.75vw;
@@ -622,6 +623,7 @@ body {
 		line-height: 2.8svh;
 		padding: 0 3vw 0 3vw;
 		text-align: center;
+        margin-top: -3px;
 	}
 
 	.mainmenunew {
