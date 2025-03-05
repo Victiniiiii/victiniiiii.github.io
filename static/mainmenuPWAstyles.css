@@ -8,6 +8,12 @@ body {
 	overflow: hidden;
 }
 
+@media screen and (orientation: landscape) {
+    body {
+        transform: rotate(90deg); /* Prevents rotating the page in mobile */
+    }
+}
+
 * {
 	box-sizing: border-box;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
