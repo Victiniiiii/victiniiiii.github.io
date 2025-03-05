@@ -91,8 +91,8 @@ document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
 		div.style.margin = "-0 0 0 -2.1vh";
         let svg = div.querySelector("svg");
         if (svg) {
-            svg.style.width = "7vh";
-            svg.style.height = "7vh";
+            window.innerWidth > 768 ? svg.style.width = "7vh" : svg.style.width = "5vh";
+            window.innerWidth > 768 ? svg.style.height = "7vh" : svg.style.height = "5vh";            
         }
 	}
 });
