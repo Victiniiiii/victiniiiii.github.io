@@ -196,11 +196,11 @@ async function calculateDistrictData() {
 		const userId = auth.currentUser.uid;
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 
-        let totalGameCount = 0;
+		let totalGameCount = 0;
 		let totalRoundCount = 0;
 		let totalScore = 0;
 		let bestHighScore = 0;
-        let uniqueDistrictCount = 0;
+		let uniqueDistrictCount = 0;
 
 		const snapshot = await getDocs(gameDataRef);
 		snapshot.forEach((doc) => {
@@ -210,18 +210,18 @@ async function calculateDistrictData() {
 			if (districtName !== "Every District" && districtName !== "Custom") {
 				totalRoundCount += data.roundCount || 0;
 				totalScore += data.totalScore || 0;
-                totalGameCount += data.playCount || 0;
-                uniqueDistrictCount++
+				totalGameCount += data.playCount || 0;
+				uniqueDistrictCount++;
 			}
 
 			bestHighScore = Math.max(bestHighScore, data.highScore || 0);
 		});
 
-        document.getElementById("statsPlayedGames").innerHTML = `Total Game Count: ${totalGameCount}`;
+		document.getElementById("statsPlayedGames").innerHTML = `Total Game Count: ${totalGameCount}`;
 		document.getElementById("statsPlayedRounds").innerHTML = `Total Round Count: ${totalRoundCount}`;
 		document.getElementById("statsPercentages").innerHTML = `Success Percentage: ${(totalScore / totalRoundCount / 10).toFixed(2)}%`;
-		document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;        
-        document.getElementById("statsUniqueDistricts").innerHTML = `Unique Districts Played: ${uniqueDistrictCount}`;
+		document.getElementById("statsHighScore").innerHTML = `Best High Score: ${bestHighScore}`;
+		document.getElementById("statsUniqueDistricts").innerHTML = `Unique Districts Played: ${uniqueDistrictCount}`;
 	}
 }
 
@@ -429,19 +429,24 @@ async function loadMatchHistory() {
 		const userId = auth.currentUser.uid;
 		const matchHistoryRef = collection(db, `users/${userId}/MatchHistory`);
 		const snapshot = await getDocs(matchHistoryRef);
-
 		const modalMatchHistory = document.getElementById("modalMatchHistory");
 		modalMatchHistory.innerHTML = "Loading...";
 
 		if (snapshot.empty) {
-			modalMatchHistory.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
+			modalMatchHistory.innerHTML = `<p>You haven't played a competitive game yet!</p>`;
 		} else {
 			let documents = [];
 			snapshot.forEach((doc) => {
 				documents.push({ id: doc.id, data: doc.data() });
 			});
 
-			documents.sort((a, b) => b.id.localeCompare(a.id, "tr"));
+			documents.sort((a, b) => {
+				const dateA = new Date(a.data.date);
+				const dateB = new Date(b.data.date);
+
+				return dateB - dateA;
+			});
+
 			modalMatchHistory.innerHTML = "";
 			let j = 0;
 			let uniqueCodes = [];
@@ -449,6 +454,7 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
+
 				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
 
 				const copycode = document.createElement("button");
