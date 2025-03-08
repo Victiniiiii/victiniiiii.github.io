@@ -431,7 +431,6 @@ async function loadMatchHistory() {
 		const snapshot = await getDocs(matchHistoryRef);
 		const modalMatchHistory = document.getElementById("modalMatchHistory");
 		modalMatchHistory.innerHTML = "Loading...";
-
 		if (snapshot.empty) {
 			modalMatchHistory.innerHTML = `<p>You haven't played a competitive game yet!</p>`;
 		} else {
@@ -441,8 +440,16 @@ async function loadMatchHistory() {
 			});
 
 			documents.sort((a, b) => {
-				const dateA = new Date(a.data.date);
-				const dateB = new Date(b.data.date);
+				const parseDate = (dateStr) => {
+					const [datePart, timePart] = dateStr.split(" ");
+					const [day, month, year] = datePart.split("/");
+					const [hours, minutes, seconds] = timePart ? timePart.split(":") : [0, 0, 0];
+
+					return new Date(year, month - 1, day, hours, minutes, seconds);
+				};
+
+				const dateA = parseDate(a.data.date);
+				const dateB = parseDate(b.data.date);
 
 				return dateB - dateA;
 			});
@@ -450,19 +457,15 @@ async function loadMatchHistory() {
 			modalMatchHistory.innerHTML = "";
 			let j = 0;
 			let uniqueCodes = [];
-
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-
 				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
-
 				const copycode = document.createElement("button");
 				copycode.innerHTML = `Copy Match Sharing Code`;
 				copycode.id = `copycode${j++}`;
 				copycode.className = "copycodeButton";
 				modalMatchHistory.appendChild(copycode);
-
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
 					uniqueMatchSharingCode += "/";
@@ -471,12 +474,10 @@ async function loadMatchHistory() {
 					uniqueMatchSharingCode += data.coordinates[i].lng;
 				}
 				uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));
-
 				for (let i = 0; i < data.score.length; i++) {
 					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
 			});
-
 			for (let i = 0; i < j; i++) {
 				document.getElementById(`copycode${i}`).addEventListener("click", () => {
 					navigator.clipboard.writeText(uniqueCodes[i]).then(() => {
