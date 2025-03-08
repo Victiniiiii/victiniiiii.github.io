@@ -573,9 +573,11 @@ function displayResults(distance, points) {
 	document.getElementById("shareMatch").style.display = "none";
 
 	document.getElementById("startGameButton").disabled = true;
+    document.getElementById("mainStartButton").disabled = true;
 	document.getElementById("startGameButton").style.backgroundColor = "gray";
 	setTimeout(() => {
 		document.getElementById("startGameButton").disabled = false;
+        document.getElementById("mainStartButton").disabled = false;
 		document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
 	}, 3000);
 
