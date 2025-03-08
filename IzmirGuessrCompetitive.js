@@ -496,6 +496,19 @@ function calculatePoints(distance) {
 	return Math.round(points);
 }
 
+function disableGameStarting() {
+    document.getElementById("startGameButton").disabled = true;
+    document.getElementById("mainStartButton").disabled = true;
+	document.getElementById("startGameButton").style.backgroundColor = "gray";
+    document.getElementById("mainStartButton").style.backgroundColor = "gray";
+	setTimeout(() => {
+		document.getElementById("startGameButton").disabled = false;
+        document.getElementById("mainStartButton").disabled = false;
+		document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+        document.getElementById("mainStartButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+	}, 3000);
+}
+
 function displayResults(distance, points) {
 	pauseTimer();
 	toggleButton();
@@ -572,14 +585,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("shareMatch").style.display = "none";
 
-	document.getElementById("startGameButton").disabled = true;
-    document.getElementById("mainStartButton").disabled = true;
-	document.getElementById("startGameButton").style.backgroundColor = "gray";
-	setTimeout(() => {
-		document.getElementById("startGameButton").disabled = false;
-        document.getElementById("mainStartButton").disabled = false;
-		document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-	}, 3000);
+    disableGameStarting()
 
 	if (roundCount != roundLimit - 1) {
 		document.getElementById("startGameButton").innerHTML = "Next Game";
@@ -735,6 +741,7 @@ function getZoomLevel(distance) {
 }
 
 function returnToMainMenu() {
+    disableGameStarting();
 	roundCount = 0;
 	gameOngoing = false;
 	currentlyPlayingSharedGame = false;
