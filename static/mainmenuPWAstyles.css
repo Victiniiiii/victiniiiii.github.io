@@ -88,6 +88,22 @@ body {
 	}
 }
 
+#proceedBtn {
+    background-color: rgb(0,80,180);        
+}
+
+#proceedBtn:hover {
+    background-color: rgb(0,115,250);
+}
+
+#cancelBtn {
+    background-color: rgb(50,50,50);
+}
+
+#cancelBtn:hover {
+    background-color: rgb(88,88,88);
+}
+
 @media (min-width: 768px) {
 	h6 {
 		margin-top: 1vw;
@@ -360,12 +376,12 @@ body {
 		left: 40%;
 		width: 20%;
 		height: 20%;
-		border: 1px solid white;
-		background: rgba(0, 0, 0, 0.9);
+		border: 1px solid rgba(80, 80, 80);
+		background: rgba(20, 20, 20);
+        color: rgba(220, 220, 220);
 		align-items: center;
 		justify-content: center;
-		text-align: center;
-		color: white;
+		text-align: center;		
 		flex-direction: column;
 		padding: 20px;
 		border-radius: 20px;
@@ -381,10 +397,11 @@ body {
         margin: 2.5vh;
         margin-top: 6.5vh;
         padding: 1vh 1vw;
-        background-color: rgb(0,0,0);
+        border: none;
         border-radius: 10px;
         color: white;
         cursor: pointer;
+        transition: background-color 400ms;
     }
 
     #aboutMeBox {
@@ -684,8 +701,9 @@ body {
 		left: 10%;
 		width: 80%;
 		height: 50%;
-		border: 1px solid white;
-		background: rgba(0, 0, 0, 0.9);
+		border: 1px solid rgba(80, 80, 80);
+		background: rgba(20, 20, 20);
+        color: rgba(220, 220, 220);
 		align-items: center;
 		justify-content: center;
 		text-align: center;
@@ -706,7 +724,7 @@ body {
         margin: 2.5vh;
         margin-top: 6.5vh;
         padding: 2vh 10vw;
-        background-color: rgb(0,0,0);
+        border: none;
         border-radius: 10px;
         color: white;
     }
