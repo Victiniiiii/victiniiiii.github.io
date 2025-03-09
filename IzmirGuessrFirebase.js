@@ -347,7 +347,7 @@ async function leaderboardModal() {
 		}
 	}
 
-	document.getElementById("modalHighScores").innerHTML = `<h1>Leaderboard</h1>`;
+	document.getElementById("modalHighScores").innerHTML = ``;
 
 	const topHighScores = Array.from(allHighScores.values())
 		.sort((a, b) => b.highScore - a.highScore)
