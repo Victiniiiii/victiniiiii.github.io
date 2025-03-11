@@ -1298,7 +1298,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		transition: all 0.25s ease-in-out;
 		justify-content: center;
-		padding: 1dvw 1dvw 15dvw 1dvw;
+		padding: 1dvw 1dvw 5dvw 1dvw;
 	}
 
 	#menubuttons {
@@ -1477,7 +1477,7 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		color: white;
 		text-shadow: 2px 2px 2px black;
-		margin: 1vw;
+		padding: 1vw;
 		font-size: 4dvw;
 		transition: all 0.25s ease-in-out;
 	}
