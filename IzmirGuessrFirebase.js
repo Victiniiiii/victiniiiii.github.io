@@ -454,7 +454,7 @@ async function loadMatchHistory() {
 				return dateB - dateA;
 			});
 
-			modalMatchHistory.innerHTML = "";
+			modalMatchHistory.innerHTML = "Loading...";
 			let j = 0;
 			let uniqueCodes = [];
 			documents.forEach((doc) => {
