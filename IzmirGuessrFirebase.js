@@ -471,9 +471,9 @@ async function loadMatchHistory() {
 				}
 				uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));
 				for (let i = 0; i < data.score.length; i++) {
-					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1}
+					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} &nbsp;
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2"> <path d="M5 12l14 0"></path> <path d="M15 16l4 -4"></path> <path d="M15 8l4 4"></path> </svg> 
-                    Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
+                    &nbsp; Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p> <br>`;
 				}
 			});
 			for (let i = 0; i < j; i++) {
