@@ -90,6 +90,26 @@ div.gm-bundled-control:nth-child(2) {
 	background-color: aliceblue;
 }
 
+#coffeeButton {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background-color: rgb(40, 140, 240);
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 0 10px;
+	transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    margin-top: 1vh;
+}
+
+#coffeeButton:hover {
+    background-color: rgb(37, 94, 151);
+}
+
 .flexrow {
 	width: 100%;
 	display: flex;
@@ -520,11 +540,15 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#izmirilcebox button {
-		font-size: min(1.4dvw, 2.8dvh);
-		padding: 0 0.3vw 0 0.3vw;
+		font-size: 1.4vw;
+		padding: 0 0.3vw;
+        margin: 0.1vw 0;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
 		background-color: green;
+        border: 1px solid rgb(80, 80, 80);
+        border-radius: 8px;
+        cursor: pointer;
 	}
 
 	.izmirilcebottombuttons {
@@ -1287,10 +1311,13 @@ div.gm-bundled-control:nth-child(2) {
 
 	#izmirilcebox button {
 		padding: 0 0.3vw 0 0.3vw;
-		font-size: 5dvw;
+		font-size: 6dvw;
+        margin: 0.15vh 0;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
 		background-color: green;
+        border: 1px solid rgb(80, 80, 80);
+        border-radius: 6px;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -1467,6 +1494,8 @@ div.gm-bundled-control:nth-child(2) {
 		background: rgb(0, 0, 0, 0.4);
 		border: 1px solid black;
 		transition: all 0.25s ease-in-out;
+        align-items: center;
+        padding: 2vh 0;
 	}
 
 	#menuarabox {
@@ -1741,4 +1770,10 @@ div.gm-bundled-control:nth-child(2) {
 		width: unset;
 		transition: all 0.25s ease-in-out;
 	}
+
+    #enterCode {
+        margin: 1vh 0;
+        width: fit-content;
+        padding: 1vw 1.5vh;
+    }
 }

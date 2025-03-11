@@ -251,6 +251,28 @@ map2.on("mousedown", function (event) {
 	}
 });
 
+buttons.forEach((button) => {
+	button.addEventListener("mouseenter", function () {
+		let currentColor = window.getComputedStyle(button).backgroundColor.trim();
+
+		if (currentColor === "rgb(0, 128, 0)") {
+			button.style.backgroundColor = "rgb(34, 194, 98)";
+			button.dataset.tempColor = "green";
+		} else if (currentColor === "rgb(255, 0, 0)") {
+			button.style.backgroundColor = "rgb(250,150,150)";
+			button.dataset.tempColor = "red";
+		}
+	});
+
+	button.addEventListener("mouseleave", function () {
+		if (button.dataset.tempColor === "green") {
+			button.style.backgroundColor = "rgb(0, 128, 0)";
+		} else if (button.dataset.tempColor === "red") {
+			button.style.backgroundColor = "rgb(255, 0, 0)";
+		}
+	});
+});
+
 function toggleDistrict(input) {
 	let district;
 
@@ -293,7 +315,8 @@ function toggleDistrict(input) {
 
 function addAllDistricts() {
 	buttons.forEach((button) => {
-		button.style.backgroundColor = "green";
+		button.style.backgroundColor = "rgb(0, 128, 0)";
+		button.dataset.tempColor = "green";
 	});
 	districtLayers.forEach((district) => {
 		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
@@ -312,7 +335,8 @@ function addAllDistricts() {
 
 function removeAllDistricts() {
 	buttons.forEach((button) => {
-		button.style.backgroundColor = "red";
+		button.style.backgroundColor = "rgb(255, 0, 0)";
+		button.dataset.tempColor = "red";
 	});
 	districtLayers.forEach((district) => {
 		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
