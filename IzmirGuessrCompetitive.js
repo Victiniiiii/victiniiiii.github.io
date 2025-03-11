@@ -1088,14 +1088,23 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 	});
 });
 
-document.addEventListener("contextmenu", function (event) {
+document.querySelectorAll(".firebaseButton").forEach((button) => {
+    button.addEventListener("click", () => {
+        button.disabled = true;
+        setTimeout(() => {
+            button.disabled = false;
+        }, 3000);
+    })
+})
+
+/* document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
 		addAllDistricts();
 	}
-});
+}); */
 
 let marker = new Image();
 marker.src = "static/images/redpin.png";

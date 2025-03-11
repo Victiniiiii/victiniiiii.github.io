@@ -268,11 +268,11 @@
 					<p id="statisticsMenuText">Disclaimer: Data of the games played in Every District and Custom settings are counted for both those and the original district.</p>
 				</div>
 				<div class="modalRight">
-					<button class="coolButton" onclick="logStatistics()">Click here to get your statistics.</button>
-					<button class="coolButton" onclick="sortStatistics('highscores')">Sort by High Scores</button>
-					<button class="coolButton" onclick="sortStatistics('gamesplayed')">Sort by Games Played</button>
-					<button class="coolButton" onclick="sortStatistics('roundsplayed')">Sort by Rounds Played</button>
-					<button class="coolButton" onclick="sortStatistics('successpercentage')">Sort by Success Percentage</button>
+					<button class="coolButton firebaseButton" onclick="logStatistics()">Click here to get your statistics.</button>
+					<button class="coolButton firebaseButton" onclick="sortStatistics('highscores')">Sort by High Scores</button>
+					<button class="coolButton firebaseButton" onclick="sortStatistics('gamesplayed')">Sort by Games Played</button>
+					<button class="coolButton firebaseButton" onclick="sortStatistics('roundsplayed')">Sort by Rounds Played</button>
+					<button class="coolButton firebaseButton" onclick="sortStatistics('successpercentage')">Sort by Success Percentage</button>
 				</div>
 			</div>
 		</div>
@@ -286,7 +286,7 @@
 					<div id="modalMatchHistory"></div>
 				</div>
 				<div class="modalRight">
-					<button class="coolButton" onclick="loadMatchHistory()">Load Match History</button>
+					<button class="coolButton firebaseButton" onclick="loadMatchHistory()">Load Match History</button>
 				</div>
 			</div>
 		</div>
@@ -334,7 +334,7 @@
 						<option value="Torbalı">Torbalı</option>
 						<option value="Urla">Urla</option>
 					</select>
-					<button class="coolButton" onclick="leaderboardModal()">Show</button>
+					<button class="coolButton firebaseButton" onclick="leaderboardModal()">Show</button>
 				</div>
 			</div>
 		</div>
@@ -344,7 +344,7 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<input id="changeUsernameInput" type="text" aria-label="usernameinput" />
-			<button class="coolButton" onclick="changeNickname()">Change</button>
+			<button class="coolButton firebaseButton" onclick="changeNickname()">Change</button>
 		</div>
 		<div class="menumodal" id="enterCodeModal">
 			<div class="modalTitleRow">
