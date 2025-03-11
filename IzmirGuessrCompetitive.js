@@ -497,15 +497,15 @@ function calculatePoints(distance) {
 }
 
 function disableGameStarting() {
-    document.getElementById("startGameButton").disabled = true;
-    document.getElementById("mainStartButton").disabled = true;
+	document.getElementById("startGameButton").disabled = true;
+	document.getElementById("mainStartButton").disabled = true;
 	document.getElementById("startGameButton").style.backgroundColor = "gray";
-    document.getElementById("mainStartButton").style.backgroundColor = "gray";
+	document.getElementById("mainStartButton").style.backgroundColor = "gray";
 	setTimeout(() => {
 		document.getElementById("startGameButton").disabled = false;
-        document.getElementById("mainStartButton").disabled = false;
+		document.getElementById("mainStartButton").disabled = false;
 		document.getElementById("startGameButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
-        document.getElementById("mainStartButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
+		document.getElementById("mainStartButton").style.backgroundColor = "rgb(0, 0, 0, 0.8)";
 	}, 3000);
 }
 
@@ -585,7 +585,7 @@ function displayResults(distance, points) {
 	document.getElementById("overlay-container").style.display = "none";
 	document.getElementById("shareMatch").style.display = "none";
 
-    disableGameStarting()
+	disableGameStarting();
 
 	if (roundCount != roundLimit - 1) {
 		document.getElementById("startGameButton").innerHTML = "Next Game";
@@ -741,7 +741,7 @@ function getZoomLevel(distance) {
 }
 
 function returnToMainMenu() {
-    disableGameStarting();
+	disableGameStarting();
 	roundCount = 0;
 	gameOngoing = false;
 	currentlyPlayingSharedGame = false;
@@ -1089,13 +1089,16 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 });
 
 document.querySelectorAll(".firebaseButton").forEach((button) => {
-    button.addEventListener("click", () => {
-        button.disabled = true;
-        setTimeout(() => {
-            button.disabled = false;
-        }, 3000);
-    })
-})
+	button.addEventListener("click", () => {
+		button.disabled = true;
+		setTimeout(() => {
+			button.disabled = false;
+			if (button.style.backgroundColor == "gray") {
+				button.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+			}
+		}, 3000);
+	});
+});
 
 /* document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();

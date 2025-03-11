@@ -139,6 +139,7 @@ div.gm-bundled-control:nth-child(2) {
 	margin-left: 2vw;
 	margin-bottom: 1vh;
 	width: 8vw;
+    transition: all 0.25s ease-in-out;
 }
 
 #modalHighScores p {
@@ -1697,5 +1698,6 @@ div.gm-bundled-control:nth-child(2) {
 
 	.coolButton {
 		width: unset;
+        transition: all 0.25s ease-in-out;
 	}
 }

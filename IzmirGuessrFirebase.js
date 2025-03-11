@@ -460,7 +460,7 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} <button id="copycode${j++}" class="copycodeButton">Copy Code</button> </h2>`;
+				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} &nbsp; &nbsp; <button id="copycode${j++}" class="copycodeButton">Copy Code</button> </h2>`;
 
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
