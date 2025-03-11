@@ -886,7 +886,7 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#resultModalLeft select {
-		width: 90%;
+		width: 12vw;
 		height: 1.5vw;
 		font-size: 1vw;
 		background-color: rgb(60, 60, 60);
