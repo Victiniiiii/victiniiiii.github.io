@@ -139,7 +139,7 @@ div.gm-bundled-control:nth-child(2) {
 	margin-left: 2vw;
 	margin-bottom: 1vh;
 	width: 8vw;
-    transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
 }
 
 #modalHighScores p {
@@ -213,11 +213,12 @@ div.gm-bundled-control:nth-child(2) {
 	height: 100%;
 }
 
-#modalMatchHistory p, #modalMatchHistory h2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+#modalMatchHistory p,
+#modalMatchHistory h2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (width > 767px) {
@@ -364,7 +365,7 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.875) 100%);
 		transition: all 0.25s ease-in-out;
-		border-radius: 2.5vw;
+		border-radius: 30px;
 	}
 
 	.finalrow {
@@ -623,7 +624,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		margin-bottom: 3vh;
 		transition: all 0.25s ease-in-out;
-        justify-content: space-between;
+		justify-content: space-between;
 	}
 
 	.modalTitle {
@@ -646,8 +647,8 @@ div.gm-bundled-control:nth-child(2) {
 
 	#changeUsernameModal {
 		width: 40vw !important;
-        height: 40dvh !important;
-        margin-top: 30dvh !important;
+		height: 40dvh !important;
+		margin-top: 30dvh !important;
 		color: white;
 		transition: all 0.25s ease-in-out;
 	}
@@ -791,7 +792,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 1vw;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
-        scrollbar-width: none;
+		scrollbar-width: none;
 	}
 
 	#resultModalRight {
@@ -801,7 +802,7 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalLeft {
 		padding-right: 1vw;
 		direction: rtl;
-        gap: 5px;
+		gap: 5px;
 	}
 
 	#resultModalTop {
@@ -856,6 +857,15 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 		font-size: 0.75vw;
 		margin-bottom: 0.5vh;
+	}
+
+	#resultModalLeft select {
+		width: 90%;
+		height: 1.5vw;
+		font-size: 1vw;
+		background-color: rgb(60, 60, 60);
+		border: 1px solid rgb(80, 80, 80);
+		color: white;
 	}
 
 	#mainMapInfo button,
@@ -1543,7 +1553,7 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid white;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
-        scrollbar-width: none;
+		scrollbar-width: none;
 	}
 
 	#resultModalRight {
@@ -1701,6 +1711,6 @@ div.gm-bundled-control:nth-child(2) {
 
 	.coolButton {
 		width: unset;
-        transition: all 0.25s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 }
