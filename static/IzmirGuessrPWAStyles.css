@@ -13,7 +13,7 @@ body {
 }
 
 select {
-    text-align: center;
+	text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -43,18 +43,20 @@ a:active {
 	text-decoration: none;
 }
 
-#expandButton>:nth-child(2):hover, #expandButton>:nth-child(3):hover, .buttonInsideButton a:hover {
-    color: rgb(50, 160, 255);
+#expandButton > :nth-child(2):hover,
+#expandButton > :nth-child(3):hover,
+.buttonInsideButton a:hover {
+	color: rgb(50, 160, 255);
 }
 
-#expandButton>:nth-child(1) {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+#expandButton > :nth-child(1) {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
 }
 
-#expandButton>:nth-child(4) {
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+#expandButton > :nth-child(4) {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 }
 
 .gm-fullscreen-control {
@@ -136,11 +138,11 @@ div.gm-bundled-control:nth-child(2) {
 	padding: 0.25vw 1vw 0.25vw 1vw;
 	margin-left: 2vw;
 	margin-bottom: 1vh;
-    width: 8vw;
+	width: 8vw;
 }
 
 #modalHighScores p {
-    font-size: 2.5vw;
+	font-size: 2.5vw;
 }
 
 .faq {
@@ -206,8 +208,8 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 #modaltoggle-button svg {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 @media (width > 767px) {
@@ -488,8 +490,8 @@ div.gm-bundled-control:nth-child(2) {
 		width: 80vw;
 		height: 80dvh;
 		margin: 10dvh 10vw 10dvh 10vw;
-        border-radius: 20px;
-        border: 1px solid rgb(80,80,80);
+		border-radius: 20px;
+		border: 1px solid rgb(80, 80, 80);
 		background-color: rgb(20, 20, 20);
 		color: white;
 		position: fixed;
@@ -580,7 +582,7 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 		z-index: 2;
 		transition: all 0.25s ease-in-out;
-        border-radius: 15px;
+		border-radius: 15px;
 	}
 
 	.buttonInsideButton {
@@ -607,7 +609,7 @@ div.gm-bundled-control:nth-child(2) {
 		width: 100%;
 		height: 4vw;
 		font-size: 2.5vw;
-        text-align: center;
+		text-align: center;
 		color: white;
 		display: flex;
 		flex-direction: row;
@@ -616,14 +618,14 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.modalTitle {
-		width: 76vw;
+		width: 90%;
 		height: 100%;
 		font-weight: bold;
 		padding-left: 4vw;
 		transition: all 0.25s ease-in-out;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.modalCloseButton {
@@ -633,14 +635,24 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#changeUsernameModalBox {
+	#changeUsernameModal {
+		width: 40vw;
+        flex-direction: column;
+        align-items: center;
 		color: white;
 		transition: all 0.25s ease-in-out;
 	}
 
+	#changeUsernameInput {
+		width: 80%;
+		height: 20%;
+		font-size: 2vw;
+		margin: 10% auto;
+	}
+
 	#menubuttons button {
 		width: calc(100% + 1vw);
-        height: 21%;
+		height: 21%;
 		font-size: 1.5vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
@@ -869,7 +881,7 @@ div.gm-bundled-control:nth-child(2) {
 	#enterCode {
 		margin-left: 0;
 		margin-top: 1vh;
-        width: unset;
+		width: unset;
 	}
 
 	.modalLeft {
@@ -917,16 +929,16 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 	}
 
-    .bmc-btn {
-        /* Coffee Button */
-        border: 1px solid white !important;
-        min-width: 0 !important;
-        height: 7vh !important;
-        border-radius: 2vh !important;
-        font-size: 4vh !important;
-        padding: 0 1vw !important;
-        line-height: unset !important;
-    }
+	.bmc-btn {
+		/* Coffee Button */
+		border: 1px solid white !important;
+		min-width: 0 !important;
+		height: 7vh !important;
+		border-radius: 2vh !important;
+		font-size: 4vh !important;
+		padding: 0 1vw !important;
+		line-height: unset !important;
+	}
 }
 
 @media (width < 768px) {
@@ -1126,7 +1138,7 @@ div.gm-bundled-control:nth-child(2) {
 		order: 1;
 		background-color: rgb(0, 0, 0, 0.8);
 		border-radius: 2dvw;
-        margin-left: 0.5dvw;
+		margin-left: 0.5dvw;
 	}
 
 	#alarmicon {
@@ -1216,13 +1228,13 @@ div.gm-bundled-control:nth-child(2) {
 		height: 80dvh;
 		top: 10dvh;
 		border-radius: 20px;
-        border: 1px solid rgb(80,80,80);
+		border: 1px solid rgb(80, 80, 80);
 		background-color: rgb(20, 20, 20);
 		color: white;
 		flex-direction: column;
 		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
 		transition: all 0.25s ease-in-out;
-        padding: 5vw;
+		padding: 5vw;
 	}
 
 	#startpagerighthalf {
@@ -1337,7 +1349,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-weight: bold;
 		padding-left: 4vw;
 		transition: all 0.25s ease-in-out;
-        text-align: center;
+		text-align: center;
 	}
 
 	.modalCloseButton {
@@ -1347,7 +1359,7 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#changeUsernameModalBox {
+	#changeUsernameModal {
 		color: white;
 		transition: all 0.25s ease-in-out;
 	}
@@ -1663,19 +1675,19 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 	}
 
-    .bmc-btn {
-        /* Coffee Button */
-        border: 1px solid white !important;
-        min-width: 0 !important;
-        height: 7vh !important;
-        border-radius: 2vh !important;
-        font-size: 4vh !important;
-        padding: 0 8vw 0 4vw !important;
-        line-height: unset !important;
-        margin-bottom: 1vh !important;
-    }
+	.bmc-btn {
+		/* Coffee Button */
+		border: 1px solid white !important;
+		min-width: 0 !important;
+		height: 7vh !important;
+		border-radius: 2vh !important;
+		font-size: 4vh !important;
+		padding: 0 8vw 0 4vw !important;
+		line-height: unset !important;
+		margin-bottom: 1vh !important;
+	}
 
-    .coolButton {
-        width: unset;
-    }
+	.coolButton {
+		width: unset;
+	}
 }
