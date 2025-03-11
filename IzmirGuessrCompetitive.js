@@ -646,22 +646,33 @@ function displayResults(distance, points) {
 		const resultModalLeft = document.getElementById("resultModalLeft");
 		resultModalLeft.innerHTML += "<h1>Map Options</h1>";
 
-		const createDropdown = (id) => {
+		const createDropdown = (id, label) => {
+			const container = document.createElement("div");
+			container.style.display = mobileUser ? "inline-block" : "block";
+			container.style.marginRight = mobileUser ? "10px" : "0";
+
 			const select = document.createElement("select");
 			select.id = id;
 
 			const defaultOption = document.createElement("option");
-			defaultOption.innerHTML = id;
+			defaultOption.innerHTML = label;
 			defaultOption.value = "default";
 			select.appendChild(defaultOption);
 
-			resultModalLeft.appendChild(select);
+			container.appendChild(select);
+			resultModalLeft.appendChild(container);
 			return select;
 		};
 
-		const centerDropdown = createDropdown("Centering Options");
-		const toggleDropdown = createDropdown("Toggling Options");
-		const copyDropdown = createDropdown("Copying Options");
+		const centerDropdown = createDropdown("centerDropdown", mobileUser ? "Centering" : "Centering Options");
+		const toggleDropdown = createDropdown("toggleDropdown", mobileUser ? "Toggling" : "Toggling Options");
+		const copyDropdown = createDropdown("copyDropdown", mobileUser ? "Copying" : "Copying Options");
+
+		if (mobileUser) {
+			resultModalLeft.style.display = "flex";
+			resultModalLeft.style.flexWrap = "wrap";
+			resultModalLeft.style.gap = "10px";
+		}
 
 		const hideAllOption = document.createElement("option");
 		hideAllOption.innerHTML = "Hide All Markers";
