@@ -627,6 +627,12 @@ function displayResults(distance, points) {
 			container.innerHTML = `<label for='${id}'>${label}:</label>`;
 			const select = document.createElement("select");
 			select.id = id;
+
+			const defaultOption = document.createElement("option");
+			defaultOption.innerHTML = label;
+			defaultOption.value = "default";
+			select.appendChild(defaultOption);
+
 			container.appendChild(select);
 			resultModalLeft.appendChild(container);
 			return select;
@@ -689,6 +695,7 @@ function displayResults(distance, points) {
 			centerDropdown.addEventListener("change", function () {
 				if (centerDropdown.value == i) {
 					resultMap.setCenter(actualMarker.getPosition());
+					centerDropdown.value = "default";
 				}
 			});
 
@@ -712,11 +719,14 @@ function displayResults(distance, points) {
 					actualMarker.setMap(resultMap);
 					line.setMap(resultMap);
 				}
+				toggleDropdown.value = "default";
 			});
 
 			copyDropdown.addEventListener("change", function () {
 				if (copyDropdown.value == i) {
 					navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
+                    alert("Coordinates copied! Share it with your friends to play the same game.")
+					copyDropdown.value = "default";
 				}
 			});
 		}
