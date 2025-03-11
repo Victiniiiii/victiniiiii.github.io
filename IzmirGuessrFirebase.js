@@ -426,11 +426,11 @@ async function saveMatchHistory() {
 
 async function loadMatchHistory() {
 	if (auth.currentUser) {
+        modalMatchHistory.innerHTML = "Loading...";
 		const userId = auth.currentUser.uid;
 		const matchHistoryRef = collection(db, `users/${userId}/MatchHistory`);
 		const snapshot = await getDocs(matchHistoryRef);
-		const modalMatchHistory = document.getElementById("modalMatchHistory");
-		modalMatchHistory.innerHTML = "Loading...";
+		const modalMatchHistory = document.getElementById("modalMatchHistory");		
 		if (snapshot.empty) {
 			modalMatchHistory.innerHTML = `<p>You haven't played a competitive game yet!</p>`;
 		} else {
