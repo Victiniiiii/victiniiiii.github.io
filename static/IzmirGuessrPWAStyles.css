@@ -791,6 +791,7 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 1vw;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
+        scrollbar-width: none;
 	}
 
 	#resultModalRight {
@@ -1541,6 +1542,7 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid white;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
+        scrollbar-width: none;
 	}
 
 	#resultModalRight {

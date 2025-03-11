@@ -607,7 +607,8 @@ function displayResults(distance, points) {
 
 		line.setMap(resultMap);
 	} else {
-		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"]; // Red, Yellow, Green, Blue, Magenta, Cyan, Orange, Purple, Brown, Gray
+		const colors = ["#FF0000", "#FFFF00", "#00FF00", "#0000FF", "#FF00FF", "#00FFFF", "#FFA500", "#800080", "#A52A2A", "#808080"];
+
 		document.getElementById("startGameButton").innerHTML = "Play Again?";
 		document.getElementById("shareMatch").style.display = "flex";
 		currentlyPlayingSharedGame = false;
@@ -619,13 +620,31 @@ function displayResults(distance, points) {
 
 		guessedLocationMarker.setMap(null);
 
-		const hideAllButton = document.createElement("button");
-		hideAllButton.innerHTML = "Hide All Markers";
-		document.getElementById("resultModalLeft").appendChild(hideAllButton);
+		const resultModalLeft = document.getElementById("resultModalLeft");
 
-		const showAllButton = document.createElement("button");
-		showAllButton.innerHTML = "Show All Markers";
-		document.getElementById("resultModalLeft").appendChild(showAllButton);
+		const createDropdown = (id, label) => {
+			const container = document.createElement("div");
+			container.innerHTML = `<label for='${id}'>${label}:</label>`;
+			const select = document.createElement("select");
+			select.id = id;
+			container.appendChild(select);
+			resultModalLeft.appendChild(container);
+			return select;
+		};
+
+		const centerDropdown = createDropdown("centerDropdown", "Centering");
+		const toggleDropdown = createDropdown("toggleDropdown", "Toggling");
+		const copyDropdown = createDropdown("copyDropdown", "Copying");
+
+		const hideAllOption = document.createElement("option");
+		hideAllOption.innerHTML = "Hide All Markers";
+		hideAllOption.value = "hideAll";
+		toggleDropdown.appendChild(hideAllOption);
+
+		const showAllOption = document.createElement("option");
+		showAllOption.innerHTML = "Show All Markers";
+		showAllOption.value = "showAll";
+		toggleDropdown.appendChild(showAllOption);
 
 		for (let i = 0; i < roundLimit; i++) {
 			const guessedMarker = new google.maps.Marker({
@@ -650,62 +669,55 @@ function displayResults(distance, points) {
 				strokeWeight: 4,
 			});
 
-			guessedMarker.addListener("click", function () {
-				resultMap.setCenter(actualMarker.getPosition());
-			});
-
-			actualMarker.addListener("click", function () {
-				resultMap.setCenter(actualMarker.getPosition());
-			});
-
-			line.addListener("click", function () {
-				resultMap.setCenter(actualMarker.getPosition());
-			});
-
-			const centerMarkerButton = document.createElement("button");
-			centerMarkerButton.innerHTML = `Center Button ${i + 1}`;
-			centerMarkerButton.addEventListener("click", () => {
-				resultMap.setCenter(actualMarker.getPosition());
-			});
-
-			document.getElementById("resultModalLeft").appendChild(centerMarkerButton);
-
 			line.setMap(resultMap);
 
-			const toggleButton = document.createElement("button");
-			toggleButton.innerHTML = `Toggle Guessed Location ${i + 1}`;
-			document.getElementById("resultModalLeft").appendChild(toggleButton);
+			const centerOption = document.createElement("option");
+			centerOption.innerHTML = `Center Location ${i + 1}`;
+			centerOption.value = i;
+			centerDropdown.appendChild(centerOption);
 
-			toggleButton.addEventListener("click", () => {
-				if (guessedMarker.getMap()) {
+			const toggleOption = document.createElement("option");
+			toggleOption.innerHTML = `Toggle Guessed Location ${i + 1}`;
+			toggleOption.value = i;
+			toggleDropdown.appendChild(toggleOption);
+
+			const copyOption = document.createElement("option");
+			copyOption.innerHTML = `Copy Coordinates Location ${i + 1}`;
+			copyOption.value = i;
+			copyDropdown.appendChild(copyOption);
+
+			centerDropdown.addEventListener("change", function () {
+				if (centerDropdown.value == i) {
+					resultMap.setCenter(actualMarker.getPosition());
+				}
+			});
+
+			toggleDropdown.addEventListener("change", function () {
+				if (toggleDropdown.value == i) {
+					if (guessedMarker.getMap()) {
+						guessedMarker.setMap(null);
+						actualMarker.setMap(null);
+						line.setMap(null);
+					} else {
+						guessedMarker.setMap(resultMap);
+						actualMarker.setMap(resultMap);
+						line.setMap(resultMap);
+					}
+				} else if (toggleDropdown.value == "hideAll") {
 					guessedMarker.setMap(null);
 					actualMarker.setMap(null);
 					line.setMap(null);
-				} else {
+				} else if (toggleDropdown.value == "showAll") {
 					guessedMarker.setMap(resultMap);
 					actualMarker.setMap(resultMap);
 					line.setMap(resultMap);
 				}
 			});
 
-			hideAllButton.addEventListener("click", () => {
-				guessedMarker.setMap(null);
-				actualMarker.setMap(null);
-				line.setMap(null);
-			});
-
-			showAllButton.addEventListener("click", () => {
-				guessedMarker.setMap(resultMap);
-				actualMarker.setMap(resultMap);
-				line.setMap(resultMap);
-			});
-
-			const copycoords = document.createElement("button");
-			copycoords.innerHTML = `Copy Coordinates Location ${i + 1}`;
-			document.getElementById("resultModalLeft").appendChild(copycoords);
-
-			copycoords.addEventListener("click", () => {
-				navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
+			copyDropdown.addEventListener("change", function () {
+				if (copyDropdown.value == i) {
+					navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
+				}
 			});
 		}
 	}
