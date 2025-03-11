@@ -7,7 +7,7 @@ let timerSeconds = 30;
 let hintCircle;
 let hintsAreEnabled = false;
 let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("gamemode") : "DistrictCenters";
-let roundLimit = localStorage.getItem("roundLimit") ? localStorage.getItem("roundLimit") : 3;
+let roundLimit = localStorage.getItem("roundLimit") ? localStorage.getItem("roundLimit") : 5;
 document.getElementById("gameModeSelector").value = menuModeToggle;
 document.getElementById("roundLimitSelector").value = roundLimit;
 
