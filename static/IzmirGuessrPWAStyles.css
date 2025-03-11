@@ -615,6 +615,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 		margin-bottom: 3vh;
 		transition: all 0.25s ease-in-out;
+        justify-content: space-between;
 	}
 
 	.modalTitle {

@@ -426,11 +426,11 @@ async function saveMatchHistory() {
 
 async function loadMatchHistory() {
 	if (auth.currentUser) {
-        const modalMatchHistory = document.getElementById("modalMatchHistory");	
-        modalMatchHistory.innerHTML = "Loading...";
+		const modalMatchHistory = document.getElementById("modalMatchHistory");
+		modalMatchHistory.innerHTML = "Loading...";
 		const userId = auth.currentUser.uid;
 		const matchHistoryRef = collection(db, `users/${userId}/MatchHistory`);
-		const snapshot = await getDocs(matchHistoryRef);			
+		const snapshot = await getDocs(matchHistoryRef);
 		if (snapshot.empty) {
 			modalMatchHistory.innerHTML = `<p>You haven't played a competitive game yet!</p>`;
 		} else {
@@ -460,12 +460,8 @@ async function loadMatchHistory() {
 			documents.forEach((doc) => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
-				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore}</h2>`;
-				const copycode = document.createElement("button");
-				copycode.innerHTML = `Copy Match Sharing Code`;
-				copycode.id = `copycode${j++}`;
-				copycode.className = "copycodeButton";
-				modalMatchHistory.appendChild(copycode);
+				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} <button id="copycode${j++}" class="copycodeButton">Copy Code</button> </h2>`;
+
 				let uniqueMatchSharingCode = data.gameMode;
 				for (let i = 0; i < data.score.length; i++) {
 					uniqueMatchSharingCode += "/";
@@ -475,7 +471,9 @@ async function loadMatchHistory() {
 				}
 				uniqueCodes.push(encodeUTF8toBase64(uniqueMatchSharingCode));
 				for (let i = 0; i < data.score.length; i++) {
-					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1} → Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
+					modalMatchHistory.innerHTML += `<br><p> Round ${i + 1}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" width="40" height="40" stroke-width="2"> <path d="M5 12l14 0"></path> <path d="M15 16l4 -4"></path> <path d="M15 8l4 4"></path> </svg> 
+                    Score: ${data.score[i]}, Time: ${data.time[i]}, Coordinates: ${data.coordinates[i].lat}, ${data.coordinates[i].lng} </p>`;
 				}
 			});
 			for (let i = 0; i < j; i++) {
