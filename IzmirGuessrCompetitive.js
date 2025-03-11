@@ -537,6 +537,7 @@ function displayResults(distance, points) {
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
 	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
+	document.getElementById("resultModalLeft").innerHTML += `<br>`;
 	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p><br>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
@@ -560,6 +561,8 @@ function displayResults(distance, points) {
 		points -= 200;
 		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 	}
+
+	document.getElementById("resultModalLeft").innerHTML += `<br>`;
 
 	if (points < 0) {
 		points = 0;
@@ -622,25 +625,22 @@ function displayResults(distance, points) {
 
 		const resultModalLeft = document.getElementById("resultModalLeft");
 
-		const createDropdown = (id, label) => {
-			const container = document.createElement("div");
-			container.innerHTML = `<label for='${id}'>${label}:</label>`;
+		const createDropdown = (id) => {
 			const select = document.createElement("select");
 			select.id = id;
 
 			const defaultOption = document.createElement("option");
-			defaultOption.innerHTML = label;
+			defaultOption.innerHTML = id;
 			defaultOption.value = "default";
 			select.appendChild(defaultOption);
 
-			container.appendChild(select);
-			resultModalLeft.appendChild(container);
+			resultModalLeft.appendChild(select);
 			return select;
 		};
 
-		const centerDropdown = createDropdown("centerDropdown", "Centering");
-		const toggleDropdown = createDropdown("toggleDropdown", "Toggling");
-		const copyDropdown = createDropdown("copyDropdown", "Copying");
+		const centerDropdown = createDropdown("Centering Options");
+		const toggleDropdown = createDropdown("Toggling Options");
+		const copyDropdown = createDropdown("Copying Options");
 
 		const hideAllOption = document.createElement("option");
 		hideAllOption.innerHTML = "Hide All Markers";
@@ -725,7 +725,7 @@ function displayResults(distance, points) {
 			copyDropdown.addEventListener("change", function () {
 				if (copyDropdown.value == i) {
 					navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
-                    alert("Coordinates copied! Share it with your friends to play the same game.")
+					alert("Coordinates copied! Share it with your friends to play the same game.");
 					copyDropdown.value = "default";
 				}
 			});
