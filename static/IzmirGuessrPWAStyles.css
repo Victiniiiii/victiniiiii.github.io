@@ -47,6 +47,16 @@ a:active {
     color: rgb(50, 160, 255);
 }
 
+#expandButton>:nth-child(1) {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#expandButton>:nth-child(4) {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 .gm-fullscreen-control {
 	/* Full screen button at top right */
 	background: rgb(0, 0, 0, 0.8) !important;
@@ -570,6 +580,7 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 		z-index: 2;
 		transition: all 0.25s ease-in-out;
+        border-radius: 15px;
 	}
 
 	.buttonInsideButton {
