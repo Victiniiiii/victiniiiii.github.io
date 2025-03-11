@@ -621,7 +621,7 @@ function displayResults(distance, points) {
 		guessedLocationMarker.setMap(null);
 
 		const resultModalLeft = document.getElementById("resultModalLeft");
-        resultModalLeft.innerHTML += "Map Options";
+        resultModalLeft.innerHTML += "<h1>Map Options</h1>";
 
 		const createDropdown = (id) => {
 			const select = document.createElement("select");
