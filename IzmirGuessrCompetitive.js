@@ -537,8 +537,7 @@ function displayResults(distance, points) {
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
 	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
-	document.getElementById("resultModalLeft").innerHTML += `<br>`;
-	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p><br>`;
+	document.getElementById("resultModalLeft").innerHTML += `<p>From Distance: ${points}</p>`;
 
 	if (selectedGameMode == "Every District" && isPointInPolygon(guessedPoint, foundDistrict.designcoordinates)) {
 		points += 100;
@@ -561,8 +560,6 @@ function displayResults(distance, points) {
 		points -= 200;
 		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 	}
-
-	document.getElementById("resultModalLeft").innerHTML += `<br>`;
 
 	if (points < 0) {
 		points = 0;
@@ -652,6 +649,9 @@ function displayResults(distance, points) {
 		showAllOption.value = "showAll";
 		toggleDropdown.appendChild(showAllOption);
 
+		const markers = [];
+		const lines = [];
+
 		for (let i = 0; i < roundLimit; i++) {
 			const guessedMarker = new google.maps.Marker({
 				position: guessedCoordinates[i],
@@ -676,6 +676,8 @@ function displayResults(distance, points) {
 			});
 
 			line.setMap(resultMap);
+			markers.push({ guessedMarker, actualMarker });
+			lines.push(line);
 
 			const centerOption = document.createElement("option");
 			centerOption.innerHTML = `Center Location ${i + 1}`;
@@ -691,45 +693,56 @@ function displayResults(distance, points) {
 			copyOption.innerHTML = `Copy Coordinates Location ${i + 1}`;
 			copyOption.value = i;
 			copyDropdown.appendChild(copyOption);
+		}
 
-			centerDropdown.addEventListener("change", function () {
-				if (centerDropdown.value == i) {
-					resultMap.setCenter(actualMarker.getPosition());
-					centerDropdown.value = "default";
-				}
-			});
+		centerDropdown.addEventListener("change", function () {
+			const index = parseInt(centerDropdown.value);
+			if (!isNaN(index)) {
+				resultMap.setCenter(markers[index].actualMarker.getPosition());
+				centerDropdown.value = "default";
+			}
+		});
 
-			toggleDropdown.addEventListener("change", function () {
-				if (toggleDropdown.value == i) {
+		toggleDropdown.addEventListener("change", function () {
+			const index = toggleDropdown.value;
+			if (index === "hideAll") {
+				markers.forEach(({ guessedMarker, actualMarker }) => {
+					guessedMarker.setMap(null);
+					actualMarker.setMap(null);
+				});
+				lines.forEach((line) => line.setMap(null));
+			} else if (index === "showAll") {
+				markers.forEach(({ guessedMarker, actualMarker }) => {
+					guessedMarker.setMap(resultMap);
+					actualMarker.setMap(resultMap);
+				});
+				lines.forEach((line) => line.setMap(resultMap));
+			} else {
+				const i = parseInt(index);
+				if (!isNaN(i)) {
+					const { guessedMarker, actualMarker } = markers[i];
 					if (guessedMarker.getMap()) {
 						guessedMarker.setMap(null);
 						actualMarker.setMap(null);
-						line.setMap(null);
+						lines[i].setMap(null);
 					} else {
 						guessedMarker.setMap(resultMap);
 						actualMarker.setMap(resultMap);
-						line.setMap(resultMap);
+						lines[i].setMap(resultMap);
 					}
-				} else if (toggleDropdown.value == "hideAll") {
-					guessedMarker.setMap(null);
-					actualMarker.setMap(null);
-					line.setMap(null);
-				} else if (toggleDropdown.value == "showAll") {
-					guessedMarker.setMap(resultMap);
-					actualMarker.setMap(resultMap);
-					line.setMap(resultMap);
 				}
-				toggleDropdown.value = "default";
-			});
+			}
+			toggleDropdown.value = "default";
+		});
 
-			copyDropdown.addEventListener("change", function () {
-				if (copyDropdown.value == i) {
-					navigator.clipboard.writeText(`${actualCoordinates[i].lat}, ${actualCoordinates[i].lng}`);
-					alert("Coordinates copied! Share it with your friends to play the same game.");
-					copyDropdown.value = "default";
-				}
-			});
-		}
+		copyDropdown.addEventListener("change", function () {
+			const index = parseInt(copyDropdown.value);
+			if (!isNaN(index)) {
+				navigator.clipboard.writeText(`${actualCoordinates[index].lat}, ${actualCoordinates[index].lng}`);
+				alert("Coordinates copied!");
+				copyDropdown.value = "default";
+			}
+		});
 	}
 	roundCount++;
 }

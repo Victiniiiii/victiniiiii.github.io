@@ -801,6 +801,7 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalLeft {
 		padding-right: 1vw;
 		direction: rtl;
+        gap: 5px;
 	}
 
 	#resultModalTop {
