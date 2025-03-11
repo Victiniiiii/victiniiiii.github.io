@@ -583,7 +583,7 @@ function displayResults(distance, points) {
 		tableHTML += "<tr>";
 
 		for (let i = 0; i <= roundCount; i++) {
-			tableHTML += `<th>Round ${i + 1}</th>`;
+			tableHTML += `<th>${i + 1}</th>`;
 		}
 
 		tableHTML += "</tr>";
@@ -598,7 +598,7 @@ function displayResults(distance, points) {
 		resultContainer.innerHTML = tableHTML;
 	} else {
 		resultContainer.innerHTML = "<h1>Round Points</h1>";
-        
+
 		for (let i = 0; i <= roundCount; i++) {
 			resultContainer.innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>`;
 		}

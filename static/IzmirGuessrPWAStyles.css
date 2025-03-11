@@ -49,16 +49,6 @@ a:active {
 	color: rgb(50, 160, 255);
 }
 
-#expandButton > :nth-child(1) {
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-}
-
-#expandButton > :nth-child(4) {
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-}
-
 .gm-fullscreen-control {
 	/* Full screen button at top right */
 	background: rgb(0, 0, 0, 0.8) !important;
@@ -594,6 +584,16 @@ div.gm-bundled-control:nth-child(2) {
 		border-radius: 15px;
 	}
 
+    #expandButton > :nth-child(1) {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    
+    #expandButton > :nth-child(4) {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
 	.buttonInsideButton {
 		width: auto;
 		height: 7vh;
@@ -1036,8 +1036,8 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: center;
 		z-index: 1;
 		width: 80dvw;
-		height: auto;
-		margin: 20dvh 0 0 10vw;
+		height: 80dvh;
+		margin: 15dvh 0 0 10vw;
 		padding: 1vw;
 		border: 1px solid white;
 		color: white;
@@ -1334,7 +1334,18 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 		z-index: 2;
 		transition: all 0.25s ease-in-out;
+        border-radius: 10px;
 	}
+
+    #expandButton > :nth-child(1) {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    #expandButton > :nth-child(4) {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
 	.buttonInsideButton {
 		display: block;
@@ -1560,12 +1571,10 @@ div.gm-bundled-control:nth-child(2) {
 
 	#resultModalRight {
 		order: 3;
-		height: 24dvw;
 	}
 
 	#resultModalLeft {
 		order: 2;
-		height: 16dvw;
 	}
 
     #resultModalLeft select {
@@ -1581,6 +1590,7 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: column;
 		transition: all 0.25s ease-in-out;
+        height: 100%;
 	}
 
 	#resultModalTop h1 {
