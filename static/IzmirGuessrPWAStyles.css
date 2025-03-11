@@ -636,16 +636,16 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#changeUsernameModal {
-		width: 40vw;
-        flex-direction: column;
-        align-items: center;
+		width: 40vw !important;
+        height: 40dvh !important;
+        margin-top: 30dvh !important;
 		color: white;
 		transition: all 0.25s ease-in-out;
 	}
 
 	#changeUsernameInput {
 		width: 80%;
-		height: 20%;
+		height: 3vw;
 		font-size: 2vw;
 		margin: 10% auto;
 	}
@@ -887,7 +887,7 @@ div.gm-bundled-control:nth-child(2) {
 	.modalLeft {
 		width: 80%;
 		height: 100%;
-		padding: 2dvw;
+		padding: 0.75vw;
 		overflow-y: auto;
 	}
 
