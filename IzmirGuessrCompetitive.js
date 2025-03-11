@@ -579,7 +579,7 @@ function displayResults(distance, points) {
 	const resultContainer = document.getElementById("resultModalRight");
 
 	if (mobileUser) {
-		let tableHTML = "<h1>Round Points</h1><table border='1' style='width: 100%; text-align: center;'>";
+		let tableHTML = "<h1>Round Points</h1><table border='1' style='width: 100%; font-size: 2.5vw; text-align: center;'>";
 		tableHTML += "<tr>";
 
 		for (let i = 0; i <= roundCount; i++) {

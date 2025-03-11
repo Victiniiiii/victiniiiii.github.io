@@ -1145,6 +1145,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: auto;
 		top: 0;
 		margin-top: 1.6dvh;
+        margin-left: 1vw;
 		z-index: 5;
 		gap: 1vw;
 		pointer-events: all;
@@ -1563,7 +1564,7 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: flex-start;
 		align-items: center;
 		text-align: center;
-		font-size: 4vw;
+		font-size: 3.5vw;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
 		scrollbar-width: none;
@@ -1596,6 +1597,8 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalTop h1 {
 		font-size: 5dvw;
 		transition: all 0.25s ease-in-out;
+        text-decoration: underline;
+        margin-bottom: 5px;
 	}
 
 	#resultModalBottom {
@@ -1610,11 +1613,16 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
+    #resultModalBottom:nth-child(3) {
+        background-color: rgb(0, 100, 200);
+    }    
+
 	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
 		transition: all 0.25s ease-in-out;
+        border: 1px solid rgb(80, 80, 80);
 	}
 
 	.flexrow select {
@@ -1635,7 +1643,7 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.flexrow p {
-		font-size: 3vw;
+		font-size: 3.5vw;
 	}
 
 	#mainMapInfo button,
