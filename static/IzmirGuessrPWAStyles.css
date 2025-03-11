@@ -625,6 +625,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin-bottom: 3vh;
 		transition: all 0.25s ease-in-out;
 		justify-content: space-between;
+        border-bottom: 1px solid rgb(80, 80, 80);
 	}
 
 	.modalTitle {
@@ -815,6 +816,7 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalTop h1 {
 		font-size: 1.3vw;
 		transition: all 0.25s ease-in-out;
+        text-decoration: underline;
 	}
 
 	#resultModalBottom {
@@ -1172,6 +1174,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.8);
 		border-top-left-radius: 2dvw;
 		border-bottom-left-radius: 2dvw;
+        margin-left: 0.5vw;
 	}
 
 	#timer {
@@ -1549,8 +1552,7 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: flex-start;
 		align-items: center;
 		text-align: center;
-		font-size: 4dvw;
-		border: 1px solid white;
+		font-size: 4vw;
 		transition: all 0.25s ease-in-out;
 		overflow-y: scroll;
 		scrollbar-width: none;
@@ -1564,6 +1566,15 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalLeft {
 		order: 2;
 		height: 16dvw;
+	}
+
+    #resultModalLeft select {
+		width: 80%;
+		height: 6vw;
+		font-size: 4vw;
+		background-color: rgb(60, 60, 60);
+		border: 1px solid rgb(80, 80, 80);
+		color: white;
 	}
 
 	#resultModalTop {
@@ -1586,7 +1597,6 @@ div.gm-bundled-control:nth-child(2) {
 		align-items: center;
 		text-align: center;
 		gap: 2vw;
-		border: 1px solid white;
 		transition: all 0.25s ease-in-out;
 	}
 

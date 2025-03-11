@@ -575,10 +575,33 @@ function displayResults(distance, points) {
 	document.getElementById("distance-info").innerHTML = `Guess Distance: ${distance.toFixed(0)}m`;
 	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
 	document.getElementById("totalPoints").innerHTML = `Total Points: ${totalPoints}`;
-	document.getElementById("resultModalRight").innerHTML = "<h1>Round Points</h1>";
 
-	for (let i = 0; i <= roundCount; i++) {
-		document.getElementById("resultModalRight").innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>`;
+	const resultContainer = document.getElementById("resultModalRight");
+
+	if (mobileUser) {
+		let tableHTML = "<h1>Round Points</h1><table border='1' style='width: 100%; text-align: center;'>";
+		tableHTML += "<tr>";
+
+		for (let i = 0; i <= roundCount; i++) {
+			tableHTML += `<th>Round ${i + 1}</th>`;
+		}
+
+		tableHTML += "</tr>";
+		tableHTML += "<tr>";
+
+		for (let i = 0; i <= roundCount; i++) {
+			tableHTML += `<td>${roundPoints[i]}</td>`;
+		}
+
+		tableHTML += "</tr>";
+		tableHTML += "</table>";
+		resultContainer.innerHTML = tableHTML;
+	} else {
+		resultContainer.innerHTML = "<h1>Round Points</h1>";
+        
+		for (let i = 0; i <= roundCount; i++) {
+			resultContainer.innerHTML += `<p>Round ${i + 1} Score: ${roundPoints[i]}</p>`;
+		}
 	}
 
 	document.getElementById("result-modal").style.display = "flex";
@@ -621,7 +644,7 @@ function displayResults(distance, points) {
 		guessedLocationMarker.setMap(null);
 
 		const resultModalLeft = document.getElementById("resultModalLeft");
-        resultModalLeft.innerHTML += "<h1>Map Options</h1>";
+		resultModalLeft.innerHTML += "<h1>Map Options</h1>";
 
 		const createDropdown = (id) => {
 			const select = document.createElement("select");
