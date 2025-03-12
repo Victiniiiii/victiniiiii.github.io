@@ -305,6 +305,7 @@ async function logTopHighScores() {
 	}
 
 	document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`;
+    document.getElementById("miniLeaderboard").innerHTML += `<p>&nbsp;</p>`
 
 	const topHighScores = Array.from(allHighScores.values())
 		.sort((a, b) => b.highScore - a.highScore)

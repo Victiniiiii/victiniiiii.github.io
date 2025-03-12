@@ -304,7 +304,7 @@ function toggleDistrict(input) {
             initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
         }
     }
-    ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+    ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 }
 
 function addAllDistricts() {
@@ -323,7 +323,7 @@ function addAllDistricts() {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
 
-		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+		ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 	});
 }
 
@@ -339,7 +339,7 @@ function removeAllDistricts() {
 
 		district.state = 0;
 		initiallyGreenDistricts.length = 0;
-		ilcesayisi.innerText = `Current District Count: ${initiallyGreenDistricts.length}`;
+		ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 	});
 }
 
@@ -967,6 +967,7 @@ function clearImageCache() {
 function saveRoundLimit() {
 	roundLimit = document.getElementById("roundLimitSelector").value;
 	localStorage.setItem("roundLimit", roundLimit);
+    document.getElementById("roundThisLong").innerHTML = `The games will last ${roundLimit} rounds long.`;
 }
 
 function saveGameMode() {
@@ -1001,6 +1002,10 @@ function decodeBase64toUTF8(str) {
 
 function enterMatchSharingCode() {
 	let theCode = document.getElementById("matchSharingCodeInput").value;
+    if (theCode.length < 10) {
+        alert("Please enter a valid code.");
+        return;
+    }
 	theCode = decodeBase64toUTF8(theCode);
 
 	const parts = theCode.split("/");
@@ -1188,14 +1193,14 @@ document.querySelectorAll(".firebaseButton").forEach((button) => {
 	});
 });
 
-document.addEventListener("contextmenu", function (event) {
+/* document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
 		addAllDistricts();
 	}
-});
+}); */
 
 let marker = new Image();
 marker.src = "static/images/redpin.png";

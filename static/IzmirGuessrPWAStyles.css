@@ -91,23 +91,11 @@ div.gm-bundled-control:nth-child(2) {
 }
 
 #coffeeButton {
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    background-color: rgb(40, 140, 240);
-    border-radius: 8px;
-    border: 1px solid white;
-    padding: 0 10px;
-	transition: all 0.25s ease-in-out;
-    cursor: pointer;
-    margin-top: 1vh;
+	background-color: rgb(40, 140, 240) !important;
 }
 
 #coffeeButton:hover {
-    background-color: rgb(37, 94, 151);
+	background-color: rgb(37, 94, 151) !important;
 }
 
 .flexrow {
@@ -117,6 +105,13 @@ div.gm-bundled-control:nth-child(2) {
 	align-items: center;
 	justify-content: space-evenly;
 	text-align: center;
+}
+
+.blur {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .flexcolumn {
@@ -130,7 +125,7 @@ div.gm-bundled-control:nth-child(2) {
 	color: white;
 	text-shadow: black 4px 4px 4px;
 	background-color: rgba(0, 0, 0, 0.5);
-	width: auto;
+	width: fit-content;
 	display: inline-block;
 	padding: 1vh;
 	border-radius: 1vh;
@@ -201,23 +196,6 @@ div.gm-bundled-control:nth-child(2) {
 	transform: rotate(180deg);
 }
 
-#matchSharingCodeInput {
-	width: 60vw;
-	height: 5vw;
-	font-size: 2vw;
-	margin-top: 5vw;
-}
-
-#matchSharingPlayButton {
-	background-color: rgb(0, 0, 0, 0.8);
-	color: white;
-	width: 20vw;
-	height: 5vw;
-	margin-top: 5vw;
-	cursor: pointer;
-	font-size: 2vw;
-}
-
 #modaltoggle-button svg {
 	width: 100%;
 	height: 100%;
@@ -229,6 +207,27 @@ div.gm-bundled-control:nth-child(2) {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+
+.width65 {
+	width: 65% !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	padding: 1vw !important;
+}
+
+.width35 {
+	width: 35% !important;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	border-left: 1px solid white;
+	padding: 1vw !important;
 }
 
 @media (width > 767px) {
@@ -542,13 +541,13 @@ div.gm-bundled-control:nth-child(2) {
 	#izmirilcebox button {
 		font-size: 1.4vw;
 		padding: 0 0.3vw;
-        margin: 0.1vw 0;
+		margin: 0.1vw 0;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
 		background-color: green;
-        border: 1px solid rgb(80, 80, 80);
-        border-radius: 8px;
-        cursor: pointer;
+		border: 1px solid rgb(80, 80, 80);
+		border-radius: 8px;
+		cursor: pointer;
 	}
 
 	.izmirilcebottombuttons {
@@ -564,23 +563,12 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
-		display: flex;
-		flex-direction: row;
-		width: 100%;
-		height: 40%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, auto);
+		gap: 15px;
 		transition: all 0.25s ease-in-out;
-		padding-bottom: 1vw;
-	}
-
-	#menubuttons {
-		width: 14vw;
-		height: 75%;
-		display: flex;
-		flex-direction: column;
-		gap: 0.1vw;
-		align-items: center;
-		padding: 0 1vw;
-		transition: all 0.25s ease-in-out;
+		margin-bottom: 5vh;
 	}
 
 	.izmirayarlar {
@@ -608,15 +596,15 @@ div.gm-bundled-control:nth-child(2) {
 		border-radius: 15px;
 	}
 
-    #expandButton > :nth-child(1) {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-    
-    #expandButton > :nth-child(4) {
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
+	#expandButton > :nth-child(1) {
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+	}
+
+	#expandButton > :nth-child(4) {
+		border-bottom-left-radius: 15px;
+		border-bottom-right-radius: 15px;
+	}
 
 	.buttonInsideButton {
 		width: auto;
@@ -649,7 +637,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin-bottom: 3vh;
 		transition: all 0.25s ease-in-out;
 		justify-content: space-between;
-        border-bottom: 1px solid rgb(80, 80, 80);
+		border-bottom: 1px solid rgb(80, 80, 80);
 	}
 
 	.modalTitle {
@@ -685,14 +673,23 @@ div.gm-bundled-control:nth-child(2) {
 		margin: 10% auto;
 	}
 
-	#menubuttons button {
-		width: calc(100% + 1vw);
-		height: 21%;
-		font-size: 1.5vw;
+	#mainmenuCompetitiveChecksAndButtons button,
+	#mainmenuCompetitiveChecksAndButtons div {
+		width: 100%;
+		height: fit-content;
+		font-size: 1.25vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-		border-radius: 1vw;
+		border-radius: 0.87vw;
+		cursor: pointer;
 		transition: all 0.25s ease-in-out;
+		border: 1px solid rgb(120, 120, 120);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		padding: 1vh 0.3vw;
 	}
 
 	.blur {
@@ -726,23 +723,6 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#competitiveChecks {
-		width: 30vw;
-		height: 75%;
-		display: flex;
-		flex-direction: column;
-		color: white;
-		text-shadow: 2px 2px 2px black;
-		font-size: 1vw;
-		text-align: left;
-		padding: 0 0 2vw 2vw;
-		line-height: 2.3vw;
-		background: rgb(0, 0, 0, 0.4);
-		border: 1px solid black;
-		margin: 0 0 2vw 1vw;
-		transition: all 0.25s ease-in-out;
-	}
-
 	#menuarabox {
 		width: 43vw;
 		height: 30%;
@@ -766,7 +746,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background: rgb(0, 0, 0, 0.4);
+		background: rgb(0, 0, 0, 0.6);
 		transition: all 0.25s ease-in-out;
 	}
 
@@ -840,7 +820,7 @@ div.gm-bundled-control:nth-child(2) {
 	#resultModalTop h1 {
 		font-size: 1.3vw;
 		transition: all 0.25s ease-in-out;
-        text-decoration: underline;
+		text-decoration: underline;
 	}
 
 	#resultModalBottom {
@@ -894,15 +874,6 @@ div.gm-bundled-control:nth-child(2) {
 		color: white;
 	}
 
-	#mainMapInfo button,
-	#mainMapInfo select {
-		background-color: rgb(0, 0, 0, 0.8);
-		color: white;
-		font-size: 1vw;
-		transition: all 0.25s ease-in-out;
-		padding: 0 0.5vw 0 0.5vw;
-	}
-
 	#mainMapInfo p,
 	#mainMapInfo label {
 		color: white;
@@ -912,10 +883,12 @@ div.gm-bundled-control:nth-child(2) {
 
 	select#gameModeSelector {
 		width: 7.5vw;
+		border: 1px solid white;
 	}
 
 	select#roundLimitSelector {
 		width: 3vw;
+		border: 1px solid white;
 	}
 
 	.modalContent {
@@ -976,15 +949,32 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 	}
 
-	.bmc-btn {
-		/* Coffee Button */
-		border: 1px solid white !important;
-		min-width: 0 !important;
-		height: 7vh !important;
-		border-radius: 2vh !important;
-		font-size: 4vh !important;
-		padding: 0 1vw !important;
-		line-height: unset !important;
+	.addremovebuttons,
+	#mapModeSelector {
+		border-radius: 6px;
+		border: 1px solid rgb(120, 120, 120);
+		padding: 4px 12px !important;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 1vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+	}
+
+	#matchSharingCodeInput {
+		width: 25vw;
+		height: 3vw;
+		font-size: 2vw;
+	}
+
+	#matchSharingPlayButton,
+	#mainStartButton {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		width: 25vw;
+		height: 3vw;
+		cursor: pointer;
+		font-size: 2vw;
 	}
 }
 
@@ -1169,7 +1159,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: auto;
 		top: 0;
 		margin-top: 1.6dvh;
-        margin-left: 1vw;
+		margin-left: 1vw;
 		z-index: 5;
 		gap: 1vw;
 		pointer-events: all;
@@ -1199,7 +1189,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.8);
 		border-top-left-radius: 2dvw;
 		border-bottom-left-radius: 2dvw;
-        margin-left: 0.5vw;
+		margin-left: 0.5vw;
 	}
 
 	#timer {
@@ -1283,7 +1273,6 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		z-index: 419800000000000005456465464654646464649849849799799846546513214964594919500000000000000000002;
 		transition: all 0.25s ease-in-out;
-		padding: 5vw;
 	}
 
 	#startpagerighthalf {
@@ -1303,8 +1292,6 @@ div.gm-bundled-control:nth-child(2) {
 		width: 100%;
 		height: auto;
 		padding: 1vw;
-		-webkit-backdrop-filter: blur(5px);
-		backdrop-filter: blur(5px);
 		transition: all 0.25s ease-in-out;
 		text-align: center;
 	}
@@ -1312,20 +1299,21 @@ div.gm-bundled-control:nth-child(2) {
 	#izmirilcebox button {
 		padding: 0 0.3vw 0 0.3vw;
 		font-size: 6dvw;
-        margin: 0.15vh 0;
+		margin: 0.15vh 0;
 		font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 		transition: all 0.25s ease-in-out;
 		background-color: green;
-        border: 1px solid rgb(80, 80, 80);
-        border-radius: 6px;
+		border: 1px solid rgb(80, 80, 80);
+		border-radius: 6px;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, auto);
+		gap: 10px;
 		transition: all 0.25s ease-in-out;
-		justify-content: center;
-		padding: 1dvw 1dvw 5dvw 1dvw;
+		margin-bottom: 5vh;
 	}
 
 	#menubuttons {
@@ -1362,18 +1350,18 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 		z-index: 2;
 		transition: all 0.25s ease-in-out;
-        border-radius: 10px;
+		border-radius: 10px;
 	}
 
-    #expandButton > :nth-child(1) {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    
-    #expandButton > :nth-child(4) {
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
+	#expandButton > :nth-child(1) {
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+
+	#expandButton > :nth-child(4) {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
 
 	.buttonInsideButton {
 		display: block;
@@ -1402,8 +1390,10 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: row;
 		margin-bottom: 3vh;
+        margin-top: 1vh;
 		align-items: center;
 		transition: all 0.25s ease-in-out;
+        border-bottom: 1px solid white;
 	}
 
 	.modalTitle {
@@ -1427,14 +1417,23 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#menubuttons button {
+	#mainmenuCompetitiveChecksAndButtons button,
+	#mainmenuCompetitiveChecksAndButtons div {
 		width: 100%;
-		font-size: 7.5dvw;
+		height: 12vw;
+		font-size: 4vw;
 		background-color: rgb(0, 0, 0, 0.8);
 		color: white;
-		border-radius: 6dvw;
-		margin-top: 2dvw;
+		border-radius: 4vw;
+		margin-top: 2vw;
 		transition: all 0.25s ease-in-out;
+		border: 1px solid rgb(120, 120, 120);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-align: center;
+		justify-content: center;
+		padding: 1vh 0.3vw;
 	}
 
 	.blur {
@@ -1494,8 +1493,8 @@ div.gm-bundled-control:nth-child(2) {
 		background: rgb(0, 0, 0, 0.4);
 		border: 1px solid black;
 		transition: all 0.25s ease-in-out;
-        align-items: center;
-        padding: 2vh 0;
+		align-items: center;
+		padding: 2vh 0;
 	}
 
 	#menuarabox {
@@ -1532,6 +1531,7 @@ div.gm-bundled-control:nth-child(2) {
 		border: 1px solid black;
 		background: rgb(0, 0, 0, 0.4);
 		transition: all 0.25s ease-in-out;
+		padding: 1vh;
 	}
 
 	#menusettings {
@@ -1607,7 +1607,7 @@ div.gm-bundled-control:nth-child(2) {
 		order: 2;
 	}
 
-    #resultModalLeft select {
+	#resultModalLeft select {
 		width: 80%;
 		height: 6vw;
 		font-size: 4vw;
@@ -1620,14 +1620,14 @@ div.gm-bundled-control:nth-child(2) {
 		display: flex;
 		flex-direction: column;
 		transition: all 0.25s ease-in-out;
-        height: 100%;
+		height: 100%;
 	}
 
 	#resultModalTop h1 {
 		font-size: 5dvw;
 		transition: all 0.25s ease-in-out;
-        text-decoration: underline;
-        margin-bottom: 5px;
+		text-decoration: underline;
+		margin-bottom: 5px;
 	}
 
 	#resultModalBottom {
@@ -1642,16 +1642,16 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-    #resultModalBottom:nth-child(3) {
-        background-color: rgb(0, 100, 200);
-    }    
+	#resultModalBottom:nth-child(3) {
+		background-color: rgb(0, 100, 200);
+	}
 
 	#resultModalBottom button {
 		padding: 1vh 1vw 1vh 1vw;
 		color: white;
 		background-color: rgb(0, 0, 0, 0.8);
 		transition: all 0.25s ease-in-out;
-        border: 1px solid rgb(80, 80, 80);
+		border: 1px solid rgb(80, 80, 80);
 	}
 
 	.flexrow select {
@@ -1693,10 +1693,12 @@ div.gm-bundled-control:nth-child(2) {
 
 	select#gameModeSelector {
 		width: 36vw;
+		border: 1px solid white;
 	}
 
 	select#roundLimitSelector {
 		width: 12vw;
+		border: 1px solid white;
 	}
 
 	.modalContent {
@@ -1754,26 +1756,48 @@ div.gm-bundled-control:nth-child(2) {
 		overflow: hidden;
 	}
 
-	.bmc-btn {
-		/* Coffee Button */
-		border: 1px solid white !important;
-		min-width: 0 !important;
-		height: 7vh !important;
-		border-radius: 2vh !important;
-		font-size: 4vh !important;
-		padding: 0 8vw 0 4vw !important;
-		line-height: unset !important;
-		margin-bottom: 1vh !important;
-	}
-
 	.coolButton {
 		width: unset;
 		transition: all 0.25s ease-in-out;
 	}
 
-    #enterCode {
-        margin: 1vh 0;
-        width: fit-content;
-        padding: 1vw 1.5vh;
+	#enterCode {
+		margin: 1vh 0;
+		width: fit-content;
+		padding: 1vw 1.5vh;
+	}
+
+	.addremovebuttons,
+	#mapModeSelector {
+		border-radius: 6px;
+		border: 1px solid rgb(120, 120, 120);
+		padding: 4px 12px !important;
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		font-size: 5vw;
+		transition: all 0.25s ease-in-out;
+		padding: 0 0.5vw 0 0.5vw;
+		margin-top: 1vh;
+	}
+
+	#matchSharingCodeInput {
+		width: 90%;
+		height: 4vh;
+		font-size: 2vw;
+	}
+
+    #playMenu {
+        font-size: 3vw;
     }
+
+	#matchSharingPlayButton,
+	#mainStartButton {
+		background-color: rgb(0, 0, 0, 0.8);
+		color: white;
+		width: fit-content;
+        padding: 0 2vw;
+		height: 4vh;
+		cursor: pointer;
+		font-size: 2vw;
+	}
 }
