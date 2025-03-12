@@ -1193,14 +1193,14 @@ document.querySelectorAll(".firebaseButton").forEach((button) => {
 	});
 });
 
-/* document.addEventListener("contextmenu", function (event) {
+document.addEventListener("contextmenu", function (event) {
 	event.preventDefault();
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
 		addAllDistricts();
 	}
-}); */
+});
 
 let marker = new Image();
 marker.src = "static/images/redpin.png";
