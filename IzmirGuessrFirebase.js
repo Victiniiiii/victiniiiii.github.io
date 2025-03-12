@@ -35,9 +35,7 @@ secondButton.addEventListener("click", () => {
 
 				runTransaction(db, async (transaction) => {
 					const userData = await transaction.get(ref);
-					console.log("test");
 					if (!userData.exists()) {
-						console.log("Nickname set as", currentUser.displayName);
 						nickname = currentUser.displayName;
 						transaction.set(ref, {
 							Nickname: nickname,
@@ -49,13 +47,9 @@ secondButton.addEventListener("click", () => {
 				console.error("Error during Google login:", error);
 			});
 	} else {
-		signOut(auth)
-			.then(() => {
-				console.log("User signed out successfully");
-			})
-			.catch((error) => {
-				console.error("Error signing out: ", error);
-			});
+		signOut(auth).catch((error) => {
+			console.error("Error signing out: ", error);
+		});
 	}
 });
 
@@ -113,14 +107,13 @@ onAuthStateChanged(auth, async (user) => {
 			} else {
 				nickname = user.displayName;
 				await runTransaction(db, async (transaction) => {
-					console.log("Nickname set as", nickname);
 					transaction.set(ref, {
 						Nickname: nickname,
 					});
 				});
 			}
 
-			window.document.getElementById("usernameHere").innerText = `Username: ${nickname}`;
+			window.document.getElementById("usernameHere").innerText = nickname.length > 14 ? `${nickname}` : `Username: ${nickname}`;
 			window.document.getElementById("secondButton").innerText = `Log Out`;
 			calculateDistrictData();
 			logTopHighScores();
@@ -305,7 +298,7 @@ async function logTopHighScores() {
 	}
 
 	document.getElementById("miniLeaderboard").innerHTML = `<h1>Leaderboard</h1>`;
-    document.getElementById("miniLeaderboard").innerHTML += `<p>&nbsp;</p>`
+	document.getElementById("miniLeaderboard").innerHTML += `<p>&nbsp;</p>`;
 
 	const topHighScores = Array.from(allHighScores.values())
 		.sort((a, b) => b.highScore - a.highScore)
