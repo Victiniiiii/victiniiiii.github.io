@@ -598,7 +598,7 @@ function displayResults(distance, points) {
 	const resultContainer = document.getElementById("resultModalRight");
 
 	if (mobileUser) {
-		let tableHTML = "<h1>Round Points</h1><table border='1' style='width: 100%; font-size: 2.5vw; text-align: center;'>";
+		let tableHTML = "<h1>Round Points</h1><table border='1' cellspacing='0' style='width: 100%; font-size: 2.5vw; text-align: center;'>";
 		tableHTML += "<tr>";
 
 		for (let i = 0; i <= roundCount; i++) {
@@ -1101,14 +1101,7 @@ function useHint() {
 	if (!hintsAreEnabled) {
 		if (confirm("Are you sure you want to use a hint? 200 Points will be deducted.")) {
 			hintsAreEnabled = true;
-			let distance;
-
-			if (selectedGameMode == "Every District") {
-				distance = 5000;
-			} else {
-				distance = 500;
-			}
-
+			let distance = selectedGameMode == "Every District" ? 5000 : 500;
 			let randomNumber = Math.floor(Math.random() * distance);
 			const newCircleCenter = getNewRandomLocation(randomNumber);
 
