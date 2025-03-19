@@ -108,12 +108,6 @@ function switchMainMenuMapType() {
 	const mode = document.getElementById("mapModeSelector").value;
 	let modeType;
 
-	districtLayers.forEach((layer) => {
-		map2.removeLayer(layer.layer);
-	});
-
-	districtLayers = [];
-
 	if (mode === "DistrictBorders" || mode === "YourPerformance" || mode === "Leaderboard") {
 		modeType = "design";
 	} else if (mode === "GameBorders") {
@@ -121,6 +115,12 @@ function switchMainMenuMapType() {
 	} else if (mode === "CityCenterBorders") {
 		modeType = "center";
 	}
+
+	districtLayers.forEach((layer) => {
+		map2.removeLayer(layer.layer);
+	});
+
+	districtLayers = document.getElementById("secondButton").innerHTML == "Log in with Google" && mode == "YourPerformance" ? districtLayers : [];
 
 	if (mode === "DistrictBorders" || mode === "GameBorders" || mode === "CityCenterBorders") {
 		districtsData.forEach((district) => {
@@ -134,6 +134,7 @@ function switchMainMenuMapType() {
 			districtLayers.push({ name: district.name, layer: polygon, state: state, bounds: district.bounds });
 		});
 	} else if (mode === "YourPerformance") {
+		if (document.getElementById("secondButton").innerHTML == "Log in with Google") return;
 		statisticsMap().then((statistics) => {
 			statistics
 				.filter((stat) => stat.district !== "Custom" && stat.district !== "Every District")
@@ -275,37 +276,32 @@ buttons.forEach((button) => {
 });
 
 function toggleDistrict(input) {
-    let district;
-    if (typeof input === "string") {
-        district = districtLayers.find((d) => d.name === input);
-    } else {
-        district = input;
-    }
-    const button = Array.from(buttons).find((b) => b.innerText.trim() === district.name);
-    const isGreen = initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds);
-    if (isGreen) {
-        if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-            district.layer.setStyle({ fill: false, color: "red" });
-        }
-        district.state = 0;
-        button.style.backgroundColor = "red";
-        button.dataset.tempColor = "red";
-        const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
-        if (index !== -1) {
-            initiallyGreenDistricts.splice(index, 1);
-        }
-    } else {
-        if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-            district.layer.setStyle({ fill: true, color: "green" });
-        }
-        district.state = 1;
-        button.style.backgroundColor = "green";
-        button.dataset.tempColor = "green";
-        if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
-            initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-        }
-    }
-    ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
+	let district = typeof input === "string" ? districtLayers.find((d) => d.name === input) : input;
+	const button = Array.from(buttons).find((b) => b.innerText.trim() === district.name);
+	const isGreen = initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds);
+	if (isGreen) {
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+			district.layer.setStyle({ fill: false, color: "red" });
+		}
+		district.state = 0;
+		button.style.backgroundColor = "red";
+		button.dataset.tempColor = "red";
+		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
+		if (index !== -1) {
+			initiallyGreenDistricts.splice(index, 1);
+		}
+	} else {
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
+			district.layer.setStyle({ fill: true, color: "green" });
+		}
+		district.state = 1;
+		button.style.backgroundColor = "green";
+		button.dataset.tempColor = "green";
+		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
+		}
+	}
+	ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 }
 
 function addAllDistricts() {
@@ -968,7 +964,7 @@ function clearImageCache() {
 function saveRoundLimit() {
 	roundLimit = document.getElementById("roundLimitSelector").value;
 	localStorage.setItem("roundLimit", roundLimit);
-    document.getElementById("roundThisLong").innerHTML = `The games will last ${roundLimit} rounds long.`;
+	document.getElementById("roundThisLong").innerHTML = `The games will last ${roundLimit} rounds long.`;
 }
 
 function saveGameMode() {
@@ -1003,10 +999,10 @@ function decodeBase64toUTF8(str) {
 
 function enterMatchSharingCode() {
 	let theCode = document.getElementById("matchSharingCodeInput").value;
-    if (theCode.length < 10) {
-        alert("Please enter a valid code.");
-        return;
-    }
+	if (theCode.length < 10) {
+		alert("Please enter a valid code.");
+		return;
+	}
 	theCode = decodeBase64toUTF8(theCode);
 
 	const parts = theCode.split("/");
