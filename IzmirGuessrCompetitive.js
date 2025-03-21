@@ -11,6 +11,8 @@ let roundLimit = localStorage.getItem("roundLimit") ? localStorage.getItem("roun
 document.getElementById("roundThisLong").innerHTML = `The games will last ${roundLimit} rounds long.`;
 document.getElementById("gameModeSelector").value = menuModeToggle;
 document.getElementById("roundLimitSelector").value = roundLimit;
+let seenTutorial = localStorage.getItem("seenTutorial") ? localStorage.getItem("seenTutorial") : 0;
+localStorage.setItem("seenTutorial", 0);
 
 // Game Points:
 
