@@ -9,26 +9,25 @@
 		<p>Input Username:</p>
 		<input id="usernameInput" type="text" />
 		<button onclick="getData()">Send</button>
-        <p>or manually enter level...</p>
-        <input type="currentXP">
-        <p>You need: X amount of experience.</p>
-        <p>X Enchanted sugar cane</p>
-        <p>X Fermented Spider eyes costing x</p>
+		<p>or manually enter level...</p>
+		<input type="currentXP" />
+		<p>You need: X amount of experience.</p>
+		<p>X Enchanted sugar cane</p>
+		<p>X Fermented Spider eyes costing x</p>
 	</body>
 </html>
 <script>
 	async function getData() {
 		const username = document.getElementById("usernameInput").value;
-		const response = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`);
-		const data = await response.json();
-        let selectedProfile;
+		const data = await fetch(`https://sky.shiiyu.moe/api/v2/profile/${username}`).then((res) => res.json());
+		let selectedProfile;
 
 		Object.values(data.profiles).forEach((profile) => {
 			if (profile.current == true) {
-                selectedProfile = profile;
-            }
+				selectedProfile = profile;
+			}
 		});
 
-        console.log(selectedProfile);
+		console.log(selectedProfile);
 	}
 </script>
