@@ -5,7 +5,6 @@ body {
 
 body {
 	background: radial-gradient(at 88% 32%, #1f0071 0px, transparent 50%), radial-gradient(at 82% 81%, #322c5f 0px, transparent 50%), radial-gradient(at 10% 20%, #2f3466 0px, transparent 50%), radial-gradient(at 22% 89%, #42133e 0px, transparent 50%), #000000;
-	overflow: hidden;
 }
 
 * {
@@ -114,7 +113,7 @@ body {
 	#mainmenuleftbox {
 		width: 15vw;
 		height: 80svh;
-		margin: 0 5vw 7.5svh 10vw;
+		margin: 0 5vw 0 10vw;
 		background-color: black;
 		display: flex;
 		flex-direction: column;
@@ -138,6 +137,7 @@ body {
 
 	#mainmenurightbox {
 		position: relative;
+        height: fit-content;
 	}
 
 	#mainmenurightbox::before {
@@ -159,7 +159,6 @@ body {
 	#aboutMeBox {
 		width: 60vw;
 		height: 80svh;
-		margin: 0 10vw 0 0;
 		background-color: black;
 		display: grid;
 		overflow-y: scroll;
@@ -185,15 +184,16 @@ body {
 	#mainmenutabs {
 		width: 30vw;
 		height: 5svh;
-		margin: 7.5svh 0 0 60vw;
+		margin: 7.5svh 0 1px 60vw !important;
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 0.1svh;
 	}
 
 	#mainmenuboxes {
 		display: flex;
 		flex-direction: row;
+        height: fit-content;
+        margin-bottom: 7.3svh;
 	}
 
 	.mainmenubutton {
@@ -265,7 +265,7 @@ body {
 		word-break: break-all;
 	}
 
-	.mainmenuline svg {
+	.mainmenuline img {
 		margin-right: 1vw;
 	}
 
@@ -408,7 +408,7 @@ body {
         padding-top: 3vh !important;
     }
 
-	#aboutMeBox div {
+	#aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3 {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -419,13 +419,13 @@ body {
 		flex-wrap: wrap;
 	}
 
-	#aboutMeBox svg,
+	#aboutMeBox img,
 	pre {
 		width: 2.5vh;
 		height: 2.5vh;
 	}
 
-	#aboutMeBox * {
+	#aboutMeBox img, #aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3, #aboutMeBox p {
 		animation: fadeIn 2s ease;
 	}
 }
@@ -499,7 +499,6 @@ body {
 		scroll-snap-type: y mandatory;
 		border-bottom-left-radius: 3vw;
 		border-bottom-right-radius: 3vw;
-		overflow: auto;
 		scrollbar-width: none;
 	}
 
@@ -514,16 +513,16 @@ body {
 	#mainmenutabs {
 		width: 59vw;
 		height: 5svh;
-		margin: 5.5svh 0 0 40vw;
+		margin: 5.5svh 0 1px 40vw !important;
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 0.1svh;
 		font-size: 4vw;
 	}
 
 	#mainmenuboxes {
 		display: flex;
 		flex-direction: row;
+        margin-bottom: 9svh;
 	}
 
 	.mainmenubutton {
@@ -595,7 +594,7 @@ body {
 		word-break: break-all;
 	}
 
-	.mainmenuline svg {
+	.mainmenuline img {
 		margin-right: 1vw;
 	}
 
@@ -636,7 +635,7 @@ body {
 		z-index: 3;
 		color: white;
 		overflow: hidden;
-		font-size: 1.9svh;
+		font-size: 1.8svh;
 		line-height: 2.8svh;
 		padding: 0 3vw 0 3vw;
 		text-align: center;
@@ -729,7 +728,7 @@ body {
         color: white;
     }
 
-	#aboutMeBox div {
+	#aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3 {
 		width: 50vw;
 		display: flex;
 		flex-direction: row;
@@ -743,7 +742,7 @@ body {
 		hyphens: auto;
 	}
 
-	#aboutMeBox svg,
+	#aboutMeBox img,
 	#aboutMeBox pre {
 		width: 2.5vh;
 		height: 2.5vh;
