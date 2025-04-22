@@ -228,7 +228,7 @@ document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
 
 document.addEventListener("DOMContentLoaded", function () {
 	let webptest = new Image(1, 1);
-	webptest.src = "/static/imageswebp/webpdot.webp";
+	webptest.src = "../static/imageswebp/webpdot.webp";
 	if (webptest.width > 0 && webptest.height > 0) {
 		WebPSupport = 1;
 	} else {
@@ -265,9 +265,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const img = document.createElement("img");
 
 		if (WebPSupport == 1) {
-			img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
+			img.src = `../static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
 		} else {
-			img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
+			img.src = `../static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
 		}
 
 		imagePlaceholder.appendChild(img);
@@ -770,7 +770,7 @@ async function minionprofits() {
 	if (htmlminioncount < 1 || htmlminioncount > 31) {
 		htmlempty.innerHTML = "Please enter the minion count value between 1 and 31.";
 	} else {
-		infernorow1.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
+		infernorow1.style.backgroundImage = "url('../static/imageswebp/CRUDE_GABAGOOL.webp'), url('../static/images/CRUDE_GABAGOOL.png')";
 		infernooneminionprofit.innerHTML = `One minion makes ${oneminionhourlyprofit} coins per hour and ${oneminiondailyprofit} per day.`;
 		infernoallminionprofit.innerHTML = `All the minions combined make ${minionhourlyprofit} coins per hour and ${miniondailyprofit} per day.`;
 		infernoallcosts.innerHTML = `Using this fuel and beacon will cost you ${expenses} coins per day.`;
@@ -781,22 +781,22 @@ async function minionprofits() {
 		if (htmlfueltype != "nothing") {
 			infernofuelgain.innerHTML = `${format((htmlminioncount * dailytotalminionactions * specialproduction * specialfuelitem).toFixed(0))} distillate ${chosenfuel} worth ${format((htmlminioncount * dailytotalminionactions * (1 - (taxRate / 100) * derpy) * specialproduction * specialfueloutput).toFixed(0))} coins,`;
 			if (chosenfuel == "Crude Gabagool") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/CRUDE_GABAGOOL.webp'), url('static/images/CRUDE_GABAGOOL.png')";
+				infernorow2.style.backgroundImage = "url('../static/imageswebp/CRUDE_GABAGOOL.webp'), url('../static/images/CRUDE_GABAGOOL.png')";
 			} else if (chosenfuel == "Blaze Rod") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/BLAZE_ROD.webp'), url('static/images/BLAZE_ROD.png')";
+				infernorow2.style.backgroundImage = "url('../static/imageswebp/BLAZE_ROD.webp'), url('../static/images/BLAZE_ROD.png')";
 			} else if (chosenfuel == "Magma Cream") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/MAGMA_CREAM.webp'), url('static/images/MAGMA_CREAM.png')";
+				infernorow2.style.backgroundImage = "url('../static/imageswebp/MAGMA_CREAM.webp'), url('../static/images/MAGMA_CREAM.png')";
 			} else if (chosenfuel == "Nether Wart") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/NETHER_WART.webp'), url('static/images/NETHER_WART.png')";
+				infernorow2.style.backgroundImage = "url('../static/imageswebp/NETHER_WART.webp'), url('../static/images/NETHER_WART.png')";
 			} else if (chosenfuel == "Glowstone Dust") {
-				infernorow2.style.backgroundImage = "url('static/imageswebp/GLOWSTONE_DUST.webp'), url('static/images/GLOWSTONE_DUST.png')";
+				infernorow2.style.backgroundImage = "url('../static/imageswebp/GLOWSTONE_DUST.webp'), url('../static/images/GLOWSTONE_DUST.png')";
 			}
 		}
 		if (checkifitst3 == 1 || checkifitst3 == 1.3) {
-			infernorow3.style.backgroundImage = "url('static/imageswebp/CHILI_PEPPER.webp'), url('static/images/CHILI_PEPPER.png')";
-			infernorow4.style.backgroundImage = "url('static/imageswebp/INFERNO_VERTEX.webp'), url('static/images/INFERNO_VERTEX.png')";
-			infernorow5.style.backgroundImage = "url('static/imageswebp/INFERNO_APEX.webp'), url('static/images/INFERNO_APEX.png')";
-			infernorow6.style.backgroundImage = "url('static/imageswebp/REAPER_PEPPER.webp'), url('static/images/REAPER_PEPPER.png')";
+			infernorow3.style.backgroundImage = "url('../static/imageswebp/CHILI_PEPPER.webp'), url('../static/images/CHILI_PEPPER.png')";
+			infernorow4.style.backgroundImage = "url('../static/imageswebp/INFERNO_VERTEX.webp'), url('../static/images/INFERNO_VERTEX.png')";
+			infernorow5.style.backgroundImage = "url('../static/imageswebp/INFERNO_APEX.webp'), url('../static/images/INFERNO_APEX.png')";
+			infernorow6.style.backgroundImage = "url('../static/imageswebp/REAPER_PEPPER.webp'), url('../static/images/REAPER_PEPPER.png')";
 			infernochiligain.innerHTML = `${format(((checkifitst3 / 136) * htmlminioncount * dailytotalminionactions).toFixed(2))} Chili Peppers worth ${format(((checkifitst3 / 136) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(chilipepperprice)).toFixed(0))} coins.`;
 			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
 			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;

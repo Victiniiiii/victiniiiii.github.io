@@ -103,7 +103,7 @@ function filterValues(arr) {
 
 document.addEventListener("DOMContentLoaded", async function () {
 	let webptest = new Image(1, 1);
-	webptest.src = "/static/imageswebp/webpdot.webp";
+	webptest.src = "../static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = true) : (WebPSupport = false);
 
 	document.getElementById("settings-bar").addEventListener("click", function () {
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		const img = document.createElement("img");
 
 		if (WebPSupport) {
-			img.src = `static/imageswebp/${item.id}.webp`;
+			img.src = `../static/imageswebp/${item.id}.webp`;
 		} else {
-			img.src = `static/images/${item.id}.png`;
+			img.src = `../static/images/${item.id}.png`;
 		}
 
 		imagePlaceholder.appendChild(img);

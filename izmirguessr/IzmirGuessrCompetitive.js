@@ -464,7 +464,7 @@ function initMap() {
 					position: event.latLng,
 					map: minimap,
 					title: "Guessed Location",
-					icon: "static/images/redpin.png",
+					icon: "../static/images/redpin.png",
 				});
 			});
 
@@ -477,7 +477,7 @@ function initMap() {
 					position: event.latLng,
 					map: minimap,
 					title: "Original Location",
-					icon: "static/images/greenpin.png",
+					icon: "../static/images/greenpin.png",
 				});
 			});
 
@@ -634,7 +634,7 @@ function displayResults(distance, points) {
 			position: randomLocation,
 			map: resultMap,
 			title: "Correct Answer",
-			icon: "static/images/greenpin.png",
+			icon: "../static/images/greenpin.png",
 		});
 
 		const line = new google.maps.Polyline({
@@ -709,14 +709,14 @@ function displayResults(distance, points) {
 				position: guessedCoordinates[i],
 				map: resultMap,
 				title: `Guessed Location ${i + 1}`,
-				icon: `static/images/redpin${i + 1}.png`,
+				icon: `../static/images/redpin${i + 1}.png`,
 			});
 
 			const actualMarker = new google.maps.Marker({
 				position: actualCoordinates[i],
 				map: resultMap,
 				title: `Actual Location ${i + 1}`,
-				icon: `static/images/greenpin${i + 1}.png`,
+				icon: `../static/images/greenpin${i + 1}.png`,
 			});
 
 			const line = new google.maps.Polyline({
@@ -1195,7 +1195,7 @@ document.addEventListener("contextmenu", function (event) {
 });
 
 let marker = new Image();
-marker.src = "static/images/redpin.png";
+marker.src = "../static/images/redpin.png";
 marker.onload = function () {
 	marker = null;
 };

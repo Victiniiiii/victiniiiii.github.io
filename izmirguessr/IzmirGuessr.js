@@ -3415,7 +3415,7 @@ function displayResults(distance, points) {
 		position: randomLocation,
 		map: resultMap,
 		title: "Correct Answer",
-		icon: "static/images/greenpin.png",
+		icon: "../static/images/greenpin.png",
 	});
 
 	guessedLocationMarker.setMap(resultMap);

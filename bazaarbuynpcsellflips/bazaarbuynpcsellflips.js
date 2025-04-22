@@ -132,7 +132,7 @@ let itemsarray = [
 
 document.addEventListener("DOMContentLoaded", function () {
     var webptest = new Image(1,1);
-    webptest.src = "/static/imageswebp/webpdot.webp";
+    webptest.src = "../static/imageswebp/webpdot.webp";
     if (webptest.width > 0 && webptest.height > 0) {
         WebPSupport = 1;
     } else {
@@ -167,9 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const img = document.createElement("img");
 
         if (WebPSupport == 1) {
-            img.src = `static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
+            img.src = `../static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
         } else {
-            img.src = `static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
+            img.src = `../static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
         }
 
 		imagePlaceholder.appendChild(img);
@@ -231,9 +231,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const bbnsImage = document.createElement("img");
         if (WebPSupport == 1) {
-            bbnsImage.src =  `static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
+            bbnsImage.src =  `../static/imageswebp/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.webp`;
         } else {
-            bbnsImage.src =  `static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
+            bbnsImage.src =  `../static/images/${itemsarray[i].img ? itemsarray[i].img : itemsarray[i].id}.png`;
         }
 
         const bbnsText = document.createElement("div");

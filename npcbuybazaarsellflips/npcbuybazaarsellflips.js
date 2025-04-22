@@ -362,7 +362,7 @@ document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
 
 document.addEventListener("DOMContentLoaded", function () {
 	var webptest = new Image(1, 1);
-	webptest.src = "/static/imageswebp/webpdot.webp";
+	webptest.src = "../static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = 1) : (WebPSupport = 0);
 
 	const savedToggleStates = localStorage.getItem("toggleStatesNpcBuy");
@@ -397,9 +397,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		const img = document.createElement("img");
 
 		if (WebPSupport == 1) {
-			img.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
+			img.src = `../static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
 		} else {
-			img.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
+			img.src = `../static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
 		}
 
 		imagePlaceholder.appendChild(img);
@@ -498,9 +498,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		const nbbsImage = document.createElement("img");
 		if (WebPSupport == 1) {
-			nbbsImage.src = `static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
+			nbbsImage.src = `../static/imageswebp/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.webp`;
 		} else {
-			nbbsImage.src = `static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
+			nbbsImage.src = `../static/images/${itemsarray[i].image ? itemsarray[i].image : itemsarray[i].id}.png`;
 		}
 
 		const theBox = document.createElement("div");
