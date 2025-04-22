@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Skyblock Effective HP Calculator</title>
+		<link rel="icon" href="../static/images/vic32.png" type="image/png"/>
+		<link rel="stylesheet" type="text/css" href="../static/styles.css" media="screen and (min-width: 768px)"/>
+		<link rel="stylesheet" type="text/css" href="../static/stylesmini.css" media="screen and (max-width: 767px)"/>
+	</head>
+	<body>
+		<header id="title-section">
+			<a href="/">
+				<picture>
+                    <source srcset="../static/imageswebp/vicinti3.webp" type="image/webp">
+                    <img class="main-menu-button" src="../static/images/vicinti3.png">
+                </picture>
+			</a>
+			<h1 class="main-menu-text">Skyblock Effective HP Calculator</h1>
+			<div class="project-buttons">
+				<div class="category-button">
+					<a href="/contactme">Contact Me</a>
+				</div>
+			</div>
+		</header>
+		<div class="effectivehpbox">
+            <div id="hpdefbox2">
+                <div id="hpdefbox">
+                    <input id="hp" type="number" inputmode="numeric" placeholder="Enter HP here...">
+                    <input id="def" type="number" inputmode="numeric" placeholder="Enter Defence here...">
+                </div>
+                <button id="effectivehpbutton" onclick="effectivehpcalculate()">Calculate</button>
+            </div>
+            <div id="effectivehpoutput"></div>
+		</div>
+	</body>
+    <script src="effectivehpcalculator.js"></script>
+</html>
