@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyblock Inferno Minion Calculator</title>
+    <link rel="icon" href="static/images/vic32.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)">
+    <link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)">
+</head>
+<body>
+    <header id="title-section">
+        <a href="/">
+            <picture>
+                <source srcset="/static/imageswebp/vicinti3.webp" type="image/webp">
+                <img class="main-menu-button" src="/static/images/vicinti3.png">
+            </picture>
+        </a>
+        <h1 class="main-menu-text">Skyblock Inferno Minion Calculator</h1>
+        <div class="project-buttons">
+            <div class="category-button">
+                <a href="/contactme">Contact Me</a>
+            </div>
+        </div>
+    </header>
+    <div id="settings">
+        <div id="settings-bar">Press here to access the bazaar settings.</div>
+        <div id="toggle-container">
+            <div class="top-row">
+                <div class="top-rows-div">
+                    Tax Rate:
+                    <div data-id="TaxRate" class="three-way-toggle"></div>
+                    <div id="TaxRateText">%1</div>
+                </div>
+                <div class="top-rows-div">
+                    Derpy:
+                    <div data-id="Derpy" class="toggle-switch"></div>
+                    <div id="DerpyText">Off</div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="infernoprofit">
+        <div class="infernoprofitrow">
+            <div class="infernoprofitbox" id="infernoprofittitleboxx">Profit Calculator</div>
+            <div class="infernoprofitbox">
+                Free Will: 
+                <select id="freewill" name="freewill">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                Postcard: 
+                <select id="postcard" name="postcard">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox" id="infernoprofitcalculatebutton" onclick="minionprofits()">Calculate</div>
+        </div>
+        <div class="infernoprofitrow">
+            <div class="infernoprofitbox">
+                <label for="minioncount">Minion Count:</label>
+                <input type="number" id="minioncount" name="minioncount" min="0">
+            </div>
+            <div class="infernoprofitbox">
+                <label for="miniontier">Minion Tier:</label>
+                <select id="miniontier" name="miniontier">
+                    <option value="t1">T1</option>
+                    <option value="t2">T2</option>
+                    <option value="t3">T3</option>
+                    <option value="t4">T4</option>
+                    <option value="t5">T5</option>
+                    <option value="t6">T6</option>
+                    <option value="t7">T7</option>
+                    <option value="t8">T8</option>
+                    <option value="t9">T9</option>
+                    <option value="t10">T10</option>
+                    <option value="t11">T11</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                <label for="fueltype">Fuel Type:</label>
+                <select id="fueltype" name="fueltype">
+                    <option value="nothing">Nothing</option>
+                    <option value="t1-gabagool">T1 Gabagool Fuel</option>
+                    <option value="t1-blazerod">T1 Blaze Rod Fuel</option>
+                    <option value="t1-glowstone">T1 Glowstone Fuel</option>
+                    <option value="t1-magmacream">T1 Magma Cream Fuel</option>
+                    <option value="t1-netherwart">T1 Nether Wart Fuel</option>
+                    <option value="t2-gabagool">T2 Gabagool Fuel</option>
+                    <option value="t2-blazerod">T2 Blaze Rod Fuel</option>
+                    <option value="t2-glowstone">T2 Glowstone Fuel</option>
+                    <option value="t2-magmacream">T2 Magma Cream Fuel</option>
+                    <option value="t2-netherwart">T2 Nether Wart Fuel</option>
+                    <option value="t3-gabagool">T3 Gabagool Fuel</option>
+                    <option value="t3-blazerod">T3 Blaze Rod Fuel</option>
+                    <option value="t3-glowstone">T3 Glowstone Fuel</option>
+                    <option value="t3-magmacream">T3 Magma Cream Fuel</option>
+                    <option value="t3-netherwart">T3 Nether Wart Fuel</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                <label for="eyedrops">Capsaicin Eyedrops:</label>
+                <select id="eyedrops" name="eyedrops">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+        </div>
+        <div class="infernoprofitrow">
+            <div class="infernoprofitbox">
+                <label for="beaconlevel">Beacon Level:</label>
+                <select id="beaconlevel" name="numbers">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="1s">1 and Scorched</option>                    
+                    <option value="2s">2 and Scorched</option>                    
+                    <option value="3s">3 and Scorched</option>                    
+                    <option value="4s">4 and Scorched</option>                    
+                    <option value="5s">5 and Scorched</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                <label for="infusion">Mithril Infusion:</label>
+                <select id="infusion" name="infusion">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                <label for="upgrades1">Upgrades:</label>
+                <select id="upgrades1" name="upgrades1">
+                    <option value="nothing">Nothing</option>
+                    <option value="minion-expander">Minion Expander</option>
+                    <option value="flycatcher">Flycatcher</option>
+                </select>
+            </div>
+            <div class="infernoprofitbox">
+                <label for="upgrades2">Upgrades:</label>
+                <select id="upgrades2" name="upgrades2">
+                    <option value="nothing">Nothing</option>
+                    <option value="minion-expander">Minion Expander</option>
+                    <option value="flycatcher">Flycatcher</option>
+                </select>
+            </div>
+        </div>
+        <div id="infernoprofitresults">
+            <div id="infernooneminionprofit"></div>
+            <div id="infernoallminionprofit"></div>
+            <div id="infernoallcosts"></div>
+            <div id="infernoafterexpenses"></div>
+            <div id="empty">Press the calculate button at the top right to start.</div>
+            <div id="infernogain"></div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow1"></div>
+                <div id="infernobasegain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow2"></div>
+                <div id="infernofuelgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow3"></div>
+                <div id="infernochiligain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow4"></div>
+                <div id="infernovertexgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow5"></div>
+                <div id="infernoapexgain"></div>
+            </div>
+            <div class="infernoflexrow">
+                <div class="infernosmallphotos" id="infernorow6"></div>
+                <div id="infernoreapergain"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infernocraftingprofits">
+        <div class="infernocraftingprofitsrow">
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/HYPERGOLIC_GABAGOOL.webp" type="image/webp">
+                    <img src="static\images/HYPERGOLIC_GABAGOOL.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="hypergolicgabagoolcraft"></div>
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/SULPHURIC_COAL.webp" type="image/webp">
+                    <img src="static\images/SULPHURIC_COAL.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="sulphuriccoalcraft"></div>
+        </div>
+        <div class="infernocraftingprofitsrow">
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/REHEATED_GUMMY_POLAR_BEAR.webp" type="image/webp">
+                    <img src="static\images/REHEATED_GUMMY_POLAR_BEAR.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="gummybearcraft"></div>
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/ENTROPY_SUPPRESSOR.webp" type="image/webp">
+                    <img src="static\images/ENTROPY_SUPPRESSOR.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="entropycraft"></div>
+        </div>
+        <div class="infernocraftingprofitsrow">
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/JALAPENO_BOOK.webp" type="image/webp">
+                    <img src="static\images/JALAPENO_BOOK.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="jalapenocraft"></div>
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/ENCHANTED_BOOK.webp" type="image/webp">
+                    <img src="static\images/ENCHANTED_BOOK.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="cayennecraft"></div>
+        </div>
+        <div class="infernocraftingprofitsrow">   
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/ENCHANTED_BOOK.webp" type="image/webp">
+                    <img src="static\images/ENCHANTED_BOOK.png">
+                </picture>
+            </div>
+            <div class="infernocraftingprofitsrowhalf" id="habanerocraft"></div>      
+            <div class="infernocraftingprofitsrowhalfphoto">
+                <picture>
+                    <source srcset="static\imageswebp/STUFFED_CHILI_PEPPER.webp" type="image/webp">
+                    <img src="static\images/STUFFED_CHILI_PEPPER.png">
+                </picture>
+            </div>  
+            <div class="infernocraftingprofitsrowhalf" id="stuffedchilicraft"></div>    
+        </div>   
+    </div> 
+
+    <div id="infernominioncrafting">
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 1</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_I.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_I.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext1blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext1derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext1total">Test</div>
+                </div>
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 2</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_II.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_II.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext2blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext2derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext2total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts2"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 3</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_III.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_III.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext3blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext3derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext3moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext3total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts3"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 4</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_IV.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_IV.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext4blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext4derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext4moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext4total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts4"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 5</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_V.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_V.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext5blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext5derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext5moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext5total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts5"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 6</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_VI.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_VI.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext6blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext6derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext6moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext6total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts6"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 7</div>
+            <div class="infernominioncraftingtierphoto"><picture>
+                <source srcset="static\imageswebp/Inferno_Minion_VII.webp" type="image/webp">
+                <img src="static\images/Inferno_Minion_VII.png">
+            </picture></div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext7blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext7derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext7moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext7total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts7"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 8</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_VIII.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_VIII.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext8blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext8derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext8moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext8total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts8"></div>
+                </div>    
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 9</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_IX.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_IX.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext9blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext9derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext9moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/INFERNO_VERTEX.webp" type="image/webp">
+                            <img src="static\images/INFERNO_VERTEX.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext9infernovertex">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext9total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts9"></div>
+                </div>     
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 10</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_X.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_X.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext10blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext10derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext10moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/INFERNO_VERTEX.webp" type="image/webp">
+                            <img src="static\images/INFERNO_VERTEX.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext10infernovertex">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext10total">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts10"></div>                    
+                </div>     
+            </div>
+        </div>
+        <div class="infernominioncraftingtier">
+            <div class="infernominioncraftingtiernumber">Tier 11</div>
+            <div class="infernominioncraftingtierphoto">
+                <picture>
+                    <source srcset="static\imageswebp/Inferno_Minion_XI.webp" type="image/webp">
+                    <img src="static\images/Inferno_Minion_XI.png">
+                </picture>
+            </div>
+            <div class="infernominioncraftingtiertext">
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/BLAZE_ROD.webp" type="image/webp">
+                            <img src="static\images/BLAZE_ROD.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11blazerod">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/DERELICT_ASHE.webp" type="image/webp">
+                            <img src="static\images/DERELICT_ASHE.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11derelictashe">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/MOLTEN_POWDER.webp" type="image/webp">
+                            <img src="static\images/MOLTEN_POWDER.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11moltenpowder">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/INFERNO_VERTEX.webp" type="image/webp">
+                            <img src="static\images/INFERNO_VERTEX.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11infernovertex">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/INFERNO_APEX.webp" type="image/webp">
+                            <img src="static\images/INFERNO_APEX.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11infernoapex">Test</div>
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_GOLD_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_GOLD_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernominioncraftingtiertext11total">Test</div>                    
+                </div>
+                <div class="infernominioncraftingtiertextboxes">
+                    <div class="infernominioncraftingtiertextphoto">
+                        <picture>
+                            <source srcset="static\imageswebp/ENCHANTED_DIAMOND_BLOCK.webp" type="image/webp">
+                            <img src="static\images/ENCHANTED_DIAMOND_BLOCK.png">
+                        </picture>
+                    </div>
+                    <div class="infernominioncraftingtiertextboxestext" id="infernoMinionUpgradeCosts11"></div>                    
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div id="infernodroprates">
+        <div class="infernodropratesrows">
+            <div class="image-placeholder">
+                <picture>
+                    <source srcset="static\imageswebp/CHILI_PEPPER.webp" type="image/webp">
+                    <img src="static\images/CHILI_PEPPER.png">
+                </picture>
+            </div>
+            Chili Pepper drop chance is one in 136, or 0.73529411%.
+        </div>
+        <div class="infernodropratesrows">
+            <div class="image-placeholder">
+                <picture>
+                    <source srcset="static\imageswebp/INFERNO_VERTEX.webp" type="image/webp">
+                    <img src="static\images/INFERNO_VERTEX.png">
+                </picture>
+            </div>
+            Inferno Vertex drop chance is one in 5,950, or 0.01680672%.
+        </div>
+        <div class="infernodropratesrows">
+            <div class="image-placeholder">
+                <picture>
+                    <source srcset="static\imageswebp/INFERNO_APEX.webp" type="image/webp">
+                    <img src="static\images/INFERNO_APEX.png">
+                </picture>
+            </div>
+            Inferno Apex drop chance is one in 1,309,091, or 0.00007639%.
+        </div>
+        <div class="infernodropratesrows">
+            <div class="image-placeholder">
+                <picture>
+                    <source srcset="static\imageswebp/REAPER_PEPPER.webp" type="image/webp">
+                    <img src="static\images/REAPER_PEPPER.png">
+                </picture>
+            </div>
+            Reaper Pepper drop chance is one in 458,182, or 0.00021825%.
+        </div>
+        <div class="infernodropratesrows">
+            <div class="image-placeholder">
+                <picture>
+                    <source srcset="static\imageswebp/GABAGOOL_FISH.webp" type="image/webp">
+                    <img src="static\images/GABAGOOL_FISH.png">
+                </picture>
+            </div>
+            Gabagool the Fish drop chance is one in 3,927,273, or 0.00002546%.
+        </div>
+    </div>
+
+    <div id="infernoinfo">
+        <div id="infernoinfotitle">Questions and Answers</div>
+        <div class="infernoinfoquestion">Is the Inferno minion the best minion ?</div>
+        <div class="infernoinfoanswer">It depends on the minion level, but usually it is better than most of the minions.</div>
+        <div class="infernoinfoquestion">Why is Gabagool the Fish not included in calculations ?</div>
+        <div class="infernoinfoanswer">The auction prices in Skyblock API is really broken, also auction items are a lot easier to manipulate.</div>
+        <div class="infernoinfoquestion">Is it worth to switch to inferno minions ?</div>
+        <div class="infernoinfoanswer">Tier 2 Inferno minions are one of the cheapest and the most profitable setups.</div>
+        <div class="infernoinfoquestion">What is the best fuel for the Inferno minions ?</div>
+        <div class="infernoinfoanswer">The best fuel is tier 1 gabagool, it will be tier 2 when Derpy is mayor, and tier 3 if Derpy is mayor and the minions are really high leveled.</div>
+        <div class="infernoinfoquestion">Why are some items toggled on in the bazaar settings menu ?</div>
+        <div class="infernoinfoanswer">I have hand selected the ones that are profitable to sell order, and sell decently quickly.</div>     
+        <div class="infernoinfoquestion">Does the calculator include the double Inferno Apex drop perk ?</div>
+        <div class="infernoinfoanswer">Yes, it does include Ionized Ceramic prices too, however i didn't include super compactors as it wouldn't affect the output much.</div>   
+    </div>
+    
+    <script>
+        document.body.style.backgroundImage = "url('static/images/infernowallpaper.png')";
+        document.body.style.backgroundImage = "url('static/imageswebp/infernowallpaper.webp')";
+        document.body.style.backgroundSize = "cover"; 
+        document.body.style.backgroundRepeat = "no-repeat"; 
+    </script>
+    <script src="inferno.js"></script>
+<body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>TaratorMusic</title>
+		<link rel="icon" href="static/images/vic32.png" type="image/png" />
+		<link rel="stylesheet" type="text/css" href="static/styles.css" media="screen and (min-width: 768px)" />
+		<link rel="stylesheet" type="text/css" href="static/stylesmini.css" media="screen and (max-width: 767px)" />
+	</head>
+	<style>
+		@media (width > 767px) {
+			* {
+				box-sizing: border-box;
+			}
+
+			.taratorgif {
+				width: 40vw;
+				height: 100%;
+			}
+
+			div h1 {
+				text-decoration: underline;
+			}
+
+			.taratorflexbox1 img,
+			.taratorflexbox2 img {
+				width: 40vw;
+				height: 100%;
+				opacity: 0;
+				transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+				border-radius: 15px;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+			}
+
+			.taratorflexbox1,
+			.taratorflexbox2 {
+				display: flex;
+				flex-direction: row;
+				margin-top: 8vh;
+				gap: 5vw;
+				height: auto;
+			}
+
+			.taratorflexbox1 {
+				flex-direction: row;
+			}
+
+			.taratorflexbox2 {
+				flex-direction: row-reverse;
+			}
+
+			.taratortextbox {
+				width: 40vw;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 15px;
+				box-shadow: 0 4px 30px rgba(0, 100, 255, 0.5);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: white;
+				font-size: 1.5em;
+				opacity: 0;
+				transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+				text-align: center;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
+				padding: 0 5vw 5vh 5vw;
+				box-sizing: border-box;
+                text-shadow: 0 0 8px black;
+			}
+
+			.taratorGetitNOW {
+				width: 80vw;
+				height: 10vh;
+				margin: 5vh 10vw 2.5vh 10vw;
+				background: rgb(0, 0, 0, 0.9);
+				color: white;
+				line-height: 10vh;
+				font-size: 2em;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				border-radius: 2vw;
+				flex-direction: row;
+			}
+
+			.taratorGetitNOW picture img {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				border-radius: 10px;
+				margin-right: 2vw;
+			}
+
+			a {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.taratortextbox.visible,
+			.taratorflexbox1 img.visible,
+			.taratorflexbox2 img.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@media (width < 768px) {
+			* {
+				box-sizing: border-box;
+			}
+
+			.taratorgif {
+				width: 90vw;
+				height: 40vh;
+			}
+
+			div h1 {
+				text-decoration: underline;
+			}
+
+			.taratorflexbox1 img,
+			.taratorflexbox2 img {
+				width: 90vw;
+				height: 40vh;
+				opacity: 0;
+				transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+				border-radius: 15px;
+				border: 1px solid rgba(255, 255, 255, 0.3);
+			}
+
+			.taratorflexbox1,
+			.taratorflexbox2 {
+				display: flex;
+				flex-direction: column;
+				margin-top: 3vh;
+				gap: 5vw;
+			}
+
+			.taratorflexbox1,
+			.taratorflexbox2 {
+				flex-direction: column;
+			}
+
+			.taratortextbox {
+				width: 90vw;
+				height: auto;
+				background: rgba(255, 255, 255, 0.1);
+				border-radius: 15px;
+				box-shadow: 0 4px 30px rgba(0, 100, 255, 0.5);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.3);
+				color: white;
+				font-size: 0.85em;
+				opacity: 0;
+				transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+				text-align: center;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				flex-direction: column;
+				padding: 0 5vw 5vh 5vw;
+				box-sizing: border-box;
+                text-shadow: 0 0 8px black;
+			}
+
+			.taratorGetitNOW {
+				width: 90vw;
+				height: 10vh;
+				margin: 5vh 10vw 2.5vh 10vw;
+				background: rgb(0, 0, 0, 0.9);
+				color: white;
+				line-height: 10vh;
+				font-size: 1.1em;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				border-radius: 2vw;
+				flex-direction: row;
+			}
+
+			.taratorGetitNOW picture img {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				border-radius: 10px;
+				margin-right: 2vw;
+			}
+
+			a {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				text-decoration: none;
+			}
+
+			.taratortextbox.visible,
+			.taratorflexbox1 img.visible,
+			.taratorflexbox2 img.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
+	<body>
+		<header id="title-section">
+			<a href="/">
+				<picture>
+					<source srcset="/static/imageswebp/vicinti3.webp" type="image/webp" />
+					<img class="main-menu-button" src="/static/images/vicinti3.png" />
+				</picture>
+			</a>
+			<h1 class="main-menu-text">TaratorMusic</h1>
+			<div class="project-buttons">
+				<div class="category-button">
+					<a href="/contactme">Contact Me</a>
+				</div>
+			</div>
+		</header>
+		<div class="taratorflexbox1">
+			<img class="taratorgif" src="static/TaratorMusicGIF.gif" />
+			<div class="taratortextbox">
+				<h1>Why TaratorMusic?</h1>
+				Aren't you tired of listening to the same ten songs in your youtube or spotify playlist? Too many ads? What if you want to listen to music offline? This app comes to your aid...
+			</div>
+		</div>
+		<div class="taratorflexbox2">
+			<picture>
+				<source srcset="/static/imageswebp/tarator1.webp" type="image/webp" />
+				<img src="/static/images/tarator1.png" alt="TaratorMusic 1. Picture" />
+			</picture>
+			<div class="taratortextbox">
+				<h1>Actual Random</h1>
+				The randomness of the next song in TaratorMusic has been statistically proven by Chi-Square Test. In the test, 10,000 random songs were played after each other, and the test was successful even at 0.01 significance level.
+			</div>
+		</div>
+		<div class="taratorflexbox1">
+			<picture>
+				<source srcset="/static/imageswebp/tarator2.webp" type="image/webp" />
+				<img src="/static/images/tarator2.png" alt="TaratorMusic 2. Picture" />
+			</picture>
+			<div class="taratortextbox">
+				<h1>Download Your Own</h1>
+				In this app, you can easily paste a link in the download section, change its name or thumbnail, and press download to make the music and its thumbnail appear in your folders. Works for playlists too! Or you can just carry your own mp3 files to the musics folder.
+			</div>
+		</div>
+		<div class="taratorflexbox2">
+			<picture>
+				<source srcset="/static/imageswebp/tarator3.webp" type="image/webp" />
+				<img src="/static/images/tarator3.png" alt="TaratorMusic 3. Picture" />
+			</picture>
+			<div class="taratortextbox">
+				<h1>Customisation</h1>
+				You can customise everything starting from the app itself, the musics and the playlists. The music files and the playlists can be renamed, and get their thumbnails changed inside the app. The settings tab has a high variety of options on how to change user experience.
+			</div>
+		</div>
+		<div class="taratorflexbox1">
+			<picture>
+				<source srcset="/static/imageswebp/tarator4.webp" type="image/webp" />
+				<img src="/static/images/tarator4.png" alt="TaratorMusic 4. Picture" />
+			</picture>
+			<div class="taratortextbox">
+				<h1>Discord</h1>
+				This app is connected to Discord via Rich Presence. Thus everyone can know you are using TaratorMusic, and what song you are listening to. Although its easily toggleable inside the settings tab if you don't want it.
+			</div>
+		</div>
+		<div class="taratorflexbox2">
+			<picture>
+				<source srcset="/static/imageswebp/tarator5.webp" type="image/webp" />
+				<img src="/static/images/tarator5.png" alt="TaratorMusic 5. Picture" />
+			</picture>
+			<div class="taratortextbox">
+				<h1>Memory Efficiency</h1>
+				TaratorMusic mostly uses near 55MBs per second of memory. The lightweightness of the app makes it suitable for computers with very low specs.
+			</div>
+		</div>
+		<div class="taratorGetitNOW">
+			<a href="https://github.com/Victiniiiii/TaratorMusic/releases" aria-label="TaratorMusic Link">
+				<picture>
+					<source srcset="/static/imageswebp/githublogo.webp" type="image/webp" />
+					<img src="/static/images/githublogo.png" alt="Github Logo" />
+				</picture>
+				Get it now on github.com!
+			</a>
+		</div>
+	</body>
+	<script src="taratormusic.js"></script>
+</html>
