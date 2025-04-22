@@ -85,7 +85,7 @@ document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
 	} else if (div.innerHTML.trim() === "Python") {
         div.innerHTML = `<img src="/icons/python.svg" alt="Python">`
 	} else if (div.innerHTML.trim() === "React") {
-        div.innerHTML = `<img src="/icons/React.svg" alt="React">`
+        div.innerHTML = `<img src="/icons/react.svg" alt="React">`
 	} else if (div.innerHTML.trim() === "TypeScript") {
         div.innerHTML = `<img src="/icons/typescript.svg" alt="Typescript">`
     } else if (div.innerHTML.trim() === "R") {
