@@ -90,14 +90,6 @@ div.gm-bundled-control:nth-child(2) {
 	background-color: aliceblue;
 }
 
-#coffeeButton {
-	background-color: rgb(40, 140, 240) !important;
-}
-
-#coffeeButton:hover {
-	background-color: rgb(115, 176, 238) !important;
-}
-
 .flexrow {
 	width: 100%;
 	display: flex;

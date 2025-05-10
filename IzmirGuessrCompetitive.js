@@ -118,16 +118,16 @@ function switchMainMenuMapType() {
 		modeType = "center";
 	}
 
-	districtLayers.forEach((layer) => {
+	districtLayers.forEach(layer => {
 		map2.removeLayer(layer.layer);
 	});
 
 	districtLayers = document.getElementById("secondButton").innerHTML == "Log in with Google" && mode == "YourPerformance" ? districtLayers : [];
 
 	if (mode === "DistrictBorders" || mode === "GameBorders" || mode === "CityCenterBorders") {
-		districtsData.forEach((district) => {
+		districtsData.forEach(district => {
 			const coordinates = mode === "CityCenterBorders" ? district.center : modeType === "design" ? district.designcoordinates : district.bounds;
-			const isGreen = initiallyGreenDistricts.some((greenDistrict) => JSON.stringify(greenDistrict.bounds) === JSON.stringify(district.bounds));
+			const isGreen = initiallyGreenDistricts.some(greenDistrict => JSON.stringify(greenDistrict.bounds) === JSON.stringify(district.bounds));
 			const state = isGreen ? 1 : 0;
 			const color = isGreen ? "green" : "red";
 			const fill = isGreen ? true : false;
@@ -137,11 +137,11 @@ function switchMainMenuMapType() {
 		});
 	} else if (mode === "YourPerformance") {
 		if (document.getElementById("secondButton").innerHTML == "Log in with Google") return;
-		statisticsMap().then((statistics) => {
+		statisticsMap().then(statistics => {
 			statistics
-				.filter((stat) => stat.district !== "Custom" && stat.district !== "Every District")
-				.forEach((stat) => {
-					const district = districtsData.find((d) => d.name === stat.district);
+				.filter(stat => stat.district !== "Custom" && stat.district !== "Every District")
+				.forEach(stat => {
+					const district = districtsData.find(d => d.name === stat.district);
 
 					if (district) {
 						const normalizedScore = Math.min(stat.highScore / 10000, 1);
@@ -163,9 +163,9 @@ function switchMainMenuMapType() {
 				});
 		});
 	} else {
-		getDistrictWinners().then((winners) => {
-			winners.forEach((winner) => {
-				const district = districtsData.find((d) => d.name === winner.district);
+		getDistrictWinners().then(winners => {
+			winners.forEach(winner => {
+				const district = districtsData.find(d => d.name === winner.district);
 
 				if (district) {
 					const winnerColor = generateColor(winner.username);
@@ -189,7 +189,7 @@ function switchMainMenuMapType() {
 }
 
 setTimeout(() => {
-	districtsData.forEach((district) => {
+	districtsData.forEach(district => {
 		initiallyGreenDistricts.push({ bounds: district.bounds });
 	});
 	switchMainMenuMapType();
@@ -229,7 +229,7 @@ function shuffleArray(array) {
 
 map2.on("mousedown", function (event) {
 	if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-		districtLayers.forEach((district) => {
+		districtLayers.forEach(district => {
 			const latLngs = district.layer.getLatLngs()[0];
 			const x = event.latlng.lng;
 			const y = event.latlng.lat;
@@ -255,7 +255,7 @@ map2.on("mousedown", function (event) {
 	}
 });
 
-buttons.forEach((button) => {
+buttons.forEach(button => {
 	button.addEventListener("mouseenter", function () {
 		let currentColor = window.getComputedStyle(button).backgroundColor.trim();
 
@@ -278,9 +278,9 @@ buttons.forEach((button) => {
 });
 
 function toggleDistrict(input) {
-	let district = typeof input === "string" ? districtLayers.find((d) => d.name === input) : input;
-	const button = Array.from(buttons).find((b) => b.innerText.trim() === district.name);
-	const isGreen = initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds);
+	let district = typeof input === "string" ? districtLayers.find(d => d.name === input) : input;
+	const button = Array.from(buttons).find(b => b.innerText.trim() === district.name);
+	const isGreen = initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds);
 	if (isGreen) {
 		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
 			district.layer.setStyle({ fill: false, color: "red" });
@@ -288,7 +288,7 @@ function toggleDistrict(input) {
 		district.state = 0;
 		button.style.backgroundColor = "red";
 		button.dataset.tempColor = "red";
-		const index = initiallyGreenDistricts.findIndex((greenDistrict) => greenDistrict.bounds === district.bounds);
+		const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
 		if (index !== -1) {
 			initiallyGreenDistricts.splice(index, 1);
 		}
@@ -299,7 +299,7 @@ function toggleDistrict(input) {
 		district.state = 1;
 		button.style.backgroundColor = "green";
 		button.dataset.tempColor = "green";
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
 	}
@@ -307,18 +307,18 @@ function toggleDistrict(input) {
 }
 
 function addAllDistricts() {
-	buttons.forEach((button) => {
+	buttons.forEach(button => {
 		button.style.backgroundColor = "rgb(0, 128, 0)";
 		button.dataset.tempColor = "green";
 	});
-	districtLayers.forEach((district) => {
+	districtLayers.forEach(district => {
 		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
 			district.layer.setStyle({ fill: true, color: "green" });
 		}
 
 		district.state = 1;
 
-		if (!initiallyGreenDistricts.some((greenDistrict) => greenDistrict.bounds === district.bounds)) {
+		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
 			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 		}
 
@@ -327,11 +327,11 @@ function addAllDistricts() {
 }
 
 function removeAllDistricts() {
-	buttons.forEach((button) => {
+	buttons.forEach(button => {
 		button.style.backgroundColor = "rgb(255, 0, 0)";
 		button.dataset.tempColor = "red";
 	});
-	districtLayers.forEach((district) => {
+	districtLayers.forEach(district => {
 		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
 			district.layer.setStyle({ fill: false, color: "red" });
 		}
@@ -345,9 +345,9 @@ function removeAllDistricts() {
 function getRandomLocation() {
 	let polygon;
 	if (menuModeToggle == "Classic") {
-		polygon = districtsData.find((district) => district.name === selectedDistrict).bounds;
+		polygon = districtsData.find(district => district.name === selectedDistrict).bounds;
 	} else {
-		polygon = districtsData.find((district) => district.name === selectedDistrict).center;
+		polygon = districtsData.find(district => district.name === selectedDistrict).center;
 	}
 
 	let minX = polygon[0][0];
@@ -383,9 +383,9 @@ function initMap() {
 		randomLocation = actualCoordinates[roundCount];
 		selectedDistrict = findDistrict(randomLocation);
 	} else {
-		let formattedNames = initiallyGreenDistricts.map((district) => district.bounds);
+		let formattedNames = initiallyGreenDistricts.map(district => district.bounds);
 		shuffleArray(formattedNames);
-		selectedDistrict = districtsData.find((district) => district.bounds === formattedNames[0]).name;
+		selectedDistrict = districtsData.find(district => district.bounds === formattedNames[0]).name;
 		randomLocation = getRandomLocation();
 	}
 
@@ -430,7 +430,7 @@ function initMap() {
 			gamemap.setStreetView(panorama);
 
 			if (initiallyGreenDistricts.length == 1) {
-				minimapcenter = districtsData.find((d) => d.name === selectedGameMode).zoom;
+				minimapcenter = districtsData.find(d => d.name === selectedGameMode).zoom;
 				minimapzoom = 12;
 			} else {
 				minimapcenter = { lat: 38.4192, lng: 27.1287 };
@@ -550,7 +550,7 @@ function displayResults(distance, points) {
 	actualCoordinates[roundCount] = { lat: randomLocation.lat, lng: randomLocation.lng };
 	roundTimes[roundCount] = 30 - timerSeconds;
 
-	const foundDistrict = districtsData.find((district) => district.name === selectedDistrict);
+	const foundDistrict = districtsData.find(district => district.name === selectedDistrict);
 	const guessedPoint = [guessedCoordinates[roundCount].lat, guessedCoordinates[roundCount].lng];
 
 	document.getElementById("resultModalLeft").innerHTML = `<h1>Point Distribution</h1>`;
@@ -561,7 +561,7 @@ function displayResults(distance, points) {
 		document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Same District: +100 points</p>`;
 	} else if (selectedGameMode == "Every District") {
 		for (i = 0; i < foundDistrict.neighbors.length; i++) {
-			let foundNeighborDistrict = districtsData.find((district) => district.name === foundDistrict.neighbors[i]);
+			let foundNeighborDistrict = districtsData.find(district => district.name === foundDistrict.neighbors[i]);
 			if (isPointInPolygon(guessedPoint, foundNeighborDistrict.designcoordinates)) {
 				points += 50;
 				document.getElementById("resultModalLeft").innerHTML += `<p>Every District Mode - Neighboring District: +50 points</p>`;
@@ -762,13 +762,13 @@ function displayResults(distance, points) {
 					guessedMarker.setMap(null);
 					actualMarker.setMap(null);
 				});
-				lines.forEach((line) => line.setMap(null));
+				lines.forEach(line => line.setMap(null));
 			} else if (index === "showAll") {
 				markers.forEach(({ guessedMarker, actualMarker }) => {
 					guessedMarker.setMap(resultMap);
 					actualMarker.setMap(resultMap);
 				});
-				lines.forEach((line) => line.setMap(resultMap));
+				lines.forEach(line => line.setMap(resultMap));
 			} else {
 				const i = parseInt(index);
 				if (!isNaN(i)) {
@@ -946,7 +946,7 @@ function minimapOpenButton() {
 }
 
 function closeAllModals() {
-	Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
+	Array.from(document.getElementsByClassName("modalCloseButton")).forEach(button => {
 		button.click();
 	});
 }
@@ -955,8 +955,8 @@ function clearImageCache() {
 	const domains = ["streetviewpixels-pa.googleapis.com", "lh3.ggpht.com", "maps.googleapis.com"];
 	const images = document.querySelectorAll("img");
 
-	images.forEach((img) => {
-		const matchedDomain = domains.find((domain) => img.src.includes(domain));
+	images.forEach(img => {
+		const matchedDomain = domains.find(domain => img.src.includes(domain));
 		if (matchedDomain) {
 			img.src = "";
 		}
@@ -1056,7 +1056,7 @@ function sortStatistics(criteria) {
 	});
 
 	statisticsMenuText.innerHTML = "";
-	statisticsElements.forEach((element) => statisticsMenuText.appendChild(element));
+	statisticsElements.forEach(element => statisticsMenuText.appendChild(element));
 }
 
 function getNewRandomLocation(radius) {
@@ -1138,15 +1138,15 @@ expandButton.addEventListener("click", () => {
 	}
 });
 
-Array.from(document.getElementsByClassName("modalCloseButton")).forEach((button) => {
+Array.from(document.getElementsByClassName("modalCloseButton")).forEach(button => {
 	button.addEventListener("click", () => {
-		Array.from(document.getElementsByClassName("menumodal")).forEach((modal) => {
+		Array.from(document.getElementsByClassName("menumodal")).forEach(modal => {
 			modal.style.display = "none";
 		});
 	});
 });
 
-document.querySelectorAll("button").forEach((button) => {
+document.querySelectorAll("button").forEach(button => {
 	const buttonStyle = window.getComputedStyle(button);
 	if (buttonStyle.backgroundColor === "rgba(0, 0, 0, 0.8)") {
 		button.addEventListener("mouseenter", () => {
@@ -1160,9 +1160,9 @@ document.querySelectorAll("button").forEach((button) => {
 	}
 });
 
-document.querySelectorAll(".faq-question").forEach((question) => {
+document.querySelectorAll(".faq-question").forEach(question => {
 	question.addEventListener("click", () => {
-		document.querySelectorAll(".faq").forEach((faq) => {
+		document.querySelectorAll(".faq").forEach(faq => {
 			if (faq !== question.parentElement) {
 				faq.classList.remove("open");
 			}
@@ -1173,7 +1173,7 @@ document.querySelectorAll(".faq-question").forEach((question) => {
 	});
 });
 
-document.querySelectorAll(".firebaseButton").forEach((button) => {
+document.querySelectorAll(".firebaseButton").forEach(button => {
 	button.addEventListener("click", () => {
 		button.disabled = true;
 		setTimeout(() => {
@@ -1186,7 +1186,7 @@ document.querySelectorAll(".firebaseButton").forEach((button) => {
 });
 
 document.addEventListener("contextmenu", function (event) {
-	event.preventDefault();
+	window.location.href === "https://victiniiiii.github.io/IzmirGuessrCompetitive" && event.preventDefault();	
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
