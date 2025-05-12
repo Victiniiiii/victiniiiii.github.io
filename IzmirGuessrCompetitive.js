@@ -42,7 +42,7 @@ let gamemap = document.getElementById("gamemap"); // Has to be "let"
 
 // Game Elements:
 
-let theKey = "AIzaSyDMa5mnLnHb8EICt_OMOUB_y0gj8Kd_6uk"; // It's restricted to the page
+let theKey = "AIzaSyBBuL3V0NXaHo6UPwhOCMMW4y1vxIXVVjY"; // It's restricted to the page
 let initiallyGreenDistricts = [];
 let districtLayers = [];
 let previousMode = "DistrictBorders";
@@ -1186,7 +1186,7 @@ document.querySelectorAll(".firebaseButton").forEach(button => {
 });
 
 document.addEventListener("contextmenu", function (event) {
-	window.location.href === "https://victiniiiii.github.io/IzmirGuessrCompetitive" && event.preventDefault();	
+	window.location.href === "https://victiniiiii.github.io/IzmirGuessrCompetitive" && event.preventDefault();
 	if (!gameOngoing && !initiallyGreenDistricts.length == 0) {
 		removeAllDistricts();
 	} else if (!gameOngoing && initiallyGreenDistricts.length == 0) {
@@ -1194,6 +1194,82 @@ document.addEventListener("contextmenu", function (event) {
 	}
 });
 
+document.addEventListener("DOMContentLoaded", event => {
+	if (localStorage.getItem("wantTutorial") != 0) {
+		document.getElementById("wantTutorial").style.display = "block";
+	}
+});
+
+function setTutorial(event) {
+	document.getElementById("wantTutorial").style.display = "none";
+	if (event == 0) {
+		localStorage.setItem("wantTutorial", 0);
+	} else {
+		document.getElementById("tutorialModal").style.display = "block";
+		showModalPage(0);
+	}
+}
+
+const modalPages = [
+	{
+		screenshot: "IzmirGuessrTutorialScreenshots/image1.png",		
+		description: "This is the main map.",
+	},
+	{
+		screenshot: "https://via.placeholder.com/400x200?text=Screenshot+2",
+		description: "This is the description for page 2.",
+	},
+	{
+		screenshot: "https://via.placeholder.com/400x200?text=Screenshot+3",
+		description: "This is the description for page 3.",
+	},
+	"When you start the game, you will need to guess where you are after checking your surroundings. For example, if you are playing only Karşıyaka and you see a lot of garages in very narrow streets, it might be Demirköprü. After you decide, you need to press and place a pin as close as possible to your answer."
+];
+
+let modalPagesCurrent = 0;
+
+const modalPagesList = document.getElementById("modalPages-pageList");
+const modalPagesContainer = document.getElementById("modalPages-pagesContainer");
+const modalPagesPrev = document.getElementById("modalPages-prevBtn");
+const modalPagesNext = document.getElementById("modalPages-nextBtn");
+
+modalPages.forEach((_, i) => {
+	const li = document.createElement("li");
+	li.textContent = "Page " + (i + 1);
+	li.dataset.index = i;
+	li.addEventListener("click", () => showModalPage(i));
+	modalPagesList.appendChild(li);
+});
+
+function updateModalSidebar() {
+	[...modalPagesList.children].forEach(li => {
+		li.classList.toggle("modalPages-active", parseInt(li.dataset.index) === modalPagesCurrent);
+	});
+}
+
+function showModalPage(index) {
+	modalPagesCurrent = index;
+	const page = modalPages[modalPagesCurrent];
+	modalPagesContainer.innerHTML = `
+        <div class="modalPages-content">
+            <img style="width: 20vw; height: 20vw;" src="${page.screenshot}" alt="Screenshot ${modalPagesCurrent + 1}">
+            <p>${page.description}</p>
+        </div>
+    `;
+	updateModalSidebar();
+	modalPagesPrev.disabled = modalPagesCurrent === 0;
+	modalPagesNext.disabled = modalPagesCurrent === modalPages.length - 1;
+}
+
+modalPagesPrev.addEventListener("click", () => {
+	if (modalPagesCurrent > 0) showModalPage(modalPagesCurrent - 1);
+});
+
+modalPagesNext.addEventListener("click", () => {
+	if (modalPagesCurrent < modalPages.length - 1) showModalPage(modalPagesCurrent + 1);
+});
+
+// Preloading the red marker for faster results map loading
 let marker = new Image();
 marker.src = "static/images/redpin.png";
 marker.onload = function () {
