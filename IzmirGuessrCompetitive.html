@@ -111,7 +111,8 @@
 						<button id="matchHistory" onclick="openmodal('matchHistoryMenu')">Match History</button>
 						<button id="leaderboards" onclick="openmodal('leaderboardMenu')">Leaderboards</button>
 						<button id="stats" onclick="openmodal('statsMenu')">Statistics</button>
-						<button onclick="openmodal('faqMenu')">How to Play</button>
+						<button onclick="showModalPage(0)">Tutorial</button>
+						<button onclick="openmodal('faqMenu')">FAQ</button>
 						<button id="playMenuButton" onclick="openmodal('playMenu')">Play</button>
 					</div>
 				</div>
@@ -213,6 +214,7 @@
 							<p>These are the current plans:</p>
 							<ul>
 								<li>2 Language support (TR - ENG)</li>
+								<li>Complete the decorative map in the main screen</li>
 								<li>If you want to suggest new changes, please contact me.</li>
 							</ul>
 						</div>
@@ -362,6 +364,7 @@
 		</div>
 		<div id="wantTutorial" class="menumodal">
 			Would you like to see a short tutorial?
+			<button onclick="setTutorial(2)">maybe later</button>
 			<button onclick="setTutorial(1)">yes</button>
 			<button onclick="setTutorial(0)">no</button>
 		</div>
@@ -393,55 +396,4 @@
 		<script src="IzmirGuessrCoordinates.js"></script>
 		<script src="IzmirGuessrCompetitive.js"></script>
 	</body>
-	<style>
-		.modalPages-container {
-			display: flex;
-			width: 100%;
-			height: 100%;
-			border: 1px solid #ccc;
-		}
-		.modalPages-sidebar {
-			width: 25%;
-			background: #f0f0f0;
-			overflow-y: auto;
-			padding: 2%;
-		}
-		.modalPages-sidebar ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.modalPages-sidebar li {
-			cursor: pointer;
-			padding: 5% 0;
-		}
-		.modalPages-sidebar li.modalPages-active {
-			background: #ddd;
-			font-weight: bold;
-		}
-		.modalPages-main {
-			width: 75%;
-			padding: 2%;
-			display: flex;
-			flex-direction: column;
-		}
-		#modalPages-pagesContainer {
-			flex: 1;
-		}
-		.modalPages-nav {
-			display: flex;
-			justify-content: space-between;
-			margin-top: 2%;
-		}
-		.modalPages-content {
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-		}
-		.modalPages-content img {
-			max-width: 100%;
-			height: auto;
-			margin-bottom: 10px;
-		}
-	</style>
 </html>
