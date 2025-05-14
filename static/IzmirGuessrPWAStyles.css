@@ -980,6 +980,8 @@ div.gm-bundled-control:nth-child(2) {
 		width: 100%;
 		height: 100%;
 		border: 1px solid #0a0909;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 
 	.modalPages-sidebar {
@@ -987,6 +989,7 @@ div.gm-bundled-control:nth-child(2) {
 		background: #1b1a1a;
 		overflow-y: auto;
 		padding: 2%;
+		border-bottom-left-radius: 20px;
 	}
 
 	.modalPages-sidebar ul {
@@ -1002,6 +1005,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	.modalPages-sidebar li.modalPages-active {
 		background: #6b6767;
+		transition: all 0.25s ease-in-out;
 		font-weight: bold;
 	}
 
@@ -1033,6 +1037,51 @@ div.gm-bundled-control:nth-child(2) {
 		height: auto;
 		margin-bottom: 10px;
 		max-height: 17vw;
+	}
+
+	#wantTutorial {
+		width: 100dvw;
+		height: 100dvh;
+		background-color: rgb(0, 0, 0, 0.6);
+		position: fixed;
+		z-index: 123102381203810128301283012830192382019381208;
+	}
+
+	#wantTutorial2 {
+		width: 20vw;
+		height: 20vh;
+		background-color: #1e1e1e;
+		color: white;
+		margin: 40vh 40vw;
+		display: flex;
+		flex-direction: column;
+		border-radius: 20px;
+		border: 1px solid #aaa;
+		padding: 1vh 1vw;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	#wantTutorialButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	#wantTutorialButtons button {
+		display: flex;
+		color: white;
+		background-color: #2a2a2a;
+		border: 1px solid white;
+		border-radius: 5px;
+		padding: 0.4vh 1vw;
+		cursor: pointer;
+	}
+
+	#wantTutorialButtons button:hover {
+		background-color: #444242;
+		transition: all 0.25s ease-in-out;
 	}
 }
 
@@ -1917,5 +1966,25 @@ div.gm-bundled-control:nth-child(2) {
 		height: auto;
 		margin-bottom: 10px;
 		max-height: 80vh;
+	}
+
+	#wantTutorial {
+		width: 100dvw;
+		height: 100dvh;
+		background-color: rgb(0, 0, 0, 0.6);
+		position: fixed;
+		z-index: 123102381203810128301283012830192382019381208;
+	}
+
+	#wantTutorial2 {
+		width: 20vw;
+		height: 20vh;
+		background-color: #1e1e1e;
+		color: white;
+		margin: 40vh 40vw;
+		display: flex;
+		flex-direction: column;
+		border-radius: 20px;
+		border: 1px solid #aaa;
 	}
 }

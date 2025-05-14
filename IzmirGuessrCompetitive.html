@@ -362,18 +362,22 @@
 				</div>
 			</div>
 		</div>
-		<div id="wantTutorial" class="menumodal">
-			Would you like to see a short tutorial?
-			<button onclick="setTutorial(2)">maybe later</button>
-			<button onclick="setTutorial(1)">yes</button>
-			<button onclick="setTutorial(0)">no</button>
+		<div id="wantTutorial">
+			<div id="wantTutorial2">
+				Would you like to see a short tutorial?
+				<div id="wantTutorialButtons">
+					<button onclick="setTutorial(2)">Later</button>
+					<button onclick="setTutorial(1)">Yes</button>
+					<button onclick="setTutorial(0)">No</button>
+				</div>
+			</div>
 		</div>
 		<div class="menumodal" id="tutorialModal">
-			<div class="modalTitleRow">
+			<div style="margin-bottom: 0 !important;" class="modalTitleRow">
 				<div class="modalTitle">Tutorial</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-			<div class="modalContent">
+			<div style="height: calc(80dvh - 4vw) !important;" class="modalContent">
 				<div class="modalPages-container">
 					<div class="modalPages-sidebar">
 						<ul id="modalPages-pageList"></ul>
