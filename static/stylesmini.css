@@ -201,14 +201,7 @@ a:active, a:focus {
 	backdrop-filter: blur(5px);
 	justify-content: center;
 	align-items: center;
-}
-
-.forgegrid-content {
-	display: flex;
-}
-
-.forgegrid-content p {
-	flex-grow: 1;
+	padding: 2vh 0;
 }
 
 .forgegrid-item {
@@ -221,14 +214,8 @@ a:active, a:focus {
 	font-family: Verdana, sans-serif;
 	background-color: rgba(0, 0, 0, 0.4);
 	margin-bottom: 1vh;
-}
-
-.forgesatir {
-	width: 90vw;
-	height: 15svh;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
+	border-radius: 10px;
+	border: 1px solid black;
 }
 
 .forgegrid-image {
