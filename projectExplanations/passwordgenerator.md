@@ -1,4 +1,4 @@
 # Password Generator
 
-This is a small project to generate a custom password fully securely.  
-The length and the inputs of the password are customisable, and the output can be easily copied using the button below.  
+This is a small project to generate a fully secure custom password.  
+The password components are customizable, and the output can be easily copied using the button below.  
