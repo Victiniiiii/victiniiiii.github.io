@@ -25,7 +25,7 @@
 				Victiniiiii
 				<div class="mainmenuline">
 					<img src="icons/basic_location.svg" alt="Location Logo" />
-					<a href="https://www.google.com/maps/place/İzmir/@38.4499471,27.1181692,11" title="Location"> İzmir </a>
+					<a href="https://www.google.com/maps/place/İzmir/@38.4499471,27.1181692,11" title="Location"> İzmir, Turkey </a>
 				</div>
 				<div class="mainmenuline">
 					<img src="icons/basic_github.svg" alt="Github Logo" />
@@ -45,7 +45,7 @@
 					<pre></pre>
 					<h2>About Me:</h2>
 					<pre></pre>
-					<p>I am a statistics student with a strong interest in front-end development. I strive for perfection, ensuring every detail is flawless. Passionate about fixing bugs and optimizing older projects for better performance.</p>
+					<p>I am a statistics student with a strong interest in front-end development. Honesty is my lifestyle, and I am a fast learner. I strive for perfection, ensuring every detail is flawless. Passionate about fixing bugs and optimizing older projects for better performance.</p>
 					<pre></pre>
 					<h2>Technologies:</h2>
 					<pre></pre>
@@ -166,6 +166,34 @@
 					</div>
 				</div>
 				<div id="mainmenugeneralprojects">
+					<div class="mainmenuproject">
+						<a href="https://github.com/Victiniiiii/skyblockdesklet-Victiniiiii" title="Skyblock Desklet" aria-label="Skyblock Desklet">
+							<div class="mainmenulanguage" title="JavaScript">JavaScript</div>
+							<picture>
+								<source srcset="static/imageswebp/skyblockdesklet384.webp" type="image/webp" />
+								<img src="static/images/skyblockdesklet384.png" alt="Skyblock Desklet" />
+							</picture>
+							<div class="mainmenunew">Release Date: 10 May 2025</div>
+						</a>
+						<div class="projectname">
+							<p>Skyblock Desklet &#10515;</p>
+							<h6>A desklet specifically made for Mint Linux, it shows current Skyblock item prices by using API's in your desktop.</h6>
+						</div>
+					</div>
+					<div class="mainmenuproject">
+						<a href="https://github.com/Victiniiiii/linux_steam_game_checker" title="Linux Steam Game Checker" aria-label="Linux Steam Game Checker">
+							<div class="mainmenulanguage" title="TypeScript">TypeScript</div>
+							<picture>
+								<source srcset="static/imageswebp/steamlinux384.webp" type="image/webp" />
+								<img src="static/images/steamlinux384.png" alt="Linux Steam Game Checker" />
+							</picture>
+							<div class="mainmenunew">Release Date: 23 April 2025</div>
+						</a>
+						<div class="projectname">
+							<p>Linux Steam Game Checker &#10515;</p>
+							<h6>A small script to search a Steam library for games natively supported in Linux.</h6>
+						</div>
+					</div>
 					<div class="mainmenuproject">
 						<a href="https://github.com/Victiniiiii/Skyblock_Statistics" title="Skyblock Statistics" aria-label="Skyblock Statistics">
 							<div class="mainmenulanguage" title="R">R</div>
@@ -510,9 +538,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="warningModal">
-			<p>Warning: This will open github.com</p>
-			<div id="warningModalButtons"><button id="proceedBtn">Proceed</button> <button id="cancelBtn">Cancel</button></div>
+		<div id="warningModal" style="display: none">
+			<p id="warningMessage">Warning: This will open an external site</p>
+			<div id="warningModalButtons">
+				<button id="proceedBtn">Proceed</button>
+				<button id="cancelBtn">Cancel</button>
+			</div>
 		</div>
 	</body>
 	<script src="index.js" defer></script>

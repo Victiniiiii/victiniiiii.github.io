@@ -5,15 +5,29 @@ if (window.location.hash) {
 let modal = document.getElementById("warningModal");
 let proceedBtn = document.getElementById("proceedBtn");
 let cancelBtn = document.getElementById("cancelBtn");
+let warningMessage = document.getElementById("warningMessage");
 let targetLink = null;
 
 document.addEventListener("click", function (event) {
 	let anchor = event.target.closest("a");
-	if (anchor && anchor.hostname !== window.location.hostname) {
-		event.preventDefault();
-		targetLink = anchor.href;
-		modal.style.display = "flex";
-		return;
+	if (anchor) {
+		let url = new URL(anchor.href);
+
+		if (url.protocol === "mailto:") {
+			event.preventDefault();
+			let email = url.pathname;
+			targetLink = anchor.href;
+			warningMessage.textContent = `Warning: This will open email client to send to ${email}`;
+			modal.style.display = "flex";
+			return;
+		} else if (url.protocol.startsWith("http") && url.hostname !== window.location.hostname) {
+			event.preventDefault();
+			let domain = url.hostname.replace(/^www\./, "");
+			targetLink = anchor.href;
+			warningMessage.textContent = `Warning: This will open ${domain}`;
+			modal.style.display = "flex";
+			return;
+		}
 	}
 
 	if (!modal.contains(event.target) && !event.target.closest("a") && !event.target.closest("img")) {
@@ -81,14 +95,14 @@ document.querySelectorAll(".projectname").forEach(function (name) {
 
 document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
 	if (div.innerHTML.trim() === "JavaScript") {
-        div.innerHTML = `<img src="/icons/javascript.svg" alt="Javascript">`
+		div.innerHTML = `<img src="/icons/javascript.svg" alt="Javascript">`;
 	} else if (div.innerHTML.trim() === "Python") {
-        div.innerHTML = `<img src="/icons/python.svg" alt="Python">`
+		div.innerHTML = `<img src="/icons/python.svg" alt="Python">`;
 	} else if (div.innerHTML.trim() === "React") {
-        div.innerHTML = `<img src="/icons/react.svg" alt="React">`
+		div.innerHTML = `<img src="/icons/react.svg" alt="React">`;
 	} else if (div.innerHTML.trim() === "TypeScript") {
-        div.innerHTML = `<img src="/icons/typescript.svg" alt="Typescript">`
-    } else if (div.innerHTML.trim() === "R") {
-        div.innerHTML = `<img src="/icons/r.svg" alt="R">`
-    }
+		div.innerHTML = `<img src="/icons/typescript.svg" alt="Typescript">`;
+	} else if (div.innerHTML.trim() === "R") {
+		div.innerHTML = `<img src="/icons/r.svg" alt="R">`;
+	}
 });
