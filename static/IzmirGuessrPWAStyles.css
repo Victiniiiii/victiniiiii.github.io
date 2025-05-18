@@ -1106,7 +1106,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 	}
 
-	#pcColumnMobileRow {
+	.pcColumnMobileRow {
 		display: flex;
 		flex-direction: column;
 	}
@@ -1189,7 +1189,7 @@ div.gm-bundled-control:nth-child(2) {
 		z-index: 1;
 		width: 80dvw;
 		height: 80dvh;
-		margin: 15dvh 0 0 10vw;
+		margin: 14dvh 0 0 10vw;
 		padding: 1vw;
 		border: 1px solid white;
 		color: white;
@@ -2064,7 +2064,7 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 	}
 
-	#pcColumnMobileRow {
+	.pcColumnMobileRow {
 		display: flex;
 		flex-direction: row;
 	}
