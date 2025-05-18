@@ -667,6 +667,7 @@ function displayResults(distance, points) {
 		container.className = "pcColumnMobileRow";
 		container.style.display = "block";
 		container.style.gap = mobileUser ? "10px" : "0";
+		resultModalLeft.appendChild(container);
 
 		const createDropdown = (id, label) => {
 			const select = document.createElement("select");
@@ -676,9 +677,8 @@ function displayResults(distance, points) {
 			defaultOption.innerHTML = label;
 			defaultOption.value = "default";
 			select.appendChild(defaultOption);
-
 			container.appendChild(select);
-			resultModalLeft.appendChild(container);
+
 			return select;
 		};
 
