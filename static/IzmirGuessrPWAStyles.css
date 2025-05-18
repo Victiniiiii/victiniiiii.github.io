@@ -1106,6 +1106,11 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: row;
 	}
 
+	#pcColumnMobileRow {
+		display: flex;
+		flex-direction: column;
+	}
+
 	#menuTip {
 		width: 30vw;
 	}
@@ -2059,6 +2064,11 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 	}
 
+	#pcColumnMobileRow {
+		display: flex;
+		flex-direction: row;
+	}
+
 	.modalPages-nav button {
 		color: #eee;
 		background-color: #2a2a2a;
@@ -2068,5 +2078,9 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 3vw;
 		cursor: pointer;
 		transition: all 0.25s ease-in-out;
+	}
+
+	#centerDropdown, #toggleDropdown, #copyDropdown {
+		width: 26vw;
 	}
 }

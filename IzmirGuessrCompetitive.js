@@ -663,11 +663,12 @@ function displayResults(distance, points) {
 		const resultModalLeft = document.getElementById("resultModalLeft");
 		resultModalLeft.innerHTML += "<h1>Map Options</h1>";
 
-		const createDropdown = (id, label) => {
-			const container = document.createElement("div");
-			container.style.display = mobileUser ? "inline-block" : "block";
-			container.style.marginRight = mobileUser ? "10px" : "0";
+		const container = document.createElement("div");
+		container.className = "pcColumnMobileRow";
+		container.style.display = "block";
+		container.style.gap = mobileUser ? "10px" : "0";
 
+		const createDropdown = (id, label) => {
 			const select = document.createElement("select");
 			select.id = id;
 
@@ -689,7 +690,7 @@ function displayResults(distance, points) {
 			resultModalLeft.style.display = "flex";
 			resultModalLeft.style.flexWrap = "wrap";
 			resultModalLeft.style.gap = "1px";
-			resultModalLeft.style.lineHeight = "1.2"
+			resultModalLeft.style.lineHeight = "1.2";
 		}
 
 		const hideAllOption = document.createElement("option");
