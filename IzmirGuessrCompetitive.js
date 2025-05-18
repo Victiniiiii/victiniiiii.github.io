@@ -688,7 +688,8 @@ function displayResults(distance, points) {
 		if (mobileUser) {
 			resultModalLeft.style.display = "flex";
 			resultModalLeft.style.flexWrap = "wrap";
-			resultModalLeft.style.gap = "10px";
+			resultModalLeft.style.gap = "1px";
+			resultModalLeft.style.lineHeight = "1.2"
 		}
 
 		const hideAllOption = document.createElement("option");

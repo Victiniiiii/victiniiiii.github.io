@@ -2012,15 +2012,34 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#wantTutorial2 {
-		width: 20vw;
-		height: 20vh;
+		width: 80vw;
+		height: 30vh;
 		background-color: #1e1e1e;
 		color: white;
-		margin: 40vh 40vw;
+		margin: 35vh 10vw;
 		display: flex;
 		flex-direction: column;
 		border-radius: 20px;
 		border: 1px solid #aaa;
+		justify-content: space-around;
+		padding: 5vw;
+	}
+
+	#wantTutorialButtons {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	#wantTutorialButtons button {
+		display: flex;
+		color: white;
+		background-color: #2a2a2a;
+		border: 1px solid white;
+		border-radius: 5px;
+		padding: 0.5vh 5vw;
+		cursor: pointer;
 	}
 
 	#mainStartButton {
@@ -2038,5 +2057,16 @@ div.gm-bundled-control:nth-child(2) {
 	#pcRowMobileColumn {
 		display: flex;
 		flex-direction: column;
+	}
+
+	.modalPages-nav button {
+		color: #eee;
+		background-color: #2a2a2a;
+		border: 1px solid #eee;
+		padding: 5px 10px;
+		border-radius: 4px;
+		font-size: 3vw;
+		cursor: pointer;
+		transition: all 0.25s ease-in-out;
 	}
 }
