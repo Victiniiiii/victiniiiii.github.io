@@ -88,10 +88,12 @@
 						<button onclick="toggleDistrict('Torbalı')">Torbalı</button>
 						<button onclick="toggleDistrict('Urla')">Urla</button>
 					</div>
-					<div class="flexrow">
-						<button class="addremovebuttons" onclick="addAllDistricts()">Add All</button>
+					<div id="pcRowMobileColumn">
+						<div class="flexrow">
+							<button class="addremovebuttons" onclick="addAllDistricts()">Add All</button>
+							<button class="addremovebuttons" onclick="removeAllDistricts()">Remove All</button>
+						</div>
 						<p id="menuTip"></p>
-						<button class="addremovebuttons" onclick="removeAllDistricts()">Remove All</button>
 					</div>
 					<div id="menuarabox">
 						<div id="miniLeaderboard">
@@ -344,7 +346,7 @@
 						<p id="roundThisLong">The games will last 5 rounds long.</p>
 						<p>&nbsp;</p>
 						<div class="flexrow">
-							<label for="gameModeSelector">Select Game Mode:</label>
+							<label for="gameModeSelector" class="gameModeSelectorLabel">Select Game Mode:</label>
 							<select id="gameModeSelector" onchange="saveGameMode()">
 								<option value="Classic">Classic</option>
 								<option value="DistrictCenters">District Centers</option>
@@ -373,11 +375,11 @@
 			</div>
 		</div>
 		<div class="menumodal" id="tutorialModal">
-			<div style="margin-bottom: 0 !important;" class="modalTitleRow">
+			<div style="margin-bottom: 0 !important" class="modalTitleRow">
 				<div class="modalTitle">Tutorial</div>
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
-			<div style="height: calc(80dvh - 4vw) !important;" class="modalContent">
+			<div style="height: calc(80dvh - 4vw) !important" class="modalContent">
 				<div class="modalPages-container">
 					<div class="modalPages-sidebar">
 						<ul id="modalPages-pageList"></ul>
@@ -385,8 +387,8 @@
 					<div class="modalPages-main">
 						<div id="modalPages-pagesContainer"></div>
 						<div class="modalPages-nav">
-							<button id="modalPages-prevBtn">PREVIOUS</button>
-							<button id="modalPages-nextBtn">NEXT</button>
+							<button id="modalPages-prevBtn">Previous Page</button>
+							<button id="modalPages-nextBtn">Next Page</button>
 						</div>
 					</div>
 				</div>

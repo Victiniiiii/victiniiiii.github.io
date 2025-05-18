@@ -973,6 +973,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: 3vw;
 		cursor: pointer;
 		font-size: 2vw;
+		border-radius: 10px;
 	}
 
 	.modalPages-container {
@@ -1045,6 +1046,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.6);
 		position: fixed;
 		z-index: 123102381203810128301283012830192382019381208;
+		display: none;
 	}
 
 	#wantTutorial2 {
@@ -1082,6 +1084,30 @@ div.gm-bundled-control:nth-child(2) {
 	#wantTutorialButtons button:hover {
 		background-color: #444242;
 		transition: all 0.25s ease-in-out;
+	}
+
+	.modalPages-nav button {
+		color: #eee;
+		background-color: #2a2a2a;
+		border: 1px solid #eee;
+		padding: 5px 10px;
+		border-radius: 4px;
+		font-size: 1vw;
+		cursor: pointer;
+		transition: all 0.25s ease-in-out;
+	}
+
+	.modalPages-nav button:hover {
+		background-color: #525151;
+	}
+
+	#pcRowMobileColumn {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#menuTip {
+		width: 30vw;
 	}
 }
 
@@ -1525,7 +1551,7 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#mainmenuCompetitiveChecksAndButtons button {
-		width: 100%;
+		width: 45vw;
 		height: 12vw;
 		font-size: 4vw;
 		background-color: rgb(0, 0, 0, 0.8);
@@ -1798,8 +1824,15 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	select#gameModeSelector {
-		width: 36vw;
+		width: 26vw;
 		border: 1px solid white;
+		font-size: 2.5vw;
+		margin-bottom: 1vh;
+	}
+
+	.gameModeSelectorLabel {
+		font-size: 3vw;
+		margin-bottom: 1vh;
 	}
 
 	select#roundLimitSelector {
@@ -1905,6 +1938,7 @@ div.gm-bundled-control:nth-child(2) {
 		height: 4vh;
 		cursor: pointer;
 		font-size: 2vw;
+		border-radius: 6px;
 	}
 
 	.modalPages-container {
@@ -1974,6 +2008,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: rgb(0, 0, 0, 0.6);
 		position: fixed;
 		z-index: 123102381203810128301283012830192382019381208;
+		display: none;
 	}
 
 	#wantTutorial2 {
@@ -1986,5 +2021,22 @@ div.gm-bundled-control:nth-child(2) {
 		flex-direction: column;
 		border-radius: 20px;
 		border: 1px solid #aaa;
+	}
+
+	#mainStartButton {
+		width: 45vw;
+		font-size: 4vw;
+	}
+
+	#menuTip {
+		width: 80vw;
+		font-size: 4vw;
+		text-align: center;
+		margin-top: 1vh;
+	}
+
+	#pcRowMobileColumn {
+		display: flex;
+		flex-direction: column;
 	}
 }
