@@ -665,7 +665,7 @@ function displayResults(distance, points) {
 
 		const container = document.createElement("div");
 		container.className = "pcColumnMobileRow";
-		container.style.display = "block";
+		container.style.display = "flex";
 		container.style.gap = mobileUser ? "10px" : "0";
 		resultModalLeft.appendChild(container);
 
