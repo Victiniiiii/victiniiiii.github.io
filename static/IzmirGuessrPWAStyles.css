@@ -1443,6 +1443,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: green;
 		border: 1px solid rgb(80, 80, 80);
 		border-radius: 6px;
+  color: black;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
