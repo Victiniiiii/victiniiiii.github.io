@@ -1928,7 +1928,6 @@ div.gm-bundled-control:nth-child(2) {
 		font-size: 5vw;
 		transition: all 0.25s ease-in-out;
 		padding: 0 0.5vw 0 0.5vw;
-		margin-top: 1vh;
 	}
 
 	#matchSharingCodeInput {
@@ -2008,8 +2007,8 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.modalPages-content img {
-		width: 50vw;
-		height: auto;
+		width: 45vw;
+		height: 45vw;
 		margin-bottom: 10px;
 		max-height: 80vh;
 	}

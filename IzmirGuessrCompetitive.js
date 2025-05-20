@@ -1213,7 +1213,7 @@ function setTutorial(event) {
 	}
 }
 
-const descriptions = ["This is the decorative map. The green districts will be included in your games. You can toggle the districts by clicking them. Also, you can check the different map modes from the menu below.", "These buttons are another way to toggle districts on and off. You can also mass toggle all districts by right clicking in a computer, or holding anywhere in the screen for two seconds.", "You can login with google using the button at the top right of the screen. It will only take one click and no password is required. Logging in will allow you to save your statistics across devices, also will make you appear in the leaderboards. You can change your nickname if you don't want to use your real name.", "After pressing the Play button, you can either start a new game, or you can enter a game code to replay an old game. When you are ready to play press the appropriate button below.", "When you start the game, you will need to guess where you are after checking your surroundings. For example, if you are playing only Karşıyaka and you see a lot of garages in very narrow streets, it might be near Demirköprü.", "After you decide, you need to press and place a pin as close as possible to your answer."];
+const descriptions = ["This is the decorative map. The green districts will be included in your games. You can toggle the districts by clicking them. Also, you can check the different map modes from the menu below.", "These buttons are another way to toggle districts on and off. You can also mass toggle all districts by right clicking in a computer, or holding anywhere in the screen for two seconds.", "You can login with google using the button at the top right of the screen. It will only take one click and no password is required. Logging in will allow you to save your statistics across devices, also will make you appear in the leaderboards. You can change your nickname if you don't want to use your real name.", "After pressing the Play button, you can either start a new game, or you can enter a game code to replay an old game. When you are ready to play press the appropriate button below.", "When you start the game, you will need to guess where you are after checking your surroundings. For example, if you are playing only Karşıyaka and you see a lot of garages in very narrow streets, it might be near Demirköprü.", "After you decide, you need to press and place a pin as close as possible to your answer by pressing on the minimap."];
 
 let modalPagesCurrent = 0;
 const modalPagesList = document.getElementById("modalPages-pageList");
@@ -1239,7 +1239,7 @@ function showModalPage(index) {
 	modalPagesCurrent = index;
 	document.getElementById("modalPages-pagesContainer").innerHTML = `
         <div class="modalPages-content">
-            <img src="IzmirGuessrTutorialScreenshots/image${index + 1}.png" alt="Screenshot ${index + 1}">
+		${mobileUser ? `<img src="IzmirGuessrTutorialScreenshots/image${index + 1}mobile.png" alt="Screenshot ${index + 1}"></img>` : `<img src="IzmirGuessrTutorialScreenshots/image${index + 1}.png" alt="Screenshot ${index + 1}"></img>`}
             <p>${descriptions[index]}</p>
         </div>
     `;
