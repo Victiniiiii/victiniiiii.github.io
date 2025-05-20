@@ -586,6 +586,7 @@ body {
 	.mainmenuline {
 		width: 30vw;
 		height: 9svh;
+		font-size: 3vw;
 		margin: 0.5svh 0.5vw 0vw 1.5vw;
 		text-align: left;
 		display: flex;
