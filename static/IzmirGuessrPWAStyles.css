@@ -43,6 +43,12 @@ a:active {
 	text-decoration: none;
 }
 
+button:disabled {
+    background-color: #8d8989 !important;
+    color: #504d4d;
+    cursor: not-allowed !important;
+}
+
 #expandButton > :nth-child(2):hover,
 #expandButton > :nth-child(3):hover,
 .buttonInsideButton a:hover {
