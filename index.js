@@ -79,9 +79,9 @@ function updateExpandedHeights() {
 		let h6Height = h6.offsetHeight;
 
 		if (grandParent.classList.contains("expanded")) {
-			grandParent.style.height = baseHeight + h6Height + marginBottom + "px";
+			grandParent.style.height = baseHeight  + "px";
 		} else {
-			grandParent.style.height = baseHeight + "px";
+			grandParent.style.height = baseHeight + h6Height + marginBottom+ "px";
 		}
 	});
 }
@@ -104,5 +104,7 @@ document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
 		div.innerHTML = `<img src="/icons/typescript.svg" alt="Typescript">`;
 	} else if (div.innerHTML.trim() === "R") {
 		div.innerHTML = `<img src="/icons/r.svg" alt="R">`;
+	} else if (div.innerHTML.trim() === "Next.js") {
+		div.innerHTML = `<img src="/icons/next.svg" alt="Next.js">`;
 	}
 });
