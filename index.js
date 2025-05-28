@@ -1,6 +1,10 @@
-if (window.location.hash) {
-	document.getElementById(window.location.hash.slice(1)).click();
-}
+document.addEventListener("DOMContentLoaded", event => {
+	if (window.location.hash) {
+		document.getElementById(window.location.hash.slice(1)).click();
+	} else {
+		document.getElementById("general").click();
+	}
+});
 
 let modal = document.getElementById("warningModal");
 let proceedBtn = document.getElementById("proceedBtn");
@@ -79,9 +83,9 @@ function updateExpandedHeights() {
 		let h6Height = h6.offsetHeight;
 
 		if (grandParent.classList.contains("expanded")) {
-			grandParent.style.height = baseHeight  + "px";
+			grandParent.style.height = baseHeight + "px";
 		} else {
-			grandParent.style.height = baseHeight + h6Height + marginBottom+ "px";
+			grandParent.style.height = baseHeight + h6Height + marginBottom + "px";
 		}
 	});
 }
