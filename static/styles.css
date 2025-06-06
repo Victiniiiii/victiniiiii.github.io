@@ -1958,7 +1958,7 @@ a:active, a:focus {
 
 #infernoprofitresults {
 	width: 80vw;
-	height: 50vh;
+	height: fit-content;
 	box-sizing: border-box;
 	border: 0.1vw solid white;
 	font-size: 1.5vw;
@@ -1967,6 +1967,7 @@ a:active, a:focus {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	padding: 5vh 0;
 }
 
 #infernoinfo {

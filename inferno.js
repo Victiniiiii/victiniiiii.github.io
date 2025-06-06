@@ -791,6 +791,9 @@ async function minionprofits() {
 			} else if (chosenfuel == "Glowstone Dust") {
 				infernorow2.style.backgroundImage = "url('static/imageswebp/GLOWSTONE_DUST.webp'), url('static/images/GLOWSTONE_DUST.png')";
 			}
+			infernorow2.style.height = "38px";
+		} else {
+			infernorow2.style.height = "0px";
 		}
 		if (checkifitst3 == 1 || checkifitst3 == 1.3) {
 			infernorow3.style.backgroundImage = "url('static/imageswebp/CHILI_PEPPER.webp'), url('static/images/CHILI_PEPPER.png')";
@@ -801,6 +804,15 @@ async function minionprofits() {
 			infernovertexgain.innerHTML = `${format(((checkifitst3 / 5950) * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Vertex worth ${format(((checkifitst3 / 5950) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(vertexprice)).toFixed(0))} coins,`;
 			infernoapexgain.innerHTML = `${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * dailytotalminionactions).toFixed(2))} Inferno Apex worth ${format(((checkifitst3 / 1309091) * apexCount * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(apexprice)).toFixed(0))} coins,`;
 			infernoreapergain.innerHTML = `${format(((checkifitst3 / 458182) * htmlminioncount * dailytotalminionactions).toFixed(2))} Reaper Peppers worth ${format(((checkifitst3 / 458182) * htmlminioncount * (1 - (taxRate / 100) * derpy) * dailytotalminionactions * parseFloat(reaperprice)).toFixed(0))} coins,`;
+			infernorow3.style.height = "38px";
+			infernorow4.style.height = "38px";
+			infernorow5.style.height = "38px";
+			infernorow6.style.height = "38px";
+		} else {
+			infernorow3.style.height = "0px";
+			infernorow4.style.height = "0px";
+			infernorow5.style.height = "0px";
+			infernorow6.style.height = "0px";
 		}
 	}
 }
