@@ -17,12 +17,52 @@ let itemsarray = [
 		price: "0",
 		toggle: false,
 	},
+	{
+		name: "Glossy Gemstone",
+		id: "GLOSSY_GEMSTONE",
+		price: "0",
+		toggle: false,
+	},
+	{
+		name: "Refined Mineral",
+		id: "REFINED_MINERAL",
+		price: "0",
+		toggle: false,
+	},
+	{
+		name: "Enchanted Gold Block",
+		id: "ENCHANTED_GOLD_BLOCK",
+		price: "0",
+		toggle: false,
+	},
+	{
+		name: "Divan's Powder Coating",
+		id: "DIVAN_POWDER_COATING",
+		price: "0",
+		toggle: false,
+	},
 ];
 
+let data;
 let derpy = false;
 let armorPrices = [0, 0, 0, 0];
+const armorPieces = ["Divan_Helmet", "Divan_Chestplate", "Divan_Leggings", "Divan_Boots"];
 let armorCosts = [0, 0, 0, 0];
 const mixtures = [5, 8, 7, 4];
+let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
+document.getElementById("TaxRateText").innerText = "%" + taxRate;
+document.querySelectorAll(".three-way-toggle").forEach(toggle => {
+	if (taxRate == 1) {
+		toggle.classList.remove("middle");
+		toggle.classList.remove("active");
+	} else if (taxRate == 1.125) {
+		toggle.classList.remove("active");
+		toggle.classList.add("middle");
+	} else if (taxRate == 1.25) {
+		toggle.classList.remove("middle");
+		toggle.classList.add("active");
+	}
+});
 
 function format(x) {
 	return Number.parseFloat(x)
@@ -32,22 +72,11 @@ function format(x) {
 
 async function getPricesFromAPI() {
 	const response = await fetch("https://api.hypixel.net/v2/skyblock/bazaar");
-	const data = await response.json();
-
-	itemsarray.forEach((item) => {
-		item.price = data.products[item.id]?.quick_status[item.toggle ? "buyPrice" : "sellPrice"];
-		document.getElementById(`prices${item.id}`).innerText = format(item.price.toFixed(0)) + " coins";
-	});
-
-	for (let i = 0; i < 4; i++) {
-		armorCosts[i] = (10 * itemsarray[0].price + mixtures[i] * itemsarray[1].price + itemsarray[2].price).toFixed(0);
-		document.getElementById(`cost${i}`).innerHTML = `<p>Total Cost: ${format(armorCosts[i]) + " coins"}</p>`;
-	}
+	data = await response.json();
+	await auctionsAPI();
 }
 
 async function auctionsAPI() {
-	const armorPieces = ["Divan_Helmet", "Divan_Chestplate", "Divan_Leggings", "Divan_Boots"];
-
 	for (let i = 0; i < armorPieces.length; i++) {
 		const piece = armorPieces[i];
 		const response = await fetch(`https://sky.coflnet.com/api/auctions/tag/${piece}/active/bin`);
@@ -55,12 +84,32 @@ async function auctionsAPI() {
 		data = data.slice(0, -5);
 
 		let values = [];
-		data.forEach((element) => {
+		data.forEach(element => {
 			values.push(element.startingBid);
 		});
 
 		armorPrices[i] = filterValues(values)[0];
 	}
+
+	fillValues();
+}
+
+function fillValues() {
+	let derpyTax = derpy ? 4 : 1;
+	for (let i = 0; i < itemsarray.length; i++) {
+		itemsarray[i].price = Math.round(data.products[itemsarray[i].id]?.quick_status[itemsarray[i].toggle ? "buyPrice" : "sellPrice"]);
+		document.getElementById(`prices${itemsarray[i].id}`).innerText = format(itemsarray[i].price.toFixed(0)) + " coins";
+	}
+
+	for (let i = 0; i < 4; i++) {
+		armorCosts[i] = (10 * Number(itemsarray[0].price) + mixtures[i] * Number(itemsarray[1].price) + Number(itemsarray[2].price)).toFixed(0);
+		document.getElementById(`cost${i}`).innerHTML = `<p>Total Cost: ${format(armorCosts[i]) + " coins"}</p>`;
+	}
+
+	let powderCoatPrice = Math.round(data.products[itemsarray[6].id]?.quick_status[itemsarray[6].toggle ? "buyPrice" : "sellPrice"]);
+
+	document.getElementById("cost4").innerHTML = `<p>Total Cost: ${format(itemsarray[3].price * 32 + itemsarray[4].price * 32 + itemsarray[5].price * 16 + itemsarray[1].price * 5) + " coins"}</p>`;
+	document.getElementById("auction4").innerHTML = `Bazaar Price: ${format(powderCoatPrice)} coins`;
 
 	for (let i = 0; i < armorPieces.length; i++) {
 		document.getElementById(`tax${i}`).innerHTML = `Taxes: ${format((armorPrices[i] - substractTaxes(armorPrices[i])).toFixed(0))} coins.`;
@@ -68,6 +117,10 @@ async function auctionsAPI() {
 		document.getElementById(`notax${i}`).innerHTML = `After taxes: ${format(substractTaxes(armorPrices[i]).toFixed(0))} coins.`;
 		document.getElementById(`profit${i}`).innerHTML = `Profit: ${format((substractTaxes(armorPrices[i]) - armorCosts[i]).toFixed(0))} coins.`;
 	}
+
+	document.getElementById("tax4").innerHTML = `Taxes: ${format(Math.round((powderCoatPrice * taxRate * derpyTax) / 100))} coins`;
+	document.getElementById("notax4").innerHTML = `After taxes: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100))} coins`; 
+	document.getElementById("profit4").innerHTML = `Profit: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100) - (itemsarray[3].price * 32 + itemsarray[4].price * 32 + itemsarray[5].price * 16 + itemsarray[1].price * 5))} coins`;
 }
 
 function substractTaxes(input) {
@@ -98,7 +151,7 @@ function filterValues(arr) {
 	const lowerBound = q1 - 1.5 * iqr;
 	const upperBound = q3 + 1.5 * iqr;
 
-	return arr.filter((value) => value >= lowerBound && value <= upperBound);
+	return arr.filter(value => value >= lowerBound && value <= upperBound);
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -170,7 +223,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 	const toggleSwitches = document.querySelectorAll(".toggle-switch");
 
-	toggleSwitches.forEach((toggleSwitch) => {
+	toggleSwitches.forEach(toggleSwitch => {
 		const dataId = toggleSwitch.getAttribute("data-id");
 
 		if (dataId == "Derpy") {
@@ -179,11 +232,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 				derpy = !derpy;
 				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
 				await getPricesFromAPI();
-				await auctionsAPI();
 			});
 		}
 
-		let item = itemsarray.find((item) => item.id == dataId);
+		let item = itemsarray.find(item => item.id == dataId);
 
 		if (!item) return;
 
@@ -197,10 +249,27 @@ document.addEventListener("DOMContentLoaded", async function () {
 			item.toggle = !item.toggle;
 			toggleSwitch.classList.toggle("active");
 			await getPricesFromAPI();
-			await auctionsAPI();
 		});
 	});
-    
-    await getPricesFromAPI();
-	await auctionsAPI();
+
+	document.querySelectorAll(".three-way-toggle").forEach(toggle => {
+		toggle.addEventListener("click", function () {
+			if (this.classList.contains("active")) {
+				this.classList.remove("active");
+				this.classList.add("middle");
+				taxRate = 1.125;
+			} else if (this.classList.contains("middle")) {
+				this.classList.remove("middle");
+				taxRate = 1;
+			} else {
+				this.classList.add("active");
+				taxRate = 1.25;
+			}
+			localStorage.setItem("taxRate", taxRate);
+			document.getElementById("TaxRateText").innerText = "%" + taxRate;
+			getPricesFromAPI();
+		});
+	});
+
+	await getPricesFromAPI();
 });
