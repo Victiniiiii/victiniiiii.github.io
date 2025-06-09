@@ -113,13 +113,13 @@ function fillValues() {
 
 	for (let i = 0; i < armorPieces.length; i++) {
 		document.getElementById(`tax${i}`).innerHTML = `Taxes: ${format((armorPrices[i] - substractTaxes(armorPrices[i])).toFixed(0))} coins.`;
-		document.getElementById(`auction${i}`).innerHTML = `Auction price: ${format(armorPrices[i])} coins`;
-		document.getElementById(`notax${i}`).innerHTML = `After taxes: ${format(substractTaxes(armorPrices[i]).toFixed(0))} coins.`;
+		document.getElementById(`auction${i}`).innerHTML = `Auction Price: ${format(armorPrices[i])} coins`;
+		document.getElementById(`notax${i}`).innerHTML = `After Taxes: ${format(substractTaxes(armorPrices[i]).toFixed(0))} coins.`;
 		document.getElementById(`profit${i}`).innerHTML = `Profit: ${format((substractTaxes(armorPrices[i]) - armorCosts[i]).toFixed(0))} coins.`;
 	}
 
 	document.getElementById("tax4").innerHTML = `Taxes: ${format(Math.round((powderCoatPrice * taxRate * derpyTax) / 100))} coins`;
-	document.getElementById("notax4").innerHTML = `After taxes: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100))} coins`; 
+	document.getElementById("notax4").innerHTML = `After Taxes: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100))} coins`; 
 	document.getElementById("profit4").innerHTML = `Profit: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100) - (itemsarray[3].price * 32 + itemsarray[4].price * 32 + itemsarray[5].price * 16 + itemsarray[1].price * 5))} coins`;
 }
 
