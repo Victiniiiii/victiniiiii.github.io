@@ -1,3 +1,4 @@
+let toggleStates;
 let itemsarray = [
 	{
 		name: "Gemstone Mixture",
@@ -46,23 +47,10 @@ let itemsarray = [
 let data;
 let derpy = false;
 let armorPrices = [0, 0, 0, 0];
-const armorPieces = ["Divan_Helmet", "Divan_Chestplate", "Divan_Leggings", "Divan_Boots"];
 let armorCosts = [0, 0, 0, 0];
 const mixtures = [5, 8, 7, 4];
-let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
-document.getElementById("TaxRateText").innerText = "%" + taxRate;
-document.querySelectorAll(".three-way-toggle").forEach(toggle => {
-	if (taxRate == 1) {
-		toggle.classList.remove("middle");
-		toggle.classList.remove("active");
-	} else if (taxRate == 1.125) {
-		toggle.classList.remove("active");
-		toggle.classList.add("middle");
-	} else if (taxRate == 1.25) {
-		toggle.classList.remove("middle");
-		toggle.classList.add("active");
-	}
-});
+const armorPieces = ["Divan_Helmet", "Divan_Chestplate", "Divan_Leggings", "Divan_Boots"];
+let taxRate;
 
 function format(x) {
 	return Number.parseFloat(x)
@@ -119,7 +107,7 @@ function fillValues() {
 	}
 
 	document.getElementById("tax4").innerHTML = `Taxes: ${format(Math.round((powderCoatPrice * taxRate * derpyTax) / 100))} coins`;
-	document.getElementById("notax4").innerHTML = `After Taxes: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100))} coins`; 
+	document.getElementById("notax4").innerHTML = `After Taxes: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100))} coins`;
 	document.getElementById("profit4").innerHTML = `Profit: ${format(Math.round((powderCoatPrice * (100 - taxRate * derpyTax)) / 100) - (itemsarray[3].price * 32 + itemsarray[4].price * 32 + itemsarray[5].price * 16 + itemsarray[1].price * 5))} coins`;
 }
 
@@ -159,9 +147,40 @@ document.addEventListener("DOMContentLoaded", async function () {
 	webptest.src = "/static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = true) : (WebPSupport = false);
 
+	taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
+
+	document.getElementById("TaxRateText").innerText = "%" + taxRate;
+	document.querySelectorAll(".three-way-toggle").forEach(toggle => {
+		if (taxRate == 1) {
+			toggle.classList.remove("middle");
+			toggle.classList.remove("active");
+		} else if (taxRate == 1.125) {
+			toggle.classList.remove("active");
+			toggle.classList.add("middle");
+		} else if (taxRate == 1.25) {
+			toggle.classList.remove("middle");
+			toggle.classList.add("active");
+		}
+	});
+
 	document.getElementById("settings-bar").addEventListener("click", function () {
 		document.getElementById("settings").classList.toggle("expanded");
 	});
+
+	const savedToggleStates = localStorage.getItem("toggleStatesDivanTracker");
+	if (savedToggleStates) {
+		toggleStates = JSON.parse(savedToggleStates);
+		for (let i = 0; i < itemsarray.length && i < toggleStates.length; i++) {
+			itemsarray[i].toggle = toggleStates[i];
+		}
+	} else {
+		toggleStates = Array(itemsarray.length).fill(false);
+	}
+
+	const savedDerpyState = localStorage.getItem("derpyState");
+	if (savedDerpyState !== null) {
+		derpy = JSON.parse(savedDerpyState);
+	}
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		const item = itemsarray[i];
@@ -196,6 +215,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		const toggleSwitch = document.createElement("div");
 		toggleSwitch.className = "toggle-switch";
 		toggleSwitch.dataset.id = item.id;
+		toggleSwitch.dataset.index = i;
 
 		const sellOrderLabel = document.createElement("span");
 		sellOrderLabel.className = "toggle-label";
@@ -221,34 +241,40 @@ document.addEventListener("DOMContentLoaded", async function () {
 		document.getElementById("toggle-container").appendChild(row);
 	}
 
-	const toggleSwitches = document.querySelectorAll(".toggle-switch");
-
-	toggleSwitches.forEach(toggleSwitch => {
+	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch) {
 		const dataId = toggleSwitch.getAttribute("data-id");
+		const itemIndex = parseInt(toggleSwitch.getAttribute("data-index"));
 
-		if (dataId == "Derpy") {
-			toggleSwitch.addEventListener("click", async function () {
-				toggleSwitch.classList.toggle("active");
-				derpy = !derpy;
-				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
-				await getPricesFromAPI();
-			});
-		}
-
-		let item = itemsarray.find(item => item.id == dataId);
-
-		if (!item) return;
-
-		if (item.toggle) {
-			toggleSwitch.classList.add("active");
-		} else {
-			toggleSwitch.classList.remove("active");
+		if (dataId === "Derpy") {
+			if (derpy) {
+				toggleSwitch.classList.add("active");
+				document.getElementById("DerpyText").innerText = "On";
+			} else {
+				toggleSwitch.classList.remove("active");
+				document.getElementById("DerpyText").innerText = "Off";
+			}
+		} else if (!isNaN(itemIndex) && itemIndex < itemsarray.length) {
+			if (itemsarray[itemIndex].toggle) {
+				toggleSwitch.classList.add("active");
+			} else {
+				toggleSwitch.classList.remove("active");
+			}
 		}
 
 		toggleSwitch.addEventListener("click", async function () {
-			item.toggle = !item.toggle;
 			toggleSwitch.classList.toggle("active");
-			await getPricesFromAPI();
+
+			if (dataId === "Derpy") {
+				derpy = !derpy;
+				localStorage.setItem("derpyState", JSON.stringify(derpy));
+				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
+				await getPricesFromAPI();
+			} else if (!isNaN(itemIndex) && itemIndex < itemsarray.length) {
+				itemsarray[itemIndex].toggle = !itemsarray[itemIndex].toggle;
+				toggleStates[itemIndex] = itemsarray[itemIndex].toggle;
+				localStorage.setItem("toggleStatesDivanTracker", JSON.stringify(toggleStates));
+				await getPricesFromAPI();
+			}
 		});
 	});
 
