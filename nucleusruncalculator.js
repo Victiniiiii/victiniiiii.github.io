@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let toggleStates;
 let WebPSupport = 2;
 let itemsarray = [];
@@ -216,3 +217,9 @@ function format(x) {
 		.toString()
 		.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
+=======
+let derpy;
+let diaz;
+let ifCrystalsActive;
+let runsPerHour;
+>>>>>>> 32dbc6b2dce311c26459782eaf105b201593a350
