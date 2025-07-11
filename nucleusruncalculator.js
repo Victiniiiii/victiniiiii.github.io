@@ -1,11 +1,22 @@
-<<<<<<< HEAD
 let toggleStates;
 let WebPSupport = 2;
-let itemsarray = [];
+let itemsarray = [
+	{
+		name: "Flawless Jasper Gemstone",
+		id: "FLAWLESS_JASPER_GEMSTONE",
+		price: "0",
+		dropchance: "61442.4",
+		auctionorbazaar: "BZ",
+		image: "FLAWLESS_JASPER_GEM",
+	},
+];
 
 let derpy = false;
 let diaz = false;
+let molePet = false;
+let diamondPerk = false;
 let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
+
 document.getElementById("TaxRateText").innerText = "%" + taxRate;
 document.querySelectorAll(".three-way-toggle").forEach(toggle => {
 	if (taxRate == 1) {
@@ -25,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	webptest.src = "/static/imageswebp/webpdot.webp";
 	webptest.width > 0 && webptest.height > 0 ? (WebPSupport = 1) : (WebPSupport = 0);
 
-	const savedToggleStates = localStorage.getItem("toggleStatesNpcBuy");
+	const savedToggleStates = localStorage.getItem("nucleusRunItems");
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
 	} else {
@@ -117,23 +128,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	document.querySelectorAll(".toggle-switch").forEach(function (toggleSwitch, index) {
 		const dataId = toggleSwitch.getAttribute("data-id");
-		if (dataId == "Derpy") {
-			toggleSwitch.addEventListener("click", async function () {
-				toggleSwitch.classList.toggle("active");
-				derpy = !derpy;
-				derpy ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
-				bazaarconnect();
-			});
-			return;
-		} else if (dataId == "Diaz") {
-			toggleSwitch.addEventListener("click", async function () {
-				toggleSwitch.classList.toggle("active");
-				diaz = !diaz;
-				diaz ? (document.getElementById("DiazText").innerText = "On") : (document.getElementById("DiazText").innerText = "Off");
-				bazaarconnect();
-			});
-			return;
-		}
+
+		["Derpy", "Diaz", "Mole", "HighRoller"].forEach(name => {
+			if (dataId === name) {
+				toggleSwitch.addEventListener("click", async function () {
+					toggleSwitch.classList.toggle("active");
+					window[name.toLowerCase()] = !window[name.toLowerCase()];
+					document.getElementById(name + "Text").innerText = window[name.toLowerCase()] ? "On" : "Off";
+					bazaarconnect();
+				});
+			}
+		});
 
 		if (toggleStates[index - 2]) {
 			toggleSwitch.classList.add("active");
@@ -144,12 +149,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		toggleSwitch.addEventListener("click", function () {
 			toggleSwitch.classList.toggle("active");
 			toggleStates[index - 2] = !toggleStates[index - 2];
-			localStorage.setItem("toggleStatesNpcBuy", JSON.stringify(toggleStates));
+			localStorage.setItem("nucleusRunItems", JSON.stringify(toggleStates));
 			bazaarconnect();
 		});
 	});
 
-	const NbBsSpace = document.getElementById("NbBsSpace");
+	const nucleusSpace = document.getElementById("nucleusSpace");
 
 	for (let i = 0; i < itemsarray.length; i++) {
 		const nbbsText = document.createElement("div");
@@ -165,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		const theBox = document.createElement("div");
 
-		NbBsSpace.appendChild(theBox);
+		nucleusSpace.appendChild(theBox);
 		theBox.appendChild(nbbsImage);
 		theBox.appendChild(nbbsText);
 	}
@@ -217,9 +222,9 @@ function format(x) {
 		.toString()
 		.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-=======
-let derpy;
-let diaz;
-let ifCrystalsActive;
-let runsPerHour;
->>>>>>> 32dbc6b2dce311c26459782eaf105b201593a350
+
+function printStuff() {
+	let averageDrops = 16.5;
+	if (molePet) averageDrops++;
+	if (diamondPerk) averageDrops++;
+}
