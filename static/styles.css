@@ -2452,3 +2452,14 @@ a:active, a:focus {
     justify-content: center;
     align-items: center;
 }
+
+#nucleusSpace {
+	width: 90vw;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1vw;
+	justify-content: center;
+    margin-top: 10vh;
+	background-color: rgb(0, 0, 0, 0.7);
+	color: white;
+}
