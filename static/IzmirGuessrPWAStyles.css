@@ -44,9 +44,9 @@ a:active {
 }
 
 button:disabled {
-    background-color: #8d8989 !important;
-    color: #504d4d;
-    cursor: not-allowed !important;
+	background-color: #8d8989 !important;
+	color: #504d4d;
+	cursor: not-allowed !important;
 }
 
 #expandButton > :nth-child(2):hover,
@@ -473,6 +473,7 @@ div.gm-bundled-control:nth-child(2) {
 		display: block;
 		border: 1px solid black;
 		position: absolute;
+		border-radius: 20px;
 	}
 
 	#mainMapInfo {
@@ -489,6 +490,8 @@ div.gm-bundled-control:nth-child(2) {
 		margin-top: 85dvh;
 		z-index: 999991923912391923919239;
 		transition: all 0.25s ease-in-out;
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
 	}
 
 	#startpage {
@@ -739,6 +742,7 @@ div.gm-bundled-control:nth-child(2) {
 		margin: 1vw;
 		font-size: 1vw;
 		transition: all 0.25s ease-in-out;
+		border-radius: 10px;
 	}
 
 	#miniLeaderboard,
@@ -751,6 +755,16 @@ div.gm-bundled-control:nth-child(2) {
 		justify-content: center;
 		background: rgb(0, 0, 0, 0.6);
 		transition: all 0.25s ease-in-out;
+	}
+
+	#miniLeaderboard {
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+
+	#yourStats {
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
 	}
 
 	#gameplayBackground {
@@ -886,12 +900,10 @@ div.gm-bundled-control:nth-child(2) {
 
 	select#gameModeSelector {
 		width: 7.5vw;
-		border: 1px solid white;
 	}
 
 	select#roundLimitSelector {
 		width: 3vw;
-		border: 1px solid white;
 	}
 
 	.modalContent {
@@ -908,9 +920,10 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.modalLeft {
-		width: 80%;
+		width: 100%;
 		height: 100%;
-		padding: 0.75vw;
+		padding-left: 10vw;
+		padding-right: 10vw;
 		overflow-y: auto;
 	}
 
@@ -1449,7 +1462,7 @@ div.gm-bundled-control:nth-child(2) {
 		background-color: green;
 		border: 1px solid rgb(80, 80, 80);
 		border-radius: 6px;
-  color: black;
+		color: black;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons {
@@ -2086,7 +2099,9 @@ div.gm-bundled-control:nth-child(2) {
 		transition: all 0.25s ease-in-out;
 	}
 
-	#centerDropdown, #toggleDropdown, #copyDropdown {
+	#centerDropdown,
+	#toggleDropdown,
+	#copyDropdown {
 		width: 26vw;
 	}
 }

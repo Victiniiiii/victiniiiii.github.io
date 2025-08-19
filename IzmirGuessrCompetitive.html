@@ -329,38 +329,58 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<div class="modalContent">
-				<div class="modalLeft width65">
-					<h1>Standard Gamemode</h1>
-					<p>To experience the different districts, you can toggle on the ones you want, and toggle off the ones you find boring. They can be toggled either on clicking on the map, or clicking the district names in the main menu. You currently have <b id="ilcesayisi">30</b> districts selected.</p>
+				<div class="modalLeft" style="width: 100%; justify-content: start">
+					<h1 id="gameModeName">Standard Gamemode</h1>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p id="sharedOff2">To experience the different districts, you can toggle on the ones you want, and toggle off the ones you find boring. They can be toggled either on clicking on the map, or clicking the district names in the main menu. You currently have <b id="ilcesayisi">30</b> districts selected.</p>
+					<p>&nbsp;</p>
 					<div id="settingsBox">
 						<h2>Settings:</h2>
 						<p>&nbsp;</p>
+						<div id="sharedOff">
+							<div class="flexrow">
+								<label for="roundLimitSelector">Set Round Limit:</label>
+								<select id="roundLimitSelector" onchange="saveRoundLimit()">
+									<option value="3">3</option>
+									<option value="5">5</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+							<p id="roundThisLong">The games will last 5 rounds long.</p>
+							<p>&nbsp;</p>
+							<div class="flexrow">
+								<label for="gameModeSelector" class="gameModeSelectorLabel">Select Map:</label>
+								<select id="gameModeSelector" onchange="saveGameMode()">
+									<option value="Classic">Classic</option>
+									<option value="DistrictCenters">District Centers</option>
+								</select>
+							</div>
+							<p>District Centers map excludes roads and places too far from each districts center.</p>
+							<p>&nbsp;</p>
+						</div>
 						<div class="flexrow">
-							<label for="roundLimitSelector">Set Round Limit:</label>
-							<select id="roundLimitSelector" onchange="saveRoundLimit()">
-								<option value="3">3</option>
-								<option value="5">5</option>
-								<option value="10">10</option>
+							<label for="matchSharingLabel">Game Mode</label>
+							<select id="matchSharingLabel" onchange="toggleGameMode()">
+								<option value="Normal">Normal</option>
+								<option value="Shared">Shared</option>
 							</select>
 						</div>
-						<p id="roundThisLong">The games will last 5 rounds long.</p>
-						<p>&nbsp;</p>
-						<div class="flexrow">
-							<label for="gameModeSelector" class="gameModeSelectorLabel">Select Game Mode:</label>
-							<select id="gameModeSelector" onchange="saveGameMode()">
-								<option value="Classic">Classic</option>
-								<option value="DistrictCenters">District Centers</option>
-							</select>
+						<p id="sharedOff3">For the game mode, you can select "Shared" if you have a game code you would like to play.</p>
+						<div id="sharedOn" style="display: none">
+							<p>&nbsp;</p>
+							<p>If you have a game code, you can play that game by pasting it here.</p>
+							<p>&nbsp;</p>
+							<p>Playing shared games do not count for statistics or the leaderboard.</p>
+							<p>&nbsp;</p>
+							<input id="matchSharingCodeInput" type="text" placeholder="Enter game code here..." aria-label="usernameinput" />
 						</div>
-						<p>District Centers mode excludes roads and places too far from each districts center.</p>
 					</div>
-					<button id="mainStartButton" onclick="startGame()">Start a new game</button>
-				</div>
-				<div class="modalRight width35">
-					<h1>Enter a game code</h1>
-					<p>If you have a game code, you can play that game by pasting it here. Playing shared games do not count for statistics or the leaderboard.</p>
-					<input id="matchSharingCodeInput" type="text" placeholder="Enter game code here..." aria-label="usernameinput" />
-					<button id="matchSharingPlayButton" onclick="enterMatchSharingCode()">Start a shared game</button>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<button id="mainStartButton" onclick="startGameButton()">Start a new game</button>
 				</div>
 			</div>
 		</div>
