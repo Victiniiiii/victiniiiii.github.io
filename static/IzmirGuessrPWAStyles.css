@@ -1768,8 +1768,6 @@ div.gm-bundled-control:nth-child(2) {
 		width: 80%;
 		height: 6vw;
 		font-size: 4vw;
-		background-color: rgb(60, 60, 60);
-		border: 1px solid rgb(80, 80, 80);
 		color: white;
 	}
 
@@ -1850,7 +1848,6 @@ div.gm-bundled-control:nth-child(2) {
 
 	select#gameModeSelector {
 		width: 26vw;
-		border: 1px solid white;
 		font-size: 2.5vw;
 		margin-bottom: 1vh;
 	}
@@ -1862,7 +1859,6 @@ div.gm-bundled-control:nth-child(2) {
 
 	select#roundLimitSelector {
 		width: 12vw;
-		border: 1px solid white;
 	}
 
 	.modalContent {
@@ -1872,10 +1868,14 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	.modalLeft {
-		width: 65%;
+		width: 100%;
 		height: 100%;
 		padding: 2dvw;
 		overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 	}
 
 	.modalRight {
@@ -1946,7 +1946,7 @@ div.gm-bundled-control:nth-child(2) {
 	#matchSharingCodeInput {
 		width: 90%;
 		height: 4vh;
-		font-size: 2vw;
+		font-size: 6vw;
 	}
 
 	#playMenu {
@@ -2067,8 +2067,9 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	#mainStartButton {
-		width: 45vw;
-		font-size: 4vw;
+		width: 80vw;
+        height: 10vw;
+		font-size: 6vw;
 	}
 
 	#menuTip {
