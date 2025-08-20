@@ -6,7 +6,7 @@ let roundCount = 0;
 let timerSeconds = 30;
 let hintCircle;
 let hintsAreEnabled = false;
-let sharedOrNot;
+let sharedOrNot = "Normal";
 let menuModeToggle = localStorage.getItem("gamemode") ? localStorage.getItem("gamemode") : "DistrictCenters";
 let roundLimit = localStorage.getItem("roundLimit") ? localStorage.getItem("roundLimit") : 5;
 document.getElementById("roundThisLong").innerHTML = `The games will last ${roundLimit} rounds long.`;
