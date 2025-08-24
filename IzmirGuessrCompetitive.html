@@ -329,18 +329,18 @@
 				<div class="modalCloseButton">&#10006;</div>
 			</div>
 			<div class="modalContent">
-				<div class="modalLeft" style="width: 100%; justify-content: start">
+				<div class="modalLeft">
 					<h1 id="gameModeName">Standard Gamemode</h1>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
 					<p id="sharedOff2">To experience the different districts, you can toggle on the ones you want, and toggle off the ones you find boring. They can be toggled either on clicking on the map, or clicking the district names in the main menu. You currently have <b id="ilcesayisi">30</b> districts selected.</p>
 					<p>&nbsp;</p>
-					<div id="settingsBox" style="display: flex;  flex-direction: column;justify-content: center; align-items: center">
+					<div id="settingsBox" style="display: flex; flex-direction: column; justify-content: center; align-items: center">
 						<h2>Settings:</h2>
 						<p>&nbsp;</p>
-						<div id="sharedOff">
-							<div class="flexrow">
+						<div id="sharedOff" style="display: flex; flex-direction: column; width: fit-content; justify-content: center; align-items: center">
+							<div class="flexrow" style="width: fit-content; justify-content: center">
 								<label for="roundLimitSelector">Set Round Limit:</label>
 								<select id="roundLimitSelector" onchange="saveRoundLimit()">
 									<option value="3">3</option>
@@ -348,9 +348,9 @@
 									<option value="10">10</option>
 								</select>
 							</div>
-							<p id="roundThisLong">The games will last 5 rounds long.</p>
+							<p id="roundThisLong" style="width: fit-content; justify-content: center">The games will last 5 rounds long.</p>
 							<p>&nbsp;</p>
-							<div class="flexrow">
+							<div class="flexrow" style="width: fit-content; justify-content: center">
 								<label for="gameModeSelector" class="gameModeSelectorLabel">Select Map:</label>
 								<select id="gameModeSelector" onchange="saveGameMode()">
 									<option value="Classic">Classic</option>
@@ -360,15 +360,15 @@
 							<p>District Centers map excludes roads and places too far from each districts center.</p>
 							<p>&nbsp;</p>
 						</div>
-						<div class="flexrow">
+						<div class="flexrow" style="width: fit-content; justify-content: center">
 							<label for="matchSharingLabel">Game Mode</label>
 							<select id="matchSharingLabel" onchange="toggleGameMode()">
 								<option value="Normal">Normal</option>
 								<option value="Shared">Shared</option>
 							</select>
 						</div>
-						<p id="sharedOff3">For the game mode, you can select "Shared" if you have a game code you would like to play.</p>
-						<div id="sharedOn" style="display: none">
+						<p id="sharedOff3" style="width: fit-content; justify-content: center">For the game mode, you can select "Shared" if you have a game code you would like to play.</p>
+						<div id="sharedOn" style="display: none; flex-direction: column; width: fit-content; justify-content: center">
 							<p>&nbsp;</p>
 							<p>If you have a game code, you can play that game by pasting it here.</p>
 							<p>&nbsp;</p>
