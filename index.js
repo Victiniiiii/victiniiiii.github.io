@@ -21,7 +21,7 @@ document.addEventListener("click", function (event) {
 			event.preventDefault();
 			let email = url.pathname;
 			targetLink = anchor.href;
-			warningMessage.textContent = `Warning: This will open email client to send to ${email}`;
+			warningMessage.textContent = `Warning: This will open your email client for sending mail to ${email}`;
 			modal.style.display = "flex";
 			return;
 		} else if (url.protocol.startsWith("http") && url.hostname !== window.location.hostname) {
@@ -110,5 +110,7 @@ document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
 		div.innerHTML = `<img src="/icons/r.svg" alt="R">`;
 	} else if (div.innerHTML.trim() === "Next.js") {
 		div.innerHTML = `<img src="/icons/next.svg" alt="Next.js">`;
+	} else if (div.innerHTML.trim() === "Go") {
+		div.innerHTML = `<img src="/icons/golang.svg" alt="Go">`;
 	}
 });
