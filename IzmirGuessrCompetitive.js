@@ -224,9 +224,7 @@ function isPointInPolygon(point, polygon) {
 
 function findDistrict(coordinate) {
 	for (let district of districtsData) {
-		if (isPointInPolygon(coordinate, district.bounds)) {
-			return district;
-		}
+		if (isPointInPolygon(coordinate, district.bounds)) return district;
 	}
 	return null;
 }
@@ -258,11 +256,10 @@ map2.on("mousedown", function (event) {
 				if (intersect) inside = !inside;
 			}
 
-			if (inside) {
+			if (inside)
 				setTimeout(function () {
 					toggleDistrict(district);
 				}, 100);
-			}
 		});
 	}
 });
@@ -294,26 +291,20 @@ function toggleDistrict(input) {
 	const button = Array.from(buttons).find(b => b.innerText.trim() === district.name);
 	const isGreen = initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds);
 	if (isGreen) {
-		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-			district.layer.setStyle({ fill: false, color: "red" });
-		}
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") district.layer.setStyle({ fill: false, color: "red" });
+
 		district.state = 0;
 		button.style.backgroundColor = "red";
 		button.dataset.tempColor = "red";
 		const index = initiallyGreenDistricts.findIndex(greenDistrict => greenDistrict.bounds === district.bounds);
-		if (index !== -1) {
-			initiallyGreenDistricts.splice(index, 1);
-		}
+		if (index !== -1) initiallyGreenDistricts.splice(index, 1);
 	} else {
-		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-			district.layer.setStyle({ fill: true, color: "green" });
-		}
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") district.layer.setStyle({ fill: true, color: "green" });
+
 		district.state = 1;
 		button.style.backgroundColor = "green";
 		button.dataset.tempColor = "green";
-		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
-			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-		}
+		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 	}
 	ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 }
@@ -324,15 +315,11 @@ function addAllDistricts() {
 		button.dataset.tempColor = "green";
 	});
 	districtLayers.forEach(district => {
-		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-			district.layer.setStyle({ fill: true, color: "green" });
-		}
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") district.layer.setStyle({ fill: true, color: "green" });
 
 		district.state = 1;
 
-		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) {
-			initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
-		}
+		if (!initiallyGreenDistricts.some(greenDistrict => greenDistrict.bounds === district.bounds)) initiallyGreenDistricts.push({ name: district.name, bounds: district.bounds });
 
 		ilcesayisi.innerText = `${initiallyGreenDistricts.length}`;
 	});
@@ -344,9 +331,7 @@ function removeAllDistricts() {
 		button.dataset.tempColor = "red";
 	});
 	districtLayers.forEach(district => {
-		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") {
-			district.layer.setStyle({ fill: false, color: "red" });
-		}
+		if (previousMode === "DistrictBorders" || previousMode === "GameBorders" || previousMode === "CityCenterBorders") district.layer.setStyle({ fill: false, color: "red" });
 
 		district.state = 0;
 		initiallyGreenDistricts.length = 0;
@@ -355,12 +340,7 @@ function removeAllDistricts() {
 }
 
 function getRandomLocation() {
-	let polygon;
-	if (menuModeToggle == "Classic") {
-		polygon = districtsData.find(district => district.name === selectedDistrict).bounds;
-	} else {
-		polygon = districtsData.find(district => district.name === selectedDistrict).center;
-	}
+	const polygon = districtsData.find(district => district.name === selectedDistrict)[menuModeToggle === "Classic" ? "bounds" : "center"];
 
 	let minX = polygon[0][0];
 	let maxX = polygon[0][0];
@@ -394,7 +374,6 @@ function initMap() {
 	if (currentlyPlayingSharedGame) {
 		randomLocation = actualCoordinates[roundCount];
 		selectedDistrict = findDistrict([randomLocation.lat, randomLocation.lng]).name;
-        console.log(randomLocation);
 	} else {
 		let formattedNames = initiallyGreenDistricts.map(district => district.bounds);
 		shuffleArray(formattedNames);
@@ -469,9 +448,7 @@ function initMap() {
 			});
 
 			google.maps.event.addListener(minimap, "click", function (event) {
-				if (guessedLocationMarker) {
-					guessedLocationMarker.setMap(null);
-				}
+				if (guessedLocationMarker) guessedLocationMarker.setMap(null);
 
 				guessedLocationMarker = new google.maps.Marker({
 					position: event.latLng,
@@ -482,9 +459,7 @@ function initMap() {
 			});
 
 			google.maps.event.addListener(gamemap, "click", function (event) {
-				if (guessedLocationMarker) {
-					guessedLocationMarker.setMap(null);
-				}
+				if (guessedLocationMarker) guessedLocationMarker.setMap(null);
 
 				guessedLocationMarker = new google.maps.Marker({
 					position: event.latLng,
@@ -502,9 +477,7 @@ function initMap() {
 
 			resumeTimer();
 
-			if (roundTimer) {
-				clearInterval(roundTimer);
-			}
+			if (roundTimer) clearInterval(roundTimer);
 
 			timerSeconds = 30;
 			document.getElementById("timer").innerHTML = `Remaining: ${timerSeconds} Seconds`;
@@ -520,9 +493,8 @@ function initMap() {
 
 function calculatePoints(distance) {
 	let points = -1.35166e-9 * Math.pow(distance, 3) + 0.0000310415 * Math.pow(distance, 2) - 0.278563 * distance + 1033.48;
-	if (points < 0) {
-		points = 0;
-	}
+	if (points < 0) points = 0;
+
 	return Math.round(points);
 }
 
@@ -552,9 +524,7 @@ function displayResults(distance, points) {
 		...panoramaOptions,
 	});
 
-	if (mobileUser) {
-		document.getElementById("gamemap").style.height = "100dvh";
-	}
+	if (mobileUser) document.getElementById("gamemap").style.height = "100dvh";
 
 	guessedLocationMarker.setMap(resultMap);
 	const guessedLatLng = guessedLocationMarker.getPosition().toJSON();
@@ -582,25 +552,17 @@ function displayResults(distance, points) {
 		}
 	}
 
-	if (points > 1000) {
-		points = 1000;
-	}
+	if (points > 1000) points = 1000;
 
-	if (hintsAreEnabled) {
-		points -= 200;
-		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
-	}
+	if (hintsAreEnabled) points -= 200;
+	document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
 
-	if (points < 0) {
-		points = 0;
-	}
+	if (points < 0) points = 0;
 
 	roundPoints[roundCount] = parseInt(points);
 	totalPoints += roundPoints[roundCount];
 
-	if (!currentlyPlayingSharedGame) {
-		saveData(selectedDistrict, roundPoints[roundCount]);
-	}
+	if (!currentlyPlayingSharedGame) saveData(selectedDistrict, roundPoints[roundCount]);
 
 	document.getElementById("distance-info").innerHTML = `Guess Distance: ${distance.toFixed(0)}m`;
 	document.getElementById("points-info").innerHTML = `Points Earned: ${points}`;
@@ -869,6 +831,7 @@ function startGame() {
 				alert("You can't start the game with no districts selected!");
 				return;
 			}
+
 			if (initiallyGreenDistricts.length == 30) {
 				selectedGameMode = "Every District";
 			} else if (initiallyGreenDistricts.length == 1) {
@@ -937,27 +900,19 @@ function openmodal(modalname) {
 }
 
 function toggleModal() {
-	if (resultModal.style.display === "flex") {
-		resultModal.style.display = "none";
-	} else {
-		resultModal.style.display = "flex";
-	}
+	resultModal.style.display = resultModal.style.display === "flex" ? "none" : "flex";
 }
 
 function minimapCloseButton() {
 	document.getElementById("overlay-container").style.zIndex = "-50";
 	document.getElementById("minimapOpenButton").style.display = "flex";
-	if (mobileUser) {
-		document.getElementById("gamemap").style.height = "100dvh";
-	}
+	if (mobileUser) document.getElementById("gamemap").style.height = "100dvh";
 }
 
 function minimapOpenButton() {
 	document.getElementById("overlay-container").style.zIndex = "2";
 	document.getElementById("minimapOpenButton").style.display = "none";
-	if (mobileUser) {
-		document.getElementById("gamemap").style.height = "65dvh";
-	}
+	if (mobileUser) document.getElementById("gamemap").style.height = "65dvh";
 }
 
 function closeAllModals() {
@@ -972,9 +927,7 @@ function clearImageCache() {
 
 	images.forEach(img => {
 		const matchedDomain = domains.find(domain => img.src.includes(domain));
-		if (matchedDomain) {
-			img.src = "";
-		}
+		if (matchedDomain) img.src = "";
 	});
 }
 
@@ -1039,10 +992,8 @@ function decodeBase64toUTF8(str) {
 
 function enterMatchSharingCode() {
 	let theCode = document.getElementById("matchSharingCodeInput").value;
-	if (theCode.length < 10) {
-		alert("Please enter a valid code.");
-		return;
-	}
+	if (theCode.length < 10) return alert("Please enter a valid code.");
+
 	theCode = decodeBase64toUTF8(theCode);
 
 	const parts = theCode.split("/");
@@ -1069,10 +1020,7 @@ function sortStatistics(criteria) {
 	const statisticsMenuText = document.getElementById("statisticsMenuText");
 	const statisticsElements = Array.from(statisticsMenuText.querySelectorAll("p"));
 
-	if (statisticsElements.length === 0 || document.getElementById("statisticsMenuText").innerText == "You need to be logged in to do this!") {
-		alert("No statistics to sort! Please fetch your statistics first.");
-		return;
-	}
+	if (statisticsElements.length === 0 || document.getElementById("statisticsMenuText").innerText == "You need to be logged in to do this!") return alert("No statistics to sort! Please fetch your statistics first.");
 
 	statisticsElements.sort((a, b) => {
 		const parseData = (text, pattern) => {
@@ -1169,11 +1117,7 @@ overlayContainer.addEventListener("mouseleave", function () {
 });
 
 expandButton.addEventListener("click", () => {
-	if (expandButton.classList.contains("expanded")) {
-		expandButton.classList.remove("expanded");
-	} else {
-		expandButton.classList.add("expanded");
-	}
+	expandButton.classList.contains("expanded") ? expandButton.classList.remove("expanded") : expandButton.classList.add("expanded");
 });
 
 Array.from(document.getElementsByClassName("modalCloseButton")).forEach(button => {
@@ -1201,9 +1145,7 @@ document.querySelectorAll("button").forEach(button => {
 document.querySelectorAll(".faq-question").forEach(question => {
 	question.addEventListener("click", () => {
 		document.querySelectorAll(".faq").forEach(faq => {
-			if (faq !== question.parentElement) {
-				faq.classList.remove("open");
-			}
+			if (faq !== question.parentElement) faq.classList.remove("open");
 		});
 
 		const faq = question.parentElement;
@@ -1233,9 +1175,8 @@ document.addEventListener("contextmenu", function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", event => {
-	if (localStorage.getItem("wantTutorial") != 0) {
-		document.getElementById("wantTutorial").style.display = "block";
-	}
+	if (localStorage.getItem("wantTutorial") != 0) document.getElementById("wantTutorial").style.display = "block";
+
 	document.getElementById("matchSharingLabel").value = "Normal";
 });
 
