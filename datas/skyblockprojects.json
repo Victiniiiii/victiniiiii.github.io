@@ -1,0 +1,82 @@
+[
+	{
+		"name": "Skyblock Desklet",
+		"language": "JavaScript",
+		"image": "skyblockdesklet384",
+		"release": "10 May 2025",
+		"url": "https://github.com/Victiniiiii/skyblockdesklet-Victiniiiii",
+		"description": "A desklet specifically made for Mint Linux, it shows current Skyblock item prices by using API's in your desktop."
+	},
+	{
+		"name": "Skyblock Statistics",
+		"language": "R",
+		"image": "skyblockstatistics384",
+		"release": "11 April 2025",
+		"url": "https://github.com/Victiniiiii/Skyblock_Statistics",
+		"description": "A statistics project for seeing the correlation between certain statistics of Hypixel Skyblock players."
+	},
+	{
+		"name": "Divan Armor Tracker",
+		"language": "JavaScript",
+		"image": "divanTracker384",
+		"release": "15 February 2025",
+		"url": "/divanArmorTracker.html",
+		"description": "A skyblock tool to see the cost of forging Divan Armor."
+	},
+	{
+		"name": "NPC Buy Bazaar Sell Flips",
+		"language": "JavaScript",
+		"image": "npcbuybazaarsellflips384",
+		"release": "9 September 2024",
+		"url": "/npcbuybazaarsellflips",
+		"description": "A skyblock tool to generate income from selling NPC items to the bazaar."
+	},
+	{
+		"name": "Bazaar Buy NPC Sell Flips",
+		"language": "JavaScript",
+		"image": "bazaarbuynpcsells384",
+		"release": "7 September 2024",
+		"url": "/bazaarbuynpcsellflips",
+		"description": "A skyblock tool to generate income from buying cheap bazaar items to sell more to the NPC's."
+	},
+	{
+		"name": "Effective HP Calculator",
+		"language": "JavaScript",
+		"image": "effectivehpcalculator384",
+		"release": "4 September 2024",
+		"url": "/effectivehpcalculator",
+		"description": "Very basic tool used to calculate Effective HP in Skyblock."
+	},
+	{
+		"name": "Fortune - Pristine Comparer",
+		"language": "JavaScript",
+		"image": "fortunevspristinecalculator384",
+		"release": "4 September 2024",
+		"url": "/fortunevspristinecalculator",
+		"description": "A Skyblock tool that helps users prioritise fortune or pristine based on their current stats."
+	},
+	{
+		"name": "Inferno Minion Calculator",
+		"language": "JavaScript",
+		"image": "inferno384",
+		"release": "27 June 2024",
+		"url": "/inferno",
+		"description": "Every information needed for inferno minion owners in Skyblock."
+	},
+	{
+		"name": "Compost Profit Calculator",
+		"language": "JavaScript",
+		"image": "compostcalculator384",
+		"release": "5 April 2024",
+		"url": "/compost",
+		"description": "A helper that calculates composter profits in Skyblock."
+	},
+	{
+		"name": "Forging Gemstone Calculator",
+		"language": "JavaScript",
+		"image": "forgecalculator384",
+		"release": "31 August 2023",
+		"url": "/flaskforge",
+		"description": "Perfect gemstone profit calculator for Skyblock."
+	}
+]

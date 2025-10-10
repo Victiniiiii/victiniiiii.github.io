@@ -1,0 +1,122 @@
+[
+    {
+        "name": "rp",
+        "language": "Go",
+        "url": "https://github.com/Victiniiiii/rp",
+        "image": "rp384",
+        "release": "14 September 2025",
+        "description": "A fork of rp (rich presence) that is set to \"Listening\" mode."
+    },
+    {
+        "name": "musicbrainz-wrapper",
+        "language": "Go",
+        "url": "https://github.com/Victiniiiii/musicbrainz-wrapper",
+        "image": "musicbrainz-wrapper384",
+        "release": "14 September 2025",
+        "description": "A go package that returns song artist, genre and language when inputted a song name, uses MusicBrainz API."
+    },
+    {
+        "name": "ytpl-ytsr-go",
+        "language": "Go",
+        "url": "https://github.com/Victiniiiii/ytpl-ytsr-go",
+        "image": "ytpl-ytsr-go384",
+        "release": "11 September 2025",
+        "description": "A Go package that can fetch search and playlist information from Youtube."
+    },
+    {
+        "name": "Chizza Bot",
+        "language": "JavaScript",
+        "url": "https://github.com/Victiniiiii/ChizzaBot",
+        "image": "chizza384",
+        "release": "15 June 2025",
+        "description": "A Discord bot programmed for Skyblock servers. Can give and take roles based on the Hypixel API, also checks Wordle winners."
+    },
+    {
+        "name": "Co-op Canvas",
+        "language": "Next.js",
+        "url": "https://victiniiiii.vercel.app/",
+        "image": "coopcanvas",
+        "release": "21 May 2025",
+        "description": "Online drawing board that supports infinite users and infinite lobbies."
+    },
+    {
+        "name": "Linux Steam Game Checker",
+        "language": "TypeScript",
+        "url": "https://github.com/Victiniiiii/linux_steam_game_checker",
+        "image": "steamlinux384",
+        "release": "23 April 2025",
+        "description": "A small script to search a Steam library for games natively supported in Linux."
+    },
+    {
+        "name": "Question Who",
+        "language": "TypeScript",
+        "url": "https://github.com/Victiniiiii/Question_Who",
+        "image": "questionWho384",
+        "release": "7 March 2025",
+        "description": "A small party game, for guessing who had the different question among everyone."
+    },
+    {
+        "name": "GradeChecker Mobile",
+        "language": "React",
+        "url": "https://github.com/Victiniiiii/ultraGradeChecker",
+        "image": "gradecheckermobile384",
+        "release": "16 February 2025",
+        "description": "This new application allows you to check your grades incredibly quickly, saving you time."
+    },
+    {
+        "name": "SushiReminder",
+        "language": "React",
+        "url": "https://github.com/Victiniiiii/SushiReminder",
+        "image": "sushireminder384",
+        "release": "13 January 2025",
+        "description": "A minimalistic desktop reminder app with drag and drop, notifications, tray icon and global shortcuts."
+    },
+    {
+        "name": "IzmirGuessr Competitive",
+        "language": "JavaScript",
+        "url": "/IzmirGuessrCompetitive",
+        "image": "izmirguessrlogo",
+        "release": "11 November 2024",
+        "description": "Try the newly updated IzmirGuessr! Now with harder games, updated maps, login and high score system and much more!"
+    },
+    {
+        "name": "Password Generator",
+        "language": "JavaScript",
+        "url": "/password_generator",
+        "image": "passwordgenerator",
+        "release": "13 October 2024",
+        "description": "Best way to generate custom secure passwords!"
+    },
+    {
+        "name": "TaratorMusic",
+        "language": "JavaScript",
+        "url": "https://github.com/Victiniiiii/taratormusic",
+        "image": "taratormusic384",
+        "release": "14 August 2024",
+        "description": "New generation music app with many features like playlists, sound stabilisation, customisation and music downloading and more!"
+    },
+    {
+        "name": "Skribbl.io Helper",
+        "language": "Python",
+        "url": "https://github.com/Victiniiiii/skribbliohelper",
+        "image": "skribbliohelper384",
+        "release": "13 March 2024",
+        "description": "A script that tells the user possible words in-game, using the database which expands with every unknown word."
+    },
+    {
+        "name": "Ortalamatör",
+        "language": "JavaScript",
+        "url": "/ortalamator",
+        "image": "ortalamator384",
+        "release": "11 February 2024",
+        "description": "This is a GPA calculator specifically designed for statistics students' needs."
+    },
+    {
+        "name": "Payday 2 Big Oil Solver",
+        "language": "JavaScript",
+        "url": "/bigoil",
+        "image": "bigoilsolver384",
+        "release": "1 October 2023",
+        "description": "All the information needed to succeed in the second day of Big Oil heist in Payday 2."
+    }
+]

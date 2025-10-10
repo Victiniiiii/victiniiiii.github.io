@@ -4,6 +4,148 @@ document.addEventListener("DOMContentLoaded", event => {
 	} else {
 		document.getElementById("general").click();
 	}
+
+	function loadProjects(jsonPath, containerId) {
+		const container = document.getElementById(containerId);
+		fetch(jsonPath)
+			.then(res => res.json())
+			.then(projects => {
+				projects.forEach(project => {
+					const mainDiv = document.createElement("div");
+					mainDiv.className = "mainmenuproject";
+
+					const a = document.createElement("a");
+					a.href = project.url;
+					a.title = project.name;
+					a.setAttribute("aria-label", project.name);
+
+					const langDiv = document.createElement("div");
+					langDiv.className = "mainmenulanguage";
+					langDiv.title = project.language;
+					langDiv.textContent = project.language;
+
+					const picture = document.createElement("picture");
+					const source = document.createElement("source");
+					source.srcset = `static/imageswebp/${project.image}.webp`;
+					source.type = "image/webp";
+					const img = document.createElement("img");
+					img.src = `static/images/${project.image}.png`;
+					img.alt = project.name;
+
+					picture.appendChild(source);
+					picture.appendChild(img);
+
+					const release = document.createElement("div");
+					release.className = "mainmenunew";
+					release.textContent = `Release Date: ${project.release}`;
+
+					a.appendChild(langDiv);
+					a.appendChild(picture);
+					a.appendChild(release);
+
+					const nameDiv = document.createElement("div");
+					nameDiv.className = "projectname";
+
+					const p = document.createElement("p");
+					p.textContent = project.name;
+
+					const h6 = document.createElement("h6");
+					h6.textContent = project.description;
+
+					nameDiv.appendChild(p);
+					nameDiv.appendChild(h6);
+
+					mainDiv.appendChild(a);
+					mainDiv.appendChild(nameDiv);
+					container.appendChild(mainDiv);
+				});
+
+				document.querySelectorAll(`#${containerId} .projectname`).forEach(name => {
+					name.addEventListener("click", function () {
+						name.parentElement.classList.toggle("expanded");
+						updateExpandedHeights();
+					});
+				});
+
+				document.querySelectorAll(`#${containerId} .mainmenulanguage`).forEach(div => {
+					const lang = div.textContent.trim();
+					const icons = {
+						JavaScript: "/icons/javascript.svg",
+						Python: "/icons/python.svg",
+						React: "/icons/react.svg",
+						TypeScript: "/icons/typescript.svg",
+						R: "/icons/r.svg",
+						"Next.js": "/icons/next.svg",
+						Go: "/icons/golang.svg",
+					};
+					if (icons[lang]) div.innerHTML = `<img src="${icons[lang]}" alt="${lang}">`;
+				});
+
+				updateExpandedHeights();
+			})
+			.catch(err => console.error(`Failed to load project data from ${jsonPath}:`, err));
+	}
+
+	loadProjects("datas/generalprojects.json", "mainmenugeneralprojects");
+	loadProjects("datas/skyblockprojects.json", "mainmenuskyblockprojects");
+
+	const container = document.getElementById("aboutMeBox");
+	fetch("datas/aboutme.json")
+		.then(res => res.json())
+		.then(data => {
+			container.innerHTML = "";
+
+			function addSection(title, content) {
+				if (!content) return;
+				const h2 = document.createElement("h2");
+				h2.textContent = title;
+				container.appendChild(h2);
+				container.appendChild(document.createElement("pre"));
+
+				if (typeof content === "string") {
+					const p = document.createElement("p");
+					p.textContent = content;
+					container.appendChild(p);
+				} else if (Array.isArray(content)) {
+					content.forEach(item => {
+						const div = document.createElement("div");
+						const img = document.createElement("img");
+						img.src = item.icon;
+						img.alt = item.name;
+						const p = document.createElement("p");
+						p.textContent = item.name;
+						div.appendChild(img);
+						div.appendChild(p);
+						container.appendChild(div);
+					});
+				} else if (typeof content === "object") {
+					for (let subsection in content) {
+						const h3 = document.createElement("h3");
+						h3.textContent = subsection;
+						container.appendChild(h3);
+						container.appendChild(document.createElement("pre"));
+						content[subsection].forEach(item => {
+							const div = document.createElement("div");
+							const img = document.createElement("img");
+							img.src = item.icon;
+							img.alt = item.name;
+							const p = document.createElement("p");
+							p.textContent = item.name;
+							div.appendChild(img);
+							div.appendChild(p);
+							container.appendChild(div);
+						});
+						container.appendChild(document.createElement("pre"));
+					}
+				}
+			}
+
+			addSection("About Me:", data.aboutMe);
+			addSection("Technologies:", data.technologies);
+			addSection("Other Skills:", data.otherSkills);
+			addSection("Speaking:", data.speaking);
+		})
+		.catch(err => console.error("Failed to load About Me data:", err));
 });
 
 let modal = document.getElementById("warningModal");
@@ -40,9 +182,7 @@ document.addEventListener("click", function (event) {
 });
 
 proceedBtn.addEventListener("click", function () {
-	if (targetLink) {
-		window.open(targetLink, "_blank");
-	}
+	if (targetLink) window.open(targetLink, "_blank");
 	modal.style.display = "none";
 });
 
@@ -89,28 +229,3 @@ function updateExpandedHeights() {
 		}
 	});
 }
-
-document.querySelectorAll(".projectname").forEach(function (name) {
-	name.addEventListener("click", function () {
-		name.parentElement.classList.toggle("expanded");
-		updateExpandedHeights();
-	});
-});
-
-document.querySelectorAll(".mainmenulanguage").forEach(function (div) {
-	if (div.innerHTML.trim() === "JavaScript") {
-		div.innerHTML = `<img src="/icons/javascript.svg" alt="Javascript">`;
-	} else if (div.innerHTML.trim() === "Python") {
-		div.innerHTML = `<img src="/icons/python.svg" alt="Python">`;
-	} else if (div.innerHTML.trim() === "React") {
-		div.innerHTML = `<img src="/icons/react.svg" alt="React">`;
-	} else if (div.innerHTML.trim() === "TypeScript") {
-		div.innerHTML = `<img src="/icons/typescript.svg" alt="Typescript">`;
-	} else if (div.innerHTML.trim() === "R") {
-		div.innerHTML = `<img src="/icons/r.svg" alt="R">`;
-	} else if (div.innerHTML.trim() === "Next.js") {
-		div.innerHTML = `<img src="/icons/next.svg" alt="Next.js">`;
-	} else if (div.innerHTML.trim() === "Go") {
-		div.innerHTML = `<img src="/icons/golang.svg" alt="Go">`;
-	}
-});
