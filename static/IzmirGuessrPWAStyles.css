@@ -232,6 +232,14 @@ div.gm-bundled-control:nth-child(2) {
 	padding: 1vw !important;
 }
 
+#sharedOn {
+	display: none;
+	flex-direction: column;
+	width: fit-content;
+	justify-content: center;
+	align-items: center;
+}
+
 @media (width > 767px) {
 	/* Big Screens */
 	body {
@@ -574,7 +582,7 @@ div.gm-bundled-control:nth-child(2) {
 		gap: 15px;
 		transition: all 0.25s ease-in-out;
 		justify-content: space-evenly;
-		margin-bottom: 5vh;
+		margin-bottom: 1vh;
 	}
 
 	#mainmenuCompetitiveChecksAndButtons button {
@@ -866,7 +874,7 @@ div.gm-bundled-control:nth-child(2) {
 		padding: 0.25vw;
 		margin-left: 0.5vw;
 		margin-right: 1vw;
-		width: 5vw;
+		width: 7vw;
 	}
 
 	#competitiveChecks div {
@@ -899,7 +907,7 @@ div.gm-bundled-control:nth-child(2) {
 	}
 
 	select#gameModeSelector {
-		width: 7.5vw;
+		width: 10vw;
 	}
 
 	select#roundLimitSelector {
@@ -924,7 +932,15 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100%;
 		padding-left: 10vw;
 		padding-right: 10vw;
-		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		font-size: 2.5vh;
+	}
+
+	.modalLeft p {
+		height: 2vh;
 	}
 
 	.modalRight {
@@ -1132,6 +1148,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#menuTip {
 		width: 30vw;
+        font-size: 0.8vw;
 	}
 }
 
@@ -1471,7 +1488,7 @@ div.gm-bundled-control:nth-child(2) {
 		grid-template-rows: repeat(3, auto);
 		gap: 10px;
 		transition: all 0.25s ease-in-out;
-		margin-bottom: 5vh;
+		margin-bottom: 2vh;
 	}
 
 	#menubuttons {
@@ -1872,10 +1889,10 @@ div.gm-bundled-control:nth-child(2) {
 		height: 100%;
 		padding: 2dvw;
 		overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.modalRight {
@@ -2068,7 +2085,7 @@ div.gm-bundled-control:nth-child(2) {
 
 	#mainStartButton {
 		width: 80vw;
-        height: 10vw;
+		height: 10vw;
 		font-size: 6vw;
 	}
 

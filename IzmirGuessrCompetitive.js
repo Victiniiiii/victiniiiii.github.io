@@ -994,7 +994,7 @@ function toggleGameMode() {
 	sharedOrNot = document.getElementById("matchSharingLabel").value;
 	if (sharedOrNot == "Normal") {
 		document.getElementById("sharedOff").style.display = "flex";
-		document.getElementById("sharedOff2").style.display = "flex";
+		document.getElementById("sharedOff2").style.display = "block";
 		document.getElementById("sharedOff3").style.display = "flex";
 		document.getElementById("sharedOn").style.display = "none";
 		document.getElementById("gameModeName").innerText = "Standard Gamemode";
