@@ -33,7 +33,7 @@ secondButton.addEventListener("click", () => {
 				const userId = currentUser.uid;
 				const ref = doc(db, `users/${userId}`);
 
-				runTransaction(db, async (transaction) => {
+				runTransaction(db, async transaction => {
 					const userData = await transaction.get(ref);
 					if (!userData.exists()) {
 						nickname = currentUser.displayName;
@@ -43,11 +43,11 @@ secondButton.addEventListener("click", () => {
 					}
 				});
 			})
-			.catch((error) => {
+			.catch(error => {
 				console.error("Error during Google login:", error);
 			});
 	} else {
-		signOut(auth).catch((error) => {
+		signOut(auth).catch(error => {
 			console.error("Error signing out: ", error);
 		});
 	}
@@ -64,8 +64,11 @@ thirdButton.addEventListener("click", () => {
 async function changeNickname() {
 	const ref = doc(db, `users/${auth.currentUser.uid}`);
 
-	await runTransaction(db, async (transaction) => {
+	await runTransaction(db, async transaction => {
 		const userData = await transaction.get(ref);
+		const response = await fetch("https://unpkg.com/bad-words@3.0.0/lib/lang.json");
+		const data = await response.json();
+		const badwords = data.words;
 		const input = document.getElementById("changeUsernameInput").value;
 		const now = Date.now();
 
@@ -74,7 +77,7 @@ async function changeNickname() {
 			return;
 		}
 
-		if (badwords.some((badword) => input.toLowerCase().includes(badword))) {
+		if (badwords.some(badword => input.toLowerCase().includes(badword))) {
 			alert("Please do not use bad words 😭");
 			return;
 		}
@@ -97,7 +100,7 @@ async function changeNickname() {
 	});
 }
 
-onAuthStateChanged(auth, async (user) => {
+onAuthStateChanged(auth, async user => {
 	if (user) {
 		const ref = doc(db, `users/${auth.currentUser.uid}`);
 		try {
@@ -106,7 +109,7 @@ onAuthStateChanged(auth, async (user) => {
 				nickname = docSnap.data().Nickname;
 			} else {
 				nickname = user.displayName;
-				await runTransaction(db, async (transaction) => {
+				await runTransaction(db, async transaction => {
 					transaction.set(ref, {
 						Nickname: nickname,
 					});
@@ -134,7 +137,7 @@ async function saveData(district, score) {
 		const ref2 = doc(db, `users/${userId}/GameData/${selectedGameMode}`);
 
 		try {
-			await runTransaction(db, async (transaction) => {
+			await runTransaction(db, async transaction => {
 				const userGameData = await transaction.get(ref);
 				const userGameData2 = await transaction.get(ref2);
 
@@ -196,7 +199,7 @@ async function calculateDistrictData() {
 		let uniqueDistrictCount = 0;
 
 		const snapshot = await getDocs(gameDataRef);
-		snapshot.forEach((doc) => {
+		snapshot.forEach(doc => {
 			const data = doc.data();
 			const districtName = doc.id;
 
@@ -231,7 +234,7 @@ async function logStatistics() {
 			statisticsMenuText.innerHTML = `<p>You haven’t played a competitive game yet!</p>`;
 		} else {
 			let documents = [];
-			snapshot.forEach((doc) => {
+			snapshot.forEach(doc => {
 				documents.push({ id: doc.id, data: doc.data() });
 			});
 
@@ -239,7 +242,7 @@ async function logStatistics() {
 
 			statisticsMenuText.innerHTML = "";
 
-			documents.forEach((doc) => {
+			documents.forEach(doc => {
 				const data = doc.data;
 				statisticsMenuText.innerHTML += `<p> District: ${doc.id}, High Score: ${data.highScore}, Games Played: ${data.playCount}, Rounds Played: ${data.roundCount}, Success Percentage: ${(data.totalScore / data.roundCount / 10).toFixed(2)}%</p>`;
 			});
@@ -258,7 +261,7 @@ async function statisticsMap() {
 		let highScores = [];
 
 		if (!snapshot.empty) {
-			snapshot.forEach((doc) => {
+			snapshot.forEach(doc => {
 				const data = doc.data();
 				highScores.push({ district: doc.id, highScore: data.highScore });
 			});
@@ -283,7 +286,7 @@ async function logTopHighScores() {
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const gameDataSnapshot = await getDocs(gameDataRef);
 
-		gameDataSnapshot.forEach((districtDoc) => {
+		gameDataSnapshot.forEach(districtDoc => {
 			const highScore = districtDoc.data().highScore;
 
 			if (highScore >= 100) {
@@ -368,12 +371,12 @@ async function getDistrictWinners() {
 		const gameDataRef = collection(db, `users/${userId}/GameData`);
 		const gameDataSnapshot = await getDocs(gameDataRef);
 
-		gameDataSnapshot.forEach((districtDoc) => {
+		gameDataSnapshot.forEach(districtDoc => {
 			const districtName = districtDoc.id;
 			const districtData = districtDoc.data();
 
 			if (districtData.highScore) {
-				const existingWinnerIndex = districtWinners.findIndex((winner) => winner.district === districtName);
+				const existingWinnerIndex = districtWinners.findIndex(winner => winner.district === districtName);
 
 				if (existingWinnerIndex === -1) {
 					districtWinners.push({
@@ -406,7 +409,7 @@ async function saveMatchHistory() {
 		const compactDateTime = `${d.getDate().toString().padStart(2, "0")}${String(d.getMonth() + 1).padStart(2, "0")}${d.getFullYear()}${String(d.getHours()).padStart(2, "0")}${String(d.getMinutes()).padStart(2, "0")}${String(d.getSeconds()).padStart(2, "0")}`;
 		const matchHistoryRef = doc(db, `users/${userId}/MatchHistory/${compactDateTime}`);
 
-		await runTransaction(db, async (transaction) => {
+		await runTransaction(db, async transaction => {
 			transaction.set(matchHistoryRef, {
 				date: currentDate,
 				gameMode: selectedGameMode,
@@ -429,12 +432,12 @@ async function loadMatchHistory() {
 			modalMatchHistory.innerHTML = `<p>You haven't played a competitive game yet!</p>`;
 		} else {
 			let documents = [];
-			snapshot.forEach((doc) => {
+			snapshot.forEach(doc => {
 				documents.push({ id: doc.id, data: doc.data() });
 			});
 
 			documents.sort((a, b) => {
-				const parseDate = (dateStr) => {
+				const parseDate = dateStr => {
 					const [datePart, timePart] = dateStr.split(" ");
 					const [day, month, year] = datePart.split("/");
 					const [hours, minutes, seconds] = timePart ? timePart.split(":") : [0, 0, 0];
@@ -451,7 +454,7 @@ async function loadMatchHistory() {
 			modalMatchHistory.innerHTML = "";
 			let j = 0;
 			let uniqueCodes = [];
-			documents.forEach((doc) => {
+			documents.forEach(doc => {
 				const data = doc.data;
 				const totalScore = data.score.reduce((acc, score) => acc + score, 0);
 				modalMatchHistory.innerHTML += `<h2> Date: ${data.date}, Game Mode: ${data.gameMode}, Score: ${totalScore} &nbsp; &nbsp; <button id="copycode${j++}" class="copycodeButton">Copy Code</button> </h2>`;
