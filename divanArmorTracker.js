@@ -44,6 +44,46 @@ let itemsarray = [
 	},
 ];
 
+const items = [
+	{ id: "helmet", name: "HELMET_OF_DIVAN" },
+	{ id: "chestplate", name: "GOLDEN_CHESTPLATE" },
+	{ id: "leggings", name: "GOLDEN_LEGGINGS" },
+	{ id: "boots", name: "GOLDEN_BOOTS" },
+	{ id: "coating", name: "DIVAN_POWDER_COATING" },
+];
+
+items.forEach((item, i) => {
+	const armorDiv = document.createElement("div");
+	armorDiv.className = "armor";
+	armorDiv.id = item.id;
+
+	const picture = document.createElement("picture");
+	const source = document.createElement("source");
+	source.srcset = `/static/imageswebp/${item.name}.webp`;
+	source.type = "image/webp";
+	const img = document.createElement("img");
+	img.className = "armorPhoto";
+	img.src = `/static/images/${item.name}.png`;
+
+	picture.appendChild(source);
+	picture.appendChild(img);
+
+	const boxBox = document.createElement("div");
+	boxBox.className = "divanBoxBox";
+
+	["cost", "auction", "tax", "notax", "profit"].forEach((type, j) => {
+		const box = document.createElement("div");
+		box.className = "divanBox";
+		box.id = `${type}${i}`;
+		if (type == "profit") box.style.color = "rgb(230,0,0,0.8)";
+		boxBox.appendChild(box);
+	});
+
+	armorDiv.appendChild(picture);
+	armorDiv.appendChild(boxBox);
+	divanContainer.appendChild(armorDiv);
+});
+
 let data;
 let derpy = false;
 let armorPrices = [0, 0, 0, 0];
