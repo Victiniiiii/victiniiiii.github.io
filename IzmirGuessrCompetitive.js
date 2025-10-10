@@ -393,7 +393,8 @@ function initMap() {
 
 	if (currentlyPlayingSharedGame) {
 		randomLocation = actualCoordinates[roundCount];
-		selectedDistrict = findDistrict([randomLocation.lat, randomLocation.lng]);
+		selectedDistrict = findDistrict([randomLocation.lat, randomLocation.lng]).name;
+        console.log(randomLocation);
 	} else {
 		let formattedNames = initiallyGreenDistricts.map(district => district.bounds);
 		shuffleArray(formattedNames);
