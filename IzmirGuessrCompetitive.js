@@ -27,14 +27,19 @@ let totalPoints = 0;
 // Loading the coordinates:
 
 setTimeout(() => {
-    fetch("datas/izmirguessrcoordinates.json")
-        .then(res => res.json())
-        .then(districtsData => {
-            console.log("Data loaded:", districtsData);
-            document.getElementById("startGameButton").disabled = false;
-            document.getElementById("mainStartButton").disabled = false;
-        });
-}, 5000);
+	fetch("datas/izmirguessrcoordinates.json")
+		.then(res => res.json())
+		.then(data => {
+			console.log("Data loaded:", data);
+            districtsData = data;
+			document.getElementById("startGameButton").disabled = false;
+			document.getElementById("mainStartButton").disabled = false;
+			districtsData.forEach(district => {
+				initiallyGreenDistricts.push({ bounds: district.bounds });
+			});
+			switchMainMenuMapType();
+		});
+}, 500);
 
 // Firebase Settings:
 
@@ -201,13 +206,6 @@ function switchMainMenuMapType() {
 	}
 	previousMode = mode;
 }
-
-setTimeout(() => {
-	districtsData.forEach(district => {
-		initiallyGreenDistricts.push({ bounds: district.bounds });
-	});
-	switchMainMenuMapType();
-}, 1000);
 
 function isPointInPolygon(point, polygon) {
 	let x = point[0],
