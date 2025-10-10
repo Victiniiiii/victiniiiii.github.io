@@ -149,7 +149,7 @@
 					<div class="flexrow">
 						<button id="returntomenu-button" onclick="returnToMainMenu()">Return to Main Menu</button>
 						<button id="shareMatch" onclick="copyMatchSharingCode()">Copy Match Code</button>
-						<button id="startGameButton" onclick="startGame()">Next Game</button>
+						<button id="startGameButton" disabled onclick="startGame()">Next Game</button>
 					</div>
 				</div>
 			</div>
@@ -380,7 +380,7 @@
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
 					<p>&nbsp;</p>
-					<button id="mainStartButton" onclick="startGameButton()">Start a new game</button>
+					<button id="mainStartButton" disabled onclick="startGameButton()">Start a new game</button>
 				</div>
 			</div>
 		</div>
@@ -418,7 +418,6 @@
 
 		<script type="module" src="IzmirGuessrFirebase.js"></script>
 		<script src="IzmirGuessrMapOptions.js"></script>
-		<script src="IzmirGuessrCoordinates.js"></script>
 		<script src="IzmirGuessrCompetitive.js"></script>
 	</body>
 </html>

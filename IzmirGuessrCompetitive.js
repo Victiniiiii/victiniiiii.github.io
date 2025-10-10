@@ -1,5 +1,6 @@
 // Game Settings:
 
+let districtsData;
 let selectedDistrict;
 let selectedGameMode;
 let roundCount = 0;
@@ -22,6 +23,18 @@ let guessedCoordinates = new Array(roundLimit).fill(0);
 let actualCoordinates = new Array(roundLimit).fill(0);
 let roundTimes = new Array(roundLimit).fill(0);
 let totalPoints = 0;
+
+// Loading the coordinates:
+
+setTimeout(() => {
+    fetch("datas/izmirguessrcoordinates.json")
+        .then(res => res.json())
+        .then(districtsData => {
+            console.log("Data loaded:", districtsData);
+            document.getElementById("startGameButton").disabled = false;
+            document.getElementById("mainStartButton").disabled = false;
+        });
+}, 5000);
 
 // Firebase Settings:
 
