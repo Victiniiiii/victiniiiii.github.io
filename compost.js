@@ -116,11 +116,11 @@ async function bazaarconnect() {
 
 	if (maxIndices.coinsPerHour !== -1) {
 		const upgradeResultCoinsPerHour = upgradeResults[maxIndices.coinsPerHour].innerHTML;
-		upgradeResults[maxIndices.coinsPerHour].innerHTML = upgradeResultCoinsPerHour.replace(/(\d{1,3},)*\d{3} coins per hour/g, (match) => `<span style="color:red">${match}</span>`);
+		upgradeResults[maxIndices.coinsPerHour].innerHTML = upgradeResultCoinsPerHour.replace(/(\d{1,3},)*\d{3} coins per hour/g, match => `<span style="color:red">${match}</span>`);
 	}
 	if (maxIndices.coinsPerDay !== -1) {
 		const upgradeResultCoinsPerDay = upgradeResults[maxIndices.coinsPerDay].innerHTML;
-		upgradeResults[maxIndices.coinsPerDay].innerHTML = upgradeResultCoinsPerDay.replace(/(\d{1,3},)*\d{3} coins per day/g, (match) => `<span style="color:red">${match}</span>`);
+		upgradeResults[maxIndices.coinsPerDay].innerHTML = upgradeResultCoinsPerDay.replace(/(\d{1,3},)*\d{3} coins per day/g, match => `<span style="color:red">${match}</span>`);
 	}
 	if (maxIndices.machineRuntime !== -1) {
 		upgradeResults[maxIndices.machineRuntime].innerHTML = upgradeResults[maxIndices.machineRuntime].innerHTML.replace(`${maxValues.machineRuntime.toFixed(2)} hours`, `<span style="color:red">${maxValues.machineRuntime.toFixed(2)} hours</span>`);
@@ -254,8 +254,8 @@ async function getbestmatterandfuel() {
 	const squash = data.products[`SQUASH`]?.quick_status.sellPrice.toFixed(0);
 	const organicsquash = squash / 10000;
 
-    const enchantedwheat = data.products["ENCHANTED_WHEAT"]?.quick_status.sellPrice.toFixed(0);
-    const organicwheat = enchantedwheat / 160;
+	const enchantedwheat = data.products["ENCHANTED_WHEAT"]?.quick_status.sellPrice.toFixed(0);
+	const organicwheat = enchantedwheat / 160;
 
 	const organicMatters = [
 		{ name: "Box of Seeds", price: matterboxofseeds },
@@ -281,7 +281,7 @@ async function getbestmatterandfuel() {
 		{ name: "Enchanted Seeds", price: organicechantedseeds },
 		{ name: "Enchanted Sugar Cane", price: organicenchantedsugarcane },
 		{ name: "Enchanted Sugar", price: organicenchantedsugar },
-        { name: "Enchanted Wheat", price: organicwheat },
+		{ name: "Enchanted Wheat", price: organicwheat },
 		{ name: "Fermento", price: organicfermento },
 		{ name: "Flowering Bouquet", price: organicfloweringbouquet },
 		{ name: "Mutant Nether Wart", price: organicmutantnetherwart },
@@ -340,17 +340,40 @@ async function compostspreadsheet() {
 	const fermento = data.products[`FERMENTO`]?.quick_status.sellPrice.toFixed(0);
 	const condensedfermento = data.products[`CONDENSED_FERMENTO`]?.quick_status.sellPrice.toFixed(0);
 
-	const spreadsheetElements = [];
+	const bigRectangle = document.querySelector(".compostupgraderectangle");
+	let count = 1;
 
-	for (let i = 1; i <= 131; i++) {
-		const spreadsheetId = `spreadsheet${i}`;
-		const spreadsheet = document.getElementById(spreadsheetId);
-		spreadsheetElements.push(spreadsheet);
+	for (let i = 1; i <= 26; i++) {
+		const upgraderow = document.createElement("div");
+		upgraderow.className = "upgraderow";
+		bigRectangle.appendChild(upgraderow);
+
+		const upgraderowministart = document.createElement("div");
+		upgraderowministart.innerText = i == 26 ? "Total" : i;
+		upgraderowministart.className = "upgraderowministart";
+		upgraderow.appendChild(upgraderowministart);
+
+		for (let j = 1; j <= 5; j++) {
+			const spreadsheet = document.createElement("div");
+			spreadsheet.id = `spreadsheet${count}`;
+			spreadsheet.className = "upgraderowmini";
+			count++;
+			upgraderow.appendChild(spreadsheet);
+		}
 	}
+
+	const totalRow = document.createElement("div");
+	totalRow.className = "spreadsheettotal";
+	totalRow.id = "spreadsheet131";
+	bigRectangle.appendChild(totalRow);
+
+	const spreadsheetElements = [];
 
 	for (let i = 1; i <= 131; i++) {
 		const spreadsheetHtmlId = `spreadsheet${i}`;
 		let value;
+		const spreadsheet = document.getElementById(spreadsheetHtmlId);
+		spreadsheetElements.push(spreadsheet);
 
 		switch (i) {
 			case 1:
