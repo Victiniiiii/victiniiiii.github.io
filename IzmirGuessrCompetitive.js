@@ -31,7 +31,7 @@ setTimeout(() => {
 		.then(res => res.json())
 		.then(data => {
 			console.log("Data loaded:", data);
-            districtsData = data;
+			districtsData = data;
 			document.getElementById("startGameButton").disabled = false;
 			document.getElementById("mainStartButton").disabled = false;
 			districtsData.forEach(district => {
@@ -393,7 +393,7 @@ function initMap() {
 
 	if (currentlyPlayingSharedGame) {
 		randomLocation = actualCoordinates[roundCount];
-		selectedDistrict = findDistrict(randomLocation);
+		selectedDistrict = findDistrict([randomLocation.lat, randomLocation.lng]);
 	} else {
 		let formattedNames = initiallyGreenDistricts.map(district => district.bounds);
 		shuffleArray(formattedNames);
