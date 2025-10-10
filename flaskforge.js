@@ -1,11 +1,42 @@
 const gemstoneNames = ["JADE_GEM", "AMBER_GEM", "TOPAZ_GEM", "SAPPHIRE_GEM", "AMETHYST_GEM", "RUBY_GEM", "JASPER_GEM", "OPAL_GEM", "ONYX_GEM", "AQUAMARINE_GEM", "CITRINE_GEM", "PERIDOT_GEM"];
 const capitalizedgemstoneNames = ["Jade", "Amber", "Topaz", "Sapphire", "Amethyst", "Ruby", "Jasper", "Opal", "Onyx", "Aquamarine", "Citrine", "Peridot"];
+const gems = ["JADE", "AMBER", "TOPAZ", "SAPPHIRE", "AMETHYST", "RUBY", "JASPER", "OPAL", "ONYX", "AQUAMARINE", "CITRINE", "PERIDOT"];
+
+const forgegrid = document.querySelector(".forgegrid");
+let textId = 1;
+
+gems.forEach(gem => {
+	["FINE", "FLAWLESS"].forEach(quality => {
+		const item = document.createElement("div");
+		item.className = "forgegrid-item";
+
+		const picture = document.createElement("picture");
+		const source = document.createElement("source");
+		source.srcset = `static/imageswebp/${quality}_${gem}_GEM.webp`;
+		source.type = "image/webp";
+
+		const img = document.createElement("img");
+		img.src = `static/images/${quality}_${gem}_GEM.png`;
+		img.className = "forgegrid-image";
+
+		picture.appendChild(source);
+		picture.appendChild(img);
+
+		const p = document.createElement("p");
+		p.className = "gem-text";
+		p.id = `text${textId++}`;
+
+		item.appendChild(picture);
+		item.appendChild(p);
+		forgegrid.appendChild(item);
+	});
+});
 
 async function gemstonenames() {
 	const response = await fetch("https://api.hypixel.net/skyblock/bazaar");
 	const data = await response.json();
 
-	const getGemstoneInfo = (gemName) => {
+	const getGemstoneInfo = gemName => {
 		const fineGem = data.products[`FINE_${gemName}`]?.quick_status;
 		const flawlessGem = data.products[`FLAWLESS_${gemName}`]?.quick_status;
 		const perfectGem = data.products[`PERFECT_${gemName}`]?.quick_status;
@@ -25,12 +56,12 @@ async function gemstonenames() {
 		const fineGemProfit = perfectGemBuyPrice - fineGemPrice * 400;
 		const flawlessGemProfit = perfectGemBuyPrice - flawlessGemPrice * 5;
 
-		const formatNumber = (number) => Math.floor(number).toLocaleString().replace(/,/g, ",");
+		const formatNumber = number => Math.floor(number).toLocaleString().replace(/,/g, ",");
 
 		const capitalizedGemName = gemName
 			.toLowerCase()
 			.split("_")
-			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.map(word => word.charAt(0).toUpperCase() + word.slice(1))
 			.join(" ");
 
 		return {
@@ -44,7 +75,7 @@ async function gemstonenames() {
 	return gemstoneSentences;
 }
 
-gemstonenames().then((sentences) => {
+gemstonenames().then(sentences => {
 	const gemstoneTexts = sentences.reduce((acc, sentence, index) => {
 		acc[`text${index + 1}`] = sentence;
 		return acc;
