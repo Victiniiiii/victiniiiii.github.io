@@ -128,9 +128,10 @@ async function bazaarconnect() {
 	const data = await response.json();
 
 	let boxesWithProfit = [];
+    const npcSellLimit = 500000000; // 500 Million
 
 	for (let i = 0; i < itemsarray.length; i++) {
-		let ableToSellCount = (200000000 / itemsarray[i].npc).toFixed(0);
+		let ableToSellCount = (npcSellLimit / itemsarray[i].npc).toFixed(0);
 		let buyPrice = data.products[itemsarray[i].id]?.quick_status[toggleStates[i] ? "buyPrice" : "sellPrice"] || 0;
 		let profit = ableToSellCount * (itemsarray[i].npc - buyPrice);
 
