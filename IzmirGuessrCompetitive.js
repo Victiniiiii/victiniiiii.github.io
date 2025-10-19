@@ -554,8 +554,10 @@ function displayResults(distance, points) {
 
 	if (points > 1000) points = 1000;
 
-	if (hintsAreEnabled) points -= 200;
-	document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
+	if (hintsAreEnabled) {
+		points -= 200;
+		document.getElementById("resultModalLeft").innerHTML += `<p>Deduction From Hints Used: -200 points</p>`;
+	}
 
 	if (points < 0) points = 0;
 
