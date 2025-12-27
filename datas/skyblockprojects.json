@@ -1,4 +1,12 @@
 [
+    {
+		"name": "Skyblock Helper App",
+		"language": "JavaScript",
+		"image": "skyblock384",
+		"release": "26 December 2025",
+		"url": "https://github.com/Chizza-Guild/SkyblockDesktopHelper",
+		"description": "A cross platform desktop app that helps Skyblock players in various ways."
+	},
 	{
 		"name": "Skyblock Desklet",
 		"language": "JavaScript",
