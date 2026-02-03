@@ -1,47 +1,53 @@
 {
-    "aboutMe": "I am a statistics student with a strong interest in front-end development. Honesty is my lifestyle, and I am a fast learner. I strive for perfection, ensuring every detail is flawless. Passionate about fixing bugs and optimizing older projects for better performance.",
-    "technologies": {
-        "Front-end": [
-            {"name": "HTML", "icon": "icons/html.svg"},
-            {"name": "CSS", "icon": "icons/css.svg"},
-            {"name": "SASS", "icon": "icons/sass.svg"},
-            {"name": "TailwindCSS", "icon": "icons/tailwind.svg"},
-            {"name": "JavaScript", "icon": "icons/javascript.svg"},
-            {"name": "TypeScript", "icon": "icons/typescript.svg"},
-            {"name": "React", "icon": "icons/react.svg"},
-            {"name": "Next.js", "icon": "icons/next.svg"}
-        ],
-        "Cross-platform & Desktop": [
-            {"name": "Electron", "icon": "icons/electronjs.svg"},
-            {"name": "Tauri", "icon": "icons/tauri.svg"},
-            {"name": "React Native", "icon": "icons/react.svg"},
-            {"name": "Expo", "icon": "icons/expo.svg"}
-        ],
-        "Back-end & Databases": [
-            {"name": "SQLite", "icon": "icons/sqlite.svg"},
-            {"name": "PostgreSQL", "icon": "icons/postgresql.svg"},
-            {"name": "Supabase", "icon": "icons/supabase.svg"},
-            {"name": "Firestore Database", "icon": "icons/firebase.svg"},
-            {"name": "Firebase Authentication", "icon": "icons/firebase.svg"},
-            {"name": "Node.js", "icon": "icons/nodejs.svg"},
-            {"name": "Go", "icon": "icons/golang.svg"},
-            {"name": "Git", "icon": "icons/git.svg"},
-            {"name": "NPM", "icon": "icons/npm.svg"},
-            {"name": "Docker", "icon": "icons/docker.svg"}
-        ],
-        "Linux": [
-            {"name": "Linux", "icon": "icons/linux.svg"},
-            {"name": "Linux Mint", "icon": "icons/linux_mint.svg"}
-        ],
-        "Statistics": [
-            {"name": "Python", "icon": "icons/python.svg"},
-            {"name": "R", "icon": "icons/r.svg"}
-        ]
-    },
-    "otherSkills": "PWAs, SEO, Browser Extensions",
-    "speaking": [
-        {"name": "Turkish", "icon": "icons/turkish.svg"},
-        {"name": "English", "icon": "icons/english.svg"},
-        {"name": "French", "icon": "icons/french.svg"}
-    ]
+	"aboutMe": "I am a statistics student with a strong interest in fullstack development. Honesty is my lifestyle, and I am a fast learner. I strive for perfection, ensuring every detail is flawless. Passionate about fixing bugs and optimizing older projects for better performance.",
+	"technologies": {
+		"Front-end": [
+			{ "name": "HTML", "icon": "icons/html.svg" },
+			{ "name": "CSS", "icon": "icons/css.svg" },
+			{ "name": "SASS", "icon": "icons/sass.svg" },
+			{ "name": "TailwindCSS", "icon": "icons/tailwind.svg" },
+			{ "name": "JavaScript", "icon": "icons/javascript.svg" },
+			{ "name": "TypeScript", "icon": "icons/typescript.svg" },
+			{ "name": "React", "icon": "icons/react.svg" },
+			{ "name": "Next.js", "icon": "icons/next.svg" }
+		],
+		"Back-end": [
+			{ "name": "Golang", "icon": "icons/golang.svg" },
+			{ "name": "Node.js", "icon": "icons/nodejs.svg" },
+			{ "name": "Bun", "icon": "icons/bun.svg" },
+			{ "name": "Git", "icon": "icons/git.svg" },
+			{ "name": "NPM", "icon": "icons/npm.svg" }
+		],
+		"Cross-platform & Desktop": [
+			{ "name": "Electron", "icon": "icons/electronjs.svg" },
+			{ "name": "Tauri", "icon": "icons/tauri.svg" },
+			{ "name": "React Native", "icon": "icons/react.svg" },
+			{ "name": "Expo", "icon": "icons/expo.svg" }
+		],
+		"Databases": [
+			{ "name": "SQLite", "icon": "icons/sqlite.svg" },
+			{ "name": "PostgreSQL", "icon": "icons/postgresql.svg" },
+			{ "name": "Firestore Database", "icon": "icons/firebase.svg" },
+			{ "name": "Firebase Authentication", "icon": "icons/firebase.svg" },
+			{ "name": "Supabase Database", "icon": "icons/supabase.svg" },
+			{ "name": "Supabase Authentication", "icon": "icons/supabase.svg" },
+			{ "name": "Supabase Bucket", "icon": "icons/supabase.svg" },
+			{ "name": "Supabase Realtime", "icon": "icons/supabase.svg" }
+		],
+		"Linux": [
+			{ "name": "Linux", "icon": "icons/linux.svg" },
+			{ "name": "Ubuntu", "icon": "icons/ubuntu.svg" },
+			{ "name": "Linux Mint", "icon": "icons/linux_mint.svg" }
+		],
+		"Statistics": [
+			{ "name": "Python", "icon": "icons/python.svg" },
+			{ "name": "R", "icon": "icons/r.svg" }
+		]
+	},
+	"otherSkills": "PWAs, SEO, Browser Extensions",
+	"speaking": [
+		{ "name": "Turkish", "icon": "icons/turkish.svg" },
+		{ "name": "English", "icon": "icons/english.svg" },
+		{ "name": "French", "icon": "icons/french.svg" }
+	]
 }

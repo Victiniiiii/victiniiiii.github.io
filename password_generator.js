@@ -28,9 +28,9 @@ function checkCheckboxes() {
 		}
 	});
 
-	if (checks.every((value) => value === false)) {
+	if (checks.every(value => value === false)) {
 		theButton.innerHTML = "Check All";
-	} else if (checks.every((value) => value === true)) {
+	} else if (checks.every(value => value === true)) {
 		theButton.innerHTML = "Uncheck All";
 	}
 }
@@ -46,13 +46,13 @@ document.querySelectorAll(".passwordAllows").forEach(function (div) {
 function checkAll() {
 	if (theButton.innerHTML == "Check All") {
 		checks.fill(true);
-		children.forEach((child) => {
+		children.forEach(child => {
 			child.innerHTML = child.innerHTML.includes("✔") ? child.innerHTML : child.innerHTML.replace("✖", "✔");
 		});
 		theButton.innerText = "Uncheck All";
 	} else if (theButton.innerHTML == "Uncheck All") {
 		checks.fill(false);
-		children.forEach((child) => {
+		children.forEach(child => {
 			child.innerHTML = child.innerHTML.includes("✔") ? child.innerHTML.replace("✔", "✖") : child.innerHTML;
 		});
 		theButton.innerText = "Check All";
@@ -65,7 +65,7 @@ async function generatePassword() {
 	let allCharacters = "";
 	document.getElementById("password").value = "";
 
-	if (checks.every((value) => value === false)) {
+	if (checks.every(value => value === false)) {
 		alert("Please select at least one setting.");
 		return;
 	} else if (document.getElementById("passwordlength").value > 100) {
@@ -89,15 +89,19 @@ async function generatePassword() {
 	for (i = 0; i < document.getElementById("passwordlength").value; i++) {
 		const randomIndex = Math.floor(Math.random() * allCharacters.length);
 		document.getElementById("password").value += allCharacters[randomIndex];
-		await new Promise((resolve) => setTimeout(resolve, 2000 / document.getElementById("passwordlength").value));
+		await new Promise(resolve => setTimeout(resolve, 2000 / document.getElementById("passwordlength").value));
 	}
 	document.getElementById("copyPassword").disabled = false;
 }
 
 function copyAll() {
-	document.getElementById("password").select();
-	document.execCommand("copy");
-	alert("Copied your password!");
+	try {
+		document.getElementById("password").select();
+		document.execCommand("copy");
+		alert("Copied your password!");
+	} catch (error) {
+		alert(error);
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -24,8 +24,8 @@ body {
 	align-items: start;
 	overflow-y: scroll;
 	justify-content: unset !important;
-    padding-bottom: 3vh !important;
-    overflow-x: hidden;
+	padding-bottom: 3vh !important;
+	overflow-x: hidden;
 }
 
 #aboutMeBox p {
@@ -88,19 +88,19 @@ body {
 }
 
 #proceedBtn {
-    background-color: rgb(0,80,180);        
+	background-color: rgb(0, 80, 180);
 }
 
 #proceedBtn:hover {
-    background-color: rgb(0,115,250);
+	background-color: rgb(0, 115, 250);
 }
 
 #cancelBtn {
-    background-color: rgb(50,50,50);
+	background-color: rgb(50, 50, 50);
 }
 
 #cancelBtn:hover {
-    background-color: rgb(88,88,88);
+	background-color: rgb(88, 88, 88);
 }
 
 @media (min-width: 768px) {
@@ -137,7 +137,7 @@ body {
 
 	#mainmenurightbox {
 		position: relative;
-        height: fit-content;
+		height: fit-content;
 	}
 
 	#mainmenurightbox::before {
@@ -192,8 +192,8 @@ body {
 	#mainmenuboxes {
 		display: flex;
 		flex-direction: row;
-        height: fit-content;
-        margin-bottom: 7.3svh;
+		height: fit-content;
+		margin-bottom: 7.3svh;
 	}
 
 	.mainmenubutton {
@@ -352,7 +352,7 @@ body {
 	.mainmenulanguage img {
 		width: 7vh;
 		height: 7vh;
-        margin: 0.5vh 0 0 -3vh;
+		margin: 0.5vh 0 0 -3vh;
 	}
 
 	.mainmenunotready {
@@ -379,37 +379,39 @@ body {
 		height: 20%;
 		border: 1px solid rgba(80, 80, 80);
 		background: rgba(20, 20, 20);
-        color: rgba(220, 220, 220);
+		color: rgba(220, 220, 220);
 		align-items: center;
 		justify-content: center;
-		text-align: center;		
+		text-align: center;
 		flex-direction: column;
 		padding: 20px;
 		border-radius: 20px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 
-    #warningModalButtons {
-        display: flex;
-        flex-direction: row;
-    }
+	#warningModalButtons {
+		display: flex;
+		flex-direction: row;
+	}
 
-    #warningModalButtons button {
-        margin: 2.5vh;
-        margin-top: 6.5vh;
-        padding: 1vh 1vw;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-        transition: background-color 400ms;
-    }
+	#warningModalButtons button {
+		margin: 2.5vh;
+		margin-top: 6.5vh;
+		padding: 1vh 1vw;
+		border: none;
+		border-radius: 10px;
+		color: white;
+		cursor: pointer;
+		transition: background-color 400ms;
+	}
 
-    #aboutMeBox {
-        padding-top: 3vh !important;
-    }
+	#aboutMeBox {
+		padding-top: 3vh !important;
+	}
 
-	#aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3 {
+	#aboutMeBox div,
+	#aboutMeBox h2,
+	#aboutMeBox h3 {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -420,23 +422,35 @@ body {
 		flex-wrap: wrap;
 	}
 
+	#aboutMeBox h2 {
+		margin: 1.5vh 0;
+	}
+
+	#aboutMeBox h3 {
+		margin: 0.7vh 0;
+	}
+
 	#aboutMeBox img,
 	pre {
 		width: 2.5vh;
 		height: 2.5vh;
 	}
 
-	#aboutMeBox img, #aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3, #aboutMeBox p {
+	#aboutMeBox img,
+	#aboutMeBox div,
+	#aboutMeBox h2,
+	#aboutMeBox h3,
+	#aboutMeBox p {
 		animation: fadeIn 2s ease;
 	}
 }
 
 @media (max-width: 767px) {
-    @media screen and (orientation: landscape) {
-        body {
-            transform: rotate(270deg); /* Prevents rotating the page in mobile */
-        }
-    }
+	@media screen and (orientation: landscape) {
+		body {
+			transform: rotate(270deg); /* Prevents rotating the page in mobile */
+		}
+	}
 
 	h6 {
 		margin-top: 1vw;
@@ -523,7 +537,7 @@ body {
 	#mainmenuboxes {
 		display: flex;
 		flex-direction: row;
-        margin-bottom: 9svh;
+		margin-bottom: 9svh;
 	}
 
 	.mainmenubutton {
@@ -641,7 +655,7 @@ body {
 		line-height: 2.8svh;
 		padding: 0 3vw 0 3vw;
 		text-align: center;
-        margin-top: -3px;
+		margin-top: -3px;
 	}
 
 	.mainmenunew {
@@ -704,33 +718,35 @@ body {
 		height: 50%;
 		border: 1px solid rgba(80, 80, 80);
 		background: rgba(20, 20, 20);
-        color: rgba(220, 220, 220);
+		color: rgba(220, 220, 220);
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		color: white;
-        font-size: 3vh;
+		font-size: 3vh;
 		flex-direction: column;
 		padding: 20px;
 		border-radius: 10px;
 		z-index: 999999999999999999999999999999999999999999999999999999999999;
 	}
 
-    #warningModalButtons {
-        display: flex;
-        flex-direction: column;
-    }
+	#warningModalButtons {
+		display: flex;
+		flex-direction: column;
+	}
 
-    #warningModalButtons button {
-        margin: 2.5vh;
-        margin-top: 6.5vh;
-        padding: 2vh 10vw;
-        border: none;
-        border-radius: 10px;
-        color: white;
-    }
+	#warningModalButtons button {
+		margin: 2.5vh;
+		margin-top: 6.5vh;
+		padding: 2vh 10vw;
+		border: none;
+		border-radius: 10px;
+		color: white;
+	}
 
-	#aboutMeBox div, #aboutMeBox h2, #aboutMeBox h3 {
+	#aboutMeBox div,
+	#aboutMeBox h2,
+	#aboutMeBox h3 {
 		width: 50vw;
 		display: flex;
 		flex-direction: row;
