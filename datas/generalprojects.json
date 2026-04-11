@@ -16,14 +16,6 @@
 		"description": "A website where people can play tons of party minigames."
 	},
 	{
-		"name": "Youtube Downloader Mobile",
-		"language": "Python",
-		"url": "https://github.com/Victiniiiii/youtube-downloader-mobile",
-		"image": "youtubedownloadermobile384",
-		"release": "26 October 2025",
-		"description": "A mobile app that can download audio and video from various sites. "
-	},
-	{
 		"name": "Personal Everything App",
 		"language": "Go",
 		"url": "https://github.com/Victiniiiii/personal-everything-app",
