@@ -213,7 +213,7 @@ let itemsarray = [
 let derpy = 1;
 let taxRate = localStorage.getItem("taxRate") ? parseFloat(localStorage.getItem("taxRate")) : 1;
 document.getElementById("TaxRateText").innerText = "%" + taxRate;
-document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+document.querySelectorAll(".three-way-toggle").forEach(toggle => {
 	if (taxRate == 1) {
 		toggle.classList.remove("middle");
 		toggle.classList.remove("active");
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		container.appendChild(row);
 	}
 
-	document.querySelectorAll(".three-way-toggle").forEach((toggle) => {
+	document.querySelectorAll(".three-way-toggle").forEach(toggle => {
 		toggle.addEventListener("click", function () {
 			if (this.classList.contains("active")) {
 				this.classList.remove("active");
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				toggleSwitch.classList.toggle("active");
 				derpy == 1 ? (derpy = 4) : (derpy = 1);
 				derpy == 4 ? (document.getElementById("DerpyText").innerText = "On") : (document.getElementById("DerpyText").innerText = "Off");
-                bazaarconnect();
+				bazaarconnect();
 			});
 			bazaarconnect();
 			return;
@@ -496,9 +496,9 @@ async function minionprofits() {
 	infernorow5.style.backgroundImage = "";
 	infernorow6.style.backgroundImage = "";
 
-	const sulphuriccoalnopeppers = ((parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice)) / 4).toFixed(0);
-	const sulphuriccoalwithpeppers = ((parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice) + parseFloat(chilipepperprice) * 4) / 12).toFixed(0);
-	let bestsulphuriccoal = [sulphuriccoalnopeppers > sulphuriccoalwithpeppers ? sulphuriccoalwithpeppers : sulphuriccoalnopeppers];
+	const sulphuriccoalnopeppers = (parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice)) / 4;
+	const sulphuriccoalwithpeppers = (parseFloat(enchantedcoalprice) * 16 + parseFloat(enchantedsulphurprice) + parseFloat(chilipepperprice) * 4) / 12;
+	let bestsulphuriccoal = sulphuriccoalnopeppers < sulphuriccoalwithpeppers ? sulphuriccoalnopeppers : sulphuriccoalwithpeppers;
 	let bestfuelgabagool = (parseFloat(crudegabagoolprice) * 24 + parseFloat(bestsulphuriccoal)).toFixed(0);
 
 	let extraspeeds = 0;
@@ -561,7 +561,7 @@ async function minionprofits() {
 	if (htmlfueltype == "nothing") {
 		fuelmultiplier = 1;
 		checkifitst3 = 0;
-        specialproduction = 0;
+		specialproduction = 0;
 	} else if (htmlfueltype == "t1-gabagool") {
 		fuelmultiplier = 11;
 		checkifitst3 = 0;
@@ -717,11 +717,11 @@ async function minionprofits() {
 		extraspeeds += 0;
 	}
 
-    let freewillValue = document.getElementById("freewill").value;
-    let postcardValue = document.getElementById("postcard").value;
+	let freewillValue = document.getElementById("freewill").value;
+	let postcardValue = document.getElementById("postcard").value;
 
-    freewillValue == "yes" ? extraspeeds += 10 : extraspeeds += 0;
-    postcardValue == "yes" ? extraspeeds += 5 : extraspeeds += 0;
+	freewillValue == "yes" ? (extraspeeds += 10) : (extraspeeds += 0);
+	postcardValue == "yes" ? (extraspeeds += 5) : (extraspeeds += 0);
 
 	var htmlupgrades1 = document.getElementById("upgrades1").value;
 	var htmlupgrades2 = document.getElementById("upgrades2").value;
@@ -740,7 +740,9 @@ async function minionprofits() {
 
 	let miniondailyprofit;
 	let dailytotalminionactions = 86400 / 2 / (minionwaitingtime / fuelmultiplier / ((100 + extraspeeds) / 100)); // this many actions per day
-    if (derpy == 4) {dailytotalminionactions *= 2}
+	if (derpy == 4) {
+		dailytotalminionactions *= 2;
+	}
 	miniondailyprofit =
 		htmlminioncount * dailytotalminionactions * ((1 - specialproduction) * parseFloat(crudegabagoolprice) + specialproduction * specialfueloutput) +
 		(checkifitst3 / 136) * htmlminioncount * dailytotalminionactions * parseFloat(chilipepperprice) +
@@ -897,9 +899,9 @@ async function minioncraftingcosts() {
 		}
 	}
 
-    for (let i = 2; i <= 11; i++) {
-        document.getElementById(`infernoMinionUpgradeCosts${i}`).innerHTML = `The cost for upgrading is: ${format(tiercraftingitems[i - 1] - tiercraftingitems[i - 2])} coins.`;
-    }
+	for (let i = 2; i <= 11; i++) {
+		document.getElementById(`infernoMinionUpgradeCosts${i}`).innerHTML = `The cost for upgrading is: ${format(tiercraftingitems[i - 1] - tiercraftingitems[i - 2])} coins.`;
+	}
 }
 
 function format(x) {
@@ -908,7 +910,7 @@ function format(x) {
 		.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-document.querySelectorAll(".infernoprofitbox select, .infernoprofitbox input").forEach((select) => {
+document.querySelectorAll(".infernoprofitbox select, .infernoprofitbox input").forEach(select => {
 	select.addEventListener("change", function () {
 		if (document.getElementById("empty").innerText.trim() !== "Press the calculate button at the top right to start.") {
 			minionprofits();
