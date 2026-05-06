@@ -671,7 +671,7 @@ async function minionprofits() {
 
 	var htmleyedrop = document.getElementById("eyedrops").value;
 	if (htmleyedrop == "yes") {
-		expenses += parseFloat(eyedropbuy);
+		expenses += parseFloat(eyedropbuy) * htmlminioncount;
 		if (checkifitst3 == 1) {
 			checkifitst3 += 0.3;
 		}
