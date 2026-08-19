@@ -105,7 +105,7 @@
 		{
 			"name": "Enchanted Red Mushroom Block",
 			"id": "ENCHANTED_HUGE_MUSHROOM_2",
-			"npc": "51200",
+			"npc": "256000",
 			"img": "ENCHANTED_RED_MUSHROOM_BLOCK"
 		},
 		{
@@ -127,6 +127,182 @@
 			"name": "Cropie",
 			"id": "CROPIE",
 			"npc": "25000"
+		},
+		{
+			"name": "Enchanted Redstone Block",
+			"id": "ENCHANTED_REDSTONE_BLOCK",
+			"npc": "25600"
+		},
+		{
+			"name": "Enchanted Pufferfish",
+			"id": "ENCHANTED_PUFFERFISH",
+			"npc": "2400"
+		},
+		{
+			"name": "Enchanted Tropical Fish",
+			"id": "ENCHANTED_CLOWNFISH",
+			"npc": "3200"
+		},
+		{
+			"name": "Enchanted Cooked Mutton",
+			"id": "ENCHANTED_COOKED_MUTTON",
+			"npc": "128000"
+		},
+		{
+			"name": "Enchanted Cooked Salmon",
+			"id": "ENCHANTED_COOKED_SALMON",
+			"npc": "256000"
+		},
+		{
+			"name": "Enchanted Poisonous Potato",
+			"id": "ENCHANTED_POISONOUS_POTATO",
+			"npc": "1600"
+		},
+		{
+			"name": "Enchanted Rabbit Foot",
+			"id": "ENCHANTED_RABBIT_FOOT",
+			"npc": "800"
+		},
+		{
+			"name": "Enchanted Rabbit Hide",
+			"id": "ENCHANTED_RABBIT_HIDE",
+			"npc": "800"
+		},
+		{
+			"name": "Enchanted Hard Stone",
+			"id": "ENCHANTED_HARD_STONE",
+			"npc": "576"
+		},
+		{
+			"name": "Enchanted Raw Beef",
+			"id": "ENCHANTED_RAW_BEEF",
+			"npc": "640"
+		},
+		{
+			"name": "Enchanted Wild Rose",
+			"id": "ENCHANTED_WILD_ROSE",
+			"npc": "640"
+		},
+		{
+			"name": "Enchanted Wool",
+			"id": "ENCHANTED_WOOL",
+			"npc": "320"
+		},
+		{
+			"name": "Fine Aquamarine Gemstone",
+			"id": "FINE_AQUAMARINE_GEM",
+			"npc": "25600"
+		},
+		{
+			"name": "Ethereal Vine",
+			"id": "ETHEREAL_VINE",
+			"npc": "20000"
+		},
+		{
+			"name": "Soul String",
+			"id": "SOUL_STRING",
+			"npc": "5000"
+		},
+		{
+			"name": "Mite Gel",
+			"id": "MITE_GEL",
+			"npc": "2000"
+		},
+		{
+			"name": "Toxic Arrow Poison",
+			"id": "TOXIC_ARROW_POISON",
+			"npc": "2000"
+		},
+		{
+			"name": "Enchanted Glacite",
+			"id": "ENCHANTED_GLACITE",
+			"npc": "1920"
+		},
+		{
+			"name": "Enchanted Sponge",
+			"id": "ENCHANTED_SPONGE",
+			"npc": "2000"
+		},
+		{
+			"name": "Hamster Wheel",
+			"id": "HAMSTER_WHEEL",
+			"npc": "20000"
+		},
+		{
+			"name": "Foul Flesh",
+			"id": "FOUL_FLESH",
+			"npc": "25000"
+		},
+		{
+			"name": "Enchanted Iron Block",
+			"id": "ENCHANTED_IRON_BLOCK",
+			"npc": "51200"
+		},
+		{
+			"name": "Enchanted Bone Block",
+			"id": "ENCHANTED_BONE_BLOCK",
+			"npc": "51200"
+		},
+		{
+			"name": "Enchanted Cactus",
+			"id": "ENCHANTED_CACTUS",
+			"npc": "102400"
+		},
+		{
+			"name": "Enchanted Cookie",
+			"id": "ENCHANTED_COOKIE",
+			"npc": "76800"
+		},
+		{
+			"name": "Enchanted Emerald Block",
+			"id": "ENCHANTED_EMERALD_BLOCK",
+			"npc": "102400"
+		},
+		{
+			"name": "Enchanted Cooked Rabbit",
+			"id": "ENCHANTED_COOKED_RABBIT",
+			"npc": "102400"
+		},
+		{
+			"name": "Enchanted Cooked Porkchop",
+			"id": "ENCHANTED_GRILLED_PORK",
+			"npc": "128000"
+		},
+		{
+			"name": "Enchanted Honeycomb",
+			"id": "ENCHANTED_HONEYCOMB",
+			"npc": "16000"
+		},
+		{
+			"name": "Enchanted Golden Carrot",
+			"id": "ENCHANTED_GOLDEN_CARROT",
+			"npc": "76800"
+		},
+		{
+			"name": "Enchanted End Stone",
+			"id": "ENCHANTED_ENDSTONE",
+			"npc": "320"
+		},
+		{
+			"name": "Enchanted Brown Mushroom Block",
+			"id": "ENCHANTED_HUGE_MUSHROOM_1",
+			"npc": "256000",
+			"img": "ENCHANTED_BROWN_MUSHROOM_BLOCK"
+		},
+		{
+			"name": "Enchanted Cooked Cod",
+			"id": "ENCHANTED_COOKED_FISH",
+			"npc": "150000"
+		},
+		{
+			"name": "Enchanted Diamond",
+			"id": "ENCHANTED_DIAMOND",
+			"npc": "1280"
+		},
+		{
+			"name": "Enchanted Raw Salmon",
+			"id": "ENCHANTED_RAW_SALMON",
+			"npc": "1600"
 		}
 	]
 }

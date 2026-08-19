@@ -18,7 +18,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 	if (savedToggleStates) {
 		toggleStates = JSON.parse(savedToggleStates);
 	} else {
-		toggleStates = Array(itemsarray.length).fill(false);
+		toggleStates = [];
+	}
+
+	while (toggleStates.length < itemsarray.length) {
+		toggleStates.push(false);
 	}
 
 	const container = document.getElementById("toggle-container");
